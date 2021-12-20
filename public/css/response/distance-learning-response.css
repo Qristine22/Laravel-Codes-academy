@@ -1,0 +1,74 @@
+@media only screen and (max-width: 1570px) {
+    .video__name{
+        width: 100%;
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 1400px) {
+    .motivation__item {
+        width: calc(33% - 46px);
+        margin: 25px;
+    }
+    .motivation__item_name{
+        margin-top: 5px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .motivation__cont{
+        margin: 0;
+    }
+    .motivation__item{
+        width: 33.3%;
+        margin: 0;
+    }
+    .motivation__item > iframe{
+        height: 200px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .video__name{
+        font-size: 13px;
+        line-height: 15px;
+    }
+    .videos__cont{
+        margin: 0px -10px;
+    }
+    .pdfs__item_layer{
+        height: 50px;
+    }
+    .swiper-pagination{
+        padding: 0 20px;
+    }
+    .motivation__item > iframe{
+        height: 140px;
+    }
+}
+@media only screen and (max-width: 750px) {
+    .videos__item {
+        width: calc(50% - 40px);
+        margin: 20px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .motivation__item{
+        width: 50%;
+    }
+    .materials__item{
+        margin-top: 20px;
+    }
+    .material__title{
+        margin-bottom: 10px;
+    }
+    .material__list_item{
+        margin-top: 5px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .videos__cont {
+        margin: 0px -5px;
+    }
+    .videos__item,
+    .motivation__item{
+        width: 100%;
+    }
+}

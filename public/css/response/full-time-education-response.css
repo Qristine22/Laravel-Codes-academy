@@ -1,0 +1,24 @@
+@media only screen and (max-width: 1080px) {
+    .education{
+        min-height: calc(100vh - 160px);
+    }
+}
+@media only screen and (max-width: 850px) {
+    .conducting-exams__iframe{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 750px) {
+    .education {
+        min-height: calc(100vh - 100px);
+    }
+}
+
+
+
+/* height */
+@media only screen and (max-height: 750px) {
+    .education {
+        height: auto;
+    }
+}

@@ -1,0 +1,35 @@
+/*
+education
+*/
+
+.education{
+    height: calc(100vh - 260px);
+}
+
+/*
+training program
+*/
+
+.training-program__title{
+    width: 90%;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+.training__pdf:last-child,
+.training__pdf{
+    margin-bottom: 40px;
+}
+
+/*
+conducting exams
+*/
+
+.conducting-exams__bot{
+    margin-top: 30px;
+}
+.conducting-exams__vid{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

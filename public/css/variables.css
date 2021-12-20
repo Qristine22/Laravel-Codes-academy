@@ -1,0 +1,14 @@
+:root{
+    --white: #ffffff;
+    --black: #000000;
+    --pink: #F8EDE8;
+    --brown: #643A22;
+    --light-brown: #966D24;
+    --dark-yellow: #C9B695;
+    --section: #FFFAF8;
+}
+
+*::selection {
+    background-color: var(--brown);
+    color: var(--white);
+}
