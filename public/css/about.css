@@ -384,9 +384,11 @@ gallery
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 50px;
+    margin: 0 -15px;
 }
 .gallery-single_item{
-    width: 50%;
+    width: calc(50% - 30px);
+    margin: 15px;
 }
 .gallery__top{
     width: 100%;

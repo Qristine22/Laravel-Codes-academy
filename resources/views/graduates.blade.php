@@ -61,7 +61,7 @@
                         <div class="swiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/1.png" alt="1">
+                                    <img class="img" src="/media/img/about/graduates/1.png" alt="1">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արուսյակ Ալեքսանյան</h3>
                                         <h4 class="member__subtitle">
@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/2.png" alt="2">
+                                    <img class="img" src="/media/img/about/graduates/2.png" alt="2">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արտյոմ Ավետիսյան</h3>
                                         <h4 class="member__subtitle">
@@ -79,7 +79,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/3.png" alt="3">
+                                    <img class="img" src="/media/img/about/graduates/3.png" alt="3">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արմեն Մարուխյան</h3>
                                         <h4 class="member__subtitle">
@@ -88,7 +88,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/4.png" alt="4">
+                                    <img class="img" src="/media/img/about/graduates/4.png" alt="4">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Վարոսյան Գայանե</h3>
                                         <h4 class="member__subtitle">
@@ -97,7 +97,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/5.png" alt="5">
+                                    <img class="img" src="/media/img/about/graduates/5.png" alt="5">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արմեն Մարուխյան</h3>
                                         <h4 class="member__subtitle">
@@ -106,7 +106,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/6.png" alt="6">
+                                    <img class="img" src="/media/img/about/graduates/6.png" alt="6">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արմեն Մարուխյան</h3>
                                         <h4 class="member__subtitle">
@@ -115,7 +115,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/7.png" alt="7">
+                                    <img class="img" src="/media/img/about/graduates/7.png" alt="7">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արմեն Մարուխյան</h3>
                                         <h4 class="member__subtitle">
@@ -133,7 +133,7 @@
                         <div class="swiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/5.png" alt="5">
+                                    <img class="img" src="/media/img/about/graduates/5.png" alt="5">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արուսյակ Ալեքսանյան</h3>
                                         <h4 class="member__subtitle">
@@ -142,7 +142,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/6.png" alt="6">
+                                    <img class="img" src="/media/img/about/graduates/6.png" alt="6">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արտյոմ Ավետիսյան</h3>
                                         <h4 class="member__subtitle">
@@ -151,7 +151,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/7.png" alt="7">
+                                    <img class="img" src="/media/img/about/graduates/7.png" alt="7">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արմեն Մարուխյան</h3>
                                         <h4 class="member__subtitle">
@@ -160,7 +160,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/8.png" alt="8">
+                                    <img class="img" src="/media/img/about/graduates/8.png" alt="8">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արմեն Մարուխյան</h3>
                                         <h4 class="member__subtitle">
@@ -169,7 +169,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/9.png" alt="9">
+                                    <img class="img" src="/media/img/about/graduates/9.png" alt="9">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արմեն Մարուխյան</h3>
                                         <h4 class="member__subtitle">
@@ -187,7 +187,7 @@
                         <div class="swiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/9.png" alt="9">
+                                    <img class="img" src="/media/img/about/graduates/9.png" alt="9">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արուսյակ Ալեքսանյան</h3>
                                         <h4 class="member__subtitle">
@@ -196,7 +196,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/10.png" alt="10">
+                                    <img class="img" src="/media/img/about/graduates/10.png" alt="10">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արտյոմ Ավետիսյան</h3>
                                         <h4 class="member__subtitle">
@@ -205,7 +205,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/11.png" alt="11">
+                                    <img class="img" src="/media/img/about/graduates/11.png" alt="11">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արմեն Մարուխյան</h3>
                                         <h4 class="member__subtitle">
@@ -214,7 +214,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/12.png" alt="12">
+                                    <img class="img" src="/media/img/about/graduates/12.png" alt="12">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արմեն Մարուխյան</h3>
                                         <h4 class="member__subtitle">
@@ -223,7 +223,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide graduate__item">
-                                    <img class="img" src="/media/img/judges/13.png" alt="13">
+                                    <img class="img" src="/media/img/about/graduates/13.png" alt="13">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">Արմեն Մարուխյան</h3>
                                         <h4 class="member__subtitle">

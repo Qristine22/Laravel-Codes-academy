@@ -23,7 +23,7 @@
         <section class="structure section-top">
             <div class="wrapper">
                 <div class="structure__cont">
-                    <img class="structure__img" src="/media/img/bgs/structure.png" alt="structure">
+                    <img class="structure__img" src="/media/img/about/bgs/structure.png" alt="structure">
                     <a class="structure__btn structure__governing-board" href="#">
                         <span class="structure__span">Կառավարման Խորհուրդ</span>
                     </a>

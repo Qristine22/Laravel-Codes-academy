@@ -267,6 +267,9 @@
     .aboute__date{
         font-size: 17px;
     }
+    .gallery-single__cont {
+        margin: 0;
+    }
 }
 @media only screen and (max-width: 650px) {
     .members__item{
@@ -329,6 +332,10 @@
     }
     .date-12{
         width: 25%;
+    }
+    .gallery-single_item {
+        width: calc(50% - 10px);
+        margin: 5px;
     }
 }
 @media only screen and (max-width: 450px) {

@@ -57,91 +57,91 @@
                 <div class="gallery__cont flex">
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/1.png" alt="1">
+                            <img class="gallery__img img" src="/media/img/about/gallery/1.png" alt="1">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/2.png" alt="2">
+                            <img class="gallery__img img" src="/media/img/about/gallery/2.png" alt="2">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/3.png" alt="3">
+                            <img class="gallery__img img" src="/media/img/about/gallery/3.png" alt="3">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/4.png" alt="4">
+                            <img class="gallery__img img" src="/media/img/about/gallery/4.png" alt="4">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/5.png" alt="5">
+                            <img class="gallery__img img" src="/media/img/about/gallery/5.png" alt="5">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/6.png" alt="6">
+                            <img class="gallery__img img" src="/media/img/about/gallery/6.png" alt="6">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/7.png" alt="7">
+                            <img class="gallery__img img" src="/media/img/about/gallery/7.png" alt="7">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/8.png" alt="8">
+                            <img class="gallery__img img" src="/media/img/about/gallery/8.png" alt="8">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/9.png" alt="9">
+                            <img class="gallery__img img" src="/media/img/about/gallery/9.png" alt="9">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/10.png" alt="10">
+                            <img class="gallery__img img" src="/media/img/about/gallery/10.png" alt="10">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/11.png" alt="11">
+                            <img class="gallery__img img" src="/media/img/about/gallery/11.png" alt="11">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/12.png" alt="12">
+                            <img class="gallery__img img" src="/media/img/about/gallery/12.png" alt="12">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/13.png" alt="13">
+                            <img class="gallery__img img" src="/media/img/about/gallery/13.png" alt="13">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/14.png" alt="14">
+                            <img class="gallery__img img" src="/media/img/about/gallery/14.png" alt="14">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>
                     <div class="gallery__item flex">
                         <a class="gallery__top" href="{{ route('gallerySingle') }}">
-                            <img class="gallery__img img" src="/media/img/gallery/2.png" alt="2">
+                            <img class="gallery__img img" src="/media/img/about/gallery/2.png" alt="2">
                         </a>
                         <span class="gallery__date text-20">29.11.2021</span>
                     </div>

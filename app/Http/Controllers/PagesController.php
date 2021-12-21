@@ -8,6 +8,8 @@ class PagesController extends Controller
     public function home(){
         return view('home');
     }
+
+    // about
     public function about(){
         return view('about');
     }
@@ -50,12 +52,16 @@ class PagesController extends Controller
     public function massMedia(){
         return view('mass-media');
     }
+
+    // news
     public function news(){
         return view('news');
     }
     public function newsSingle(){
         return view('news-single');
     }
+
+    // full time education
     public function fullTimeEducation(){
         return view('full-time-education');
     }
@@ -65,7 +71,83 @@ class PagesController extends Controller
     public function conductingExams(){
         return view('conducting-exams');
     }
+    public function conductingPractice(){
+        return view('pdfs-downloade');
+    }
+    public function rulesOfBehaviour(){
+        return view('pdfs-downloade');
+    }
+    public function dormitoryRules(){
+        return view('pdfs-downloade');
+    }
+    public function provideDeferral(){
+        return view('pdfs-downloade');
+    }
+
+    // distance learning
     public function distanceLearning(){
         return view('distance-learning');
+    }
+    public function videoMaterials(){
+        return view('video-materials');
+    }
+    public function distanceLearningCourses(){
+        return view('distance-learning-courses');
+    }
+    public function motivationalVideos(){
+        return view('motivational-videos');
+    }
+    public function mediaMaterials(){
+        return view('media-materials');
+    }
+    public function distanceLearningGuide(){
+        return view('distance-learning-guide');
+    }
+
+    // library
+    public function library(){
+        return view('library');
+    }
+    public function trainingMaterials(){
+        return view('library');
+    }
+    public function videoLectures(){
+        return view('video-lectures');
+    }
+    public function videoLectureSingle($id){
+        return view('video-lecture-single');
+    }
+    public function academyPublications(){
+        return view('library');
+    }
+    public function professionalLiterature(){
+        return view('pdfs-downloade');
+    }
+    public function organizingLibraryActivities(){
+        return view('pdfs-downloade');
+    }
+    public function ECHRResources(){
+        return view('library');
+    }
+    public function investigatorTrainingModules(){
+        return view('library');
+    }
+
+    // bulletin
+    public function bulletin(){
+        return view('bulletin');
+    }
+
+    // partners
+    public function partners(){
+        return view('partners');
+    }
+    public function partnerSingle($id){
+        return view('partner-single');
+    }
+
+    // contacts
+    public function contacts(){
+        return view('contacts');
     }
 }

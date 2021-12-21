@@ -107,14 +107,14 @@
                     <h2 class="members__title text-26">Ակադեմիայի կառավաման խորհրդի կազմը</h2>
                     <div class="members__items flex">
                         <div class="members__item">
-                            <img class="img" src="/media/img/governing-board-members/1.png" alt="1">
+                            <img class="img" src="/media/img/about/governing-board-members/1.png" alt="1">
                             <a class="members__item_cont" href="{{ route('biography') }}">
                                 <h3 class="member__title">Գեվորգ Բաղդասարյան</h3>
                                 <h4 class="member__subtitle">ՀՀ գլխավոր դատախազի տեղակալ (Խորհրդի նախագահ)</h4>
                             </a>
                         </div>
                         <div class="members__item">
-                            <img class="img" src="/media/img/governing-board-members/2.png" alt="2">
+                            <img class="img" src="/media/img/about/governing-board-members/2.png" alt="2">
                             <a class="members__item_cont" href="{{ route('biography') }}">
                                 <h3 class="member__title">Եղիազար Ավագյան</h3>
                                 <h4 class="member__subtitle">ՀՀ գլխավոր դատախազության միջազգային-իրավական
@@ -122,7 +122,7 @@
                             </a>
                         </div>
                         <div class="members__item">
-                            <img class="img" src="/media/img/governing-board-members/3.png" alt="3">
+                            <img class="img" src="/media/img/about/governing-board-members/3.png" alt="3">
                             <a class="members__item_cont" href="{{ route('biography') }}">
                                 <h3 class="member__title">Արմեն Մարուխյան</h3>
                                 <h4 class="member__subtitle">ՀՀ գլխավոր դատախազության կազմակերպական-վերահսկողական և
@@ -130,28 +130,28 @@
                             </a>
                         </div>
                         <div class="members__item">
-                            <img class="img" src="/media/img/governing-board-members/4.png" alt="4">
+                            <img class="img" src="/media/img/about/governing-board-members/4.png" alt="4">
                             <a class="members__item_cont" href="{{ route('biography') }}">
                                 <h3 class="member__title">Անդրանիկ Մնացականյան</h3>
                                 <h4 class="member__subtitle">ՀՀ գլխավոր դատախազի տեղակալ (Խորհրդի նախագահ)</h4>
                             </a>
                         </div>
                         <div class="members__item">
-                            <img class="img" src="/media/img/governing-board-members/5.png" alt="5">
+                            <img class="img" src="/media/img/about/governing-board-members/5.png" alt="5">
                             <a class="members__item_cont" href="{{ route('biography') }}">
                                 <h3 class="member__title">Արման Թովմասյան</h3>
                                 <h4 class="member__subtitle">ՀՀ վերաքննիչ վարչական դատարանի դատավոր</h4>
                             </a>
                         </div>
                         <div class="members__item">
-                            <img class="img" src="/media/img/governing-board-members/6.png" alt="6">
+                            <img class="img" src="/media/img/about/governing-board-members/6.png" alt="6">
                             <a class="members__item_cont" href="{{ route('biography') }}">
                                 <h3 class="member__title">Երեմ Եսոյան</h3>
                                 <h4 class="member__subtitle">Երևան քաղաքի ընդհանուր իրավասության դատարանի դատավոր</h4>
                             </a>
                         </div>
                         <div class="members__item">
-                            <img class="img" src="/media/img/governing-board-members/7.png" alt="7">
+                            <img class="img" src="/media/img/about/governing-board-members/7.png" alt="7">
                             <a class="members__item_cont" href="{{ route('biography') }}">
                                 <h3 class="member__title">Երանուհի Թումանյանց</h3>
                                 <h4 class="member__subtitle">ՀՀ արդարադատության նախարարի տեղակալ</h4>

@@ -24,6 +24,9 @@
     .motivation__item > iframe{
         height: 200px;
     }
+    .learning-guide{
+        min-height: calc(100vh - 100px);
+    }
 }
 @media only screen and (max-width: 900px) {
     .video__name{
@@ -41,6 +44,11 @@
     }
     .motivation__item > iframe{
         height: 140px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .learning-guide__img{
+        width: 45%;
     }
 }
 @media only screen and (max-width: 750px) {
@@ -70,5 +78,8 @@
     .videos__item,
     .motivation__item{
         width: 100%;
+    }
+    .learning-guide__img{
+        width: 70%;
     }
 }

@@ -119,7 +119,7 @@
                         </div>
                     </div>
                     <div class="member__img">
-                        <img class="img" src="/media/img/governing-board-members/1.png" alt="1">
+                        <img class="img" src="/media/img/about/governing-board-members/1.png" alt="1">
                     </div>
                 </div>
             </div>

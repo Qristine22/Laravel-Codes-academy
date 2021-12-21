@@ -163,3 +163,23 @@ media materials
 .material__list_item{
     margin-top: 10px;
 }
+
+/*
+learning-guide
+*/
+
+.learning-guide{
+    min-height: calc(100vh - 200px);
+}
+.learning-guide__title{
+    text-align: center;
+    text-transform: uppercase;
+}
+.learning-guide__cont{
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+}
+.learning-guide__img{
+    width: 25%;
+}
