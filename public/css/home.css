@@ -108,3 +108,45 @@ rector
 .rector__signature{
     width: 195px;
 }
+
+/*
+login
+*/
+
+.login{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--pink);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form__item{
+    flex-direction: column;
+    margin-top: 20px;
+}
+.login__inp{
+    border: 1px solid var(--brown);
+    margin-top: 10px;
+    color: var(--brown);
+    padding: 8px 17px;
+}
+.login__btn_cont{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+.login__btn{
+    padding: 5px 15px;
+    background-color: var(--pink);
+    color: var(--brown);
+    cursor: pointer;
+    border: 1px solid var(--brown);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}

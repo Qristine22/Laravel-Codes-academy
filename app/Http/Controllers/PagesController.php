@@ -25,6 +25,12 @@ class PagesController extends Controller
     public function rector(){
         return view('rector');
     }
+    public function rectorsBiography(){
+        return view('biography');
+    }
+    public function formerRectorsBiography(){
+        return view('biography');
+    }
     public function rectorsDecrees(){
         return view('rectors-decrees');
     }
@@ -37,10 +43,25 @@ class PagesController extends Controller
     public function graduates(){
         return view('graduates');
     }
+    public function graduatesJudges(){
+        return view('graduates-profession');
+    }
+    public function graduatesProsecutors(){
+        return view('graduates-profession');
+    }
+    public function graduatesInvestigators(){
+        return view('graduates-profession');
+    }
     public function admission(){
         return view('admission');
     }
     public function judgesCandidates(){
+        return view('judges-candidates');
+    }
+    public function prosecutorsCandidates(){
+        return view('judges-candidates');
+    }
+    public function investigatorsCandidates(){
         return view('judges-candidates');
     }
     public function gallery(){
@@ -149,5 +170,10 @@ class PagesController extends Controller
     // contacts
     public function contacts(){
         return view('contacts');
+    }
+
+    //login
+    public function login(){
+        return view('admin.login');
     }
 }

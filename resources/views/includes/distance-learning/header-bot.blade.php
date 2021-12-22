@@ -12,11 +12,6 @@
                         Request::is('distance-learning/media-materials'))header__bot_link-active @endif"
                         href="{{ route('distanceLearningCourses') }}">Դասընթացներ</a>
                 </li>
-                <li class="header__bot_item">
-                    <a class="header__bot_link" href="#">
-                        ԱՄՆ Դաշնային դատական կենտրոնի միջազգային դատական կապերի գծով ղեկավարի հարցազրույցը Արդարադատության ակադեմիայի հեռաուսուցման ծրագրերի և նյութերի մասին
-                    </a>
-                </li>
             </ul>
         </nav>
     </div>

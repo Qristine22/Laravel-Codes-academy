@@ -134,6 +134,9 @@ rector
     flex-direction: column;
     align-items: flex-start;
 }
+.about__link{
+    text-transform: uppercase;
+}
 .about__link,
 .report__link{
     color: var(--dark-yellow);
@@ -189,8 +192,40 @@ graduates
 .graduates__title{
     margin-bottom: 20px;
 }
-.graduate__item:hover .members__item_cont{
+.graduate__item,
+.graduate-profession__item{
+    width: calc(20% - 20px);
+    position: relative;
+}
+.graduate__item:hover .members__item_cont,
+.graduate-profession__item:hover .members__item_cont{
     opacity: 1;
+}
+.members__item_count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.members__item_count > span{
+    color: var(--white);
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.graduates-profession{
+    min-height: calc(100vh - 200px);
+}
+.graduates-profession__items{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+.graduates-profession__title{
+    color: var(--light-brown);
+    font-style: italic;
+}
+.graduate-profession__item{
+    margin: 10px;
 }
 
 /*

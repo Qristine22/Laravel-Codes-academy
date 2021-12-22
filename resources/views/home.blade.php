@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Արդարադատության Ակադեմիա - ԱՐԴԱՐԱԴԱՏՈւԹՅԱՆ ԱԿԱԴԵՄԻԱ</title>
-    <link rel="icon" type="image/x-icon" href="/media/img/logo/brownLogo.png">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/media/fonts/fonts.css">
-    <link rel="stylesheet" href="/css/all.css">
+@section('styles')
     <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/response/all-response.css">
     <link rel="stylesheet" href="/css/response/home-response.css">
-</head>
+@endsection
 
-<body>
-    @include("includes.header")
-
+@section('content')
     <main>
         <section class="home section">
             <div class="wrapper">
@@ -62,45 +50,48 @@
                     <div class="last-news__items flex">
                         <div class="last-news__item">
                             <div class="last-news__item_top">
-                                <a href="new-single.php">
+                                <a href="{{ route('newsSingle', ['id' => 2]) }}">
                                     <img class="img news__item_img" src="/media/img/more/news1.png" alt="news1">
                                 </a>
                             </div>
                             <div class="last-news__item_cont">
-                                <a class="last-news__item_link" href="new-single.php">Մեկնարկեց դատախազի թեկնածուների 2021-2022թթ.
-                                    մասնագիտական պատրաստումը</a>
+                                <a class="last-news__item_link" href="{{ route('newsSingle', ['id' => 2]) }}">
+                                    Մեկնարկեց դատախազի թեկնածուների 2021-2022թթ. մասնագիտական պատրաստումը
+                                </a>
                                 <div class="read-more__cont">
-                                    <a class="read-more" href="new-single.php">Կարդալ ավելին</a>
+                                    <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">Կարդալ ավելին</a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                                 </div>
                             </div>
                         </div>
                         <div class="last-news__item">
                             <div class="last-news__item_top">
-                                <a href="new-single.php">
+                                <a href="{{ route('newsSingle', ['id' => 2]) }}">
                                     <img class="img news__item_img" src="/media/img/more/news2.png" alt="news2">
                                 </a>
                             </div>
                             <div class="last-news__item_cont">
-                                <a class="last-news__item_link" href="new-single.php">Սեմինար՝ նվիրված դատական համակարգում կոռուպցիոն
-                                    ռիսկերին</a>
+                                <a class="last-news__item_link" href="{{ route('newsSingle', ['id' => 2]) }}">
+                                    Սեմինար՝ նվիրված դատական համակարգում կոռուպցիոն ռիսկերին
+                                </a>
                                 <div class="read-more__cont">
-                                    <a class="read-more" href="new-single.php">Կարդալ ավելին</a>
+                                    <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">Կարդալ ավելին</a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                                 </div>
                             </div>
                         </div>
                         <div class="last-news__item">
                             <div class="last-news__item_top">
-                                <a href="new-single.php">
+                                <a href="{{ route('newsSingle', ['id' => 2]) }}">
                                     <img class="img news__item_img" src="/media/img/more/news3.png" alt="news3">
                                 </a>
                             </div>
                             <div class="last-news__item_cont">
-                                <a class="last-news__item_link" href="new-single.php">Ռեկտորը Նուր-Սուլթանում մասնակցել է միջազգային
-                                    կլոր-սեղան քննարկման</a>
+                                <a class="last-news__item_link" href="{{ route('newsSingle', ['id' => 2]) }}">
+                                    Ռեկտորը Նուր-Սուլթանում մասնակցել է միջազգային կլոր-սեղան քննարկման
+                                </a>
                                 <div class="read-more__cont">
-                                    <a class="read-more" href="new-single.php">Կարդալ ավելին</a>
+                                    <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">Կարդալ ավելին</a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                                 </div>
                             </div>
@@ -110,10 +101,4 @@
             </div>
         </section>
     </main>
-
-    @include("includes.footer")
-
-    <script src="/js/main.js"></script>
-</body>
-
-</html>
+@endsection

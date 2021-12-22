@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Արդարադատության Ակադեմիա - ԱՐԴԱՐԱԴԱՏՈւԹՅԱՆ ԱԿԱԴԵՄԻԱ</title>
-    <link rel="icon" type="image/x-icon" href="/media/img/logo/brownLogo.png">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/media/fonts/fonts.css">
-    <link rel="stylesheet" href="/css/all.css">
+@section('styles')
     <link rel="stylesheet" href="/css/partners.css">
-    <link rel="stylesheet" href="/css/response/all-response.css">
     <link rel="stylesheet" href="/css/response/partners-response.css">
-</head>
+@endsection
 
-<body>
-    @include("includes.header")
-
+@section('content')
     <main>
         <section class="partners section-text">
             <div class="wrapper">
@@ -82,7 +70,8 @@
                                     <img class="partner__img img" src="/media/img/partners/international/8.png" alt="8">
                                 </a>
                                 <h3 class="partner__name">
-                                    Ռաուլ Վալլենբերգի անվան մարդու իրավունքների և մարդասիրական իրավունքի ինստիտուտի եվրոպական գրասենյակ
+                                    Ռաուլ Վալլենբերգի անվան մարդու իրավունքների և մարդասիրական իրավունքի ինստիտուտի
+                                    եվրոպական գրասենյակ
                                 </h3>
                             </div>
                         </div>
@@ -163,11 +152,4 @@
             </div>
         </section>
     </main>
-
-    @include("includes.footer")
-
-
-    <script src="/js/main.js"></script>
-</body>
-
-</html>
+@endsection

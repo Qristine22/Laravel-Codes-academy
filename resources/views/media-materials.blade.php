@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Արդարադատության Ակադեմիա - ԱՐԴԱՐԱԴԱՏՈւԹՅԱՆ ԱԿԱԴԵՄԻԱ</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="icon" type="image/x-icon" href="/media/img/logo/brownLogo.png">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/media/fonts/fonts.css">
-    <link rel="stylesheet" href="/css/all.css">
+@section('styles')
     <link rel="stylesheet" href="/css/distance-learning.css">
-    <link rel="stylesheet" href="/css/response/all-response.css">
     <link rel="stylesheet" href="/css/response/distance-learning-response.css">
-</head>
+@endsection
 
-<body>
-    @include("includes.header")
+@section('header-bot')
     @include("includes.distance-learning.header-bot")
+@endsection
 
+@section('content')
     <main>
         <section class="materials section-text section-top">
             <div class="wrapper">
@@ -54,7 +44,8 @@
                             </li>
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    6. Гришко А.Я., Гришко Е.А., Упоров И.В. Уголовное право. Общая часть: Учебное пособие/ Под ред. Н.И. Ветрова. М., 2001
+                                    6. Гришко А.Я., Гришко Е.А., Упоров И.В. Уголовное право. Общая часть: Учебное пособие/
+                                    Под ред. Н.И. Ветрова. М., 2001
                                 </a>
                             </li>
                         </ul>
@@ -64,22 +55,28 @@
                         <ul class="material__list">
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    1. Report of the Consultation on Child Abuse Prevention, 29–31 March 1999, WHO, Geneva. Geneva, World Health Organization, 1999 (document WHO/HSC/PVI/99.1).
+                                    1. Report of the Consultation on Child Abuse Prevention, 29–31 March 1999, WHO, Geneva.
+                                    Geneva, World Health Organization, 1999 (document WHO/HSC/PVI/99.1).
                                 </a>
                             </li>
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    2. Calam R. Child abuse and its consequences: observational approaches. Cambridge University Press, 1987, էջ 226
+                                    2. Calam R. Child abuse and its consequences: observational approaches. Cambridge
+                                    University Press, 1987, էջ 226
                                 </a>
                             </li>
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    3.Алексеева И.А., Новосельский И.Г. Жестокое обращение с ребенком. Причины. Последствия. Помощь. — М.: Гене зис, 2006. — 256 с.
+                                    3.Алексеева И.А., Новосельский И.Г. Жестокое обращение с ребенком. Причины. Последствия.
+                                    Помощь. — М.: Гене зис, 2006. — 256 с.
                                 </a>
                             </li>
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    4.Fergusson D.M., Lynskey M.T., Horwood L.J. Childhood sexual abuse and psychiatric disorder in young adulthood. I: Prevalence of sexual abuse and factors associated with sexual abuse. Journal of the American Academy of Child and Adolescent Psychiatry, 1996, N35, էջեր 1355–1364:
+                                    4.Fergusson D.M., Lynskey M.T., Horwood L.J. Childhood sexual abuse and psychiatric
+                                    disorder in young adulthood. I: Prevalence of sexual abuse and factors associated with
+                                    sexual abuse. Journal of the American Academy of Child and Adolescent Psychiatry, 1996,
+                                    N35, էջեր 1355–1364:
                                 </a>
                             </li>
                             <li class="material__list_item">
@@ -99,32 +96,39 @@
                         <ul class="material__list">
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    1. Ռենոլդն ընդդեմ Ֆրանսիայի գործով (2008թ.-ի հոկտեմբերի 16-ի վճիռ, Renold v. France, application no. 5608/05)
+                                    1. Ռենոլդն ընդդեմ Ֆրանսիայի գործով (2008թ.-ի հոկտեմբերի 16-ի վճիռ, Renold v. France,
+                                    application no. 5608/05)
                                 </a>
                             </li>
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    2. ՀՀ քրեական իրավունք: Հատուկ մաս (չորրորդ հրատարակություն)/ Գ. Ղազինյանի խմբագրությամբ. Եր.: ԵՊՀ հրատ., 2009, 2012, 2013 թթ.,
+                                    2. ՀՀ քրեական իրավունք: Հատուկ մաս (չորրորդ հրատարակություն)/ Գ. Ղազինյանի
+                                    խմբագրությամբ. Եր.: ԵՊՀ հրատ., 2009, 2012, 2013 թթ.,
                                 </a>
                             </li>
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    3.Երեմյան Ա., Թումասյան Դ., Ղամբարյան Ա., Պետրոսյան Տ. Հայաստանի Հանրապետությունում մարդու թրաֆիքինգի և շահագործման դեմ պայքարի իրավական հիմունքները: Երևան, 2013,
+                                    3.Երեմյան Ա., Թումասյան Դ., Ղամբարյան Ա., Պետրոսյան Տ. Հայաստանի Հանրապետությունում
+                                    մարդու թրաֆիքինգի և շահագործման դեմ պայքարի իրավական հիմունքները: Երևան, 2013,
                                 </a>
                             </li>
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    4. Երեմյան Ա., Թումասյան Դ., Ղամբարյան Ա., Պետրոսյան Տ. Պայքար մարդու թրաֆիքինգի և շահագործման դեմ: Մոդուլ 2: Երևան, 2011,
+                                    4. Երեմյան Ա., Թումասյան Դ., Ղամբարյան Ա., Պետրոսյան Տ. Պայքար մարդու թրաֆիքինգի և
+                                    շահագործման դեմ: Մոդուլ 2: Երևան, 2011,
                                 </a>
                             </li>
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    5. Երեմյան Ա., Թումասյան Դ., Ղամբարյան Ա., Պետրոսյան Տ. Պայքար մարդու թրաֆիքինգի և շահագործման դեմ: Մոդուլ 3: Երևան, 2011,
+                                    5. Երեմյան Ա., Թումասյան Դ., Ղամբարյան Ա., Պետրոսյան Տ. Պայքար մարդու թրաֆիքինգի և
+                                    շահագործման դեմ: Մոդուլ 3: Երևան, 2011,
                                 </a>
                             </li>
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    6. Ղամբարյան Ա., Թումասյան Դ. Երեխաների սեռական անձեռնմխելիության և սեռական ազատության դեմ ուղղված հանցագործություններն ու դրանց վարույթի առանձնահատկությունները (ձեռնարկ քննիչների համար): Երևան, 2015,
+                                    6. Ղամբարյան Ա., Թումասյան Դ. Երեխաների սեռական անձեռնմխելիության և սեռական ազատության
+                                    դեմ ուղղված հանցագործություններն ու դրանց վարույթի առանձնահատկությունները (ձեռնարկ
+                                    քննիչների համար): Երևան, 2015,
                                 </a>
                             </li>
                         </ul>
@@ -134,22 +138,28 @@
                         <ul class="material__list">
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    1. Մարաբյան Ս. Քրեական դատավարությունում հայց հարուցելու և հայցվոր ճանաչելու հիմնահարցերն ըստ ՀՀ քրեական դատավարության նոր օրենսգրքի նախագծի // ՀՀ քրեական դատավարության օրենսգրքի նախագծի հիմնախնդիրներին նվիրված գիտական հոդվածների ժողովածու, Երևան, 2014, էջեր 374-401 //
+                                    1. Մարաբյան Ս. Քրեական դատավարությունում հայց հարուցելու և հայցվոր ճանաչելու
+                                    հիմնահարցերն ըստ ՀՀ քրեական դատավարության նոր օրենսգրքի նախագծի // ՀՀ քրեական
+                                    դատավարության օրենսգրքի նախագծի հիմնախնդիրներին նվիրված գիտական հոդվածների ժողովածու,
+                                    Երևան, 2014, էջեր 374-401 //
                                 </a>
                             </li>
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    2. Мельникова Э.Б., Ювенальная юстиция: проблемы уголовного права, уголовного процесса и криминологии. М., 2000
+                                    2. Мельникова Э.Б., Ювенальная юстиция: проблемы уголовного права, уголовного процесса и
+                                    криминологии. М., 2000
                                 </a>
                             </li>
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    3. Красиков А.Н., Сущность и значение согласия потерпевшего в советском уголовном праве // под ред. проф. И.С. Ноя, Саратов, 1976 //
+                                    3. Красиков А.Н., Сущность и значение согласия потерпевшего в советском уголовном праве
+                                    // под ред. проф. И.С. Ноя, Саратов, 1976 //
                                 </a>
                             </li>
                             <li class="material__list_item">
                                 <a class="material__link text-18" href="#">
-                                    4. Божьев В. Предпосылки обеспечения интересов потерпевшего в уголовном процессе// Законность, 2005, N 11 //
+                                    4. Божьев В. Предпосылки обеспечения интересов потерпевшего в уголовном процессе//
+                                    Законность, 2005, N 11 //
                                 </a>
                             </li>
                             <li class="material__list_item">
@@ -168,11 +178,4 @@
             </div>
         </section>
     </main>
-
-    @include("includes.footer")
-
-
-    <script src="/js/main.js"></script>
-</body>
-
-</html>
+@endsection

@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Արդարադատության Ակադեմիա - ԱՐԴԱՐԱԴԱՏՈւԹՅԱՆ ԱԿԱԴԵՄԻԱ</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="icon" type="image/x-icon" href="/media/img/logo/brownLogo.png">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/media/fonts/fonts.css">
-    <link rel="stylesheet" href="/css/all.css">
+@section('styles')
     <link rel="stylesheet" href="/css/library.css">
-    <link rel="stylesheet" href="/css/response/all-response.css">
     <link rel="stylesheet" href="/css/response/library-response.css">
-</head>
+@endsection
 
-<body>
-    @include("includes.header")
+@section('header-bot')
     @include("includes.library.header-bot")
+@endsection
 
+@section('content')
     <main>
         <section class="section section-top">
             <div class="swiper">
@@ -174,8 +164,7 @@
                     <div class="swiper-slide courses__slide-item">
                         <div class="courses__item">
                             <a href="#">
-                                <img class="img" src="/media/img/library/training-manuals/10.png"
-                                    alt="book10">
+                                <img class="img" src="/media/img/library/training-manuals/10.png" alt="book10">
                             </a>
                         </div>
                         <h2 class="courses__item_name text-26">
@@ -191,8 +180,7 @@
                     <div class="swiper-slide courses__slide-item">
                         <div class="courses__item">
                             <a href="#">
-                                <img class="img" src="/media/img/library/training-manuals/11.png"
-                                    alt="book11">
+                                <img class="img" src="/media/img/library/training-manuals/11.png" alt="book11">
                             </a>
                         </div>
                         <h2 class="courses__item_name text-26">
@@ -208,8 +196,7 @@
                     <div class="swiper-slide courses__slide-item">
                         <div class="courses__item">
                             <a href="#">
-                                <img class="img" src="/media/img/library/training-manuals/12.png"
-                                    alt="book12">
+                                <img class="img" src="/media/img/library/training-manuals/12.png" alt="book12">
                             </a>
                         </div>
                         <h2 class="courses__item_name text-26">
@@ -225,8 +212,7 @@
                     <div class="swiper-slide courses__slide-item">
                         <div class="courses__item">
                             <a href="#">
-                                <img class="img" src="/media/img/library/training-manuals/13.png"
-                                    alt="book13">
+                                <img class="img" src="/media/img/library/training-manuals/13.png" alt="book13">
                             </a>
                         </div>
                         <h2 class="courses__item_name text-26">
@@ -242,8 +228,7 @@
                     <div class="swiper-slide courses__slide-item">
                         <div class="courses__item">
                             <a href="#">
-                                <img class="img" src="/media/img/library/training-manuals/14.png"
-                                    alt="book14">
+                                <img class="img" src="/media/img/library/training-manuals/14.png" alt="book14">
                             </a>
                         </div>
                         <h2 class="courses__item_name text-26">
@@ -260,13 +245,9 @@
             </div>
         </section>
     </main>
+@endsection
 
-    @include("includes.footer")
-
-
+@section('scripts')
     <script src="/js/swiper.js"></script>
-    <script src="/js/main.js"></script>
     <script src="/js/pdf.js"></script>
-</body>
-
-</html>
+@endsection

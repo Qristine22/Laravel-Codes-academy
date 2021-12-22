@@ -161,6 +161,15 @@
     .gallery-single__cont{
         margin-top: 20px;
     }
+    .graduate__item{
+        width: calc(25% - 10px);
+    }
+    .graduates__items > .graduate__item:first-child{
+        display: none;
+    }
+    .graduate-profession__item{
+        width: calc(25% - 20px);
+    }
 }
 @media only screen and (max-width: 850px) {
     .structure__img{
@@ -259,16 +268,22 @@
     .members__title{
         text-align: center;
     }
+    .members__item_count > span{
+        font-size: 45px;
+    }
 }
 @media only screen and (max-width: 750px) {
     .member__info_subtitle{
         font-size: 13px;
     }
-    .aboute__date{
+    .about__date{
         font-size: 17px;
     }
     .gallery-single__cont {
         margin: 0;
+    }
+    .graduate-profession__item{
+        width: calc(33.3% - 20px);
     }
 }
 @media only screen and (max-width: 650px) {
@@ -337,6 +352,9 @@
         width: calc(50% - 10px);
         margin: 5px;
     }
+    .members__item_count > span{
+        font-size: 22px;
+    }
 }
 @media only screen and (max-width: 450px) {
     .governing__date .date{
@@ -346,8 +364,29 @@
     .about__dates{
         flex-wrap: wrap;
     }
-    .aboute__date{
+    .about__date{
         font-size: 15px;
         padding: 0px 5px;
+    }
+    .member__title {
+        font-size: 10px;
+    }
+    .member__subtitle {
+        font-size: 8px;
+        line-height: 9px;
+        margin-top: 3px;
+    }
+    .graduate__item{
+        width: calc(33% - 5px);
+    }
+    .graduates__items > .graduate__item:nth-child(2){
+        display: none;
+    }
+    .graduate-profession__item{
+        width: calc(33.3% - 10px);
+        margin: 5px;
+    }
+    .graduates-profession__items{
+        margin: 0 -5px;
     }
 }

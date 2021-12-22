@@ -1,31 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Արդարադատության Ակադեմիա - ԱՐԴԱՐԱԴԱՏՈւԹՅԱՆ ԱԿԱԴԵՄԻԱ</title>
-    <link rel="icon" type="image/x-icon" href="/media/img/logo/brownLogo.png">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/media/fonts/fonts.css">
-    <link rel="stylesheet" href="/css/all.css">
+@section('styles')
     <link rel="stylesheet" href="/css/distance-learning.css">
-    <link rel="stylesheet" href="/css/response/all-response.css">
     <link rel="stylesheet" href="/css/response/distance-learning-response.css">
-</head>
+@endsection
 
-<body>
-    @include("includes.header")
+@section('header-bot')
     @include("includes.distance-learning.header-bot")
+@endsection
 
+@section('content')
     <main>
-        <section class="videos section-text section-top">
+        <section class="distance-learning section-text">
             <div class="wrapper">
                 <div class="videos__cont">
                     <div class="videos__item flex">
                         <video class="videos__video" controls="controls">
-                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4" data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
+                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4"
+                                data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
                             <source src="movie.ogg" type="video/ogg" data-mce-src="movie.ogg">
                             Your browser does not support the video tag.
                         </video>
@@ -33,7 +25,8 @@
                     </div>
                     <div class="videos__item flex">
                         <video class="videos__video" controls="controls">
-                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4" data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
+                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4"
+                                data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
                             <source src="movie.ogg" type="video/ogg" data-mce-src="movie.ogg">
                             Your browser does not support the video tag.
                         </video>
@@ -41,7 +34,8 @@
                     </div>
                     <div class="videos__item flex">
                         <video class="videos__video" controls="controls">
-                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4" data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
+                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4"
+                                data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
                             <source src="movie.ogg" type="video/ogg" data-mce-src="movie.ogg">
                             Your browser does not support the video tag.
                         </video>
@@ -49,7 +43,8 @@
                     </div>
                     <div class="videos__item flex">
                         <video class="videos__video" controls="controls">
-                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4" data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
+                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4"
+                                data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
                             <source src="movie.ogg" type="video/ogg" data-mce-src="movie.ogg">
                             Your browser does not support the video tag.
                         </video>
@@ -57,7 +52,8 @@
                     </div>
                     <div class="videos__item flex">
                         <video class="videos__video" controls="controls">
-                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4" data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
+                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4"
+                                data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
                             <source src="movie.ogg" type="video/ogg" data-mce-src="movie.ogg">
                             Your browser does not support the video tag.
                         </video>
@@ -65,7 +61,8 @@
                     </div>
                     <div class="videos__item flex">
                         <video class="videos__video" controls="controls">
-                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4" data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
+                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4"
+                                data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
                             <source src="movie.ogg" type="video/ogg" data-mce-src="movie.ogg">
                             Your browser does not support the video tag.
                         </video>
@@ -73,7 +70,8 @@
                     </div>
                     <div class="videos__item flex">
                         <video class="videos__video" controls="controls">
-                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4" data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
+                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4"
+                                data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
                             <source src="movie.ogg" type="video/ogg" data-mce-src="movie.ogg">
                             Your browser does not support the video tag.
                         </video>
@@ -81,7 +79,8 @@
                     </div>
                     <div class="videos__item flex">
                         <video class="videos__video" controls="controls">
-                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4" data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
+                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4"
+                                data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
                             <source src="movie.ogg" type="video/ogg" data-mce-src="movie.ogg">
                             Your browser does not support the video tag.
                         </video>
@@ -89,7 +88,8 @@
                     </div>
                     <div class="videos__item flex">
                         <video class="videos__video" controls="controls">
-                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4" data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
+                            <source src="/media/videos/distance-learning/1.mp4" type="video/mp4"
+                                data-mce-src="/uploads/HETADARDZ_KAP_0.mp4">
                             <source src="movie.ogg" type="video/ogg" data-mce-src="movie.ogg">
                             Your browser does not support the video tag.
                         </video>
@@ -99,12 +99,4 @@
             </div>
         </section>
     </main>
-
-    @include("includes.footer")
-
-
-
-    <script src="/js/main.js"></script>
-</body>
-
-</html>
+@endsection

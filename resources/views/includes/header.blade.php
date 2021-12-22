@@ -2,9 +2,15 @@
     <div class="wrapper">
         <div class="header__cont flex">
             <div class="header__logo">
+                @auth
+                    <a class="admin__btn admin__logout" href="{{ route('logout') }}">logout</a>
+                @endauth
                 <a href="{{ route('home') }}">
                     <img class="header__logo_img" src="/media/img/logo/brownLogo.png" alt="Logo">
                 </a>
+                @auth
+                    <a class="admin__btn" href="#">Admin</a>
+                @endauth
             </div>
             <nav class="nav">
                 <ul class="header__list header__info_list flex">
@@ -103,11 +109,6 @@
                                 <li class="header__menu_item">
                                     <a class="header__menu_link"
                                         href="{{ route('distanceLearningCourses') }}">Դասընթացներ</a>
-                                </li>
-                                <li class="header__menu_item">
-                                    <a class="header__menu_link" href="#">ԱՄՆ Դաշնային դատական կենտրոնի միջազգային
-                                        դատական կապերի գծով ղեկավարի հարցազրույցը Արդարադատության ակադեմիայի
-                                        հեռաուսուցման ծրագրերի և նյութերի մասին</a>
                                 </li>
                             </ul>
                         @endif
@@ -301,12 +302,6 @@
                     </li>
                     <li class="header-mob__menu_item">
                         <a class="header__menu_link" href="{{ route('distanceLearningCourses') }}">Դասընթացներ</a>
-                    </li>
-                    <li class="header-mob__menu_item">
-                        <a class="header__menu_link" href="#">
-                            ԱՄՆ Դաշնային դատական կենտրոնի միջազգային դատական կապերի գծով ղեկավարի հարցազրույցը
-                            Արդարադատության ակադեմիայի հեռաուսուցման ծրագրերի և նյութերի մասին
-                        </a>
                     </li>
                 </ul>
             </li>

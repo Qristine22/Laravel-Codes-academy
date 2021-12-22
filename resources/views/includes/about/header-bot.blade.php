@@ -3,12 +3,13 @@
         <nav class="header__bot_nav">
             <ul class="header__bot_list">
                 <li class="header__bot_item">
-                    <a class="header__bot_link @if (Request::is('about/governing-board'))header__bot_link-active @endif" href="{{ route('governingBoard') }}">
+                    <a class="header__bot_link @if (Request::is('about/governing-board') || Request::is('about/biography')
+                    || Request::is('about/listeners-training'))header__bot_link-active @endif" href="{{ route('governingBoard') }}">
                         Ակադեմիայի կառավարման խորհուրդ
                     </a>
                 </li>
                 <li class="header__bot_item">
-                    <a class="header__bot_link @if (Request::is('about/rector') || Request::is('about/rectors-decrees'))header__bot_link-active @endif" href="{{ route('rector') }}">
+                    <a class="header__bot_link @if (Request::is('about/rector') || Request::is('about/rectors-decrees') ||    Request::is('about/rectors-biography') || Request::is('about/former-rectors-biography'))header__bot_link-active @endif" href="{{ route('rector') }}">
                         Ակադեմիայի ռեկտոր
                     </a>
                 </li>
@@ -23,11 +24,13 @@
                     </a>
                 </li>
                 <li class="header__bot_item">
-                    <a class="header__bot_link @if (Request::is('about/graduates'))header__bot_link-active @endif"
+                    <a class="header__bot_link @if (Request::is('about/graduates') || Request::is('about/graduates/*'))header__bot_link-active @endif"
                     href="{{ route('graduates') }}">Ակադեմիայի շրջանավարտներ</a>
                 </li>
                 <li class="header__bot_item">
-                    <a class="header__bot_link @if (Request::is('about/admission') || Request::is('about/judges-candidates'))header__bot_link-active @endif"
+                    <a class="header__bot_link @if (Request::is('about/admission') || Request::is('about/judges-candidates')
+                    || Request::is('about/prosecutors-candidates')
+                    || Request::is('about/investigators-candidates'))header__bot_link-active @endif"
                     href="{{ route('admission') }}">Ընդունելություն</a>
                 </li>
                 <li class="header__bot_item">

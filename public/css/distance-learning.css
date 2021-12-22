@@ -2,6 +2,10 @@
 videos
 */
 
+.distance-learning{
+    margin-top: 175px;
+    min-height: calc(100vh - 250px);
+}
 .videos__cont{
     display: flex;
     flex-wrap: wrap;
@@ -102,6 +106,7 @@ courses
     color: var(--dark-yellow);
     font-weight: 700;
     padding: 0 8px;
+    text-transform: uppercase;
     border: 1px solid transparent;
     transition: all ease .3s;
     -webkit-transition: all ease .3s;

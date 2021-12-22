@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Արդարադատության Ակադեմիա - ԱՐԴԱՐԱԴԱՏՈւԹՅԱՆ ԱԿԱԴԵՄԻԱ</title>
-    <link rel="icon" type="image/x-icon" href="/media/img/logo/brownLogo.png">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/media/fonts/fonts.css">
-    <link rel="stylesheet" href="/css/all.css">
+@section('styles')
     <link rel="stylesheet" href="/css/about.css">
-    <link rel="stylesheet" href="/css/response/all-response.css">
     <link rel="stylesheet" href="/css/response/about-response.css">
-</head>
+@endsection
 
-<body>
-    @include("includes.header")
+@section('header-bot')
     @include("includes.about.header-bot")
+@endsection
 
+@section('content')
     <main>
         <section class="section-text section-top">
             <div class="wrapper">
@@ -163,9 +154,4 @@
         </section>
     </main>
 
-    @include("includes.footer")
-
-    <script src="/js/main.js"></script>
-</body>
-
-</html>
+@endsection

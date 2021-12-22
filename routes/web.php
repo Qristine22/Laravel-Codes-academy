@@ -24,12 +24,25 @@ Route::group(['prefix' => 'about'], function () {
     Route::get('/listeners-training', 'App\Http\Controllers\PagesController@listenersTraining')->name('listenersTraining');
     Route::get('/biography', 'App\Http\Controllers\PagesController@biography')->name('biography');
     Route::get('/rector', 'App\Http\Controllers\PagesController@rector')->name('rector');
+    Route::get('/rectors-biography', 'App\Http\Controllers\PagesController@rectorsBiography')->name('rectorsBiography');
+    Route::get('/former-rectors-biography', 'App\Http\Controllers\PagesController@formerRectorsBiography')
+        ->name('formerRectorsBiography');
     Route::get('/rectors-decrees', 'App\Http\Controllers\PagesController@rectorsDecrees')->name('rectorsDecrees');
     Route::get('/academy-structure', 'App\Http\Controllers\PagesController@academyStructure')->name('academyStructure');
     Route::get('/report', 'App\Http\Controllers\PagesController@report')->name('report');
     Route::get('/graduates', 'App\Http\Controllers\PagesController@graduates')->name('graduates');
+    Route::get('/graduates/judges', 'App\Http\Controllers\PagesController@graduatesJudges')
+        ->name('graduatesJudges');
+    Route::get('/graduates/prosecutors', 'App\Http\Controllers\PagesController@graduatesProsecutors')
+        ->name('graduatesProsecutors');
+    Route::get('/graduates/investigators', 'App\Http\Controllers\PagesController@graduatesInvestigators')
+        ->name('graduatesInvestigators');
     Route::get('/admission', 'App\Http\Controllers\PagesController@admission')->name('admission');
     Route::get('/judges-candidates', 'App\Http\Controllers\PagesController@judgesCandidates')->name('judgesCandidates');
+    Route::get('/prosecutors-candidates', 'App\Http\Controllers\PagesController@prosecutorsCandidates')
+        ->name('prosecutorsCandidates');
+    Route::get('/investigators-candidates', 'App\Http\Controllers\PagesController@investigatorsCandidates')
+        ->name('investigatorsCandidates');
     Route::get('/gallery', 'App\Http\Controllers\PagesController@gallery')->name('gallery');
     Route::get('/gallery-single', 'App\Http\Controllers\PagesController@gallerySingle')->name('gallerySingle');
     Route::get('/mass-media', 'App\Http\Controllers\PagesController@massMedia')->name('massMedia');
@@ -104,3 +117,14 @@ Route::group(['prefix' => 'partners'], function () {
 
 // contacts/***************************************************************************
 Route::get('/contacts', 'App\Http\Controllers\PagesController@contacts')->name('contacts');
+
+
+// admin form/***************************************************************************
+Route::get('/login', 'App\Http\Controllers\PagesController@login')->name('login');
+Route::post('/login-progress', 'App\Http\Controllers\AuthController@loginProgress')->name('loginProgress');
+Route::get('/register-progress', 'App\Http\Controllers\AuthController@registerProgress')->name('registerProgress');
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
+});
