@@ -11,20 +11,21 @@
 
 @section('content')
     <main>
-        <section class="learning-guide section-text section-top">
+        <section class="learning-guide section-text distance-learning">
             <h2 class="text-26 learning-guide__title">Հեռաուսուցման ուղեցույց</h2>
             <div class="wrapper">
                 <div class="learning-guide__cont flex">
-                    <div class="learning-guide__img">
+                    <div class="courses__pdfs_item">
                         <a href="#">
                             <img class="img"
                                 src="/media/img/distance-learning/distance-learning-courses/guide/1.png" alt="1">
                         </a>
-                    </div>
-                    <div class="pdf__download_cont">
-                        <a class="pdf__download flex" href="#">
-                            <img class="pdf__download_img" src="\media\img\icons\pdf.png" alt="pdf">
-                            <span class="pdf__download_layer text-18">Ներբեռնել</span>
+                        <a href="#">
+                            <span class="pdfs__item_layer"></span>
+                            <span class="pdfs__item_see-all text-18">
+                                <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
+                                Ներբեռնել
+                            </span>
                         </a>
                     </div>
                 </div>

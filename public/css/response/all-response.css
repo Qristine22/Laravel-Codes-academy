@@ -135,7 +135,7 @@
     .section-top{
         margin-top: 90px;
     }
-    .pdf-downloade{
+    .section__min-height{
         min-height: calc(100vh - 100px);
     }
 }
@@ -198,6 +198,10 @@
     }
     .pdfs__title{
         font-size: 25px;
+    }
+    .pdfs__item_layer,
+    .pdfs__item_see-all{
+        height: 50px;
     }
 }
 @media only screen and (max-width: 850px) {
@@ -292,6 +296,14 @@
     .footer__link:nth-child(4) > img,
     .footer__link:last-child > img{
         width: 18px;
+    }
+    .pdfs__layer_img {
+        width: 22px;
+        margin-right: 5px;
+    }
+    .courses__item_name{
+        width: 200%;
+        margin: 60px 0 0 -50%;
     }
 
     .swiper-pagination-bullet{

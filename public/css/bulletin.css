@@ -6,3 +6,6 @@ bulletin
     position: relative;
     margin-top: 120px;
 }
+.bulletin__pdfs{
+    border-top: 1px solid var(--dark-yellow);
+}

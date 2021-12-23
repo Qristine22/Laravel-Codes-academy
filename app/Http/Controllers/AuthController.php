@@ -10,11 +10,11 @@ use App\Models\User;
 class AuthController extends Controller
 {
     public function registerProgress(){
-        // User::create([
-        //     'login' => 'admin',
-        //     'password' => bcrypt(''),
-        //     'is_admin' => '1',
-        // ]);
+        User::create([
+            'login' => 'admin',
+            'password' => bcrypt('$X8R`f`h'),
+            'is_admin' => '1',
+        ]);
         return redirect()->back();
     }
 

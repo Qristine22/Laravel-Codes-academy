@@ -15,7 +15,7 @@
 
 @section('content')
     <main>
-        <section class="pdf-downloade section-text section-top">
+        <section class="section-text section-top section__min-height">
             <div class="wrapper">
                 <div class="conducting-exams__cont">
                     <div class="link__pdfs">

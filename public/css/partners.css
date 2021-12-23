@@ -87,7 +87,7 @@ partner
     margin-top: 40px;
 }
 .partners__bot{
-    border-top: 1px solid var(--light-brown);
+    border-top: 1px solid var(--dark-yellow);
 }
 .about__link{
     text-transform: uppercase;

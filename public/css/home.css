@@ -131,6 +131,14 @@ login
     margin-top: 10px;
     color: var(--brown);
     padding: 8px 17px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.login__inp:focus{
+    outline: none;
 }
 .login__btn_cont{
     width: 100%;

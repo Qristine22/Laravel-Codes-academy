@@ -127,4 +127,13 @@ Route::get('/register-progress', 'App\Http\Controllers\AuthController@registerPr
 
 Route::middleware('auth')->group(function () {
     Route::get('/logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
+
+
+
+
+
+    // admin page/***************************************************************************
+    Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+        Route::resource('about', 'App\Http\Controllers\Admin\AboutController');
+    });
 });

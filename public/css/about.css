@@ -127,7 +127,7 @@ rector
 }
 .rector__bot{
     width: 100%;
-    border-top: 1px solid var(--light-brown);
+    border-top: 1px solid var(--dark-yellow);
 }
 .rector__bot_cont{
     display: flex;

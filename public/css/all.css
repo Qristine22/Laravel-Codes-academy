@@ -36,6 +36,9 @@ html{
 .section-top{
     margin-top: 215px;
 }
+.section__min-height{
+    min-height: calc(100vh - 200px);
+}
 .img{
     width: 100%;
     display: block;
@@ -680,13 +683,69 @@ pdfs
     -o-transform: translateX(0);
 }
 
+.courses__pdfs{
+    padding: 60px 0;
+}
+.courses__pdfs_items{
+    display: none;
+    flex-wrap: wrap;
+}
+.courses__pdfs_item{
+    width: calc(33% - 110px);
+    position: relative;
+}
+.courses__item{
+    position: relative;
+}
+.pdfs__item_layer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 60px;
+    background-color: rgba(255, 251, 250, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: width ease .3s;
+    -webkit-transition: width ease .3s;
+    -moz-transition: width ease .3s;
+    -ms-transition: width ease .3s;
+    -o-transition: width ease .3s;
+}
+.pdfs__layer_img{
+    width: 30px;
+    margin-right: 10px;
+}
+.courses__pdfs_item:hover .pdfs__item_layer,
+.swiper-slide-active:hover .pdfs__item_layer{
+    width: 100%;
+}
+.courses__pdfs_item:hover .pdfs__item_see-all,
+.swiper-slide-active:hover .pdfs__item_see-all{
+    opacity: 1;
+}
+.pdfs__item_see-all{
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity ease .3s;
+    -webkit-transition: opacity ease .3s;
+    -moz-transition: opacity ease .3s;
+    -ms-transition: opacity ease .3s;
+    -o-transition: opacity ease .3s;
+}
+
 /*
 link pdfs
 */
 
-.pdf-downloade{
-    min-height: calc(100vh - 200px);
-}
 .link__pdf{
     width: 100%;
     height: 125px;
@@ -743,7 +802,7 @@ courses
     background-color: var(--pink);
 }
 .swiper{
-    padding: 80px 0 0 0;
+    padding: 115px 0 0 0;
 }
 .swiper-slide{
     overflow: unset;
@@ -751,6 +810,8 @@ courses
 .courses__item{
     opacity: 0.5;
     width: 100%;
+    box-shadow: 0px 0px 8px 2px rgb(0 0 0 / 30%);
+    -webkit-box-shadow: 0px 0px 8px 2px rgb(0 0 0 / 30%);
     transition: all ease .3s;
     -webkit-transition: all ease .3s;
     -moz-transition: all ease .3s;
@@ -774,7 +835,7 @@ courses
 .swiper-pagination{
     width: 100%;
     position: absolute;
-    top: 10px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
@@ -830,11 +891,11 @@ courses
     -o-transform: translateX(90%) scale(0.8);
 }
 .courses__item_name{
-    width: 200%;
+    width: 380%;
     position: absolute;
     text-align: center;
     text-transform: uppercase;
-    margin: 30px 0 0 -50%;
+    margin: 60px 0 0 -140%;
     opacity: 0;
     transition: opacity ease .3s;
     -webkit-transition: opacity ease .3s;

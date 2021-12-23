@@ -11,7 +11,7 @@
 
 @section('content')
     <main>
-        <section class="motivation section-text section-top">
+        <section class="motivation section-text distance-learning">
             <div class="wrapper">
                 <div class="motivation__cont flex">
                     <div class="motivation__item flex">

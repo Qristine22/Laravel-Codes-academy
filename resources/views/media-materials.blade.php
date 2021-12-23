@@ -11,7 +11,7 @@
 
 @section('content')
     <main>
-        <section class="materials section-text section-top">
+        <section class="materials section-text distance-learning">
             <div class="wrapper">
                 <div class="materials__cont">
                     <div class="materials__item">

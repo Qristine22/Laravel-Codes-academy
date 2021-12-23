@@ -22,7 +22,7 @@
                     <div class="swiper-slide courses__slide-item">
                         <div class="courses__item">
                             <a href="#">
-                                <img class="img" src="/media/img/bulletin/Book2.png" alt="book2">
+                                <img class="img" src="/media/img/bulletin/Book1.png" alt="book2">
                             </a>
                         </div>
                         <h2 class="courses__item_name text-26">ԲԱՆԲԵՐ, 2020, № 1 (3)</h2>
@@ -30,7 +30,7 @@
                     <div class="swiper-slide courses__slide-item">
                         <div class="courses__item">
                             <a href="#">
-                                <img class="img" src="/media/img/bulletin/Book3.png" alt="book3">
+                                <img class="img" src="/media/img/bulletin/Book1.png" alt="book3">
                             </a>
                         </div>
                         <h2 class="courses__item_name text-26">ԲԱՆԲԵՐ, 2020, № 1 (3)</h2>
@@ -38,7 +38,7 @@
                     <div class="swiper-slide courses__slide-item">
                         <div class="courses__item">
                             <a href="#">
-                                <img class="img" src="/media/img/bulletin/Book4.png" alt="book4">
+                                <img class="img" src="/media/img/bulletin/Book1.png" alt="book4">
                             </a>
                         </div>
                         <h2 class="courses__item_name text-26">ԲԱՆԲԵՐ, 2020, № 1 (3)</h2>
@@ -46,7 +46,7 @@
                     <div class="swiper-slide courses__slide-item">
                         <div class="courses__item">
                             <a href="#">
-                                <img class="img" src="/media/img/bulletin/Book5.png" alt="book5">
+                                <img class="img" src="/media/img/bulletin/Book1.png" alt="book5">
                             </a>
                         </div>
                         <h2 class="courses__item_name text-26">ԲԱՆԲԵՐ, 2020, № 1 (3)</h2>
@@ -92,15 +92,6 @@
                             <span class="link__pdf_span text-18">Ներբեռնել</span>
                         </div>
                     </a>
-                </div>
-            </div>
-        </section>
-        <section class="section-text rector__bot">
-            <div class="wrapper">
-                <div class="rector__bot_cont">
-                    <a class="about__link text-18" href="motivational-videos.php">Մոտիվացնող ներածական տեսանյութեր</a>
-                    <a class="about__link text-18" href="media-materials.php">Լրացուցիչ մեդիա-նյութեր</a>
-                    <a class="about__link text-18" href="#">Հեռաուսուցման ուղեցույց</a>
                 </div>
             </div>
         </section>

@@ -9,7 +9,7 @@
                     <img class="header__logo_img" src="/media/img/logo/brownLogo.png" alt="Logo">
                 </a>
                 @auth
-                    <a class="admin__btn" href="#">Admin</a>
+                    <a class="admin__btn" href="{{ route('admin.about.index') }}">Admin</a>
                 @endauth
             </div>
             <nav class="nav">
@@ -161,17 +161,6 @@
                     </li>
                     <li class="header__item">
                         <a class="header__link @if (Request::is('bulletin/*') || Request::is('bulletin'))header__link-active @endif" href="{{ route('bulletin') }}">Բանբեր</a>
-                        <ul class="header__menu_list">
-                            <li class="header__menu_item">
-                                <a class="header__menu_link" href="#">Բանբեր, 2021, № 1 (5)</a>
-                            </li>
-                            <li class="header__menu_item">
-                                <a class="header__menu_link" href="#">Բանբեր, 2020, № 2 (4)</a>
-                            </li>
-                            <li class="header__menu_item">
-                                <a class="header__menu_link" href="#">Արխիվ</a>
-                            </li>
-                        </ul>
                     </li>
                     <li class="header__item">
                         <a class="header__link @if (Request::is('partners/*') || Request::is('partners'))header__link-active @endif"
@@ -347,22 +336,8 @@
                     </li>
                 </ul>
             </li>
-            <li class="header-mob__item">
+            <li class="header-mob__item header-mob__item-single">
                 <a class="header__link" href="{{ route('bulletin') }}">Բանբեր</a>
-                <div class="header-mob__arrow">
-                    <img class="img" src="/media/img/icons/downArrow.png" alt="downArrow">
-                </div>
-                <ul class="header-mob__menu_list">
-                    <li class="header-mob__menu_item">
-                        <a class="header__menu_link" href="#">Բանբեր, 2021, № 1 (5)</a>
-                    </li>
-                    <li class="header-mob__menu_item">
-                        <a class="header__menu_link" href="#">Բանբեր, 2020, № 2 (4)</a>
-                    </li>
-                    <li class="header-mob__menu_item">
-                        <a class="header__menu_link" href="#">Արխիվ</a>
-                    </li>
-                </ul>
             </li>
             <li class="header-mob__item">
                 <a class="header__link" href="{{ route('partners') }}">Գործընկերներ</a>

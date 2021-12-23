@@ -48,54 +48,9 @@ courses
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
 }
-.courses__pdfs{
-    padding: 60px 0;
-}
-.courses__pdfs_items{
-    display: none;
-    flex-wrap: wrap;
-}
-.courses__pdfs_item{
-    width: calc(33% - 110px);
-    position: relative;
-}
-.pdfs__item_layer{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 60px;
-    background-color: rgba(255, 251, 250, 0.627);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: width ease .3s;
-    -webkit-transition: width ease .3s;
-    -moz-transition: width ease .3s;
-    -ms-transition: width ease .3s;
-    -o-transition: width ease .3s;
-}
-.courses__pdfs_item:hover .pdfs__item_layer{
-    width: 100%;
-}
-.courses__pdfs_item:hover .pdfs__item_see-all{
-    opacity: 1;
-}
-.pdfs__item_see-all{
-    position: absolute;
-    bottom: 13px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    transition: opacity ease .3s;
-    -webkit-transition: opacity ease .3s;
-    -moz-transition: opacity ease .3s;
-    -ms-transition: opacity ease .3s;
-    -o-transition: opacity ease .3s;
-}
 .rector__bot {
     width: 100%;
-    border-top: 1px solid var(--light-brown);
+    border-top: 1px solid var(--dark-yellow);
 }
 .rector__bot_cont {
     display: flex;
@@ -184,7 +139,4 @@ learning-guide
     flex-direction: column;
     justify-content: center;
     margin-top: 30px;
-}
-.learning-guide__img{
-    width: 25%;
 }
