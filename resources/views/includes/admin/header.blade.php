@@ -8,14 +8,18 @@
             </li>
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
-                    <a class="text-20 admin-header__link" href="#">Ակադեմիայի մասին</a>
+                    <a class="text-20 admin-header__link @if (Request::is('admin/about/*') || Request::is('admin/about'))admin-header__link-active @endif"
+                        href="{{ route('admin.about.page.index') }}">Ակադեմիայի մասին</a>
                     <div class="admin-header__arrow">
                         <img class="img" src="/media/img/icons/whiteDownArrow.png" alt="whiteDownArrow">
                     </div>
                 </div>
                 <ul class="admin-header__menu-list">
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link" href="#">Ակադեմիայի կառավարմանխորհուրդ</a>
+                        <a class="text-18 admin-header__menu-link"
+                            href="{{ route('admin.about.governing-board-page.index') }}">
+                            Ակադեմիայի կառավարման խորհուրդ
+                        </a>
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link" href="#">Ակադեմիայի ռեկտոր</a>

@@ -166,7 +166,9 @@
         margin-bottom: 30px;
     }
     .last-news__item_link,
-    .text-18{
+    .text-18,
+    .section-text__cont p,
+    .section-text__cont li{
         font-size: 16px;
         line-height: 20px;
     }
@@ -180,17 +182,21 @@
     .read-more__arrow{
         width: 25px;
     }
-    .info__list{
+    /* .info__list, */
+    .section-text__cont ol{
         margin-left: 70px;
     }
-    .info__item{
+    /* .info__item, */
+    .section-text__cont li{
         margin-bottom: 20px;
     }
-    .info__item::before{
+    /* .info__item::before, */
+    .section-text__cont li::before{
         font-size: 25px;
         left: -20px;
     }
-    .info__item .info__item::before{
+    /* .info__item .info__item::before, */
+    .section-text__cont li::before{
         font-size: 20px;
     }
     .pdfs{
@@ -254,18 +260,23 @@
         font-size: 14px;
         line-height: 18px;
     }
-    .text-18{
+    .text-18,
+    .section-text__cont p,
+    .section-text__cont li{
         font-size: 13px;
         line-height: 18px;
     }
-    .info__list {
+    /* .info__list, */
+    .section-text__cont ol{
         margin-left: 50px;
     }
-    .info__item::before,
+    /* .info__item::before, */
+    .section-text__cont li::before,
     .pdfs__title{
         font-size: 20px;
     }
-    .info__item .info__item::before{
+    /* .info__item .info__item::before, */
+    .section-text__cont li::before{
         font-size: 16px;
     }
     .last-news__item_link {
@@ -354,18 +365,23 @@
     }
 }
 @media only screen and (max-width: 505px) {
-    .text-18 {
+    .text-18,
+    .section-text__cont p,
+    .section-text__cont li{
         font-size: 10px;
         line-height: 18px;
     }
-    .info__list{
+    /* .info__list, */
+    .section-text__cont ol{
         margin-left: 30px;
     }
-    .info__item::before {
+    /* .info__item::before, */
+    .section-text__cont li::before{
         font-size: 15px;
         left: -15px;
     }
-    .info__item .info__item::before{
+    /* .info__item .info__item::before, */
+    .section-text__cont li .section-text__cont li::before{
         font-size: 13px;
     }
     .section {

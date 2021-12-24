@@ -65,6 +65,9 @@ news
 .new__read-more{
     font-size: 18px;
 }
+.new-images__top .swiper{
+    padding: 0;
+}
 
 /*
 new single

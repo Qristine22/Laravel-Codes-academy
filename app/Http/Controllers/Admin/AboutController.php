@@ -16,7 +16,7 @@ class AboutController extends Controller
     public function index()
     {
         $data = About::get();
-        return view('admin.about.index', [
+        return view('admin.about.page.index', [
             'data' => $data
         ]);
     }
@@ -28,7 +28,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        return view('admin.about.create');
+        return view('admin.about.page.create');
     }
 
     /**
@@ -39,17 +39,17 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        // $data = $request->validate([
-        //     'about_en' => 'required',
-        //     'about_am' => 'required',
-        //     'about_ru' => 'required',
-        // ]);
-        About::insert([
-            'about_en' => $request->about_en,
-            'about_am' => $request->about_am,
-            'about_ru' => $request->about_ru,
+        $data = $request->validate([
+            'about_en' => 'required',
+            'about_am' => 'required',
+            'about_ru' => 'required',
         ]);
-        return redirect(route('admin.about.index'));
+        About::insert([
+            'about_en' => $data['about_en'],
+            'about_am' => $data['about_am'],
+            'about_ru' => $data['about_ru'],
+        ]);
+        return redirect(route('admin.about.page.index'));
     }
 
     /**
@@ -58,7 +58,7 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function show(About $about)
+    public function show(About $page)
     {
         //
     }
@@ -69,9 +69,11 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $about)
+    public function edit(About $page)
     {
-        return view('admin.about.edit');
+        return view('admin.about.page.edit', [
+            'about' => $page
+        ]);
     }
 
     /**
@@ -81,9 +83,19 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About $about)
+    public function update(Request $request, About $page)
     {
-        //
+        $data = $request->validate([
+            'about_en' => 'required',
+            'about_am' => 'required',
+            'about_ru' => 'required',
+        ]);
+        $page->update([
+            'about_en' => $data['about_en'],
+            'about_am' => $data['about_am'],
+            'about_ru' => $data['about_ru'],
+        ]);
+        return redirect(route('admin.about.page.index'));
     }
 
     /**
@@ -92,8 +104,9 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy(About $about)
+    public function destroy(About $page)
     {
-        //
+        $page->delete();
+        return redirect(route('admin.about.page.index'));
     }
 }

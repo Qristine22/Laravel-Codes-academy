@@ -9,7 +9,7 @@
                     <img class="header__logo_img" src="/media/img/logo/brownLogo.png" alt="Logo">
                 </a>
                 @auth
-                    <a class="admin__btn" href="{{ route('admin.about.index') }}">Admin</a>
+                    <a class="admin__btn" href="{{ route('admin.about.page.index') }}">Admin</a>
                 @endauth
             </div>
             <nav class="nav">

@@ -12,8 +12,8 @@ class GoverningBoardPage extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'inner_en',
-        'inner_am',
-        'inner_ru',
+        'text_en',
+        'text_am',
+        'text_ru',
     ];
 }

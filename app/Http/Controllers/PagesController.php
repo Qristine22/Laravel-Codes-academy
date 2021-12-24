@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
+// Models
+use App\Models\About;
+
 class PagesController extends Controller
 {
     public function home(){
@@ -11,7 +14,10 @@ class PagesController extends Controller
 
     // about
     public function about(){
-        return view('about');
+        $about = About::first();
+        return view('about', [
+            'about' => $about
+        ]);
     }
     public function governingBoard(){
         return view('governing-board');
