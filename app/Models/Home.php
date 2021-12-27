@@ -13,7 +13,8 @@ class Home extends Model
     
     protected $fillable = [
         'logo',
-        'bg_img',
+        'bg',
+        'rectors_img',
         'title_en',
         'title_am',
         'title_ru',

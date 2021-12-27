@@ -9,7 +9,6 @@ home
 .home{
     width: 100%;
     min-height: 100vh;
-    background-image: url(../media/img/bgs/main.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -83,30 +82,32 @@ rector
 }
 .rector__inner{
     width: calc(66% - 157px);
+    position: relative;
 }
-.rector__title{
+.rector__inner h2,
+.rector__inner h3{
     color: var(--brown);
     font-size: 26px;
     font-weight: 700;
     letter-spacing: 2px;
 }
-.rector__word{
+.rector__inner > p{
     color: var(--brown);
     font-size: 24px;
     line-height: 45px;
     letter-spacing: 2px;
     font-style: italic;
-    margin: 40px 0;
 }
-.rector__bot{
-    justify-content: flex-end;
-}
-.rector__bot_title{
+.rector__inner h3{
     font-style: italic;
-    margin-right: 20px;
+    margin-right: 210px;
+    text-align: right;
 }
 .rector__signature{
+    position: absolute;
     width: 195px;
+    right: 0;
+    bottom: -10px;
 }
 
 /*

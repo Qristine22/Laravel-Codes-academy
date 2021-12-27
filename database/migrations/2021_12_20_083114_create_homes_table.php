@@ -17,7 +17,8 @@ class CreateHomesTable extends Migration
         Schema::create('homes', function (Blueprint $table) {
             $table->id();
             $table->string('logo');
-            $table->string('bg_img');
+            $table->string('bg');
+            $table->string('rectors_img');
             $table->string('title_en');
             $table->string('title_am');
             $table->string('title_ru');

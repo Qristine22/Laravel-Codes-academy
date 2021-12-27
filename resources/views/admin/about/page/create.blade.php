@@ -6,7 +6,7 @@
             <h2 class="admin__title">Ակադեմիայի մասին</h2>
         </div>
 
-        <form class="admin__form" action="{{ route('admin.about.store') }}" method="POST">
+        <form class="admin__form" action="{{ route('admin.about.page.store') }}" method="POST">
             @csrf
             @if ($errors->any())
                 @foreach ($errors->all() as $e)
@@ -15,16 +15,16 @@
             @endif
             <div class="form__text">
                 <div class="form__item">
-                    <label class="text-20" for="about__en">About English</label>
-                    <textarea name="about_en" id="about__en"></textarea>
+                    <label class="text-20 form__item_name" for="about__en">About English</label>
+                    <textarea name="about_en" id="about__en" placeholder="Enter Your Text Here"></textarea>
                 </div>
                 <div class="form__item">
-                    <label class="text-20" for="about__en">About Armenian</label>
-                    <textarea name="about_am" id="about__am"></textarea>
+                    <label class="text-20 form__item_name" for="about__am">About Armenian</label>
+                    <textarea name="about_am" id="about__am" placeholder="Enter Your Text Here"></textarea>
                 </div>
                 <div class="form__item">
-                    <label class="text-20" for="about__en">About Russian</label>
-                    <textarea name="about_ru" id="about__ru"></textarea>
+                    <label class="text-20 form__item_name" for="about__ru">About Russian</label>
+                    <textarea name="about_ru" id="about__ru" placeholder="Enter Your Text Here"></textarea>
                 </div>
             </div>
             <button class="form__btn">Save</button>

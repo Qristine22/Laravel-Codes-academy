@@ -23,6 +23,13 @@ admin-header
     min-height: 100vh;
     background-color: var(--dark-yellow);
     padding: 30px 50px;
+    position: relative;
+}
+.admin-header__logo{
+    width: 50px;
+    position: absolute;
+    top: 5px;
+    left: 50px;
 }
 .admin-nav{
     margin-top: 20px;
@@ -96,11 +103,15 @@ admin-section
 }
 .th{
     font-weight: 700;
+    line-height: 25px;
+    text-transform: capitalize;
+    vertical-align: middle;
 }
 .td{
     color: var(--brown);
     font-size: 14px;
     line-height: 20px;
+    vertical-align: top;
 }
 .td:first-child{
     text-align: center;
@@ -157,10 +168,12 @@ admin-section
 .form__text{
     width: 100%;
 }
-.form__item{
+.form__item,
+.inputs__group{
     margin-top: 40px;
 }
-.form__item:first-child{
+.form__item:first-child,
+.inputs__group:first-child{
     margin-top: 0;
 }
 .table__panel_delete{
@@ -169,6 +182,49 @@ admin-section
 }
 .tox-tinymce{
     height: 600px !important;
+}
+.form__item-inp{
+    width: calc(33% - 10px);
+    margin: 0;
+}
+.admin-inp-file{
+    position: relative;
+}
+.admin-inp-file::before{
+    content: url(../../media/img/icons/fileIcon.png);
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+.form__item_name{
+    font-weight: 700;
+    text-transform: capitalize;
+    display: inline-block;
+    margin: 0 0 5px 13px;
+}
+.admin-file{
+    display: none;
+}
+.admin-inp{
+    width: 100%;
+    height: 80px;
+    color: var(--dark-yellow);
+    background-color: var(--section);
+    font-size: 18px;
+    display: inline-block;
+    padding: 5px 13px 40px 13px;
+    border: 1px solid var(--dark-yellow);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.admin-inp:focus{
+    outline: none;
+}
+.admin-inp::placeholder{
+    color: var(--dark-yellow);
 }
 .form__btn{
     color: var(--brown);

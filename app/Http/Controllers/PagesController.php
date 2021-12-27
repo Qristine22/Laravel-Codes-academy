@@ -5,12 +5,18 @@ use Illuminate\Http\Request;
 
 // Models
 use App\Models\About;
+use App\Models\Home;
+use App\Models\GoverningBoardPage;
 
 class PagesController extends Controller
 {
     public function home(){
-        return view('home');
+        $home = Home::first();
+        return view('home', [
+            'home' => $home
+        ]);
     }
+
 
     // about
     public function about(){
@@ -20,7 +26,10 @@ class PagesController extends Controller
         ]);
     }
     public function governingBoard(){
-        return view('governing-board');
+        $governingBoardPage = GoverningBoardPage::first();
+        return view('governing-board', [
+            'governingBoardPage' => $governingBoardPage
+        ]);
     }
     public function listenersTraining(){
         return view('listeners-training');

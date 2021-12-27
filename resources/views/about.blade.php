@@ -14,7 +14,9 @@
         <section class="section section-text section-top">
             <div class="wrapper">
                 <div class="section-text__cont">
-                    {!! $about->about_am !!}
+                    @if (!empty($about))
+                        {!! $about->about_am !!}
+                    @endif
                 </div>
             </div>
         </section>

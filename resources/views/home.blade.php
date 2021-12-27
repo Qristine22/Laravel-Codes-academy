@@ -7,42 +7,40 @@
 
 @section('content')
     <main>
-        <section class="home section">
-            <div class="wrapper">
-                <div class="home__cont">
-                    <div class="home__inner flex">
-                        <div class="home__logo">
-                            <img class="home__logo_img" src="/media/img/logo/mainLogo.png" alt="mainLogo">
-                        </div>
-                        <h1 class="home__title">հայաստանի Հանրապետություն
-                            Արդարադատության ակադեմիա</h1>
-                        <form class="home__form" action="#" method="POST">
-                            <img class="home__search_icon" src="/media/img/icons/search.png" alt="search">
-                            <input class="inp home__form_inp" type="text" placeholder="Որոնում...">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section rector">
-            <div class="wrapper">
-                <div class="rector__cont flex">
-                    <div class="rector__img">
-                        <img class="img" src="/media/img/more/rector.png" alt="rector">
-                    </div>
-                    <div class="rector__inner">
-                        <h2 class="rector__title">Հարգելի՛ գործընկեր,</h2>
-                        <p class="rector__word">Արդարադատության ակադեմիայի գործունեության հիմնական ուղղությունների
-                            կապակցությամբ բաց երկխոսություն ապահովելու նպատակով ստեղծվել է համապատասխան էլեկտրոնային
-                            հարթակ, որում Դուք կարող եք ստանալ Ձեզ հուզող բոլոր հարցերի պատասխանները:</p>
-                        <div class="rector__bot flex">
-                            <h3 class="rector__title rector__bot_title">Ռեկտոր</h3>
-                            <img class="rector__signature" src="/media/img/more/signature.png" alt="signature">
+        @if (!empty($home))
+            <section class="home section" style="background-image: url({{ Storage::url($home->bg) }})">
+                <div class="wrapper">
+                    <div class="home__cont">
+                        <div class="home__inner flex">
+                            <div class="home__logo">
+                                <img class="home__logo_img" src="{{ Storage::url($home->logo) }}" alt="mainLogo">
+                            </div>
+                            <h1 class="home__title">{{ $home->title_am }}</h1>
+                            <form class="home__form" action="#" method="POST">
+                                <img class="home__search_icon" src="/media/img/icons/search.png" alt="search">
+                                <input class="inp home__form_inp" type="text" placeholder="Որոնում...">
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endif
+        @if (!empty($home))
+            <section class="section rector">
+                <div class="wrapper">
+                    <div class="rector__cont flex">
+                        <div class="rector__img">
+                            <img class="img" src="{{ Storage::url($home->rectors_img) }}" alt="rector">
+                        </div>
+                        <div class="rector__inner">
+                            {!! $home->rectors_word_am !!}
+                            <img class="rector__signature" src="{{ Storage::url($home->rectors_signature) }}"
+                                alt="signature">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif
         <section class="section last-news">
             <div class="wrapper">
                 <h2 class="last-news__title">Նորություններ</h2>
@@ -59,7 +57,8 @@
                                     Մեկնարկեց դատախազի թեկնածուների 2021-2022թթ. մասնագիտական պատրաստումը
                                 </a>
                                 <div class="read-more__cont">
-                                    <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">Կարդալ ավելին</a>
+                                    <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">Կարդալ
+                                        ավելին</a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                                 </div>
                             </div>
@@ -75,7 +74,8 @@
                                     Սեմինար՝ նվիրված դատական համակարգում կոռուպցիոն ռիսկերին
                                 </a>
                                 <div class="read-more__cont">
-                                    <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">Կարդալ ավելին</a>
+                                    <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">Կարդալ
+                                        ավելին</a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                                 </div>
                             </div>
@@ -91,7 +91,8 @@
                                     Ռեկտորը Նուր-Սուլթանում մասնակցել է միջազգային կլոր-սեղան քննարկման
                                 </a>
                                 <div class="read-more__cont">
-                                    <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">Կարդալ ավելին</a>
+                                    <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">Կարդալ
+                                        ավելին</a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                                 </div>
                             </div>

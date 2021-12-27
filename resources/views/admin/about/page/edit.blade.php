@@ -9,18 +9,23 @@
         <form class="admin__form" action="{{ route('admin.about.page.update', ['page' => $about]) }}" method="POST">
             @csrf
             @method('PUT')
+            @if ($errors->any())
+                @foreach ($errors->all() as $e)
+                    <p class="error">{{ $e }}</p>
+                @endforeach
+            @endif
             <div class="form__text">
                 <div class="form__item">
-                    <label class="text-20" for="about__en">About English</label>
-                    <textarea name="about_en" id="about__en">{{ $about->about_en }}</textarea>
+                    <label class="text-20 form__item_name" for="about__en">About English</label>
+                    <textarea name="about_en" id="about__en" placeholder="Enter Your Text Here">{{ $about->about_en }}</textarea>
                 </div>
                 <div class="form__item">
-                    <label class="text-20" for="about__en">About Armenian</label>
-                    <textarea name="about_am" id="about__am">{{ $about->about_am }}</textarea>
+                    <label class="text-20 form__item_name" for="about__am">About Armenian</label>
+                    <textarea name="about_am" id="about__am" placeholder="Enter Your Text Here">{{ $about->about_am }}</textarea>
                 </div>
                 <div class="form__item">
-                    <label class="text-20" for="about__en">About Russian</label>
-                    <textarea name="about_ru" id="about__ru">{{ $about->about_ru }}</textarea>
+                    <label class="text-20 form__item_name" for="about__ru">About Russian</label>
+                    <textarea name="about_ru" id="about__ru" placeholder="Enter Your Text Here">{{ $about->about_ru }}</textarea>
                 </div>
             </div>
             <button class="form__btn">Save</button>

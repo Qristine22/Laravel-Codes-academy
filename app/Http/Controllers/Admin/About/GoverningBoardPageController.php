@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\About;
 
 use App\Http\Controllers\Controller;
 use App\Models\GoverningBoardPage;
-use Illuminate\Http\Request;
+use App\Http\Requests\About\GoverningBoardRequest;
+
+use function GuzzleHttp\Promise\all;
 
 class GoverningBoardPageController extends Controller
 {
@@ -16,7 +18,7 @@ class GoverningBoardPageController extends Controller
     public function index()
     {
         $data = GoverningBoardPage::get();
-        return view('admin.governing-board-page.index', [
+        return view('admin.about.governing-board-page.index', [
             'data' => $data
         ]);
     }
@@ -28,7 +30,7 @@ class GoverningBoardPageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.about.governing-board-page.create');
     }
 
     /**
@@ -37,9 +39,15 @@ class GoverningBoardPageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GoverningBoardRequest $request)
     {
-        //
+        GoverningBoardPage::insert([
+            'text_en' => $request->text_en,
+            'text_am' => $request->text_am,
+            'text_ru' => $request->text_ru,
+        ]);
+
+        return redirect(route('admin.about.governing-board-page.index'));
     }
 
     /**
@@ -61,7 +69,9 @@ class GoverningBoardPageController extends Controller
      */
     public function edit(GoverningBoardPage $governingBoardPage)
     {
-        //
+        return view('admin.about.governing-board-page.edit', [
+            'governingBoardPage' => $governingBoardPage
+        ]);
     }
 
     /**
@@ -71,9 +81,15 @@ class GoverningBoardPageController extends Controller
      * @param  \App\Models\GoverningBoardPage  $governingBoardPage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, GoverningBoardPage $governingBoardPage)
+    public function update(GoverningBoardRequest $request, GoverningBoardPage $governingBoardPage)
     {
-        //
+        $governingBoardPage->update([
+            'text_en' => $request->text_en,
+            'text_am' => $request->text_am,
+            'text_ru' => $request->text_ru,
+        ]);
+
+        return redirect(route('admin.about.governing-board-page.index'));
     }
 
     /**
@@ -84,6 +100,7 @@ class GoverningBoardPageController extends Controller
      */
     public function destroy(GoverningBoardPage $governingBoardPage)
     {
-        //
+        $governingBoardPage->delete();
+        return redirect(route('admin.about.governing-board-page.index'));
     }
 }

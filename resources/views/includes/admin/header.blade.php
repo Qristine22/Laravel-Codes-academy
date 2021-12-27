@@ -1,9 +1,15 @@
 <header class="admin-header">
+    <div class="admin-header__logo">
+        <a href="{{ route('home') }}">
+            <img class="img" src="/media/img/logo/brownLogo.png" alt="brownLogo">
+        </a>
+    </div>
     <div class="admin-nav">
         <ul class="admin-header__list">
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
-                    <a class="text-20 admin-header__link" href="#">Գլխավոր էջ</a>
+                    <a class="text-20 admin-header__link @if (Request::is('admin/home/*') || Request::is('admin/home'))admin-header__link-active @endif"
+                        href="{{ route('admin.home.index') }}">Գլխավոր էջ</a>
                 </div>
             </li>
             <li class="admin-header__item">
@@ -16,7 +22,7 @@
                 </div>
                 <ul class="admin-header__menu-list">
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link"
+                        <a class="text-18 admin-header__menu-link @if (Request::is('admin/about/governing-board-page'))admin-header__link-active @endif"
                             href="{{ route('admin.about.governing-board-page.index') }}">
                             Ակադեմիայի կառավարման խորհուրդ
                         </a>

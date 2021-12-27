@@ -7,7 +7,7 @@
         </div>
 
         @if (count($data) == 0)
-            <a class="admin-item__create" href="{{ route('admin.about.create') }}">
+            <a class="admin-item__create" href="{{ route('admin.about.governing-board-page.create') }}">
                 <span class="admin-item__plus">+</span>
             </a>
         @endif
@@ -23,10 +23,11 @@
                     <td class="td">{!! $item->text_am !!}</td>
                     <td class="td text-18">
                         <div class="table__panel flex">
-                            <a class="table__panel_item" href="{{ route('admin.about.edit', ['about' => $item->id]) }}">
+                            <a class="table__panel_item"
+                            href="{{ route('admin.about.governing-board-page.edit', ['governing_board_page' => $item]) }}">
                                 <img class="img" src="/media/img/icons/edit.png" alt="edit">
                             </a>
-                            <form action="{{ route('admin.about.destroy', ['about' => $item]) }}" method="POST">
+                            <form action="{{ route('admin.about.governing-board-page.destroy', ['governing_board_page' => $item]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button class="table__panel_item table__panel_delete">

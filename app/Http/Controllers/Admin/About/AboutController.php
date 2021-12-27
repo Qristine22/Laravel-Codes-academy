@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\About;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\About\AboutPageRequest;
 use App\Models\About;
-use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
@@ -37,17 +37,12 @@ class AboutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AboutPageRequest $request)
     {
-        $data = $request->validate([
-            'about_en' => 'required',
-            'about_am' => 'required',
-            'about_ru' => 'required',
-        ]);
         About::insert([
-            'about_en' => $data['about_en'],
-            'about_am' => $data['about_am'],
-            'about_ru' => $data['about_ru'],
+            'about_en' => $request->about_en,
+            'about_am' => $request->about_am,
+            'about_ru' => $request->about_ru,
         ]);
         return redirect(route('admin.about.page.index'));
     }
@@ -83,17 +78,12 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About $page)
+    public function update(AboutPageRequest $request, About $page)
     {
-        $data = $request->validate([
-            'about_en' => 'required',
-            'about_am' => 'required',
-            'about_ru' => 'required',
-        ]);
         $page->update([
-            'about_en' => $data['about_en'],
-            'about_am' => $data['about_am'],
-            'about_ru' => $data['about_ru'],
+            'about_en' => $request->about_en,
+            'about_am' => $request->about_am,
+            'about_ru' => $request->about_ru,
         ]);
         return redirect(route('admin.about.page.index'));
     }

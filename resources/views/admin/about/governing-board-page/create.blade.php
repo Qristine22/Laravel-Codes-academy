@@ -3,10 +3,10 @@
 @section('content')
     <section class="admin-section">
         <div class="admin__head">
-            <h2 class="admin__title">Ակադեմիայի մասին</h2>
+            <h2 class="admin__title">Ակադեմիայի կառավարման խորհուրդ</h2>
         </div>
 
-        <form class="admin__form" action="{{ route('admin.about.store') }}" method="POST">
+        <form class="admin__form" action="{{ route('admin.about.governing-board-page.store') }}" method="POST">
             @csrf
             @if ($errors->any())
                 @foreach ($errors->all() as $e)
@@ -15,16 +15,16 @@
             @endif
             <div class="form__text">
                 <div class="form__item">
-                    <label class="text-20" for="about__en">About English</label>
-                    <textarea name="about_en" id="about__en"></textarea>
+                    <label class="text-20" for="text__en">Text English</label>
+                    <textarea name="text_en" id="text__en"></textarea>
                 </div>
                 <div class="form__item">
-                    <label class="text-20" for="about__en">About Armenian</label>
-                    <textarea name="about_am" id="about__am"></textarea>
+                    <label class="text-20" for="text__en">Text Armenian</label>
+                    <textarea name="text_am" id="text__am"></textarea>
                 </div>
                 <div class="form__item">
-                    <label class="text-20" for="about__en">About Russian</label>
-                    <textarea name="about_ru" id="about__ru"></textarea>
+                    <label class="text-20" for="text__en">Text Russian</label>
+                    <textarea name="text_ru" id="text__ru"></textarea>
                 </div>
             </div>
             <button class="form__btn">Save</button>

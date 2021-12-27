@@ -134,9 +134,12 @@ Route::middleware('auth')->group(function () {
 
     // admin page/***************************************************************************
     Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+        // home form/***************************************************************************
+        Route::resource('home', 'App\Http\Controllers\Admin\HomeController');
+
         Route::group(['prefix' => 'about', 'as' => 'about.'], function () {
-            Route::resource('page', 'App\Http\Controllers\Admin\AboutController');
-            Route::resource('governing-board-page', 'App\Http\Controllers\Admin\GoverningBoardPageController');
+            Route::resource('page', 'App\Http\Controllers\Admin\About\AboutController');
+            Route::resource('governing-board-page', 'App\Http\Controllers\Admin\About\GoverningBoardPageController');
         });
     });
 });

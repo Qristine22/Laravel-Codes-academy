@@ -16,14 +16,14 @@
     .home__search_icon{
         width: 20px;
     }
-    .rector__title{
+    .rector__inner h2,
+    .rector__inner h3{
         font-size: 22px;
     }
-    .rector__word{
+    .rector__inner > p{
         font-size: 20px;
         line-height: 35px;
         letter-spacing: 1px;
-        margin: 35px 0;
     }
     .rector__inner {
         width: calc(66% - 120px);
@@ -40,13 +40,13 @@
     .home__inner {
         width: 440px;
     }
-    .rector__title{
+    .rector__inner h2,
+    .rector__inner h3{
         font-size: 20px;
     }
-    .rector__word{
+    .rector__inner > p{
         font-size: 18px;
         line-height: 25px;
-        margin: 35px 0;
     }
     .rector__signature {
         width: 170px;
@@ -83,14 +83,17 @@
         width: calc(66% - 50px);
     }
 
-    .rector__title,
+    .rector__inner h3{
+        margin-right: 160px;
+    }
+    .rector__inner h2,
+    .rector__inner h3,
     .new-info__cont_date{
         font-size: 18px;
     }
-    .rector__word{
+    .rector__inner > p{
         font-size: 15px;
         line-height: 20px;
-        margin: 20px 0;
     }
     .rector__signature {
         width: 150px;
@@ -117,13 +120,13 @@
         font-size: 20px;
         line-height: 30px;
     }
-    .rector__title {
+    .rector__inner h2,
+    .rector__inner h3{
         font-size: 15px;
     }
-    .rector__word {
+    .rector__inner > p {
         font-size: 12px;
         line-height: 18px;
-        margin: 13px 0;
     }
     .rector__signature {
         width: 120px;
