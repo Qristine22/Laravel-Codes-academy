@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin\About;
 
 use App\Http\Controllers\Controller;
-use App\Models\GoverningBoardPage;
 use App\Http\Requests\About\GoverningBoardRequest;
 
-use function GuzzleHttp\Promise\all;
+// Models
+use App\Models\GoverningBoardPage;
+use App\Models\GoverningBoardDecree;
 
 class GoverningBoardPageController extends Controller
 {
@@ -17,9 +18,12 @@ class GoverningBoardPageController extends Controller
      */
     public function index()
     {
-        $data = GoverningBoardPage::get();
+        $aboutPage = GoverningBoardPage::get();
+        $decrees = GoverningBoardDecree::orderBy('id', 'DESC')->paginate(5);
+
         return view('admin.about.governing-board-page.index', [
-            'data' => $data
+            'aboutPage' => $aboutPage,
+            'decrees' => $decrees,
         ]);
     }
 

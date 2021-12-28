@@ -71,7 +71,8 @@ html{
 .margin__par:first-child{
     margin-top: 0;
 }
-.section-text__cont ol{
+.section-text__cont ol,
+.section-text__cont ul{
     margin-left: 150px;
     counter-reset: number;
     list-style-type: none;
@@ -923,6 +924,9 @@ courses
 paginate
 */
 
+.pagination{
+    justify-content: center;
+}
 .pagination__link{
     width: 28px;
     padding: 6px 8px;

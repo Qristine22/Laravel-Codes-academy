@@ -188,9 +188,9 @@
                             կապ</a>
                     </li>
                     <li class="header__item flex">
-                        <a class="header__lang" href="#">հայ</a>
-                        <a class="header__lang" href="#">eng</a>
-                        <a class="header__lang" href="#">pyc</a>
+                        <a class="header__lang" href="{{ route('lang', ['locale' => 'am']) }}">հայ</a>
+                        <a class="header__lang" href="{{ route('lang', ['locale' => 'en']) }}">eng</a>
+                        <a class="header__lang" href="{{ route('lang', ['locale' => 'ru']) }}">pyc</a>
                     </li>
                 </ul>
             </nav>
@@ -202,6 +202,9 @@
         </div>
     </div>
 </header>
+
+
+{{-- mobile header ************************************************************************** --}}
 <nav class="mobile-nav">
     <div class="wrapper">
         <ul class="header-mob__list">
@@ -361,9 +364,9 @@
                 <a class="header__link" href="{{ route('contacts') }}">Հետադարձ կապ</a>
             </li>
             <li class="header-mob__item flex">
-                <a class="header__lang" href="#">հայ</a>
-                <a class="header__lang" href="#">eng</a>
-                <a class="header__lang" href="#">pyc</a>
+                <a class="header__lang" href="{{ route('lang', ['locale' => 'am']) }}">հայ</a>
+                <a class="header__lang" href="{{ route('lang', ['locale' => 'en']) }}">eng</a>
+                <a class="header__lang" href="{{ route('lang', ['locale' => 'ru']) }}">pyc</a>
             </li>
         </ul>
     </div>

@@ -62,63 +62,8 @@
                 </div>
             </div>
         </section>
-        <section class="section last-news">
-            <div class="wrapper">
-                <h2 class="last-news__title">Նորություններ</h2>
-                <div class="last-news__cont">
-                    <div class="last-news__items flex">
-                        <div class="last-news__item">
-                            <div class="last-news__item_top">
-                                <a href="new-single.php">
-                                    <img class="img news__item_img" src="/media/img/more/news1.png" alt="news1">
-                                </a>
-                            </div>
-                            <div class="last-news__item_cont">
-                                <a class="last-news__item_link" href="new-single.php">Մեկնարկեց դատախազի թեկնածուների
-                                    2021-2022թթ.
-                                    մասնագիտական պատրաստումը</a>
-                                <div class="read-more__cont">
-                                    <a class="read-more" href="new-single.php">Կարդալ ավելին</a>
-                                    <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="last-news__item">
-                            <div class="last-news__item_top">
-                                <a href="new-single.php">
-                                    <img class="img news__item_img" src="/media/img/more/news2.png" alt="news2">
-                                </a>
-                            </div>
-                            <div class="last-news__item_cont">
-                                <a class="last-news__item_link" href="new-single.php">Սեմինար՝ նվիրված դատական
-                                    համակարգում կոռուպցիոն
-                                    ռիսկերին</a>
-                                <div class="read-more__cont">
-                                    <a class="read-more" href="new-single.php">Կարդալ ավելին</a>
-                                    <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="last-news__item">
-                            <div class="last-news__item_top">
-                                <a href="new-single.php">
-                                    <img class="img news__item_img" src="/media/img/more/news3.png" alt="news3">
-                                </a>
-                            </div>
-                            <div class="last-news__item_cont">
-                                <a class="last-news__item_link" href="new-single.php">Ռեկտորը Նուր-Սուլթանում մասնակցել
-                                    է միջազգային
-                                    կլոր-սեղան քննարկման</a>
-                                <div class="read-more__cont">
-                                    <a class="read-more" href="new-single.php">Կարդալ ավելին</a>
-                                    <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
+        @include('includes.news.last-news')
     </main>
 @endsection
 

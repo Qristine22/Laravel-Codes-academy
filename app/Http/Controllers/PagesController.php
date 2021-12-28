@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\About;
 use App\Models\Home;
 use App\Models\GoverningBoardPage;
+use App\Models\GoverningBoardDecree;
 
 class PagesController extends Controller
 {
@@ -27,12 +28,17 @@ class PagesController extends Controller
     }
     public function governingBoard(){
         $governingBoardPage = GoverningBoardPage::first();
+        $governingBoardDecreesYears = GoverningBoardDecree::all()->groupBy('year');
+        $governingBoardDecrees = GoverningBoardDecree::get();
+
         return view('governing-board', [
-            'governingBoardPage' => $governingBoardPage
+            'governingBoardPage' => $governingBoardPage,
+            'governingBoardDecreesYears' => $governingBoardDecreesYears,
+            'governingBoardDecrees' => $governingBoardDecrees
         ]);
     }
-    public function listenersTraining(){
-        return view('listeners-training');
+    public function governingBoardDecree(){
+        return view('governing-board-decree');
     }
     public function biography(){
         return view('biography');

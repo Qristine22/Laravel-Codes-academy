@@ -15,7 +15,7 @@
             <div class="wrapper">
                 <div class="section-text__cont">
                     @if (!empty($about))
-                        {!! $about->about_am !!}
+                        {!! $about->{'about_'.app()->getLocale()} !!}
                     @endif
                 </div>
             </div>

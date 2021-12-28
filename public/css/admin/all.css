@@ -74,10 +74,13 @@ admin-header
 admin-section
 */
 
-.admin-section{
-    width: calc(100% - 450px);
+.admin__sections{
     min-height: 100vh;
     background-color: var(--section);
+    width: calc(100% - 450px);
+}
+.admin-section{
+    position: relative;
     padding: 0 40px 40px 40px;
 }
 .admin__head{
@@ -168,11 +171,14 @@ admin-section
 .form__text{
     width: 100%;
 }
-.form__item,
+.inputs__group{
+    justify-content: flex-start;
+}
+.form__text > .form__item,
 .inputs__group{
     margin-top: 40px;
 }
-.form__item:first-child,
+.form__text > .form__item:first-child,
 .inputs__group:first-child{
     margin-top: 0;
 }
@@ -185,7 +191,7 @@ admin-section
 }
 .form__item-inp{
     width: calc(33% - 10px);
-    margin: 0;
+    margin: 10px;
 }
 .admin-inp-file{
     position: relative;
@@ -239,4 +245,7 @@ admin-section
     -moz-border-radius: 12px;
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
+}
+.admin__paginate{
+    margin-top: 30px;
 }

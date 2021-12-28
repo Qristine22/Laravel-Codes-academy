@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(HomeSeeder::class);
         $this->call(AboutSeeder::class);
         $this->call(GoverningBoardPageSeeder::class);
+        $this->call(GoverningBoardDecreeSeeder::class);
     }
 }

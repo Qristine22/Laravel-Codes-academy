@@ -15,7 +15,7 @@
             <div class="wrapper">
                 <div class="section-text__cont">
                     @if (!empty($governingBoardPage))
-                        {!! $governingBoardPage->text_am !!}
+                        {!! $governingBoardPage->{'text_' . app()->getLocale()} !!}
                     @endif
                 </div>
             </div>
@@ -23,32 +23,14 @@
         <section class="governing__dates">
             <div class="wrapper">
                 <div class="dates__item dates__item-first flex">
-                    <h2 class="dates__item_title">Դատական համակարգի ունկնդիրների ուսուցում</h2>
+                    <h2 class="dates__item_title">Կառավարման խորհրդի որոշումներ</h2>
                     <div class="dates governing__date_items flex">
-                        <div class="governing__date">
-                            <a class="date" href="{{ route('listenersTraining') }}">2021</a>
-                        </div>
-                        <div class="governing__date">
-                            <a class="date" href="{{ route('listenersTraining') }}">2020</a>
-                        </div>
-                        <div class="governing__date">
-                            <a class="date" href="{{ route('listenersTraining') }}">2019</a>
-                        </div>
-                        <div class="governing__date">
-                            <a class="date" href="{{ route('listenersTraining') }}">2018</a>
-                        </div>
-                        <div class="governing__date">
-                            <a class="date" href="{{ route('listenersTraining') }}">2017</a>
-                        </div>
-                        <div class="governing__date">
-                            <a class="date" href="{{ route('listenersTraining') }}">2016</a>
-                        </div>
-                        <div class="governing__date">
-                            <a class="date" href="{{ route('listenersTraining') }}">2015</a>
-                        </div>
-                        <div class="governing__date">
-                            <a class="date" href="{{ route('listenersTraining') }}">2014</a>
-                        </div>
+                        @foreach ($governingBoardDecreesYears as $key => $val)
+                            <div class="governing__date">
+                                <a class="date"
+                                    href="{{ route('governingBoardDecree') }}">{{ $key }}</a>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
