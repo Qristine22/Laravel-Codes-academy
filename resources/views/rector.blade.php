@@ -51,15 +51,7 @@
                 </div>
             </div>
         </section>
-        <section class="section-text rector__bot">
-            <div class="wrapper">
-                <div class="rector__bot_cont">
-                    <a class="about__link text-18" href="{{ route('rectorsDecrees') }}">Ռեկտորի հրամանները</a>
-                    <a class="about__link text-18" href="{{ route('rectorsBiography') }}">Ռեկտորի կենսագրություն</a>
-                    <a class="about__link text-18" href="{{ route('formerRectorsBiography') }}">Ակադեմիայի նախկին
-                        Ռեկտոր</a>
-                </div>
-            </div>
-        </section>
+        
+        @include('includes.about.rector.rector-menu')
     </main>
 @endsection

@@ -47,7 +47,7 @@
             <div class="wrapper">
                 <div class="graduates__cont">
                     <div class="graduates__item">
-                        <h3 class="members__title graduates__title text-26">Դատավորներ</h3>
+                        <h3 class="members__title graduates__title text-26">@lang('about.graduates.judges')</h3>
                         <div class="graduates__items flex">
                             <div class="graduate__item">
                                 <img class="img" src="/media/img/about/graduates/1.png" alt="1">
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                     <div class="graduates__item">
-                        <h3 class="members__title graduates__title text-26">Դատախազներ</h3>
+                        <h3 class="members__title graduates__title text-26">@lang('about.graduates.prosecutors')</h3>
                         <div class="graduates__items flex">
                             <div class="graduate__item">
                                 <img class="img" src="/media/img/about/graduates/1.png" alt="1">
@@ -145,7 +145,7 @@
                         </div>
                     </div>
                     <div class="graduates__item">
-                        <h3 class="members__title graduates__title text-26">Քննիչներ</h3>
+                        <h3 class="members__title graduates__title text-26">@lang('about.graduates.investigators')</h3>
                         <div class="graduates__items flex">
                             <div class="graduate__item">
                                 <img class="img" src="/media/img/about/graduates/1.png" alt="1">

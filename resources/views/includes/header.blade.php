@@ -188,9 +188,12 @@
                             կապ</a>
                     </li>
                     <li class="header__item flex">
-                        <a class="header__lang" href="{{ route('lang', ['locale' => 'am']) }}">հայ</a>
-                        <a class="header__lang" href="{{ route('lang', ['locale' => 'en']) }}">eng</a>
-                        <a class="header__lang" href="{{ route('lang', ['locale' => 'ru']) }}">pyc</a>
+                        <a class="header__lang @if (app()->getLocale() == 'am') header__lang-active @endif"
+                            href="{{ route('lang', ['locale' => 'am']) }}">հայ</a>
+                        <a class="header__lang @if (app()->getLocale() == 'en') header__lang-active @endif"
+                            href="{{ route('lang', ['locale' => 'en']) }}">eng</a>
+                        <a class="header__lang @if (app()->getLocale() == 'ru') header__lang-active @endif"
+                            href="{{ route('lang', ['locale' => 'ru']) }}">pyc</a>
                     </li>
                 </ul>
             </nav>
@@ -364,9 +367,12 @@
                 <a class="header__link" href="{{ route('contacts') }}">Հետադարձ կապ</a>
             </li>
             <li class="header-mob__item flex">
-                <a class="header__lang" href="{{ route('lang', ['locale' => 'am']) }}">հայ</a>
-                <a class="header__lang" href="{{ route('lang', ['locale' => 'en']) }}">eng</a>
-                <a class="header__lang" href="{{ route('lang', ['locale' => 'ru']) }}">pyc</a>
+                <a class="header__lang  @if (app()->getLocale() == 'am') header__lang-active @endif"
+                href="{{ route('lang', ['locale' => 'am']) }}">հայ</a>
+                <a class="header__lang  @if (app()->getLocale() == 'en') header__lang-active @endif"
+                href="{{ route('lang', ['locale' => 'en']) }}">eng</a>
+                <a class="header__lang  @if (app()->getLocale() == 'ru') header__lang-active @endif"
+                href="{{ route('lang', ['locale' => 'ru']) }}">pyc</a>
             </li>
         </ul>
     </div>

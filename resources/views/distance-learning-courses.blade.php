@@ -90,7 +90,9 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/1.png" alt="1">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">1Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">
+                                    @lang('main.see-more')
+                                </span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -98,7 +100,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/2.png" alt="2">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">1Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -106,7 +108,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/3.png" alt="3">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">1Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                     </div>
@@ -116,7 +118,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/2.png" alt="2">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">2Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -124,7 +126,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/1.png" alt="1">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">2Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -132,7 +134,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/3.png" alt="3">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">2Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                     </div>
@@ -142,7 +144,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/3.png" alt="3">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">3Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -150,7 +152,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/1.png" alt="1">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">3Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -158,7 +160,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/2.png" alt="2">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">3Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                     </div>
@@ -168,7 +170,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/1.png" alt="1">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">4Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -176,7 +178,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/3.png" alt="3">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">4Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -184,7 +186,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/2.png" alt="2">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">4Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                     </div>
@@ -194,7 +196,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/2.png" alt="2">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">5Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -202,7 +204,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/1.png" alt="1">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">5Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -210,7 +212,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/3.png" alt="3">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">5Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                     </div>
@@ -220,7 +222,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/3.png" alt="3">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">6Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -228,7 +230,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/1.png" alt="1">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">6Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -236,7 +238,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/2.png" alt="2">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">6Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                     </div>
@@ -246,7 +248,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/1.png" alt="1">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">7Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -254,7 +256,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/3.png" alt="3">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">7Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -262,7 +264,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/2.png" alt="2">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">7Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                     </div>
@@ -272,7 +274,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/2.png" alt="2">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">8Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -280,7 +282,7 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/1.png" alt="1">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">8Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                         <div class="courses__pdfs_item">
@@ -288,25 +290,15 @@
                                 src="/media/img/distance-learning/distance-learning-courses/pdfs/3.png" alt="3">
                             <a href="#">
                                 <span class="pdfs__item_layer"></span>
-                                <span class="pdfs__item_see-all text-18">8Տեսնել ամբողջը</span>
+                                <span class="pdfs__item_see-all text-18">@lang('main.see-more')</span>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="section-text rector__bot">
-            <div class="wrapper">
-                <div class="rector__bot_cont">
-                    <a class="about__link text-18" href="{{ route('motivationalVideos') }}">
-                        Մոտիվացնող ներածական տեսանյութեր
-                    </a>
-                    <a class="about__link text-18" href="{{ route('mediaMaterials') }}">Լրացուցիչ մեդիա-նյութեր</a>
-                    <a class="about__link text-18" href="{{ route('distanceLearningGuide') }}">Հեռաուսուցման
-                        ուղեցույց</a>
-                </div>
-            </div>
-        </section>
+
+        @include('includes.distance-learning.courses.courses-menu')
     </main>
 @endsection
 

@@ -34,7 +34,9 @@
                             </p>
                             <div class="new__bot">
                                 <div class="read-more__cont news__read-more__cont">
-                                    <a class="read-more new__read-more" href="{{ route('newsSingle', ['id' => 1]) }}">Կարդալ ավելին</a>
+                                    <a class="read-more new__read-more" href="{{ route('newsSingle', ['id' => 1]) }}">
+                                        @lang('main.read-more')    
+                                    </a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png"
                                         alt="longArrow">
                                 </div>
@@ -63,7 +65,9 @@
                             </p>
                             <div class="new__bot">
                                 <div class="read-more__cont news__read-more__cont">
-                                    <a class="read-more new__read-more" href="{{ route('newsSingle', ['id' => 1]) }}">Կարդալ ավելին</a>
+                                    <a class="read-more new__read-more" href="{{ route('newsSingle', ['id' => 1]) }}">
+                                        @lang('main.read-more')    
+                                    </a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png"
                                         alt="longArrow">
                                 </div>
@@ -93,7 +97,9 @@
                             </p>
                             <div class="new__bot">
                                 <div class="read-more__cont news__read-more__cont">
-                                    <a class="read-more new__read-more" href="{{ route('newsSingle', ['id' => 1]) }}">Կարդալ ավելին</a>
+                                    <a class="read-more new__read-more" href="{{ route('newsSingle', ['id' => 1]) }}">
+                                        @lang('main.read-more')    
+                                    </a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png"
                                         alt="longArrow">
                                 </div>
@@ -122,7 +128,9 @@
                             </p>
                             <div class="new__bot">
                                 <div class="read-more__cont news__read-more__cont">
-                                    <a class="read-more new__read-more" href="{{ route('newsSingle', ['id' => 1]) }}">Կարդալ ավելին</a>
+                                    <a class="read-more new__read-more" href="{{ route('newsSingle', ['id' => 1]) }}">
+                                        @lang('main.read-more')    
+                                    </a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png"
                                         alt="longArrow">
                                 </div>
@@ -152,7 +160,9 @@
                             </p>
                             <div class="new__bot">
                                 <div class="read-more__cont news__read-more__cont">
-                                    <a class="read-more new__read-more" href="{{ route('newsSingle', ['id' => 1]) }}">Կարդալ ավելին</a>
+                                    <a class="read-more new__read-more" href="{{ route('newsSingle', ['id' => 1]) }}">
+                                        @lang('main.read-more')    
+                                    </a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png"
                                         alt="longArrow">
                                 </div>
@@ -181,7 +191,9 @@
                             </p>
                             <div class="new__bot">
                                 <div class="read-more__cont news__read-more__cont">
-                                    <a class="read-more new__read-more" href="{{ route('newsSingle', ['id' => 1]) }}">Կարդալ ավելին</a>
+                                    <a class="read-more new__read-more" href="{{ route('newsSingle', ['id' => 1]) }}">
+                                        @lang('main.read-more')    
+                                    </a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png"
                                         alt="longArrow">
                                 </div>

@@ -3,7 +3,7 @@ education
 */
 
 .education{
-    height: calc(100vh - 260px);
+    height: calc(100vh - 293px);
 }
 
 /*
@@ -14,10 +14,6 @@ training program
     width: 90%;
     margin-bottom: 30px;
     letter-spacing: 2px;
-}
-.training__pdf:last-child,
-.training__pdf{
-    margin-bottom: 40px;
 }
 
 /*

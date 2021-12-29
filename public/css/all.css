@@ -37,7 +37,7 @@ html{
     margin-top: 215px;
 }
 .section__min-height{
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 293px);
 }
 .img{
     width: 100%;
@@ -261,7 +261,8 @@ header
 .header__lang:first-child{
     margin-left: 0;
 }
-.header__lang:hover{
+.header__lang:hover,
+.header__lang-active{
     background-color: var(--pink);
     border: 1px solid var(--dark-yellow);
 }
@@ -611,7 +612,14 @@ pdfs
 }
 .pdf__item{
     width: 100%;
-    margin-bottom: 50px;
+    background-color: #FBF3EF;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: background-color ease .3s;
+    -webkit-transition: background-color ease .3s;
+    -moz-transition: background-color ease .3s;
+    -ms-transition: background-color ease .3s;
+    -o-transition: background-color ease .3s;
 }
 .pdf__item:last-child{
     margin-bottom: 0;
@@ -630,7 +638,46 @@ pdfs
 }
 .pdf__item_icon{
     width: 45px;
-    margin-left: 30px;
+    margin-left: 50px;
+}
+.pdf__item_img{
+    margin: 35px 0 0 -20px;
+    transition: all ease .3s;
+    -webkit-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    -ms-transition: all ease .3s;
+    -o-transition: all ease .3s;
+}
+.pdf__item_span{
+    display: block;
+    position: relative;
+    top: -40px;
+    right: 40px;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transition: all ease .3s;
+    -webkit-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    -ms-transition: all ease .3s;
+    -o-transition: all ease .3s;
+}
+.pdf__item_icon:hover .pdf__item_img{
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+}
+.pdf__item_icon:hover .pdf__item_span{
+    top: -20px;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
 }
 
 .pdf__download_cont{
@@ -784,10 +831,12 @@ link pdfs
     -ms-transition: all ease .3s;
     -o-transition: all ease .3s;
 }
-.link__pdf:hover{
+.link__pdf:hover,
+.pdf__item:hover{
     background-color: var(--pink);
 }
-.link__pdf:hover .link__pdf_span{
+.link__pdf:hover .link__pdf_span,
+.pdf__item_icon:hover .link__pdf_span{
     margin-top: 0;
     opacity: 1;
     transform: scale(1);

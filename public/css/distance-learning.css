@@ -69,7 +69,8 @@ courses
     -ms-transition: all ease .3s;
     -o-transition: all ease .3s;
 }
-.about__link:hover{
+.about__link:hover,
+.about__link-active{
     border: 1px solid var(--dark-yellow);
     background-color: var(--pink);
 }

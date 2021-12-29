@@ -23,7 +23,7 @@
         <section class="governing__dates">
             <div class="wrapper">
                 <div class="dates__item dates__item-first flex">
-                    <h2 class="dates__item_title">Կառավարման խորհրդի որոշումներ</h2>
+                    <h2 class="dates__item_title">@lang('about.governing-board.decrees')</h2>
                     <div class="dates governing__date_items flex">
                         @foreach ($governingBoardDecreesYears as $key => $val)
                             <div class="governing__date">
@@ -38,7 +38,7 @@
         <section class="members section-text">
             <div class="wrapper">
                 <div class="members__cont">
-                    <h2 class="members__title text-26">Ակադեմիայի կառավաման խորհրդի կազմը</h2>
+                    <h2 class="members__title text-26">@lang('about.governing-board.members')</h2>
                     <div class="members__items flex">
                         <div class="members__item">
                             <img class="img" src="/media/img/about/governing-board-members/1.png" alt="1">

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 // localization
+session(['locale' => 'am']);
+App::setLocale('am');
 Route::get('locale/{locale}', 'App\Http\Controllers\MainController@changeLocale')->name('lang');
 
 Route::middleware(['set_locale'])->group(function(){

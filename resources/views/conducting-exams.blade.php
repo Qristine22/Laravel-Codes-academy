@@ -19,7 +19,7 @@
                             <span class="text-18">Ակադեմիայում քննությունների անցկացման կարգ</span>
                             <div class="link__pdf_icon">
                                 <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
-                                <span class="link__pdf_span text-18">Ներբեռնել</span>
+                                <span class="link__pdf_span text-18">@lang('main.downloade')</span>
                             </div>
                         </a>
                         <a class="link__pdf flex" href="#">
@@ -29,7 +29,7 @@
                             </span>
                             <div class="link__pdf_icon">
                                 <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
-                                <span class="link__pdf_span text-18">Ներբեռնել</span>
+                                <span class="link__pdf_span text-18">@lang('main.downloade')</span>
                             </div>
                         </a>
                     </div>

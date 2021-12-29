@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="wrapper">
         <div class="footer__cont flex">
-            <h3 class="footer__text">© ՀՀ Արդարադատության ակադեմիա</h3>
+            <h3 class="footer__text">© @lang('home.footer-text')</h3>
             <div class="footer__sites">
                 <a class="footer__link" href="#">
                     <img src="/media/img/icons/face.png" alt="facebook">

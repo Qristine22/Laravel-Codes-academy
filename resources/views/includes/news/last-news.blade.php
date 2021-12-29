@@ -1,6 +1,6 @@
 <section class="section last-news">
     <div class="wrapper">
-        <h2 class="last-news__title">Նորություններ</h2>
+        <h2 class="last-news__title">@lang('news.news')</h2>
         <div class="last-news__cont">
             <div class="last-news__items flex">
                 <div class="last-news__item">
@@ -14,8 +14,9 @@
                             Մեկնարկեց դատախազի թեկնածուների 2021-2022թթ. մասնագիտական պատրաստումը
                         </a>
                         <div class="read-more__cont">
-                            <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">Կարդալ
-                                ավելին</a>
+                            <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">
+                                @lang('main.read-more')    
+                            </a>
                             <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                         </div>
                     </div>
@@ -31,8 +32,9 @@
                             Սեմինար՝ նվիրված դատական համակարգում կոռուպցիոն ռիսկերին
                         </a>
                         <div class="read-more__cont">
-                            <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">Կարդալ
-                                ավելին</a>
+                            <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">
+                                @lang('main.read-more')    
+                            </a>
                             <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                         </div>
                     </div>
@@ -48,8 +50,9 @@
                             Ռեկտորը Նուր-Սուլթանում մասնակցել է միջազգային կլոր-սեղան քննարկման
                         </a>
                         <div class="read-more__cont">
-                            <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">Կարդալ
-                                ավելին</a>
+                            <a class="read-more" href="{{ route('newsSingle', ['id' => 2]) }}">
+                                @lang('main.read-more')    
+                            </a>
                             <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                         </div>
                     </div>

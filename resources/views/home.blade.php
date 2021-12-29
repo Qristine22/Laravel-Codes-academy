@@ -18,7 +18,7 @@
                             <h1 class="home__title">{{ $home->{'title_'.app()->getLocale()} }}</h1>
                             <form class="home__form" action="#" method="POST">
                                 <img class="home__search_icon" src="/media/img/icons/search.png" alt="search">
-                                <input class="inp home__form_inp" type="text" placeholder="Որոնում...">
+                                <input class="inp home__form_inp" type="text" placeholder="@lang('home.search')">
                             </form>
                         </div>
                     </div>

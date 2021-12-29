@@ -29,17 +29,8 @@
                     </div>
                 </div>
             </section>
-            <section class="section-text rector__bot">
-                <div class="wrapper">
-                    <div class="rector__bot_cont">
-                        <a class="about__link text-18" href="{{ route('judgesCandidates') }}">
-                            Դատավորի թեկնածուի հավակնորդներ
-                        </a>
-                        <a class="about__link text-18" href="{{ route('prosecutorsCandidates') }}">Դատախազների թեկնածուներ</a>
-                        <a class="about__link text-18" href="{{ route('investigatorsCandidates') }}">Քննիչների թեկնածուներ</a>
-                    </div>
-                </div>
-            </section>
+            
+            @include('includes.about.admission.admission-menu')
         </div>
     </main>
 @endsection

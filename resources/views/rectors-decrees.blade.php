@@ -25,7 +25,10 @@
                         </div>
                         <div class="pdf__item_icon">
                             <a href="#">
-                                <img class="img" src="/media/img/icons/pdf.png" alt="pdf">
+                                <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                <span class="pdf__item_span text-18">
+                                    @lang('main.downloade')
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -39,7 +42,10 @@
                         </div>
                         <div class="pdf__item_icon">
                             <a href="#">
-                                <img class="img" src="/media/img/icons/pdf.png" alt="pdf">
+                                <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                <span class="pdf__item_span text-18">
+                                    @lang('main.downloade')
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -53,7 +59,10 @@
                         </div>
                         <div class="pdf__item_icon">
                             <a href="#">
-                                <img class="img" src="/media/img/icons/pdf.png" alt="pdf">
+                                <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                <span class="pdf__item_span text-18">
+                                    @lang('main.downloade')
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -68,7 +77,10 @@
                         </div>
                         <div class="pdf__item_icon">
                             <a href="#">
-                                <img class="img" src="/media/img/icons/pdf.png" alt="pdf">
+                                <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                <span class="pdf__item_span text-18">
+                                    @lang('main.downloade')
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -82,7 +94,10 @@
                         </div>
                         <div class="pdf__item_icon">
                             <a href="#">
-                                <img class="img" src="/media/img/icons/pdf.png" alt="pdf">
+                                <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                <span class="pdf__item_span text-18">
+                                    @lang('main.downloade')
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -108,16 +123,7 @@
                 </div>
             </div>
         </section>
-        <section class="section-text rector__bot">
-            <div class="wrapper">
-                <div class="rector__bot_cont">
-                    <a class="about__link text-18 about__link-active" href="{{ route('rectorsDecrees') }}">
-                        Ռեկտորի հրամանները
-                    </a>
-                    <a class="about__link text-18" href="{{ route('rectorsBiography') }}">Ռեկտորի կենսագրություն</a>
-                    <a class="about__link text-18" href="{{ route('formerRectorsBiography') }}">Ակադեմիայի նախկին Ռեկտոր</a>
-                </div>
-            </div>
-        </section>
+        
+        @include('includes.about.rector.rector-menu')
     </main>
 @endsection

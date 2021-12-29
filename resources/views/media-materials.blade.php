@@ -177,5 +177,7 @@
                 </div>
             </div>
         </section>
+
+        @include('includes.distance-learning.courses.courses-menu')
     </main>
 @endsection

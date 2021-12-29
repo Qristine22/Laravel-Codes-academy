@@ -127,5 +127,9 @@
                 </div>
             </div>
         </section>
+
+        @if (Request::is('about/rectors-biography') || Request::is('about/former-rectors-biography'))
+            @include('includes.about.rector.rector-menu')
+        @endif
     </main>
 @endsection
