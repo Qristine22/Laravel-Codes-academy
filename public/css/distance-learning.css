@@ -141,3 +141,12 @@ learning-guide
     justify-content: center;
     margin-top: 30px;
 }
+
+/*
+learning video
+*/
+
+.learning-video iframe{
+    width: 100% !important;
+    height: 500px !important;
+}

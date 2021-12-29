@@ -130,6 +130,9 @@ class PagesController extends Controller
     public function distanceLearning(){
         return view('distance-learning');
     }
+    public function distanceLearningVideo(){
+        return view('distance-learning-video');
+    }
     public function videoMaterials(){
         return view('video-materials');
     }

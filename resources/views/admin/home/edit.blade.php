@@ -46,9 +46,9 @@
                             <input class="admin-file" type="file" id="bg" name="bg">
                         </div>
                         <div class="form__item form__item-inp">
-                            <span class="text-20 form__item_name">Attach your Photo</span>
+                            <span class="text-20 form__item_name">Rectors Signature</span>
                             <label class="text-20 admin-inp admin-inp-file" for="rectors__signature">
-                                Attach Rectors Signature
+                                Attach your Photo
                             </label>
                             <input class="admin-file" type="file" id="rectors__signature" name="rectors_signature">
                         </div>

@@ -11,7 +11,7 @@
             <div class="wrapper">
                 <div class="partners__cont">
                     <div class="partners__item" id="international">
-                        <h2 class="partners__title">ՄԻՋԱԶԳԱՅԻՆ</h2>
+                        <h2 class="partners__title">@lang('partners.international')</h2>
                         <div class="partners__items">
                             <div class="partner__item">
                                 <a class="partners__link" href="{{ route('partnerSingle', ['id' => 2]) }}">
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <div class="partners__item" id="foreign">
-                        <h2 class="partners__title">Օտարերկրյա</h2>
+                        <h2 class="partners__title">@lang('partners.foreign')</h2>
                         <div class="partners__items">
                             <div class="partner__item">
                                 <a class="partners__link" href="{{ route('partnerSingle', ['id' => 2]) }}">
@@ -126,7 +126,7 @@
                         </div>
                     </div>
                     <div class="partners__item" id="arm&artsakh">
-                        <h2 class="partners__title">Հայաստանյան եվ արցախյան</h2>
+                        <h2 class="partners__title">@lang('partners.arm&artsakh')</h2>
                         <div class="partners__items">
                             <div class="partner__item">
                                 <a class="partners__link" href="{{ route('partnerSingle', ['id' => 2]) }}">

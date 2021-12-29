@@ -22,18 +22,23 @@
                         </div>
                         <div class="lecture__inner">
                             <h3 class="lecture__title text-20">
-                                <span class="lecture__strong">Թեմա՝ </span>«Ուկրաինայի դատախազության մարմիններում պետական
-                                ծառայության բարեփոխումները»
+                                <span class="lecture__strong">
+                                    @lang('library.video-lectures.topic')
+                                </span>
+                                «Ուկրաինայի դատախազության մարմիններում պետական ծառայության բարեփոխումները»
                             </h3>
                             <p class="lecture__title text-20">
-                                <span class="lecture__strong">Դասախոս՝ </span>Ուկրաինայի դատախազության ազգային ակադեմիայի
+                                <span class="lecture__strong">
+                                    @lang('library.video-lectures.lecturer')
+                                </span>
+                                Ուկրաինայի դատախազության ազգային ակադեմիայի
                                 դատախազության պետական ծառայողների որակավորման բարձրացման բաժնի պետ Նատալյա Նաուլիկ
                             </p>
                             <div class="lecture__bot">
                                 <div class="read-more__cont lectures__read-more__cont">
                                     <a class="read-more lecture__read-more"
                                         href="{{ route('videoLectureSingle', ['id' => 2]) }}">
-                                        Դիտել տեսադասախոսությունը
+                                        @lang('library.video-lectures.watch-the-video')
                                     </a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                                 </div>
@@ -48,18 +53,23 @@
                         </div>
                         <div class="lecture__inner">
                             <h3 class="lecture__title text-20">
-                                <span class="lecture__strong">Թեմա՝ </span>«Ուկրաինայի դատախազության մարմիններում պետական
-                                ծառայության բարեփոխումները»
+                                <span class="lecture__strong">
+                                    @lang('library.video-lectures.topic')
+                                </span>
+                                «Ուկրաինայի դատախազության մարմիններում պետական ծառայության բարեփոխումները»
                             </h3>
                             <p class="lecture__title text-20">
-                                <span class="lecture__strong">Դասախոս՝ </span>Ուկրաինայի դատախազության ազգային ակադեմիայի
+                                <span class="lecture__strong">
+                                    @lang('library.video-lectures.lecturer')
+                                </span>
+                                Ուկրաինայի դատախազության ազգային ակադեմիայի
                                 դատախազության պետական ծառայողների որակավորման բարձրացման բաժնի պետ Նատալյա Նաուլիկ
                             </p>
                             <div class="lecture__bot">
                                 <div class="read-more__cont lectures__read-more__cont">
                                     <a class="read-more lecture__read-more"
                                         href="{{ route('videoLectureSingle', ['id' => 2]) }}">
-                                        Դիտել տեսադասախոսությունը
+                                        @lang('library.video-lectures.watch-the-video')
                                     </a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                                 </div>
@@ -74,18 +84,23 @@
                         </div>
                         <div class="lecture__inner">
                             <h3 class="lecture__title text-20">
-                                <span class="lecture__strong">Թեմա՝ </span>«Ուկրաինայի դատախազության մարմիններում պետական
-                                ծառայության բարեփոխումները»
+                                <span class="lecture__strong">
+                                    @lang('library.video-lectures.topic')
+                                </span>
+                                «Ուկրաինայի դատախազության մարմիններում պետական ծառայության բարեփոխումները»
                             </h3>
                             <p class="lecture__title text-20">
-                                <span class="lecture__strong">Դասախոս՝ </span>Ուկրաինայի դատախազության ազգային ակադեմիայի
+                                <span class="lecture__strong">
+                                    @lang('library.video-lectures.lecturer')
+                                </span>
+                                Ուկրաինայի դատախազության ազգային ակադեմիայի
                                 դատախազության պետական ծառայողների որակավորման բարձրացման բաժնի պետ Նատալյա Նաուլիկ
                             </p>
                             <div class="lecture__bot">
                                 <div class="read-more__cont lectures__read-more__cont">
                                     <a class="read-more lecture__read-more"
                                         href="{{ route('videoLectureSingle', ['id' => 2]) }}">
-                                        Դիտել տեսադասախոսությունը
+                                        @lang('library.video-lectures.watch-the-video')
                                     </a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                                 </div>
@@ -100,18 +115,23 @@
                         </div>
                         <div class="lecture__inner">
                             <h3 class="lecture__title text-20">
-                                <span class="lecture__strong">Թեմա՝ </span>«Ուկրաինայի դատախազության մարմիններում պետական
-                                ծառայության բարեփոխումները»
+                                <span class="lecture__strong">
+                                    @lang('library.video-lectures.topic')
+                                </span>
+                                «Ուկրաինայի դատախազության մարմիններում պետական ծառայության բարեփոխումները»
                             </h3>
                             <p class="lecture__title text-20">
-                                <span class="lecture__strong">Դասախոս՝ </span>Ուկրաինայի դատախազության ազգային ակադեմիայի
+                                <span class="lecture__strong">
+                                    @lang('library.video-lectures.lecturer')
+                                </span>
+                                Ուկրաինայի դատախազության ազգային ակադեմիայի
                                 դատախազության պետական ծառայողների որակավորման բարձրացման բաժնի պետ Նատալյա Նաուլիկ
                             </p>
                             <div class="lecture__bot">
                                 <div class="read-more__cont lectures__read-more__cont">
                                     <a class="read-more lecture__read-more"
                                         href="{{ route('videoLectureSingle', ['id' => 2]) }}">
-                                        Դիտել տեսադասախոսությունը
+                                        @lang('library.video-lectures.watch-the-video')
                                     </a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                                 </div>
@@ -126,18 +146,23 @@
                         </div>
                         <div class="lecture__inner">
                             <h3 class="lecture__title text-20">
-                                <span class="lecture__strong">Թեմա՝ </span>«Ուկրաինայի դատախազության մարմիններում պետական
-                                ծառայության բարեփոխումները»
+                                <span class="lecture__strong">
+                                    @lang('library.video-lectures.topic')
+                                </span>
+                                «Ուկրաինայի դատախազության մարմիններում պետական ծառայության բարեփոխումները»
                             </h3>
                             <p class="lecture__title text-20">
-                                <span class="lecture__strong">Դասախոս՝ </span>Ուկրաինայի դատախազության ազգային ակադեմիայի
+                                <span class="lecture__strong">
+                                    @lang('library.video-lectures.lecturer')
+                                </span>
+                                Ուկրաինայի դատախազության ազգային ակադեմիայի
                                 դատախազության պետական ծառայողների որակավորման բարձրացման բաժնի պետ Նատալյա Նաուլիկ
                             </p>
                             <div class="lecture__bot">
                                 <div class="read-more__cont lectures__read-more__cont">
                                     <a class="read-more lecture__read-more"
                                         href="{{ route('videoLectureSingle', ['id' => 2]) }}">
-                                        Դիտել տեսադասախոսությունը
+                                        @lang('library.video-lectures.watch-the-video')
                                     </a>
                                     <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                                 </div>

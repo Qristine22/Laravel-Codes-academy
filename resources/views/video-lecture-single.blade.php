@@ -15,12 +15,16 @@
             <div class="wrapper">
                 <div class="lecture__top">
                     <h3 class="lecture__title text-20">
-                        <span class="lecture__strong">Թեմա՝ </span>«Ուկրաինայի դատախազության մարմիններում պետական ծառայության
-                        բարեփոխումները»
+                        <span class="lecture__strong">
+                            @lang('library.video-lectures.topic')
+                        </span>
+                        «Ուկրաինայի դատախազության մարմիններում պետական ծառայության բարեփոխումները»
                     </h3>
                     <p class="lecture__title text-20">
-                        <span class="lecture__strong">Դասախոս՝ </span>Ուկրաինայի դատախազության ազգային ակադեմիայի
-                        դատախազության պետական ծառայողների որակավորման բարձրացման բաժնի պետ Նատալյա Նաուլիկ
+                        <span class="lecture__strong">
+                            @lang('library.video-lectures.lecturer')
+                        </span>
+                        Ուկրաինայի դատախազության ազգային ակադեմիայի դատախազության պետական ծառայողների որակավորման բարձրացման բաժնի պետ Նատալյա Նաուլիկ
                     </p>
                 </div>
                 <div class="lecture__cont">

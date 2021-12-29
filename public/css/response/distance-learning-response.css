@@ -55,6 +55,9 @@
     .motivation__item > iframe{
         height: 140px;
     }
+    .learning-video iframe{
+        height: 300px !important;
+    }
 }
 @media only screen and (max-width: 800px) {
 
@@ -81,6 +84,9 @@
     .material__list_item{
         margin-top: 5px;
     }
+    .learning-video iframe{
+        height: 200px !important;
+    }
 }
 @media only screen and (max-width: 450px) {
     .videos__cont {
@@ -94,5 +100,8 @@
 @media only screen and (max-width: 430px) {
     .distance-learning{
         margin-top: 56px;
+    }
+    .learning-video iframe{
+        height: 200px !important;
     }
 }

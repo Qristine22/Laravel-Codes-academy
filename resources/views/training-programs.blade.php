@@ -32,7 +32,10 @@
                             </div>
                             <div class="pdf__item_icon">
                                 <a href="#">
-                                    <img class="img" src="/media/img/icons/pdf.png" alt="pdf">
+                                    <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                    <span class="pdf__item_span text-18">
+                                        @lang('main.downloade')
+                                    </span>
                                 </a>
                             </div>
                         </div>
@@ -53,7 +56,10 @@
                             </div>
                             <div class="pdf__item_icon">
                                 <a href="#">
-                                    <img class="img" src="/media/img/icons/pdf.png" alt="pdf">
+                                    <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                    <span class="pdf__item_span text-18">
+                                        @lang('main.downloade')
+                                    </span>
                                 </a>
                             </div>
                         </div>
@@ -73,7 +79,10 @@
                             </div>
                             <div class="pdf__item_icon">
                                 <a href="#">
-                                    <img class="img" src="/media/img/icons/pdf.png" alt="pdf">
+                                    <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                    <span class="pdf__item_span text-18">
+                                        @lang('main.downloade')
+                                    </span>
                                 </a>
                             </div>
                         </div>
@@ -96,7 +105,10 @@
                             </div>
                             <div class="pdf__item_icon">
                                 <a href="#">
-                                    <img class="img" src="/media/img/icons/pdf.png" alt="pdf">
+                                    <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                    <span class="pdf__item_span text-18">
+                                        @lang('main.downloade')
+                                    </span>
                                 </a>
                             </div>
                         </div>
@@ -119,7 +131,10 @@
                             </div>
                             <div class="pdf__item_icon">
                                 <a href="#">
-                                    <img class="img" src="/media/img/icons/pdf.png" alt="pdf">
+                                    <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                    <span class="pdf__item_span text-18">
+                                        @lang('main.downloade')
+                                    </span>
                                 </a>
                             </div>
                         </div>
