@@ -33,17 +33,17 @@
                     </div>
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="info__en">info English</label>
+                            <label class="text-20 form__item_name" for="info__en">info (English)</label>
                             <input class="admin-inp" type="text" id="info__en" name="info_en"
                                 placeholder="Enter your text here" value="{{ $governingBoardDecree->info_en }}">
                         </div>
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="info__am">info Armenian</label>
+                            <label class="text-20 form__item_name" for="info__am">info (Armenian)</label>
                             <input class="admin-inp" type="text" id="info__am" name="info_am"
                                 placeholder="Enter your text here" value="{{ $governingBoardDecree->info_am }}">
                         </div>
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="info__ru">info Russian</label>
+                            <label class="text-20 form__item_name" for="info__ru">info (Russian)</label>
                             <input class="admin-inp" type="text" id="info__ru" name="info_ru"
                                 placeholder="Enter your text here" value="{{ $governingBoardDecree->info_ru }}">
                         </div>

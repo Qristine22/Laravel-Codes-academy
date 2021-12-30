@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AboutSeeder::class);
         $this->call(GoverningBoardPageSeeder::class);
         $this->call(GoverningBoardDecreeSeeder::class);
+        $this->call(GoverningBoardStaffSeeder::class);
     }
 }

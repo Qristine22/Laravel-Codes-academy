@@ -16,15 +16,15 @@
                 @endif
                 <div class="form__text">
                     <div class="form__item">
-                        <label class="text-20 form__item_name" for="about__en">About English</label>
+                        <label class="text-20 form__item_name" for="about__en">About (English)</label>
                         <textarea name="about_en" id="about__en" placeholder="Enter Your Text Here"></textarea>
                     </div>
                     <div class="form__item">
-                        <label class="text-20 form__item_name" for="about__am">About Armenian</label>
+                        <label class="text-20 form__item_name" for="about__am">About (Armenian)</label>
                         <textarea name="about_am" id="about__am" placeholder="Enter Your Text Here"></textarea>
                     </div>
                     <div class="form__item">
-                        <label class="text-20 form__item_name" for="about__ru">About Russian</label>
+                        <label class="text-20 form__item_name" for="about__ru">About (Russian)</label>
                         <textarea name="about_ru" id="about__ru" placeholder="Enter Your Text Here"></textarea>
                     </div>
                 </div>

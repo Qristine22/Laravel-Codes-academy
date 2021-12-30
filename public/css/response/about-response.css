@@ -148,7 +148,7 @@
         font-size: 25px;
         letter-spacing: 2px;
     }
-    .member__info_block {
+    .member__info > div {
         margin-top: 50px;
     }
     .member__info_item{
@@ -169,6 +169,10 @@
     }
     .graduate-profession__item{
         width: calc(25% - 20px);
+    }
+    .member__info strong{
+        font-size: 16px;
+        line-height: 20px;
     }
 }
 @media only screen and (max-width: 850px) {
@@ -285,6 +289,16 @@
     .graduate-profession__item{
         width: calc(33.3% - 20px);
     }
+    .member__info strong{
+        font-size: 13px;
+        line-height: 18px;
+    }
+    .member__info li p:first-child,
+    .member__info li p:last-child,
+    .member__info h4{
+        font-size: 13px;
+        line-height: 25px;
+    }
 }
 @media only screen and (max-width: 650px) {
     .members__item{
@@ -354,6 +368,16 @@
     }
     .members__item_count > span{
         font-size: 22px;
+    }
+    .member__info strong{
+        font-size: 10px;
+        line-height: 18px;
+    }
+    .member__info li p:first-child{
+        width: 100px;
+    }
+    .member__info li p:last-child{
+        width: calc(100% - 100px);
     }
 }
 @media only screen and (max-width: 450px) {

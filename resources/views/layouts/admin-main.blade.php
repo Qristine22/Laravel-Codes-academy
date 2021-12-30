@@ -18,7 +18,7 @@
             <img class="img" src="/media/img/logo/brownLogo.png" alt="loading">
         </div>
     </div>
-    <div class="admin flex">
+    <div class="admin">
         @include('includes.admin.header')
 
         @yield('content')

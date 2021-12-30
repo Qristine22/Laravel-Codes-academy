@@ -11,7 +11,8 @@ admin
     width: 100%;
     min-height: 100vh;
     background-color: var(--section);
-    align-items: flex-start;
+    display: flex;
+    justify-content: flex-end;
 }
 
 /*
@@ -23,7 +24,9 @@ admin-header
     min-height: 100vh;
     background-color: var(--dark-yellow);
     padding: 30px 50px;
-    position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 .admin-header__logo{
     width: 50px;
@@ -118,6 +121,22 @@ admin-section
 }
 .td:first-child{
     text-align: center;
+}
+.td-scroll{
+    max-height: 200px;
+    overflow-y: scroll;
+}
+.td-scroll::-webkit-scrollbar{
+    width: 7px;
+}
+.td-scroll::-webkit-scrollbar-track {
+    background: var(--pink);
+}
+.td-scroll::-webkit-scrollbar-thumb {
+    background: var(--brown);
+}
+.td-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-brown);
 }
 .table__panel{
     flex-direction: column;

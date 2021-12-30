@@ -8,7 +8,8 @@
             </div>
 
             <form class="admin__form"
-                action="{{ route('admin.about.governing-board-page.update', ['governing_board_page' => $governingBoardPage]) }}"
+                action="{{ route('admin.about.governing-board-page.update',
+                ['governing_board_page' => $governingBoardPage]) }}"
                 method="POST">
                 @csrf
                 @method('PUT')

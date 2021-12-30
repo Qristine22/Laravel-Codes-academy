@@ -28,8 +28,9 @@ Route::middleware(['set_locale'])->group(function(){
     Route::group(['prefix' => 'about'], function () {
         Route::get('/', 'App\Http\Controllers\PagesController@about')->name('about');
         Route::get('/governing-board', 'App\Http\Controllers\PagesController@governingBoard')->name('governingBoard');
-        Route::get('/governing-board-decree', 'App\Http\Controllers\PagesController@governingBoardDecree')->name('governingBoardDecree');
-        Route::get('/biography', 'App\Http\Controllers\PagesController@biography')->name('biography');
+        Route::get('/governing-board-decree/{year}', 'App\Http\Controllers\PagesController@governingBoardDecree')->name('governingBoardDecree');
+        Route::get('/governing-board/biography/{id}', 'App\Http\Controllers\PagesController@governingBoardBiography')
+            ->name('governingBoardBiography');
         Route::get('/rector', 'App\Http\Controllers\PagesController@rector')->name('rector');
         Route::get('/rectors-biography', 'App\Http\Controllers\PagesController@rectorsBiography')->name('rectorsBiography');
         Route::get('/former-rectors-biography', 'App\Http\Controllers\PagesController@formerRectorsBiography')
@@ -149,6 +150,7 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::resource('page', 'App\Http\Controllers\Admin\About\AboutController');
                 Route::resource('governing-board-page', 'App\Http\Controllers\Admin\About\GoverningBoardPageController');
                 Route::resource('governing-board-decree', 'App\Http\Controllers\Admin\About\GoverningBoardDecreeController');
+                Route::resource('governing-board-staff', 'App\Http\Controllers\Admin\About\GoverningBoardStaffController');
             });
         });
     });

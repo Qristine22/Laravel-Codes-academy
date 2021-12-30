@@ -8,6 +8,7 @@ use App\Models\About;
 use App\Models\Home;
 use App\Models\GoverningBoardPage;
 use App\Models\GoverningBoardDecree;
+use App\Models\GoverningBoardStaff;
 
 class PagesController extends Controller
 {
@@ -19,38 +20,63 @@ class PagesController extends Controller
     }
 
 
-    // about
+    // about *********************************************************************************
     public function about(){
         $about = About::first();
         return view('about', [
             'about' => $about
         ]);
     }
+
     public function governingBoard(){
+        // text in top /about/governing-board
         $governingBoardPage = GoverningBoardPage::first();
+
+        // years /about/governing-board
         $governingBoardDecreesYears = GoverningBoardDecree::all()->groupBy('year');
-        $governingBoardDecrees = GoverningBoardDecree::get();
+
+        // members /about/governing-board
+        $governingBoardMembers = GoverningBoardStaff::get();
 
         return view('governing-board', [
             'governingBoardPage' => $governingBoardPage,
             'governingBoardDecreesYears' => $governingBoardDecreesYears,
-            'governingBoardDecrees' => $governingBoardDecrees
+            'governingBoardMembers' => $governingBoardMembers,
         ]);
     }
-    public function governingBoardDecree(){
-        return view('governing-board-decree');
+
+    public function governingBoardDecree($year){
+        $governingBoardDecrees = GoverningBoardDecree::where('year', $year)->get();
+        $governingBoardDecreesYears = GoverningBoardDecree::all()->groupBy('year');
+
+        return view('governing-board-decree', [
+            'governingBoardDecrees' => $governingBoardDecrees,
+            'governingBoardDecreesYears' => $governingBoardDecreesYears,
+            'year' => $year,
+        ]);
     }
-    public function biography(){
-        return view('biography');
+
+    public function governingBoardBiography($id){
+        $person = GoverningBoardStaff::findOrFail($id);
+        return view('biography', [
+            'person' => $person,
+        ]);
     }
+
     public function rector(){
         return view('rector');
     }
     public function rectorsBiography(){
-        return view('biography');
+        $person = GoverningBoardStaff::findOrFail(1);
+        return view('biography', [
+            'person' => $person
+        ]);
     }
     public function formerRectorsBiography(){
-        return view('biography');
+        $person = GoverningBoardStaff::findOrFail(1);
+        return view('biography', [
+            'person' => $person
+        ]);
     }
     public function rectorsDecrees(){
         return view('rectors-decrees');
@@ -95,7 +121,7 @@ class PagesController extends Controller
         return view('mass-media');
     }
 
-    // news
+    // news *********************************************************************************
     public function news(){
         return view('news');
     }
@@ -103,7 +129,7 @@ class PagesController extends Controller
         return view('news-single');
     }
 
-    // full time education
+    // full time education *********************************************************************************
     public function fullTimeEducation(){
         return view('full-time-education');
     }
@@ -126,7 +152,7 @@ class PagesController extends Controller
         return view('pdfs-downloade');
     }
 
-    // distance learning
+    // distance learning *********************************************************************************
     public function distanceLearning(){
         return view('distance-learning');
     }
@@ -149,7 +175,7 @@ class PagesController extends Controller
         return view('distance-learning-guide');
     }
 
-    // library
+    // library *********************************************************************************
     public function library(){
         return view('library');
     }
@@ -178,12 +204,12 @@ class PagesController extends Controller
         return view('library');
     }
 
-    // bulletin
+    // bulletin *********************************************************************************
     public function bulletin(){
         return view('bulletin');
     }
 
-    // partners
+    // partners *********************************************************************************
     public function partners(){
         return view('partners');
     }
@@ -191,12 +217,12 @@ class PagesController extends Controller
         return view('partner-single');
     }
 
-    // contacts
+    // contacts *********************************************************************************
     public function contacts(){
         return view('contacts');
     }
 
-    //login
+    //login *********************************************************************************
     public function login(){
         return view('admin.login');
     }

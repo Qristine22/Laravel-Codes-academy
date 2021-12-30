@@ -18,17 +18,17 @@
                 <div class="form__text">
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="title__en">Title English</label>
+                            <label class="text-20 form__item_name" for="title__en">Title (English)</label>
                             <input class="admin-inp" type="text" id="title__en" name="title_en"
                                 placeholder="Enter your text here" value="{{ old('title_en') }}">
                         </div>
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="title__am">Title Armenian</label>
+                            <label class="text-20 form__item_name" for="title__am">Title (Armenian)</label>
                             <input class="admin-inp" type="text" id="title__am" name="title_am"
                                 placeholder="Enter your text here" value="{{ old('title_am') }}">
                         </div>
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="title__ru">Title Russian</label>
+                            <label class="text-20 form__item_name" for="title__ru">Title (Russian)</label>
                             <input class="admin-inp" type="text" id="title__ru" name="title_ru"
                                 placeholder="Enter your text here" value="{{ old('title_ru') }}">
                         </div>
@@ -60,15 +60,15 @@
                         </div>
                     </div>
                     <div class="form__item inputs__group">
-                        <label class="text-20 form__item_name" for="rectors_word__en">Rectors Word English</label>
+                        <label class="text-20 form__item_name" for="rectors_word__en">Rectors Word (English)</label>
                         <textarea name="rectors_word_en" id="rectors_word__en">{{ old('rectors_word_en') }}</textarea>
                     </div>
                     <div class="form__item">
-                        <label class="text-20 form__item_name" for="rectors_word__am">Rectors Word Armenian</label>
+                        <label class="text-20 form__item_name" for="rectors_word__am">Rectors Word (Armenian)</label>
                         <textarea name="rectors_word_am" id="rectors_word__am">{{ old('rectors_word_am') }}</textarea>
                     </div>
                     <div class="form__item">
-                        <label class="text-20 form__item_name" for="rectors_word__ru">Rectors Word Russian</label>
+                        <label class="text-20 form__item_name" for="rectors_word__ru">Rectors Word (Russian)</label>
                         <textarea name="rectors_word_ru" id="rectors_word__ru">{{ old('rectors_word_ru') }}</textarea>
                     </div>
                 </div>

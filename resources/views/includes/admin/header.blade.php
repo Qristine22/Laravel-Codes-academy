@@ -25,7 +25,9 @@
                         <a class="text-18 admin-header__menu-link @if (Request::is('admin/about/governing-board-page') || 
                         Request::is('admin/about/governing-board-page/*') ||
                         Request::is('admin/about/governing-board-decree') ||
-                        Request::is('admin/about/governing-board-decree/*'))admin-header__link-active @endif"
+                        Request::is('admin/about/governing-board-decree/*') ||
+                        Request::is('admin/about/governing-board-staff/*') ||
+                        Request::is('admin/about/governing-board-staff'))admin-header__link-active @endif"
                             href="{{ route('admin.about.governing-board-page.index') }}">
                             Ակադեմիայի կառավարման խորհուրդ
                         </a>

@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Storage;
 
 // Models
 use App\Models\GoverningBoardDecree;
-use App\Models\GoverningBoardPage;
 
 class GoverningBoardDecreeController extends Controller
 {
@@ -20,13 +19,7 @@ class GoverningBoardDecreeController extends Controller
      */
     public function index()
     {
-        $aboutPage = GoverningBoardPage::get();
-        $decrees = GoverningBoardDecree::orderBy('id', 'DESC')->paginate(5);
-
-        return view('admin.about.governing-board-page.index', [
-            'aboutPage' => $aboutPage,
-            'decrees' => $decrees,
-        ]);
+        //
     }
 
     /**
@@ -58,7 +51,7 @@ class GoverningBoardDecreeController extends Controller
             'pdf' => $pdf,
         ]);
 
-        return redirect(route('admin.about.governing-board-decree.index'));
+        return redirect(route('admin.about.governing-board-page.index'));
     }
 
     /**
@@ -110,7 +103,7 @@ class GoverningBoardDecreeController extends Controller
             'pdf' => $pdf,
         ]);
 
-        return redirect(route('admin.about.governing-board-decree.index'));
+        return redirect(route('admin.about.governing-board-page.index'));
     }
 
     /**
@@ -123,6 +116,6 @@ class GoverningBoardDecreeController extends Controller
     {
         $governingBoardDecree->delete();
         Storage::delete($governingBoardDecree->pdf);
-        return redirect(route('admin.about.governing-board-decree.index'));
+        return redirect(route('admin.about.governing-board-page.index'));
     }
 }

@@ -8,6 +8,7 @@ use App\Http\Requests\About\GoverningBoardRequest;
 // Models
 use App\Models\GoverningBoardPage;
 use App\Models\GoverningBoardDecree;
+use App\Models\GoverningBoardStaff;
 
 class GoverningBoardPageController extends Controller
 {
@@ -20,10 +21,12 @@ class GoverningBoardPageController extends Controller
     {
         $aboutPage = GoverningBoardPage::get();
         $decrees = GoverningBoardDecree::orderBy('id', 'DESC')->paginate(5);
+        $staff = GoverningBoardStaff::orderBy('id', 'DESC')->paginate(5);
 
         return view('admin.about.governing-board-page.index', [
             'aboutPage' => $aboutPage,
             'decrees' => $decrees,
+            'staff' => $staff,
         ]);
     }
 

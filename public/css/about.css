@@ -89,20 +89,30 @@ member
 .member__info{
     width: 80%;
 }
-.member__info_title{
+.member__info strong{
+    color: var(--brown);
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: 2px;
+    line-height: 35px;
 }
-.member__info_block{
+.member__info > div{
     margin-top: 90px;
 }
-.member__info_item{
+.member__info li,
+.member__info h4{
     display: flex;
     align-items: flex-start;
     margin-top: 20px;
 }
-.member__info_inner{
+.member__info li p:last-child{
     width: calc(100% - 180px);
+}
+.member__info li p:last-child,
+.member__info h4{
+    color: var(--brown);
+    font-size: 18px;
+    line-height: 35px;
 }
 .member__img{
     position: absolute;
@@ -110,7 +120,7 @@ member
     right: 0;
     width: 20%;
 }
-.member__info_subtitle{
+.member__info li p:first-child{
     color: var(--brown);
     width: 180px;
     font-size: 16px;

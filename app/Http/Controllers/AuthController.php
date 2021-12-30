@@ -25,7 +25,7 @@ class AuthController extends Controller
             'password' => ['required', 'min:4']
         ]);
         if(auth('web')->attempt($data)){
-            return redirect(route('home'));
+            return redirect(route('admin.home.index'));
         }
         else{
             return redirect()->back();

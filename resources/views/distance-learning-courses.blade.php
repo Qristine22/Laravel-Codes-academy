@@ -19,6 +19,18 @@
                         <div class="courses__item">
                             <img class="img"
                                 src="/media/img/distance-learning/distance-learning-courses/book1.png" alt="book1">
+                            <a class="pdfs__item_link pdfs__item_link-first" href="{{ route('motivationalVideos') }}">
+                                <span class="pdfs__item_layer"></span>
+                                <span class="pdfs__item_see-all text-18">
+                                    @lang('distance-learning.motivational-videos')
+                                </span>
+                            </a>
+                            <a class="pdfs__item_link" href="{{ route('mediaMaterials') }}">
+                                <span class="pdfs__item_layer"></span>
+                                <span class="pdfs__item_see-all text-18">
+                                    @lang('distance-learning.media-materials')
+                                </span>
+                            </a>
                         </div>
                         <h2 class="courses__item_name text-26">Փախստականների իրավունք քրեական ուղղվածություն</h2>
                     </div>
@@ -26,6 +38,18 @@
                         <div class="courses__item">
                             <img class="img"
                                 src="/media/img/distance-learning/distance-learning-courses/book2.png" alt="book2">
+                            <a class="pdfs__item_link pdfs__item_link-first" href="{{ route('motivationalVideos') }}">
+                                <span class="pdfs__item_layer"></span>
+                                <span class="pdfs__item_see-all text-18">
+                                    @lang('distance-learning.motivational-videos')
+                                </span>
+                            </a>
+                            <a class="pdfs__item_link" href="{{ route('mediaMaterials') }}">
+                                <span class="pdfs__item_layer"></span>
+                                <span class="pdfs__item_see-all text-18">
+                                    @lang('distance-learning.media-materials')
+                                </span>
+                            </a>
                         </div>
                         <h2 class="courses__item_name text-26">
                             Անչափահասի պաշտպանությունը քրեական գործերով վարույթի ընթացքում
