@@ -48,8 +48,9 @@
                                     <a class="header__menu_link" href="{{ route('gallery') }}">Տեսադարան</a>
                                 </li>
                                 <li class="header__menu_item">
-                                    <a class="header__menu_link" href="{{ route('massMedia') }}">ԶԼՄ-ները մեր
-                                        մասին</a>
+                                    <a class="header__menu_link" href="{{ route('massMedia') }}">
+                                        ԶԼՄ-ները մեր մասին
+                                    </a>
                                 </li>
                             </ul>
                         @endif
@@ -64,8 +65,9 @@
                         @if (!(Request::is('full-time-education/*') || Request::is('full-time-education')))
                             <ul class="header__menu_list">
                                 <li class="header__menu_item">
-                                    <a class="header__menu_link" href="{{ route('fullTimeEducation') }}">Ուսուցման
-                                        ծրագրեր</a>
+                                    <a class="header__menu_link" href="{{ route('fullTimeEducation') }}">
+                                        Ուսուցման ծրագրեր
+                                    </a>
                                 </li>
                                 <li class="header__menu_item">
                                     <a class="header__menu_link" href="{{ route('conductingExams') }}">

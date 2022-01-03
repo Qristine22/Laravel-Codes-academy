@@ -14,6 +14,12 @@
             </li>
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
+                    <a class="text-20 admin-header__link @if (Request::is('admin/header/*') || Request::is('admin/header'))admin-header__link-active @endif"
+                        href="{{ route('admin.header.index') }}">Նավիգացիա</a>
+                </div>
+            </li>
+            <li class="admin-header__item">
+                <div class="admin-header__item_cont flex">
                     <a class="text-20 admin-header__link @if (Request::is('admin/about/*') || Request::is('admin/about'))admin-header__link-active @endif"
                         href="{{ route('admin.about.page.index') }}">Ակադեմիայի մասին</a>
                     <div class="admin-header__arrow">

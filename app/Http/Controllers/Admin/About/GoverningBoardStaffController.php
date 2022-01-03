@@ -49,9 +49,7 @@ class GoverningBoardStaffController extends Controller
             'position_en' => $request->position_en,
             'position_am' => $request->position_am,
             'position_ru' => $request->position_ru,
-            'biography_en' => $request->biography_en,
-            'biography_am' => $request->biography_am,
-            'biography_ru' => $request->biography_ru,
+            'biography' => $request->biography,
             'img' => $photo,
         ]);
 
@@ -105,9 +103,7 @@ class GoverningBoardStaffController extends Controller
             'position_en' => $request->position_en,
             'position_am' => $request->position_am,
             'position_ru' => $request->position_ru,
-            'biography_en' => $request->biography_en,
-            'biography_am' => $request->biography_am,
-            'biography_ru' => $request->biography_ru,
+            'biography' => $request->biography,
             'img' => $photo,
         ]);
 

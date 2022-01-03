@@ -18,4 +18,9 @@ class Header extends Model
         'link',
         'parent_id',
     ];
+
+
+    public static function findItemWithParentId($id){
+        return Header::findOrFail($id)->name_am;
+    }
 }

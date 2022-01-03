@@ -128,7 +128,7 @@
                         <td class="td text-18">{{ $item->position_am }}</td>
                         <td class="td text-18">
                             <div class="td-scroll">
-                                {!! $item->biography_am !!}
+                                {!! $item->biography !!}
                             </div>
                         </td>
                         <td class="td text-18">

@@ -245,6 +245,7 @@ header
     -o-transition: transform ease .3s;
 }
 .header__link-active{
+    color: var(--light-brown);
     background: linear-gradient(0deg, rgba(255,250,248,1) 0%, rgba(201,182,149,1) 100%);
 }
 .header__lang{

@@ -7,8 +7,9 @@
                 <h2 class="admin__title">Նավիգացիա</h2>
             </div>
 
-            <form class="admin__form" action="{{ route('admin.header.store') }}" method="POST">
+            <form class="admin__form" action="{{ route('admin.header.update', ['header' => $header]) }}" method="POST">
                 @csrf
+                @method('PUT')
                 @if ($errors->any())
                     @foreach ($errors->all() as $e)
                         <p class="error">{{ $e }}</p>
@@ -19,36 +20,41 @@
                         <div class="form__item form__item-inp">
                             <label class="text-20 form__item_name" for="name__en">Name (English)</label>
                             <input class="admin-inp" type="text" id="name__en" name="name_en"
-                                placeholder="Enter your text here" value="{{ old('name_en') }}">
+                                placeholder="Enter your text here" value="{{ $header->name_en }}">
                         </div>
                         <div class="form__item form__item-inp">
                             <label class="text-20 form__item_name" for="name__am">Name (Armenian)</label>
                             <input class="admin-inp" type="text" id="name__am" name="name_am"
-                                placeholder="Enter your text here" value="{{ old('name_am') }}">
+                                placeholder="Enter your text here" value="{{ $header->name_am }}">
                         </div>
                         <div class="form__item form__item-inp">
                             <label class="text-20 form__item_name" for="name__ru">Name (Russian)</label>
                             <input class="admin-inp" type="text" id="name__ru" name="name_ru"
-                                placeholder="Enter your text here" value="{{ old('name_ru') }}">
+                                placeholder="Enter your text here" value="{{ $header->name_ru }}">
                         </div>
                     </div>
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
                             <label class="text-20 form__item_name" for="link">Link</label>
                             <input class="admin-inp" type="text" id="link" name="link"
-                                placeholder="Enter your text here" value="{{ old('link') }}">
+                                placeholder="Enter your text here" value="{{ $header->link }}">
                         </div>
                         <div class="form__item form__item-inp">
                             <label class="text-20 form__item_name" for="parent_id">Parent</label>
                             <select class="admin-inp" name="parent_id" id="parent_id">
                                 <option value="">no</option>
-                                @foreach ($headers as $header)
-                                    <option value="{{ $header->id }}">{{ $header->name_am }}</option>
+                                @foreach ($headers as $item)
+                                    @if($item->id == $header->parent_id)
+                                        <option value="{{ $item->id }}" selected>{{ $item->name_am }}</option>
+                                    @else
+                                        <option value="{{ $item->id }}">{{ $item->name_am }}</option>
+                                    @endif
                                 @endforeach
                             </select>
                         </div>
                     </div>
                 </div>
+
                 <button class="form__btn">Save</button>
             </form>
         </section>

@@ -59,21 +59,9 @@
                     </div>
                     <div class="form__text">
                         <div class="form__item">
-                            <label class="text-20 form__item_name" for="biography__en">Biography (English)</label>
-                            <textarea name="biography_en" id="biography__en" placeholder="Enter Your Text Here">
-                                {{ old('biography_en') }}
-                            </textarea>
-                        </div>
-                        <div class="form__item">
-                            <label class="text-20 form__item_name" for="biography__am">Biography (Armenian)</label>
-                            <textarea name="biography_am" id="biography__am" placeholder="Enter Your Text Here">
-                                {{ old('biography_am') }}
-                            </textarea>
-                        </div>
-                        <div class="form__item">
-                            <label class="text-20 form__item_name" for="biography__ru">Biography (Russian)</label>
-                            <textarea name="biography_ru" id="biography__ru" placeholder="Enter Your Text Here">
-                                {{ old('biography_ru') }}
+                            <label class="text-20 form__item_name" for="biography">Biography</label>
+                            <textarea name="biography" id="biography" placeholder="Enter Your Text Here">
+                                {{ old('biography') }}
                             </textarea>
                         </div>
                     </div>

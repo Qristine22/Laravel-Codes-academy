@@ -3,8 +3,9 @@
         <nav class="header__bot_nav">
             <ul class="header__bot_list">
                 <li class="header__bot_item">
-                    <a class="header__bot_link @if (Request::is('about/governing-board') || Request::is('about/biography')
-                    || Request::is('about/governing-board-decree'))header__bot_link-active @endif" href="{{ route('governingBoard') }}">
+                    <a class="header__bot_link @if (Request::is('about/governing-board') ||
+                        Request::is('about/governing-board/*') || Request::is('about/governing-board-decree') ||
+                        Request::is('about/governing-board-decree/*'))header__bot_link-active @endif" href="{{ route('governingBoard') }}">
                         Ակադեմիայի կառավարման խորհուրդ
                     </a>
                 </li>

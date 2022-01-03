@@ -22,9 +22,7 @@ class CreateGoverningBoardStaffTable extends Migration
             $table->string('position_en');
             $table->string('position_am');
             $table->string('position_ru');
-            $table->text('biography_en');
-            $table->text('biography_am');
-            $table->text('biography_ru');
+            $table->text('biography');
             $table->string('img');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

@@ -18,9 +18,7 @@ class GoverningBoardStaff extends Model
         'possition_en',
         'possition_am',
         'possition_ru',
-        'biography_en',
-        'biography_am',
-        'biography_ru',
+        'biography',
         'img',
     ];
 }

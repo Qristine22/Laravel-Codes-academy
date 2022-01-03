@@ -143,7 +143,10 @@ Route::middleware(['set_locale'])->group(function(){
     
         // admin page/***************************************************************************
         Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-            // home form/***************************************************************************
+            // header /***************************************************************************
+            Route::resource('header', 'App\Http\Controllers\Admin\HeaderController');
+
+            // home /***************************************************************************
             Route::resource('home', 'App\Http\Controllers\Admin\HomeController');
     
             Route::group(['prefix' => 'about', 'as' => 'about.'], function () {

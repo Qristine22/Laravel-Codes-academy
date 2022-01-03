@@ -34,7 +34,13 @@
                                 <p class="pdf__name text-18">
                                     {{ $item->{'info_'.app()->getLocale()} }}
                                 </p>
-                                <a class="pdf__link text-18" href="#">{{ $item->pdf_name }}</a>
+                                @if(app()->getLocale() == 'am')
+                                    <a class="pdf__link text-18" href="#">{{ $item->pdf_name }}</a>
+                                @elseif(app()->getLocale() == 'ru')
+                                    <span class="pdf__link text-18">Информация доступна на армянском языке.</span>
+                                @elseif(app()->getLocale() == 'en')
+                                    <span class="pdf__link text-18">Information is available in Armenian</span>
+                                @endif
                             </div>
                             <div class="pdf__item_icon">
                                 <a href="{{ $item->pdf }}">

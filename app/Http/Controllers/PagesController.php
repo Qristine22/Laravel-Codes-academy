@@ -29,13 +29,13 @@ class PagesController extends Controller
     }
 
     public function governingBoard(){
-        // text in top /about/governing-board
+        // /about/governing-board - long text in top 
         $governingBoardPage = GoverningBoardPage::first();
 
-        // years /about/governing-board
+        // /about/governing-board - years
         $governingBoardDecreesYears = GoverningBoardDecree::all()->groupBy('year');
 
-        // members /about/governing-board
+        // /about/governing-board - members
         $governingBoardMembers = GoverningBoardStaff::get();
 
         return view('governing-board', [

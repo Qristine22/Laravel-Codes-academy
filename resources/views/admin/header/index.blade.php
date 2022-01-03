@@ -4,39 +4,37 @@
     <div class="admin__sections">
         <section class="admin-section">
             <div class="admin__head">
-                <h2 class="admin__title">Գլխավոր էջ</h2>
+                <h2 class="admin__title">Նավիգացիա</h2>
             </div>
-            @if (count($data) == 0)
-                <a class="admin-item__create" href="{{ route('admin.home.create') }}">
-                    <span class="admin-item__plus">+</span>
-                </a>
-            @endif
+            <a class="admin-item__create" href="{{ route('admin.header.create') }}">
+                <span class="admin-item__plus">+</span>
+            </a>
             <table class="table">
                 <tr>
                     <th class="th text-18" style="width: 5%">#id</th>
-                    <th class="th text-18">title</th>
-                    <th class="th text-18">rectors word</th>
-                    <th class="th text-18" style="width: 8%">bg</th>
-                    <th class="th text-18" style="width: 8%">rectors photo</th>
+                    <th class="th text-18">name</th>
+                    <th class="th text-18">link</th>
+                    <th class="th text-18" style="width: 5%">parent</th>
                     <th class="th text-18" style="width: 5%">Panel</th>
                 </tr>
                 @foreach ($data as $item)
                     <tr>
                         <td class="td text-18">{{ $item->id }}</td>
-                        <td class="td">{!! $item->title_am !!}</td>
-                        <td class="td">{!! $item->rectors_word_am !!}</td>
+                        <td class="td">{{ $item->name_am }}</td>
+                        <td class="td">{{ $item->link }}</td>
                         <td class="td">
-                            <img class="img" src="{{ Storage::url($item->bg) }}" alt="bg">
-                        </td>
-                        <td class="td">
-                            <img class="img" src="{{ Storage::url($item->rectors_img) }}" alt="photo">
+                            @if (!@empty($item->parent_id))
+                                {{ App\Models\Header::findItemWithParentId($item->parent_id) }}
+                            @else
+                                -
+                            @endif
                         </td>
                         <td class="td text-18">
                             <div class="table__panel flex">
-                                <a class="table__panel_item" href="{{ route('admin.home.edit', ['home' => $item]) }}">
+                                <a class="table__panel_item" href="{{ route('admin.header.edit', ['header' => $item]) }}">
                                     <img class="img" src="/media/img/icons/edit.png" alt="edit">
                                 </a>
-                                <form action="{{ route('admin.home.destroy', ['home' => $item]) }}" method="POST">
+                                <form action="{{ route('admin.header.destroy', ['header' => $item]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="table__panel_item table__panel_delete">
