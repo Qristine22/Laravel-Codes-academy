@@ -109,11 +109,13 @@ html{
     color: var(--brown);
     content: ".";
 }
-.bold__title{
+.section-text__cont h3{
+    color: var(--brown);
     font-weight: 700;
     margin-top: 40px;
+    font-size: 20px;
 }
-.bold__title:first-child{
+.section-text__cont h3:first-child{
     margin-top: 0;
 }
 .section-text__cont a{

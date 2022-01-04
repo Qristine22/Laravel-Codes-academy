@@ -17,9 +17,11 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(HomeSeeder::class);
         $this->call(HeaderSeeder::class);
+        $this->call(SubheaderSeeder::class);
         $this->call(AboutSeeder::class);
         $this->call(GoverningBoardPageSeeder::class);
         $this->call(GoverningBoardDecreeSeeder::class);
         $this->call(GoverningBoardStaffSeeder::class);
+        $this->call(RectorsPageSeeder::class);
     }
 }

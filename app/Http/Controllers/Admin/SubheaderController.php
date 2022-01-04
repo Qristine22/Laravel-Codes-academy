@@ -7,10 +7,10 @@ use App\Http\Requests\HeaderRequest;
 use Illuminate\Http\Request;
 
 // Models
-use App\Models\Header;
 use App\Models\Subheader;
+use App\Models\Header;
 
-class HeaderController extends Controller
+class SubheaderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,12 +19,7 @@ class HeaderController extends Controller
      */
     public function index()
     {
-        $data = Header::orderBy('id', 'DESC')->paginate(5);
-        $subheaders = Subheader::orderBy('id', 'DESC')->paginate(5);
-        return view('admin.header.index', [
-            'data' => $data,
-            'subheaders' => $subheaders,
-        ]);
+        //
     }
 
     /**
@@ -34,9 +29,10 @@ class HeaderController extends Controller
      */
     public function create()
     {
-        $headers = Header::all();
-        return view('admin.header.create', [
-            'headers' => $headers,
+        $parentHeaders = Header::all();
+
+        return view('admin.subheader.create', [
+            'parentHeaders' => $parentHeaders,
         ]);
     }
 
@@ -48,11 +44,12 @@ class HeaderController extends Controller
      */
     public function store(HeaderRequest $request)
     {
-        Header::insert([
+        Subheader::insert([
             'name_en' => $request->name_en,
             'name_am' => $request->name_am,
             'name_ru' => $request->name_ru,
             'link' => $request->link,
+            'parent_id' => $request->parent_id,
         ]);
 
         return redirect(route('admin.header.index'));
@@ -61,10 +58,10 @@ class HeaderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Header  $header
+     * @param  \App\Models\Subheader  $subheader
      * @return \Illuminate\Http\Response
      */
-    public function show(Header $header)
+    public function show(Subheader $subheader)
     {
         //
     }
@@ -72,15 +69,16 @@ class HeaderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Header  $header
+     * @param  \App\Models\Subheader  $subheader
      * @return \Illuminate\Http\Response
      */
-    public function edit(Header $header)
+    public function edit(Subheader $subheader)
     {
-        $headers = Header::all();
-        return view('admin.header.edit', [
-            'header' => $header,
-            'headers' => $headers,
+        $parentHeaders = Header::all();
+
+        return view('admin.subheader.edit', [
+            'subheader' => $subheader,
+            'parentHeaders' => $parentHeaders,
         ]);
     }
 
@@ -88,29 +86,31 @@ class HeaderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Header  $header
+     * @param  \App\Models\Subheader  $subheader
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Header $header)
+    public function update(Request $request, Subheader $subheader)
     {
-        $header->update([
+        $subheader->update([
             'name_en' => $request->name_en,
             'name_am' => $request->name_am,
             'name_ru' => $request->name_ru,
             'link' => $request->link,
+            'parent_id' => $request->parent_id,
         ]);
+
         return redirect(route('admin.header.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Header  $header
+     * @param  \App\Models\Subheader  $subheader
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Header $header)
+    public function destroy(Subheader $subheader)
     {
-        $header->delete();
+        $subheader->delete();
         return redirect(route('admin.header.index'));
     }
 }

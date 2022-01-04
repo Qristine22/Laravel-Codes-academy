@@ -4,10 +4,10 @@
     <div class="admin__sections">
         <section class="admin-section">
             <div class="admin__head">
-                <h2 class="admin__title">Նավիգացիա</h2>
+                <h2 class="admin__title">Ենթա Նավիգացիա</h2>
             </div>
 
-            <form class="admin__form" action="{{ route('admin.header.store') }}" method="POST">
+            <form class="admin__form" action="{{ route('admin.subheader.store') }}" method="POST">
                 @csrf
                 @if ($errors->any())
                     @foreach ($errors->all() as $e)
@@ -37,6 +37,15 @@
                             <label class="text-20 form__item_name" for="link">Link</label>
                             <input class="admin-inp" type="text" id="link" name="link"
                                 placeholder="Enter your text here" value="{{ old('link') }}">
+                        </div>
+                        <div class="form__item form__item-inp">
+                            <label class="text-20 form__item_name" for="parent_id">Parent</label>
+                            <select class="admin-inp" name="parent_id" id="parent_id">
+                                <option value="">no</option>
+                                @foreach ($parentHeaders as $parentHeader)
+                                    <option value="{{ $parentHeader->id }}">{{ $parentHeader->name_am }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>

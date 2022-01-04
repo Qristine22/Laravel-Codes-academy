@@ -39,19 +39,6 @@
                             <input class="admin-inp" type="text" id="link" name="link"
                                 placeholder="Enter your text here" value="{{ $header->link }}">
                         </div>
-                        <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="parent_id">Parent</label>
-                            <select class="admin-inp" name="parent_id" id="parent_id">
-                                <option value="">no</option>
-                                @foreach ($headers as $item)
-                                    @if($item->id == $header->parent_id)
-                                        <option value="{{ $item->id }}" selected>{{ $item->name_am }}</option>
-                                    @else
-                                        <option value="{{ $item->id }}">{{ $item->name_am }}</option>
-                                    @endif
-                                @endforeach
-                            </select>
-                        </div>
                     </div>
                 </div>
 

@@ -4,18 +4,37 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 // Models
+use App\Models\Header;
 use App\Models\About;
 use App\Models\Home;
 use App\Models\GoverningBoardPage;
 use App\Models\GoverningBoardDecree;
 use App\Models\GoverningBoardStaff;
+use App\Models\RectorsPage;
 
 class PagesController extends Controller
 {
+    public $headers;
+
+    public function getHeader(){
+        return $this->headers;
+    }
+    public function setHeader($headers){
+        $this->headers = $headers;
+    }
+
+    public function __construct(){
+        $headers = Header::headers();
+        $this->setHeader($headers);
+    }
+
+
+
     public function home(){
         $home = Home::first();
         return view('home', [
-            'home' => $home
+            'headers' => $this->getHeader(),
+            'home' => $home,
         ]);
     }
 
@@ -24,7 +43,8 @@ class PagesController extends Controller
     public function about(){
         $about = About::first();
         return view('about', [
-            'about' => $about
+            'headers' => $this->getHeader(),
+            'about' => $about,
         ]);
     }
 
@@ -39,6 +59,7 @@ class PagesController extends Controller
         $governingBoardMembers = GoverningBoardStaff::get();
 
         return view('governing-board', [
+            'headers' => $this->getHeader(),
             'governingBoardPage' => $governingBoardPage,
             'governingBoardDecreesYears' => $governingBoardDecreesYears,
             'governingBoardMembers' => $governingBoardMembers,
@@ -50,6 +71,7 @@ class PagesController extends Controller
         $governingBoardDecreesYears = GoverningBoardDecree::all()->groupBy('year');
 
         return view('governing-board-decree', [
+            'headers' => $this->getHeader(),
             'governingBoardDecrees' => $governingBoardDecrees,
             'governingBoardDecreesYears' => $governingBoardDecreesYears,
             'year' => $year,
@@ -59,171 +81,266 @@ class PagesController extends Controller
     public function governingBoardBiography($id){
         $person = GoverningBoardStaff::findOrFail($id);
         return view('biography', [
+            'headers' => $this->getHeader(),
             'person' => $person,
         ]);
     }
 
     public function rector(){
-        return view('rector');
+        $text = RectorsPage::first();
+        return view('rector', [
+            'headers' => $this->getHeader(),
+            'text' => $text,
+        ]);
     }
     public function rectorsBiography(){
         $person = GoverningBoardStaff::findOrFail(1);
         return view('biography', [
+            'headers' => $this->getHeader(),
             'person' => $person
         ]);
     }
     public function formerRectorsBiography(){
         $person = GoverningBoardStaff::findOrFail(1);
         return view('biography', [
+            'headers' => $this->getHeader(),
             'person' => $person
         ]);
     }
     public function rectorsDecrees(){
-        return view('rectors-decrees');
+        return view('rectors-decrees', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function academyStructure(){
-        return view('academy-structure');
+        return view('academy-structure', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function report(){
-        return view('report');
+        return view('report', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function graduates(){
-        return view('graduates');
+        return view('graduates', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function graduatesJudges(){
-        return view('graduates-profession');
+        return view('graduates-profession', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function graduatesProsecutors(){
-        return view('graduates-profession');
+        return view('graduates-profession', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function graduatesInvestigators(){
-        return view('graduates-profession');
+        return view('graduates-profession', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function admission(){
-        return view('admission');
+        return view('admission', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function judgesCandidates(){
-        return view('judges-candidates');
+        return view('judges-candidates', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function prosecutorsCandidates(){
-        return view('judges-candidates');
+        return view('judges-candidates', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function investigatorsCandidates(){
-        return view('judges-candidates');
+        return view('judges-candidates', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function gallery(){
-        return view('gallery');
+        return view('gallery', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function gallerySingle(){
-        return view('gallery-single');
+        return view('gallery-single', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function massMedia(){
-        return view('mass-media');
+        return view('mass-media', [
+            'headers' => $this->getHeader(),
+        ]);
     }
 
     // news *********************************************************************************
     public function news(){
-        return view('news');
+        return view('news', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function newsSingle(){
-        return view('news-single');
+        return view('news-single', [
+            'headers' => $this->getHeader(),
+        ]);
     }
 
     // full time education *********************************************************************************
     public function fullTimeEducation(){
-        return view('full-time-education');
+        return view('full-time-education', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function trainingPrograms(){
-        return view('training-programs');
+        return view('training-programs', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function conductingExams(){
-        return view('conducting-exams');
+        return view('conducting-exams', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function conductingPractice(){
-        return view('pdfs-downloade');
+        return view('pdfs-downloade', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function rulesOfBehaviour(){
-        return view('pdfs-downloade');
+        return view('pdfs-downloade', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function dormitoryRules(){
-        return view('pdfs-downloade');
+        return view('pdfs-downloade', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function provideDeferral(){
-        return view('pdfs-downloade');
+        return view('pdfs-downloade', [
+            'headers' => $this->getHeader(),
+        ]);
     }
 
     // distance learning *********************************************************************************
     public function distanceLearning(){
-        return view('distance-learning');
+        return view('distance-learning', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function distanceLearningVideo(){
-        return view('distance-learning-video');
+        return view('distance-learning-video', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function videoMaterials(){
-        return view('video-materials');
+        return view('video-materials', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function distanceLearningCourses(){
-        return view('distance-learning-courses');
+        return view('distance-learning-courses', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function motivationalVideos(){
-        return view('motivational-videos');
+        return view('motivational-videos', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function mediaMaterials(){
-        return view('media-materials');
+        return view('media-materials', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function distanceLearningGuide(){
-        return view('distance-learning-guide');
+        return view('distance-learning-guide', [
+            'headers' => $this->getHeader(),
+        ]);
     }
 
     // library *********************************************************************************
     public function library(){
-        return view('library');
+        return view('library', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function trainingMaterials(){
-        return view('library');
+        return view('library', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function videoLectures(){
-        return view('video-lectures');
+        return view('video-lectures', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function videoLectureSingle($id){
-        return view('video-lecture-single');
+        return view('video-lecture-single', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function academyPublications(){
-        return view('library');
+        return view('library', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function professionalLiterature(){
-        return view('pdfs-downloade');
+        return view('pdfs-downloade', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function organizingLibraryActivities(){
-        return view('pdfs-downloade');
+        return view('pdfs-downloade', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function ECHRResources(){
-        return view('library');
+        return view('library', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function investigatorTrainingModules(){
-        return view('library');
+        return view('library', [
+            'headers' => $this->getHeader(),
+        ]);
     }
 
     // bulletin *********************************************************************************
     public function bulletin(){
-        return view('bulletin');
+        return view('bulletin', [
+            'headers' => $this->getHeader(),
+        ]);
     }
 
     // partners *********************************************************************************
     public function partners(){
-        return view('partners');
+        return view('partners', [
+            'headers' => $this->getHeader(),
+        ]);
     }
     public function partnerSingle($id){
-        return view('partner-single');
+        return view('partner-single', [
+            'headers' => $this->getHeader(),
+        ]);
     }
 
     // contacts *********************************************************************************
     public function contacts(){
-        return view('contacts');
+        return view('contacts', [
+            'headers' => $this->getHeader(),
+        ]);
     }
 
     //login *********************************************************************************
     public function login(){
-        return view('admin.login');
+        return view('admin.login', [
+            'headers' => $this->getHeader(),
+        ]);
     }
 }

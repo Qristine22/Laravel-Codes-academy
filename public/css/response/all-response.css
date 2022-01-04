@@ -172,7 +172,8 @@
         font-size: 16px;
         line-height: 20px;
     }
-    .text-20{
+    .text-20,
+    .section-text__cont h3{
         font-size: 16px;
         line-height: 25px;
     }
@@ -182,20 +183,16 @@
     .read-more__arrow{
         width: 25px;
     }
-    /* .info__list, */
     .section-text__cont ol{
         margin-left: 70px;
     }
-    /* .info__item, */
     .section-text__cont li{
         margin-bottom: 20px;
     }
-    /* .info__item::before, */
     .section-text__cont li::before{
         font-size: 25px;
         left: -20px;
     }
-    /* .info__item .info__item::before, */
     .section-text__cont li::before{
         font-size: 20px;
     }
@@ -256,7 +253,8 @@
     .header__logo {
         width: 40px;
     }
-    .text-20{
+    .text-20,
+    .section-text__cont h3{
         font-size: 14px;
         line-height: 18px;
     }
@@ -266,16 +264,13 @@
         font-size: 13px;
         line-height: 18px;
     }
-    /* .info__list, */
     .section-text__cont ol{
         margin-left: 50px;
     }
-    /* .info__item::before, */
     .section-text__cont li::before,
     .pdfs__title{
         font-size: 20px;
     }
-    /* .info__item .info__item::before, */
     .section-text__cont li::before{
         font-size: 16px;
     }

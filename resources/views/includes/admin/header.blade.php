@@ -14,8 +14,8 @@
             </li>
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
-                    <a class="text-20 admin-header__link @if (Request::is('admin/header/*') || Request::is('admin/header'))admin-header__link-active @endif"
-                        href="{{ route('admin.header.index') }}">Նավիգացիա</a>
+                    <a class="text-20 admin-header__link @if (Request::is('admin/header/*') || Request::is('admin/header')
+                        || Request::is('admin/subheader')|| Request::is('admin/subheader/*'))admin-header__link-active @endif" href="{{ route('admin.header.index') }}">Նավիգացիա</a>
                 </div>
             </li>
             <li class="admin-header__item">
@@ -39,7 +39,11 @@
                         </a>
                     </li>
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link" href="#">Ակադեմիայի ռեկտոր</a>
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/rectors-page') ||
+                            Request::is('admin/about/rectors-page/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.about.rectors-page.index') }}">
+                            Ակադեմիայի ռեկտոր
+                        </a>
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link" href="#">Ակադեմիայի կառուցվածք</a>

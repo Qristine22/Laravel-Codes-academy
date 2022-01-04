@@ -145,6 +145,7 @@ Route::middleware(['set_locale'])->group(function(){
         Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             // header /***************************************************************************
             Route::resource('header', 'App\Http\Controllers\Admin\HeaderController');
+            Route::resource('subheader', 'App\Http\Controllers\Admin\SubheaderController');
 
             // home /***************************************************************************
             Route::resource('home', 'App\Http\Controllers\Admin\HomeController');
@@ -154,6 +155,9 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::resource('governing-board-page', 'App\Http\Controllers\Admin\About\GoverningBoardPageController');
                 Route::resource('governing-board-decree', 'App\Http\Controllers\Admin\About\GoverningBoardDecreeController');
                 Route::resource('governing-board-staff', 'App\Http\Controllers\Admin\About\GoverningBoardStaffController');
+
+                // rectors page
+                Route::resource('rectors-page', 'App\Http\Controllers\Admin\About\RectorsPageController');
             });
         });
     });
