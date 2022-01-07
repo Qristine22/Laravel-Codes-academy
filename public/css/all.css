@@ -748,7 +748,7 @@ pdfs
 .courses__pdfs{
     padding: 60px 0;
 }
-.courses__pdfs_items{
+.courses__block{
     display: none;
     flex-wrap: wrap;
 }

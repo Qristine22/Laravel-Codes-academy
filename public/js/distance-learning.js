@@ -1,5 +1,5 @@
 const coursesSlideItems = document.querySelectorAll(".courses__slide-item");
-const coursesPdfsItems = document.querySelectorAll(".courses__pdfs_items");
+const coursesPdfsItems = document.querySelectorAll(".courses__block");
 const swiperPaginationBullets = document.querySelectorAll(".swiper-pagination-bullet");
 let selectedItem = 1;
 coursesPdfsItems[0].style.display = "flex";

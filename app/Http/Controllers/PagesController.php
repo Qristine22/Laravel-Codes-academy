@@ -11,6 +11,9 @@ use App\Models\GoverningBoardPage;
 use App\Models\GoverningBoardDecree;
 use App\Models\GoverningBoardStaff;
 use App\Models\RectorsPage;
+use App\Models\RectorsDecree;
+use App\Models\RectorsBiography;
+use App\Models\FormerRectorsBiography;
 
 class PagesController extends Controller
 {
@@ -94,22 +97,24 @@ class PagesController extends Controller
         ]);
     }
     public function rectorsBiography(){
-        $person = GoverningBoardStaff::findOrFail(1);
+        $person = RectorsBiography::first();
         return view('biography', [
             'headers' => $this->getHeader(),
             'person' => $person
         ]);
     }
     public function formerRectorsBiography(){
-        $person = GoverningBoardStaff::findOrFail(1);
+        $person = FormerRectorsBiography::first();
         return view('biography', [
             'headers' => $this->getHeader(),
             'person' => $person
         ]);
     }
     public function rectorsDecrees(){
+        $decrees = RectorsDecree::orderBy('id', 'DESC')->paginate(10);
         return view('rectors-decrees', [
             'headers' => $this->getHeader(),
+            'decrees' => $decrees,
         ]);
     }
     public function academyStructure(){

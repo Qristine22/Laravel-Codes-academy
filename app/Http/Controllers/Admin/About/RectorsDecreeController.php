@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers\Admin\About;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\About\RectorsPageRequest;
 use Illuminate\Http\Request;
-
-// Models
-use App\Models\RectorsPage;
 use App\Models\RectorsDecree;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\About\RectorsDecreeRequest;
 
-class RectorsPageController extends Controller
+class RectorsDecreeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,13 +17,7 @@ class RectorsPageController extends Controller
      */
     public function index()
     {
-        $data =  RectorsPage::get();
-        $decrees = RectorsDecree::orderBy('id', 'DESC')->paginate(5);
-
-        return view('admin.about.rectors-page.index', [
-            'data' => $data,
-            'decrees' => $decrees,
-        ]);
+        //
     }
 
     /**
@@ -35,7 +27,7 @@ class RectorsPageController extends Controller
      */
     public function create()
     {
-        return view('admin.about.rectors-page.create');
+        return view('admin.about.rectors-decree.create');
     }
 
     /**
@@ -44,12 +36,16 @@ class RectorsPageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(RectorsPageRequest $request)
+    public function store(RectorsDecreeRequest $request)
     {
-        RectorsPage::insert([
+        $pdf = $request->file('pdf')->store('about/rectors-decrees');
+
+        RectorsDecree::insert([
             'text_en' => $request->text_en,
             'text_am' => $request->text_am,
             'text_ru' => $request->text_ru,
+            'pdf_name' => $request->pdf_name,
+            'pdf' => $pdf,
         ]);
 
         return redirect(route('admin.about.rectors-page.index'));
@@ -58,10 +54,10 @@ class RectorsPageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\RectorsPage  $rectorsPage
+     * @param  \App\Models\RectorsDecree  $rectorsDecree
      * @return \Illuminate\Http\Response
      */
-    public function show(RectorsPage $rectorsPage)
+    public function show(RectorsDecree $rectorsDecree)
     {
         //
     }
@@ -69,13 +65,13 @@ class RectorsPageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\RectorsPage  $rectorsPage
+     * @param  \App\Models\RectorsDecree  $rectorsDecree
      * @return \Illuminate\Http\Response
      */
-    public function edit(RectorsPage $rectorsPage)
+    public function edit(RectorsDecree $rectorsDecree)
     {
-        return view('admin.about.rectors-page.edit', [
-            'rectorsPage' => $rectorsPage,
+        return view('admin.about.rectors-decree.edit', [
+            'rectorsDecree' => $rectorsDecree,
         ]);
     }
 
@@ -83,15 +79,24 @@ class RectorsPageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\RectorsPage  $rectorsPage
+     * @param  \App\Models\RectorsDecree  $rectorsDecree
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RectorsPage $rectorsPage)
+    public function update(Request $request, RectorsDecree $rectorsDecree)
     {
-        $rectorsPage->update([
+        $pdf = $request->pdfHidden;
+
+        if(!empty($request->pdf)){
+            Storage::delete($pdf);
+            $pdf = $request->file('pdf')->store('about/rectors-decrees');
+        }
+
+        $rectorsDecree->update([
             'text_en' => $request->text_en,
             'text_am' => $request->text_am,
             'text_ru' => $request->text_ru,
+            'pdf_name' => $request->pdf_name,
+            'pdf' => $pdf,
         ]);
 
         return redirect(route('admin.about.rectors-page.index'));
@@ -100,12 +105,14 @@ class RectorsPageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\RectorsPage  $rectorsPage
+     * @param  \App\Models\RectorsDecree  $rectorsDecree
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RectorsPage $rectorsPage)
+    public function destroy(RectorsDecree $rectorsDecree)
     {
-        $rectorsPage->delete();
+        Storage::delete($rectorsDecree->pdf);
+        $rectorsDecree->delete();
+
         return redirect(route('admin.about.rectors-page.index'));
     }
 }

@@ -1,14 +1,12 @@
-<section class="section-text rector__bot">
+<section class="courses__pdfs section-text">
     <div class="wrapper">
-        <div class="rector__bot_cont">
-            <a class="about__link text-18 @if(Request::is('distance-learning/motivational-videos')) about__link-active @endif" href="{{ route('motivationalVideos') }}">
-                @lang('distance-learning.motivational-videos')
-            </a>
-            <a class="about__link text-18 @if(Request::is('distance-learning/media-materials')) about__link-active @endif" href="{{ route('mediaMaterials') }}">
-                @lang('distance-learning.media-materials')
-            </a>
-            <a class="about__link text-18 @if(Request::is('distance-learning/distance-learning-guide')) about__link-active @endif" href="{{ route('distanceLearningGuide') }}">
-                @lang('distance-learning.distance-larening-guide')
+        <div class="link__pdfs">
+            <a class="link__pdf flex" href="{{ route('distanceLearningGuide') }}">
+                <span class="text-18">@lang('distance-learning.distance-larening-guide')</span>
+                <div class="link__pdf_icon">
+                    <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                    <span class="link__pdf_span text-18">Ներբեռնել</span>
+                </div>
             </a>
         </div>
     </div>

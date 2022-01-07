@@ -40,6 +40,9 @@
     .distance-learning{
         margin-top: 90px;
     }
+    .courses__btn{
+        padding: 5px 40px;
+    }
 }
 @media only screen and (max-width: 900px) {
     .video__name{
@@ -69,6 +72,13 @@
     }
     .distance-learning{
         margin-top: 60px;
+    }
+    .courses__btns{
+        margin-top: 20px;
+        flex-direction: column;
+    }
+    .courses__btn:last-child{
+        margin-top: 10px;
     }
 }
 @media only screen and (max-width: 600px) {

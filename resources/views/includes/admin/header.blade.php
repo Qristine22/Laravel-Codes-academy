@@ -40,9 +40,17 @@
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/rectors-page') ||
-                            Request::is('admin/about/rectors-page/*')) admin-header__link-active @endif"
+                            Request::is('admin/about/rectors-page/*') || Request::is('admin/about/rectors-decree')
+                            || Request::is('admin/about/rectors-decree/*')) admin-header__link-active @endif"
                             href="{{ route('admin.about.rectors-page.index') }}">
                             Ակադեմիայի ռեկտոր
+                        </a>
+                    </li>
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/rectors-biography') ||
+                        Request::is('admin/about/rectors-biography/*')) admin-header__link-active @endif"
+                        href="{{ route('admin.about.rectors-biography.index') }}">
+                            Ռեկտորի կենսագրություն
                         </a>
                     </li>
                     <li class="admin-header__menu-item">

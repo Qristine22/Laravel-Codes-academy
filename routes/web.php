@@ -81,7 +81,7 @@ Route::middleware(['set_locale'])->group(function(){
         Route::get('/', 'App\Http\Controllers\PagesController@distanceLearning')->name('distanceLearning');
         Route::get('/video', 'App\Http\Controllers\PagesController@distanceLearningVideo')->name('distanceLearningVideo');
         Route::get('/video-materials', 'App\Http\Controllers\PagesController@videoMaterials')->name('videoMaterials');
-        Route::get('/distance-learning-courses', 'App\Http\Controllers\PagesController@distanceLearningCourses')
+        Route::get('/courses', 'App\Http\Controllers\PagesController@distanceLearningCourses')
             ->name('distanceLearningCourses');
         Route::get('/motivational-videos', 'App\Http\Controllers\PagesController@motivationalVideos')->name('motivationalVideos');
         Route::get('/media-materials', 'App\Http\Controllers\PagesController@mediaMaterials')->name('mediaMaterials');
@@ -134,15 +134,19 @@ Route::middleware(['set_locale'])->group(function(){
     Route::get('/register-progress', 'App\Http\Controllers\AuthController@registerProgress')->name('registerProgress');
     
     
+
+
+
+
+
+
+
     Route::middleware('auth')->group(function () {
         Route::get('/logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
     
-    
-    
-    
-    
         // admin page/***************************************************************************
         Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+
             // header /***************************************************************************
             Route::resource('header', 'App\Http\Controllers\Admin\HeaderController');
             Route::resource('subheader', 'App\Http\Controllers\Admin\SubheaderController');
@@ -151,6 +155,7 @@ Route::middleware(['set_locale'])->group(function(){
             Route::resource('home', 'App\Http\Controllers\Admin\HomeController');
     
             Route::group(['prefix' => 'about', 'as' => 'about.'], function () {
+                // governing board page
                 Route::resource('page', 'App\Http\Controllers\Admin\About\AboutController');
                 Route::resource('governing-board-page', 'App\Http\Controllers\Admin\About\GoverningBoardPageController');
                 Route::resource('governing-board-decree', 'App\Http\Controllers\Admin\About\GoverningBoardDecreeController');
@@ -158,6 +163,9 @@ Route::middleware(['set_locale'])->group(function(){
 
                 // rectors page
                 Route::resource('rectors-page', 'App\Http\Controllers\Admin\About\RectorsPageController');
+                Route::resource('rectors-decree', 'App\Http\Controllers\Admin\About\RectorsDecreeController');
+                Route::resource('rectors-biography', 'App\Http\Controllers\Admin\About\RectorsBiographyController');
+                Route::resource('former-rectors-biography','App\Http\Controllers\Admin\About\FormerRectorsBiographyController');
             });
         });
     });
