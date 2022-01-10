@@ -6,7 +6,7 @@
 @endsection
 
 @section('header-bot')
-    @include("includes.distance-learning.header-bot")
+    @include("includes.header-bot")
 @endsection
 
 @section('content')

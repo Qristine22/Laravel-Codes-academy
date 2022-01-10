@@ -71,6 +71,9 @@ html{
 .margin__par:first-child{
     margin-top: 0;
 }
+.bold__title{
+    font-weight: bold;
+}
 .section-text__cont ol,
 .section-text__cont ul{
     margin-left: 150px;

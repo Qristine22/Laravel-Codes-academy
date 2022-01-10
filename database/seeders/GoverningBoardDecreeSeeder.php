@@ -95,6 +95,14 @@ class GoverningBoardDecreeSeeder extends Seeder
                 'pdf' => 'about/governing-board-decrees/Fkm6hPmOklyqXIv09SYUgACSkF0HSA6kwrjIj4Gf.pdf',
                 'year' => 2014
             ],
+            [
+                'info_en' => 'A decree on the approval of the 2014 training programs for prosecutors and state servants in the staff of the Prosicutor\'s office',
+                'info_am' => 'Դատախազների և դատախազության աշխատակազմում պետական ծառայողների 2014թ. վերապատրաստման ծրագրերը հաստատելու մասին որոշում',
+                'info_ru' => 'Постановление «Об утверждении учебных программ профессиональной переподготовки прокуроров, государственных служащих аппарата прокуратуры на 2014 год»',
+                'pdf_name' => 'Որոշման ամբողջական տարբերակը.pdf',
+                'pdf' => 'about/governing-board-decrees/htSltJXRSseuVGE16gRznPdfqDoqQtzDQ4NOzrpI.pdf',
+                'year' => 2014
+            ],
         ]);
     }
 }

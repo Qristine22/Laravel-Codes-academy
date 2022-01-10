@@ -6,7 +6,7 @@
 @endsection
 
 @section('header-bot')
-    @include("includes.about.header-bot")
+    @include("includes.header-bot", ['headersBot' => $headersBot])
 @endsection
 
 @section('content')

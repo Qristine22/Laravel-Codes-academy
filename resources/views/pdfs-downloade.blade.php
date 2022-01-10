@@ -7,9 +7,9 @@
 
 @section('header-bot')
     @if (Request::is('library/*'))
-        @include("includes.library.header-bot")
+        @include("includes.header-bot")
     @else
-        @include("includes.full-time-education.header-bot")
+        @include("includes.header-bot")
     @endif
 @endsection
 

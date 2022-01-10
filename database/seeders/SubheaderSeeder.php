@@ -61,7 +61,7 @@ class SubheaderSeeder extends Seeder
                 'name_en' => 'Gallery',
                 'name_am' => 'Տեսադարան',
                 'name_ru' => 'Галерея',
-                'link' => 'about/gallery',
+                'link' => 'about/gallery/2021',
                 'parent_id' => 1,
             ],
             [
@@ -75,7 +75,7 @@ class SubheaderSeeder extends Seeder
                 'name_en' => 'Training programs',
                 'name_am' => 'Ուսուցման ծրագրեր',
                 'name_ru' => 'Учебные программы',
-                'link' => 'full-time-education',
+                'link' => 'full-time-education/training-programs',
                 'parent_id' => 3,
             ],
             [
@@ -124,7 +124,7 @@ class SubheaderSeeder extends Seeder
                 'name_en' => 'Courses',
                 'name_am' => 'Դասընթացներ',
                 'name_ru' => 'Курсы',
-                'link' => 'distance-learning/distance-learning-courses',
+                'link' => 'distance-learning/courses',
                 'parent_id' => 4,
             ],
             [
@@ -138,7 +138,7 @@ class SubheaderSeeder extends Seeder
                 'name_en' => 'Manuals',
                 'name_am' => 'Ուսումնական ձեռնարկներ',
                 'name_ru' => 'Учебные пособия',
-                'link' => 'library',
+                'link' => 'library/manuals',
                 'parent_id' => 5,
             ],
             [

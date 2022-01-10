@@ -6,14 +6,14 @@
 @endsection
 
 @section('header-bot')
-    @include("includes.about.header-bot")
+    @include("includes.header-bot", ['headersBot' => $headersBot])
 @endsection
 
 @section('content')
     <main>
         <section class="pdfs section-text section-top">
             <div class="wrapper">
-                <h3 class="pdfs__title">Ռեկտորի հրամանները</h3>
+                <h3 class="pdfs__title">@lang('about.rector.decrees')</h3>
                 <div class="pdfs__cont flex">
                     @foreach ($decrees as $decree)
                         <div class="pdf__item flex">

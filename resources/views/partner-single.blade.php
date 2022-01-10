@@ -6,7 +6,7 @@
 @endsection
 
 @section('header-bot')
-    @include("includes.partners.header-bot")
+    @include("includes.header-bot")
 @endsection
 
 @section('content')

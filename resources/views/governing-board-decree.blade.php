@@ -6,7 +6,7 @@
 @endsection
 
 @section('header-bot')
-    @include("includes.about.header-bot")
+    @include("includes.header-bot")
 @endsection
 
 @section('content')
@@ -35,7 +35,9 @@
                                     {{ $item->{'info_'.app()->getLocale()} }}
                                 </p>
                                 @if(app()->getLocale() == 'am')
-                                    <a class="pdf__link text-18" href="#">{{ $item->pdf_name }}</a>
+                                    <a class="pdf__link text-18" href="{{ Storage::url($item->pdf) }}" target="_blank">
+                                        {{ $item->pdf_name }}
+                                    </a>
                                 @elseif(app()->getLocale() == 'ru')
                                     <span class="pdf__link text-18">Информация доступна на армянском языке.</span>
                                 @elseif(app()->getLocale() == 'en')
@@ -43,7 +45,7 @@
                                 @endif
                             </div>
                             <div class="pdf__item_icon">
-                                <a href="{{ $item->pdf }}">
+                                <a href="#">
                                     <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
                                     <span class="pdf__item_span text-18">
                                         @lang('main.downloade')

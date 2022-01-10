@@ -14,6 +14,7 @@ use App\Models\RectorsPage;
 use App\Models\RectorsDecree;
 use App\Models\RectorsBiography;
 use App\Models\FormerRectorsBiography;
+use App\Models\Subheader;
 
 class PagesController extends Controller
 {
@@ -25,7 +26,6 @@ class PagesController extends Controller
     public function setHeader($headers){
         $this->headers = $headers;
     }
-
     public function __construct(){
         $headers = Header::headers();
         $this->setHeader($headers);
@@ -33,6 +33,9 @@ class PagesController extends Controller
 
 
 
+
+
+    // home *********************************************************************************
     public function home(){
         $home = Home::first();
         return view('home', [
@@ -42,16 +45,25 @@ class PagesController extends Controller
     }
 
 
+
+
+
+
+
     // about *********************************************************************************
     public function about(){
         $about = About::first();
+        $headersBot = Subheader::where('parent_id', 1)->get();
         return view('about', [
             'headers' => $this->getHeader(),
             'about' => $about,
+            'headersBot' => $headersBot,
         ]);
     }
 
     public function governingBoard(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         // /about/governing-board - long text in top 
         $governingBoardPage = GoverningBoardPage::first();
 
@@ -63,6 +75,7 @@ class PagesController extends Controller
 
         return view('governing-board', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
             'governingBoardPage' => $governingBoardPage,
             'governingBoardDecreesYears' => $governingBoardDecreesYears,
             'governingBoardMembers' => $governingBoardMembers,
@@ -70,11 +83,14 @@ class PagesController extends Controller
     }
 
     public function governingBoardDecree($year){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         $governingBoardDecrees = GoverningBoardDecree::where('year', $year)->get();
         $governingBoardDecreesYears = GoverningBoardDecree::all()->groupBy('year');
 
         return view('governing-board-decree', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
             'governingBoardDecrees' => $governingBoardDecrees,
             'governingBoardDecreesYears' => $governingBoardDecreesYears,
             'year' => $year,
@@ -82,106 +98,167 @@ class PagesController extends Controller
     }
 
     public function governingBoardBiography($id){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         $person = GoverningBoardStaff::findOrFail($id);
         return view('biography', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
             'person' => $person,
         ]);
     }
 
     public function rector(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         $text = RectorsPage::first();
         return view('rector', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
             'text' => $text,
         ]);
     }
     public function rectorsBiography(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         $person = RectorsBiography::first();
         return view('biography', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
             'person' => $person
         ]);
     }
     public function formerRectorsBiography(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         $person = FormerRectorsBiography::first();
         return view('biography', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
             'person' => $person
         ]);
     }
     public function rectorsDecrees(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         $decrees = RectorsDecree::orderBy('id', 'DESC')->paginate(10);
         return view('rectors-decrees', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
             'decrees' => $decrees,
         ]);
     }
     public function academyStructure(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         return view('academy-structure', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function report(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         return view('report', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function graduates(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         return view('graduates', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function graduatesJudges(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         return view('graduates-profession', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function graduatesProsecutors(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         return view('graduates-profession', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function graduatesInvestigators(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         return view('graduates-profession', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function admission(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         return view('admission', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function judgesCandidates(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         return view('judges-candidates', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function prosecutorsCandidates(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         return view('judges-candidates', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function investigatorsCandidates(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         return view('judges-candidates', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
-    public function gallery(){
+    public function gallery($year){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         return view('gallery', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
-    public function gallerySingle(){
+    public function gallerySingle($year, $id){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         return view('gallery-single', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function massMedia(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+
         return view('mass-media', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
+
+
+
+
+
+
+
 
     // news *********************************************************************************
     public function news(){
@@ -195,126 +272,237 @@ class PagesController extends Controller
         ]);
     }
 
+
+
+
+
+
+
+
+
     // full time education *********************************************************************************
     public function fullTimeEducation(){
-        return view('full-time-education', [
+        $headersBot = Subheader::where('parent_id', 3)->get();
+
+        return view('training-programs', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function trainingPrograms(){
+        $headersBot = Subheader::where('parent_id', 3)->get();
+
         return view('training-programs', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+        ]);
+    }
+    public function trainingProgramSingle(){
+        $headersBot = Subheader::where('parent_id', 3)->get();
+
+        return view('training-program-single', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function conductingExams(){
+        $headersBot = Subheader::where('parent_id', 3)->get();
+
         return view('conducting-exams', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function conductingPractice(){
+        $headersBot = Subheader::where('parent_id', 3)->get();
+
         return view('pdfs-downloade', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function rulesOfBehaviour(){
+        $headersBot = Subheader::where('parent_id', 3)->get();
+
         return view('pdfs-downloade', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function dormitoryRules(){
+        $headersBot = Subheader::where('parent_id', 3)->get();
+        
         return view('pdfs-downloade', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function provideDeferral(){
+        $headersBot = Subheader::where('parent_id', 3)->get();
+
         return view('pdfs-downloade', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
+
+
+
+
+
+
 
     // distance learning *********************************************************************************
     public function distanceLearning(){
+        $headersBot = Subheader::where('parent_id', 4)->get();
+
         return view('distance-learning', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function distanceLearningVideo(){
+        $headersBot = Subheader::where('parent_id', 4)->get();
+
         return view('distance-learning-video', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function videoMaterials(){
+        $headersBot = Subheader::where('parent_id', 4)->get();
+
         return view('video-materials', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function distanceLearningCourses(){
+        $headersBot = Subheader::where('parent_id', 4)->get();
+
         return view('distance-learning-courses', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function motivationalVideos(){
+        $headersBot = Subheader::where('parent_id', 4)->get();
+
         return view('motivational-videos', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function mediaMaterials(){
+        $headersBot = Subheader::where('parent_id', 4)->get();
+
         return view('media-materials', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function distanceLearningGuide(){
+        $headersBot = Subheader::where('parent_id', 4)->get();
+
         return view('distance-learning-guide', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
 
+
+
+
+
+
+
     // library *********************************************************************************
     public function library(){
+        $headersBot = Subheader::where('parent_id', 5)->get();
+
         return view('library', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function trainingMaterials(){
+        $headersBot = Subheader::where('parent_id', 5)->get();
+
         return view('library', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function videoLectures(){
+        $headersBot = Subheader::where('parent_id', 5)->get();
+
         return view('video-lectures', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function videoLectureSingle($id){
+        $headersBot = Subheader::where('parent_id', 5)->get();
+
         return view('video-lecture-single', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function academyPublications(){
+        $headersBot = Subheader::where('parent_id', 5)->get();
+
         return view('library', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+        ]);
+    }
+    public function manuals(){
+        $headersBot = Subheader::where('parent_id', 5)->get();
+
+        return view('library', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function professionalLiterature(){
+        $headersBot = Subheader::where('parent_id', 5)->get();
+
         return view('pdfs-downloade', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function organizingLibraryActivities(){
+        $headersBot = Subheader::where('parent_id', 5)->get();
+
         return view('pdfs-downloade', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function ECHRResources(){
+        $headersBot = Subheader::where('parent_id', 5)->get();
+
         return view('library', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
     public function investigatorTrainingModules(){
+        $headersBot = Subheader::where('parent_id', 5)->get();
+
         return view('library', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
+
+
+
+
+
+
 
     // bulletin *********************************************************************************
     public function bulletin(){
@@ -323,6 +511,12 @@ class PagesController extends Controller
         ]);
     }
 
+
+
+
+
+
+
     // partners *********************************************************************************
     public function partners(){
         return view('partners', [
@@ -330,11 +524,20 @@ class PagesController extends Controller
         ]);
     }
     public function partnerSingle($id){
+        $headersBot = Subheader::where('parent_id', 7)->get();
+
         return view('partner-single', [
             'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
         ]);
     }
 
+
+
+
+
+
+    
     // contacts *********************************************************************************
     public function contacts(){
         return view('contacts', [
@@ -342,6 +545,12 @@ class PagesController extends Controller
         ]);
     }
 
+
+
+
+
+
+    
     //login *********************************************************************************
     public function login(){
         return view('admin.login', [

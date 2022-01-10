@@ -6,7 +6,7 @@
 @endsection
 
 @section('header-bot')
-    @include("includes.library.header-bot")
+    @include("includes.header-bot")
 @endsection
 
 @section('content')

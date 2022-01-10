@@ -28,14 +28,20 @@ Route::middleware(['set_locale'])->group(function(){
     Route::group(['prefix' => 'about'], function () {
         Route::get('/', 'App\Http\Controllers\PagesController@about')->name('about');
         Route::get('/governing-board', 'App\Http\Controllers\PagesController@governingBoard')->name('governingBoard');
-        Route::get('/governing-board-decree/{year}', 'App\Http\Controllers\PagesController@governingBoardDecree')->name('governingBoardDecree');
+        Route::get('/governing-board/decree/{year}', 'App\Http\Controllers\PagesController@governingBoardDecree')
+            ->name('governingBoardDecree');
         Route::get('/governing-board/biography/{id}', 'App\Http\Controllers\PagesController@governingBoardBiography')
             ->name('governingBoardBiography');
-        Route::get('/rector', 'App\Http\Controllers\PagesController@rector')->name('rector');
-        Route::get('/rectors-biography', 'App\Http\Controllers\PagesController@rectorsBiography')->name('rectorsBiography');
-        Route::get('/former-rectors-biography', 'App\Http\Controllers\PagesController@formerRectorsBiography')
-            ->name('formerRectorsBiography');
-        Route::get('/rectors-decrees', 'App\Http\Controllers\PagesController@rectorsDecrees')->name('rectorsDecrees');
+
+        Route::group(['prefix' => 'rector'], function () {
+            Route::get('/', 'App\Http\Controllers\PagesController@rector')->name('rector');
+            Route::get('/rectors-biography', 'App\Http\Controllers\PagesController@rectorsBiography')
+                ->name('rectorsBiography');
+            Route::get('/former-rectors-biography', 'App\Http\Controllers\PagesController@formerRectorsBiography')
+                ->name('formerRectorsBiography');
+            Route::get('/decrees', 'App\Http\Controllers\PagesController@rectorsDecrees')->name('rectorsDecrees');
+        });
+
         Route::get('/academy-structure', 'App\Http\Controllers\PagesController@academyStructure')->name('academyStructure');
         Route::get('/report', 'App\Http\Controllers\PagesController@report')->name('report');
         Route::get('/graduates', 'App\Http\Controllers\PagesController@graduates')->name('graduates');
@@ -45,14 +51,19 @@ Route::middleware(['set_locale'])->group(function(){
             ->name('graduatesProsecutors');
         Route::get('/graduates/investigators', 'App\Http\Controllers\PagesController@graduatesInvestigators')
             ->name('graduatesInvestigators');
-        Route::get('/admission', 'App\Http\Controllers\PagesController@admission')->name('admission');
-        Route::get('/judges-candidates', 'App\Http\Controllers\PagesController@judgesCandidates')->name('judgesCandidates');
-        Route::get('/prosecutors-candidates', 'App\Http\Controllers\PagesController@prosecutorsCandidates')
-            ->name('prosecutorsCandidates');
-        Route::get('/investigators-candidates', 'App\Http\Controllers\PagesController@investigatorsCandidates')
-            ->name('investigatorsCandidates');
-        Route::get('/gallery', 'App\Http\Controllers\PagesController@gallery')->name('gallery');
-        Route::get('/gallery-single', 'App\Http\Controllers\PagesController@gallerySingle')->name('gallerySingle');
+
+        Route::group(['prefix' => 'admission'], function () {
+            Route::get('/', 'App\Http\Controllers\PagesController@admission')->name('admission');
+            Route::get('/judges-candidates', 'App\Http\Controllers\PagesController@judgesCandidates')
+                ->name('judgesCandidates');
+            Route::get('/prosecutors-candidates', 'App\Http\Controllers\PagesController@prosecutorsCandidates')
+                ->name('prosecutorsCandidates');
+            Route::get('/investigators-candidates', 'App\Http\Controllers\PagesController@investigatorsCandidates')
+                ->name('investigatorsCandidates');
+        });
+
+        Route::get('/gallery/{year}', 'App\Http\Controllers\PagesController@gallery')->name('gallery');
+        Route::get('/gallery/{year}/{id}', 'App\Http\Controllers\PagesController@gallerySingle')->name('gallerySingle');
         Route::get('/mass-media', 'App\Http\Controllers\PagesController@massMedia')->name('massMedia');
     });
     
@@ -60,16 +71,21 @@ Route::middleware(['set_locale'])->group(function(){
     // news/*********************************************************************************
     Route::group(['prefix' => 'news'], function () {
         Route::get('/', 'App\Http\Controllers\PagesController@news')->name('news');
-        Route::get('/news-single/{id}', 'App\Http\Controllers\PagesController@newsSingle')->name('newsSingle');
+        Route::get('/{id}', 'App\Http\Controllers\PagesController@newsSingle')->name('newsSingle');
     });
     
     
     // full-time-education/******************************************************************
     Route::group(['prefix' => 'full-time-education'], function () {
-        Route::get('/', 'App\Http\Controllers\PagesController@fullTimeEducation')->name('fullTimeEducation');
-        Route::get('/training-programs', 'App\Http\Controllers\PagesController@trainingPrograms')->name('trainingPrograms');
+        Route::get('/', 'App\Http\Controllers\PagesController@fullTimeEducation')
+            ->name('fullTimeEducation');
+        Route::get('/training-programs', 'App\Http\Controllers\PagesController@trainingPrograms')
+            ->name('trainingPrograms');
+        Route::get('/training-programs/{year}', 'App\Http\Controllers\PagesController@trainingProgramSingle')
+            ->name('trainingProgramSingle');
         Route::get('/conducting-exams', 'App\Http\Controllers\PagesController@conductingExams')->name('conductingExams');
-        Route::get('/conducting-practice', 'App\Http\Controllers\PagesController@conductingPractice')->name('conductingPractice');
+        Route::get('/conducting-practice', 'App\Http\Controllers\PagesController@conductingPractice')
+            ->name('conductingPractice');
         Route::get('/rules-of-behaviour', 'App\Http\Controllers\PagesController@rulesOfBehaviour')->name('rulesOfBehaviour');
         Route::get('/dormitory-rules', 'App\Http\Controllers\PagesController@dormitoryRules')->name('dormitoryRules');
         Route::get('/provide-deferral', 'App\Http\Controllers\PagesController@provideDeferral')->name('provideDeferral');
@@ -81,25 +97,32 @@ Route::middleware(['set_locale'])->group(function(){
         Route::get('/', 'App\Http\Controllers\PagesController@distanceLearning')->name('distanceLearning');
         Route::get('/video', 'App\Http\Controllers\PagesController@distanceLearningVideo')->name('distanceLearningVideo');
         Route::get('/video-materials', 'App\Http\Controllers\PagesController@videoMaterials')->name('videoMaterials');
-        Route::get('/courses', 'App\Http\Controllers\PagesController@distanceLearningCourses')
-            ->name('distanceLearningCourses');
-        Route::get('/motivational-videos', 'App\Http\Controllers\PagesController@motivationalVideos')->name('motivationalVideos');
-        Route::get('/media-materials', 'App\Http\Controllers\PagesController@mediaMaterials')->name('mediaMaterials');
-        Route::get('/distance-learning-guide', 'App\Http\Controllers\PagesController@distanceLearningGuide')
-            ->name('distanceLearningGuide');
+
+        Route::group(['prefix' => 'courses'], function () {
+            Route::get('/', 'App\Http\Controllers\PagesController@distanceLearningCourses')
+                ->name('distanceLearningCourses');
+            Route::get('/motivational-videos/{id}', 'App\Http\Controllers\PagesController@motivationalVideos')
+                ->name('motivationalVideos');
+            Route::get('/media-materials/{id}', 'App\Http\Controllers\PagesController@mediaMaterials')
+                ->name('mediaMaterials');
+            Route::get('/distance-learning-guide', 'App\Http\Controllers\PagesController@distanceLearningGuide')
+                ->name('distanceLearningGuide');
+        });
     });
     
     
     // library/****************************************************************************
     Route::group(['prefix' => 'library'], function () {
         Route::get('/', 'App\Http\Controllers\PagesController@library')->name('library');
+        Route::get('/academy-publications', 'App\Http\Controllers\PagesController@academyPublications')
+            ->name('academyPublications');
+        Route::get('/manuals', 'App\Http\Controllers\PagesController@manuals')
+            ->name('manuals');
         Route::get('/training-materials', 'App\Http\Controllers\PagesController@trainingMaterials')
             ->name('trainingMaterials');
         Route::get('/video-lectures', 'App\Http\Controllers\PagesController@videoLectures')->name('videoLectures');
-        Route::get('/video-lecture-single/{id}', 'App\Http\Controllers\PagesController@videoLectureSingle')
+        Route::get('/video-lectures/{id}', 'App\Http\Controllers\PagesController@videoLectureSingle')
             ->name('videoLectureSingle');
-        Route::get('/academy-publications', 'App\Http\Controllers\PagesController@academyPublications')
-            ->name('academyPublications');
         Route::get('/professional-literature', 'App\Http\Controllers\PagesController@professionalLiterature')
             ->name('professionalLiterature');
         Route::get('/organizing-library-activities', 'App\Http\Controllers\PagesController@organizingLibraryActivities')
