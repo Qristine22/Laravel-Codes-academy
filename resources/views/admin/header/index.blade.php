@@ -39,7 +39,7 @@
                 @endforeach
             </table>
 
-            {{ $data->links('includes.pagination.paginate') }}
+            {{ $data->appends(['subheaders' => $subheaders->currentPage()])->links('includes.pagination.paginate') }}
         </section>
 
         <section class="admin-section">
@@ -89,7 +89,7 @@
                 @endforeach
             </table>
 
-            {{ $subheaders->links('includes.pagination.paginate') }}
+            {{ $subheaders->appends(['headers' => $data->currentPage()])->links('includes.pagination.paginate') }}
         </section>
     </div>
 @endsection

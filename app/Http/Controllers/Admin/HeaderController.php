@@ -19,8 +19,8 @@ class HeaderController extends Controller
      */
     public function index()
     {
-        $data = Header::orderBy('id', 'DESC')->paginate(5);
-        $subheaders = Subheader::orderBy('id', 'DESC')->paginate(5);
+        $data = Header::orderBy('id', 'DESC')->paginate(5, ['*'], 'headers');
+        $subheaders = Subheader::orderBy('id', 'DESC')->paginate(5, ['*'], 'subheaders');
         return view('admin.header.index', [
             'data' => $data,
             'subheaders' => $subheaders,
