@@ -99,7 +99,7 @@
                 @endforeach
             </table>
 
-            {{ $decrees->links('includes.pagination.paginate') }}
+            {{ $decrees->appends(['staff' => $staff->currentPage()])->links('includes.pagination.paginate') }}
         </section>
 
 
@@ -156,7 +156,7 @@
                 @endforeach
             </table>
 
-            {{ $staff->links('includes.pagination.paginate') }}
+            {{ $staff->appends(['decrees' => $decrees->currentPage()])->links('includes.pagination.paginate') }}
         </section>
     </div>
 @endsection

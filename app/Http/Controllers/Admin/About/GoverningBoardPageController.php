@@ -20,8 +20,8 @@ class GoverningBoardPageController extends Controller
     public function index()
     {
         $aboutPage = GoverningBoardPage::get();
-        $decrees = GoverningBoardDecree::orderBy('id', 'DESC')->paginate(5);
-        $staff = GoverningBoardStaff::orderBy('id', 'DESC')->paginate(5);
+        $decrees = GoverningBoardDecree::orderBy('id', 'DESC')->paginate(5, ['*'], 'decrees');
+        $staff = GoverningBoardStaff::orderBy('id', 'DESC')->paginate(5, ['*'], 'staff');
 
         return view('admin.about.governing-board-page.index', [
             'aboutPage' => $aboutPage,

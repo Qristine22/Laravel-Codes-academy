@@ -189,6 +189,9 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::resource('rectors-decree', 'App\Http\Controllers\Admin\About\RectorsDecreeController');
                 Route::resource('rectors-biography', 'App\Http\Controllers\Admin\About\RectorsBiographyController');
                 Route::resource('former-rectors-biography','App\Http\Controllers\Admin\About\FormerRectorsBiographyController');
+
+                // academy structure
+                Route::resource('academy-structure','App\Http\Controllers\Admin\About\AcademyStructureController');
             });
         });
     });

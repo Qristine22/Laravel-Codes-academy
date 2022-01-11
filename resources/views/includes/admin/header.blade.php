@@ -54,7 +54,9 @@
                         </a>
                     </li>
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link" href="#">Ակադեմիայի կառուցվածք</a>
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/academy-structure') ||
+                        Request::is('admin/about/academy-structure/*')) admin-header__link-active @endif"
+                        href="{{ route('admin.about.academy-structure.index') }}">Ակադեմիայի կառուցվածք</a>
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link" href="#">

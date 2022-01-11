@@ -15,6 +15,7 @@ use App\Models\RectorsDecree;
 use App\Models\RectorsBiography;
 use App\Models\FormerRectorsBiography;
 use App\Models\Subheader;
+use App\Models\AcademyStructure;
 
 class PagesController extends Controller
 {
@@ -150,10 +151,12 @@ class PagesController extends Controller
     }
     public function academyStructure(){
         $headersBot = Subheader::where('parent_id', 1)->get();
+        $academyStructure = AcademyStructure::all();
 
         return view('academy-structure', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'academyStructure' => $academyStructure,
         ]);
     }
     public function report(){
