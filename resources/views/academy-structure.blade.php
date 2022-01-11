@@ -53,92 +53,92 @@
                     </a>
 
                     {{-- Bulletin of the Academy of Justice --}}
-                    {{-- <a class="structure__btn structure__small_link-left structure__scientific-research"
+                    <a class="structure__btn structure__small_link-left structure__scientific-research"
                         href="{{ isset($academyStructure[7]->link) ? env('APP_URL').$academyStructure[7]->link : env('APP_URL').'about/academy-structure' }}">
                         <span class="structure__span">
                             {!! $academyStructure[7]->{'name_'.app()->getLocale()} !!}
                         </span>
-                    </a> --}}
+                    </a>
 
                     {{-- Unit of Organization of Scientific Research and Programmatic methodological Activities --}}
-                    {{-- <a class="structure__btn structure__small_link-left structure__judiciary"
+                    <a class="structure__btn structure__small_link-left structure__judiciary"
                         href="{{ isset($academyStructure[9]->link) ? env('APP_URL').$academyStructure[9]->link : env('APP_URL').'about/academy-structure' }}">
                         <span class="structure__span">
                             {!! $academyStructure[9]->{'name_'.app()->getLocale()} !!}
                         </span>
-                    </a> --}}
+                    </a>
 
                     {{-- Library --}}
-                    {{-- <a class="structure__btn structure__small_link-left structure__prosecutorial"
+                    <a class="structure__btn structure__small_link-left structure__prosecutorial"
                         href="{{ isset($academyStructure[11]->link) ? env('APP_URL').$academyStructure[11]->link : env('APP_URL').'about/academy-structure' }}">
                         <span class="structure__span">
                             {!! $academyStructure[11]->{'name_'.app()->getLocale()} !!}
                         </span>
-                    </a> --}}
+                    </a>
 
                     {{-- Unit of Organization of Training for Trainees of Judiciary --}}
-                    {{-- <a class="structure__btn structure__small_link-center structure__bulletin"
+                    <a class="structure__btn structure__small_link-center structure__bulletin"
                         href="{{ isset($academyStructure[6]->link) ? env('APP_URL').$academyStructure[6]->link : env('APP_URL').'about/academy-structure' }}">
                         <span class="structure__span">
                             {!! $academyStructure[6]->{'name_'.app()->getLocale()} !!}
                         </span>
-                    </a> --}}
+                    </a>
 
                     {{-- Publishing house --}}
-                    {{-- <a class="structure__btn structure__small_link-center structure__library"
+                    <a class="structure__btn structure__small_link-center structure__library"
                         href="{{ isset($academyStructure[8]->link) ? env('APP_URL').$academyStructure[8]->link : env('APP_URL').'about/academy-structure' }}">
                         <span class="structure__span">
                             {!! $academyStructure[8]->{'name_'.app()->getLocale()} !!}
                         </span>
-                    </a> --}}
+                    </a>
 
                     {{-- Unit of Organization of Training for Trainees of Prosecutorial and Investigative systems --}}
-                    {{-- <a class="structure__btn structure__small_link-center structure__publishing"
+                    <a class="structure__btn structure__small_link-center structure__publishing"
                         href="{{ isset($academyStructure[10]->link) ? env('APP_URL').$academyStructure[10]->link : env('APP_URL').'about/academy-structure' }}">
                         <span class="structure__span">
                             {!! $academyStructure[10]->{'name_'.app()->getLocale()} !!}
                         </span>
-                    </a> --}}
+                    </a>
 
                     {{-- unit of finance --}}
-                    {{-- <a class="structure__btn structure__small_link-right structure__finance"
+                    <a class="structure__btn structure__small_link-right structure__finance"
                         href="{{ isset($academyStructure[12]->link) ? env('APP_URL').$academyStructure[12]->link : env('APP_URL').'about/academy-structure' }}">
                         <span class="structure__span">
                             {!! $academyStructure[12]->{'name_'.app()->getLocale()} !!}
                         </span>
-                    </a> --}}
+                    </a>
 
                     {{-- Unit of Cooperation and Public Relations --}}
-                    {{-- <a class="structure__btn structure__small_link-right structure__cooperation"
+                    <a class="structure__btn structure__small_link-right structure__cooperation"
                         href="{{ isset($academyStructure[13]->link) ? env('APP_URL').$academyStructure[13]->link : env('APP_URL').'about/academy-structure' }}">
                         <span class="structure__span">
                             {!! $academyStructure[13]->{'name_'.app()->getLocale()} !!}
                         </span>
-                    </a> --}}
+                    </a>
 
                     {{-- Unit of Staff and Document management --}}
-                    {{-- <a class="structure__btn structure__small_link-right structure__staff"
+                    <a class="structure__btn structure__small_link-right structure__staff"
                         href="{{ isset($academyStructure[14]->link) ? env('APP_URL').$academyStructure[14]->link : env('APP_URL').'about/academy-structure' }}">
                         <span class="structure__span">
                             {!! $academyStructure[14]->{'name_'.app()->getLocale()} !!}
                         </span>
-                    </a> --}}
+                    </a>
 
                     {{-- Unit of Tehchnical and Economic activities --}}
-                    {{-- <a class="structure__btn structure__small_link-right structure__tehchnic"
+                    <a class="structure__btn structure__small_link-right structure__tehchnic"
                         href="{{ isset($academyStructure[15]->link) ? env('APP_URL').$academyStructure[15]->link : env('APP_URL').'about/academy-structure' }}">
                         <span class="structure__span">
                             {!! $academyStructure[15]->{'name_'.app()->getLocale()} !!}
                         </span>
-                    </a> --}}
+                    </a>
 
                     {{-- Hotel --}}
-                    {{-- <a class="structure__btn structure__small_link-right structure__hotel"
+                    <a class="structure__btn structure__small_link-right structure__hotel"
                         href="{{ isset($academyStructure[16]->link) ? env('APP_URL').$academyStructure[16]->link : env('APP_URL').'about/academy-structure' }}">
                         <span class="structure__span">
                             {!! $academyStructure[16]->{'name_'.app()->getLocale()} !!}
                         </span>
-                    </a> --}}
+                    </a>
                 </div>
             </div>
         </section>
