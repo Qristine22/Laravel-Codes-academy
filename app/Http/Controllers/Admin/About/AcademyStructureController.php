@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin\About;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\About\AcademyStructureRequest;
-use App\Models\AcademyStructure;
 use Illuminate\Http\Request;
+
+// Models
+use App\Models\AcademyStructure;
+use App\Models\Worker;
 
 class AcademyStructureController extends Controller
 {
@@ -16,10 +19,12 @@ class AcademyStructureController extends Controller
      */
     public function index()
     {
-        $data = AcademyStructure::paginate(10);
+        $data = AcademyStructure::paginate(5, ['*'], 'academyStructure');
+        $workers = Worker::paginate(5, ['*'], 'workers');
 
         return view('admin.about.academy-structure.index', [
             'data' => $data,
+            'workers' => $workers,
         ]);
     }
 

@@ -4,18 +4,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 // Models
-use App\Models\Header;
-use App\Models\About;
 use App\Models\Home;
-use App\Models\GoverningBoardPage;
-use App\Models\GoverningBoardDecree;
-use App\Models\GoverningBoardStaff;
+use App\Models\About;
+use App\Models\Header;
+use App\Models\Worker;
+use App\Models\Subheader;
 use App\Models\RectorsPage;
 use App\Models\RectorsDecree;
-use App\Models\RectorsBiography;
-use App\Models\FormerRectorsBiography;
-use App\Models\Subheader;
 use App\Models\AcademyStructure;
+use App\Models\RectorsBiography;
+use App\Models\GoverningBoardPage;
+use App\Models\GoverningBoardStaff;
+use App\Models\GoverningBoardDecree;
+use App\Models\FormerRectorsBiography;
 
 class PagesController extends Controller
 {
@@ -149,6 +150,10 @@ class PagesController extends Controller
             'decrees' => $decrees,
         ]);
     }
+
+
+
+
     public function academyStructure(){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $academyStructure = AcademyStructure::all();
@@ -159,6 +164,20 @@ class PagesController extends Controller
             'academyStructure' => $academyStructure,
         ]);
     }
+    public function VICERector(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+        $person = Worker::first();
+
+        return view('biography', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'person' => $person,
+        ]);
+    }
+
+
+
+
     public function report(){
         $headersBot = Subheader::where('parent_id', 1)->get();
 

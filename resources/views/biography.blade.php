@@ -18,9 +18,9 @@
                         <h2 class="member__name">{{ $person->{'name_'.app()->getLocale()} }}</h2>
                         <p class="member__position text-20">{{ $person->{'position_'.app()->getLocale()} }}</p>
 
-                        {{-- rector and former rector hase biography in ru and en --}}
-                        @if (Request::is('about/rector/rectors-biography') ||
-                            Request::is('about/rector/former-rectors-biography'))
+                        {{-- academy workers hase biography in ru and en --}}
+                        @if (Request::is('about/rector/*') ||
+                            Request::is('about/academy-structure/*'))
                             {!! $person->{'biography_'.app()->getLocale()} !!}
                         @else
                             @if(app()->getLocale() == 'am')

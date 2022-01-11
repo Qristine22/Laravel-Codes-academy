@@ -33,6 +33,7 @@ Route::middleware(['set_locale'])->group(function(){
         Route::get('/governing-board/biography/{id}', 'App\Http\Controllers\PagesController@governingBoardBiography')
             ->name('governingBoardBiography');
 
+        // rector
         Route::group(['prefix' => 'rector'], function () {
             Route::get('/', 'App\Http\Controllers\PagesController@rector')->name('rector');
             Route::get('/rectors-biography', 'App\Http\Controllers\PagesController@rectorsBiography')
@@ -42,7 +43,12 @@ Route::middleware(['set_locale'])->group(function(){
             Route::get('/decrees', 'App\Http\Controllers\PagesController@rectorsDecrees')->name('rectorsDecrees');
         });
 
-        Route::get('/academy-structure', 'App\Http\Controllers\PagesController@academyStructure')->name('academyStructure');
+        // rector
+        Route::group(['prefix' => 'academy-structure'], function () {
+            Route::get('/', 'App\Http\Controllers\PagesController@academyStructure')->name('academyStructure');
+            Route::get('/vice-rector', 'App\Http\Controllers\PagesController@VICERector')->name('VICERector');
+        });
+
         Route::get('/report', 'App\Http\Controllers\PagesController@report')->name('report');
         Route::get('/graduates', 'App\Http\Controllers\PagesController@graduates')->name('graduates');
         Route::get('/graduates/judges', 'App\Http\Controllers\PagesController@graduatesJudges')
@@ -192,6 +198,7 @@ Route::middleware(['set_locale'])->group(function(){
 
                 // academy structure
                 Route::resource('academy-structure','App\Http\Controllers\Admin\About\AcademyStructureController');
+                Route::resource('workers','App\Http\Controllers\Admin\About\WorkersController');
             });
         });
     });

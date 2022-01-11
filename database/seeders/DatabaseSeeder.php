@@ -27,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RectorsBiographySeeder::class);
         $this->call(FormerRectorsBiographySeeder::class);
         $this->call(AcademyStructureSeeder::class);
+        $this->call(WorkersSeeder::class);
     }
 }

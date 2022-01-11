@@ -107,6 +107,7 @@ member
 }
 .member__info li p:last-child{
     width: calc(100% - 180px);
+    padding-left: 10px;
 }
 .member__info li p:last-child,
 .member__info h4{
