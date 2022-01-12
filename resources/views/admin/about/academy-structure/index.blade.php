@@ -66,7 +66,11 @@
                             </div>
                         </td>
                         <td class="td text-18">
-                            <img class="img" src="{{ Storage::url($item->img) }}" alt="{{ $item->name_am }}">
+                            @if(@isset($item->img))
+                                <img class="img" src="{{ Storage::url($item->img) }}" alt="{{ $item->name_am }}">
+                            @else
+                                ---
+                            @endif
                         </td>
                         <td class="td text-18">
                             <div class="table__panel flex">

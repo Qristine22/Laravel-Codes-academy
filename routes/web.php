@@ -52,6 +52,10 @@ Route::middleware(['set_locale'])->group(function(){
             Route::get('/chief-of-staff', 'App\Http\Controllers\PagesController@chiefOfStaff')->name('chiefOfStaff');
             Route::get('/distance-learning', 'App\Http\Controllers\PagesController@distanceLearningChief')
                 ->name('distanceLearningChief');
+            Route::get('/programmatic-methodological-activities', 'App\Http\Controllers\PagesController@programmaticMethodologicalActivities')
+                ->name('programmaticMethodologicalActivities');
+            Route::get('/training-for-trainees', 'App\Http\Controllers\PagesController@trainingForTrainees')
+                ->name('trainingForTrainees');
         });
 
 

@@ -15,9 +15,13 @@
             <div class="wrapper">
                 <div class="member__cont">
                     @if(@isset($person))
-                        <div class="member__info">
+                        <div class="member__info" @if(@empty($person->img))style="width: 100%" @endif>
                             <h2 class="member__name">{{ $person->{'name_'.app()->getLocale()} }}</h2>
-                            <p class="member__position text-20">{{ $person->{'position_'.app()->getLocale()} }}</p>
+
+                            @if(@isset($person->position_en) || @isset($person->position_am) || @isset($person->position_ru))
+                                <p class="member__position text-20">{{ $person->{'position_'.app()->getLocale()} }}</p>
+                            @endif
+
 
                             {{-- academy workers hase biography in ru and en --}}
                             @if (Request::is('about/rector/*') ||
@@ -33,9 +37,12 @@
                                 @endif
                             @endif
                         </div>
-                        <div class="member__img">
-                            <img class="img" src="{{ Storage::url($person->img) }}" alt="1">
-                        </div>
+
+                        @if(@isset($person->img))
+                            <div class="member__img">
+                                <img class="img" src="{{ Storage::url($person->img) }}" alt="1">
+                            </div>
+                        @endif
                     @endif
                 </div>
             </div>

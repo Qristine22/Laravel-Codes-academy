@@ -38,7 +38,10 @@ class WorkersController extends Controller
      */
     public function store(WorkersRequest $request)
     {
-        $photo = $request->file('img')->store('about/workers');
+        $photo = null;
+        if(!empty($request->file('img'))){
+            $photo = $request->file('img')->store('about/workers');
+        }
 
         Worker::insert([
             'name_en' => $request->name_en,
@@ -89,7 +92,11 @@ class WorkersController extends Controller
      */
     public function update(Request $request, Worker $worker)
     {
-        $photo = $request->imgHidden;
+        $photo = null;
+
+        if(!empty($request->imgHidden)){
+            $photo = $request->imgHidden;
+        }
 
         if(!empty($request->img)){
             Storage::delete($photo);

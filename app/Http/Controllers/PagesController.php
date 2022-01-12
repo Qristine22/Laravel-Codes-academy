@@ -194,6 +194,26 @@ class PagesController extends Controller
             'person' => $person,
         ]);
     }
+    public function programmaticMethodologicalActivities(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+        $person = Worker::where('id', 4)->first();
+
+        return view('biography', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'person' => $person,
+        ]);
+    }
+    public function trainingForTrainees(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+        $person = Worker::where('id', 5)->first();
+
+        return view('biography', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'person' => $person,
+        ]);
+    }
 
 
 

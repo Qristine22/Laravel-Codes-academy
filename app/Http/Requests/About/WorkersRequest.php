@@ -27,13 +27,9 @@ class WorkersRequest extends FormRequest
             'name_en' => 'required|min:4',
             'name_am' => 'required|min:4',
             'name_ru' => 'required|min:4',
-            'position_en' => 'required',
-            'position_am' => 'required',
-            'position_ru' => 'required',
             'biography_en' => 'required',
             'biography_am' => 'required',
             'biography_ru' => 'required',
-            'img' => 'required',
         ];
     }
 }
