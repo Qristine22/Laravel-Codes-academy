@@ -174,6 +174,30 @@ class PagesController extends Controller
             'person' => $person,
         ]);
     }
+    public function chiefOfStaff(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+        $person = Worker::where('id', 2)->first();
+
+        return view('biography', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'person' => $person,
+        ]);
+    }
+    public function distanceLearningChief(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+        $person = Worker::where('id', 3)->first();
+
+        return view('biography', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'person' => $person,
+        ]);
+    }
+
+
+
+
 
 
 

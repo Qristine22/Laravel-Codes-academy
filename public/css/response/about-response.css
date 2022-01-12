@@ -369,14 +369,12 @@
     .members__item_count > span{
         font-size: 22px;
     }
-    .member__info strong{
-        font-size: 10px;
-        line-height: 18px;
-    }
     .member__info li p:first-child{
+        font-size: 12px;
         width: 100px;
     }
     .member__info li p:last-child{
+        font-size: 12px;
         width: calc(100% - 100px);
     }
 }
