@@ -41,9 +41,9 @@ class RectorsDecreeController extends Controller
         $pdf = $request->file('pdf')->store('about/rectors-decrees');
 
         RectorsDecree::insert([
-            'text_en' => $request->text_en,
-            'text_am' => $request->text_am,
-            'text_ru' => $request->text_ru,
+            'info_en' => $request->info_en,
+            'info_am' => $request->info_am,
+            'info_ru' => $request->info_ru,
             'pdf_name' => $request->pdf_name,
             'pdf' => $pdf,
         ]);
@@ -92,9 +92,9 @@ class RectorsDecreeController extends Controller
         }
 
         $rectorsDecree->update([
-            'text_en' => $request->text_en,
-            'text_am' => $request->text_am,
-            'text_ru' => $request->text_ru,
+            'info_en' => $request->info_en,
+            'info_am' => $request->info_am,
+            'info_ru' => $request->info_ru,
             'pdf_name' => $request->pdf_name,
             'pdf' => $pdf,
         ]);

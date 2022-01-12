@@ -11,6 +11,8 @@
 
 @section('content')
     <main>
+
+        {{-- about/governing-board  long text --}}
         <section class="section-text section-top">
             <div class="wrapper">
                 <div class="section-text__cont">
@@ -20,6 +22,8 @@
                 </div>
             </div>
         </section>
+
+        {{-- about/governing-board  dates --}}
         <section class="governing__dates">
             <div class="wrapper">
                 <div class="dates__item dates__item-first flex">
@@ -35,20 +39,17 @@
                 </div>
             </div>
         </section>
+
+        {{-- about/governing-board  bottom members --}}
         <section class="members section-text">
             <div class="wrapper">
                 <div class="members__cont">
                     <h2 class="members__title text-26">@lang('about.governing-board.members')</h2>
                     <div class="members__items flex">
                         @foreach ($governingBoardMembers as $item)
-                            <div class="members__item">
-                                <img class="img" src="{{ Storage::url($item->img) }}" alt="1">
-                                <a class="members__item_cont" href="{{ route('governingBoardBiography',
-                                    ['id' => $item->id]) }}">
-                                    <h3 class="member__title">{{ $item->{'name_'.app()->getLocale()} }}</h3>
-                                    <h4 class="member__subtitle">{{ $item->{'position_'.app()->getLocale()} }}</h4>
-                                </a>
-                            </div>
+
+                            {{-- component path  about/governing-board/members --}}
+                            <x-about.governing-board.members :item=$item />
                         @endforeach
                     </div>
                 </div>

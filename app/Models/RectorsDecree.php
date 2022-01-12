@@ -12,9 +12,9 @@ class RectorsDecree extends Model
     use SoftDeletes;
     
     protected $fillable = [
-        'text_en',
-        'text_am',
-        'text_ru',
+        'info_en',
+        'info_am',
+        'info_ru',
         'pdf_name',
         'pdf',
     ];

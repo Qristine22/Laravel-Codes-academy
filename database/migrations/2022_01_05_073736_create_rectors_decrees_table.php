@@ -16,9 +16,9 @@ class CreateRectorsDecreesTable extends Migration
     {
         Schema::create('rectors_decrees', function (Blueprint $table) {
             $table->id();
-            $table->text('text_en');
-            $table->text('text_am');
-            $table->text('text_ru');
+            $table->text('info_en');
+            $table->text('info_am');
+            $table->text('info_ru');
             $table->string('pdf_name');
             $table->string('pdf');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

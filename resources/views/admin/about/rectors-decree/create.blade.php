@@ -18,19 +18,19 @@
                 <div class="form__text">
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="text__en">Text (English)</label>
-                            <input class="admin-inp" type="text" id="text__en" name="text_en"
-                                placeholder="Enter your text here" value="{{ old('text_en') }}">
+                            <label class="text-20 form__item_name" for="info__en">Info (English)</label>
+                            <input class="admin-inp" type="text" id="info__en" name="info_en"
+                                placeholder="Enter your text here" value="{{ old('info_en') }}">
                         </div>
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="text__am">Text (Armenian)</label>
-                            <input class="admin-inp" type="text" id="text__am" name="text_am"
-                                placeholder="Enter your text here" value="{{ old('text_am') }}">
+                            <label class="text-20 form__item_name" for="info__am">Info (Armenian)</label>
+                            <input class="admin-inp" type="text" id="info__am" name="info_am"
+                                placeholder="Enter your text here" value="{{ old('info_am') }}">
                         </div>
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="text__ru">Text (Russian)</label>
-                            <input class="admin-inp" type="text" id="text__ru" name="text_ru"
-                                placeholder="Enter your text here" value="{{ old('text_ru') }}">
+                            <label class="text-20 form__item_name" for="info__ru">Info (Russian)</label>
+                            <input class="admin-inp" type="text" id="info__ru" name="info_ru"
+                                placeholder="Enter your text here" value="{{ old('info_ru') }}">
                         </div>
                     </div>
                     <div class="form__text">

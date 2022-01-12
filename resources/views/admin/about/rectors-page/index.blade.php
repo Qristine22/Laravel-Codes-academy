@@ -62,14 +62,14 @@
             <table class="table">
                 <tr>
                     <th class="th text-18" style="width: 5%">#id</th>
-                    <th class="th text-18">Text</th>
+                    <th class="th text-18">Info</th>
                     <th class="th text-18" style="width: 20%">File Name</th>
                     <th class="th text-18" style="width: 5%">Panel</th>
                 </tr>
                 @foreach ($decrees as $decree)
                     <tr>
                         <td class="td text-18">{{ $decree->id }}</td>
-                        <td class="td">{!! $decree->text_am !!}</td>
+                        <td class="td">{!! $decree->info_am !!}</td>
                         <td class="td text-18">{{ $decree->pdf_name }}</td>
                         <td class="td text-18">
                             <div class="table__panel flex">
