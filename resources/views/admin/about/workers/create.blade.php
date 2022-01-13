@@ -50,11 +50,13 @@
                                 placeholder="Enter your text here" value="{{ old('position_ru') }}">
                         </div>
                     </div>
-                    <div class="flex inputs__group">
-                        <div class="form__item form__item-inp">
-                            <span class="text-20 form__item_name">Photo</span>
-                            <label class="text-20 admin-inp admin-inp-file" for="img">Attach your File</label>
-                            <input class="admin-file" type="file" id="img" name="img">
+                    <div class="inputs__group">
+                        <span class="text-20 form__item_name">Photo <span class="admin__input_add">+</span></span>
+                        <div class="flex inputs__add_group">
+                            <div class="form__item form__item-inp">
+                                <label class="text-20 admin-inp admin-inp-file" for="img">Attach your File</label>
+                                <input class="admin-file" type="file" id="img" name="imgs[]">
+                            </div>
                         </div>
                     </div>
                     <div class="form__text">
@@ -89,4 +91,5 @@
     <script src="https://cdn.tiny.cloud/1/kq8av1qstz5kw9feupprnmtm1wehpvky0yrkarctqemoowkq/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
     <script src="/js/admin/tinyCloud.js"></script>
+    <script src="/js/admin/inputsAdd.js"></script>
 @endsection

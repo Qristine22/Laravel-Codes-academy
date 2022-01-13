@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWorkersTable extends Migration
+class CreateWorkersImgsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,17 +14,10 @@ class CreateWorkersTable extends Migration
      */
     public function up()
     {
-        Schema::create('workers', function (Blueprint $table) {
+        Schema::create('workers_imgs', function (Blueprint $table) {
             $table->id();
-            $table->string('name_en');
-            $table->string('name_am');
-            $table->string('name_ru');
-            $table->text('position_en')->nullable(true);
-            $table->text('position_am')->nullable(true);
-            $table->text('position_ru')->nullable(true);
-            $table->longText('biography_en');
-            $table->longText('biography_am');
-            $table->longText('biography_ru');
+            $table->integer('worker_id');
+            $table->string('img');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->softDeletes();
@@ -38,6 +31,6 @@ class CreateWorkersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('workers');
+        Schema::dropIfExists('workers_imgs');
     }
 }

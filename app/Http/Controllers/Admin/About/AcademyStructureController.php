@@ -20,8 +20,7 @@ class AcademyStructureController extends Controller
     public function index()
     {
         $data = AcademyStructure::paginate(5, ['*'], 'academyStructure');
-        $workers = Worker::paginate(5, ['*'], 'workers');
-
+        $workers = Worker::workers();
         return view('admin.about.academy-structure.index', [
             'data' => $data,
             'workers' => $workers,

@@ -190,7 +190,8 @@ admin-section
 .form__text{
     width: 100%;
 }
-.inputs__group{
+.inputs__group,
+.inputs__add_group{
     justify-content: flex-start;
 }
 .form__text > .form__item,
@@ -267,4 +268,25 @@ admin-section
 }
 .admin__paginate{
     margin-top: 30px;
+}
+.admin__input_add{
+    padding: 0px 12px 3px 12px;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid var(--dark-yellow);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.admin__edit_imgs{
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.admin__edit_img{
+    width: 15%;
+    padding: 5px;
 }

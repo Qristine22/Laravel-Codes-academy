@@ -56,6 +56,12 @@ Route::middleware(['set_locale'])->group(function(){
                 ->name('programmaticMethodologicalActivities');
             Route::get('/training-for-trainees', 'App\Http\Controllers\PagesController@trainingForTrainees')
                 ->name('trainingForTrainees');
+            Route::get('/training-organization', 'App\Http\Controllers\PagesController@trainingOrganization')
+                ->name('trainingOrganization');
+            Route::get('/unit-of-finance', 'App\Http\Controllers\PagesController@unitOfFinance')
+                ->name('unitOfFinance');
+            Route::get('/hotel', 'App\Http\Controllers\PagesController@hotel')
+                ->name('hotel');
         });
 
 

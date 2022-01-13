@@ -56,7 +56,7 @@
                     <th class="th text-18" style="width: 5%">Panel</th>
                 </tr>
                 @foreach ($workers as $item)
-                    <tr>
+                <tr>
                         <td class="td text-18">{{ $item->id }}</td>
                         <td class="td text-18">{{ $item->name_am }}</td>
                         <td class="td text-18">{{ $item->position_am }}</td>
@@ -66,10 +66,10 @@
                             </div>
                         </td>
                         <td class="td text-18">
-                            @if(@isset($item->img))
-                                <img class="img" src="{{ Storage::url($item->img) }}" alt="{{ $item->name_am }}">
+                            @if(count($item->imgs) > 0)
+                                <img class="img" src="{{ Storage::url($item->imgs[0]->img) }}" alt="{{ $item->name_am }}">
                             @else
-                                ---
+                                ընտրված չէ
                             @endif
                         </td>
                         <td class="td text-18">

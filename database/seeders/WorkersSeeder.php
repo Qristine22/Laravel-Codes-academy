@@ -272,8 +272,6 @@ class WorkersSeeder extends Seeder
                 <p><strong>Семейное положение</strong></p>
                 <h4>Женат, имеет дочь и сына</h4>
                 </div>',
-
-                'img' => 'about/workers/cZqvwk60yJSO3XMDA9QLbXVzBG6SdbOc7ZfPHJrk.jpg',
             ],
 
 
@@ -496,8 +494,6 @@ class WorkersSeeder extends Seeder
                 <p><strong>Семейное положение</strong></p>
                 <h4>Женат, имеет двух дочерей</h4>
                 </div>',
-
-                'img' => 'about/workers/C1PRxroKH49M7mwIrzcenST7DSMkOP6prqor8zpq.jpg',
             ],
 
 
@@ -831,8 +827,6 @@ class WorkersSeeder extends Seeder
                 <h4>Права беженцев для судей уголовного суда и прокуроров</h4>
                 <h4>Департамент занимается разработкой и тестированием инновационных решений в области цифрового обучения для судей и прокуроров, используя методы играфикации и микрообучения, цифровые статистические модели и навыки обучения на основе учебных сценариев.</h4>
                 </div>',
-
-                'img' => 'about/workers/UMCMIdeIKTgjQQp98nKUEgbCoQ1oRd9S3Zw1ENoi.jpg',
             ],
 
             
@@ -1494,8 +1488,730 @@ class WorkersSeeder extends Seeder
                 <p><strong>Oтдел по организации научно-исследовательских и программно-методических работ</strong></p>
                 <h4>Отдел осуществляет научные исследования, научные и учебные публикации, сотрудничество с иными научно-исследовательскими организациями и учреждениями, разработку и постоянную модернизацию учебных программ, учебно-методологических материалов, проводит необходимые исследования для разработки проектов внутренних и индивидуальных правовых актов ректора Академии, а также иных правовых актов, обеспечивает участие слушателей в научно-исследовательских работах, проводимых в Академии, участвует в работе организации семинаров и конференций, выполняет другие функции.</h4>
                 </div>',
+            ],
 
-                'img' => 'about/workers/cdqLGnykyXChm1j6OzeC4LXtLgydOG0rvZbevrew.jpg',
+
+
+
+
+
+
+
+            // ************************************************************************************************
+            [
+                'name_en' => 'Unit of Organization of Training for Trainees of Judiciary',
+                'name_am' => 'Դատական համակարգի ունկնդիրների ուսուցման կազմակերպման բաժին',
+                'name_ru' => 'Отдел по организации обучения слушателей судебной системы',
+                'position_en' => null,
+                'position_am' => null,
+                'position_ru' => null,
+
+
+                'biography_en' => '<div><p><strong>Unit implements the activities in the following directions</strong></p>
+                <h4>initial training of persons included in the list of candidates of applicants of judges,</h4>
+                <h4>continuous training of judges and persons included in the list of candidates of applicants of judges,</h4>
+                <h4>initial training of those who have a scientific degree in the field of jurisprudence included in the list of promotion of candidates of judges for appointment to the position of judge of the Court of Appeal,</h4>
+                <h4>continuous training of judicial servants and judicial bailiffs</h4>
+                <h4>continuous training of state servants in the staff of the human rights defender of the RA,</h4>
+                <h4>special training of judges and judicial bailiffs.</h4></div>',
+
+
+                'biography_am' => '<div><p><strong>Բաժինն աշխատանքներ է իրականացնում հետևյալ ուղղություններով`</strong></p>
+                <h4>դատավորների թեկնածուների հավակնորդների ցուցակում ընդգրկված անձանց մաuնագիտական պատրաստում,</h4>
+                <h4>դատավորների և դատավորների թեկնածուների ցուցակում գտնվող անձանց վերապատրաստում,</h4>
+                <h4>վերաքննիչ դատարանում դատավոր նշանակվելու համար առաջխաղացման ենթակա դատավորների թեկնածուների ցուցակում ընդգրկված՝ իրավագիտության բնագավառում գիտական աստիճան ունեցող անձանց մաuնագիտական պատրաստում,</h4>
+                <h4>դատական ծառայողների և դատական կարգադրիչների վերապատրաստում,</h4>
+                <h4>ՀՀ մարդու իրավունքների պաշտպանի աշխատակազմում պետական ծառայության պաշտոն զբաղեցնող անձանց վերապատրաստում,</h4>
+                <h4>դատավորների և դատական կարգադրիչների հատուկ ուսուցում:</h4></div>',
+
+
+                'biography_ru' => '<div><p><strong>Отдел осуществляет деятельность по следующим направлениям:</strong></p>
+                <h4>профессиональная подготовка лиц, включенных в список претендентов в кандидаты на должности судей,</h4>
+                <h4>переподготовка судей и лиц, включенных в список претендентов в кандидаты на должности судей,</h4>
+                <h4>подготовка лиц, включенных в список кандидатов на продвижение по службе судей, имеющих научную степень в области юриспруденции, для назначения на должности судей Апелляционного суда,</h4>
+                <h4>переподготовка судебных служащих и судебных приставов,</h4>
+                <h4>переподготовка лиц, занимающих государственные должности в аппарате защитника прав человека РА,</h4>
+                <h4>специальная подготовка судей и судебных приставов.</h4></div>',
+            ],
+
+            
+            
+
+
+            
+
+
+            // ************************************************************************************************
+            [
+                'name_en' => 'Hasmik Avetisyan',
+                'name_am' => 'Հասմիկ Ավետիսյան',
+                'name_ru' => 'Асмик Аветисян',
+                'position_en' => 'Head of the Unit of Organization of Training for Trainees of Prosecutorial and Investigative System',
+                'position_am' => 'Դատախազության և քննչական համակարգի ունկնդիրների ուսուցման կազմակերպման բաժնի ղեկավար',
+                'position_ru' => 'Начальник отдела по организации обучения слушателей органов прокуратуры и следственной системы',
+
+
+                'biography_en' => '<div>
+                <p><strong>Date and Place of Birth</strong></p>
+                <h4>12.11.1977, Yerevan</h4>
+                </div>
+                <div>
+                <p><strong>Education</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>1994-1999:</p>
+                <p>Faculty of Law of YSU</p>
+                </li>
+                <li>
+                <p>1994:</p>
+                <p>Basic School № 21 named after A.Shirvanzade</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <h4><strong>Academic degree, title</strong></h4>
+                </div>
+                <div>
+                <h4>Candidate of Law</h4>
+                </div>
+                <div>
+                <p><strong>Topic of PHD Thesis</strong></p>
+                <h4>"Judicial control of pre-trial proceedings as a guarantee of protection of constitutional rights and freedoms of a person"</h4>
+                </div>
+                <div>
+                <p><strong>Work experience</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2017 February &ndash; present:</p>
+                <p>Head of the Unit of Organization of Training for Trainees of Prosecutorial and Investigative System of the &ldquo;Academy of Justice&rdquo; state non-commercial organization</p>
+                </li>
+                <li>
+                <p>2014-2017:</p>
+                <p>Head of the Department of Relations with the Prosecutor\'s Office of the Department of Full-time Education of the Academy of Justice of RA SNCO</p>
+                </li>
+                <li>
+                <p>2012-2013:</p>
+                <p>Lecturer at the European Regional Education Academy</p>
+                </li>
+                </ul>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2008-2013:</p>
+                <p>Senior Researcher at the "School of Prosecutors" of RA state non-commercial organization</p>
+                </li>
+                <li>
+                <p>2008 July- August</p>
+                <p>Senior Specialist in the Council of Justice of the Republic of Armenia</p>
+                </li>
+                </ul>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2007-2008:</p>
+                <p>Senior Researcher at the "School of Prosecutors" of RA state non-commercial organization</p>
+                </li>
+                <li>
+                <p>2005-2007:</p>
+                <p>Researcher at the Scientific and Educational Center of the General Prosecutor\'s Office of the Republic of Armenia</p>
+                </li>
+                <li>
+                <p>2005 March-April</p>
+                <p>Assistant of Prosecutor of the Prosecutor&rsquo;s Office of Gegharkunik District</p>
+                </li>
+                <li>
+                <p>2002-2005:</p>
+                <p>Assistant of Gavar State University (concurrently)</p>
+                </li>
+                <li>
+                <p>1999-2005:</p>
+                <p>Assistant Judge of the Criminal and Military Court of Appeal of the Republic of Armenia</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Membership in non-governmental or other organizations</strong></p>
+                <h4>Since 1999 a member of the Law Society of the RA.</h4>
+                </div>
+                <div>
+                <p><strong>Foreign languages</strong></p>
+                <h4>Russian, English</h4>
+                </div>
+                <div>
+                <p><strong>Publications</strong></p>
+                <h4>Author and co-author of 22 scientific, training manuals, monographs, textbooks and scientific articles.</h4>
+                </div>
+                <div>
+                <p><strong>Marital status</strong></p>
+                <h4>Married, has 2 sons and a daughter.</h4>
+                </div>
+                <div>
+                <p><strong>Unit of Organization of Training for Trainees of Prosecutorial and Investigative System&nbsp;</strong></p>
+                <h4>The Unit implements the activities in the following directions:</h4>
+                <h4>initial training of persons included in the list of candidates of prosecutors,</h4>
+                <h4>continuous training of prosecutors,</h4>
+                <h4>special training of prosecutors</h4>
+                <h4>continuous training of state servants in the staff of the Prosecutor\'s office of the RA</h4>
+                <h4>initial training of persons included in the list of candidates for servants of Investigative Committee of the RA</h4>
+                <h4>continuous training of investigators of the Investigative Committee of the RA,</h4>
+                <h4>special training of investigators of Investigative Committee of the RA,</h4>
+                <h4>continuous training of state servants of the Department of Investigative Committee of the RA,</h4>
+                <h4>continuous training of investigators of Special Investigation Service of the RA,</h4>
+                <h4>special training of investigators of Special Investigation Service of the RA,</h4>
+                <h4>continuous training of investigators of the Investigative Department of the National Security Service under the Government of the RA.</h4>
+                </div>',
+
+
+                'biography_am' => '<div>
+                <p><strong>Ծննդյան տարեթիվ, ամսաթիվ, ծննդավայր</strong></p>
+                <h4>12.11.1977 թ., ք. Երևան</h4>
+                </div>
+                <div>
+                <p><strong>Կրթություն</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>1994-1999 թթ.</p>
+                <p>ԵՊՀ իրավաբանական ֆակուլտետ</p>
+                </li>
+                <li>
+                <p>1994 թ.</p>
+                <p>Ալ. Շիրվանզադեի անվան N 21 միջնակարգ դպրոց</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <h4><strong>Գիտական աստիճան, կոչում</strong></h4>
+                </div>
+                <div>
+                <h4>Իրավաբանական գիտությունների թեկնածու</h4>
+                </div>
+                <div>
+                <p><strong>Ատենախոսության թեման</strong></p>
+                <h4>&laquo;Մինչդատական վարույթի նկատմամբ դատական վերահսկողությունը՝ որպես անձի սահմանադրական իրավունքների և ազատությունների պաշտպանության ապահովման երաշխիք&raquo;</h4>
+                </div>
+                <div>
+                <p><strong>Աշխատանքային փորձ</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2017 թ. փետրվարից</p>
+                <p>Արդարադատության ակադեմիայի դատախազության և քննչական համակարգի ունկնդիրների ուսուցման կազմակերպման բաժնի ղեկավար</p>
+                </li>
+                <li>
+                <p>2014-2017 թթ.</p>
+                <p>Արդարադատության ակադեմիայի առկա ուսուցման վարչության դատախազության հետ կապերի բաժնի պետ</p>
+                </li>
+                <li>
+                <p>2012-2013 թթ.</p>
+                <p>Եվրոպական կրթական տարածաշրջանային ակադեմիայի դասախոս</p>
+                </li>
+                </ul>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2008-2013 թթ.</p>
+                <p>ՀՀ &laquo;Դատախազության դպրոց&raquo; ՊՈԱԿ ավագ գիտաշխատող</p>
+                </li>
+                <li>
+                <p>2008 թ. հուլիս-օգոստոս</p>
+                <p>ՀՀ արդարադատության խորհրդի ավագ մասնագետ</p>
+                </li>
+                </ul>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2007-2008 թթ.</p>
+                <p>ՀՀ &laquo;Դատախազության դպրոց&raquo; ՊՈԱԿ ավագ գիտաշխատող</p>
+                </li>
+                <li>
+                <p>2005-2007 թթ.</p>
+                <p>ՀՀ գլխավոր դատախազության գիտաուսումնական կենտրոնի գիտական աշխատող</p>
+                </li>
+                <li>
+                <p>2005 թ. մարտ-ապրիլ</p>
+                <p>ՀՀ Գեղարքունիքի մարզի դատախազության դատախազի օգնական</p>
+                </li>
+                <li>
+                <p>2002-2005 թթ.</p>
+                <p>Գավառի պետական համալսարանի ասիստենտ (համատեղությամբ)</p>
+                </li>
+                <li>
+                <p>1999-2005 թթ.</p>
+                <p>ՀՀ քրեական և զինվորական գործերով վերաքննիչ դատարանի դատավորի օգնական</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Մասնակցությունը հասարակական կամ այլ կառույցների</strong></p>
+                <h4>1999 թ.-ից ՀՀ իրավաբանների միության անդամ</h4>
+                </div>
+                <div>
+                <p><strong>Օտար լեզուներ</strong></p>
+                <h4>Ռուսերեն, անգլերեն</h4>
+                </div>
+                <div>
+                <p><strong>Հրապարակումներ</strong></p>
+                <h4>Հեղինակ և համահեղինակ է 22 գիտական, ուսումնական ձեռնարկների, մենագրությունների, դասագրքերի և գիտական հոդվածների</h4>
+                </div>
+                <div>
+                <p><strong>Ընտանեկան կարգավիճակ</strong></p>
+                <h4>Ամուսնացած է, ունի երկու որդի և մեկ դուստր</h4>
+                </div>
+                <div>
+                <p><strong>Դատախազության և քննչական համակարգի ունկնդիրների ուսուցման կազմակերպման բաժին</strong></p>
+                <h4>Բաժինն աշխատանքներ է իրականացնում հետևյալ ուղղություններով՝</h4>
+                <h4>Դատախազների վերապատրաստում,</h4>
+                <h4>ՀՀ քննչական կոմիտեի քննիչների վերապատրաստում,</h4>
+                <h4>ՀՀ հատուկ քննչական ծառայության քննիչների վերապատրաստում,</h4>
+                <h4>ՀՀ կառավարությանն առընթեր ազգային անվտանգության ծառայության քննչական դեպարտամենտի քննիչների վերապատրաստում,</h4>
+                <h4>ՀՀ դատախազության աշխատակազմում պետական ծառայողների վերապատրաստում,</h4>
+                <h4>ՀՀ քննչական կոմիտեի դեպարտամենտի պետական ծառայողների վերապատրաստում,</h4>
+                <h4>Դատախազների թեկնածությունների ցուցակում ընդգրկված անձանց մաuնագիտական պատրաստում,</h4>
+                <h4>ՀՀ քննչական կոմիտեի ծառայողների թեկնածությունների ցուցակում ընդգրկված անձանց մասնագիտական պատրաստում,</h4>
+                <h4>Դատախազների հատուկ ուսուցում,</h4>
+                <h4>ՀՀ քննչական կոմիտեի քննիչների հատուկ ուսուցում,</h4>
+                <h4>ՀՀ հատուկ քննչական ծառայության քննիչների հատուկ ուսուցում:</h4>
+                </div>',
+
+
+                'biography_ru' => '<div>
+                <p><strong>Дата рождения, место</strong></p>
+                <h4>12.11.1977, г. Ереван</h4>
+                </div>
+                <div>
+                <p><strong>Образование</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>1994-1999&nbsp;гг.</p>
+                <p>Юридический факультет ЕГУ</p>
+                </li>
+                <li>
+                <p>1994 г.</p>
+                <p>Средняя школа № 21 им. А.Ширванзаде</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <h4><strong>Ученая степень</strong></h4>
+                </div>
+                <div>
+                <h4>Кандидат юридических наук</h4>
+                </div>
+                <div>
+                <p><strong>Тема кандидатской диссертации</strong></p>
+                <h4>&laquo;Судебный контроль над досудебным производством как гарантия обеспечения конституционных прав и свобод человека&raquo;</h4>
+                </div>
+                <div>
+                <p><strong>Опыт работы</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>С 1-го февраля 2017 г.</p>
+                <p>начальник отдела по организации обучения слушателей органов прокуратуры и следственной системы &laquo;Академия юстиции&raquo; РА</p>
+                </li>
+                <li>
+                <p>2014-2017 гг.</p>
+                <p>начальник отдела по связям с прокуратурой управления очного обучения Академии юстиции</p>
+                </li>
+                <li>
+                <p>2012-2013 гг.</p>
+                <p>преподаватель в Европейской образовательной региональной академии</p>
+                </li>
+                </ul>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2008-2013 гг.</p>
+                <p>cтарший научный сотрудник в Г.Н.К.О. &laquo;Школа Прокуроров&raquo; РА</p>
+                </li>
+                <li>
+                <p>2008г. июль-август</p>
+                <p>старший специалист в Совете юстиции РА</p>
+                </li>
+                </ul>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2007-2008 гг.</p>
+                <p>cтарший научный сотрудник в Г.Н.К.О. &laquo;Школа Прокуроров&raquo; РА</p>
+                </li>
+                <li>
+                <p>2005-2007 гг.</p>
+                <p>научный сотрудник в Научно-образовательном центре Генеральной прокуратуры РА</p>
+                </li>
+                <li>
+                <p>2005 март-апрель</p>
+                <p>помощник прокурора Гегаркуникского района</p>
+                </li>
+                <li>
+                <p>2002-2005 гг.</p>
+                <p>aссистент Гаварского государственного университета (по совместительству)</p>
+                </li>
+                <li>
+                <p>1999-2005 гг.</p>
+                <p>помощник судьи апелляционного суда РА по уголовным и военным делам</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Участие в общественных или других структурах</strong></p>
+                <h4>С 1999 года является членом общества юристов РА</h4>
+                </div>
+                <div>
+                <p><strong>Иностранные языки</strong></p>
+                <h4>Русский, английский</h4>
+                </div>
+                <div>
+                <p><strong>Публикации</strong></p>
+                <h4>Автор и соавтор 22 научных, учебных пособий, монографий, учебников и научных статей</h4>
+                </div>
+                <div>
+                <p><strong>Семейное положение</strong></p>
+                <h4>Замужем, имеет двух сыновей и одну дочь</h4>
+                </div>
+                <div>
+                <p><strong>Отдел по организации обучения слушателей органов прокуратуры и следственной системы</strong></p>
+                <h4>Отдел осуществляет деятельность по следующим направлениям:</h4>
+                <h4>профессиональная подготовка лиц, включенных в список кандидатов на должности прокуроров,</h4>
+                <h4>переподготовка прокуроров,</h4>
+                <h4>специальная подготовка прокуроров,</h4>
+                <h4>переподготовка государственных служащих аппарата Прокуратуры РА,</h4>
+                <h4>профессиональная подготовка лиц, включенных в список кандидатов на должности служащих Следственного Комитета РА,</h4>
+                <h4>переподготовка следователей Следственного комитета РА,</h4>
+                <h4>специальная подготовка следователей Следственного комитета РА,</h4>
+                <h4>&nbsp;переподготовка государственных служащих департамента Следственного комитета РА,</h4>
+                <h4>переподготовка следователей Специальной следственной службы РА,</h4>
+                <h4>специальная подготовка следователей Специальной следственной службы РА,</h4>
+                <h4>переподготовка следователей Следственного департамента Службы Национальной Безопасности при Правительстве РА.</h4>
+                </div>',
+            ],
+
+            
+            
+            
+
+
+            
+
+
+            // ************************************************************************************************
+            [
+                'name_en' => 'Narine Harutyunyan',
+                'name_am' => 'Նարինե Հարությունյան',
+                'name_ru' => 'Нарине Арутюнян',
+                'position_en' => 'Head of the Unit of Finance-senior accountant',
+                'position_am' => 'Ֆինանսական բաժնի ղեկավար-գլխավոր հաշվապահ',
+                'position_ru' => 'Руководитель финансового отдела-главный бухгалтер',
+
+
+                'biography_en' => '<div>
+                <p><strong>Date and Place of Birth</strong></p>
+                <h4>23.12.1981, Yerevan</h4>
+                </div>
+                <div>
+                <p><strong>Education</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>1999- 2004:</p>
+                <p>Yerevan State Institute of Economics Faculty of Management</p>
+                </li>
+                <li>
+                <p>1998:</p>
+                <p>Basic school N 168</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <h4><strong>Qualifications</strong></h4>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2012:</p>
+                <p>ACCA&nbsp; F6 Taxation</p>
+                </li>
+                <li>
+                <p>2011:</p>
+                <p>ACCA&nbsp; F2 Management Accounting</p>
+                </li>
+                <li>
+                <p>2010:</p>
+                <p>ACCA&nbsp; F3 Financial Accounting</p>
+                </li>
+                </ul>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2010:</p>
+                <p>ACCA&nbsp; F1 Accountant in Business</p>
+                </li>
+                <li>
+                <p>2009:</p>
+                <p>Leading servant having classification title of the 2nd class</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Work experience</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2018 August up to now:</p>
+                <p>Head of the Unit of Finance-senior accountant of the Academy of Justice&nbsp;</p>
+                </li>
+                <li>
+                <p>2014-2018:</p>
+                <p>&ldquo;National Bureau of Expertises&rdquo; Head of the budgeting and finance department-Chief Accountant</p>
+                </li>
+                <li>
+                <p>2012-2014:</p>
+                <p>&ldquo;Yerevan Plant of Household Chemicals&rdquo; OJSC Accountant</p>
+                </li>
+                <li>
+                <p>2012-2013:</p>
+                <p>&ldquo;Adventure Explorer&rdquo; LLC (Incoming tourism) Chief Accountant</p>
+                </li>
+                <li>
+                <p>2011-2012:</p>
+                <p>"Nana &amp; Lusine" LLC (Accounting and consulting) Accountant</p>
+                </li>
+                <li>
+                <p>2009-2011:</p>
+                <p>Leading specialist at budget process management department of Ministry of Finance of the RA</p>
+                </li>
+                <li>
+                <p>2007-2009:</p>
+                <p>1st class specialist of the financial and economic department of Rescue Service of Ministry of emergency situations of the RA</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Foreign languages</strong></p>
+                <h4>Russian, English</h4>
+                </div>
+                <div>
+                <p><strong>Marital status</strong></p>
+                <h4>Married, has 3 sons.&nbsp;</h4>
+                </div>
+                <div>
+                <p><strong>Unit of Finance</strong></p>
+                <h4>The unit complies with the requirements of legal acts regulating accounting and tax accounting:</h4>
+                <h4>implements common accounting complies annual financial reports,</h4>
+                <h4>compiles and presents the reports prescribed by the Tax Code of the RA during the reporting period,</h4>
+                <h4>implements other current activities.</h4>
+                </div>',
+
+
+                'biography_am' => '<div>
+                <p><strong>Ծննդյան տարեթիվ, ամսաթիվ, ծննդավայր</strong></p>
+                <h4>23.12.1981, ք. Երևան</h4>
+                </div>
+                <div>
+                <p><strong>Կրթություն</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>1999-2004 թթ.</p>
+                <p>Երևանի պետական տնտեսագիտական ինստիտուտ, Կառավարման ֆակուլտետ</p>
+                </li>
+                <li>
+                <p>1998 թ.</p>
+                <p>Երևանի թիվ 168 միջնակարգ դպրոց</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <h4><strong>Որակավորումներ, դասային աստիճան</strong></h4>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2012 թ.</p>
+                <p>ACCA F6 Հարկեր</p>
+                </li>
+                <li>
+                <p>2011 թ.</p>
+                <p>ACCA F2 Կառավարչական հաշվառում&nbsp;</p>
+                </li>
+                <li>
+                <p>2010 թ.</p>
+                <p>ACCA F3 Ֆինանսական հաշվապահություն</p>
+                </li>
+                </ul>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2010 թ.</p>
+                <p>ACCA F1 Հաշվապահը բիզնեսում &nbsp;</p>
+                </li>
+                <li>
+                <p>2009 թ.</p>
+                <p>2-րդ դասի առաջատար ծառայողի դասային աստիճան</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Աշխատանքային փորձ</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2018 թ. օգոստոսից</p>
+                <p>Արդարադատության ակադեմիա, Ֆինանսական բաժնի պետ-գլխավոր հաշվապահ</p>
+                </li>
+                <li>
+                <p>2014-2018 թթ.</p>
+                <p>&laquo;ՀՀ ԳԱԱ Փորձաքննությունների ազգային բյուրո&raquo;, Ֆինանսատնտեսագիտական բաժնի պետ-գլխավոր հաշվապահ</p>
+                </li>
+                <li>
+                <p>2012-2014 թթ.</p>
+                <p>&laquo;Երևանի կենցաղային քիմիայի գործարան&raquo; ԲԲԸ, հաշվապահ</p>
+                </li>
+                <li>
+                <p>2012-2013 թթ.</p>
+                <p>&laquo;Ադվենտուր Էքսփլորեր&raquo; ՍՊԸ, գլխավոր հաշվապահ</p>
+                </li>
+                <li>
+                <p>2011-2012 թթ.</p>
+                <p>&laquo;Նանա և Լուսինե&raquo; ՍՊԸ, հաշվապահ</p>
+                </li>
+                <li>
+                <p>2009-2011 թթ.</p>
+                <p>ՀՀ ֆինանսների նախարարության աշխատակազմի բյուջետային գործընթացի կառավարման վարչություն, առաջատար մասնագետ</p>
+                </li>
+                <li>
+                <p>2007-2009 թթ.</p>
+                <p>ՀՀ արտակարգ իրավիճակների նախարարության Հայաստանի փրկարար ծառայության աշխատակազմի ֆինանսատնտեսագիտական վարչություն, առաջին կարգի մասնագետ</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Օտար լեզուներ</strong></p>
+                <h4>Ռուսերեն, անգլերեն</h4>
+                </div>
+                <div>
+                <p><strong>Ընտանեկան կարգավիճակ</strong></p>
+                <h4>Ամուսնացած է, ունի 3 որդի</h4>
+                </div>
+                <div>
+                <p><strong>Ֆինանսական բաժին</strong></p>
+                <h4>Բաժինը հաշվապահական և հարկային հաշվառումը կարգավորող իրավական ակտերի պահանջներին համապատասխան.</h4>
+                <h4>իրականացնում է հաշվապահական հաշվառման ընդհանուր վարումը, կազմում՝ տարեկան ֆինանսական հաշվետվությունները,</h4>
+                <h4>հաշվետու ժամանակաշրջանի ընթացքում կազմում և ներկայացնում է ՀՀ հարկային օրենսգրքով սահմանված հաշվետվությունները,</h4>
+                <h4>իրականացնում է ընթացիկ այլ աշխատանքներ:</h4>
+                </div>',
+
+
+                'biography_ru' => '<div>
+                <p><strong>Дата и место рождения</strong></p>
+                <h4>23.12.1981, г. Ереван</h4>
+                </div>
+                <div>
+                <p><strong>Образование</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>1999-2004 гг.</p>
+                <p>Ереванский государственный институт экономики, факультет управления</p>
+                </li>
+                <li>
+                <p>1998 г.</p>
+                <p>средняя школа № 168</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <h4><strong>Сертефикаты, классы</strong></h4>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2012 г.</p>
+                <p>ACCA F6 Налоги</p>
+                </li>
+                <li>
+                <p>2011 г.</p>
+                <p>ACCA F2 Управленческий учет</p>
+                </li>
+                <li>
+                <p>2010 г.</p>
+                <p>ACCA F3 Финансовая бухгалтерия</p>
+                </li>
+                </ul>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2010 г.</p>
+                <p>ACCA F1 Бухгалтер в бизнесе</p>
+                </li>
+                <li>
+                <p>2009 г.</p>
+                <p>степень ведущего служащего 2-го класса</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Трудовая деятельность</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>С августа 2018 года.</p>
+                <p>руководитель финансового отдела-главный бухгалтер Академии юстиции</p>
+                </li>
+                <li>
+                <p>2014-2018 гг.</p>
+                <p>&laquo;Национальное бюро экспертиз&raquo; ГНКО, руководитель финансово-экономического отдела, главный бухгалтер</p>
+                </li>
+                <li>
+                <p>2012-2014 гг.</p>
+                <p>&laquo;Ереванский завод бытовой химии&raquo; бухгалтер</p>
+                </li>
+                <li>
+                <p>2012-2013 гг.</p>
+                <p>&laquo;Адвентур эксплорер&raquo; ООО главный бухгалтер</p>
+                </li>
+                <li>
+                <p>2011-2012 гг.</p>
+                <p>&laquo;Нана и Лусине&raquo; ООО, бухгалтер</p>
+                </li>
+                <li>
+                <p>2009-2011 гг.</p>
+                <p>ведущий специалист отдела управления бюджетным процессом Министерства финансов РА</p>
+                </li>
+                <li>
+                <p>2007-2009 гг.</p>
+                <p>специалист первого класса финансово-экономического управления службы спасения Армении Министерства по чрезвычайным ситуациям РА</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Иностранные языки</strong></p>
+                <h4>Русский, английский</h4>
+                </div>
+                <div>
+                <p><strong>Семейное положение</strong></p>
+                <h4>Замужем, имеет трех сыновей</h4>
+                </div>
+                <div>
+                <p><strong>Финансовый отдел</strong></p>
+                <h4>Отдел в соответствии с требованиями нормативно-правовых актов, регулирующими бухгалтерский и налоговый учет:</h4>
+                <h4>осуществляет общий бухгалтерский учет, составляет годовую финансовую отчетность,</h4>
+                <h4>в отчетный период составляет и представляет отчеты, предусмотренные Налоговым кодексом РА, осуществляет иную деятельность,</h4>
+                <h4>иная текущая деятельность.</h4>
+                </div>',
+            ],
+
+            
+            
+            
+
+
+            
+
+
+            // ************************************************************************************************
+            [
+                'name_en' => 'Hotel',
+                'name_am' => 'Հյուրանոց',
+                'name_ru' => 'Гостиница',
+                'position_en' => null,
+                'position_am' => null,
+                'position_ru' => null,
+
+
+                'biography_en' => '<div>
+                <p><strong>According to the Law of the RA "On the Academy of Justice", the hotel complex (hotel) of the Academy hosts the trainees who are trained and permanently live outside the place of training: judges, prosecutors, investigators, judicial servants, judicial bailiffs, state servants of the Department of the Investigative Committee of the RA, State servants in the staff of the Prosecutor\'s office. Besides the above mentioned trainees, other persons can also use the hotel with the permission of the Rector of the Academy. The terms of use of the hotel are prescribed by the procedure "Use of the Hotel of the Academy of Justice" in accordance with the relevant order of the Rector of the Academy.</strong></p>
+                <h4>The hotel consists of 16 double rooms equipped with all amenities: bathroom, refrigerator, TV-set, air conditioner also internet connection.</h4>
+                </div>',
+
+
+                'biography_am' => '<div>
+                <p><strong>&laquo;Արդարադատության ակադեմիայի մասին&raquo; ՀՀ օրենքով սահմանված կարգով Ակադեմիայի հյուրանոցային համալիրը (հյուրանոցը) հյուրընկալում է վերապատրաստում անցնող և վերապատրաստման վայրից դուրս մշտապես բնակվող ունկնդիրներին՝ դատավորներին, դատախազներին, քննիչներին, դատական ծառայողներին, դատական կարգադրիչներին, ՀՀ քննչական կոմիտեի դեպարտամենտում պետական ծառայողներին, ՀՀ դատախազության աշխատակազմում պետական ծառայողներին: Բացի վերոնշյալ ունկնդիրներից՝ Ակադեմիայի ռեկտորի թույլտվությամբ հյուրանոցից կարող են օգտվել նաև այլ անձինք: Հյուրանոցից օգտվելու պայմանները սահմանված են &laquo;Արդարադատության ակադեմիայի հյուրանոցից օգտվելու&raquo; կարգով՝ հաստատված Ակադեմիայի ռեկտորի համապատասխան հրամանի հիման վրա:</strong></p>
+                <h4>Հյուրանոցը բաղկացած է 16 երկտեղանոց սենյակներից, որոնք ապահովված են կենցաղային բոլոր հարմարություններով՝ լոգասենյակ, սառնարան, հեռուստացույց, օդորակիչ, նաև ինտերնետային կապ:</h4>
+                </div>',
+
+
+                'biography_ru' => '<div>
+                <p><strong>В соответствии с Законом РА "Об Академии юстиции" гостиничный комплекс (гостиница) Академии принимает слушателей, проходящих переподготовку и постоянно проживающих за пределами места обучения: судей, прокуроров, следователей, судебных служащих, судебных приставов, государственных служащих Следственного комитета РА, государственных служащих прокуратуры РА. Помимо упомянутых выше слушателей, с разрешения ректора Академии, услугами гостиницы могут воспользоваться и иные лица. Условия пребывания в гостиничном комплексе закреплены в порядке &laquo;Об использовании гостиницы Академии юстиции&raquo;, утвержденном ректором Академии.</strong></p>
+                <h4>Гостиница включает 16 двухместных номера, оборудованных всеми удобствами: ванной комнатой, холодильником, телевизором, кондиционером и интернетом.</h4>
+                </div>',
             ],
         ]);
     }

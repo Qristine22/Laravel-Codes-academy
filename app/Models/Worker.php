@@ -21,6 +21,13 @@ class Worker extends Model
         'biography_en',
         'biography_am',
         'biography_ru',
-        'img',
     ];
+
+    public static function workers(){
+        return Worker::with('imgs')->paginate(5, ['*'], 'workers');
+    }
+
+    public function imgs(){
+        return $this->hasMany(WorkersImg::class, 'worker_id', 'id');
+    }
 }

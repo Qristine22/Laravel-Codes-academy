@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Admin\About;
 
-use App\Models\Worker;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\About\WorkersRequest;
+
+// Models
+use App\Models\Worker;
+use App\Models\WorkersImg;
 
 class WorkersController extends Controller
 {
@@ -38,12 +41,7 @@ class WorkersController extends Controller
      */
     public function store(WorkersRequest $request)
     {
-        $photo = null;
-        if(!empty($request->file('img'))){
-            $photo = $request->file('img')->store('about/workers');
-        }
-
-        Worker::insert([
+        $worker = Worker::insertGetId([
             'name_en' => $request->name_en,
             'name_am' => $request->name_am,
             'name_ru' => $request->name_ru,
@@ -53,8 +51,18 @@ class WorkersController extends Controller
             'biography_en' => $request->biography_en,
             'biography_am' => $request->biography_am,
             'biography_ru' => $request->biography_ru,
-            'img' => $photo,
         ]);
+
+
+        if (!empty($request->imgs)) {
+            foreach ($request->imgs as $img) {
+                $imgPath = $img->store('about/workers');
+                WorkersImg::insert([
+                    'worker_id' => $worker,
+                    'img' => $imgPath,
+                ]);
+            }
+        }
 
         return redirect(route('admin.about.academy-structure.index'));
     }
@@ -92,17 +100,6 @@ class WorkersController extends Controller
      */
     public function update(Request $request, Worker $worker)
     {
-        $photo = null;
-
-        if(!empty($request->imgHidden)){
-            $photo = $request->imgHidden;
-        }
-
-        if(!empty($request->img)){
-            Storage::delete($photo);
-            $photo = $request->file('img')->store('about/workers');
-        }
-
         $worker->update([
             'name_en' => $request->name_en,
             'name_am' => $request->name_am,
@@ -113,9 +110,18 @@ class WorkersController extends Controller
             'biography_en' => $request->biography_en,
             'biography_am' => $request->biography_am,
             'biography_ru' => $request->biography_ru,
-            'img' => $photo,
         ]);
 
+
+        if (!empty($request->imgs)) {
+            foreach ($request->imgs as $img) {
+                $imgPath = $img->store('about/workers');
+                WorkersImg::insert([
+                    'worker_id' => $worker->id,
+                    'img' => $imgPath,
+                ]);
+            }
+        }
         return redirect(route('admin.about.academy-structure.index'));
     }
 

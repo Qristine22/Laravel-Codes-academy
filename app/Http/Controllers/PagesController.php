@@ -214,6 +214,36 @@ class PagesController extends Controller
             'person' => $person,
         ]);
     }
+    public function trainingOrganization(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+        $person = Worker::where('id', 6)->first();
+
+        return view('biography', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'person' => $person,
+        ]);
+    }
+    public function unitOfFinance(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+        $person = Worker::where('id', 7)->first();
+
+        return view('biography', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'person' => $person,
+        ]);
+    }
+    public function hotel(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+        $person = Worker::where('id', 8)->first();
+
+        return view('biography', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'person' => $person,
+        ]);
+    }
 
 
 

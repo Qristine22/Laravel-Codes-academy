@@ -15,7 +15,7 @@
             <div class="wrapper">
                 <div class="member__cont">
                     @if(@isset($person))
-                        <div class="member__info" @if(@empty($person->img))style="width: 100%" @endif>
+                        <div class="member__info" @if(count($person->imgs) == 0)style="width: 100%" @endif>
                             <h2 class="member__name">{{ $person->{'name_'.app()->getLocale()} }}</h2>
 
                             @if(@isset($person->position_en) || @isset($person->position_am) || @isset($person->position_ru))
@@ -38,9 +38,9 @@
                             @endif
                         </div>
 
-                        @if(@isset($person->img))
+                        @if(count($person->imgs) > 0)
                             <div class="member__img">
-                                <img class="img" src="{{ Storage::url($person->img) }}" alt="1">
+                                <img class="img" src="{{ Storage::url($person->imgs[0]->img) }}" alt="img">
                             </div>
                         @endif
                     @endif
