@@ -36,7 +36,14 @@
                     @foreach ($governingBoardDecrees as $item)
 
                         {{-- component path  about/decree --}}
-                        <x-about.decree :item=$item />
+                        <x-about.decree :item=$item>
+                            <a href="{{ route('governingBoardDecreedownload', ['pdf' => $item->id]) }}">
+                                <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                <span class="pdf__item_span text-18">
+                                    @lang('main.download')
+                                </span>
+                            </a>
+                        </x-about.decree>
                     @endforeach
                 </div>
             </div>

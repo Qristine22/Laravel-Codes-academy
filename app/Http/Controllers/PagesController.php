@@ -101,9 +101,9 @@ class PagesController extends Controller
 
     public function governingBoardBiography($id){
         $headersBot = Subheader::where('parent_id', 1)->get();
-
         $person = GoverningBoardStaff::findOrFail($id);
-        return view('biography', [
+
+        return view('governing-board-biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'person' => $person,
@@ -442,7 +442,7 @@ class PagesController extends Controller
     public function conductingPractice(){
         $headersBot = Subheader::where('parent_id', 3)->get();
 
-        return view('pdfs-downloade', [
+        return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
         ]);
@@ -450,7 +450,7 @@ class PagesController extends Controller
     public function rulesOfBehaviour(){
         $headersBot = Subheader::where('parent_id', 3)->get();
 
-        return view('pdfs-downloade', [
+        return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
         ]);
@@ -458,7 +458,7 @@ class PagesController extends Controller
     public function dormitoryRules(){
         $headersBot = Subheader::where('parent_id', 3)->get();
         
-        return view('pdfs-downloade', [
+        return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
         ]);
@@ -466,7 +466,7 @@ class PagesController extends Controller
     public function provideDeferral(){
         $headersBot = Subheader::where('parent_id', 3)->get();
 
-        return view('pdfs-downloade', [
+        return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
         ]);
@@ -594,7 +594,7 @@ class PagesController extends Controller
     public function professionalLiterature(){
         $headersBot = Subheader::where('parent_id', 5)->get();
 
-        return view('pdfs-downloade', [
+        return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
         ]);
@@ -602,7 +602,7 @@ class PagesController extends Controller
     public function organizingLibraryActivities(){
         $headersBot = Subheader::where('parent_id', 5)->get();
 
-        return view('pdfs-downloade', [
+        return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
         ]);

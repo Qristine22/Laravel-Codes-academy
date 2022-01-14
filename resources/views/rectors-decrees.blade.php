@@ -15,10 +15,17 @@
             <div class="wrapper">
                 <h3 class="pdfs__title">@lang('about.rector.decrees')</h3>
                 <div class="pdfs__cont flex">
-                    @foreach ($decrees as $decree)
+                    @foreach ($decrees as $item)
 
                         {{-- component path  about/decree --}}
-                        <x-about.decree :item=$decree />
+                        <x-about.decree :item=$item>
+                            <a href="{{ route('rectorsDecreedownload', ['pdf' => $item->id]) }}">
+                                <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                <span class="pdf__item_span text-18">
+                                    @lang('main.download')
+                                </span>
+                            </a>
+                        </x-about.decree>
                     @endforeach
 
                     {{-- pagination --}}

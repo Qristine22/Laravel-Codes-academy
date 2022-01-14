@@ -24,7 +24,7 @@
                                 <span class="pdfs__item_layer"></span>
                                 <span class="pdfs__item_see-all text-18">
                                     <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
-                                    @lang('main.downloade')
+                                    @lang('main.download')
                                 </span>
                             </a>
                         </div>
@@ -42,7 +42,7 @@
                                 <span class="pdfs__item_layer"></span>
                                 <span class="pdfs__item_see-all text-18">
                                     <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
-                                    @lang('main.downloade')
+                                    @lang('main.download')
                                 </span>
                             </a>
                         </div>
@@ -60,7 +60,7 @@
                                 <span class="pdfs__item_layer"></span>
                                 <span class="pdfs__item_see-all text-18">
                                     <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
-                                    @lang('main.downloade')
+                                    @lang('main.download')
                                 </span>
                             </a>
                         </div>
@@ -77,7 +77,7 @@
                                 <span class="pdfs__item_layer"></span>
                                 <span class="pdfs__item_see-all text-18">
                                     <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
-                                    @lang('main.downloade')
+                                    @lang('main.download')
                                 </span>
                             </a>
                         </div>
@@ -94,7 +94,7 @@
                                 <span class="pdfs__item_layer"></span>
                                 <span class="pdfs__item_see-all text-18">
                                     <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
-                                    @lang('main.downloade')
+                                    @lang('main.download')
                                 </span>
                             </a>
                         </div>
@@ -111,7 +111,7 @@
                                 <span class="pdfs__item_layer"></span>
                                 <span class="pdfs__item_see-all text-18">
                                     <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
-                                    @lang('main.downloade')
+                                    @lang('main.download')
                                 </span>
                             </a>
                         </div>
@@ -128,7 +128,7 @@
                                 <span class="pdfs__item_layer"></span>
                                 <span class="pdfs__item_see-all text-18">
                                     <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
-                                    @lang('main.downloade')
+                                    @lang('main.download')
                                 </span>
                             </a>
                         </div>
@@ -145,7 +145,7 @@
                                 <span class="pdfs__item_layer"></span>
                                 <span class="pdfs__item_see-all text-18">
                                     <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
-                                    @lang('main.downloade')
+                                    @lang('main.download')
                                 </span>
                             </a>
                         </div>
@@ -162,7 +162,7 @@
                                 <span class="pdfs__item_layer"></span>
                                 <span class="pdfs__item_see-all text-18">
                                     <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
-                                    @lang('main.downloade')
+                                    @lang('main.download')
                                 </span>
                             </a>
                         </div>
@@ -179,7 +179,7 @@
                                 <span class="pdfs__item_layer"></span>
                                 <span class="pdfs__item_see-all text-18">
                                     <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
-                                    @lang('main.downloade')
+                                    @lang('main.download')
                                 </span>
                             </a>
                         </div>
@@ -196,7 +196,7 @@
                                 <span class="pdfs__item_layer"></span>
                                 <span class="pdfs__item_see-all text-18">
                                     <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
-                                    @lang('main.downloade')
+                                    @lang('main.download')
                                 </span>
                             </a>
                         </div>
@@ -213,7 +213,7 @@
                                 <span class="pdfs__item_layer"></span>
                                 <span class="pdfs__item_see-all text-18">
                                     <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
-                                    @lang('main.downloade')
+                                    @lang('main.download')
                                 </span>
                             </a>
                         </div>
@@ -230,7 +230,7 @@
                                 <span class="pdfs__item_layer"></span>
                                 <span class="pdfs__item_see-all text-18">
                                     <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
-                                    @lang('main.downloade')
+                                    @lang('main.download')
                                 </span>
                             </a>
                         </div>
@@ -247,7 +247,7 @@
                                 <span class="pdfs__item_layer"></span>
                                 <span class="pdfs__item_see-all text-18">
                                     <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
-                                    @lang('main.downloade')
+                                    @lang('main.download')
                                 </span>
                             </a>
                         </div>

@@ -34,7 +34,7 @@
                                 <a href="#">
                                     <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
                                     <span class="pdf__item_span text-18">
-                                        @lang('main.downloade')
+                                        @lang('main.download')
                                     </span>
                                 </a>
                             </div>
@@ -58,7 +58,7 @@
                                 <a href="#">
                                     <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
                                     <span class="pdf__item_span text-18">
-                                        @lang('main.downloade')
+                                        @lang('main.download')
                                     </span>
                                 </a>
                             </div>
@@ -81,7 +81,7 @@
                                 <a href="#">
                                     <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
                                     <span class="pdf__item_span text-18">
-                                        @lang('main.downloade')
+                                        @lang('main.download')
                                     </span>
                                 </a>
                             </div>
@@ -107,7 +107,7 @@
                                 <a href="#">
                                     <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
                                     <span class="pdf__item_span text-18">
-                                        @lang('main.downloade')
+                                        @lang('main.download')
                                     </span>
                                 </a>
                             </div>
@@ -133,7 +133,7 @@
                                 <a href="#">
                                     <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
                                     <span class="pdf__item_span text-18">
-                                        @lang('main.downloade')
+                                        @lang('main.download')
                                     </span>
                                 </a>
                             </div>

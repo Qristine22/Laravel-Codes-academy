@@ -30,6 +30,9 @@ Route::middleware(['set_locale'])->group(function(){
         Route::get('/governing-board', 'App\Http\Controllers\PagesController@governingBoard')->name('governingBoard');
         Route::get('/governing-board/decree/{year}', 'App\Http\Controllers\PagesController@governingBoardDecree')
             ->name('governingBoardDecree');
+        // governing board pdf download
+        Route::get('/governing-board/decree/{pdf}/download', 'App\Http\Controllers\MainController@governingBoardDecreedownload')
+            ->name('governingBoardDecreedownload');
         Route::get('/governing-board/biography/{id}', 'App\Http\Controllers\PagesController@governingBoardBiography')
             ->name('governingBoardBiography');
 
@@ -42,6 +45,9 @@ Route::middleware(['set_locale'])->group(function(){
             Route::get('/former-rectors-biography', 'App\Http\Controllers\PagesController@formerRectorsBiography')
                 ->name('formerRectorsBiography');
             Route::get('/decrees', 'App\Http\Controllers\PagesController@rectorsDecrees')->name('rectorsDecrees');
+            // governing board pdf download
+            Route::get('/decree/{pdf}/download', 'App\Http\Controllers\MainController@rectorsDecreedownload')
+                ->name('rectorsDecreedownload');
         });
 
 
@@ -187,8 +193,8 @@ Route::middleware(['set_locale'])->group(function(){
     Route::get('/login', 'App\Http\Controllers\PagesController@login')->name('login');
     Route::post('/login-progress', 'App\Http\Controllers\AuthController@loginProgress')->name('loginProgress');
     Route::get('/register-progress', 'App\Http\Controllers\AuthController@registerProgress')->name('registerProgress');
-    
-    
+
+
 
 
 

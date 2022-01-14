@@ -23,14 +23,14 @@
                             <span class="text-18">Հայալեզու գրքերի ցանկ</span>
                             <div class="link__pdf_icon">
                                 <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
-                                <span class="link__pdf_span text-18">@lang('main.downloade')</span>
+                                <span class="link__pdf_span text-18">@lang('main.download')</span>
                             </div>
                         </a>
                         <a class="link__pdf flex" href="#">
                             <span class="text-18">Օտարալեզու գրքերի ցանկ</span>
                             <div class="link__pdf_icon">
                                 <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
-                                <span class="link__pdf_span text-18">@lang('main.downloade')</span>
+                                <span class="link__pdf_span text-18">@lang('main.download')</span>
                             </div>
                         </a>
                     </div>

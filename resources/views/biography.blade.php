@@ -16,7 +16,8 @@
                 <div class="member__cont">
                     @if(@isset($person))
                         <div class="member__info"
-                            @if(count($person->imgs) == 0 || count($person->imgs) > 1) style="width: 100%" @endif>
+                            @if(@isset($person->imgs) &&
+                            (count($person->imgs) == 0 || count($person->imgs) > 1)) style="width: 100%" @endif>
                             <h2 class="member__name">{{ $person->{'name_'.app()->getLocale()} }}</h2>
 
                             @if(@isset($person->position_en) || @isset($person->position_am) || @isset($person->position_ru))
@@ -40,15 +41,19 @@
                         </div>
                         
                         {{-- one img --}}
-                        @if(count($person->imgs) == 1)
+                        @if(@isset($person->imgs) && count($person->imgs) == 1)
                             <div class="member__img">
                                 <img class="img" src="{{ Storage::url($person->imgs[0]->img) }}" alt="img">
+                            </div>
+                        @elseif (@isset($person->img))
+                            <div class="member__img">
+                                <img class="img" src="{{ Storage::url($person->img) }}" alt="img">
                             </div>
                         @endif
                         
 
                         {{-- more imgs in bottom --}}
-                        @if(count($person->imgs) > 1)
+                        @if(@isset($person->imgs) && count($person->imgs) > 1)
                             <div class="biography__imgs">
                                 @foreach($person->imgs as $img)
                                     <div class="biography__img">
@@ -75,5 +80,4 @@
 
 @section('scripts')
     <script src="/js/swiper.js"></script>
-    {{-- <script src="/js/biography.js"></script> --}}
 @endsection
