@@ -29,5 +29,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AcademyStructureSeeder::class);
         $this->call(WorkersSeeder::class);
         $this->call(WorkersImgsSeeder::class);
+        $this->call(ReportSeeder::class);
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Home;
 use App\Models\About;
 use App\Models\Header;
+use App\Models\Report;
 use App\Models\Worker;
 use App\Models\Subheader;
 use App\Models\RectorsPage;
@@ -282,12 +283,17 @@ class PagesController extends Controller
 
 
 
-    public function report(){
+    public function report($year){
         $headersBot = Subheader::where('parent_id', 1)->get();
+        $reports = Report::where('year', $year)->get();
+        $reportYears = Report::orderBy('id', 'DESC')->get()->groupBy('year');
 
         return view('report', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'reports' => $reports,
+            'reportYears' => $reportYears,
+            'year' => $year,
         ]);
     }
     public function graduates(){

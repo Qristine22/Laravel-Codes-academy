@@ -40,7 +40,7 @@ class SubheaderSeeder extends Seeder
                 'name_en' => 'Reports and audit conclusion',
                 'name_am' => 'Հաշվետվություններ և աուդիտորական եզրակացություններ',
                 'name_ru' => 'Отчёты и аудиторские заключения',
-                'link' => 'about/report',
+                'link' => 'about/report/2020',
                 'parent_id' => 1,
             ],
             [
