@@ -2188,6 +2188,472 @@ class WorkersSeeder extends Seeder
 
             // ************************************************************************************************
             [
+                'name_en' => 'Anna Mkrtichyan',
+                'name_am' => 'Աննա Մկրտիչյան',
+                'name_ru' => 'Анна Мкртичян',
+                'position_en' => 'Head of the Unit of Cooperation and Public Relations',
+                'position_am' => 'Համագործակցության և հանրային կապերի բաժնի ղեկավար',
+                'position_ru' => 'Руководитель отделa сотрудничества и общественных связей',
+
+
+                'biography_en' => '<div>
+                <h4><strong>Education</strong></h4>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2009 up to now:</p>
+                <p>Yerevan State University, writing PhD thesis</p>
+                </li>
+                <li>
+                <p>2009:</p>
+                <p>Yerevan State University, Department of Journalism, Master\'s degree</p>
+                </li>
+                <li>
+                <p>2007:</p>
+                <p>Yerevan State University, Department of Journalism, Bachelor\'s degree</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Trainings</strong></p>
+                <h4>Participation in numerous professional trainings in Armenia and abroad</h4>
+                </div>
+                <div>
+                <p><strong>Work experience</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2017 February up to now:</p>
+                <p>Head of the Unit of Cooperation and Public Relations of Academy of Justice</p>
+                </li>
+                <li>
+                <p>2014-2017:</p>
+                <p>Responsible for International Cooperation and Public Relations of Academy of Justice</p>
+                </li>
+                <li>
+                <p>2009 up to now:</p>
+                <p>Yerevan State University, Department of Journalism, lecturer</p>
+                </li>
+                <li>
+                <p>2009-2017:</p>
+                <p>Yerevan State University, &ldquo;Journalist&rdquo; newspaper, chief editor</p>
+                </li>
+                <li>
+                <p>2007-2014:</p>
+                <p>&ldquo;Yerkir Media&rdquo; TV, &ldquo;Yerkirn aysor&rdquo; news program, journalist</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Languages</strong></p>
+                <h4>Russian, English</h4>
+                </div>
+                <div>
+                <p><strong>Publications</strong></p>
+                <h4>Author and co-author of about two dozen scientific articles published in Armenian and foreign scientific journals</h4>
+                </div>
+                <div>
+                <p><strong>Awards, prizes</strong></p>
+                <h4>Golden Medal of the Academy of Justice of RA</h4>
+                <h4>Winner of the nomination "The best publicist article", Union of Armenians in Russia</h4>
+                </div>
+                <div>
+                <p><strong>Unit of Cooperation and Public Relations</strong></p>
+                <h4>The unit carries out the activities for implementing its goals and objectives in the following directions:</h4>
+                <h4>establishing and expanding cooperation with Armenian, Artsakh, foreign and international organizations, which is one of the key directions of the Academy\'s activities,</h4>
+                <h4>ensuring publicity of the Academy\'s activities (organizing communication between printed and online media and journalists, covering of the Academy\'s public events, development, translation and sharing of information packages for public awareness on activities and programs organized by the Academy or with its participation, providing information for official website and etc),</h4>
+                <h4>organization of visits, events,</h4>
+                <h4>development and strengthening of public relations,</h4>
+                <h4>other current activities.</h4>
+                </div>',
+
+
+                'biography_am' => '<div>
+                <h4><strong>Կրթություն</strong></h4>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2009 թ.-ից</p>
+                <p>ԵՊՀ մամուլի պատմության և տեսության ամբիոնի հայցորդ</p>
+                </li>
+                <li>
+                <p>2007-2009 թթ.</p>
+                <p>ԵՊՀ ժուռնալիստիկայի ֆակուլտետի մագիստրատուրա</p>
+                </li>
+                <li>
+                <p>2003-2007 թթ.</p>
+                <p>ԵՊՀ ժուռնալիստիկայի ֆակուլտետի բակալավրիատ</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Վերապատրաստումներ</strong></p>
+                <h4>Մասնակցել է բազմաթիվ մասնագիտական վերապատրաստումների Հայաստանում և արտերկրում</h4>
+                </div>
+                <div>
+                <p><strong>Աշխատանքային փորձ</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2017 թ.-ի փետրվարից</p>
+                <p>Արդարադատության ակադեմիայի համագործակցության և հանրային կապերի բաժնի ղեկավար</p>
+                </li>
+                <li>
+                <p>2014-2017 թթ.</p>
+                <p>Արդարադատության ակադեմիայի միջազգային համագործակցության և հանրային կապերի պատասխանատու</p>
+                </li>
+                <li>
+                <p>2009 թ.-ից մինչ օրս</p>
+                <p>ԵՊՀ տպագիր և հեռարձակվող լրատվամիջոցների ամբիոնի դասախոս</p>
+                </li>
+                <li>
+                <p>2009-2017 թթ.</p>
+                <p>ԵՊՀ &laquo;Ժուռնալիստ&raquo; թերթի պատասխանատու խմբագիր</p>
+                </li>
+                <li>
+                <p>2007-2014 թթ.</p>
+                <p>&laquo;Երկիր Մեդիա&nbsp;ՀԸ&nbsp;&laquo;Երկիրն այսօր&raquo; լրատվական ծրագրի լրագրող</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Օտար լեզուներ</strong></p>
+                <h4>Ռուսերեն, անգլերեն</h4>
+                </div>
+                <div>
+                <p><strong>Հրապարակումներ</strong></p>
+                <h4>Հեղինակ և համահեղինակ է շուրջ երկու տասնյակ գիտական հոդվածների, որոնք հրապարակվել են հայաստանյան և արտասահմանյան գիտական ամսագրերում</h4>
+                </div>
+                <div>
+                <p><strong>Պարգևներ, մրցանակներ</strong></p>
+                <h4>Արդարադատության ակադեմիայի հուշամեդալ</h4>
+                <h4>&laquo;Լավագույն հրապարակախոսական հոդված&raquo; անվանակարգի հաղթող, Ռուսաստանի հայերի միություն</h4>
+                </div>
+                <div>
+                <p><strong>Համագործակցության և հանրային կապերի բաժին</strong></p>
+                <h4>Բաժինն իր գործունեության նպատակների ու խնդիրների կենսագործման ուղղությամբ աշխատանքներ է իրականացնում հետևյալ ուղղություններով՝</h4>
+                <h4>հայաստանյան, արցախյան, օտարերկրյա և միջազգային կառույցների հետ համագործակցության հաստատում և ընդլայնում, ինչը Ակադեմիայի գործունեության առանցքային ուղղություններից է,</h4>
+                <h4>Ակադեմիայի գործունեության հրապարակայնության ապահովում (տպագիր և էլեկտրոնային լրատվամիջոցների և լրագրողների միջև հաղորդակցության կազմակերպում, Ակադեմիայի հանրային միջոցառումների լուսաբանում, Ակադեմիայի կողմից կամ նրա մասնակցությամբ կազմակերպված աշխատանքների և ծրագրերի վերաբերյալ հանրության իրազեկմանն ուղղված տեղեկատվական փաթեթների մշակում, թարգմանում և տարածում, համացանցային պաշտոնական կայքէջի սպասարկում և այլն),</h4>
+                <h4>այցերի, միջոցառումների կազմակերպում,</h4>
+                <h4>հասարակայնության հետ կապերի զարգացում և ամրապնդում,</h4>
+                <h4>ընթացիկ այլ աշխատանքներ:</h4>
+                </div>',
+
+
+                'biography_ru' => '<div>
+                <h4><strong>Образование</strong></h4>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>С 2009 года</p>
+                <p>Ереванский государственный университет, Кафедра истории и теории прессы, аспирант</p>
+                </li>
+                <li>
+                <p>2007-2009&nbsp;гг.</p>
+                <p>Ереванский государственный университет, Факультет журналистики, магистратура</p>
+                </li>
+                <li>
+                <p>2003-2007&nbsp;гг.</p>
+                <p>Ереванский государственный университет, Факультет журналистики, бакалавр</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Переподготовки</strong></p>
+                <h4>Участвовала в многочисленных профессиональных тренингах в Армении и за рубежом</h4>
+                </div>
+                <div>
+                <p><strong>Трудовая деятельность</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>С февраля 2017 года</p>
+                <p>руководитель отдела сотрудничества и общественных связей Академии юстиции</p>
+                </li>
+                <li>
+                <p>2014-2017 гг.</p>
+                <p>ответственный за международное сотрудничество и связи с общественностью Академии юстиции</p>
+                </li>
+                <li>
+                <p>С 2009 года</p>
+                <p>преподаватель кафедры печатных и вещательных СМИ, Ереванский государственный университет</p>
+                </li>
+                <li>
+                <p>2009-2017 гг.</p>
+                <p>главный редактор журнала &laquo;Журналист&raquo; Ереванского государственного университета</p>
+                </li>
+                <li>
+                <p>2007-2014 гг.</p>
+                <p>корреспондент новостной программы &laquo;Еркирн айсор&raquo;, &laquo;Еркир-медиа&raquo; ТВ</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Иностранные языки</strong></p>
+                <h4>Русский, английский</h4>
+                </div>
+                <div>
+                <p><strong>Публикации</strong></p>
+                <h4>Автор и соавтор около 20 научных статей, опубликованных в армянских и зарубежных научных журналах</h4>
+                </div>
+                <div>
+                <p><strong>Награды, призы</strong></p>
+                <h4>Медаль Академии юстиции</h4>
+                <h4>Лауреат номинации &laquo;Лучшая публицистическая статья&raquo;, Союз армян России</h4>
+                </div>
+                <div>
+                <p><strong>Отдел сотрудничества и общественных связей</strong></p>
+                <h4>Отдел для реализации своих целей и задач осуществляет деятельность по следующим направлениям:</h4>
+                <h4>установление и расширение сотрудничества с армянскими, арцахскими, зарубежными и международными организациями, что является одним из ключевых направлений деятельности Академии,</h4>
+                <h4>обеспечение публичности деятельности Академии (организация коммуникации Академии с печатными и электронными СМИ, журналистами, освещение общественных мероприятий Академии, разработка, перевод и распространение информационных пакетов для информирования общественности о мероприятиях и программах, реализуемых Академией или при ее участии, информационная поддержка официального сайта и т.д.),</h4>
+                <h4>организация визитов, мероприятий,</h4>
+                <h4>развитие и укрепление связей с общественностью,</h4>
+                <h4>иная текущая деятельность.</h4>
+                </div>',
+            ],
+                        
+            
+            
+
+
+            
+
+
+            // ************************************************************************************************
+            [
+                'name_en' => '....',
+                'name_am' => '....',
+                'name_ru' => '....',
+                'position_en' => null,
+                'position_am' => null,
+                'position_ru' => null,
+
+
+                'biography_en' => '<div>
+                <h4>According to the Law of the RA "On the Academy of Justice", the hotel complex (hotel) of the Academy hosts the trainees who are trained and permanently live outside the place of training: judges, prosecutors, investigators, judicial servants, judicial bailiffs, state servants of the Department of the Investigative Committee of the RA, State servants in the staff of the Prosecutor\'s office. Besides the above mentioned trainees, other persons can also use the hotel with the permission of the Rector of the Academy. The terms of use of the hotel are prescribed by the procedure "Use of the Hotel of the Academy of Justice" in accordance with the relevant order of the Rector of the Academy.</h4>
+                <h4>The hotel consists of 16 double rooms equipped with all amenities: bathroom, refrigerator, TV-set, air conditioner also internet connection.</h4>
+                </div>',
+
+
+                'biography_am' => '<div>
+                <h4>&laquo;Արդարադատության ակադեմիայի մասին&raquo; ՀՀ օրենքով սահմանված կարգով Ակադեմիայի հյուրանոցային համալիրը (հյուրանոցը) հյուրընկալում է վերապատրաստում անցնող և վերապատրաստման վայրից դուրս մշտապես բնակվող ունկնդիրներին՝ դատավորներին, դատախազներին, քննիչներին, դատական ծառայողներին, դատական կարգադրիչներին, ՀՀ քննչական կոմիտեի դեպարտամենտում պետական ծառայողներին, ՀՀ դատախազության աշխատակազմում պետական ծառայողներին: Բացի վերոնշյալ ունկնդիրներից՝ Ակադեմիայի ռեկտորի թույլտվությամբ հյուրանոցից կարող են օգտվել նաև այլ անձինք: Հյուրանոցից օգտվելու պայմանները սահմանված են &laquo;Արդարադատության ակադեմիայի հյուրանոցից օգտվելու&raquo; կարգով՝ հաստատված Ակադեմիայի ռեկտորի համապատասխան հրամանի հիման վրա:</h4>
+                <h4>Հյուրանոցը բաղկացած է 16 երկտեղանոց սենյակներից, որոնք ապահովված են կենցաղային բոլոր հարմարություններով՝ լոգասենյակ, սառնարան, հեռուստացույց, օդորակիչ, նաև ինտերնետային կապ:</h4>
+                </div>',
+
+
+                'biography_ru' => '<div>
+                <h4>В соответствии с Законом РА "Об Академии юстиции" гостиничный комплекс (гостиница) Академии принимает слушателей, проходящих переподготовку и постоянно проживающих за пределами места обучения: судей, прокуроров, следователей, судебных служащих, судебных приставов, государственных служащих Следственного комитета РА, государственных служащих прокуратуры РА. Помимо упомянутых выше слушателей, с разрешения ректора Академии, услугами гостиницы могут воспользоваться и иные лица. Условия пребывания в гостиничном комплексе закреплены в порядке &laquo;Об использовании гостиницы Академии юстиции&raquo;, утвержденном ректором Академии.</h4>
+                <h4>Гостиница включает 16 двухместных номера, оборудованных всеми удобствами: ванной комнатой, холодильником, телевизором, кондиционером и интернетом.</h4>
+                </div>',
+            ],
+                                    
+            
+            
+
+
+            
+
+
+            // ************************************************************************************************
+            [
+                'name_en' => 'Alexander Pilosyan',
+                'name_am' => 'Ալեքսանդր Փիլոսյան',
+                'name_ru' => 'Александр Пилосян',
+                'position_en' => 'Head of the Unit of Technical and Economic activities-technical manager',
+                'position_am' => 'Տեխնիկատնտեսական բաժնի ղեկավար-տնտեսվար',
+                'position_ru' => 'Руководитель хозяйственно-технического отдела',
+
+
+                'biography_en' => '<div>
+                <p><strong>Date and Place of Birth</strong></p>
+                <h4>04.08.1958, Republic of Georgia, Akhalkalaki region, Sulda</h4>
+                </div>
+                <div>
+                <p><strong>Education</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>1980:</p>
+                <p>Basic school of Sulda</p>
+                </li>
+                <li>
+                <p>1975:</p>
+                <p>Faculty of Finance and Accounting of Yerevan Institute of National Economy</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <h4><strong>Work experience</strong></h4>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2017 up to now</p>
+                <p>Head of the Unit of Technical and Economic activities-technical manager of the Academy of Justice</p>
+                </li>
+                <li>
+                <p>2014-2017:</p>
+                <p>Technical manager of the Academy of Justice</p>
+                </li>
+                <li>
+                <p>1996-2013:</p>
+                <p>"Profitold" LLC, RF, Moscow</p>
+                </li>
+                <li>
+                <p>1992-1996:</p>
+                <p>Haykop Public Food Administration</p>
+                </li>
+                <li>
+                <p>1980-1991:</p>
+                <p>Ministry of Commerce, Armenian SSR</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Diplomas, letters of appreciation, medals</strong></p>
+                <h4>Medal of the Academy of Justice</h4>
+                <h4>Diploma, letter of appreciation, Academy of Justice</h4>
+                <h4>Diplomas, letters of appreciation Ministry of Commerce, Armenian SSR</h4>
+                </div>
+                <div>
+                <p><strong>Marital Status</strong></p>
+                <h4>Married, has 3 daughters.</h4>
+                </div>
+                <div>
+                <p><strong>Unit of Tehchnical and Economic activities</strong></p>
+                <h4>The Unit implements the activities in the following directions:</h4>
+                <h4>Protection and repairing of the building complex,</h4>
+                <h4>Provision of uninterrupted work of engineering nodes: electrical, gas service, water supply, telephone and internet connection,</h4>
+                <h4>Organizing the supply of stationery, economic and construction products, fuel,</h4>
+                <h4>Distribution of necessary goods for the relevant units,</h4>
+                <h4>Renovation of the yard area, greenery.</h4>
+                </div>',
+
+
+                'biography_am' => '<div>
+                <p><strong>Ծննդյան տարեթիվ, ամսաթիվ, ծննդավայր</strong></p>
+                <h4>04.08.1958, Վրաստանի Հանրապետություն, Ախալքալաքի շրջան, գ․ Սուլդա</h4>
+                </div>
+                <div>
+                <p><strong>Կրթություն</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>1980 թ.</p>
+                <p>Երևանի ժողովրդական տնտեսության ինստիտուտի ֆինանսահաշվային ֆակուլտետ</p>
+                </li>
+                <li>
+                <p>1975 թ.</p>
+                <p>Սուլդայի միջնակարգ դպրոց</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <h4><strong>Աշխատանքային փորձ</strong></h4>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>2017թ.-ից առ այսօր</p>
+                <p>Արդարադատության ակադեմիայի տեխնիկատնտեսական բաժնի ղեկավար-տնտեսվար&nbsp;</p>
+                </li>
+                <li>
+                <p>2014-2017 թթ.</p>
+                <p>Արդարադատության ակադեմիայի տնտեսվար</p>
+                </li>
+                <li>
+                <p>1996-2013 թթ.</p>
+                <p>&laquo;Պրոֆիտոլդ&raquo; ՍՊԸ, ՌԴ, Մոսկվա</p>
+                </li>
+                <li>
+                <p>1992-1996 թթ.</p>
+                <p>Հայկոպ հասարակական սննդի կառավարչություն</p>
+                </li>
+                <li>
+                <p>1980-1991 թթ.</p>
+                <p>ՀԽՍՀ առևտրի նախարարություն&nbsp;</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Պատվոգրեր, շնորհակալագրեր, մեդալներ</strong></p>
+                <h4>Հուշամեդալ, Արդարադատության ակադեմիա</h4>
+                <h4>Պատվոգիր, Շնորհակալագիր, Արդարադատության ակադեմիա</h4>
+                <h4>Պատվոգրեր, շնորհակալագրեր, ՀԽՍՀ առևտրի նախարարություն</h4>
+                </div>
+                <div>
+                <p><strong>Ընտանեկան կարգավիճակ</strong></p>
+                <h4>Ամուսնացած է, ունի երեք դուստր</h4>
+                </div>
+                <div>
+                <p><strong>Տեխնիկատնտեսական բաժին</strong></p>
+                <h4>Բաժինն աշխատանքներ է իրականացնում հետևյալ ուղղություններով`</h4>
+                <h4>շենքային համալիրի պահպանման և վերանորոգման աշխատանքներ,</h4>
+                <h4>ինժեներական հանգույցների անխափան աշխատանքի ապահովում (էլեկտրական, գազսպասարկման, ջրամատակարարման, հեռախոսային և ինտերնետ կապի),</h4>
+                <h4>գրենական պիտույքների, տնտեսական և շինարարական ապրանքների, վառելիքի մատակարարման կազմակերպում,</h4>
+                <h4>համապատասխան ստորաբաժանումների համար անհրաժեշտ ապրանքների բաշխում,</h4>
+                <h4>շենքի բակային տարածքի բարելավում և կանաչապատում:</h4>
+                </div>',
+
+
+                'biography_ru' => '<div>
+                <p><strong>Дата и место рождения&nbsp;</strong></p>
+                <h4>04.08.1958, Грузия ССР, Ахалкалакская область, с.Сулда</h4>
+                </div>
+                <div>
+                <p><strong>Образование</strong></p>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>1980 финансово</p>
+                <p>учетный факультет Ереванского института народного хозяйства</p>
+                </li>
+                <li>
+                <p>1975 г.</p>
+                <p>средняя школа с.Сулда</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <h4><strong>Трудовая деятельность</strong></h4>
+                <ul style="list-style-type: none;">
+                <li>
+                <p>С 2017 года</p>
+                <p>руководитель хозяйственно-технического отдела Академии юстиции</p>
+                </li>
+                <li>
+                <p>2014-2017 гг.</p>
+                <p>завхоз Академии юстиции</p>
+                </li>
+                <li>
+                <p>1996-2013 гг.</p>
+                <p>ООО &laquo;Профитольд&raquo;, РФ, Москва</p>
+                </li>
+                <li>
+                <p>1992-1996 гг.</p>
+                <p>администрация общественного питания &laquo;Айкоп&raquo;</p>
+                </li>
+                <li>
+                <p>1980-1991 гг.</p>
+                <p>Министерство торговли, Армянская ССР</p>
+                </li>
+                </ul>
+                </div>
+                <div>
+                <p><strong>Похвальные грамоты, благодарственные письма, медали</strong></p>
+                <h4>Медаль Академии юстиции</h4>
+                <h4>Похвальная грамота, благодарственное письмо, Академия юстиции</h4>
+                <h4>Похвальные грамоты, благодарственные письма Министерства торговли АССР</h4>
+                </div>
+                <div>
+                <p><strong>Семейное положение</strong></p>
+                <h4>Женат, имеет 3 дочерей.</h4>
+                </div>
+                <div>
+                <p><strong>Хозяйственно-технический отдел</strong></p>
+                <h4>Отдел осуществляет деятельность по следующим направлениям:</h4>
+                <h4>работы, направленные на поддержание в надлежащем состоянии здания Академии,</h4>
+                <h4>обеспечение бесперебойной работы инженерных узлов: электричество, газ, водоснабжение, телефон и интернет,</h4>
+                <h4>организация поставок, необходимых для деятельности Академии, канцелярских принадлежностей, хозяйственных товаров, строительных материалов, топлива,</h4>
+                <h4>распространение необходимых материальных ценностей для нужд соответствующих подразделений Академии,</h4>
+                <h4>благоустройство и озеленение территории Академии․</h4>
+                </div>',
+            ],
+            
+
+
+            
+
+
+            // ************************************************************************************************
+            [
                 'name_en' => 'Hotel',
                 'name_am' => 'Հյուրանոց',
                 'name_ru' => 'Гостиница',

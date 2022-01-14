@@ -120,6 +120,7 @@ member
     top: 0;
     right: 0;
     width: 19%;
+    height: 200px;
 }
 .member__info li p:first-child{
     color: var(--brown);
@@ -127,6 +128,21 @@ member
     font-size: 16px;
     font-weight: 700;
     line-height: 35px;
+}
+.biography__imgs{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.biography__img{
+    height: 100%;
+    padding: 10px;
+}
+.biography__img > img{
+    height: 100%;
+    display: block;
 }
 
 /*

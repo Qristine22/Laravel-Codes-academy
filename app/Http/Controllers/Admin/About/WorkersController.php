@@ -135,4 +135,17 @@ class WorkersController extends Controller
     {
         //
     }
+
+
+
+    
+
+    
+    // edit page deleting img
+    public function imgDelete($id){
+        $item = WorkersImg::findOrFail($id);
+        Storage::delete($item->img);
+        $item->delete();
+        return redirect()->back();
+    }
 }

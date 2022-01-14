@@ -60,6 +60,11 @@ Route::middleware(['set_locale'])->group(function(){
                 ->name('trainingOrganization');
             Route::get('/unit-of-finance', 'App\Http\Controllers\PagesController@unitOfFinance')
                 ->name('unitOfFinance');
+            Route::get('/cooperation-and-public-relation', 'App\Http\Controllers\PagesController@cooperationAndPublicRelation')
+                ->name('cooperationAndPublicRelation');
+            Route::get('/staff-and-document-management', 'App\Http\Controllers\PagesController@staffAndDocumentManagement')
+                ->name('staffAndDocumentManagement');
+            Route::get('/tehchnical-and-economic-activities', 'App\Http\Controllers\PagesController@tehchnicalAndEconomicActivities')->name('tehchnicalAndEconomicActivities');
             Route::get('/hotel', 'App\Http\Controllers\PagesController@hotel')
                 ->name('hotel');
         });
@@ -222,6 +227,9 @@ Route::middleware(['set_locale'])->group(function(){
                 // academy structure
                 Route::resource('academy-structure','App\Http\Controllers\Admin\About\AcademyStructureController');
                 Route::resource('workers','App\Http\Controllers\Admin\About\WorkersController');
+                // edit page deleting img
+                Route::get('/workers/-deleting-img/{id}', 'App\Http\Controllers\Admin\About\WorkersController@imgDelete')
+                    ->name('workersImgDelete');
             });
         });
     });

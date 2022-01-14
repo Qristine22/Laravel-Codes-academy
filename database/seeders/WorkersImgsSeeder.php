@@ -41,7 +41,32 @@ class WorkersImgsSeeder extends Seeder
             ],
             [
                 'worker_id' => '8',
+                'img' => 'about/workers/KECoWuhiyYEnDUB8QkWjUi04nohFJGlRdi6NS93D.jpg',
+            ],
+
+            [
+                'worker_id' => '10',
+                'img' => 'about/workers/eviaIM3T9V6eaEoYZPlxqDy8BEENIgUe7v6JOBBW.jpg',
+            ],
+            [
+                'worker_id' => '11',
                 'img' => 'about/workers/Us1xZ8mz31z9u9RRM42SZbBVZMrLdX9dbHGOuS8Q.jpg',
+            ],
+            [
+                'worker_id' => '11',
+                'img' => 'about/workers/9CNBHC0QtxkJcxX6SlHvFfeneiRFN3CHvHGL8zQ0.jpg',
+            ],
+            [
+                'worker_id' => '11',
+                'img' => 'about/workers/w9v0g688IY9upj43LZRBMe4QkyFtc71l0306zCro.jpg',
+            ],
+            [
+                'worker_id' => '11',
+                'img' => 'about/workers/vNoCz1QZwgYyhoOPxUd5D1lpmSasmiayvzKboaI4.jpg',
+            ],
+            [
+                'worker_id' => '11',
+                'img' => 'about/workers/Fb8xogJOhKzfAL8esZ3s2UUdcu0HdCMTTBAoZsLl.jpg',
             ],
         ]);
     }

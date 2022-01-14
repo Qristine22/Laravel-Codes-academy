@@ -234,9 +234,39 @@ class PagesController extends Controller
             'person' => $person,
         ]);
     }
-    public function hotel(){
+    public function cooperationAndPublicRelation(){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $person = Worker::where('id', 8)->first();
+
+        return view('biography', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'person' => $person,
+        ]);
+    }
+    public function staffAndDocumentManagement(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+        $person = Worker::where('id', 9)->first();
+
+        return view('biography', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'person' => $person,
+        ]);
+    }
+    public function tehchnicalAndEconomicActivities(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+        $person = Worker::where('id', 10)->first();
+
+        return view('biography', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'person' => $person,
+        ]);
+    }
+    public function hotel(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+        $person = Worker::where('id', 11)->first();
 
         return view('biography', [
             'headers' => $this->getHeader(),

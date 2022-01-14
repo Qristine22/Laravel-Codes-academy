@@ -62,8 +62,11 @@
                         <div class="flex admin__edit_imgs">
                             @foreach ($worker->imgs as $img)
                                 <div class="admin__edit_img">
-                                    <img class="img"
-                                    src="{{ Storage::url($img->img) }}" alt="{{ $worker->name_am }}">
+                                    <img src="{{ Storage::url($img->img) }}" alt="{{ $worker->name_am }}">
+                                    <a class="admin__edit_img_delete"
+                                        href="{{ route('admin.about.workersImgDelete', ['id' => $img->id]) }}">
+                                        <img class="img" src="/media/img/icons/delete.png" alt="delete">
+                                    </a>
                                 </div>
                             @endforeach
                         </div>

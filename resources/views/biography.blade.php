@@ -15,7 +15,8 @@
             <div class="wrapper">
                 <div class="member__cont">
                     @if(@isset($person))
-                        <div class="member__info" @if(count($person->imgs) == 0)style="width: 100%" @endif>
+                        <div class="member__info"
+                            @if(count($person->imgs) == 0 || count($person->imgs) > 1) style="width: 100%" @endif>
                             <h2 class="member__name">{{ $person->{'name_'.app()->getLocale()} }}</h2>
 
                             @if(@isset($person->position_en) || @isset($person->position_am) || @isset($person->position_ru))
@@ -37,10 +38,25 @@
                                 @endif
                             @endif
                         </div>
-
-                        @if(count($person->imgs) > 0)
+                        
+                        {{-- one img --}}
+                        @if(count($person->imgs) == 1)
                             <div class="member__img">
                                 <img class="img" src="{{ Storage::url($person->imgs[0]->img) }}" alt="img">
+                            </div>
+                        @endif
+                        
+
+                        {{-- more imgs in bottom --}}
+                        @if(count($person->imgs) > 1)
+                            <div class="biography__imgs">
+                                <div class="swiper-wrapper">
+                                    @foreach($person->imgs as $img)
+                                        <div class="biography__img">
+                                            <img src="{{ Storage::url($img->img) }}" alt="img">
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                         @endif
                     @endif
@@ -54,4 +70,10 @@
             @include('includes.about.rector.rector-menu')
         @endif
     </main>
+@endsection
+
+
+@section('scripts')
+    <script src="/js/swiper.js"></script>
+    {{-- <script src="/js/biography.js"></script> --}}
 @endsection
