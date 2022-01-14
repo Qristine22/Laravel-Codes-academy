@@ -50,13 +50,13 @@
                         {{-- more imgs in bottom --}}
                         @if(count($person->imgs) > 1)
                             <div class="biography__imgs">
-                                <div class="swiper-wrapper">
-                                    @foreach($person->imgs as $img)
-                                        <div class="biography__img">
+                                @foreach($person->imgs as $img)
+                                    <div class="biography__img">
+                                        <a href="{{ Storage::url($img->img) }}" target="_blank">
                                             <img src="{{ Storage::url($img->img) }}" alt="img">
-                                        </div>
-                                    @endforeach
-                                </div>
+                                        </a>
+                                    </div>
+                                @endforeach
                             </div>
                         @endif
                     @endif

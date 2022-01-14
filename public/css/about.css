@@ -140,7 +140,7 @@ member
     height: 100%;
     padding: 10px;
 }
-.biography__img > img{
+.biography__img img{
     height: 100%;
     display: block;
 }

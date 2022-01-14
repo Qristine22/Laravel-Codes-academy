@@ -2415,29 +2415,23 @@ class WorkersSeeder extends Seeder
 
             // ************************************************************************************************
             [
-                'name_en' => '....',
-                'name_am' => '....',
-                'name_ru' => '....',
+                'name_en' => 'Unit of the Staff and Document Management',
+                'name_am' => 'Անձնակազմի և փաստաթղթաշրջանառության բաժին',
+                'name_ru' => 'Отдел по работе с персоналом и документооборота',
                 'position_en' => null,
                 'position_am' => null,
                 'position_ru' => null,
 
 
-                'biography_en' => '<div>
-                <h4>According to the Law of the RA "On the Academy of Justice", the hotel complex (hotel) of the Academy hosts the trainees who are trained and permanently live outside the place of training: judges, prosecutors, investigators, judicial servants, judicial bailiffs, state servants of the Department of the Investigative Committee of the RA, State servants in the staff of the Prosecutor\'s office. Besides the above mentioned trainees, other persons can also use the hotel with the permission of the Rector of the Academy. The terms of use of the hotel are prescribed by the procedure "Use of the Hotel of the Academy of Justice" in accordance with the relevant order of the Rector of the Academy.</h4>
-                <h4>The hotel consists of 16 double rooms equipped with all amenities: bathroom, refrigerator, TV-set, air conditioner also internet connection.</h4>
+                'biography_en' => '<div><h4>The unit provides the document management of the Academy, conducts the personal data packages of the employees, forms internal and individual legal acts of the rector of the Academy, as well as draft employment contracts, implements other functions․</h4>
                 </div>',
 
 
-                'biography_am' => '<div>
-                <h4>&laquo;Արդարադատության ակադեմիայի մասին&raquo; ՀՀ օրենքով սահմանված կարգով Ակադեմիայի հյուրանոցային համալիրը (հյուրանոցը) հյուրընկալում է վերապատրաստում անցնող և վերապատրաստման վայրից դուրս մշտապես բնակվող ունկնդիրներին՝ դատավորներին, դատախազներին, քննիչներին, դատական ծառայողներին, դատական կարգադրիչներին, ՀՀ քննչական կոմիտեի դեպարտամենտում պետական ծառայողներին, ՀՀ դատախազության աշխատակազմում պետական ծառայողներին: Բացի վերոնշյալ ունկնդիրներից՝ Ակադեմիայի ռեկտորի թույլտվությամբ հյուրանոցից կարող են օգտվել նաև այլ անձինք: Հյուրանոցից օգտվելու պայմանները սահմանված են &laquo;Արդարադատության ակադեմիայի հյուրանոցից օգտվելու&raquo; կարգով՝ հաստատված Ակադեմիայի ռեկտորի համապատասխան հրամանի հիման վրա:</h4>
-                <h4>Հյուրանոցը բաղկացած է 16 երկտեղանոց սենյակներից, որոնք ապահովված են կենցաղային բոլոր հարմարություններով՝ լոգասենյակ, սառնարան, հեռուստացույց, օդորակիչ, նաև ինտերնետային կապ:</h4>
+                'biography_am' => '<div><h4>Բաժինն ապահովում է ակադեմիայի փաստաթղթաշրջանառությունը, վարում է աշխատակիցների անձնական գործերը, կազմում է Ակադեմիայի ռեկտորի ներքին և անհատական իրավական ակտերի, ինչպես նաև աշխատանքային պայմանագրերի նախագծերը, իրականացնում է սահմանված այլ գործառույթներ:</h4>
                 </div>',
 
 
-                'biography_ru' => '<div>
-                <h4>В соответствии с Законом РА "Об Академии юстиции" гостиничный комплекс (гостиница) Академии принимает слушателей, проходящих переподготовку и постоянно проживающих за пределами места обучения: судей, прокуроров, следователей, судебных служащих, судебных приставов, государственных служащих Следственного комитета РА, государственных служащих прокуратуры РА. Помимо упомянутых выше слушателей, с разрешения ректора Академии, услугами гостиницы могут воспользоваться и иные лица. Условия пребывания в гостиничном комплексе закреплены в порядке &laquo;Об использовании гостиницы Академии юстиции&raquo;, утвержденном ректором Академии.</h4>
-                <h4>Гостиница включает 16 двухместных номера, оборудованных всеми удобствами: ванной комнатой, холодильником, телевизором, кондиционером и интернетом.</h4>
+                'biography_ru' => '<div><h4>Отдел обеспечивает документооборот в Академии, ведет личные дела сотрудников Академии, составляет проекты внутренних и личных правовых актов ректора Академии, а также составляет проекты трудовых договоров, выполняет иные функции.</h4>
                 </div>',
             ],
                                     
