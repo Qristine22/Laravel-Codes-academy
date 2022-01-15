@@ -1,10 +1,10 @@
 @media only screen and (max-width: 1570px) {
+    .distance-learning{
+        margin-top: 90px;
+    }
     .video__name{
         width: 100%;
         font-size: 16px;
-    }
-    .distance-learning{
-        margin-top: 140px;
     }
 }
 @media only screen and (max-width: 1400px) {
