@@ -105,7 +105,7 @@ class RectorsPageController extends Controller
      */
     public function destroy(RectorsPage $rectorsPage)
     {
-        $rectorsPage->delete();
-        return redirect(route('admin.about.rectors-page.index'));
+        // $rectorsPage->delete();
+        // return redirect(route('admin.about.rectors-page.index'));
     }
 }

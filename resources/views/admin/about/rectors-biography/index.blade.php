@@ -41,15 +41,6 @@
                                     ['rectors_biography' => $item]) }}">
                                     <img class="img" src="/media/img/icons/edit.png" alt="edit">
                                 </a>
-                                <form
-                                    action="{{ route('admin.about.rectors-biography.destroy',
-                                    ['rectors_biography' => $item]) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="table__panel_item table__panel_delete">
-                                        <img class="img" src="/media/img/icons/delete.png" alt="edit">
-                                    </button>
-                                </form>
                             </div>
                         </td>
                     </tr>
@@ -98,15 +89,6 @@
                                     ['former_rectors_biography' => $item]) }}">
                                     <img class="img" src="/media/img/icons/edit.png" alt="edit">
                                 </a>
-                                <form
-                                    action="{{ route('admin.about.former-rectors-biography.destroy',
-                                    ['former_rectors_biography' => $item]) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="table__panel_item table__panel_delete">
-                                        <img class="img" src="/media/img/icons/delete.png" alt="edit">
-                                    </button>
-                                </form>
                             </div>
                         </td>
                     </tr>

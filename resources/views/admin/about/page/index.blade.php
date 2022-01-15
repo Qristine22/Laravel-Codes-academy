@@ -31,13 +31,6 @@
                                     href="{{ route('admin.about.page.edit', ['page' => $item]) }}">
                                     <img class="img" src="/media/img/icons/edit.png" alt="edit">
                                 </a>
-                                <form action="{{ route('admin.about.page.destroy', ['page' => $item]) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="table__panel_item table__panel_delete">
-                                        <img class="img" src="/media/img/icons/delete.png" alt="edit">
-                                    </button>
-                                </form>
                             </div>
                         </td>
                     </tr>

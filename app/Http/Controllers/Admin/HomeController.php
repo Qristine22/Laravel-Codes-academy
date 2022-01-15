@@ -143,11 +143,11 @@ class HomeController extends Controller
      */
     public function destroy(Home $home)
     {
-        $home->delete();
-        Storage::delete($home->logo);
-        Storage::delete($home->bg);
-        Storage::delete($home->rectors_img);
-        Storage::delete($home->rectors_signature);
-        return redirect(route('admin.home.index'));
+        // $home->delete();
+        // Storage::delete($home->logo);
+        // Storage::delete($home->bg);
+        // Storage::delete($home->rectors_img);
+        // Storage::delete($home->rectors_signature);
+        // return redirect(route('admin.home.index'));
     }
 }

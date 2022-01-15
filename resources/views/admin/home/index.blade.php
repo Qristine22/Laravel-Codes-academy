@@ -36,13 +36,6 @@
                                 <a class="table__panel_item" href="{{ route('admin.home.edit', ['home' => $item]) }}">
                                     <img class="img" src="/media/img/icons/edit.png" alt="edit">
                                 </a>
-                                <form action="{{ route('admin.home.destroy', ['home' => $item]) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="table__panel_item table__panel_delete">
-                                        <img class="img" src="/media/img/icons/delete.png" alt="edit">
-                                    </button>
-                                </form>
                             </div>
                         </td>
                     </tr>

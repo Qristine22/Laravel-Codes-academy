@@ -120,8 +120,8 @@ class FormerRectorsBiographyController extends Controller
      */
     public function destroy(FormerRectorsBiography $formerRectorsBiography)
     {
-        $formerRectorsBiography->delete();
-        Storage::delete($formerRectorsBiography->img);
-        return redirect(route('admin.about.rectors-biography.index'));
+        // $formerRectorsBiography->delete();
+        // Storage::delete($formerRectorsBiography->img);
+        // return redirect(route('admin.about.rectors-biography.index'));
     }
 }

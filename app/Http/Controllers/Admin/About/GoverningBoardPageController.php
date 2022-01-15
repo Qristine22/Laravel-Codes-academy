@@ -107,7 +107,7 @@ class GoverningBoardPageController extends Controller
      */
     public function destroy(GoverningBoardPage $governingBoardPage)
     {
-        $governingBoardPage->delete();
-        return redirect(route('admin.about.governing-board-page.index'));
+        // $governingBoardPage->delete();
+        // return redirect(route('admin.about.governing-board-page.index'));
     }
 }

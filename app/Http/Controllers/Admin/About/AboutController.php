@@ -96,7 +96,7 @@ class AboutController extends Controller
      */
     public function destroy(About $page)
     {
-        $page->delete();
-        return redirect(route('admin.about.page.index'));
+        // $page->delete();
+        // return redirect(route('admin.about.page.index'));
     }
 }

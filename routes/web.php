@@ -238,8 +238,12 @@ Route::middleware(['set_locale'])->group(function(){
                     ->name('workersImgDelete');
 
 
-                // rectors page
+                // reports page
                 Route::resource('report','App\Http\Controllers\Admin\About\ReportController');
+                
+
+                // graduates page
+                Route::resource('graduates','App\Http\Controllers\Admin\About\GraduateController');
             });
         });
     });

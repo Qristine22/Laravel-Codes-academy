@@ -33,15 +33,6 @@
                                     ['governing_board_page' => $item]) }}">
                                     <img class="img" src="/media/img/icons/edit.png" alt="edit">
                                 </a>
-                                <form
-                                    action="{{ route('admin.about.governing-board-page.destroy',
-                                    ['governing_board_page' => $item]) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="table__panel_item table__panel_delete">
-                                        <img class="img" src="/media/img/icons/delete.png" alt="edit">
-                                    </button>
-                                </form>
                             </div>
                         </td>
                     </tr>
@@ -118,7 +109,7 @@
                     <th class="th text-18" style="width: 5%">name</th>
                     <th class="th text-18" style="width: 15%">position</th>
                     <th class="th text-18">biography</th>
-                    <th class="th text-18" style="width: 10%">img</th>
+                    <th class="th text-18" style="width: 10%">Photo</th>
                     <th class="th text-18" style="width: 5%">Panel</th>
                 </tr>
                 @foreach ($staff as $item)
