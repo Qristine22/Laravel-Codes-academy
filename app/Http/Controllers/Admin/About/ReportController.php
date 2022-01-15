@@ -42,6 +42,10 @@ class ReportController extends Controller
      */
     public function store(ReportRequest $request)
     {
+        $request->validate([
+            'pdf' => 'required',
+        ]);
+
         $pdf = $request->file('pdf')->store('about/reports');
 
         Report::insert([
@@ -86,7 +90,7 @@ class ReportController extends Controller
      * @param  \App\Models\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Report $report)
+    public function update(ReportRequest $request, Report $report)
     {
         $pdf = $request->pdfHidden;
 

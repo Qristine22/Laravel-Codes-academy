@@ -89,7 +89,7 @@ class SubheaderController extends Controller
      * @param  \App\Models\Subheader  $subheader
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Subheader $subheader)
+    public function update(HeaderRequest $request, Subheader $subheader)
     {
         $subheader->update([
             'name_en' => $request->name_en,

@@ -43,6 +43,13 @@ class HomeController extends Controller
      */
     public function store(HomeRequest $request)
     {
+        $request->validate([
+            'logo' => 'required',
+            'bg' => 'required',
+            'rectors_img' => 'required',
+            'rectors_signature' => 'required',
+        ]);
+
         $logo = $request->file('logo')->store('home');
         $bg = $request->file('bg')->store('home');
         $rectorsPhoto = $request->file('rectors_img')->store('home');
@@ -95,7 +102,7 @@ class HomeController extends Controller
      * @param  \App\Models\Home  $home
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Home $home)
+    public function update(HomeRequest $request, Home $home)
     {
         $logo = $request->logoHidden;
         $bg = $request->bgHidden;

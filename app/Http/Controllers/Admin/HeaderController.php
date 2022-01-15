@@ -91,7 +91,7 @@ class HeaderController extends Controller
      * @param  \App\Models\Header  $header
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Header $header)
+    public function update(HeaderRequest $request, Header $header)
     {
         $header->update([
             'name_en' => $request->name_en,

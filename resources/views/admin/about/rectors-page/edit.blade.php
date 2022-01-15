@@ -4,13 +4,18 @@
     <div class="admin__sections">
         <section class="admin-section">
             <div class="admin__head">
-                <h2 class="admin__title">Ակադեմիայի մասին</h2>
+                <h2 class="admin__title">Ակադեմիայի ռեկտոր</h2>
             </div>
             <form class="admin__form"
                 action="{{ route('admin.about.rectors-page.update', ['rectors_page' => $rectorsPage]) }}"
                 method="POST">
                 @csrf
                 @method('PUT')
+                @if ($errors->any())
+                    @foreach ($errors->all() as $e)
+                        <p class="error">{{ $e }}</p>
+                    @endforeach
+                @endif
                 <div class="form__text">
                     <div class="form__item">
                         <label class="text-20" for="text__en">Text English</label>

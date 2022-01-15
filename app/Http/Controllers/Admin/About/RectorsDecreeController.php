@@ -38,6 +38,9 @@ class RectorsDecreeController extends Controller
      */
     public function store(RectorsDecreeRequest $request)
     {
+        $request->validate([
+            'pdf' => 'required',
+        ]);
         $pdf = $request->file('pdf')->store('about/rectors-decrees');
 
         RectorsDecree::insert([
@@ -82,7 +85,7 @@ class RectorsDecreeController extends Controller
      * @param  \App\Models\RectorsDecree  $rectorsDecree
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RectorsDecree $rectorsDecree)
+    public function update(RectorsDecreeRequest $request, RectorsDecree $rectorsDecree)
     {
         $pdf = $request->pdfHidden;
 

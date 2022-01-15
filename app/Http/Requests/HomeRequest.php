@@ -24,10 +24,10 @@ class HomeRequest extends FormRequest
     public function rules()
     {
         return [
-            'logo' => 'required',
-            'bg' => 'required',
-            'rectors_img' => 'required',
-            'rectors_signature' => 'required',
+            // 'logo' => 'required',
+            // 'bg' => 'required',
+            // 'rectors_img' => 'required',
+            // 'rectors_signature' => 'required',
             'title_en' => 'required',
             'title_am' => 'required',
             'title_ru' => 'required',

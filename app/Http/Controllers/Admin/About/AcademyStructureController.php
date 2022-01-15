@@ -86,7 +86,7 @@ class AcademyStructureController extends Controller
      * @param  \App\Models\AcademyStructure  $academyStructure
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AcademyStructure $academyStructure)
+    public function update(AcademyStructureRequest $request, AcademyStructure $academyStructure)
     {
         $academyStructure->update([
             'name_en' => $request->name_en,

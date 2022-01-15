@@ -33,7 +33,6 @@ class RectorsBiographyRequest extends FormRequest
             'biography_en' => 'required',
             'biography_am' => 'required',
             'biography_ru' => 'required',
-            'img' => 'required',
         ];
     }
 }

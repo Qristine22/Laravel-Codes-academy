@@ -40,6 +40,10 @@ class GoverningBoardStaffController extends Controller
      */
     public function store(GoverningBoardStaffRequest $request)
     {
+        $request->validate([
+            'img' => 'required',
+        ]);
+
         $photo = $request->file('img')->store('about/governing-board-staff');
 
         GoverningBoardStaff::insert([
@@ -87,7 +91,7 @@ class GoverningBoardStaffController extends Controller
      * @param  \App\Models\GoverningBoardStaff  $governingBoardStaff
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, GoverningBoardStaff $governingBoardStaff)
+    public function update(GoverningBoardStaffRequest $request, GoverningBoardStaff $governingBoardStaff)
     {
         $photo = $request->imgHidden;
 

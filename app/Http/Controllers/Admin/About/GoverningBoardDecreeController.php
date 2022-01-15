@@ -40,6 +40,9 @@ class GoverningBoardDecreeController extends Controller
      */
     public function store(GoverningBoardDecreeRequest $request)
     {
+        $request->validate([
+            'pdf' => 'required',
+        ]);
         $pdf = $request->file('pdf')->store('about/governing-board-decrees');
 
         GoverningBoardDecree::insert([
@@ -85,7 +88,7 @@ class GoverningBoardDecreeController extends Controller
      * @param  \App\Models\GoverningBoardDecree  $governingBoardDecree
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, GoverningBoardDecree $governingBoardDecree)
+    public function update(GoverningBoardDecreeRequest $request, GoverningBoardDecree $governingBoardDecree)
     {
         $pdf = $request->pdfHidden;
 

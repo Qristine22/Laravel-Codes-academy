@@ -47,6 +47,10 @@ class RectorsBiographyController extends Controller
      */
     public function store(RectorsBiographyRequest $request)
     {
+        $request->validate([
+            'img' => 'required',
+        ]);
+
         $photo = $request->file('img')->store('about/rectors');
 
         RectorsBiography::insert([
@@ -96,7 +100,7 @@ class RectorsBiographyController extends Controller
      * @param  \App\Models\RectorsBiography  $rectorsBiography
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RectorsBiography $rectorsBiography)
+    public function update(RectorsBiographyRequest $request, RectorsBiography $rectorsBiography)
     {
         $photo = $request->imgHidden;
 

@@ -13,6 +13,11 @@
                 method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
+                @if ($errors->any())
+                    @foreach ($errors->all() as $e)
+                        <p class="error">{{ $e }}</p>
+                    @endforeach
+                @endif
                 <div class="form__text">
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">

@@ -86,7 +86,7 @@ class RectorsPageController extends Controller
      * @param  \App\Models\RectorsPage  $rectorsPage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RectorsPage $rectorsPage)
+    public function update(RectorsPageRequest $request, RectorsPage $rectorsPage)
     {
         $rectorsPage->update([
             'text_en' => $request->text_en,

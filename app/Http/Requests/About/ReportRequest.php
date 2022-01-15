@@ -28,7 +28,6 @@ class ReportRequest extends FormRequest
             'name_am' => 'required',
             'name_ru' => 'required',
             'year' => 'required|numeric|min:4',
-            'pdf' => 'required',
         ];
     }
 }

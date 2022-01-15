@@ -31,7 +31,6 @@ class GoverningBoardStaffRequest extends FormRequest
             'position_am' => 'required',
             'position_ru' => 'required',
             'biography' => 'required',
-            'img' => 'required',
         ];
     }
 }

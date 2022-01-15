@@ -13,6 +13,11 @@
                 method="POST">
                 @csrf
                 @method('PUT')
+                @if ($errors->any())
+                    @foreach ($errors->all() as $e)
+                        <p class="error">{{ $e }}</p>
+                    @endforeach
+                @endif
                 <div class="form__text">
                     <div class="form__item">
                         <label class="text-20" for="text__en">Text English</label>
