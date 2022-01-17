@@ -47,7 +47,7 @@ class SubheaderSeeder extends Seeder
                 'name_en' => 'Graduates of Academy',
                 'name_am' => 'Ակադեմիայի շրջանավարտներ',
                 'name_ru' => 'Выпускники Академии',
-                'link' => 'about/graduates',
+                'link' => 'about/graduates/2014',
                 'parent_id' => 1,
             ],
             [

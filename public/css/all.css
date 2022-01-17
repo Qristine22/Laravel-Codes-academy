@@ -1041,3 +1041,18 @@ footer
 .footer__link:first-child{
     margin-left: 0;
 }
+
+/*
+footer
+*/
+
+.error-404{
+    font-size: 227px;
+    font-weight: 700;
+    color: var(--white);
+}
+.not-found-404{
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--white);
+}

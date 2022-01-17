@@ -17,7 +17,7 @@ class GraduateController extends Controller
      */
     public function index()
     {
-        $graduates = Graduate::paginate(10);
+        $graduates = Graduate::orderBy('id', 'DESC')->paginate(10);
 
         return view('admin.about.graduate.index', [
             'graduates' => $graduates,
@@ -48,14 +48,11 @@ class GraduateController extends Controller
         $photo = $request->file('img')->store('about/graduates');
 
         Graduate::insert([
-            'name_en' => $request->name_en,
-            'name_am' => $request->name_am,
-            'name_ru' => $request->name_ru,
-            'info_en' => $request->info_en,
-            'info_am' => $request->info_am,
-            'info_ru' => $request->info_ru,
+            'name' => $request->name,
+            'info' => $request->info,
             'position' => $request->position,
             'img' => $photo,
+            'year' => $request->year,
         ]);
 
         return redirect(route('admin.about.graduates.index'));
@@ -102,14 +99,11 @@ class GraduateController extends Controller
         }
 
         $graduate->update([
-            'name_en' => $request->name_en,
-            'name_am' => $request->name_am,
-            'name_ru' => $request->name_ru,
-            'info_en' => $request->info_en,
-            'info_am' => $request->info_am,
-            'info_ru' => $request->info_ru,
+            'name' => $request->name,
+            'info' => $request->info,
             'position' => $request->position,
             'img' => $photo,
+            'year' => $request->year,
         ]);
 
         return redirect(route('admin.about.graduates.index'));

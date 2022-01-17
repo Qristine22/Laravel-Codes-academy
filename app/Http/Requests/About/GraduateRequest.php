@@ -24,13 +24,9 @@ class GraduateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_en' => 'required|min:4',
-            'name_am' => 'required|min:4',
-            'name_ru' => 'required|min:4',
-            'info_en' => 'required',
-            'info_am' => 'required',
-            'info_ru' => 'required',
+            'name' => 'required|min:4',
             'position' => 'required',
+            'year' => 'required|numeric|min:2000',
         ];
     }
 }

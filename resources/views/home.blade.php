@@ -24,8 +24,7 @@
                     </div>
                 </div>
             </section>
-        @endif
-        @if (!empty($home))
+
             <section class="section rector">
                 <div class="wrapper">
                     <div class="rector__cont flex">

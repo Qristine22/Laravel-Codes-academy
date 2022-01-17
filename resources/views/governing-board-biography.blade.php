@@ -25,10 +25,9 @@
 
                             @if(app()->getLocale() == 'am')
                                 {!! $person->biography !!}
-                            @elseif(app()->getLocale() == 'ru')
-                                <h4>Информация доступна на армянском языке.</h4>
-                            @elseif(app()->getLocale() == 'en')
-                                <h4>Information is available in Armenian</h4>
+
+                            @else
+                                <h4>@lang('main.info-is-available')</h4>
                             @endif
                         </div>
                         

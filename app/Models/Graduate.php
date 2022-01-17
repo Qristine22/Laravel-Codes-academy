@@ -12,13 +12,10 @@ class Graduate extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'name_en',
-        'name_am',
-        'name_ru',
-        'info_en',
-        'info_am',
-        'info_ru',
+        'name',
+        'info',
         'img',
+        'year',
         'position',
     ];
 }

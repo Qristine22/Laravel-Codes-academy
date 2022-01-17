@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
+use App\Models\RectorsDecree;
 
 // Models
+use Illuminate\Support\Facades\App;
 use App\Models\GoverningBoardDecree;
-use App\Models\RectorsDecree;
 
 class MainController extends Controller
 {

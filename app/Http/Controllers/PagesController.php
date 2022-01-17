@@ -18,6 +18,7 @@ use App\Models\GoverningBoardPage;
 use App\Models\GoverningBoardStaff;
 use App\Models\GoverningBoardDecree;
 use App\Models\FormerRectorsBiography;
+use App\Models\Graduate;
 
 class PagesController extends Controller
 {
@@ -151,6 +152,8 @@ class PagesController extends Controller
             'decrees' => $decrees,
         ]);
     }
+
+
 
 
 
@@ -296,38 +299,70 @@ class PagesController extends Controller
             'year' => $year,
         ]);
     }
-    public function graduates(){
+
+
+
+
+
+
+    public function graduates($year){
         $headersBot = Subheader::where('parent_id', 1)->get();
+        $graduateYears = Graduate::orderBy('id', 'DESC')->get()->groupBy('year');
+        $judgeGraduates = Graduate::where('year', $year)->where('position', 'judge')->get();
+        $prosecutorGraduates = Graduate::where('year', $year)->where('position', 'prosecutor')->get();
+        $investigatorGraduates = Graduate::where('year', $year)->where('position', 'investigator')->get();
 
         return view('graduates', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'graduateYears' => $graduateYears,
+            'judgeGraduates' => $judgeGraduates,
+            'prosecutorGraduates' => $prosecutorGraduates,
+            'investigatorGraduates' => $investigatorGraduates,
+            'year' => $year,
         ]);
     }
-    public function graduatesJudges(){
+    public function graduatesJudges($year){
         $headersBot = Subheader::where('parent_id', 1)->get();
+        $judgeGraduates = Graduate::where('year', $year)->where('position', 'judge')->get();
 
         return view('graduates-profession', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'graduates' => $judgeGraduates,
+            'position' => 'judge',
         ]);
     }
-    public function graduatesProsecutors(){
+    public function graduatesProsecutors($year){
         $headersBot = Subheader::where('parent_id', 1)->get();
+        $prosecutorGraduates = Graduate::where('year', $year)->where('position', 'prosecutor')->get();
 
         return view('graduates-profession', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'graduates' => $prosecutorGraduates,
+            'position' => 'prosecutor',
         ]);
     }
-    public function graduatesInvestigators(){
+    public function graduatesInvestigators($year){
         $headersBot = Subheader::where('parent_id', 1)->get();
+        $investigatorGraduates = Graduate::where('year', $year)->where('position', 'investigator')->get();
 
         return view('graduates-profession', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'graduates' => $investigatorGraduates,
+            'position' => 'investigator',
         ]);
     }
+
+
+
+
+
+
+
+
     public function admission(){
         $headersBot = Subheader::where('parent_id', 1)->get();
 

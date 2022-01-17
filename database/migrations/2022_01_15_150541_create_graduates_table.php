@@ -16,13 +16,10 @@ class CreateGraduatesTable extends Migration
     {
         Schema::create('graduates', function (Blueprint $table) {
             $table->id();
-            $table->string('name_en');
-            $table->string('name_am');
-            $table->string('name_ru');
-            $table->string('info_en');
-            $table->string('info_am');
-            $table->string('info_ru');
+            $table->string('name');
+            $table->string('info')->nullable();
             $table->string('img');
+            $table->integer('year');
             $table->enum('position', ['judge', 'prosecutor', 'investigator']);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

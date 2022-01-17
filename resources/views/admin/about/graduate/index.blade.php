@@ -12,20 +12,22 @@
             <table class="table">
                 <tr>
                     <th class="th text-18" style="width: 5%">#id</th>
-                    <th class="th text-18">Name</th>
+                    <th class="th text-18" style="width: 20%">Name</th>
                     <th class="th text-18">Info</th>
-                    <th class="th text-18" style="width: 15%">Position</th>
+                    <th class="th text-18" style="width: 10%">Position</th>
+                    <th class="th text-18" style="width: 5%">year</th>
                     <th class="th text-18" style="width: 10%">Photo</th>
                     <th class="th text-18" style="width: 5%">Panel</th>
                 </tr>
                 @foreach ($graduates as $item)
                     <tr>
                         <td class="td text-18">{{ $item->id }}</td>
-                        <td class="td">{{ $item->name_am }}</td>
-                        <td class="td">{{ $item->info_am }}</td>
+                        <td class="td">{{ $item->name }}</td>
+                        <td class="td">{{ $item->info }}</td>
                         <td class="td">{{ $item->position }}</td>
+                        <td class="td">{{ $item->year }}</td>
                         <td class="td">
-                            <img class="img" src="{{ Storage::url($item->img) }}" alt="{{ $item->name_am }}">
+                            <img class="img" src="{{ Storage::url($item->img) }}" alt="{{ $item->name }}">
                         </td>
                         <td class="td text-18">
                             <div class="table__panel flex">
@@ -44,6 +46,8 @@
                     </tr>
                 @endforeach
             </table>
+
+            {{ $graduates->links('includes.pagination.paginate') }}
         </section>
     </div>
 @endsection

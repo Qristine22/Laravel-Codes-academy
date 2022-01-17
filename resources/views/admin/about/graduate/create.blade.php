@@ -18,44 +18,22 @@
                 <div class="form__text">
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="name__en">Name (English)</label>
-                            <input class="admin-inp" type="text" id="name__en" name="name_en"
-                                placeholder="Enter your text here" value="{{ old('name_en') }}">
+                            <label class="text-20 form__item_name" for="name">Name</label>
+                            <input class="admin-inp" type="text" id="name" name="name"
+                                placeholder="Enter your text here" value="{{ old('name') }}">
                         </div>
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="name__am">Name (Armenian)</label>
-                            <input class="admin-inp" type="text" id="name__am" name="name_am"
-                                placeholder="Enter your text here" value="{{ old('name_am') }}">
+                            <label class="text-20 form__item_name" for="info">Info</label>
+                            <input class="admin-inp" type="text" id="info" name="info"
+                                placeholder="Enter your text here" value="{{ old('info') }}">
                         </div>
-                        <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="name__ru">Name (Russian)</label>
-                            <input class="admin-inp" type="text" id="name__ru" name="name_ru"
-                                placeholder="Enter your text here" value="{{ old('name_ru') }}">
-                        </div>
-                    </div>
-                    <div class="flex inputs__group">
-                        <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="info__en">Info (English)</label>
-                            <input class="admin-inp" type="text" id="info__en" name="info_en"
-                                placeholder="Enter your text here" value="{{ old('info_en') }}">
-                        </div>
-                        <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="info__am">Info (Armenian)</label>
-                            <input class="admin-inp" type="text" id="info__am" name="info_am"
-                                placeholder="Enter your text here" value="{{ old('info_am') }}">
-                        </div>
-                        <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="info__ru">Info (Russian)</label>
-                            <input class="admin-inp" type="text" id="info__ru" name="info_ru"
-                                placeholder="Enter your text here" value="{{ old('info_ru') }}">
-                        </div>
-                    </div>
-                    <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
                             <span class="text-20 form__item_name">Photo</span>
                             <label class="text-20 admin-inp admin-inp-file" for="img">Attach your Photo</label>
                             <input class="admin-file" type="file" id="img" name="img">
                         </div>
+                    </div>
+                    <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
                             <label class="text-20 form__item_name" for="position">Position</label>
                             <select class="admin-inp" name="position" id="position">
@@ -63,6 +41,11 @@
                                 <option value="prosecutor">prosecutor</option>
                                 <option value="investigator">investigator</option>
                             </select>
+                        </div>
+                        <div class="form__item form__item-inp">
+                            <label class="text-20 form__item_name" for="year">Year</label>
+                            <input class="admin-inp" type="text" id="year" name="year"
+                                placeholder="Enter your text here" value="{{ old('year') }}">
                         </div>
                     </div>
                 </div>

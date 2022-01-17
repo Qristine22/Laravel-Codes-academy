@@ -7,10 +7,9 @@
             <a class="pdf__link text-18" href="{{ Storage::url($item->pdf) }}" target="_blank">
                 {{ $item->pdf_name }}
             </a>
-        @elseif(app()->getLocale() == 'ru')
-            <span class="pdf__link text-18">Информация доступна на армянском языке.</span>
-        @elseif(app()->getLocale() == 'en')
-            <span class="pdf__link text-18">Information is available in Armenian</span>
+
+        @else
+            <span class="pdf__link text-18">@lang('main.info-is-available')</span>
         @endif
     </div>
     

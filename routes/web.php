@@ -77,12 +77,12 @@ Route::middleware(['set_locale'])->group(function(){
 
 
         Route::get('/report/{year}', 'App\Http\Controllers\PagesController@report')->name('report');
-        Route::get('/graduates', 'App\Http\Controllers\PagesController@graduates')->name('graduates');
-        Route::get('/graduates/judges', 'App\Http\Controllers\PagesController@graduatesJudges')
+        Route::get('/graduates/{year}', 'App\Http\Controllers\PagesController@graduates')->name('graduates');
+        Route::get('/graduates/{year}/judges', 'App\Http\Controllers\PagesController@graduatesJudges')
             ->name('graduatesJudges');
-        Route::get('/graduates/prosecutors', 'App\Http\Controllers\PagesController@graduatesProsecutors')
+        Route::get('/graduates/{year}/prosecutors', 'App\Http\Controllers\PagesController@graduatesProsecutors')
             ->name('graduatesProsecutors');
-        Route::get('/graduates/investigators', 'App\Http\Controllers\PagesController@graduatesInvestigators')
+        Route::get('/graduates/{year}/investigators', 'App\Http\Controllers\PagesController@graduatesInvestigators')
             ->name('graduatesInvestigators');
 
 
