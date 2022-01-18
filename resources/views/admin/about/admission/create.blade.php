@@ -4,10 +4,10 @@
     <div class="admin__sections">
         <section class="admin-section">
             <div class="admin__head">
-                <h2 class="admin__title">Ակադեմիայի մասին</h2>
+                <h2 class="admin__title">Ընդունելություն</h2>
             </div>
 
-            <form class="admin__form" action="{{ route('admin.about.page.store') }}" method="POST">
+            <form class="admin__form" action="{{ route('admin.about.admission.store') }}" method="POST">
                 @csrf
                 @if ($errors->any())
                     @foreach ($errors->all() as $e)

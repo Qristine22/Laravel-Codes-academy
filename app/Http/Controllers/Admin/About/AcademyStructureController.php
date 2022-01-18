@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin\About;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\About\AcademyStructureRequest;
+use App\Http\Requests\NameRequest;
 use Illuminate\Http\Request;
 
 // Models
@@ -43,7 +43,7 @@ class AcademyStructureController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AcademyStructureRequest $request)
+    public function store(NameRequest $request)
     {
         AcademyStructure::insert([
             'name_en' => $request->name_en,
@@ -86,7 +86,7 @@ class AcademyStructureController extends Controller
      * @param  \App\Models\AcademyStructure  $academyStructure
      * @return \Illuminate\Http\Response
      */
-    public function update(AcademyStructureRequest $request, AcademyStructure $academyStructure)
+    public function update(NameRequest $request, AcademyStructure $academyStructure)
     {
         $academyStructure->update([
             'name_en' => $request->name_en,

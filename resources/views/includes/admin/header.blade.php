@@ -66,12 +66,13 @@
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/graduates') ||
-                        Request::is('admin/about/graduates/*')) admin-header__link-active @endif" href="{{ route('admin.about.graduates.index') }}">
-                            Ակադեմիայի շրջանավարտներ
-                        </a>
+                        Request::is('admin/about/graduates/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.about.graduates.index') }}">Ակադեմիայի շրջանավարտներ</a>
                     </li>
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link" href="#">Ընդունելություն</a>
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/admission') ||
+                        Request::is('admin/about/admission/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.about.admission.index') }}">Ընդունելություն</a>
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link" href="#">Տեսադարան</a>

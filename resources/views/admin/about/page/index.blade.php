@@ -22,7 +22,7 @@
                 @foreach ($data as $item)
                     <tr>
                         <td class="td text-18">{{ $item->id }}</td>
-                        <td class="td">{!! $item->about_am !!}</td>
+                        <td class="td">{!! $item->text_am !!}</td>
                         <td class="td">{{ $item->created_at }}</td>
                         <td class="td">{{ $item->updated_at }}</td>
                         <td class="td text-18">

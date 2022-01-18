@@ -31,5 +31,6 @@ class DatabaseSeeder extends Seeder
         $this->call(WorkersImgsSeeder::class);
         $this->call(ReportSeeder::class);
         $this->call(GraduateSeeder::class);
+        $this->call(AdmissionSeeder::class);
     }
 }

@@ -215,6 +215,7 @@ Route::middleware(['set_locale'])->group(function(){
             // home /***************************************************************************
             Route::resource('home', 'App\Http\Controllers\Admin\HomeController');
     
+            // about /***************************************************************************
             Route::group(['prefix' => 'about', 'as' => 'about.'], function () {
                 // governing board page
                 Route::resource('page', 'App\Http\Controllers\Admin\About\AboutController');
@@ -230,7 +231,7 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::resource('former-rectors-biography','App\Http\Controllers\Admin\About\FormerRectorsBiographyController');
 
 
-                // academy structure
+                // academy structure page
                 Route::resource('academy-structure','App\Http\Controllers\Admin\About\AcademyStructureController');
                 Route::resource('workers','App\Http\Controllers\Admin\About\WorkersController');
                 // edit page deleting img
@@ -240,10 +241,16 @@ Route::middleware(['set_locale'])->group(function(){
 
                 // reports page
                 Route::resource('report','App\Http\Controllers\Admin\About\ReportController');
-                
+
 
                 // graduates page
                 Route::resource('graduates','App\Http\Controllers\Admin\About\GraduateController');
+                
+
+                // admission page
+                Route::resource('admission','App\Http\Controllers\Admin\About\AdmissionController');
+                // candidate page
+                Route::resource('candidate','App\Http\Controllers\Admin\About\CandidateController');
             });
         });
     });

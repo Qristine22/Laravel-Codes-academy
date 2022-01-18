@@ -4,10 +4,11 @@
     <div class="admin__sections">
         <section class="admin-section">
             <div class="admin__head">
-                <h2 class="admin__title">Ակադեմիայի մասին</h2>
+                <h2 class="admin__title">Ընդունելություն</h2>
             </div>
 
-            <form class="admin__form" action="{{ route('admin.about.page.update', ['page' => $about]) }}" method="POST">
+            <form class="admin__form" action="{{ route('admin.about.admission.update', ['admission' => $admission]) }}"
+                method="POST">
                 @csrf
                 @method('PUT')
                 @if ($errors->any())
@@ -17,19 +18,19 @@
                 @endif
                 <div class="form__text">
                     <div class="form__item">
-                        <label class="text-20 form__item_name" for="text__en">Text (English)</label>
+                        <label class="text-20 form__item_name" for="text__en">text (English)</label>
                         <textarea name="text_en" id="text__en"
-                            placeholder="Enter Your Text Here">{{ $about->text_en }}</textarea>
+                            placeholder="Enter Your Text Here">{{ $admission->text_en }}</textarea>
                     </div>
                     <div class="form__item">
-                        <label class="text-20 form__item_name" for="text__am">Text (Armenian)</label>
+                        <label class="text-20 form__item_name" for="text__am">text (Armenian)</label>
                         <textarea name="text_am" id="text__am"
-                            placeholder="Enter Your Text Here">{{ $about->text_am }}</textarea>
+                            placeholder="Enter Your Text Here">{{ $admission->text_am }}</textarea>
                     </div>
                     <div class="form__item">
-                        <label class="text-20 form__item_name" for="text__ru">Text (Russian)</label>
+                        <label class="text-20 form__item_name" for="text__ru">text (Russian)</label>
                         <textarea name="text_ru" id="text__ru"
-                            placeholder="Enter Your Text Here">{{ $about->text_ru }}</textarea>
+                            placeholder="Enter Your Text Here">{{ $admission->text_ru }}</textarea>
                     </div>
                 </div>
                 <button class="form__btn">Save</button>

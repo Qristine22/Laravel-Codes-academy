@@ -13,6 +13,8 @@ use App\Models\Subheader;
 use App\Models\RectorsPage;
 use App\Models\RectorsDecree;
 use App\Models\AcademyStructure;
+use App\Models\Admission;
+use App\Models\Candidate;
 use App\Models\RectorsBiography;
 use App\Models\GoverningBoardPage;
 use App\Models\GoverningBoardStaff;
@@ -365,24 +367,28 @@ class PagesController extends Controller
 
     public function admission(){
         $headersBot = Subheader::where('parent_id', 1)->get();
+        $admission = Admission::first();
 
         return view('admission', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'admission' => $admission,
         ]);
     }
     public function judgesCandidates(){
         $headersBot = Subheader::where('parent_id', 1)->get();
+        $judgesCandidate = Candidate::first();
 
-        return view('judges-candidates', [
+        return view('candidates', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'judgesCandidate' => $judgesCandidate,
         ]);
     }
     public function prosecutorsCandidates(){
         $headersBot = Subheader::where('parent_id', 1)->get();
 
-        return view('judges-candidates', [
+        return view('candidates', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
         ]);
@@ -390,7 +396,7 @@ class PagesController extends Controller
     public function investigatorsCandidates(){
         $headersBot = Subheader::where('parent_id', 1)->get();
 
-        return view('judges-candidates', [
+        return view('candidates', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
         ]);

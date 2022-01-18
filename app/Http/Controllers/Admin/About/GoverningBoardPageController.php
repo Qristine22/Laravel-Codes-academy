@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin\About;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\About\GoverningBoardRequest;
+use App\Http\Requests\TextRequest;
 
 // Models
 use App\Models\GoverningBoardPage;
@@ -46,7 +46,7 @@ class GoverningBoardPageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GoverningBoardRequest $request)
+    public function store(TextRequest $request)
     {
         GoverningBoardPage::insert([
             'text_en' => $request->text_en,
@@ -88,7 +88,7 @@ class GoverningBoardPageController extends Controller
      * @param  \App\Models\GoverningBoardPage  $governingBoardPage
      * @return \Illuminate\Http\Response
      */
-    public function update(GoverningBoardRequest $request, GoverningBoardPage $governingBoardPage)
+    public function update(TextRequest $request, GoverningBoardPage $governingBoardPage)
     {
         $governingBoardPage->update([
             'text_en' => $request->text_en,

@@ -6,11 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\TextRequest;
 use Illuminate\Http\Request;
 
-// Models
-use App\Models\RectorsPage;
-use App\Models\RectorsDecree;
+// Model
+use App\Models\Admission;
+use App\Models\Candidate;
 
-class RectorsPageController extends Controller
+class AdmissionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,12 +19,12 @@ class RectorsPageController extends Controller
      */
     public function index()
     {
-        $data =  RectorsPage::get();
-        $decrees = RectorsDecree::orderBy('id', 'DESC')->paginate(5);
+        $admission = Admission::all();
+        $candidates = Candidate::all();
 
-        return view('admin.about.rectors-page.index', [
-            'data' => $data,
-            'decrees' => $decrees,
+        return view('admin.about.admission.index', [
+            'data' => $admission,
+            'candidates' => $candidates,
         ]);
     }
 
@@ -35,7 +35,7 @@ class RectorsPageController extends Controller
      */
     public function create()
     {
-        return view('admin.about.rectors-page.create');
+        return view('admin.about.admission.create');
     }
 
     /**
@@ -46,22 +46,22 @@ class RectorsPageController extends Controller
      */
     public function store(TextRequest $request)
     {
-        RectorsPage::insert([
+        Admission::insert([
             'text_en' => $request->text_en,
             'text_am' => $request->text_am,
             'text_ru' => $request->text_ru,
         ]);
 
-        return redirect(route('admin.about.rectors-page.index'));
+        return redirect(route('admin.about.admission.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\RectorsPage  $rectorsPage
+     * @param  \App\Models\Admission  $admission
      * @return \Illuminate\Http\Response
      */
-    public function show(RectorsPage $rectorsPage)
+    public function show(Admission $admission)
     {
         //
     }
@@ -69,13 +69,13 @@ class RectorsPageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\RectorsPage  $rectorsPage
+     * @param  \App\Models\Admission  $admission
      * @return \Illuminate\Http\Response
      */
-    public function edit(RectorsPage $rectorsPage)
+    public function edit(Admission $admission)
     {
-        return view('admin.about.rectors-page.edit', [
-            'rectorsPage' => $rectorsPage,
+        return view('admin.about.admission.edit', [
+            'admission' => $admission,
         ]);
     }
 
@@ -83,29 +83,29 @@ class RectorsPageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\RectorsPage  $rectorsPage
+     * @param  \App\Models\Admission  $admission
      * @return \Illuminate\Http\Response
      */
-    public function update(TextRequest $request, RectorsPage $rectorsPage)
+    public function update(TextRequest $request, Admission $admission)
     {
-        $rectorsPage->update([
+        $admission->update([
             'text_en' => $request->text_en,
             'text_am' => $request->text_am,
             'text_ru' => $request->text_ru,
         ]);
 
-        return redirect(route('admin.about.rectors-page.index'));
+        return redirect(route('admin.about.admission.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\RectorsPage  $rectorsPage
+     * @param  \App\Models\Admission  $admission
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RectorsPage $rectorsPage)
+    public function destroy(Admission $admission)
     {
-        // $rectorsPage->delete();
-        // return redirect(route('admin.about.rectors-page.index'));
+        // $admission->delete();
+        // return redirect(route('admin.about.admission.index'));
     }
 }

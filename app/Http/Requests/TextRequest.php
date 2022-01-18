@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\About;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AboutPageRequest extends FormRequest
+class TextRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,9 @@ class AboutPageRequest extends FormRequest
     public function rules()
     {
         return [
-            'about_en' => 'required',
-            'about_am' => 'required',
-            'about_ru' => 'required',
+            'text_en' => 'required',
+            'text_am' => 'required',
+            'text_ru' => 'required',
         ];
     }
 }

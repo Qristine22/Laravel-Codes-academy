@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\About;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class GraduateRequest extends FormRequest
@@ -27,6 +28,10 @@ class GraduateRequest extends FormRequest
             'name' => 'required|min:4',
             'position' => 'required',
             'year' => 'required|numeric|min:2000',
+            'position' => [
+                'required',
+                Rule::in(['judge', 'prosecutor', 'investigator']),
+            ]
         ];
     }
 }

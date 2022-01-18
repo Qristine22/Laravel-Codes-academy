@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\HeaderRequest;
+use App\Http\Requests\NameRequest;
 use Illuminate\Http\Request;
 
 // Models
@@ -46,7 +46,7 @@ class HeaderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(HeaderRequest $request)
+    public function store(NameRequest $request)
     {
         Header::insert([
             'name_en' => $request->name_en,
@@ -91,7 +91,7 @@ class HeaderController extends Controller
      * @param  \App\Models\Header  $header
      * @return \Illuminate\Http\Response
      */
-    public function update(HeaderRequest $request, Header $header)
+    public function update(NameRequest $request, Header $header)
     {
         $header->update([
             'name_en' => $request->name_en,

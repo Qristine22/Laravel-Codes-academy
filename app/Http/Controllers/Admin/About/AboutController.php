@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin\About;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\About\AboutPageRequest;
+use App\Http\Requests\TextRequest;
 use App\Models\About;
 
 class AboutController extends Controller
@@ -37,12 +37,12 @@ class AboutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AboutPageRequest $request)
+    public function store(TextRequest $request)
     {
         About::insert([
-            'about_en' => $request->about_en,
-            'about_am' => $request->about_am,
-            'about_ru' => $request->about_ru,
+            'text_en' => $request->text_en,
+            'text_am' => $request->text_am,
+            'text_ru' => $request->text_ru,
         ]);
         return redirect(route('admin.about.page.index'));
     }
@@ -78,12 +78,12 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(AboutPageRequest $request, About $page)
+    public function update(TextRequest $request, About $page)
     {
         $page->update([
-            'about_en' => $request->about_en,
-            'about_am' => $request->about_am,
-            'about_ru' => $request->about_ru,
+            'text_en' => $request->text_en,
+            'text_am' => $request->text_am,
+            'text_ru' => $request->text_ru,
         ]);
         return redirect(route('admin.about.page.index'));
     }
