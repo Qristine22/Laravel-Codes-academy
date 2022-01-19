@@ -4,7 +4,7 @@ namespace App\Http\Requests\About;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GoverningBoardStaffRequest extends FormRequest
+class GalleryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,8 @@ class GoverningBoardStaffRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_en' => 'required',
-            'name_am' => 'required',
-            'name_ru' => 'required',
-            'position_en' => 'required',
-            'position_am' => 'required',
-            'position_ru' => 'required',
-            'biography' => 'required',
+            'year' => 'required|numeric',
+            'full_date' => 'required',
         ];
     }
 }

@@ -20,6 +20,7 @@ use App\Models\GoverningBoardPage;
 use App\Models\GoverningBoardStaff;
 use App\Models\GoverningBoardDecree;
 use App\Models\FormerRectorsBiography;
+use App\Models\Gallery;
 use App\Models\Graduate;
 
 class PagesController extends Controller
@@ -382,31 +383,45 @@ class PagesController extends Controller
         return view('candidates', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
-            'judgesCandidate' => $judgesCandidate,
+            'candidate' => $judgesCandidate,
         ]);
     }
     public function prosecutorsCandidates(){
         $headersBot = Subheader::where('parent_id', 1)->get();
+        $prosecutorsCandidate = Candidate::findOrFail(2);
 
         return view('candidates', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'candidate' => $prosecutorsCandidate,
         ]);
     }
     public function investigatorsCandidates(){
         $headersBot = Subheader::where('parent_id', 1)->get();
+        $investigatorsCandidate = Candidate::findOrFail(3);
 
         return view('candidates', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'candidate' => $investigatorsCandidate,
         ]);
     }
+
+
+
+
+
     public function gallery($year){
         $headersBot = Subheader::where('parent_id', 1)->get();
+        $galleries = Gallery::galleryAll($year);
+        $years = Gallery::all()->groupBy('year')->reverse();
 
         return view('gallery', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'galleries' => $galleries,
+            'years' => $years,
+            'year' => $year,
         ]);
     }
     public function gallerySingle($year, $id){

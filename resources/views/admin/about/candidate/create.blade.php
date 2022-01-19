@@ -16,21 +16,9 @@
                 @endif
                 <div class="form__text">
                     <div class="form__item">
-                        <label class="text-20 form__item_name" for="text__en">Text (English)</label>
-                        <textarea name="text_en" id="text__en" placeholder="Enter Your Text Here">
-                            {{ old('text_en') }}
-                        </textarea>
-                    </div>
-                    <div class="form__item">
-                        <label class="text-20 form__item_name" for="text__am">Text (Armenian)</label>
-                        <textarea name="text_am" id="text__am" placeholder="Enter Your Text Here">
-                            {{ old('text_am') }}
-                        </textarea>
-                    </div>
-                    <div class="form__item">
-                        <label class="text-20 form__item_name" for="text__ru">Text (Russian)</label>
-                        <textarea name="text_ru" id="text__ru" placeholder="Enter Your Text Here">
-                            {{ old('text_ru') }}
+                        <label class="text-20 form__item_name" for="text">Text</label>
+                        <textarea name="text" id="text" placeholder="Enter Your Text Here">
+                            {{ old('text') }}
                         </textarea>
                     </div>
                 </div>

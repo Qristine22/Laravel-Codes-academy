@@ -75,7 +75,9 @@
                             href="{{ route('admin.about.admission.index') }}">Ընդունելություն</a>
                     </li>
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link" href="#">Տեսադարան</a>
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/gallery') ||
+                        Request::is('admin/about/gallery/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.about.gallery.index') }}">Տեսադարան</a>
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link" href="#">ԶԼՄ-ները մեր մասին</a>

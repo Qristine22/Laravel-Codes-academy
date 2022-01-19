@@ -61,7 +61,7 @@ class SubheaderSeeder extends Seeder
                 'name_en' => 'Gallery',
                 'name_am' => 'Տեսադարան',
                 'name_ru' => 'Галерея',
-                'link' => 'about/gallery/2021',
+                'link' => 'about/gallery/2014',
                 'parent_id' => 1,
             ],
             [

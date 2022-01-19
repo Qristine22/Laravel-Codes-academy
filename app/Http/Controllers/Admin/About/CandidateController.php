@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin\About;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\TextRequest;
 use App\Models\Candidate;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\TextAmRequest;
 
 class CandidateController extends Controller
 {
@@ -35,12 +35,10 @@ class CandidateController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TextRequest $request)
+    public function store(TextAmRequest $request)
     {
         Candidate::insert([
-            'text_en' => $request->text_en,
-            'text_am' => $request->text_am,
-            'text_ru' => $request->text_ru,
+            'text' => $request->text,
         ]);
 
         return redirect(route('admin.about.admission.index'));
@@ -77,12 +75,10 @@ class CandidateController extends Controller
      * @param  \App\Models\Candidate  $candidate
      * @return \Illuminate\Http\Response
      */
-    public function update(TextRequest $request, Candidate $candidate)
+    public function update(TextAmRequest $request, Candidate $candidate)
     {
         $candidate->update([
-            'text_en' => $request->text_en,
-            'text_am' => $request->text_am,
-            'text_ru' => $request->text_ru,
+            'text' => $request->text,
         ]);
 
         return redirect(route('admin.about.admission.index'));

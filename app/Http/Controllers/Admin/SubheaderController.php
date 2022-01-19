@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\HeaderRequest;
+use App\Models\Header;
+use App\Models\Subheader;
 use Illuminate\Http\Request;
 
 // Models
-use App\Models\Subheader;
-use App\Models\Header;
+use App\Http\Requests\NameRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\HeaderRequest;
 
 class SubheaderController extends Controller
 {
@@ -42,7 +43,7 @@ class SubheaderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(HeaderRequest $request)
+    public function store(NameRequest $request)
     {
         Subheader::insert([
             'name_en' => $request->name_en,
@@ -89,7 +90,7 @@ class SubheaderController extends Controller
      * @param  \App\Models\Subheader  $subheader
      * @return \Illuminate\Http\Response
      */
-    public function update(HeaderRequest $request, Subheader $subheader)
+    public function update(NameRequest $request, Subheader $subheader)
     {
         $subheader->update([
             'name_en' => $request->name_en,

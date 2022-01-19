@@ -14,7 +14,11 @@
         <section class="section-text section-top section__min-height">
             <div class="wrapper">
                 <div class="section-text__cont">
-                    {!! $judgesCandidate->{'text_'.app()->getLocale()} !!}
+                    @if (app()->getLocale() == 'am')
+                            {!! $candidate->text !!}
+                    @else
+                        <h4>@lang('main.info-is-available')</h4>
+                    @endif
                 </div>
             </div>
         </section>

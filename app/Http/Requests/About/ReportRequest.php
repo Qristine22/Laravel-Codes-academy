@@ -27,7 +27,7 @@ class ReportRequest extends FormRequest
             'name_en' => 'required',
             'name_am' => 'required',
             'name_ru' => 'required',
-            'year' => 'required|numeric|min:4',
+            'year' => 'required|numeric',
         ];
     }
 }

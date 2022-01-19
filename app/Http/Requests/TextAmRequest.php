@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\About;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GoverningBoardStaffRequest extends FormRequest
+class TextAmRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,7 @@ class GoverningBoardStaffRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_en' => 'required',
-            'name_am' => 'required',
-            'name_ru' => 'required',
-            'position_en' => 'required',
-            'position_am' => 'required',
-            'position_ru' => 'required',
-            'biography' => 'required',
+            'text' => 'required',
         ];
     }
 }

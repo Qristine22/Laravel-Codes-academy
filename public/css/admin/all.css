@@ -210,8 +210,11 @@ admin-section
     height: 600px !important;
 }
 .form__item-inp{
-    width: calc(33% - 10px);
+    width: calc(33% - 20px);
     margin: 10px;
+}
+.form__item-wrap{
+    flex-wrap: wrap;
 }
 .admin-inp-file{
     position: relative;

@@ -1,0 +1,54 @@
+@extends('layouts.admin-main')
+
+@section('content')
+    <div class="admin__sections">
+        <section class="admin-section">
+            <div class="admin__head">
+                <h2 class="admin__title">Տեսադարան</h2>
+            </div>
+
+            <form class="admin__form" action="{{ route('admin.about.gallery.store') }}" method="POST"
+                enctype="multipart/form-data">
+                @csrf
+                @if ($errors->any())
+                    @foreach ($errors->all() as $e)
+                        <p class="error">{{ $e }}</p>
+                    @endforeach
+                @endif
+                <div class="form__text">
+                    <div class="flex inputs__group">
+                        <div class="form__item form__item-inp">
+                            <label class="text-20 form__item_name" for="full_date">Full date</label>
+                            <input class="admin-inp" type="text" id="full_date" name="full_date"
+                                placeholder="Enter your text here" value="{{ old('full_date') }}">
+                        </div>
+                        <div class="form__item form__item-inp">
+                            <label class="text-20 form__item_name" for="year">Year</label>
+                            <input class="admin-inp" type="text" id="year" name="year"
+                                placeholder="Enter your text here" value="{{ old('year') }}">
+                        </div>
+                    </div>
+                    <div class="inputs__group">
+                        <span class="text-20 form__item_name">Photo <span class="admin__input_add">+</span></span>
+                        <div class="flex inputs__add_group form__item-wrap">
+                            <div class="form__item form__item-inp">
+                                <label class="text-20 admin-inp admin-inp-file" for="img">Attach your File</label>
+                                <input class="admin-file" type="file" id="img" name="imgs[]">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <button class="form__btn">Save</button>
+            </form>
+        </section>
+    </div>
+@endsection
+
+
+@section('scripts')
+    <script src="https://cdn.tiny.cloud/1/kq8av1qstz5kw9feupprnmtm1wehpvky0yrkarctqemoowkq/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script src="/js/admin/tinyCloud.js"></script>
+    <script src="/js/admin/inputsAdd.js"></script>
+@endsection

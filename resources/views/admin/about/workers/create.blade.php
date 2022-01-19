@@ -52,7 +52,7 @@
                     </div>
                     <div class="inputs__group">
                         <span class="text-20 form__item_name">Photo <span class="admin__input_add">+</span></span>
-                        <div class="flex inputs__add_group">
+                        <div class="flex inputs__add_group form__item-wrap">
                             <div class="form__item form__item-inp">
                                 <label class="text-20 admin-inp admin-inp-file" for="img">Attach your File</label>
                                 <input class="admin-file" type="file" id="img" name="imgs[]">

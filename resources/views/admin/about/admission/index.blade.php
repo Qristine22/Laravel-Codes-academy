@@ -60,7 +60,7 @@
                         <td class="td text-18">{{ $item->id }}</td>
                         <td class="td">
                             <div class="td-scroll">
-                                {!! $item->text_am !!}</td>
+                                {!! $item->text !!}</td>
                             </div>
                         <td class="td">{{ $item->created_at }}</td>
                         <td class="td">{{ $item->updated_at }}</td>

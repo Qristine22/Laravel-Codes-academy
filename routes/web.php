@@ -235,7 +235,7 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::resource('academy-structure','App\Http\Controllers\Admin\About\AcademyStructureController');
                 Route::resource('workers','App\Http\Controllers\Admin\About\WorkersController');
                 // edit page deleting img
-                Route::get('/workers/-deleting-img/{id}', 'App\Http\Controllers\Admin\About\WorkersController@imgDelete')
+                Route::get('/workers/deleting-img/{id}', 'App\Http\Controllers\Admin\About\WorkersController@imgDelete')
                     ->name('workersImgDelete');
 
 
@@ -251,6 +251,12 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::resource('admission','App\Http\Controllers\Admin\About\AdmissionController');
                 // candidate page
                 Route::resource('candidate','App\Http\Controllers\Admin\About\CandidateController');
+
+
+                // candidate page
+                Route::resource('gallery','App\Http\Controllers\Admin\About\GalleryController');
+                Route::get('/gallery/deleting-img/{id}', 'App\Http\Controllers\Admin\About\GalleryController@imgDelete')
+                ->name('galleryImgDelete');
             });
         });
     });
