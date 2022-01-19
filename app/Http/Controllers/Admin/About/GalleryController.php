@@ -45,6 +45,9 @@ class GalleryController extends Controller
     public function store(GalleryRequest $request)
     {
         $gallery = Gallery::insertGetId([
+            'text_en' => $request->text_en,
+            'text_am' => $request->text_am,
+            'text_ru' => $request->text_ru,
             'year' => $request->year,
             'full_date' => $request->full_date,
         ]);
@@ -96,6 +99,9 @@ class GalleryController extends Controller
     public function update(GalleryRequest $request, Gallery $gallery)
     {
         $gallery->update([
+            'text_en' => $request->text_en,
+            'text_am' => $request->text_am,
+            'text_ru' => $request->text_ru,
             'full_date' => $request->full_date,
             'year' => $request->year,
         ]);

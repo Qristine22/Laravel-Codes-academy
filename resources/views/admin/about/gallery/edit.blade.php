@@ -19,6 +19,23 @@
                 <div class="form__text">
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
+                            <label class="text-20 form__item_name" for="text__en">Text (English)</label>
+                            <input class="admin-inp" type="text" id="text__en" name="text_en"
+                                placeholder="Enter your text here" value="{{ $gallery->text_en }}">
+                        </div>
+                        <div class="form__item form__item-inp">
+                            <label class="text-20 form__item_name" for="text__am">Text (Armenian)</label>
+                            <input class="admin-inp" type="text" id="text__am" name="text_am"
+                                placeholder="Enter your text here" value="{{ $gallery->text_am }}">
+                        </div>
+                        <div class="form__item form__item-inp">
+                            <label class="text-20 form__item_name" for="text__ru">Text (Russian)</label>
+                            <input class="admin-inp" type="text" id="text__ru" name="text_ru"
+                                placeholder="Enter your text here" value="{{ $gallery->text_ru }}">
+                        </div>
+                    </div>
+                    <div class="flex inputs__group">
+                        <div class="form__item form__item-inp">
                             <label class="text-20 form__item_name" for="full_date">Full date</label>
                             <input class="admin-inp" type="text" id="full_date" name="full_date"
                                 placeholder="Enter your text here" value="{{ $gallery->full_date }}">
@@ -64,4 +81,5 @@
     <script src="https://cdn.tiny.cloud/1/kq8av1qstz5kw9feupprnmtm1wehpvky0yrkarctqemoowkq/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
     <script src="/js/admin/tinyCloud.js"></script>
+    <script src="/js/admin/inputsAdd.js"></script>
 @endsection

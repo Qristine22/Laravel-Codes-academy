@@ -424,14 +424,6 @@ class PagesController extends Controller
             'year' => $year,
         ]);
     }
-    public function gallerySingle($year, $id){
-        $headersBot = Subheader::where('parent_id', 1)->get();
-
-        return view('gallery-single', [
-            'headers' => $this->getHeader(),
-            'headersBot' => $headersBot,
-        ]);
-    }
     public function massMedia(){
         $headersBot = Subheader::where('parent_id', 1)->get();
 

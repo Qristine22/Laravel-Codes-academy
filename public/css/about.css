@@ -405,14 +405,12 @@ structure
 gallery
 */
 
-.gallery,
-.gallery-single{
+.gallery{
     min-height: calc(100vh - 300px);
 }
 .gallery__cont{
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0 -20px;
 }
 .gallery__item{
     width: calc(33% - 70px);
@@ -440,17 +438,6 @@ gallery
 .gallery__date,
 .mass-media__link-site{
     font-weight: 700;
-}
-.gallery-single__cont{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 50px;
-    margin: 0 -15px;
-}
-.gallery-single_item{
-    width: calc(50% - 30px);
-    margin: 15px;
 }
 .gallery__top{
     width: 100%;

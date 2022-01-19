@@ -24,6 +24,9 @@ class GalleryRequest extends FormRequest
     public function rules()
     {
         return [
+            'text_en' => 'required',
+            'text_am' => 'required',
+            'text_ru' => 'required',
             'year' => 'required|numeric',
             'full_date' => 'required',
         ];

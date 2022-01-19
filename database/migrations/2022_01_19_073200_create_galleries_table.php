@@ -16,6 +16,9 @@ class CreateGalleriesTable extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
+            $table->string('text_en');
+            $table->string('text_am');
+            $table->string('text_ru');
             $table->string('full_date');
             $table->integer('year');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

@@ -12,6 +12,9 @@ class Gallery extends Model
     use SoftDeletes;
 
     protected $fillable = [
+        'text_en',
+        'text_am',
+        'text_ru',
         'full_date',
         'year',
     ];

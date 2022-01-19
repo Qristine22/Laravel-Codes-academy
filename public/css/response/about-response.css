@@ -132,14 +132,11 @@
     .graduates__cont_item{
         width: calc(25% - 10px);
     }
-    .gallery__cont{
-        margin: 0 -10px;
-    }
     .gallery__item{
         width: calc(33% - 20px);
         margin: 10px;
     }
-    .gallery, .gallery-single {
+    .gallery {
         min-height: calc(100vh - 120px);
     }
 }
@@ -157,9 +154,6 @@
     .member__info_subtitle{
         font-size: 15px;
         line-height: 25px;
-    }
-    .gallery-single__cont{
-        margin-top: 20px;
     }
     .graduate__item{
         width: calc(25% - 10px);
@@ -283,9 +277,6 @@
     .about__date{
         font-size: 17px;
     }
-    .gallery-single__cont {
-        margin: 0;
-    }
     .graduate-profession__item{
         width: calc(33.3% - 20px);
     }
@@ -361,10 +352,6 @@
     }
     .date-12{
         width: 25%;
-    }
-    .gallery-single_item {
-        width: calc(50% - 10px);
-        margin: 5px;
     }
     .members__item_count > span{
         font-size: 22px;

@@ -99,7 +99,6 @@ Route::middleware(['set_locale'])->group(function(){
 
 
         Route::get('/gallery/{year}', 'App\Http\Controllers\PagesController@gallery')->name('gallery');
-        Route::get('/gallery/{year}/{id}', 'App\Http\Controllers\PagesController@gallerySingle')->name('gallerySingle');
         Route::get('/mass-media', 'App\Http\Controllers\PagesController@massMedia')->name('massMedia');
     });
     

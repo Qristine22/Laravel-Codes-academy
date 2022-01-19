@@ -18,6 +18,23 @@
                 <div class="form__text">
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
+                            <label class="text-20 form__item_name" for="text__en">Text (English)</label>
+                            <input class="admin-inp" type="text" id="text__en" name="text_en"
+                                placeholder="Enter your text here" value="{{ old('text_en') }}">
+                        </div>
+                        <div class="form__item form__item-inp">
+                            <label class="text-20 form__item_name" for="text__am">Text (Armenian)</label>
+                            <input class="admin-inp" type="text" id="text__am" name="text_am"
+                                placeholder="Enter your text here" value="{{ old('text_am') }}">
+                        </div>
+                        <div class="form__item form__item-inp">
+                            <label class="text-20 form__item_name" for="text__ru">Text (Russian)</label>
+                            <input class="admin-inp" type="text" id="text__ru" name="text_ru"
+                                placeholder="Enter your text here" value="{{ old('text_ru') }}">
+                        </div>
+                    </div>
+                    <div class="flex inputs__group">
+                        <div class="form__item form__item-inp">
                             <label class="text-20 form__item_name" for="full_date">Full date</label>
                             <input class="admin-inp" type="text" id="full_date" name="full_date"
                                 placeholder="Enter your text here" value="{{ old('full_date') }}">
