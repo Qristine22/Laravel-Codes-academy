@@ -6,7 +6,7 @@
             <div class="admin__head">
                 <h2 class="admin__title">ԶԼՄ-ները մեր մասին</h2>
             </div>
-{{ dd($massMedia->text_en) }}
+
             <form class="admin__form" action="{{ route('admin.about.mass-media.update', ['mass_medium' => $massMedia]) }}"
                 method="POST">
                 @csrf
@@ -34,21 +34,49 @@
                                 placeholder="Enter your text here" value="{{ $massMedia->text_ru }}">
                         </div>
                     </div>
-                    <div class="inputs__group">
-                        <span class="text-20 form__item_name">Photos</span>
-                        <div class="flex admin__edit_imgs">
-                            {{-- @foreach ($massMedia->imgs as $img)
-                                <div class="admin__edit_img">
-                                    <img src="{{ Storage::url($img->img) }}" alt="{{ $massMedia->id }}">
-                                    <a class="admin__edit_img_delete"
-                                        href="{{ route('admin.about.galleryImgDelete', ['id' => $img->id]) }}">
-                                        <img class="img" src="/media/img/icons/delete.png" alt="delete">
-                                    </a>
-                                </div>
-                            @endforeach --}}
+                    <div class="inputs__group mass-media__group">
+                        <span class="text-20 form__item_name">Links <span class="admin__input_add">+</span></span>
+                        <div class="flex form__item-wrap">
+                            <div class="form__item form__item-inp">
+                                <label class="text-20 form__item_name" for="site__name">Site Name</label>
+                                <input class="admin-inp" type="text" id="site__name" name="siteNames[]"
+                                    placeholder="Enter your text here" value="{{ $massMedia->site_name }}">
+                            </div>
+                            <div class="form__item form__item-inp">
+                                <label class="text-20 form__item_name" for="link__name">Link Name</label>
+                                <input class="admin-inp" type="text" id="link__name" name="linkNames[]"
+                                    placeholder="Enter your text here" value="{{ $massMedia->link_name }}">
+                            </div>
+                            <div class="form__item form__item-inp">
+                                <label class="text-20 form__item_name" for="link">Link</label>
+                                <input class="admin-inp" type="text" id="link" name="links[]"
+                                    placeholder="Enter your text here" value="{{ $massMedia->link }}">
+                            </div>
                         </div>
                     </div>
                     
+                    <div class="inputs__group">
+                        <span class="text-20 form__item_name">Links</span>
+                        <div class="flex admin__edit_imgs admin__edit_column">
+                            @foreach ($massMedia->links as $link)
+                                <div class="admin__edit_img admin__edit_bordered">
+                                    <span class="text-20">{{ $link->site_name }}</span>
+                                    <a class="text-18 admin__edit_link" href="{{ $link->link }}">{{ $link->link_name }}</a>
+                                    <a class="admin__edit_img_delete"
+                                        href="{{ route('admin.about.massMediaLinkDelete', ['id' => $link->id]) }}">
+                                        <img class="img" src="/media/img/icons/delete.png" alt="delete">
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="flex inputs__group">
+                        <div class="form__item form__item-inp">
+                            <label class="text-20 form__item_name" for="year">Year</label>
+                            <input class="admin-inp" type="text" id="year" name="year"
+                                placeholder="Enter your text here" value="{{ $massMedia->year }}">
+                        </div>
+                    </div>
                     
                 <button class="form__btn">Save</button>
             </form>

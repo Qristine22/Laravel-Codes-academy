@@ -258,9 +258,9 @@ Route::middleware(['set_locale'])->group(function(){
                 ->name('galleryImgDelete');
 
                 // mass media page
-                Route::resource('media','App\Http\Controllers\Admin\About\MediaController');
-                // Route::get('/gallery/deleting-img/{id}', 'App\Http\Controllers\Admin\About\GalleryController@imgDelete')
-                // ->name('galleryImgDelete');
+                Route::resource('mass-media','App\Http\Controllers\Admin\About\MassMediaController');
+                Route::get('/mass-media/link/{id}', 'App\Http\Controllers\Admin\About\MassMediaController@linkDelete')
+                ->name('massMediaLinkDelete');
             });
         });
     });

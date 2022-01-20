@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Admin\About;
 
-use App\Models\Media;
 use Illuminate\Http\Request;
-use App\Models\MassMediaLink;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\About\MassMediaRequest;
 
-class MediaController extends Controller
+// Models
+use App\Models\MassMedium;
+use App\Models\MassMediaLink;
+
+class MassMediaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +19,9 @@ class MediaController extends Controller
      */
     public function index()
     {
-        $massMedias = Media::get();
+        $massMedia = MassMedium::get();
         return view('admin.about.mass-media.index', [
-            'massMedias' => $massMedias,
+            'massMedia' => $massMedia,
         ]);
     }
 
@@ -41,7 +43,7 @@ class MediaController extends Controller
      */
     public function store(MassMediaRequest $request)
     {
-        $massMedia = Media::insertGetId([
+        $massMedia = MassMedium::insertGetId([
             'text_en' => $request->text_en,
             'text_am' => $request->text_am,
             'text_ru' => $request->text_ru,
@@ -65,10 +67,10 @@ class MediaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Media  $media
+     * @param  \App\Models\MassMedium  $massMedium
      * @return \Illuminate\Http\Response
      */
-    public function show(Media $media)
+    public function show(MassMedium $massMedium)
     {
         //
     }
@@ -76,14 +78,13 @@ class MediaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Media  $media
+     * @param  \App\Models\MassMedium  $massMedium
      * @return \Illuminate\Http\Response
      */
-    public function edit(Media $media)
+    public function edit(MassMedium $massMedium)
     {
-        dd($media);
         return view('admin.about.mass-media.edit', [
-            'massMedia' => $media,
+            'massMedia' => $massMedium,
         ]);
     }
 
@@ -91,22 +92,56 @@ class MediaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Media  $media
+     * @param  \App\Models\MassMedium  $massMedium
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Media $media)
+    public function update(MassMediaRequest $request, MassMedium $massMedium)
     {
-        //
+        $massMedium->update([
+            'text_en' => $request->text_en,
+            'text_am' => $request->text_am,
+            'text_ru' => $request->text_ru,
+            'year' => $request->year,
+        ]);
+
+
+        if (!empty($request->siteNames) && !empty($request->linkNames) && !empty($request->links)) {
+            foreach ($request->siteNames as $index => $siteName) {
+                MassMediaLink::insert([
+                    'mass_media_id' => $massMedium->id,
+                    'site_name' => $siteName,
+                    'link_name' => $request->linkNames[$index],
+                    'link' => $request->links[$index],
+                ]);
+            }
+        }
+        return redirect(route('admin.about.mass-media.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Media  $media
+     * @param  \App\Models\MassMedium  $massMedium
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Media $media)
+    public function destroy(MassMedium $massMedium)
     {
-        //
+        $massMedium->delete();
+        foreach($massMedium->links as $link){
+            $link->delete();
+        }
+
+        return redirect(route('admin.about.mass-media.index'));
+    }
+
+
+
+
+
+
+    public function linkDelete($id){
+        $link = MassMediaLink::findOrFail($id);
+        $link->delete();
+        return redirect()->back();
     }
 }

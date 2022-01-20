@@ -308,3 +308,28 @@ admin-section
     right: 15px;
     cursor: pointer;
 }
+.admin__edit_column{
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+.admin__edit_bordered{
+    margin-top: 10px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--dark-yellow);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.admin__edit_column .admin__edit_img_delete{
+    top: 0;
+    right: -20px;
+}
+.admin__edit_link{
+    text-decoration: underline;
+}

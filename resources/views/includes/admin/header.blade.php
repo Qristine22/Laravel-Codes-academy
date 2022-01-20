@@ -82,7 +82,7 @@
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/mass-media') ||
                         Request::is('admin/about/mass-media/*')) admin-header__link-active @endif"
-                            href="{{ route('admin.about.media.index') }}">
+                            href="{{ route('admin.about.mass-media.index') }}">
                             ԶԼՄ-ները մեր մասին
                         </a>
                     </li>
