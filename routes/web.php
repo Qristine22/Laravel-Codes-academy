@@ -256,6 +256,11 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::resource('gallery','App\Http\Controllers\Admin\About\GalleryController');
                 Route::get('/gallery/deleting-img/{id}', 'App\Http\Controllers\Admin\About\GalleryController@imgDelete')
                 ->name('galleryImgDelete');
+
+                // mass media page
+                Route::resource('media','App\Http\Controllers\Admin\About\MediaController');
+                // Route::get('/gallery/deleting-img/{id}', 'App\Http\Controllers\Admin\About\GalleryController@imgDelete')
+                // ->name('galleryImgDelete');
             });
         });
     });

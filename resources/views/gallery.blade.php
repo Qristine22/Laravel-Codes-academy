@@ -33,7 +33,8 @@
                         @if(count($gallery->imgs) > 1)
                             @foreach($gallery->imgs as $img)
                                 <div class="gallery__item flex">
-                                    <a class="gallery__top" data-fancybox="gallery" data-caption="**************************"
+                                    <a class="gallery__top" data-fancybox="gallery"
+                                        data-caption="{{ $gallery->{'text_'.app()->getLocale()} }}"
                                         href="{{ Storage::url($img->img) }}">
                                         <img class="gallery__img img" src="{{ Storage::url($img->img) }}" alt="1">
                                     </a>
@@ -42,7 +43,8 @@
                             @endforeach
                         @endif
                         <div class="gallery__item flex">
-                            <a class="gallery__top" data-fancybox="gallery" data-caption="**************************"
+                            <a class="gallery__top" data-fancybox="gallery"
+                                data-caption="{{ $gallery->{'text_'.app()->getLocale()} }}"
                                 href="{{ Storage::url($gallery->imgs[0]->img) }}">
                                 <img class="gallery__img img" src="{{ Storage::url($gallery->imgs[0]->img) }}" alt="1">
                             </a>

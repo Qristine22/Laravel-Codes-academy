@@ -35,7 +35,7 @@
                         Request::is('admin/about/governing-board-staff/*') ||
                         Request::is('admin/about/governing-board-staff'))admin-header__link-active @endif"
                             href="{{ route('admin.about.governing-board-page.index') }}">
-                            Ակադեմիայի կառավարման խորհուրդ
+                            Կառավարման խորհուրդ
                         </a>
                     </li>
                     <li class="admin-header__menu-item">
@@ -43,7 +43,7 @@
                             Request::is('admin/about/rectors-page/*') || Request::is('admin/about/rectors-decree')
                             || Request::is('admin/about/rectors-decree/*')) admin-header__link-active @endif"
                             href="{{ route('admin.about.rectors-page.index') }}">
-                            Ակադեմիայի ռեկտոր
+                            Ռեկտորի Էջ
                         </a>
                     </li>
                     <li class="admin-header__menu-item">
@@ -67,7 +67,7 @@
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/graduates') ||
                         Request::is('admin/about/graduates/*')) admin-header__link-active @endif"
-                            href="{{ route('admin.about.graduates.index') }}">Ակադեմիայի շրջանավարտներ</a>
+                            href="{{ route('admin.about.graduates.index') }}">Շրջանավարտներ</a>
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/admission') ||
@@ -80,7 +80,11 @@
                             href="{{ route('admin.about.gallery.index') }}">Տեսադարան</a>
                     </li>
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link" href="#">ԶԼՄ-ները մեր մասին</a>
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/mass-media') ||
+                        Request::is('admin/about/mass-media/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.about.media.index') }}">
+                            ԶԼՄ-ները մեր մասին
+                        </a>
                     </li>
                 </ul>
             </li>

@@ -231,6 +231,9 @@ admin-section
     display: inline-block;
     margin: 0 0 5px 13px;
 }
+.inputs__group > .form__item_name{
+    margin: 0 0 5px 26px;
+}
 .admin-file{
     display: none;
 }
