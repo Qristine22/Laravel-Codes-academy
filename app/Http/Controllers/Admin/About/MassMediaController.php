@@ -141,7 +141,7 @@ class MassMediaController extends Controller
 
     public function linkDelete($id){
         $link = MassMediaLink::findOrFail($id);
-        $link->delete();
+        $link->forceDelete();
         return redirect()->back();
     }
 }

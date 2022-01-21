@@ -12,7 +12,7 @@ class News extends Model
     use SoftDeletes;
     
     protected $fillable = [
-        'bg_img',
+        'bg',
         'title_en',
         'title_am',
         'title_ru',
@@ -21,4 +21,13 @@ class News extends Model
         'description_ru',
         'date',
     ];
+    
+
+    public static function news(){
+        return News::with('imgs')->paginate(5);
+    }
+
+    public function imgs(){
+        return $this->hasMany(NewsImg::class, 'news_id', 'id');
+    }
 }

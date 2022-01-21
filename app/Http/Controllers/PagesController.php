@@ -23,6 +23,7 @@ use App\Models\FormerRectorsBiography;
 use App\Models\Gallery;
 use App\Models\Graduate;
 use App\Models\MassMedium;
+use App\Models\News;
 
 class PagesController extends Controller
 {
@@ -46,9 +47,12 @@ class PagesController extends Controller
     // home *********************************************************************************
     public function home(){
         $home = Home::first();
+        $lastNews = News::latest()->take(3)->get();
+
         return view('home', [
             'headers' => $this->getHeader(),
             'home' => $home,
+            'lastNews' => $lastNews,
         ]);
     }
 
@@ -464,13 +468,21 @@ class PagesController extends Controller
 
     // news *********************************************************************************
     public function news(){
+        $news = News::orderBy('id', 'DESC')->paginate(10);
+
         return view('news', [
             'headers' => $this->getHeader(),
+            'news' => $news,
         ]);
     }
-    public function newsSingle(){
+    public function newsSingle($id){
+        $news = News::findOrFail($id);
+        $lastNews = News::latest()->take(3)->get();
+
         return view('news-single', [
             'headers' => $this->getHeader(),
+            'news' => $news,
+            'lastNews' => $lastNews,
         ]);
     }
 

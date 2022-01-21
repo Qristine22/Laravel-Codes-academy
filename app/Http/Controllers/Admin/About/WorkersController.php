@@ -139,7 +139,7 @@ class WorkersController extends Controller
     public function imgDelete($id){
         $item = WorkersImg::findOrFail($id);
         Storage::delete($item->img);
-        $item->delete();
+        $item->forceDelete();
         return redirect()->back();
     }
 }

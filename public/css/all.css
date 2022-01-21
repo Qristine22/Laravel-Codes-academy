@@ -472,12 +472,17 @@ header
     text-transform: uppercase;
     margin-bottom: 50px;
 }
+.last-news__item{
+    width: 100%;
+    max-width: 34%;
+}
 .last-news__item,
 .last-news__item:hover .last-news__item_cont::before{
     width: 100%;
 }
 .last-news__item_top{
     width: 100%;
+    max-height: 270px;
     overflow: hidden;
 }
 .news__item_img{
@@ -516,6 +521,7 @@ header
 }
 .last-news__items{
     align-items: flex-start;
+    justify-content: flex-start;
 }
 .last-news__item_link{
     color: var(--brown);

@@ -90,7 +90,9 @@
             </li>
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
-                    <a class="text-20 admin-header__link" href="#">Նորություննր</a>
+                    <a class="text-20 admin-header__link @if(Request::is('admin/news') ||
+                    Request::is('admin/news/*')) admin-header__link-active @endif"
+                    href="{{ route('admin.news.index') }}">Նորություննր</a>
                 </div>
             </li>
             <li class="admin-header__item">

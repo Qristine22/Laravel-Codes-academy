@@ -7,12 +7,11 @@
 
 @section('content')
     <main>
-        <section class="news__home" style="background-image: url(/media/img/news/new-single.png)">
+        <section class="news__home" style="background-image: url({{ Storage::url($news->bg) }}">
             <div class="news__home_cont">
                 <div class="wrapper">
                     <h2 class="news__home_title">
-                        Սեմինար՝ նվիրված դատական համակարգում կոռուպցիոն ռիսկերին,
-                        կոռուպցիայի դեմ պայքարի միջազգային լավագույն փորձին
+                        {{ $news->{'title_'.app()->getLocale()} }}
                     </h2>
                 </div>
             </div>
@@ -20,16 +19,10 @@
         <section class="new-info">
             <div class="wrapper">
                 <div class="new-info__cont">
-                    <span class="new-info__cont_date">10․11․2021</span>
-                    <p class="text-18 new-info__text">Նոյեմբերի 5-ին Արդարադատության ակադեմիայում անցկացվեց սեմինար՝
-                        «Կոռուպցիոն ռիսկերը դատական համակարգում» թեմայով: Սեմինարների այս շարքն իրականացնում է
-                        Ակադեմիան՝ Միջազգային իրավական համագործակցության գերմանական հիմնադրամի (IRZ) հետ համատեղ՝
-                        «Հայաստանում արդարադատության համակարգի ամրապնդում» ծրագրի շրջանակում:
-                        <br>
-                        <br>
-                        Սեմինարը վարում էր հակակոռուպցիոն և էթիկայի հարցերով փորձագետ Դիանա Կուրպնիսը (Լատվիա):
-                        Մասնակցում էին ՀՀ տարբեր ատյանների դատավորներ:
-                    </p>
+                    <span class="new-info__cont_date">{{ $news->date }}</span>
+                    <div class="text-18 new-info__text">
+                        {!! $news->{'description_'.app()->getLocale()} !!}
+                    </div>
                 </div>
             </div>
         </section>
@@ -39,21 +32,14 @@
                     <div class="new-images__top flex">
                         <div class="swiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide new-top__img">
-                                    <a href="/media/img/news/new-single1.png" target="_blank">
-                                        <img class="img" src="/media/img/news/new-single1.png" alt="new-single1">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide new-top__img">
-                                    <a href="/media/img/news/new-single2.png" target="_blank">
-                                        <img class="img" src="/media/img/news/new-single2.png" alt="new-single2">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide new-top__img">
-                                    <a href="/media/img/news/new-single3.png" target="_blank">
-                                        <img class="img" src="/media/img/news/new-single3.png" alt="new-single3">
-                                    </a>
-                                </div>
+                                @foreach($news->imgs as $img)
+                                    <div class="swiper-slide new-top__img">
+                                        <a href="{{ Storage::url($img->img) }}" target="_blank">
+                                            <img class="img" src="{{ Storage::url($img->img) }}"
+                                                alt="{{ Storage::url($img->id) }}">
+                                        </a>
+                                    </div>
+                                @endforeach
                             </div>
                             <div class="swiper-button-prev swiper__arrow"></div>
                             <div class="swiper-button-next swiper__arrow"></div>

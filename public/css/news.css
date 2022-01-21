@@ -4,6 +4,7 @@ news
 
 .news__section{
     margin-top: 60px;
+    min-height: calc(100vh - 120px);
 }
 .news__cont{
     width: 100%;
@@ -67,6 +68,7 @@ news
 }
 .new-images__top .swiper{
     padding: 0;
+    max-height: 260px;
 }
 
 /*

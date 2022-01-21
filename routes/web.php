@@ -262,6 +262,11 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::get('/mass-media/link/{id}', 'App\Http\Controllers\Admin\About\MassMediaController@linkDelete')
                 ->name('massMediaLinkDelete');
             });
+            
+            // news /***************************************************************************
+            Route::resource('news', 'App\Http\Controllers\Admin\NewsController');
+            Route::get('/news/deleting-img/{id}', 'App\Http\Controllers\Admin\NewsController@imgDelete')
+            ->name('news.ImgDelete');
         });
     });
 });
