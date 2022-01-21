@@ -76,8 +76,8 @@ Route::middleware(['set_locale'])->group(function(){
         });
 
 
-        Route::get('/report/{year}', 'App\Http\Controllers\PagesController@report')->name('report');
-        Route::get('/graduates/{year}', 'App\Http\Controllers\PagesController@graduates')->name('graduates');
+        Route::get('/report/{year?}', 'App\Http\Controllers\PagesController@report')->name('report');
+        Route::get('/graduates/{year?}', 'App\Http\Controllers\PagesController@graduates')->name('graduates');
         Route::get('/graduates/{year}/judges', 'App\Http\Controllers\PagesController@graduatesJudges')
             ->name('graduatesJudges');
         Route::get('/graduates/{year}/prosecutors', 'App\Http\Controllers\PagesController@graduatesProsecutors')
@@ -98,8 +98,8 @@ Route::middleware(['set_locale'])->group(function(){
         });
 
 
-        Route::get('/gallery/{year}', 'App\Http\Controllers\PagesController@gallery')->name('gallery');
-        Route::get('/mass-media', 'App\Http\Controllers\PagesController@massMedia')->name('massMedia');
+        Route::get('/gallery/{year?}', 'App\Http\Controllers\PagesController@gallery')->name('gallery');
+        Route::get('/mass-media/{year?}', 'App\Http\Controllers\PagesController@massMedia')->name('massMedia');
     });
     
     

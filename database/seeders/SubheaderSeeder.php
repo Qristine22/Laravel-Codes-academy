@@ -40,14 +40,14 @@ class SubheaderSeeder extends Seeder
                 'name_en' => 'Reports and audit conclusion',
                 'name_am' => 'Հաշվետվություններ և աուդիտորական եզրակացություններ',
                 'name_ru' => 'Отчёты и аудиторские заключения',
-                'link' => 'about/report/2020',
+                'link' => 'about/report',
                 'parent_id' => 1,
             ],
             [
                 'name_en' => 'Graduates of Academy',
                 'name_am' => 'Ակադեմիայի շրջանավարտներ',
                 'name_ru' => 'Выпускники Академии',
-                'link' => 'about/graduates/2014',
+                'link' => 'about/graduates',
                 'parent_id' => 1,
             ],
             [
@@ -61,7 +61,7 @@ class SubheaderSeeder extends Seeder
                 'name_en' => 'Gallery',
                 'name_am' => 'Տեսադարան',
                 'name_ru' => 'Галерея',
-                'link' => 'about/gallery/2014',
+                'link' => 'about/gallery',
                 'parent_id' => 1,
             ],
             [

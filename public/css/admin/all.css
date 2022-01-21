@@ -315,6 +315,7 @@ admin-section
     padding-left: 10px;
 }
 .admin__edit_bordered{
+    height: max-content;
     margin-top: 10px;
     padding: 0 10px;
     display: flex;

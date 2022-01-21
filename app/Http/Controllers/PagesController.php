@@ -22,6 +22,7 @@ use App\Models\GoverningBoardDecree;
 use App\Models\FormerRectorsBiography;
 use App\Models\Gallery;
 use App\Models\Graduate;
+use App\Models\MassMedium;
 
 class PagesController extends Controller
 {
@@ -289,10 +290,13 @@ class PagesController extends Controller
 
 
 
-    public function report($year){
+    public function report($year = null){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $reports = Report::where('year', $year)->get();
         $reportYears = Report::orderBy('id', 'DESC')->get()->groupBy('year');
+        if(empty($year)){
+            $year = $reportYears->keys()[0];
+        }
+        $reports = Report::where('year', $year)->get();
 
         return view('report', [
             'headers' => $this->getHeader(),
@@ -308,9 +312,13 @@ class PagesController extends Controller
 
 
 
-    public function graduates($year){
+    public function graduates($year = null){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $graduateYears = Graduate::orderBy('id', 'DESC')->get()->groupBy('year');
+        
+        if(empty($year)){
+            $year = $graduateYears->keys()[0];
+        }
         $judgeGraduates = Graduate::where('year', $year)->where('position', 'judge')->get();
         $prosecutorGraduates = Graduate::where('year', $year)->where('position', 'prosecutor')->get();
         $investigatorGraduates = Graduate::where('year', $year)->where('position', 'investigator')->get();
@@ -411,10 +419,14 @@ class PagesController extends Controller
 
 
 
-    public function gallery($year){
+    public function gallery($year = null){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $galleries = Gallery::galleryAll($year);
         $years = Gallery::all()->groupBy('year')->reverse();
+
+        if(empty($year)){
+            $year = $years->keys()[0];
+        }
+        $galleries = Gallery::galleryAll($year);
 
         return view('gallery', [
             'headers' => $this->getHeader(),
@@ -424,12 +436,22 @@ class PagesController extends Controller
             'year' => $year,
         ]);
     }
-    public function massMedia(){
+
+    public function massMedia($year = null){
         $headersBot = Subheader::where('parent_id', 1)->get();
+        $years = MassMedium::all()->groupBy('year')->reverse();
+
+        if(empty($year)){
+            $year = $years->keys()[0];
+        }
+        $massMedia = MassMedium::massMidiaYear($year);
 
         return view('mass-media', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'massMedia' => $massMedia,
+            'years' => $years,
+            'year' => $year,
         ]);
     }
 

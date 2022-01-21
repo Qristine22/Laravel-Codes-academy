@@ -22,6 +22,10 @@ class MassMedium extends Model
         return MassMedium::with('links')->paginate(5);
     }
 
+    public static function massMidiaYear($year){
+        return MassMedium::with('links')->where('year', $year)->get();
+    }
+
     public function links(){
         return $this->hasMany(MassMediaLink::class, 'mass_media_id', 'id');
     }

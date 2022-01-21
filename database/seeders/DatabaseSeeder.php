@@ -35,5 +35,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CandidateSeeder::class);
         $this->call(GallerySeeder::class);
         $this->call(GalleryImgSeeder::class);
+        $this->call(MassMediaSeeder::class);
+        $this->call(MassMediaLinkSeeder::class);
     }
 }
