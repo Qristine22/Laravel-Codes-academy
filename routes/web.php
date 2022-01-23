@@ -267,6 +267,12 @@ Route::middleware(['set_locale'])->group(function(){
             Route::resource('news', 'App\Http\Controllers\Admin\NewsController');
             Route::get('/news/deleting-img/{id}', 'App\Http\Controllers\Admin\NewsController@imgDelete')
             ->name('news.ImgDelete');
+
+
+            // news /***************************************************************************
+            Route::group(['prefix' => 'full-time-education', 'as' => 'full.time.education.'], function () {
+                Route::resource('training-program', 'App\Http\Controllers\Admin\TrainingProgramController');
+            });
         });
     });
 });

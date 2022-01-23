@@ -90,21 +90,24 @@
             </li>
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
-                    <a class="text-20 admin-header__link @if(Request::is('admin/news') ||
-                    Request::is('admin/news/*')) admin-header__link-active @endif"
+                    <a class="text-20 admin-header__link @if(Request::is('admin/news') || Request::is('admin/news/*')) admin-header__link-active @endif"
                     href="{{ route('admin.news.index') }}">Նորություննր</a>
                 </div>
             </li>
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
-                    <a class="text-20 admin-header__link" href="#">Առկա ուսուցում</a>
+                    <a class="text-20 admin-header__link @if(Request::is('admin/full-time-education') ||
+                    Request::is('admin/full-time-education/*')) admin-header__link-active @endif"
+                        href="{{ route('admin.full.time.education.training-program.index') }}">Առկա ուսուցում</a>
                     <div class="admin-header__arrow">
                         <img class="img" src="/media/img/icons/whiteDownArrow.png" alt="whiteDownArrow">
                     </div>
                 </div>
                 <ul class="admin-header__menu-list">
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link" href="#">Ակադեմիայի կառավարմանխորհուրդ</a>
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/full-time-education/training-program') ||
+                        Request::is('admin/full-time-education/training-program/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.full.time.education.training-program.index') }}">Ուսուցման ծրագրեր</a>
                     </li>
                 </ul>
             </li>
