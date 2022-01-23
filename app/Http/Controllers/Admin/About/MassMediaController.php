@@ -19,7 +19,7 @@ class MassMediaController extends Controller
      */
     public function index()
     {
-        $massMedia = MassMedium::get();
+        $massMedia = MassMedium::paginate(10);
         return view('admin.about.mass-media.index', [
             'massMedia' => $massMedia,
         ]);
