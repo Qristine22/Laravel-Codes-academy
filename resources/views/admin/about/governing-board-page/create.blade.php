@@ -17,19 +17,19 @@
                 <div class="form__text">
                     <div class="form__item">
                         <label class="text-20" for="text__en">Text English</label>
-                        <textarea name="text_en" id="text__en">
+                        <textarea class="ckeditor" name="text_en" id="text__en">
                             {{ old('text_en') }}
                         </textarea>
                     </div>
                     <div class="form__item">
                         <label class="text-20" for="text__en">Text Armenian</label>
-                        <textarea name="text_am" id="text__am">
+                        <textarea class="ckeditor" name="text_am" id="text__am">
                             {{ old('text_am') }}
                         </textarea>
                     </div>
                     <div class="form__item">
                         <label class="text-20" for="text__en">Text Russian</label>
-                        <textarea name="text_ru" id="text__ru">
+                        <textarea class="ckeditor" name="text_ru" id="text__ru">
                             {{ old('text_ru') }}
                         </textarea>
                     </div>
@@ -42,7 +42,5 @@
 
 
 @section('scripts')
-    <script src="https://cdn.tiny.cloud/1/kq8av1qstz5kw9feupprnmtm1wehpvky0yrkarctqemoowkq/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
-    <script src="/js/admin/tinyCloud.js"></script>
+    <script src="/ckeditor/ckeditor.js"></script>
 @endsection

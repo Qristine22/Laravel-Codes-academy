@@ -19,17 +19,17 @@
                 <div class="form__text">
                     <div class="form__item">
                         <label class="text-20 form__item_name" for="text__en">text (English)</label>
-                        <textarea name="text_en" id="text__en"
+                        <textarea class="ckeditor" name="text_en" id="text__en"
                             placeholder="Enter Your Text Here">{{ $admission->text_en }}</textarea>
                     </div>
                     <div class="form__item">
                         <label class="text-20 form__item_name" for="text__am">text (Armenian)</label>
-                        <textarea name="text_am" id="text__am"
+                        <textarea class="ckeditor" name="text_am" id="text__am"
                             placeholder="Enter Your Text Here">{{ $admission->text_am }}</textarea>
                     </div>
                     <div class="form__item">
                         <label class="text-20 form__item_name" for="text__ru">text (Russian)</label>
-                        <textarea name="text_ru" id="text__ru"
+                        <textarea class="ckeditor" name="text_ru" id="text__ru"
                             placeholder="Enter Your Text Here">{{ $admission->text_ru }}</textarea>
                     </div>
                 </div>
@@ -40,7 +40,5 @@
 @endsection
 
 @section('scripts')
-    <script src="https://cdn.tiny.cloud/1/kq8av1qstz5kw9feupprnmtm1wehpvky0yrkarctqemoowkq/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
-    <script src="/js/admin/tinyCloud.js"></script>
+    <script src="/ckeditor/ckeditor.js"></script>
 @endsection

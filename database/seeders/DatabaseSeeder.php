@@ -39,5 +39,6 @@ class DatabaseSeeder extends Seeder
         $this->call(MassMediaLinkSeeder::class);
         $this->call(NewsSeeder::class);
         $this->call(NewsImgSeeder::class);
+        $this->call(TrainingProgramSeeder::class);
     }
 }

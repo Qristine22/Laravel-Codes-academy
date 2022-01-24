@@ -610,7 +610,7 @@ pdfs
 */
 
 .pdfs{
-    min-height: calc(100vh - 400px);
+    min-height: calc(100vh - 280px);
 }
 .pdfs__cont{
     flex-direction: column;

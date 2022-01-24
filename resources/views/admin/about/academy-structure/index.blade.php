@@ -6,9 +6,9 @@
             <div class="admin__head">
                 <h2 class="admin__title">Ակադեմիայի կառուցվածք</h2>
             </div>
-            <a class="admin-item__create" href="{{ route('admin.about.academy-structure.create') }}">
+            {{-- <a class="admin-item__create" href="{{ route('admin.about.academy-structure.create') }}">
                 <span class="admin-item__plus">+</span>
-            </a>
+            </a> --}}
             <table class="table">
                 <tr>
                     <th class="th text-18" style="width: 5%">#id</th>

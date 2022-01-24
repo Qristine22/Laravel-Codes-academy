@@ -61,15 +61,21 @@
                     </div>
                     <div class="form__item inputs__group">
                         <label class="text-20 form__item_name" for="rectors_word__en">Rectors Word (English)</label>
-                        <textarea name="rectors_word_en" id="rectors_word__en">{{ old('rectors_word_en') }}</textarea>
+                        <textarea class="ckeditor" name="rectors_word_en" id="rectors_word__en">
+                            {{ old('rectors_word_en') }}
+                        </textarea>
                     </div>
                     <div class="form__item">
                         <label class="text-20 form__item_name" for="rectors_word__am">Rectors Word (Armenian)</label>
-                        <textarea name="rectors_word_am" id="rectors_word__am">{{ old('rectors_word_am') }}</textarea>
+                        <textarea class="ckeditor" name="rectors_word_am" id="rectors_word__am">
+                            {{ old('rectors_word_am') }}
+                        </textarea>
                     </div>
                     <div class="form__item">
                         <label class="text-20 form__item_name" for="rectors_word__ru">Rectors Word (Russian)</label>
-                        <textarea name="rectors_word_ru" id="rectors_word__ru">{{ old('rectors_word_ru') }}</textarea>
+                        <textarea class="ckeditor" name="rectors_word_ru" id="rectors_word__ru">
+                            {{ old('rectors_word_ru') }}
+                        </textarea>
                     </div>
                 </div>
                 <button class="form__btn">Save</button>
@@ -80,7 +86,5 @@
 
 
 @section('scripts')
-    <script src="https://cdn.tiny.cloud/1/kq8av1qstz5kw9feupprnmtm1wehpvky0yrkarctqemoowkq/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
-    <script src="/js/admin/tinyCloud.js"></script>
+    <script src="/ckeditor/ckeditor.js"></script>
 @endsection

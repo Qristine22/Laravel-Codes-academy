@@ -72,20 +72,20 @@
                     <div class="form__text">
                         <div class="form__item">
                             <label class="text-20 form__item_name" for="description__en">Description (English)</label>
-                            <textarea name="description_en" id="description__en" placeholder="Enter Your Text Here">
-                                {{ $news->description_en }}
+                            <textarea class="ckeditor" name="description_en" id="description__en"
+                                placeholder="Enter Your Text Here">{{ $news->description_en }}
                             </textarea>
                         </div>
                         <div class="form__item">
                             <label class="text-20 form__item_name" for="description__am">Description (Armenian)</label>
-                            <textarea name="description_am" id="description__am" placeholder="Enter Your Text Here">
-                                {{ $news->description_am }}
+                            <textarea class="ckeditor" name="description_am" id="description__am"
+                                placeholder="Enter Your Text Here">{{ $news->description_am }}
                             </textarea>
                         </div>
                         <div class="form__item">
                             <label class="text-20 form__item_name" for="description__ru">Description (Russian)</label>
-                            <textarea name="description_ru" id="description__ru" placeholder="Enter Your Text Here">
-                                {{ $news->description_ru }}
+                            <textarea class="ckeditor" name="description_ru" id="description__ru"
+                                placeholder="Enter Your Text Here">{{ $news->description_ru }}
                             </textarea>
                         </div>
                     </div>
@@ -99,8 +99,6 @@
 @endsection
 
 @section('scripts')
-    <script src="https://cdn.tiny.cloud/1/kq8av1qstz5kw9feupprnmtm1wehpvky0yrkarctqemoowkq/tinymce/5/tinymce.min.js"
-    referrerpolicy="origin"></script>
-    <script src="/js/admin/tinyCloud.js"></script>
+    <script src="/ckeditor/ckeditor.js"></script>
     <script src="/js/admin/inputsAdd.js"></script>
 @endsection

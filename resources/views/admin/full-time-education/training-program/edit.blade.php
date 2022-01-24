@@ -4,12 +4,12 @@
     <div class="admin__sections">
         <section class="admin-section">
             <div class="admin__head">
-                <h2 class="admin__title">Կառավարման խորհուրդի որոշումներ</h2>
+                <h2 class="admin__title">Ուսուցման ծրագրեր</h2>
             </div>
 
             <form class="admin__form"
-                action="{{ route('admin.about.governing-board-decree.update',
-                ['governing_board_decree' => $governingBoardDecree]) }}"
+                action="{{ route('admin.full-time-education.training-program.update',
+                ['training_program' => $trainingProgram]) }}"
                 method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
@@ -21,17 +21,43 @@
                 <div class="form__text">
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="position">Position</label>
-                            <select class="admin-inp" name="position" id="position">
-                                <option value="judge" @if($graduate->position == 'judge') selected @endif>judge</option>
-                                <option value="prosecutor" @if($graduate->position == 'prosecutor') selected @endif>prosecutor</option>
-                                <option value="investigator" @if($graduate->position == 'investigator') selected @endif>investigator</option>
+                            <label class="text-20 form__item_name" for="name__en">Name (English)</label>
+                            <input class="admin-inp" type="text" id="name__en" name="name_en"
+                                placeholder="Enter your text here" value="{{ $trainingProgram->name_en }}">
+                        </div>
+                        <div class="form__item form__item-inp">
+                            <label class="text-20 form__item_name" for="name__am">Name (Armenian)</label>
+                            <input class="admin-inp" type="text" id="name__am" name="name_am"
+                                placeholder="Enter your text here" value="{{ $trainingProgram->name_am }}">
+                        </div>
+                        <div class="form__item form__item-inp">
+                            <label class="text-20 form__item_name" for="name__ru">Name (Russian)</label>
+                            <input class="admin-inp" type="text" id="name__ru" name="name_ru"
+                                placeholder="Enter your text here" value="{{ $trainingProgram->name_ru }}">
+                        </div>
+                    </div>
+                    <div class="flex inputs__group">
+                        <div class="form__item form__item-inp">
+                            <label class="text-20 form__item_name" for="category">Category</label>
+                            <select class="admin-inp" name="category" id="category">
+                                <option value="judge"
+                                    @if($trainingProgram->category == 'judge') selected @endif>
+                                    Դատական համակարգի ունկնդիրների ուսուցում
+                                </option>
+                                <option value="prosecutor"
+                                    @if($trainingProgram->category == 'prosecutor') selected @endif>
+                                    Դատախազության համակարգի ունկնդիրների ուսուցում
+                                </option>
+                                <option value="investigator"
+                                    @if($trainingProgram->category == 'investigator') selected @endif>
+                                    Քննչական համակարգի ունկնդիրների ուսուցում
+                                </option>
                             </select>
                         </div>
                         <div class="form__item form__item-inp">
                             <label class="text-20 form__item_name" for="year">year</label>
                             <input class="admin-inp" type="text" id="year" name="year"
-                                placeholder="Enter your text here" value="{{ $governingBoardDecree->year }}">
+                                placeholder="Enter your text here" value="{{ $trainingProgram->year }}">
                         </div>
                         <div class="form__item form__item-inp">
                             <span class="text-20 form__item_name">file</span>
@@ -39,29 +65,25 @@
                             <input class="admin-file" type="file" id="pdf" name="pdf">
                         </div>
                     </div>
-                    <div class="flex inputs__group">
-                        <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="info__en">info (English)</label>
-                            <input class="admin-inp" type="text" id="info__en" name="info_en"
-                                placeholder="Enter your text here" value="{{ $governingBoardDecree->info_en }}">
-                        </div>
-                        <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="info__am">info (Armenian)</label>
-                            <input class="admin-inp" type="text" id="info__am" name="info_am"
-                                placeholder="Enter your text here" value="{{ $governingBoardDecree->info_am }}">
-                        </div>
-                        <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="info__ru">info (Russian)</label>
-                            <input class="admin-inp" type="text" id="info__ru" name="info_ru"
-                                placeholder="Enter your text here" value="{{ $governingBoardDecree->info_ru }}">
+                    <div class="form__text">
+                        <div class="form__item">
+                            <label class="text-20 form__item_name" for="description">Text (English)</label>
+                            <textarea class="ckeditor" name="description" id="description" placeholder="Enter Your Text Here">
+                                {{ $trainingProgram->description }}
+                            </textarea>
                         </div>
                     </div>
                 </div>
 
 
-                <input type="hidden" name="pdfHidden" value="{{ $governingBoardDecree->pdf }}">
+                <input type="hidden" name="pdfHidden" value="{{ $trainingProgram->pdf }}">
                 <button class="form__btn">Save</button>
             </form>
         </section>
     </div>
+@endsection
+
+
+@section('scripts')
+    <script src="/ckeditor/ckeditor.js"></script>
 @endsection

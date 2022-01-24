@@ -17,7 +17,7 @@
                 <div class="form__text">
                     <div class="form__item">
                         <label class="text-20 form__item_name" for="text">Text</label>
-                        <textarea name="text" id="text" placeholder="Enter Your Text Here">
+                        <textarea class="ckeditor" name="text" id="text" placeholder="Enter Your Text Here">
                             {{ old('text') }}
                         </textarea>
                     </div>
@@ -30,7 +30,5 @@
 
 
 @section('scripts')
-    <script src="https://cdn.tiny.cloud/1/kq8av1qstz5kw9feupprnmtm1wehpvky0yrkarctqemoowkq/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
-    <script src="/js/admin/tinyCloud.js"></script>
+    <script src="/ckeditor/ckeditor.js"></script>
 @endsection

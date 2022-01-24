@@ -60,20 +60,20 @@
                     <div class="form__text">
                         <div class="form__item">
                             <label class="text-20 form__item_name" for="biography__en">Biography (English)</label>
-                            <textarea name="biography_en" id="biography__en" placeholder="Enter Your Text Here">
-                                {{ old('biography_en') }}
+                            <textarea class="ckeditor" name="biography_en" id="biography__en"
+                                placeholder="Enter Your Text Here">{{ old('biography_en') }}
                             </textarea>
                         </div>
                         <div class="form__item">
                             <label class="text-20 form__item_name" for="biography__am">Biography (Armenian)</label>
-                            <textarea name="biography_am" id="biography__am" placeholder="Enter Your Text Here">
-                                {{ old('biography_am') }}
+                            <textarea class="ckeditor" name="biography_am" id="biography__am"
+                                placeholder="Enter Your Text Here">{{ old('biography_am') }}
                             </textarea>
                         </div>
                         <div class="form__item">
                             <label class="text-20 form__item_name" for="biography__ru">Biography (Russian)</label>
-                            <textarea name="biography_ru" id="biography__ru" placeholder="Enter Your Text Here">
-                                {{ old('biography_ru') }}
+                            <textarea class="ckeditor" name="biography_ru" id="biography__ru"
+                                placeholder="Enter Your Text Here">{{ old('biography_ru') }}
                             </textarea>
                         </div>
                     </div>
@@ -86,7 +86,5 @@
 
 
 @section('scripts')
-    <script src="https://cdn.tiny.cloud/1/kq8av1qstz5kw9feupprnmtm1wehpvky0yrkarctqemoowkq/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
-    <script src="/js/admin/tinyCloud.js"></script>
+    <script src="/ckeditor/ckeditor.js"></script>
 @endsection

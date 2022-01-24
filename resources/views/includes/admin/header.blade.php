@@ -48,7 +48,9 @@
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/rectors-biography') ||
-                        Request::is('admin/about/rectors-biography/*')) admin-header__link-active @endif"
+                        Request::is('admin/about/rectors-biography/*') ||
+                        Request::is('admin/about/former-rectors-biography') ||
+                        Request::is('admin/about/former-rectors-biography/*')) admin-header__link-active @endif"
                         href="{{ route('admin.about.rectors-biography.index') }}">
                             Ռեկտորի կենսագրություն
                         </a>
@@ -60,7 +62,8 @@
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/report') ||
-                            Request::is('admin/about/report/*')) admin-header__link-active @endif" href="{{ route('admin.about.report.index') }}">
+                            Request::is('admin/about/report/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.about.report.index') }}">
                             Հաշվետվություններ և աուդիտորական եզրակացություններ
                         </a>
                     </li>
@@ -71,7 +74,8 @@
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/admission') ||
-                        Request::is('admin/about/admission/*')) admin-header__link-active @endif"
+                        Request::is('admin/about/admission/*') || Request::is('admin/about/candidate') ||
+                        Request::is('admin/about/candidate/*')) admin-header__link-active @endif"
                             href="{{ route('admin.about.admission.index') }}">Ընդունելություն</a>
                     </li>
                     <li class="admin-header__menu-item">
@@ -98,7 +102,7 @@
                 <div class="admin-header__item_cont flex">
                     <a class="text-20 admin-header__link @if(Request::is('admin/full-time-education') ||
                     Request::is('admin/full-time-education/*')) admin-header__link-active @endif"
-                        href="{{ route('admin.full.time.education.training-program.index') }}">Առկա ուսուցում</a>
+                        href="{{ route('admin.full-time-education.training-program.index') }}">Առկա ուսուցում</a>
                     <div class="admin-header__arrow">
                         <img class="img" src="/media/img/icons/whiteDownArrow.png" alt="whiteDownArrow">
                     </div>
@@ -107,7 +111,7 @@
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/full-time-education/training-program') ||
                         Request::is('admin/full-time-education/training-program/*')) admin-header__link-active @endif"
-                            href="{{ route('admin.full.time.education.training-program.index') }}">Ուսուցման ծրագրեր</a>
+                            href="{{ route('admin.full-time-education.training-program.index') }}">Ուսուցման ծրագրեր</a>
                     </li>
                 </ul>
             </li>

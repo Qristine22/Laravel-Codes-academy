@@ -6,7 +6,7 @@
             <div class="admin__head">
                 <h2 class="admin__title">Ուսուցման ծրագրեր</h2>
             </div>
-            <a class="admin-item__create" href="{{ route('admin.full.time.education.training-program.create') }}">
+            <a class="admin-item__create" href="{{ route('admin.full-time-education.training-program.create') }}">
                 <span class="admin-item__plus">+</span>
             </a>
             <table class="table">
@@ -22,19 +22,27 @@
                     <tr>
                         <td class="td text-18">{{ $item->id }}</td>
                         <td class="td text-18">{{ $item->name_am }}</td>
-                        <td class="td text-18">{{ $item->description }}</td>
-                        <td class="td text-18">{{ $item->category }}</td>
+                        <td class="td text-18">{!! $item->description !!}</td>
+                        <td class="td text-18">
+                            @if($item->category == 'judge')
+                                Դատական համակարգի ունկնդիրների ուսուցում
+                            @elseif($item->category == 'prosecutor')
+                                Դատախազության համակարգի ունկնդիրների ուսուցում
+                            @elseif($item->category == 'investigator')
+                                Քննչական համակարգի ունկնդիրների ուսուցում
+                            @endif
+                        </td>
                         <td class="td text-18">{{ $item->year }}</td>
                         <td class="td text-18">
                             <div class="table__panel flex">
                                 <a class="table__panel_item"
-                                    href="{{ route('admin.about.governing-board-decree.edit',
-                                    ['governing_board_decree' => $item]) }}">
+                                    href="{{ route('admin.full-time-education.training-program.edit',
+                                    ['training_program' => $item]) }}">
                                     <img class="img" src="/media/img/icons/edit.png" alt="edit">
                                 </a>
                                 <form
-                                    action="{{ route('admin.about.governing-board-decree.destroy',
-                                    ['governing_board_decree' => $item]) }}" method="POST">
+                                    action="{{ route('admin.full-time-education.training-program.destroy',
+                                    ['training_program' => $item]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="table__panel_item table__panel_delete">

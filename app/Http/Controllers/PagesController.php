@@ -24,6 +24,7 @@ use App\Models\Gallery;
 use App\Models\Graduate;
 use App\Models\MassMedium;
 use App\Models\News;
+use App\Models\TrainingProgram;
 
 class PagesController extends Controller
 {
@@ -495,30 +496,55 @@ class PagesController extends Controller
 
 
     // full time education *********************************************************************************
+    // training programs
     public function fullTimeEducation(){
         $headersBot = Subheader::where('parent_id', 3)->get();
+        $trainingProgramJodgeYears = TrainingProgram::where('category', 'judge')->get()->groupBy('year')->reverse();
+        $trainingProgramProsecutorYears = TrainingProgram::where('category', 'prosecutor')->get()->groupBy('year')->reverse();
+        $trainingProgramInvestigatorYears = TrainingProgram::where('category', 'investigator')
+            ->get()->groupBy('year')->reverse();
 
         return view('training-programs', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'trainingProgramJodgeYears' => $trainingProgramJodgeYears,
+            'trainingProgramProsecutorYears' => $trainingProgramProsecutorYears,
+            'trainingProgramInvestigatorYears' => $trainingProgramInvestigatorYears,
         ]);
     }
     public function trainingPrograms(){
         $headersBot = Subheader::where('parent_id', 3)->get();
+        $trainingProgramJodgeYears = TrainingProgram::where('category', 'judge')->get()->groupBy('year')->reverse();
+        $trainingProgramProsecutorYears = TrainingProgram::where('category', 'prosecutor')->get()->groupBy('year')->reverse();
+        $trainingProgramInvestigatorYears = TrainingProgram::where('category', 'investigator')
+            ->get()->groupBy('year')->reverse();
 
         return view('training-programs', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'trainingProgramJodgeYears' => $trainingProgramJodgeYears,
+            'trainingProgramProsecutorYears' => $trainingProgramProsecutorYears,
+            'trainingProgramInvestigatorYears' => $trainingProgramInvestigatorYears,
         ]);
     }
-    public function trainingProgramSingle(){
+    public function trainingProgramSingle($year, $category){
         $headersBot = Subheader::where('parent_id', 3)->get();
+        $trainingPrograms = TrainingProgram::where('category', $category)->where('year', $year)
+            ->get();
 
         return view('training-program-single', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'trainingPrograms' => $trainingPrograms,
+            'year' => $year,
+            'category' => $category,
         ]);
     }
+
+
+
+
+    // conducting exams
     public function conductingExams(){
         $headersBot = Subheader::where('parent_id', 3)->get();
 

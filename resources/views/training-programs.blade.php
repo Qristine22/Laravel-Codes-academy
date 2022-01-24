@@ -17,34 +17,35 @@
                     <div class="dates__item dates__item-first flex">
                         <h2 class="dates__item_title">@lang('full-time-education.judiciary-training')</h2>
                         <div class="dates flex">
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2021</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2020</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2019</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2018</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2017</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2015-2016</a>
+                            @foreach($trainingProgramJodgeYears as $key => $val)
+                                <a class="date"
+                                    href="{{ route('trainingProgramSingle', ['year' => $key, 'category' => 'judge']) }}">
+                                    {{ $key }}
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                     <div class="dates__item flex">
                         <h2 class="dates__item_title">@lang('full-time-education.prosecutorial-training')</h2>
                         <div class="dates flex">
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2021</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2020</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2019</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2018</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2017</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2015-2016</a>
+                            @foreach($trainingProgramProsecutorYears as $key => $val)
+                                <a class="date"
+                                    href="{{ route('trainingProgramSingle', ['year' => $key, 'category' => 'prosecutor']) }}">
+                                    {{ $key }}
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                     <div class="dates__item flex">
                         <h2 class="dates__item_title">@lang('full-time-education.investigative-training')</h2>
                         <div class="dates flex">
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2021</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2020</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2019</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2018</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2017</a>
-                            <a class="date" href="{{ route('trainingProgramSingle', ['year' => 2021]) }}">2015-2016</a>
+                            @foreach($trainingProgramInvestigatorYears as $key => $val)
+                                <a class="date"
+                                    href="{{ route('trainingProgramSingle',
+                                        ['year' => $key, 'category' => 'investigator']) }}">
+                                    {{ $key }}
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                 </div>

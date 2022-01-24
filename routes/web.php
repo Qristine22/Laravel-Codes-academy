@@ -116,7 +116,7 @@ Route::middleware(['set_locale'])->group(function(){
             ->name('fullTimeEducation');
         Route::get('/training-programs', 'App\Http\Controllers\PagesController@trainingPrograms')
             ->name('trainingPrograms');
-        Route::get('/training-programs/{year}', 'App\Http\Controllers\PagesController@trainingProgramSingle')
+        Route::get('/training-programs/{year}/{category}', 'App\Http\Controllers\PagesController@trainingProgramSingle')
             ->name('trainingProgramSingle');
         Route::get('/conducting-exams', 'App\Http\Controllers\PagesController@conductingExams')->name('conductingExams');
         Route::get('/conducting-practice', 'App\Http\Controllers\PagesController@conductingPractice')
@@ -270,8 +270,8 @@ Route::middleware(['set_locale'])->group(function(){
 
 
             // news /***************************************************************************
-            Route::group(['prefix' => 'full-time-education', 'as' => 'full.time.education.'], function () {
-                Route::resource('training-program', 'App\Http\Controllers\Admin\TrainingProgramController');
+            Route::group(['prefix' => 'full-time-education', 'as' => 'full-time-education.'], function () {
+                Route::resource('training-program', 'App\Http\Controllers\Admin\FullTime\TrainingProgramController');
             });
         });
     });

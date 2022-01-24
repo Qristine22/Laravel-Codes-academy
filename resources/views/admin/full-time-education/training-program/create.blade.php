@@ -7,7 +7,7 @@
                 <h2 class="admin__title">Ուսուցման ծրագրեր</h2>
             </div>
 
-            <form class="admin__form" action="{{ route('admin.full.time.education.training-program.store') }}" method="POST"
+            <form class="admin__form" action="{{ route('admin.full-time-education.training-program.store') }}" method="POST"
                 enctype="multipart/form-data">
                 @csrf
                 @if ($errors->any())
@@ -35,8 +35,8 @@
                     </div>
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="position">Position</label>
-                            <select class="admin-inp" name="position" id="position">
+                            <label class="text-20 form__item_name" for="category">Category</label>
+                            <select class="admin-inp" name="category" id="category">
                                 <option value="judge">Դատական համակարգի ունկնդիրների ուսուցում</option>
                                 <option value="prosecutor">Դատախազության համակարգի ունկնդիրների ուսուցում</option>
                                 <option value="investigator">Քննչական համակարգի ունկնդիրների ուսուցում</option>
@@ -55,9 +55,9 @@
                     </div>
                     <div class="form__text">
                         <div class="form__item">
-                            <label class="text-20 form__item_name" for="text__en">Text (English)</label>
-                            <textarea name="text_en" id="text__en" placeholder="Enter Your Text Here">
-                                {{ old('text_en') }}
+                            <label class="text-20 form__item_name" for="description">Text (English)</label>
+                            <textarea class="ckeditor" name="description" id="description" placeholder="Enter Your Text Here">
+                                {{ old('description') }}
                             </textarea>
                         </div>
                     </div>
@@ -70,7 +70,5 @@
 
 
 @section('scripts')
-    <script src="https://cdn.tiny.cloud/1/kq8av1qstz5kw9feupprnmtm1wehpvky0yrkarctqemoowkq/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
-    <script src="/js/admin/tinyCloud.js"></script>
+    <script src="/ckeditor/ckeditor.js"></script>
 @endsection
