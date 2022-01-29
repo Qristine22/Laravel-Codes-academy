@@ -45,7 +45,7 @@ Route::middleware(['set_locale'])->group(function(){
             Route::get('/former-rectors-biography', 'App\Http\Controllers\PagesController@formerRectorsBiography')
                 ->name('formerRectorsBiography');
             Route::get('/decrees', 'App\Http\Controllers\PagesController@rectorsDecrees')->name('rectorsDecrees');
-            // governing board pdf download
+            // rectors decree pdf download
             Route::get('/decree/{pdf}/download', 'App\Http\Controllers\MainController@rectorsDecreedownload')
                 ->name('rectorsDecreedownload');
         });
@@ -70,7 +70,8 @@ Route::middleware(['set_locale'])->group(function(){
                 ->name('cooperationAndPublicRelation');
             Route::get('/staff-and-document-management', 'App\Http\Controllers\PagesController@staffAndDocumentManagement')
                 ->name('staffAndDocumentManagement');
-            Route::get('/tehchnical-and-economic-activities', 'App\Http\Controllers\PagesController@tehchnicalAndEconomicActivities')->name('tehchnicalAndEconomicActivities');
+            Route::get('/tehchnical-and-economic-activities', 'App\Http\Controllers\PagesController@tehchnicalAndEconomicActivities')
+                ->name('tehchnicalAndEconomicActivities');
             Route::get('/hotel', 'App\Http\Controllers\PagesController@hotel')
                 ->name('hotel');
         });
@@ -118,6 +119,10 @@ Route::middleware(['set_locale'])->group(function(){
             ->name('trainingPrograms');
         Route::get('/training-programs/{year}/{category}', 'App\Http\Controllers\PagesController@trainingProgramSingle')
             ->name('trainingProgramSingle');
+        // training programs pdf download
+        Route::get('/training-programs/{year}/{category}/{pdf}/download', 'App\Http\Controllers\MainController@trainingProgramDownload')
+            ->name('trainingProgramDownload');
+
         Route::get('/conducting-exams', 'App\Http\Controllers\PagesController@conductingExams')->name('conductingExams');
         Route::get('/conducting-practice', 'App\Http\Controllers\PagesController@conductingPractice')
             ->name('conductingPractice');

@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\RectorsDecree;
+use Illuminate\Support\Facades\App;
 
 // Models
-use Illuminate\Support\Facades\App;
+use App\Models\RectorsDecree;
 use App\Models\GoverningBoardDecree;
+use App\Models\TrainingProgram;
 
 class MainController extends Controller
 {
@@ -39,5 +40,14 @@ class MainController extends Controller
         $headers = ['Content-Type: application/pdf'];
 
         return response()->download($file, 'decree'.$decree->id.'.pdf', $headers);
+    }
+
+    // training program download
+    public function trainingProgramDownload($year, $category, $pdf){
+        $trainingProgram = TrainingProgram::findOrFail($pdf);
+        $file = public_path()."/storage/".$trainingProgram->pdf;
+        $headers = ['Content-Type: application/pdf'];
+
+        return response()->download($file, 'training-program'.$trainingProgram->id.'.pdf', $headers);
     }
 }

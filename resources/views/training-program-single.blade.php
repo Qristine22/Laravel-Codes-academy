@@ -36,7 +36,7 @@
                                     </p>
                                 </div>
                                 <div class="pdf__item_icon">
-                                    <a href="#">
+                                    <a href="{{ route('trainingProgramDownload', ['year' => $year, 'category' => $category, 'pdf' => $item->id]) }}">
                                         <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
                                         <span class="pdf__item_span text-18">
                                             @lang('main.download')
