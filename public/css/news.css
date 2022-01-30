@@ -133,6 +133,12 @@ new info
 .new-info__text{
     margin: 40px 0;
 }
+.new-top__imgs{
+    width: 100%;
+}
+.new-top__imgs > .new-top__img{
+    width: 33.3%;
+}
 .new-top__img{
     width: 100%;
 }

@@ -245,6 +245,7 @@ graduates
 .graduates-profession__items{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     margin: 0 -10px;
 }
 .graduates-profession__title{
