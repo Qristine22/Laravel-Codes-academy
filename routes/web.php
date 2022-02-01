@@ -277,6 +277,7 @@ Route::middleware(['set_locale'])->group(function(){
             // news /***************************************************************************
             Route::group(['prefix' => 'full-time-education', 'as' => 'full-time-education.'], function () {
                 Route::resource('training-program', 'App\Http\Controllers\Admin\FullTime\TrainingProgramController');
+                Route::resource('conducting-exam', 'App\Http\Controllers\Admin\FullTime\ConducttingExam');
             });
         });
     });

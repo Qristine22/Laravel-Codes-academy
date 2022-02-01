@@ -113,6 +113,11 @@
                         Request::is('admin/full-time-education/training-program/*')) admin-header__link-active @endif"
                             href="{{ route('admin.full-time-education.training-program.index') }}">Ուսուցման ծրագրեր</a>
                     </li>
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/full-time-education/conducting-exam') ||
+                        Request::is('admin/full-time-education/conducting-exam/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.full-time-education.conducting-exam.index') }}">Քննությունների անցկացման կարգ</a>
+                    </li>
                 </ul>
             </li>
             <li class="admin-header__item">
