@@ -15,6 +15,8 @@ use App\Models\RectorsDecree;
 use App\Models\AcademyStructure;
 use App\Models\Admission;
 use App\Models\Candidate;
+use App\Models\ConductingExam;
+use App\Models\ConductingExamVideo;
 use App\Models\RectorsBiography;
 use App\Models\GoverningBoardPage;
 use App\Models\GoverningBoardStaff;
@@ -547,10 +549,14 @@ class PagesController extends Controller
     // conducting exams
     public function conductingExams(){
         $headersBot = Subheader::where('parent_id', 3)->get();
+        $conductingExams = ConductingExam::all();
+        $conductingExamVideos = ConductingExamVideo::all();
 
         return view('conducting-exams', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'conductingExams' => $conductingExams,
+            'conductingExamVideos' => $conductingExamVideos,
         ]);
     }
     public function conductingPractice(){

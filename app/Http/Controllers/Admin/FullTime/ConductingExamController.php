@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\Admin\FullTime;
 
 use Illuminate\Http\Request;
-use App\Models\ConductingExam;
 use App\Http\Requests\NameRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
-class ConducttingExam extends Controller
+// Models
+use App\Models\ConductingExam;
+use App\Models\ConductingExamVideo;
+
+class ConductingExamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +21,11 @@ class ConducttingExam extends Controller
     public function index()
     {
         $conductingExam = ConductingExam::paginate(10);
+        $conductingExamVideos = ConductingExamVideo::paginate(5);
+
         return view('admin.full-time-education.conducting-exam.index', [
             'conductingExam' => $conductingExam,
+            'conductingExamVideos' => $conductingExamVideos,
         ]);
     }
 

@@ -124,6 +124,9 @@ Route::middleware(['set_locale'])->group(function(){
             ->name('trainingProgramDownload');
 
         Route::get('/conducting-exams', 'App\Http\Controllers\PagesController@conductingExams')->name('conductingExams');
+        // conducting exam download
+        Route::get('conducting-exam/{pdf}/download', 'App\Http\Controllers\MainController@conductingExamDownload')
+            ->name('conductingExamDownload');
         Route::get('/conducting-practice', 'App\Http\Controllers\PagesController@conductingPractice')
             ->name('conductingPractice');
         Route::get('/rules-of-behaviour', 'App\Http\Controllers\PagesController@rulesOfBehaviour')->name('rulesOfBehaviour');
@@ -277,7 +280,8 @@ Route::middleware(['set_locale'])->group(function(){
             // news /***************************************************************************
             Route::group(['prefix' => 'full-time-education', 'as' => 'full-time-education.'], function () {
                 Route::resource('training-program', 'App\Http\Controllers\Admin\FullTime\TrainingProgramController');
-                Route::resource('conducting-exam', 'App\Http\Controllers\Admin\FullTime\ConducttingExam');
+                Route::resource('conducting-exam', 'App\Http\Controllers\Admin\FullTime\ConductingExamController');
+                Route::resource('conducting-exam-video', 'App\Http\Controllers\Admin\FullTime\ConductingExamVideoController');
             });
         });
     });

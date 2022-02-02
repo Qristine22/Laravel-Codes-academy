@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\App;
 use App\Models\RectorsDecree;
 use App\Models\GoverningBoardDecree;
 use App\Models\TrainingProgram;
+use App\Models\ConductingExam;
 
 class MainController extends Controller
 {
@@ -49,5 +50,14 @@ class MainController extends Controller
         $headers = ['Content-Type: application/pdf'];
 
         return response()->download($file, 'training-program'.$trainingProgram->id.'.pdf', $headers);
+    }
+
+    // conducting exam download
+    public function conductingExamDownload($pdf){
+        $conductingExam = ConductingExam::findOrFail($pdf);
+        $file = public_path()."/storage/".$conductingExam->pdf;
+        $headers = ['Content-Type: application/pdf'];
+
+        return response()->download($file, 'conducting-exam'.$conductingExam->id.'.pdf', $headers);
     }
 }

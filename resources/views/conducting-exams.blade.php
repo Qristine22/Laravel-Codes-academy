@@ -11,34 +11,28 @@
 
 @section('content')
     <main>
-        <section class="conducting-exams section-text section-top">
+        <section class="conducting-exams section-text section-top section__min-height">
             <div class="wrapper">
                 <div class="conducting-exams__cont">
                     <div class="link__pdfs">
-                        <a class="link__pdf flex" href="#">
-                            <span class="text-18">Ակադեմիայում քննությունների անցկացման կարգ</span>
-                            <div class="link__pdf_icon">
-                                <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
-                                <span class="link__pdf_span text-18">@lang('main.download')</span>
-                            </div>
-                        </a>
-                        <a class="link__pdf flex" href="#">
-                            <span class="text-18">
-                                ՀՀ քննչական կոմիտեի քննիչների թեկնածությունների ցուցակում ընդգրկված անձանց և ՀՀ քննչական
-                                կոմիտեի դեպարտամենտի պետական ծառայողների քննությունների կազմակերպման և անցկացման կարգ
-                            </span>
-                            <div class="link__pdf_icon">
-                                <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
-                                <span class="link__pdf_span text-18">@lang('main.download')</span>
-                            </div>
-                        </a>
+                        @foreach($conductingExams as $conductingExam)
+                            <a class="link__pdf flex" href="{{ route('conductingExamDownload', ['pdf' => $conductingExam->id]) }}">
+                                <span class="text-18">{{ $conductingExam->{'name_'.app()->getLocale()} }}</span>
+                                <div class="link__pdf_icon">
+                                    <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                    <span class="link__pdf_span text-18">@lang('main.download')</span>
+                                </div>
+                            </a>
+                        @endforeach
                     </div>
                     <div class="conducting-exams__bot">
-                        <div class="conducting-exams__vid">
-                            <iframe class="conducting-exams__iframe" src="https://www.youtube.com/embed/ITLC_CeiWL0"
-                                width="800" height="500" frameborder="0" allowfullscreen=""
-                                data-mce-src="https://www.youtube.com/embed/ITLC_CeiWL0"></iframe>
-                        </div>
+                        @if(!@empty($conductingExamVideos))
+                            @foreach($conductingExamVideos as $conductingExamVideo)
+                                <div class="conducting-exams__vid">
+                                    {!! $conductingExamVideo->video !!}
+                                </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
