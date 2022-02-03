@@ -24,12 +24,12 @@ class RectorsBiographyRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_en' => 'required|min:4',
-            'name_am' => 'required|min:4',
-            'name_ru' => 'required|min:4',
-            'position_en' => 'required',
-            'position_am' => 'required',
-            'position_ru' => 'required',
+            'name_en' => 'required|min:4|max:255',
+            'name_am' => 'required|min:4|max:255',
+            'name_ru' => 'required|min:4|max:255',
+            'position_en' => 'required|max:255',
+            'position_am' => 'required|max:255',
+            'position_ru' => 'required|max:255',
             'biography_en' => 'required',
             'biography_am' => 'required',
             'biography_ru' => 'required',

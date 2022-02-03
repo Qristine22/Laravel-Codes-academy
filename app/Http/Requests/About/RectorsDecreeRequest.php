@@ -27,7 +27,7 @@ class RectorsDecreeRequest extends FormRequest
             'info_en' => 'required',
             'info_am' => 'required',
             'info_ru' => 'required',
-            'pdf_name' => 'required',
+            'pdf_name' => 'required|max:255',
         ];
     }
 }

@@ -25,9 +25,9 @@ class GraduateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:4',
-            'position' => 'required',
-            'year' => 'required|numeric|min:2000',
+            'name' => 'required|min:4|max:255',
+            'position' => 'required|max:255',
+            'year' => 'required|numeric|digits:4',
             'position' => [
                 'required',
                 Rule::in(['judge', 'prosecutor', 'investigator']),

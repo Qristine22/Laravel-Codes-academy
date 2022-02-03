@@ -16,9 +16,9 @@ class CreateGoverningBoardPagesTable extends Migration
     {
         Schema::create('governing_board_pages', function (Blueprint $table) {
             $table->id();
-            $table->longText('text_en');
-            $table->longText('text_am');
-            $table->longText('text_ru');
+            $table->text('text_en');
+            $table->text('text_am');
+            $table->text('text_ru');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->softDeletes();

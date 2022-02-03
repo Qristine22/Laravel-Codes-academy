@@ -24,10 +24,10 @@ class ReportRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_en' => 'required',
-            'name_am' => 'required',
-            'name_ru' => 'required',
-            'year' => 'required|numeric',
+            'name_en' => 'required|max:255',
+            'name_am' => 'required|max:255',
+            'name_ru' => 'required|max:255',
+            'year' => 'required|numeric|digits:4',
         ];
     }
 }

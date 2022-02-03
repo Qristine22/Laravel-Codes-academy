@@ -24,13 +24,13 @@ class NewsRequest extends FormRequest
     public function rules()
     {
         return [
-            'title_en' => 'required',
-            'title_am' => 'required',
-            'title_ru' => 'required',
+            'title_en' => 'required|max:255',
+            'title_am' => 'required|max:255',
+            'title_ru' => 'required|max:255',
             'description_en' => 'required',
             'description_am' => 'required',
             'description_ru' => 'required',
-            'date' => 'required',
+            'date' => 'required|max:255',
         ];
     }
 }

@@ -24,9 +24,9 @@ class WorkersRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_en' => 'required|min:4',
-            'name_am' => 'required|min:4',
-            'name_ru' => 'required|min:4',
+            'name_en' => 'required|min:255',
+            'name_am' => 'required|min:255',
+            'name_ru' => 'required|min:255',
             'biography_en' => 'required',
             'biography_am' => 'required',
             'biography_ru' => 'required',

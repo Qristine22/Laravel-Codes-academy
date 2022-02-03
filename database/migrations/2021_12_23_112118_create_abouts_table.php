@@ -16,9 +16,9 @@ class CreateAboutsTable extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->mediumText('text_en');
-            $table->mediumText('text_am');
-            $table->mediumText('text_ru');
+            $table->text('text_en');
+            $table->text('text_am');
+            $table->text('text_ru');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->softDeletes();

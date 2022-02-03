@@ -24,11 +24,11 @@ class GoverningBoardDecreeRequest extends FormRequest
     public function rules()
     {
         return [
-            'file_name' => 'required',
+            'file_name' => 'required|max:255',
             'info_en' => 'required',
             'info_am' => 'required',
             'info_ru' => 'required',
-            'year' => 'required|numeric',
+            'year' => 'required|numeric|max:255',
         ];
     }
 }

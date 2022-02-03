@@ -24,11 +24,11 @@ class GalleryRequest extends FormRequest
     public function rules()
     {
         return [
-            'text_en' => 'required',
-            'text_am' => 'required',
-            'text_ru' => 'required',
-            'year' => 'required|numeric',
-            'full_date' => 'required',
+            'text_en' => 'required|max:255',
+            'text_am' => 'required|max:255',
+            'text_ru' => 'required|max:255',
+            'year' => 'required|numeric|digits:4',
+            'full_date' => 'required|max:255',
         ];
     }
 }

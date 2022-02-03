@@ -16,16 +16,16 @@ class CreateFormerRectorsBiographiesTable extends Migration
     {
         Schema::create('former_rectors_biographies', function (Blueprint $table) {
             $table->id();
-            $table->longText('name_en');
-            $table->longText('name_am');
-            $table->longText('name_ru');
-            $table->longText('position_en');
-            $table->longText('position_am');
-            $table->longText('position_ru');
-            $table->longText('biography_en');
-            $table->longText('biography_am');
-            $table->longText('biography_ru');
-            $table->longText('img');
+            $table->string('name_en');
+            $table->string('name_am');
+            $table->string('name_ru');
+            $table->string('position_en');
+            $table->string('position_am');
+            $table->string('position_ru');
+            $table->text('biography_en');
+            $table->text('biography_am');
+            $table->text('biography_ru');
+            $table->string('img');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->softDeletes();

@@ -24,12 +24,12 @@ class HomeRequest extends FormRequest
     public function rules()
     {
         return [
-            'title_en' => 'required',
-            'title_am' => 'required',
-            'title_ru' => 'required',
-            'rectors_word_en' => 'required',
-            'rectors_word_am' => 'required',
-            'rectors_word_ru' => 'required',
+            'title_en' => 'required|max:255',
+            'title_am' => 'required|max:255',
+            'title_ru' => 'required|max:255',
+            'rectors_word_en' => 'required|max:255',
+            'rectors_word_am' => 'required|max:255',
+            'rectors_word_ru' => 'required|max:255',
         ];
     }
 }

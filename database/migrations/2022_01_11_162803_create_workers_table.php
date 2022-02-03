@@ -22,9 +22,9 @@ class CreateWorkersTable extends Migration
             $table->text('position_en')->nullable(true);
             $table->text('position_am')->nullable(true);
             $table->text('position_ru')->nullable(true);
-            $table->longText('biography_en');
-            $table->longText('biography_am');
-            $table->longText('biography_ru');
+            $table->text('biography_en');
+            $table->text('biography_am');
+            $table->text('biography_ru');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->softDeletes();

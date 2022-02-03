@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\FullTime;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class TrainingProgramRequest extends FormRequest
@@ -24,11 +25,14 @@ class TrainingProgramRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_en' => 'required',
-            'name_am' => 'required',
-            'name_ru' => 'required',
-            'category' => 'required',
-            'year' => 'required|numeric',
+            'name_en' => 'required|max:255',
+            'name_am' => 'required|max:255',
+            'name_ru' => 'required|max:255',
+            'category' => [
+                'required',
+                Rule::in(['judge', 'prosecutor', 'investigator']),
+            ],
+            'year' => 'required|numeric|digits:4',
             'description' => 'required',
         ];
     }

@@ -16,10 +16,10 @@ class CreateTrainingProgramsTable extends Migration
     {
         Schema::create('training_programs', function (Blueprint $table) {
             $table->id();
-            $table->tinyText('name_en');
-            $table->tinyText('name_am');
-            $table->tinyText('name_ru');
-            $table->mediumText('description');
+            $table->string('name_en');
+            $table->string('name_am');
+            $table->string('name_ru');
+            $table->text('description');
             $table->string('pdf');
             $table->integer('year');
             $table->enum('category', ['judge', 'prosecutor', 'investigator']);
