@@ -118,6 +118,11 @@
                         Request::is('admin/full-time-education/conducting-exam/*')) admin-header__link-active @endif"
                             href="{{ route('admin.full-time-education.conducting-exam.index') }}">Քննությունների անցկացման կարգ</a>
                     </li>
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/full-time-education/conducting-practice') ||
+                        Request::is('admin/full-time-education/conducting-practice/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.full-time-education.conducting-practice.index') }}">Փորձաշրջանի անցկացման կարգ</a>
+                    </li>
                 </ul>
             </li>
             <li class="admin-header__item">

@@ -282,6 +282,7 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::resource('training-program', 'App\Http\Controllers\Admin\FullTime\TrainingProgramController');
                 Route::resource('conducting-exam', 'App\Http\Controllers\Admin\FullTime\ConductingExamController');
                 Route::resource('conducting-exam-video', 'App\Http\Controllers\Admin\FullTime\ConductingExamVideoController');
+                Route::resource('conducting-practice', 'App\Http\Controllers\Admin\FullTime\ConductingpracticeController');
             });
         });
     });

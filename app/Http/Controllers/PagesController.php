@@ -17,6 +17,7 @@ use App\Models\Admission;
 use App\Models\Candidate;
 use App\Models\ConductingExam;
 use App\Models\ConductingExamVideo;
+use App\Models\ConductingPractice;
 use App\Models\RectorsBiography;
 use App\Models\GoverningBoardPage;
 use App\Models\GoverningBoardStaff;
@@ -561,10 +562,12 @@ class PagesController extends Controller
     }
     public function conductingPractice(){
         $headersBot = Subheader::where('parent_id', 3)->get();
+        $conductingPractices = ConductingPractice::paginate(10);
 
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'data' => $conductingPractices,
         ]);
     }
     public function rulesOfBehaviour(){
