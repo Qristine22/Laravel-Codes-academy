@@ -21,13 +21,15 @@
                     <div class="link__pdfs">
                         @if(@isset($data) && count($data))
                             @foreach($data as $item)
-                                <a class="link__pdf flex" href="#">
-                                    <span class="text-18">{{ $item->{'name_'.app()->getLocale()} }}</span>
-                                    <div class="link__pdf_icon">
-                                        <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
-                                        <span class="link__pdf_span text-18">@lang('main.download')</span>
-                                    </div>
-                                </a>
+                                <div class="link__pdf flex">
+                                    <a class="link__name text-18" href="{{ Storage::url($item->pdf) }}" target="_blank">{{ $item->{'name_'.app()->getLocale()} }}</a>
+                                    <a href="#">
+                                        <div class="link__pdf_icon">
+                                            <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                            <span class="link__pdf_span text-18">@lang('main.download')</span>
+                                        </div>
+                                    </a>
+                                </div>
                             @endforeach
                         @endif
                     </div>
