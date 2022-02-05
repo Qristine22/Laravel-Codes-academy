@@ -14,6 +14,7 @@ use App\Models\RectorsPage;
 use App\Models\RectorsDecree;
 use App\Models\AcademyStructure;
 use App\Models\Admission;
+use App\Models\BehaviorRule;
 use App\Models\Candidate;
 use App\Models\ConductingExam;
 use App\Models\ConductingExamVideo;
@@ -570,12 +571,14 @@ class PagesController extends Controller
             'data' => $conductingPractices,
         ]);
     }
-    public function rulesOfBehaviour(){
+    public function rulesOfBehavior(){
         $headersBot = Subheader::where('parent_id', 3)->get();
+        $data = BehaviorRule::paginate(10);
 
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'data' => $data,
         ]);
     }
     public function dormitoryRules(){

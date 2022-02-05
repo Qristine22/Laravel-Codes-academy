@@ -129,7 +129,7 @@ Route::middleware(['set_locale'])->group(function(){
             ->name('conductingExamDownload');
         Route::get('/conducting-practice', 'App\Http\Controllers\PagesController@conductingPractice')
             ->name('conductingPractice');
-        Route::get('/rules-of-behaviour', 'App\Http\Controllers\PagesController@rulesOfBehaviour')->name('rulesOfBehaviour');
+        Route::get('/rules-of-behavior', 'App\Http\Controllers\PagesController@rulesOfBehavior')->name('rulesOfBehavior');
         Route::get('/dormitory-rules', 'App\Http\Controllers\PagesController@dormitoryRules')->name('dormitoryRules');
         Route::get('/provide-deferral', 'App\Http\Controllers\PagesController@provideDeferral')->name('provideDeferral');
     });
@@ -283,6 +283,7 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::resource('conducting-exam', 'App\Http\Controllers\Admin\FullTime\ConductingExamController');
                 Route::resource('conducting-exam-video', 'App\Http\Controllers\Admin\FullTime\ConductingExamVideoController');
                 Route::resource('conducting-practice', 'App\Http\Controllers\Admin\FullTime\ConductingpracticeController');
+                Route::resource('behavior-rule', 'App\Http\Controllers\Admin\FullTime\BehaviorRuleController');
             });
         });
     });

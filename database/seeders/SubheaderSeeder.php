@@ -96,7 +96,7 @@ class SubheaderSeeder extends Seeder
                 'name_en' => 'Rules of trainee\'s behavior',
                 'name_am' => 'Ունկնդրի վարքագծի կանոններ',
                 'name_ru' => 'Правила поведения слушателя',
-                'link' => 'full-time-education/rules-of-behaviour',
+                'link' => 'full-time-education/rules-of-behavior',
                 'parent_id' => 3,
             ],
             [
