@@ -5,30 +5,31 @@ use Illuminate\Http\Request;
 
 // Models
 use App\Models\Home;
+use App\Models\News;
 use App\Models\About;
 use App\Models\Header;
 use App\Models\Report;
 use App\Models\Worker;
-use App\Models\Subheader;
-use App\Models\RectorsPage;
-use App\Models\RectorsDecree;
-use App\Models\AcademyStructure;
+use App\Models\Gallery;
+use App\Models\Graduate;
 use App\Models\Admission;
-use App\Models\BehaviorRule;
 use App\Models\Candidate;
+use App\Models\Subheader;
+use App\Models\MassMedium;
+use App\Models\RectorsPage;
+use App\Models\BehaviorRule;
+use App\Models\DormitoryRule;
+use App\Models\RectorsDecree;
 use App\Models\ConductingExam;
-use App\Models\ConductingExamVideo;
-use App\Models\ConductingPractice;
+use App\Models\TrainingProgram;
+use App\Models\AcademyStructure;
 use App\Models\RectorsBiography;
+use App\Models\ConductingPractice;
 use App\Models\GoverningBoardPage;
+use App\Models\ConductingExamVideo;
 use App\Models\GoverningBoardStaff;
 use App\Models\GoverningBoardDecree;
 use App\Models\FormerRectorsBiography;
-use App\Models\Gallery;
-use App\Models\Graduate;
-use App\Models\MassMedium;
-use App\Models\News;
-use App\Models\TrainingProgram;
 
 class PagesController extends Controller
 {
@@ -583,10 +584,12 @@ class PagesController extends Controller
     }
     public function dormitoryRules(){
         $headersBot = Subheader::where('parent_id', 3)->get();
+        $data = DormitoryRule::paginate(10);
         
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'data' => $data,
         ]);
     }
     public function provideDeferral(){

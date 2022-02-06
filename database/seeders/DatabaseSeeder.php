@@ -44,5 +44,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ConductingExamVideoSeeder::class);
         $this->call(ConductingPracticeSeeder::class);
         $this->call(BehaviorRuleSeeder::class);
+        $this->call(DormitoryRuleSeeder::class);
     }
 }
