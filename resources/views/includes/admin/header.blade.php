@@ -133,6 +133,11 @@
                         Request::is('admin/full-time-education/dormitory-rule/*')) admin-header__link-active @endif"
                             href="{{ route('admin.full-time-education.dormitory-rule.index') }}">Հանրակացարանային համալիրից օգտվելու կարգ</a>
                     </li>
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/full-time-education/provide-deferral') ||
+                        Request::is('admin/full-time-education/provide-deferral/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.full-time-education.provide-deferral.index') }}">Ունկնդիրներին տարկետում տրամադրելու կարգ</a>
+                    </li>
                 </ul>
             </li>
             <li class="admin-header__item">

@@ -30,6 +30,7 @@ use App\Models\ConductingExamVideo;
 use App\Models\GoverningBoardStaff;
 use App\Models\GoverningBoardDecree;
 use App\Models\FormerRectorsBiography;
+use App\Models\ProvideDeferral;
 
 class PagesController extends Controller
 {
@@ -594,10 +595,12 @@ class PagesController extends Controller
     }
     public function provideDeferral(){
         $headersBot = Subheader::where('parent_id', 3)->get();
+        $data = ProvideDeferral::paginate(10);
 
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'data' => $data,
         ]);
     }
 

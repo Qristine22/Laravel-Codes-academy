@@ -16,13 +16,17 @@
                 <div class="conducting-exams__cont">
                     <div class="link__pdfs">
                         @foreach($conductingExams as $conductingExam)
-                            <a class="link__pdf flex" href="{{ route('conductingExamDownload', ['pdf' => $conductingExam->id]) }}">
-                                <span class="text-18">{{ $conductingExam->{'name_'.app()->getLocale()} }}</span>
-                                <div class="link__pdf_icon">
-                                    <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
-                                    <span class="link__pdf_span text-18">@lang('main.download')</span>
-                                </div>
-                            </a>
+                            <div class="link__pdf flex">
+                                <a class="link__name text-18" href="{{ Storage::url($conductingExam->pdf) }}" target="_blank">
+                                    {{ $conductingExam->{'name_'.app()->getLocale()} }}
+                                </a>
+                                <a href="{{ route('conductingExamDownload', ['pdf' => $conductingExam->id]) }}">
+                                    <div class="link__pdf_icon">
+                                        <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                        <span class="link__pdf_span text-18">@lang('main.download')</span>
+                                    </div>
+                                </a>
+                            </div>
                         @endforeach
                     </div>
                     <div class="conducting-exams__bot">
