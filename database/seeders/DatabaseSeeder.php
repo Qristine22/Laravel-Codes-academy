@@ -46,5 +46,6 @@ class DatabaseSeeder extends Seeder
         $this->call(BehaviorRuleSeeder::class);
         $this->call(DormitoryRuleSeeder::class);
         $this->call(ProvideDeferralSeeder::class);
+        $this->call(DistanceLearningSeeder::class);
     }
 }

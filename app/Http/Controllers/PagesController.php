@@ -27,6 +27,7 @@ use App\Models\RectorsBiography;
 use App\Models\ConductingPractice;
 use App\Models\GoverningBoardPage;
 use App\Models\ConductingExamVideo;
+use App\Models\DistanceLearning;
 use App\Models\GoverningBoardStaff;
 use App\Models\GoverningBoardDecree;
 use App\Models\FormerRectorsBiography;
@@ -613,10 +614,12 @@ class PagesController extends Controller
     // distance learning *********************************************************************************
     public function distanceLearning(){
         $headersBot = Subheader::where('parent_id', 4)->get();
+        $distanceLearning = DistanceLearning::first();
 
         return view('distance-learning', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'distanceLearning' => $distanceLearning,
         ]);
     }
     public function distanceLearningVideo(){

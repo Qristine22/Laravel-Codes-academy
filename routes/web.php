@@ -277,7 +277,7 @@ Route::middleware(['set_locale'])->group(function(){
             ->name('news.ImgDelete');
 
 
-            // news /***************************************************************************
+            // full time education /***************************************************************************
             Route::group(['prefix' => 'full-time-education', 'as' => 'full-time-education.'], function () {
                 Route::resource('training-program', 'App\Http\Controllers\Admin\FullTime\TrainingProgramController');
                 Route::resource('conducting-exam', 'App\Http\Controllers\Admin\FullTime\ConductingExamController');
@@ -286,6 +286,12 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::resource('behavior-rule', 'App\Http\Controllers\Admin\FullTime\BehaviorRuleController');
                 Route::resource('dormitory-rule', 'App\Http\Controllers\Admin\FullTime\DormitoryRuleController');
                 Route::resource('provide-deferral', 'App\Http\Controllers\Admin\FullTime\ProvideDeferralController');
+            });
+            
+
+            // distance learning /***************************************************************************
+            Route::group(['prefix' => 'distance-learning', 'as' => 'distance-learning.'], function () {
+                Route::resource('page', 'App\Http\Controllers\Admin\DistanceLearning\DistancelearningController');
             });
         });
     });

@@ -142,7 +142,9 @@
             </li>
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
-                    <a class="text-20 admin-header__link" href="#">Հեռաուսուցում</a>
+                    <a class="text-20 admin-header__link @if(Request::is('admin/distance-learning') ||
+                    Request::is('admin/distance-learning/*')) admin-header__link-active @endif"
+                        href="{{ route('admin.distance-learning.page.index') }}">Հեռաուսուցում</a>
                     <div class="admin-header__arrow">
                         <img class="img" src="/media/img/icons/whiteDownArrow.png" alt="whiteDownArrow">
                     </div>
