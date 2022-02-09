@@ -138,7 +138,7 @@ Route::middleware(['set_locale'])->group(function(){
     // distance-learning/********************************************************************
     Route::group(['prefix' => 'distance-learning'], function () {
         Route::get('/', 'App\Http\Controllers\PagesController@distanceLearning')->name('distanceLearning');
-        Route::get('/video', 'App\Http\Controllers\PagesController@distanceLearningVideo')->name('distanceLearningVideo');
+        Route::get('/video/{id}', 'App\Http\Controllers\PagesController@distanceLearningVideo')->name('distanceLearningVideo');
         Route::get('/video-materials', 'App\Http\Controllers\PagesController@videoMaterials')->name('videoMaterials');
 
 
@@ -292,6 +292,7 @@ Route::middleware(['set_locale'])->group(function(){
             // distance learning /***************************************************************************
             Route::group(['prefix' => 'distance-learning', 'as' => 'distance-learning.'], function () {
                 Route::resource('page', 'App\Http\Controllers\Admin\DistanceLearning\DistancelearningController');
+                Route::resource('video', 'App\Http\Controllers\Admin\DistanceLearning\VideoController');
             });
         });
     });

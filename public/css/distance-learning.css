@@ -21,6 +21,15 @@ videos
 .videos__video{
     width: 100%;
 }
+.distance__learning_videos{
+    margin-bottom: 30px;
+}
+.distance__learning_video_name{
+    margin-top: 10px;
+}
+.distance__learning_video_name:first-child{
+    margin-top: 0;
+}
 .video__name{
     width: 70%;
     text-align: center;

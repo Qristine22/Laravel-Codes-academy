@@ -13,7 +13,7 @@
     <main>
         <section class="learning-video section-text distance-learning">
             <div class="wrapper">
-                <iframe src="https://player.vimeo.com/video/144792674?title=0&amp;byline=0&amp;portrait=0" frameborder="0" allowfullscreen="" data-mce-src="https://player.vimeo.com/video/144792674?title=0&amp;byline=0&amp;portrait=0"></iframe>
+                {!! $distancelearningVideo->video !!}
             </div>
         </section>
 

@@ -151,7 +151,9 @@
                 </div>
                 <ul class="admin-header__menu-list">
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link" href="#">Ակադեմիայի կառավարմանխորհուրդ</a>
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/video') ||
+                        Request::is('admin/distance-learning/video/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.distance-learning.video.index') }}">Կարևոր Վիդեոներ</a>
                     </li>
                 </ul>
             </li>
