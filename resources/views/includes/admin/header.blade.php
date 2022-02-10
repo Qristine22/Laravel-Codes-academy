@@ -153,7 +153,12 @@
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/video') ||
                         Request::is('admin/distance-learning/video/*')) admin-header__link-active @endif"
-                            href="{{ route('admin.distance-learning.video.index') }}">Կարևոր Վիդեոներ</a>
+                            href="{{ route('admin.distance-learning.video.index') }}">Կարևոր Տեսանյութեր</a>
+                    </li>
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/video-material') ||
+                        Request::is('admin/distance-learning/video-material/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.distance-learning.video-material.index') }}">Տեղեկատվական տեսանյութեր</a>
                     </li>
                 </ul>
             </li>

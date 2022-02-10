@@ -293,6 +293,7 @@ Route::middleware(['set_locale'])->group(function(){
             Route::group(['prefix' => 'distance-learning', 'as' => 'distance-learning.'], function () {
                 Route::resource('page', 'App\Http\Controllers\Admin\DistanceLearning\DistancelearningController');
                 Route::resource('video', 'App\Http\Controllers\Admin\DistanceLearning\VideoController');
+                Route::resource('video-material', 'App\Http\Controllers\Admin\DistanceLearning\VideoMaterialController');
             });
         });
     });

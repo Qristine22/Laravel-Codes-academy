@@ -4,10 +4,10 @@
     <div class="admin__sections">
         <section class="admin-section">
             <div class="admin__head">
-                <h2 class="admin__title">Կարևոր Տեսանյութեր</h2>
+                <h2 class="admin__title">Տեղեկատվական Տեսանյութեր</h2>
             </div>
 
-            <form class="admin__form" action="{{ route('admin.distance-learning.video.store') }}" method="POST">
+            <form class="admin__form" action="{{ route('admin.distance-learning.video-material.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @if ($errors->any())
                     @foreach ($errors->all() as $e)
@@ -34,9 +34,9 @@
                     </div>
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="video">Video</label>
-                            <input class="admin-inp" type="text" id="video" name="video"
-                                placeholder="Enter your text here" value="{{ old('video') }}">
+                            <span class="text-20 form__item_name">Video</span>
+                            <label class="text-20 admin-inp admin-inp-file" for="video">Attach your Photo</label>
+                            <input class="admin-file" type="file" id="video" name="video">
                         </div>
                     </div>
                 </div>

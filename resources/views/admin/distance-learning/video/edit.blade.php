@@ -4,7 +4,7 @@
     <div class="admin__sections">
         <section class="admin-section">
             <div class="admin__head">
-                <h2 class="admin__title">Կարևոր Վիդեոներ</h2>
+                <h2 class="admin__title">Կարևոր Տեսանյութեր</h2>
             </div>
 
             <form class="admin__form"

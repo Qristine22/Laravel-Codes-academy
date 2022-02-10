@@ -28,11 +28,12 @@ use App\Models\ConductingPractice;
 use App\Models\GoverningBoardPage;
 use App\Models\ConductingExamVideo;
 use App\Models\DistanceLearning;
-use App\Models\DistanceLearningVideo;
 use App\Models\GoverningBoardStaff;
 use App\Models\GoverningBoardDecree;
-use App\Models\FormerRectorsBiography;
 use App\Models\ProvideDeferral;
+use App\Models\DistanceLearningVideo;
+use App\Models\FormerRectorsBiography;
+use App\Models\DistanceLearningVideoMaterial;
 
 class PagesController extends Controller
 {
@@ -637,10 +638,12 @@ class PagesController extends Controller
     }
     public function videoMaterials(){
         $headersBot = Subheader::where('parent_id', 4)->get();
+        $videoMaterials = DistanceLearningVideoMaterial::all();
 
         return view('video-materials', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'videoMaterials' => $videoMaterials
         ]);
     }
     public function distanceLearningCourses(){
