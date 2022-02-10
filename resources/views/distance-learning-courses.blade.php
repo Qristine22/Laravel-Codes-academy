@@ -184,13 +184,13 @@
                             </div>
                         </div>
                         <div class="courses__btns flex">
-                            <a href="{{ route('motivationalVideos', ['id' => 1]) }}">
+                            <a href="{{ route('motivationalVideos', ['id' => 2]) }}">
                                 <button class="courses__btn text-18">
                                     <i class="courses__icon fas fa-play"></i>
                                     Մոտիվացնող տեսանյութեր
                                 </button>
                             </a>
-                            <a href="{{ route('mediaMaterials', ['id' => 1]) }}">
+                            <a href="{{ route('mediaMaterials', ['id' => 2]) }}">
                                 <button class="courses__btn text-18">
                                     <i class="courses__icon fas fa-headphones"></i>
                                     Լրացուցիչ մեդիա-նյութեր
@@ -241,13 +241,13 @@
                             </div>
                         </div>
                         <div class="courses__btns flex">
-                            <a href="{{ route('motivationalVideos', ['id' => 1]) }}">
+                            <a href="{{ route('motivationalVideos', ['id' => 3]) }}">
                                 <button class="courses__btn text-18">
                                     <i class="courses__icon fas fa-play"></i>
                                     Մոտիվացնող տեսանյութեր
                                 </button>
                             </a>
-                            <a href="{{ route('mediaMaterials', ['id' => 1]) }}">
+                            <a href="{{ route('mediaMaterials', ['id' => 3]) }}">
                                 <button class="courses__btn text-18">
                                     <i class="courses__icon fas fa-headphones"></i>
                                     Լրացուցիչ մեդիա-նյութեր
@@ -298,13 +298,13 @@
                             </div>
                         </div>
                         <div class="courses__btns flex">
-                            <a href="{{ route('motivationalVideos', ['id' => 1]) }}">
+                            <a href="{{ route('motivationalVideos', ['id' => 4]) }}">
                                 <button class="courses__btn text-18">
                                     <i class="courses__icon fas fa-play"></i>
                                     Մոտիվացնող տեսանյութեր
                                 </button>
                             </a>
-                            <a href="{{ route('mediaMaterials', ['id' => 1]) }}">
+                            <a href="{{ route('mediaMaterials', ['id' => 4]) }}">
                                 <button class="courses__btn text-18">
                                     <i class="courses__icon fas fa-headphones"></i>
                                     Լրացուցիչ մեդիա-նյութեր
@@ -355,13 +355,13 @@
                             </div>
                         </div>
                         <div class="courses__btns flex">
-                            <a href="{{ route('motivationalVideos', ['id' => 1]) }}">
+                            <a href="{{ route('motivationalVideos', ['id' => 5]) }}">
                                 <button class="courses__btn text-18">
                                     <i class="courses__icon fas fa-play"></i>
                                     Մոտիվացնող տեսանյութեր
                                 </button>
                             </a>
-                            <a href="{{ route('mediaMaterials', ['id' => 1]) }}">
+                            <a href="{{ route('mediaMaterials', ['id' => 5]) }}">
                                 <button class="courses__btn text-18">
                                     <i class="courses__icon fas fa-headphones"></i>
                                     Լրացուցիչ մեդիա-նյութեր
@@ -412,13 +412,13 @@
                             </div>
                         </div>
                         <div class="courses__btns flex">
-                            <a href="{{ route('motivationalVideos', ['id' => 1]) }}">
+                            <a href="{{ route('motivationalVideos', ['id' => 6]) }}">
                                 <button class="courses__btn text-18">
                                     <i class="courses__icon fas fa-play"></i>
                                     Մոտիվացնող տեսանյութեր
                                 </button>
                             </a>
-                            <a href="{{ route('mediaMaterials', ['id' => 1]) }}">
+                            <a href="{{ route('mediaMaterials', ['id' => 6]) }}">
                                 <button class="courses__btn text-18">
                                     <i class="courses__icon fas fa-headphones"></i>
                                     Լրացուցիչ մեդիա-նյութեր
@@ -469,13 +469,13 @@
                             </div>
                         </div>
                         <div class="courses__btns flex">
-                            <a href="{{ route('motivationalVideos', ['id' => 1]) }}">
+                            <a href="{{ route('motivationalVideos', ['id' => 7]) }}">
                                 <button class="courses__btn text-18">
                                     <i class="courses__icon fas fa-play"></i>
                                     Մոտիվացնող տեսանյութեր
                                 </button>
                             </a>
-                            <a href="{{ route('mediaMaterials', ['id' => 1]) }}">
+                            <a href="{{ route('mediaMaterials', ['id' => 7]) }}">
                                 <button class="courses__btn text-18">
                                     <i class="courses__icon fas fa-headphones"></i>
                                     Լրացուցիչ մեդիա-նյութեր
@@ -526,13 +526,13 @@
                             </div>
                         </div>
                         <div class="courses__btns flex">
-                            <a href="{{ route('motivationalVideos', ['id' => 1]) }}">
+                            <a href="{{ route('motivationalVideos', ['id' => 8]) }}">
                                 <button class="courses__btn text-18">
                                     <i class="courses__icon fas fa-play"></i>
                                     Մոտիվացնող տեսանյութեր
                                 </button>
                             </a>
-                            <a href="{{ route('mediaMaterials', ['id' => 1]) }}">
+                            <a href="{{ route('mediaMaterials', ['id' => 8]) }}">
                                 <button class="courses__btn text-18">
                                     <i class="courses__icon fas fa-headphones"></i>
                                     Լրացուցիչ մեդիա-նյութեր
