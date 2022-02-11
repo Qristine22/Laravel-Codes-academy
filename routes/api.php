@@ -18,3 +18,7 @@ use App\Http\Controllers\Api\PagesController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+// home search API *******************************************************************
+Route::post('search/{query}', 'App\Http\Controllers\MainController@search')->name('search');

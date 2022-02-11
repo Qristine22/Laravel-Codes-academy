@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\App;
 
 // Models
 use App\Models\RectorsDecree;
-use App\Models\GoverningBoardDecree;
-use App\Models\TrainingProgram;
 use App\Models\ConductingExam;
+use App\Models\TrainingProgram;
+use App\Models\GoverningBoardDecree;
 
 class MainController extends Controller
 {
@@ -21,6 +21,39 @@ class MainController extends Controller
         App::setLocale($locale);
         return redirect()->back();
     }
+
+
+
+
+
+
+
+    // home search function *******************************************************************
+    public function search($query){
+        $columnsToSearch = ['info_en', 'info_am', 'info_ru', 'pdf_name'];
+        $indents = [];
+
+
+        if(isset($query)){
+            foreach($columnsToSearch as $column) {
+                $indent = GoverningBoardDecree::where($column, 'LIKE', "%$query%")->get();
+                if(count($indent)){
+                    $indents[] = $indent;
+                }
+            }
+            
+            return response()->json($indents);
+        }
+    }
+
+
+
+
+
+
+
+
+
 
 
 

@@ -45,3 +45,7 @@
         @include('includes.news.last-news')
     </main>
 @endsection
+
+@section('scripts')
+    <script src="/js/home/search.js"></script>
+@endsection
