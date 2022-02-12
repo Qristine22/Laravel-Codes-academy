@@ -287,13 +287,19 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::resource('dormitory-rule', 'App\Http\Controllers\Admin\FullTime\DormitoryRuleController');
                 Route::resource('provide-deferral', 'App\Http\Controllers\Admin\FullTime\ProvideDeferralController');
             });
-            
+
 
             // distance learning /***************************************************************************
             Route::group(['prefix' => 'distance-learning', 'as' => 'distance-learning.'], function () {
                 Route::resource('page', 'App\Http\Controllers\Admin\DistanceLearning\DistancelearningController');
                 Route::resource('video', 'App\Http\Controllers\Admin\DistanceLearning\VideoController');
                 Route::resource('video-material', 'App\Http\Controllers\Admin\DistanceLearning\VideoMaterialController');
+            });
+
+
+            // library /***************************************************************************
+            Route::group(['prefix' => 'library', 'as' => 'library.'], function () {
+                Route::resource('academy-publication', 'App\Http\Controllers\Admin\Library\AcademyPublicationController');
             });
         });
     });

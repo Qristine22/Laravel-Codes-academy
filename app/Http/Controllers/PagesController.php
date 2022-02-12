@@ -24,6 +24,7 @@ use App\Models\ConductingExam;
 use App\Models\TrainingProgram;
 use App\Models\AcademyStructure;
 use App\Models\RectorsBiography;
+use App\Models\AcademyPublication;
 use App\Models\ConductingPractice;
 use App\Models\GoverningBoardPage;
 use App\Models\ConductingExamVideo;
@@ -688,10 +689,12 @@ class PagesController extends Controller
     // library *********************************************************************************
     public function library(){
         $headersBot = Subheader::where('parent_id', 5)->get();
+        $academyPublications = AcademyPublication::all();
 
         return view('library', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'data' => $academyPublications,
         ]);
     }
     public function trainingMaterials(){
@@ -720,10 +723,12 @@ class PagesController extends Controller
     }
     public function academyPublications(){
         $headersBot = Subheader::where('parent_id', 5)->get();
+        $academyPublications = AcademyPublication::all();
 
         return view('library', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'data' => $academyPublications,
         ]);
     }
     public function manuals(){

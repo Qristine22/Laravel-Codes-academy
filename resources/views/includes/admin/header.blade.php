@@ -164,7 +164,9 @@
             </li>
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
-                    <a class="text-20 admin-header__link" href="#">Գրադարան</a>
+                    <a class="text-20 admin-header__link @if(Request::is('admin/library') ||
+                    Request::is('admin/library/*')) admin-header__link-active @endif"
+                        href="{{ route('admin.library.academy-publication.index') }}">Գրադարան</a>
                     <div class="admin-header__arrow">
                         <img class="img" src="/media/img/icons/whiteDownArrow.png" alt="whiteDownArrow">
                     </div>
