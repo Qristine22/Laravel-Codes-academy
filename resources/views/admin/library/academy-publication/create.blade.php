@@ -4,7 +4,7 @@
     <div class="admin__sections">
         <section class="admin-section">
             <div class="admin__head">
-                <h2 class="admin__title">Արդարադատության ակադեմիայի հրատարակություններ</h2>
+                <h2 class="admin__title">{{ $title }}</h2>
             </div>
 
             <form class="admin__form" action="{{ route('admin.library.academy-publication.store') }}" method="POST"

@@ -4,7 +4,7 @@
     <div class="admin__sections">
         <section class="admin-section">
             <div class="admin__head">
-                <h2 class="admin__title">Արդարադատության ակադեմիայի հրատարակություններ</h2>
+                <h2 class="admin__title">{{ $title }}</h2>
             </div>
 
             <a class="admin-item__create" href="{{ route('admin.library.academy-publication.create') }}">
@@ -18,7 +18,7 @@
                     <th class="th text-18" style="width: 5%">file</th>
                     <th class="th text-18" style="width: 5%">Panel</th>
                 </tr>
-                @foreach ($academyPublications as $item)
+                @foreach ($books as $item)
                     <tr>
                         <td class="td text-18">{{ $item->id }}</td>
                         <td class="td text-18">
@@ -29,7 +29,11 @@
                             @endif
                         </td>
                         <td class="td">
-                            <img class="img" src="{{ Storage::url($item->img) }}" alt="img">
+                            @if(@isset($item->img))
+                                <img class="img" src="{{ Storage::url($item->img) }}" alt="img">
+                            @else
+                                ---
+                            @endif
                         </td>
                         <td class="td">
                             <img src="/media/img/icons/pdf.png" alt="pdf">    
@@ -56,7 +60,7 @@
                 @endforeach
             </table>
 
-            {{ $academyPublications->links('includes.pagination.paginate') }}
+            {{ $books->links('includes.pagination.paginate') }}
         </section>
     </div>
 @endsection

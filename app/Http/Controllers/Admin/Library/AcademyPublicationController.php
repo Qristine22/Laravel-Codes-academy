@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin\Library;
 
+use App\Models\Library;
 use Illuminate\Http\Request;
-use App\Models\AcademyPublication;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,10 +16,11 @@ class AcademyPublicationController extends Controller
      */
     public function index()
     {
-        $academyPublications = AcademyPublication::paginate(10);
+        $academyPublications = Library::where('category', 'academy-publication')->paginate(10);
 
         return view('admin.library.academy-publication.index', [
-            'academyPublications' => $academyPublications,
+            'title' => 'Արդարադատության ակադեմիայի հրատարակություններ',
+            'books' => $academyPublications,
         ]);
     }
 
@@ -30,7 +31,9 @@ class AcademyPublicationController extends Controller
      */
     public function create()
     {
-        return view('admin.library.academy-publication.create');
+        return view('admin.library.academy-publication.create', [
+            'title' => 'Արդարադատության ակադեմիայի հրատարակություններ',
+        ]);
     }
 
     /**
@@ -43,18 +46,21 @@ class AcademyPublicationController extends Controller
     {
         $request->validate([
             'pdf' => 'required',
-            'img' => 'required',
         ]);
 
         $pdf = $request->file('pdf')->store('library/academy-publications');
-        $img = $request->file('img')->store('library/academy-publications');
+        $img = null;
+        if(!empty($request->img)){
+            $img = $request->file('img')->store('library/academy-publications');
+        }
 
-        AcademyPublication::insert([
+        Library::insert([
             'name_en' => $request->name_en,
             'name_am' => $request->name_am,
             'name_ru' => $request->name_ru,
             'pdf' => $pdf,
             'img' => $img,
+            'category' => 'academy-publication',
         ]);
 
         return redirect(route('admin.library.academy-publication.index'));
@@ -63,10 +69,10 @@ class AcademyPublicationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AcademyPublication  $academyPublication
+     * @param  \App\Models\Library  $academyPublication
      * @return \Illuminate\Http\Response
      */
-    public function show(AcademyPublication $academyPublication)
+    public function show(Library $academyPublication)
     {
         //
     }
@@ -74,13 +80,14 @@ class AcademyPublicationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\AcademyPublication  $academyPublication
+     * @param  \App\Models\Library  $academyPublication
      * @return \Illuminate\Http\Response
      */
-    public function edit(AcademyPublication $academyPublication)
+    public function edit(Library $academyPublication)
     {
         return view('admin.library.academy-publication.edit', [
-            'academyPublication' => $academyPublication,
+            'title' => 'Արդարադատության ակադեմիայի հրատարակություններ',
+            'library' => $academyPublication,
         ]);
     }
 
@@ -88,10 +95,10 @@ class AcademyPublicationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AcademyPublication  $academyPublication
+     * @param  \App\Models\Library  $academyPublication
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AcademyPublication $academyPublication)
+    public function update(Request $request, Library $academyPublication)
     {
         $pdf = $request->pdfHidden;
         $img = $request->imgHidden;
@@ -109,7 +116,7 @@ class AcademyPublicationController extends Controller
             'name_en' => $request->name_en,
             'name_am' => $request->name_am,
             'name_ru' => $request->name_ru,
-            'year' => $img,
+            'img' => $img,
             'pdf' => $pdf
         ]);
 
@@ -119,10 +126,10 @@ class AcademyPublicationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AcademyPublication  $academyPublication
+     * @param  \App\Models\Library  $academyPublication
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AcademyPublication $academyPublication)
+    public function destroy(Library $academyPublication)
     {
         Storage::delete($academyPublication->pdf);
         Storage::delete($academyPublication->img);

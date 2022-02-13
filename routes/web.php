@@ -300,6 +300,7 @@ Route::middleware(['set_locale'])->group(function(){
             // library /***************************************************************************
             Route::group(['prefix' => 'library', 'as' => 'library.'], function () {
                 Route::resource('academy-publication', 'App\Http\Controllers\Admin\Library\AcademyPublicationController');
+                Route::resource('manual', 'App\Http\Controllers\Admin\Library\ManualController');
             });
         });
     });

@@ -165,15 +165,32 @@
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
                     <a class="text-20 admin-header__link @if(Request::is('admin/library') ||
-                    Request::is('admin/library/*')) admin-header__link-active @endif"
-                        href="{{ route('admin.library.academy-publication.index') }}">Գրադարան</a>
+                    Request::is('admin/library/*')) admin-header__link-active @endif" href="#">Գրադարան</a>
                     <div class="admin-header__arrow">
                         <img class="img" src="/media/img/icons/whiteDownArrow.png" alt="whiteDownArrow">
                     </div>
                 </div>
                 <ul class="admin-header__menu-list">
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link" href="#">Ակադեմիայի կառավարմանխորհուրդ</a>
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/academy-publication') ||
+                        Request::is('admin/library/academy-publication/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.library.academy-publication.index') }}">Արդարադատության ակադեմիայի հրատարակություններ</a>
+                    </li>
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/manual') ||
+                        Request::is('admin/library/manual/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.library.manual.index') }}">Ուսումնական ձեռնարկներ</a>
+                    </li>
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link" href="#">Ուսումնաօժանդակ նյութեր</a>
+                    </li>
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link" href="#">
+                            Անչափահասների մասնակցությամբ գործերով մասնագիտացված քննիչների վերապատրաստման մոդուլներ
+                        </a>
+                    </li>
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link" href="#">ՄԻԵԴ իրավաբանության վերաբերյալ ռեսուրսներ</a>
                     </li>
                 </ul>
             </li>

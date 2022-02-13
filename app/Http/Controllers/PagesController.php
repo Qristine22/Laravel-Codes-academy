@@ -11,6 +11,7 @@ use App\Models\Header;
 use App\Models\Report;
 use App\Models\Worker;
 use App\Models\Gallery;
+use App\Models\Library;
 use App\Models\Graduate;
 use App\Models\Admission;
 use App\Models\Candidate;
@@ -21,17 +22,16 @@ use App\Models\BehaviorRule;
 use App\Models\DormitoryRule;
 use App\Models\RectorsDecree;
 use App\Models\ConductingExam;
+use App\Models\ProvideDeferral;
 use App\Models\TrainingProgram;
 use App\Models\AcademyStructure;
+use App\Models\DistanceLearning;
 use App\Models\RectorsBiography;
-use App\Models\AcademyPublication;
 use App\Models\ConductingPractice;
 use App\Models\GoverningBoardPage;
 use App\Models\ConductingExamVideo;
-use App\Models\DistanceLearning;
 use App\Models\GoverningBoardStaff;
 use App\Models\GoverningBoardDecree;
-use App\Models\ProvideDeferral;
 use App\Models\DistanceLearningVideo;
 use App\Models\FormerRectorsBiography;
 use App\Models\DistanceLearningVideoMaterial;
@@ -689,7 +689,7 @@ class PagesController extends Controller
     // library *********************************************************************************
     public function library(){
         $headersBot = Subheader::where('parent_id', 5)->get();
-        $academyPublications = AcademyPublication::all();
+        $academyPublications = Library::where('category', 'academy-publication')->get();
 
         return view('library', [
             'headers' => $this->getHeader(),
@@ -723,7 +723,7 @@ class PagesController extends Controller
     }
     public function academyPublications(){
         $headersBot = Subheader::where('parent_id', 5)->get();
-        $academyPublications = AcademyPublication::all();
+        $academyPublications = Library::where('category', 'academy-publication')->get();
 
         return view('library', [
             'headers' => $this->getHeader(),
@@ -733,10 +733,12 @@ class PagesController extends Controller
     }
     public function manuals(){
         $headersBot = Subheader::where('parent_id', 5)->get();
+        $manuals = Library::where('category', 'manual')->get();
 
         return view('library', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'data' => $manuals,
         ]);
     }
     public function professionalLiterature(){
