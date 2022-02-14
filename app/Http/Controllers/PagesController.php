@@ -699,10 +699,12 @@ class PagesController extends Controller
     }
     public function trainingMaterials(){
         $headersBot = Subheader::where('parent_id', 5)->get();
+        $academyPublications = Library::where('category', 'training-material')->get();
 
         return view('library', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'data' => $academyPublications,
         ]);
     }
     public function videoLectures(){

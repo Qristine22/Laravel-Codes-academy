@@ -6,6 +6,7 @@ use App\Models\Library;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\Library\BookRequest;
 
 class ManualController extends Controller
 {
@@ -42,7 +43,7 @@ class ManualController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BookRequest $request)
     {
         $request->validate([
             'pdf' => 'required',
@@ -98,7 +99,7 @@ class ManualController extends Controller
      * @param  \App\Models\Library  $manual
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Library $manual)
+    public function update(BookRequest $request, Library $manual)
     {
         $pdf = $request->pdfHidden;
         $img = $request->imgHidden;

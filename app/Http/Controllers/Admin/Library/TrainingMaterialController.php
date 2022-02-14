@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin\Library;
 use App\Models\Library;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Library\BookRequest;
+use Illuminate\Support\Facades\Storage;
 
-class AcademyPublicationController extends Controller
+class TrainingMaterialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +17,11 @@ class AcademyPublicationController extends Controller
      */
     public function index()
     {
-        $academyPublications = Library::where('category', 'academy-publication')->paginate(10);
+        $trainingManuals = Library::where('category', 'training-material')->paginate(10);
 
-        return view('admin.library.academy-publication.index', [
-            'title' => 'Արդարադատության ակադեմիայի հրատարակություններ',
-            'books' => $academyPublications,
+        return view('admin.library.training-material.index', [
+            'title' => 'Ուսումնաօժանդակ նյութեր',
+            'books' => $trainingManuals,
         ]);
     }
 
@@ -32,8 +32,8 @@ class AcademyPublicationController extends Controller
      */
     public function create()
     {
-        return view('admin.library.academy-publication.create', [
-            'title' => 'Արդարադատության ակադեմիայի հրատարակություններ',
+        return view('admin.library.training-material.create', [
+            'title' => 'Ուսումնաօժանդակ նյութեր',
         ]);
     }
 
@@ -49,10 +49,10 @@ class AcademyPublicationController extends Controller
             'pdf' => 'required',
         ]);
 
-        $pdf = $request->file('pdf')->store('library/academy-publications');
+        $pdf = $request->file('pdf')->store('library/training-materials');
         $img = null;
         if(!empty($request->img)){
-            $img = $request->file('img')->store('library/academy-publications');
+            $img = $request->file('img')->store('library/training-materials');
         }
 
         Library::insert([
@@ -61,19 +61,19 @@ class AcademyPublicationController extends Controller
             'name_ru' => $request->name_ru,
             'pdf' => $pdf,
             'img' => $img,
-            'category' => 'academy-publication',
+            'category' => 'training-material',
         ]);
 
-        return redirect(route('admin.library.academy-publication.index'));
+        return redirect(route('admin.library.training-material.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Library  $academyPublication
+     * @param  \App\Models\Library  $trainingMaterial
      * @return \Illuminate\Http\Response
      */
-    public function show(Library $academyPublication)
+    public function show(Library $trainingMaterial)
     {
         //
     }
@@ -81,14 +81,14 @@ class AcademyPublicationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Library  $academyPublication
+     * @param  \App\Models\Library  $trainingMaterial
      * @return \Illuminate\Http\Response
      */
-    public function edit(Library $academyPublication)
+    public function edit(Library $trainingMaterial)
     {
-        return view('admin.library.academy-publication.edit', [
-            'title' => 'Արդարադատության ակադեմիայի հրատարակություններ',
-            'library' => $academyPublication,
+        return view('admin.library.training-material.edit', [
+            'title' => 'Ուսումնաօժանդակ նյութեր',
+            'trainingMaterial' => $trainingMaterial,
         ]);
     }
 
@@ -96,24 +96,24 @@ class AcademyPublicationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Library  $academyPublication
+     * @param  \App\Models\Library  $trainingMaterial
      * @return \Illuminate\Http\Response
      */
-    public function update(BookRequest $request, Library $academyPublication)
+    public function update(BookRequest $request, Library $trainingMaterial)
     {
         $pdf = $request->pdfHidden;
         $img = $request->imgHidden;
 
         if(!empty($request->pdf)){
             Storage::delete($pdf);
-            $pdf = $request->file('pdf')->store('library/academy-publications');
+            $pdf = $request->file('pdf')->store('library/training-materials');
         }
         if(!empty($request->img)){
             Storage::delete($img);
-            $img = $request->file('img')->store('library/academy-publications');
+            $img = $request->file('img')->store('library/training-materials');
         }
 
-        $academyPublication->update([
+        $trainingMaterial->update([
             'name_en' => $request->name_en,
             'name_am' => $request->name_am,
             'name_ru' => $request->name_ru,
@@ -121,21 +121,21 @@ class AcademyPublicationController extends Controller
             'pdf' => $pdf
         ]);
 
-        return redirect(route('admin.library.academy-publication.index'));
+        return redirect(route('admin.library.training-material.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Library  $academyPublication
+     * @param  \App\Models\Library  $trainingMaterial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Library $academyPublication)
+    public function destroy(Library $trainingMaterial)
     {
-        Storage::delete($academyPublication->pdf);
-        Storage::delete($academyPublication->img);
-        $academyPublication->delete();
+        Storage::delete($trainingMaterial->pdf);
+        Storage::delete($trainingMaterial->img);
+        $trainingMaterial->delete();
 
-        return redirect(route('admin.library.academy-publication.index'));
+        return redirect(route('admin.library.training-material.index'));
     }
 }

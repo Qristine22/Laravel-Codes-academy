@@ -301,6 +301,7 @@ Route::middleware(['set_locale'])->group(function(){
             Route::group(['prefix' => 'library', 'as' => 'library.'], function () {
                 Route::resource('academy-publication', 'App\Http\Controllers\Admin\Library\AcademyPublicationController');
                 Route::resource('manual', 'App\Http\Controllers\Admin\Library\ManualController');
+                Route::resource('training-material', 'App\Http\Controllers\Admin\Library\TrainingMaterialController');
             });
         });
     });

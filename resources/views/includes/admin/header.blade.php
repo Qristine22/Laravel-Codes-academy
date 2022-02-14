@@ -182,7 +182,9 @@
                             href="{{ route('admin.library.manual.index') }}">Ուսումնական ձեռնարկներ</a>
                     </li>
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link" href="#">Ուսումնաօժանդակ նյութեր</a>
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/training-material') ||
+                        Request::is('admin/library/training-material/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.library.training-material.index') }}">Ուսումնաօժանդակ նյութեր</a>
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link" href="#">
