@@ -187,7 +187,9 @@
                             href="{{ route('admin.library.training-material.index') }}">Ուսումնաօժանդակ նյութեր</a>
                     </li>
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link" href="#">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/investigator-training-module') ||
+                        Request::is('admin/library/investigator-training-module/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.library.investigator-training-module.index') }}">
                             Անչափահասների մասնակցությամբ գործերով մասնագիտացված քննիչների վերապատրաստման մոդուլներ
                         </a>
                     </li>

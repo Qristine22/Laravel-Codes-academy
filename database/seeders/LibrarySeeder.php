@@ -218,6 +218,51 @@ class LibrarySeeder extends Seeder
                 'pdf' => 'library/training-materials/1itsTqi8RSFI1rSpuhKK4jSkO5UltT2pLKP6ghK0.pdf',
                 'img' => 'library/training-materials/Tz5s7N9NtU02rIBIGpgWRCwZQRQislmlxqpYbIs1.jpg',
             ],
+            
+
+
+
+            // investigator training modules
+            [
+                'name_en' => 'Երեխայի իրավունքների միջազգային և սահմանադրաիրավական պաշտպանությունը',
+                'name_am' => 'Երեխայի իրավունքների միջազգային և սահմանադրաիրավական պաշտպանությունը',
+                'name_ru' => 'Երեխայի իրավունքների միջազգային և սահմանադրաիրավական պաշտպանությունը',
+                'category' => 'investigator-training-module',
+                'pdf' => 'library/investigator-training-modules/x6g99HWqi0lzmh1srmyo9nvJop7VbiCODuZ5BOjq.pdf',
+                'img' => 'library/investigator-training-modules/gXS0IMKf7g3Kyb4M7Y3YS5ZDP6npBGNC9CAYpuQN.jpg',
+            ],
+            [
+                'name_en' => 'Երեխայի իրավունքների քրեաիրավական և վարչաիրավական պաշտպանությունը',
+                'name_am' => 'Երեխայի իրավունքների քրեաիրավական և վարչաիրավական պաշտպանությունը',
+                'name_ru' => 'Երեխայի իրավունքների քրեաիրավական և վարչաիրավական պաշտպանությունը',
+                'category' => 'investigator-training-module',
+                'pdf' => 'library/investigator-training-modules/HU7fbSa3n4LDfgKsqfqVIbG8dVsk4sTxe4FYFONe.pdf',
+                'img' => 'library/investigator-training-modules/FfuLSKIiXnM48LZ1FZdoSxfvQiFi34XskWc4wPYg.jpg',
+            ],
+            [
+                'name_en' => 'Անչափահասների մասնակցությամբ քրեական վարույթը',
+                'name_am' => 'Անչափահասների մասնակցությամբ քրեական վարույթը',
+                'name_ru' => 'Անչափահասների մասնակցությամբ քրեական վարույթը',
+                'category' => 'investigator-training-module',
+                'pdf' => 'library/investigator-training-modules/knMBVhr8Wf67UqIYPuzrR8mZ39l4cYUoeRhlxjXC.pdf',
+                'img' => 'library/investigator-training-modules/oqx53NvkRgkHT2h2160ulhZE6UkAR7dPIWcidziD.jpg',
+            ],
+            [
+                'name_en' => 'Հոգեբանության ոլորտ',
+                'name_am' => 'Հոգեբանության ոլորտ',
+                'name_ru' => 'Հոգեբանության ոլորտ',
+                'category' => 'investigator-training-module',
+                'pdf' => 'library/investigator-training-modules/9GBM1T0bsFz4LHt819JyGQUS8FJFhat4cFqTK9Mz.pdf',
+                'img' => 'library/investigator-training-modules/xdhNvetVMQuAT25uIicXRcYAwDGoBuj4GWxQzEqN.jpg',
+            ],
+            [
+                'name_en' => 'Սոցիալական աջակցության ոլորտ',
+                'name_am' => 'Սոցիալական աջակցության ոլորտ',
+                'name_ru' => 'Սոցիալական աջակցության ոլորտ',
+                'category' => 'investigator-training-module',
+                'pdf' => 'library/investigator-training-modules/1DN5fpo6ZawVoVJ2WazEQZ5QZvfv2L1lKMpLwROZ.pdf',
+                'img' => 'library/investigator-training-modules/fcurWcea2tVjrEv37gY6kT7NJlXP9JlYOukGwvPU.jpg',
+            ],
         ]);
     }
 }

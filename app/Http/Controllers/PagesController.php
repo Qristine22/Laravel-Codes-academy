@@ -769,10 +769,12 @@ class PagesController extends Controller
     }
     public function investigatorTrainingModules(){
         $headersBot = Subheader::where('parent_id', 5)->get();
+        $investigatorTrainingModules = Library::where('category', 'investigator-training-module')->get();
 
         return view('library', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'data' => $investigatorTrainingModules,
         ]);
     }
 

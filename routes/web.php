@@ -302,6 +302,7 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::resource('academy-publication', 'App\Http\Controllers\Admin\Library\AcademyPublicationController');
                 Route::resource('manual', 'App\Http\Controllers\Admin\Library\ManualController');
                 Route::resource('training-material', 'App\Http\Controllers\Admin\Library\TrainingMaterialController');
+                Route::resource('investigator-training-module', 'App\Http\Controllers\Admin\Library\InvestigatorTrainingModuleController');
             });
         });
     });
