@@ -10,10 +10,13 @@ use App\Models\RectorsDecree;
 use App\Models\ConductingExam;
 use App\Models\TrainingProgram;
 use App\Models\GoverningBoardDecree;
+use App\Models\News;
+use App\Models\Gallery;
 
 class MainController extends Controller
 {
-    public function changeLocale($locale) {
+    public function changeLocale($locale)
+    {
         if (!in_array($locale, ['en', 'am', 'ru'])) {
             abort(404);
         }
@@ -29,20 +32,43 @@ class MainController extends Controller
 
 
     // home search function *******************************************************************
-    public function search($query){
-        $columnsToSearch = ['info_en', 'info_am', 'info_ru', 'pdf_name'];
-        $indents = [];
+    public function search($query)
+    {
+        // $columnsToSearch = ['info_en', 'info_am', 'info_ru', 'pdf_name'];
+        // $indents = [];
 
 
-        if(isset($query)){
-            foreach($columnsToSearch as $column) {
-                $indent = GoverningBoardDecree::where($column, 'LIKE', "%$query%")->get();
-                if(count($indent)){
-                    $indents[] = $indent;
-                }
-            }
-            
-            return response()->json($indents);
+        // if(isset($query)){
+        //     foreach($columnsToSearch as $column) {
+        //         $indent = GoverningBoardDecree::where($column, 'LIKE', "%$query%")->get();
+        //         if(count($indent)){
+        //             $indents[] = $indent;
+        //         }
+        //     }
+
+        //     return response()->json($indents);
+        // }
+
+
+        if (isset($query)) {
+            $news = News::where('title_en', 'LIKE', "%$query%")
+                ->orwhere('title_am', 'LIKE', "%$query%")
+                ->orwhere('title_ru', 'LIKE', "%$query%")
+                ->orwhere('description_en', 'LIKE', "%$query%")
+                ->orwhere('description_am', 'LIKE', "%$query%")
+                ->orwhere('description_ru', 'LIKE', "%$query%")
+                ->orwhere('date', 'LIKE', "%$query%")
+                ->get()->toArray();
+
+            $galleries = Gallery::where('text_en', 'LIKE', "%$query%")
+                ->orwhere('text_am', 'LIKE', "%$query%")
+                ->orwhere('text_ru', 'LIKE', "%$query%")
+                ->orwhere('year', 'LIKE', "%$query%")
+                ->orwhere('full_date', 'LIKE', "%$query%")
+                ->get()->toArray();
+
+            $data = array_merge($news, $galleries);
+            return response()->json($data);
         }
     }
 
@@ -59,38 +85,42 @@ class MainController extends Controller
 
     // download functions ***********************************************************************
     // governing board decree download
-    public function governingBoardDecreedownload($pdf){
+    public function governingBoardDecreedownload($pdf)
+    {
         $decree = GoverningBoardDecree::findOrFail($pdf);
-        $file = public_path()."/storage/".$decree->pdf;
+        $file = public_path() . "/storage/" . $decree->pdf;
         $headers = ['Content-Type: application/pdf'];
 
-        return response()->download($file, 'decree'.$decree->id.'.pdf', $headers);
+        return response()->download($file, 'decree' . $decree->id . '.pdf', $headers);
     }
 
     // rectors decree download
-    public function rectorsDecreedownload($pdf){
+    public function rectorsDecreedownload($pdf)
+    {
         $decree = RectorsDecree::findOrFail($pdf);
-        $file = public_path()."/storage/".$decree->pdf;
+        $file = public_path() . "/storage/" . $decree->pdf;
         $headers = ['Content-Type: application/pdf'];
 
-        return response()->download($file, 'decree'.$decree->id.'.pdf', $headers);
+        return response()->download($file, 'decree' . $decree->id . '.pdf', $headers);
     }
 
     // training program download
-    public function trainingProgramDownload($year, $category, $pdf){
+    public function trainingProgramDownload($year, $category, $pdf)
+    {
         $trainingProgram = TrainingProgram::findOrFail($pdf);
-        $file = public_path()."/storage/".$trainingProgram->pdf;
+        $file = public_path() . "/storage/" . $trainingProgram->pdf;
         $headers = ['Content-Type: application/pdf'];
 
-        return response()->download($file, 'training-program'.$trainingProgram->id.'.pdf', $headers);
+        return response()->download($file, 'training-program' . $trainingProgram->id . '.pdf', $headers);
     }
 
     // conducting exam download
-    public function conductingExamDownload($pdf){
+    public function conductingExamDownload($pdf)
+    {
         $conductingExam = ConductingExam::findOrFail($pdf);
-        $file = public_path()."/storage/".$conductingExam->pdf;
+        $file = public_path() . "/storage/" . $conductingExam->pdf;
         $headers = ['Content-Type: application/pdf'];
 
-        return response()->download($file, 'conducting-exam'.$conductingExam->id.'.pdf', $headers);
+        return response()->download($file, 'conducting-exam' . $conductingExam->id . '.pdf', $headers);
     }
 }
