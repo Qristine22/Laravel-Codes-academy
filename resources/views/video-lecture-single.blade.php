@@ -18,18 +18,17 @@
                         <span class="lecture__strong">
                             @lang('library.video-lectures.topic')
                         </span>
-                        «Ուկրաինայի դատախազության մարմիններում պետական ծառայության բարեփոխումները»
+                        {{ $videoLecture->{'topic_' . app()->getLocale()} }}
                     </h3>
                     <p class="lecture__title text-20">
                         <span class="lecture__strong">
                             @lang('library.video-lectures.lecturer')
                         </span>
-                        Ուկրաինայի դատախազության ազգային ակադեմիայի դատախազության պետական ծառայողների որակավորման բարձրացման բաժնի պետ Նատալյա Նաուլիկ
+                        {{ $videoLecture->{'lecturer_' . app()->getLocale()} }}
                     </p>
                 </div>
                 <div class="lecture__cont">
-                    <iframe class="lecture-single_iframe" src="https://www.youtube.com/embed/Rlb6vGChevE" frameborder="0"
-                        allowfullscreen="" data-mce-src="https://www.youtube.com/embed/Rlb6vGChevE"></iframe>
+                    {!! $videoLecture->video !!}
                 </div>
             </div>
         </section>

@@ -19,6 +19,7 @@ use App\Models\Subheader;
 use App\Models\MassMedium;
 use App\Models\RectorsPage;
 use App\Models\BehaviorRule;
+use App\Models\VideoLecture;
 use App\Models\DormitoryRule;
 use App\Models\RectorsDecree;
 use App\Models\ConductingExam;
@@ -709,18 +710,22 @@ class PagesController extends Controller
     }
     public function videoLectures(){
         $headersBot = Subheader::where('parent_id', 5)->get();
+        $videoLectures = VideoLecture::paginate(10);
 
         return view('video-lectures', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'videoLectures' => $videoLectures,
         ]);
     }
     public function videoLectureSingle($id){
         $headersBot = Subheader::where('parent_id', 5)->get();
+        $videoLecture = VideoLecture::findOrFail($id);
 
         return view('video-lecture-single', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'videoLecture' => $videoLecture,
         ]);
     }
     public function academyPublications(){
@@ -762,7 +767,7 @@ class PagesController extends Controller
     public function ECHRResources(){
         $headersBot = Subheader::where('parent_id', 5)->get();
 
-        return view('library', [
+        return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
         ]);

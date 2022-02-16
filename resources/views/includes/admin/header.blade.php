@@ -194,6 +194,11 @@
                         </a>
                     </li>
                     <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/video-lecture') ||
+                        Request::is('admin/library/video-lecture/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.library.video-lecture.index') }}">Տեսադասախոսություններ</a>
+                    </li>
+                    <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link" href="#">ՄԻԵԴ իրավաբանության վերաբերյալ ռեսուրսներ</a>
                     </li>
                 </ul>
