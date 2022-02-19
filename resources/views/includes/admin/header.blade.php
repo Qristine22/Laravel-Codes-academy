@@ -160,6 +160,11 @@
                         Request::is('admin/distance-learning/video-material/*')) admin-header__link-active @endif"
                             href="{{ route('admin.distance-learning.video-material.index') }}">Տեղեկատվական տեսանյութեր</a>
                     </li>
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/guide') ||
+                        Request::is('admin/distance-learning/guide/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.distance-learning.guide.index') }}">Հեռաուսուցման ուղեցույց</a>
+                    </li>
                 </ul>
             </li>
             <li class="admin-header__item">

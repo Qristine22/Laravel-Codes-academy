@@ -12,15 +12,15 @@
 @section('content')
     <main>
         <section class="learning-guide section-text distance-learning">
-            <h2 class="text-26 learning-guide__title">Հեռաուսուցման ուղեցույց</h2>
+            <h2 class="text-26 learning-guide__title">{{ $guide->{'name_'.app()->getLocale()} }}</h2>
             <div class="wrapper">
                 <div class="learning-guide__cont flex">
                     <div class="courses__pdfs_item">
-                        <a href="#">
+                        <a href="{{ Storage::url($guide->pdf) }}" target="_blank">
                             <img class="img"
-                                src="/media/img/distance-learning/distance-learning-courses/guide/1.png" alt="1">
+                                src="{{ Storage::url($guide->img) }}" alt="1">
                         </a>
-                        <a href="#">
+                        <a href="{{ route('distanceLearningGuideDownload', ['pdf' => $guide->id]) }}">
                             <span class="pdfs__item_layer"></span>
                             <span class="pdfs__item_see-all text-18">
                                 <img class="pdfs__layer_img" src="\media\img\icons\pdf.png" alt="pdf">
@@ -32,6 +32,5 @@
             </div>
         </section>
 
-        @include('includes.distance-learning.courses.courses-menu')
     </main>
 @endsection

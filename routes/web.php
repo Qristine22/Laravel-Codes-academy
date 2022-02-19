@@ -19,11 +19,11 @@ session(['locale' => 'am']);
 App::setLocale('am');
 Route::get('locale/{locale}', 'App\Http\Controllers\MainController@changeLocale')->name('lang');
 
-Route::middleware(['set_locale'])->group(function(){
+Route::middleware(['set_locale'])->group(function () {
     // pages ******************************************************************************
     Route::get('/', 'App\Http\Controllers\PagesController@home')->name('home');
-    
-    
+
+
     // about/*********************************************************************************
     Route::group(['prefix' => 'about'], function () {
         Route::get('/', 'App\Http\Controllers\PagesController@about')->name('about');
@@ -102,15 +102,15 @@ Route::middleware(['set_locale'])->group(function(){
         Route::get('/gallery/{year?}', 'App\Http\Controllers\PagesController@gallery')->name('gallery');
         Route::get('/mass-media/{year?}', 'App\Http\Controllers\PagesController@massMedia')->name('massMedia');
     });
-    
-    
+
+
     // news/*********************************************************************************
     Route::group(['prefix' => 'news'], function () {
         Route::get('/', 'App\Http\Controllers\PagesController@news')->name('news');
         Route::get('/{id}', 'App\Http\Controllers\PagesController@newsSingle')->name('newsSingle');
     });
-    
-    
+
+
     // full-time-education/******************************************************************
     Route::group(['prefix' => 'full-time-education'], function () {
         Route::get('/', 'App\Http\Controllers\PagesController@fullTimeEducation')
@@ -133,8 +133,8 @@ Route::middleware(['set_locale'])->group(function(){
         Route::get('/dormitory-rules', 'App\Http\Controllers\PagesController@dormitoryRules')->name('dormitoryRules');
         Route::get('/provide-deferral', 'App\Http\Controllers\PagesController@provideDeferral')->name('provideDeferral');
     });
-    
-    
+
+
     // distance-learning/********************************************************************
     Route::group(['prefix' => 'distance-learning'], function () {
         Route::get('/', 'App\Http\Controllers\PagesController@distanceLearning')->name('distanceLearning');
@@ -153,9 +153,13 @@ Route::middleware(['set_locale'])->group(function(){
             Route::get('/distance-learning-guide', 'App\Http\Controllers\PagesController@distanceLearningGuide')
                 ->name('distanceLearningGuide');
         });
+
+        // distance learning guide pdf download
+        Route::get('guide{pdf}download', 'App\Http\Controllers\MainController@distanceLearningGuideDownload')
+            ->name('distanceLearningGuideDownload');
     });
-    
-    
+
+
     // library/****************************************************************************
     Route::group(['prefix' => 'library'], function () {
         Route::get('/', 'App\Http\Controllers\PagesController@library')->name('library');
@@ -177,25 +181,25 @@ Route::middleware(['set_locale'])->group(function(){
         Route::get('/ECHR-resources', 'App\Http\Controllers\PagesController@ECHRResources')
             ->name('ECHRResources');
     });
-    
-    
+
+
     // bulletin/***************************************************************************
     Route::group(['prefix' => 'bulletin'], function () {
         Route::get('/', 'App\Http\Controllers\PagesController@bulletin')->name('bulletin');
     });
-    
-    
+
+
     // partners/***************************************************************************
     Route::group(['prefix' => 'partners'], function () {
         Route::get('/', 'App\Http\Controllers\PagesController@partners')->name('partners');
         Route::get('/partner-single/{id}', 'App\Http\Controllers\PagesController@partnerSingle')->name('partnerSingle');
     });
-    
-    
+
+
     // contacts/***************************************************************************
     Route::get('/contacts', 'App\Http\Controllers\PagesController@contacts')->name('contacts');
-    
-    
+
+
     // admin form/***************************************************************************
     Route::get('/login', 'App\Http\Controllers\PagesController@login')->name('login');
     Route::post('/login-progress', 'App\Http\Controllers\AuthController@loginProgress')->name('loginProgress');
@@ -211,7 +215,7 @@ Route::middleware(['set_locale'])->group(function(){
 
     Route::middleware('auth')->group(function () {
         Route::get('/logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
-    
+
         // admin page/***************************************************************************
         Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
@@ -221,7 +225,7 @@ Route::middleware(['set_locale'])->group(function(){
 
             // home /***************************************************************************
             Route::resource('home', 'App\Http\Controllers\Admin\HomeController');
-    
+
             // about /***************************************************************************
             Route::group(['prefix' => 'about', 'as' => 'about.'], function () {
                 // governing board page
@@ -235,46 +239,46 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::resource('rectors-page', 'App\Http\Controllers\Admin\About\RectorsPageController');
                 Route::resource('rectors-decree', 'App\Http\Controllers\Admin\About\RectorsDecreeController');
                 Route::resource('rectors-biography', 'App\Http\Controllers\Admin\About\RectorsBiographyController');
-                Route::resource('former-rectors-biography','App\Http\Controllers\Admin\About\FormerRectorsBiographyController');
+                Route::resource('former-rectors-biography', 'App\Http\Controllers\Admin\About\FormerRectorsBiographyController');
 
 
                 // academy structure page
-                Route::resource('academy-structure','App\Http\Controllers\Admin\About\AcademyStructureController');
-                Route::resource('workers','App\Http\Controllers\Admin\About\WorkersController');
+                Route::resource('academy-structure', 'App\Http\Controllers\Admin\About\AcademyStructureController');
+                Route::resource('workers', 'App\Http\Controllers\Admin\About\WorkersController');
                 // edit page deleting img
                 Route::get('/workers/deleting-img/{id}', 'App\Http\Controllers\Admin\About\WorkersController@imgDelete')
                     ->name('workersImgDelete');
 
 
                 // reports page
-                Route::resource('report','App\Http\Controllers\Admin\About\ReportController');
+                Route::resource('report', 'App\Http\Controllers\Admin\About\ReportController');
 
 
                 // graduates page
-                Route::resource('graduates','App\Http\Controllers\Admin\About\GraduateController');
-                
+                Route::resource('graduates', 'App\Http\Controllers\Admin\About\GraduateController');
+
 
                 // admission page
-                Route::resource('admission','App\Http\Controllers\Admin\About\AdmissionController');
+                Route::resource('admission', 'App\Http\Controllers\Admin\About\AdmissionController');
                 // candidate page
-                Route::resource('candidate','App\Http\Controllers\Admin\About\CandidateController');
+                Route::resource('candidate', 'App\Http\Controllers\Admin\About\CandidateController');
 
 
                 // candidate page
-                Route::resource('gallery','App\Http\Controllers\Admin\About\GalleryController');
+                Route::resource('gallery', 'App\Http\Controllers\Admin\About\GalleryController');
                 Route::get('/gallery/deleting-img/{id}', 'App\Http\Controllers\Admin\About\GalleryController@imgDelete')
-                ->name('galleryImgDelete');
+                    ->name('galleryImgDelete');
 
                 // mass media page
-                Route::resource('mass-media','App\Http\Controllers\Admin\About\MassMediaController');
+                Route::resource('mass-media', 'App\Http\Controllers\Admin\About\MassMediaController');
                 Route::get('/mass-media/link/{id}', 'App\Http\Controllers\Admin\About\MassMediaController@linkDelete')
-                ->name('massMediaLinkDelete');
+                    ->name('massMediaLinkDelete');
             });
-            
+
             // news /***************************************************************************
             Route::resource('news', 'App\Http\Controllers\Admin\NewsController');
             Route::get('/news/deleting-img/{id}', 'App\Http\Controllers\Admin\NewsController@imgDelete')
-            ->name('news.ImgDelete');
+                ->name('news.ImgDelete');
 
 
             // full time education /***************************************************************************
@@ -294,6 +298,7 @@ Route::middleware(['set_locale'])->group(function(){
                 Route::resource('page', 'App\Http\Controllers\Admin\DistanceLearning\DistancelearningController');
                 Route::resource('video', 'App\Http\Controllers\Admin\DistanceLearning\VideoController');
                 Route::resource('video-material', 'App\Http\Controllers\Admin\DistanceLearning\VideoMaterialController');
+                Route::resource('guide', 'App\Http\Controllers\Admin\DistanceLearning\GuideController');
             });
 
 

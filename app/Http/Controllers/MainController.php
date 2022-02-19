@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\App;
 // Models
 use App\Models\RectorsDecree;
 use App\Models\ConductingExam;
+use App\Models\DistanceLearningGuide;
 use App\Models\TrainingProgram;
 use App\Models\GoverningBoardDecree;
 use App\Models\News;
@@ -122,5 +123,15 @@ class MainController extends Controller
         $headers = ['Content-Type: application/pdf'];
 
         return response()->download($file, 'conducting-exam' . $conductingExam->id . '.pdf', $headers);
+    }
+
+    // distance learning guide download
+    public function distanceLearningGuideDownload($pdf)
+    {
+        $guide = DistanceLearningGuide::findOrFail($pdf);
+        $file = public_path() . "/storage/" . $guide->pdf;
+        $headers = ['Content-Type: application/pdf'];
+
+        return response()->download($file, 'guide' . $guide->id . '.pdf', $headers);
     }
 }

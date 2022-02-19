@@ -31,6 +31,7 @@ use App\Models\RectorsBiography;
 use App\Models\ConductingPractice;
 use App\Models\GoverningBoardPage;
 use App\Models\ConductingExamVideo;
+use App\Models\DistanceLearningGuide;
 use App\Models\GoverningBoardStaff;
 use App\Models\GoverningBoardDecree;
 use App\Models\DistanceLearningVideo;
@@ -631,11 +632,13 @@ class PagesController extends Controller
     public function distanceLearningVideo($id){
         $headersBot = Subheader::where('parent_id', 4)->get();
         $distancelearningVideo = DistanceLearningVideo::findOrFail($id);
+        $guide = DistanceLearningGuide::first();
 
         return view('distance-learning-video', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'distancelearningVideo' => $distancelearningVideo,
+            'guide' => $guide,
         ]);
     }
     public function videoMaterials(){
@@ -650,34 +653,42 @@ class PagesController extends Controller
     }
     public function distanceLearningCourses(){
         $headersBot = Subheader::where('parent_id', 4)->get();
+        $guide = DistanceLearningGuide::first();
 
         return view('distance-learning-courses', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'guide' => $guide,
         ]);
     }
     public function motivationalVideos(){
         $headersBot = Subheader::where('parent_id', 4)->get();
+        $guide = DistanceLearningGuide::first();
 
         return view('motivational-videos', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'guide' => $guide,
         ]);
     }
     public function mediaMaterials(){
         $headersBot = Subheader::where('parent_id', 4)->get();
+        $guide = DistanceLearningGuide::first();
 
         return view('media-materials', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'guide' => $guide,
         ]);
     }
     public function distanceLearningGuide(){
         $headersBot = Subheader::where('parent_id', 4)->get();
+        $guide = DistanceLearningGuide::first();
 
         return view('distance-learning-guide', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'guide' => $guide,
         ]);
     }
 
