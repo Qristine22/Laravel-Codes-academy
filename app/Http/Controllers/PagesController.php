@@ -777,10 +777,12 @@ class PagesController extends Controller
     }
     public function ECHRResources(){
         $headersBot = Subheader::where('parent_id', 5)->get();
+        $ECHRResources = Library::where('category', 'ECHR-resource')->get();
 
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'data' => $ECHRResources,
         ]);
     }
     public function investigatorTrainingModules(){

@@ -263,6 +263,51 @@ class LibrarySeeder extends Seeder
                 'pdf' => 'library/investigator-training-modules/1DN5fpo6ZawVoVJ2WazEQZ5QZvfv2L1lKMpLwROZ.pdf',
                 'img' => 'library/investigator-training-modules/fcurWcea2tVjrEv37gY6kT7NJlXP9JlYOukGwvPU.jpg',
             ],
+            
+
+
+
+            // echr resources
+            [
+                'name_en' => 'Մարդու իրավունքների Եվրոպական դատարան, վճիռների ժողովածու',
+                'name_am' => 'Մարդու իրավունքների Եվրոպական դատարան, վճիռների ժողովածու',
+                'name_ru' => 'Մարդու իրավունքների Եվրոպական դատարան, վճիռների ժողովածու',
+                'category' => 'ECHR-resource',
+                'pdf' => 'library/ECHR-resources/Yjuoy4yOfCdudk1Nq9oD6qKCfmPWKQOWHfWPphbH.pdf',
+                'img' => null,
+            ],
+            [
+                'name_en' => 'Նախադեպային իրավունքը սեփականության պաշտպանության ոլորտում',
+                'name_am' => 'Նախադեպային իրավունքը սեփականության պաշտպանության ոլորտում',
+                'name_ru' => 'Նախադեպային իրավունքը սեփականության պաշտպանության ոլորտում',
+                'category' => 'ECHR-resource',
+                'pdf' => 'library/ECHR-resources/a32FQR5pbDa9aiRw7rp64FAPpBoZC9Zrhm2yZlKM.pdf',
+                'img' => null,
+            ],
+            [
+                'name_en' => 'Նախադեպային իրավունքը վարչական դատավարությունում',
+                'name_am' => 'Նախադեպային իրավունքը վարչական դատավարությունում',
+                'name_ru' => 'Նախադեպային իրավունքը վարչական դատավարությունում',
+                'category' => 'ECHR-resource',
+                'pdf' => 'library/ECHR-resources/rLBvCNWgDK3E9Hmyqz4NRTPnWFVi03wKW76uceMe.pdf',
+                'img' => null,
+            ],
+            [
+                'name_en' => 'Նախադեպային իրավունքի հիմնահարցերը քրեական գործերով',
+                'name_am' => 'Նախադեպային իրավունքի հիմնահարցերը քրեական գործերով',
+                'name_ru' => 'Նախադեպային իրավունքի հիմնահարցերը քրեական գործերով',
+                'category' => 'ECHR-resource',
+                'pdf' => 'library/ECHR-resources/i2hnMR2OI3qfDdlLCrXgpRL49wI9o2seD425XgM2.pdf',
+                'img' => null,
+            ],
+            [
+                'name_en' => 'Նախադեպային իրավունքը քաղաքացիական դատավարությունում',
+                'name_am' => 'Նախադեպային իրավունքը քաղաքացիական դատավարությունում',
+                'name_ru' => 'Նախադեպային իրավունքը քաղաքացիական դատավարությունում',
+                'category' => 'ECHR-resource',
+                'pdf' => 'library/ECHR-resources/3ZvGAYkS7eEd4k73WjUcriBb6pvzIOGmd6telF5U.pdf',
+                'img' => null,
+            ],
         ]);
     }
 }

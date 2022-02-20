@@ -19,7 +19,7 @@ class CreateLibrariesTable extends Migration
             $table->string('name_en')->nullable(true);
             $table->string('name_am')->nullable(true);
             $table->string('name_ru')->nullable(true);
-            $table->enum('category', ['academy-publication', 'manual', 'investigator-training-module', 'training-material', 'ECHR-manual']);
+            $table->enum('category', ['academy-publication', 'manual', 'investigator-training-module', 'training-material', 'ECHR-resource']);
             $table->string('pdf');
             $table->string('img')->nullable(true);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

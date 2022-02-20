@@ -309,6 +309,7 @@ Route::middleware(['set_locale'])->group(function () {
                 Route::resource('training-material', 'App\Http\Controllers\Admin\Library\TrainingMaterialController');
                 Route::resource('investigator-training-module', 'App\Http\Controllers\Admin\Library\InvestigatorTrainingModuleController');
                 Route::resource('video-lecture', 'App\Http\Controllers\Admin\Library\VideoLectureController');
+                Route::resource('echr-resource', 'App\Http\Controllers\Admin\Library\ECHRResourceController');
             });
         });
     });
