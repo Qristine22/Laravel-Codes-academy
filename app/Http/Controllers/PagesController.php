@@ -12,6 +12,7 @@ use App\Models\Report;
 use App\Models\Worker;
 use App\Models\Gallery;
 use App\Models\Library;
+use App\Models\EchrLink;
 use App\Models\Graduate;
 use App\Models\Admission;
 use App\Models\Candidate;
@@ -31,9 +32,9 @@ use App\Models\RectorsBiography;
 use App\Models\ConductingPractice;
 use App\Models\GoverningBoardPage;
 use App\Models\ConductingExamVideo;
-use App\Models\DistanceLearningGuide;
 use App\Models\GoverningBoardStaff;
 use App\Models\GoverningBoardDecree;
+use App\Models\DistanceLearningGuide;
 use App\Models\DistanceLearningVideo;
 use App\Models\FormerRectorsBiography;
 use App\Models\DistanceLearningVideoMaterial;
@@ -778,11 +779,13 @@ class PagesController extends Controller
     public function ECHRResources(){
         $headersBot = Subheader::where('parent_id', 5)->get();
         $ECHRResources = Library::where('category', 'ECHR-resource')->get();
+        $ECHRLinks = EchrLink::all();
 
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'data' => $ECHRResources,
+            'ECHRLinks' => $ECHRLinks,
         ]);
     }
     public function investigatorTrainingModules(){

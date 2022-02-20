@@ -19,11 +19,12 @@
             <div class="wrapper">
                 <div class="conducting-exams__cont">
                     <div class="link__pdfs">
-                        @if(@isset($data) && count($data))
-                            @foreach($data as $item)
+                        @if (@isset($data) && count($data))
+                            @foreach ($data as $item)
                                 <div class="link__pdf flex">
-                                    <a class="link__name text-18" href="{{ Storage::url($item->pdf) }}" target="_blank">{{ $item->{'name_'.app()->getLocale()} }}</a>
-                                    <a href="#">
+                                    <a class="link__name text-18" href="{{ Storage::url($item->pdf) }}"
+                                        target="_blank">{{ $item->{'name_' . app()->getLocale()} }}</a>
+                                    <a href="{{ route('ECHRResourcesDownload', ['pdf' => $item->id]) }}">
                                         <div class="link__pdf_icon">
                                             <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
                                             <span class="link__pdf_span text-18">@lang('main.download')</span>
@@ -36,5 +37,19 @@
                 </div>
             </div>
         </section>
+
+        @if (!@empty($ECHRLinks) && @isset($ECHRLinks))
+            <section class="section-text rector__bot">
+                <div class="wrapper">
+                    <div class="rector__bot_cont distance__learning_videos">
+                        @foreach ($ECHRLinks as $ECHRLink)
+                            <a class="distance__learning_video_name about__link text-18" href="{{ $ECHRLink->link }}" target="_blank">
+                                {{ $ECHRLink->{'name_' . app()->getLocale()} }}
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+        @endif
     </main>
 @endsection

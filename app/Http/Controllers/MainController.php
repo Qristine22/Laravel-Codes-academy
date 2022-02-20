@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
-
-// Models
-use App\Models\RectorsDecree;
-use App\Models\ConductingExam;
-use App\Models\DistanceLearningGuide;
-use App\Models\TrainingProgram;
-use App\Models\GoverningBoardDecree;
 use App\Models\News;
 use App\Models\Gallery;
+
+// Models
+use App\Models\Library;
+use Illuminate\Http\Request;
+use App\Models\RectorsDecree;
+use App\Models\ConductingExam;
+use App\Models\TrainingProgram;
+use Illuminate\Support\Facades\App;
+use App\Models\GoverningBoardDecree;
+use App\Models\DistanceLearningGuide;
 
 class MainController extends Controller
 {
@@ -133,5 +134,14 @@ class MainController extends Controller
         $headers = ['Content-Type: application/pdf'];
 
         return response()->download($file, 'guide' . $guide->id . '.pdf', $headers);
+    }
+
+    // ECHR resource download
+    public function ECHRResourcesDownload($pdf){
+        $ECHRResource = Library::findOrFail($pdf);
+        $file = public_path() . "/storage/" . $ECHRResource->pdf;
+        $headers = ['Content-Type: application/pdf'];
+
+        return response()->download($file, 'ECHRResource' . $ECHRResource->id . '.pdf', $headers);
     }
 }

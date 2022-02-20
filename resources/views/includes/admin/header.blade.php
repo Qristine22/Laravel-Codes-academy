@@ -200,7 +200,8 @@
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/echr-resource') ||
-                        Request::is('admin/library/echr-resource/*')) admin-header__link-active @endif"
+                        Request::is('admin/library/echr-resource/*') || Request::is('admin/library/echr-link/*') ||
+                        Request::is('admin/library/echr-link/*')) admin-header__link-active @endif"
                             href="{{ route('admin.library.echr-resource.index') }}">
                             ՄԻԵԴ իրավաբանության վերաբերյալ ռեսուրսներ
                         </a>

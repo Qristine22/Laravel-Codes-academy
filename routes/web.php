@@ -180,6 +180,10 @@ Route::middleware(['set_locale'])->group(function () {
             ->name('investigatorTrainingModules');
         Route::get('/ECHR-resources', 'App\Http\Controllers\PagesController@ECHRResources')
             ->name('ECHRResources');
+
+        // ECHR resource pdf download
+        Route::get('/ECHR-resources/{pdf}/download', 'App\Http\Controllers\MainController@ECHRResourcesDownload')
+            ->name('ECHRResourcesDownload');
     });
 
 
@@ -310,6 +314,7 @@ Route::middleware(['set_locale'])->group(function () {
                 Route::resource('investigator-training-module', 'App\Http\Controllers\Admin\Library\InvestigatorTrainingModuleController');
                 Route::resource('video-lecture', 'App\Http\Controllers\Admin\Library\VideoLectureController');
                 Route::resource('echr-resource', 'App\Http\Controllers\Admin\Library\ECHRResourceController');
+                Route::resource('echr-link', 'App\Http\Controllers\Admin\Library\ECHRLinkController');
             });
         });
     });

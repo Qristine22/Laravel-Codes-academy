@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Admin\Library;
 
-use App\Models\Library;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Library\BookRequest;
+
+// Models
+use App\Models\Library;
+use App\Models\EchrLink;
 
 class ECHRResourceController extends Controller
 {
@@ -17,10 +20,12 @@ class ECHRResourceController extends Controller
      */
     public function index()
     {
-        $echrResources = Library::where('category', 'ECHR-resource')->paginate(10);
+        $echrResources = Library::where('category', 'ECHR-resource')->paginate(10, ['*'], 'echrResources');
+        $echrLinks = EchrLink::paginate(10, ['*'], 'echrLinks');
 
         return view('admin.library.echr-resource.index', [
             'echrResources' => $echrResources,
+            'echrLinks' => $echrLinks,
         ]);
     }
 
