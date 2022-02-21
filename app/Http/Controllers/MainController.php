@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BehaviorRule;
 use App\Models\News;
 use App\Models\Gallery;
 
@@ -12,10 +13,13 @@ use App\Models\LibraryPdf;
 use Illuminate\Http\Request;
 use App\Models\RectorsDecree;
 use App\Models\ConductingExam;
+use App\Models\ConductingPractice;
 use App\Models\TrainingProgram;
 use Illuminate\Support\Facades\App;
 use App\Models\GoverningBoardDecree;
 use App\Models\DistanceLearningGuide;
+use App\Models\DormitoryRule;
+use App\Models\ProvideDeferral;
 
 class MainController extends Controller
 {
@@ -126,6 +130,46 @@ class MainController extends Controller
         $headers = ['Content-Type: application/pdf'];
 
         return response()->download($file, 'conducting-exam' . $conductingExam->id . '.pdf', $headers);
+    }
+
+    // conducting practice download
+    public function conductingPracticeDownload($pdf)
+    {
+        $conductingPractice = ConductingPractice::findOrFail($pdf);
+        $file = public_path() . "/storage/" . $conductingPractice->pdf;
+        $headers = ['Content-Type: application/pdf'];
+
+        return response()->download($file, 'conducting-practice' . $conductingPractice->id . '.pdf', $headers);
+    }
+    
+    // rules of behavior download
+    public function rulesOfBehaviorDownload($pdf)
+    {
+        $rulesOfBehavior = BehaviorRule::findOrFail($pdf);
+        $file = public_path() . "/storage/" . $rulesOfBehavior->pdf;
+        $headers = ['Content-Type: application/pdf'];
+
+        return response()->download($file, 'behavior-rule' . $rulesOfBehavior->id . '.pdf', $headers);
+    }
+        
+    // dormitory rules download
+    public function dormitoryRulesDownload($pdf)
+    {
+        $dormitoryRules = DormitoryRule::findOrFail($pdf);
+        $file = public_path() . "/storage/" . $dormitoryRules->pdf;
+        $headers = ['Content-Type: application/pdf'];
+
+        return response()->download($file, 'dormitory-rule' . $dormitoryRules->id . '.pdf', $headers);
+    }
+            
+    // provide deferral download
+    public function provideDeferralDownload($pdf)
+    {
+        $provideDeferral = ProvideDeferral::findOrFail($pdf);
+        $file = public_path() . "/storage/" . $provideDeferral->pdf;
+        $headers = ['Content-Type: application/pdf'];
+
+        return response()->download($file, 'provide-deferral' . $provideDeferral->id . '.pdf', $headers);
     }
 
     // distance learning guide download

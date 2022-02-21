@@ -579,7 +579,7 @@ class PagesController extends Controller
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'data' => $conductingPractices,
-            'downloadLink' => 'ECHRResourcesDownload', // ------------------------------------------------------------------
+            'downloadLink' => 'conductingPracticeDownload',
         ]);
     }
     public function rulesOfBehavior(){
@@ -590,7 +590,7 @@ class PagesController extends Controller
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'data' => $data,
-            'downloadLink' => 'ECHRResourcesDownload', // -----------------------------------------------------------------
+            'downloadLink' => 'rulesOfBehaviorDownload',
         ]);
     }
     public function dormitoryRules(){
@@ -601,7 +601,7 @@ class PagesController extends Controller
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'data' => $data,
-            'downloadLink' => 'ECHRResourcesDownload', // ------------------------------------------------------------------
+            'downloadLink' => 'dormitoryRulesDownload',
         ]);
     }
     public function provideDeferral(){
@@ -612,7 +612,7 @@ class PagesController extends Controller
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'data' => $data,
-            'downloadLink' => 'ECHRResourcesDownload', // ------------------------------------------------------------------
+            'downloadLink' => 'provideDeferralDownload',
         ]);
     }
 

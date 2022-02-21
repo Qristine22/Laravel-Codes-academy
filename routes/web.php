@@ -127,11 +127,27 @@ Route::middleware(['set_locale'])->group(function () {
         // conducting exam download
         Route::get('conducting-exam/{pdf}/download', 'App\Http\Controllers\MainController@conductingExamDownload')
             ->name('conductingExamDownload');
+
         Route::get('/conducting-practice', 'App\Http\Controllers\PagesController@conductingPractice')
             ->name('conductingPractice');
+        // conducting practice download
+        Route::get('conducting-practice/{pdf}/download', 'App\Http\Controllers\MainController@conductingPracticeDownload')
+            ->name('conductingPracticeDownload');
+
         Route::get('/rules-of-behavior', 'App\Http\Controllers\PagesController@rulesOfBehavior')->name('rulesOfBehavior');
+        // conducting practice download
+        Route::get('rules-of-behavior/{pdf}/download', 'App\Http\Controllers\MainController@rulesOfBehaviorDownload')
+            ->name('rulesOfBehaviorDownload');
+
         Route::get('/dormitory-rules', 'App\Http\Controllers\PagesController@dormitoryRules')->name('dormitoryRules');
+        // dormitory rule download
+        Route::get('dormitory-rules/{pdf}/download', 'App\Http\Controllers\MainController@dormitoryRulesDownload')
+            ->name('dormitoryRulesDownload');
+
         Route::get('/provide-deferral', 'App\Http\Controllers\PagesController@provideDeferral')->name('provideDeferral');
+        // provide deferral download
+        Route::get('provide-deferral/{pdf}/download', 'App\Http\Controllers\MainController@provideDeferralDownload')
+            ->name('provideDeferralDownload');
     });
 
 
