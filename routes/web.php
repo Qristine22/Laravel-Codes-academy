@@ -210,6 +210,10 @@ Route::middleware(['set_locale'])->group(function () {
     // bulletin/***************************************************************************
     Route::group(['prefix' => 'bulletin'], function () {
         Route::get('/', 'App\Http\Controllers\PagesController@bulletin')->name('bulletin');
+
+        // bulletin info pdf download
+        Route::get('/bulletin-info/{pdf}/download', 'App\Http\Controllers\MainController@bulletinInfoDownload')
+        ->name('bulletinInfoDownload');
     });
 
 
@@ -346,6 +350,12 @@ Route::middleware(['set_locale'])->group(function () {
                     'organizing-library-activity',
                     'App\Http\Controllers\Admin\Library\OrganizingLibraryActivityController'
                 );
+            });
+
+
+            // bulletin /***************************************************************************
+            Route::group(['prefix' => 'bulletin', 'as' => 'bulletin.'], function () {
+                Route::resource('info', 'App\Http\Controllers\Admin\Bulletin\InfoController');
             });
         });
     });

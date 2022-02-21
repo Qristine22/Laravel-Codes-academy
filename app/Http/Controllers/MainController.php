@@ -1,25 +1,25 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\BehaviorRule;
-use App\Models\News;
-use App\Models\Gallery;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 // Models
 
+use App\Models\News;
+use App\Models\Gallery;
 use App\Models\Library;
 use App\Models\LibraryPdf;
-use Illuminate\Http\Request;
+use App\Models\BehaviorRule;
+use App\Models\BulletinInfo;
 use App\Models\RectorsDecree;
+use App\Models\DormitoryRule;
 use App\Models\ConductingExam;
-use App\Models\ConductingPractice;
+use App\Models\ProvideDeferral;
 use App\Models\TrainingProgram;
-use Illuminate\Support\Facades\App;
+use App\Models\ConductingPractice;
 use App\Models\GoverningBoardDecree;
 use App\Models\DistanceLearningGuide;
-use App\Models\DormitoryRule;
-use App\Models\ProvideDeferral;
 
 class MainController extends Controller
 {
@@ -141,7 +141,7 @@ class MainController extends Controller
 
         return response()->download($file, 'conducting-practice' . $conductingPractice->id . '.pdf', $headers);
     }
-    
+
     // rules of behavior download
     public function rulesOfBehaviorDownload($pdf)
     {
@@ -151,7 +151,7 @@ class MainController extends Controller
 
         return response()->download($file, 'behavior-rule' . $rulesOfBehavior->id . '.pdf', $headers);
     }
-        
+
     // dormitory rules download
     public function dormitoryRulesDownload($pdf)
     {
@@ -161,7 +161,7 @@ class MainController extends Controller
 
         return response()->download($file, 'dormitory-rule' . $dormitoryRules->id . '.pdf', $headers);
     }
-            
+
     // provide deferral download
     public function provideDeferralDownload($pdf)
     {
@@ -200,5 +200,15 @@ class MainController extends Controller
         $headers = ['Content-Type: application/pdf'];
 
         return response()->download($file, 'library' . $LibraryPdf->id . '.pdf', $headers);
+    }
+
+    // bulletin info download
+    public function bulletinInfoDownload($pdf)
+    {
+        $bulletinInfo = BulletinInfo::findOrFail($pdf);
+        $file = public_path() . "/storage/" . $bulletinInfo->pdf;
+        $headers = ['Content-Type: application/pdf'];
+
+        return response()->download($file, 'bulletin-info' . $bulletinInfo->id . '.pdf', $headers);
     }
 }

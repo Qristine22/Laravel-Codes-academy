@@ -57,41 +57,19 @@
         <section class="bulletin__pdfs section-text">
             <div class="wrapper">
                 <div class="link__pdfs">
-                    <a class="link__pdf flex" href="#">
-                        <span class="text-18">Գիտագործնական հանդեսի հրատարակման աշխատանքների կազմակերպման
-                            կարգը</span>
-                        <div class="link__pdf_icon">
-                            <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
-                            <span class="link__pdf_span text-18">@lang('main.download')</span>
+                    @foreach ($bulletinInfos as $bulletinInfo)
+                        <div class="link__pdf flex">
+                            <a class="link__name text-18" href="{{ Storage::url($bulletinInfo->pdf) }}" target="_blank">
+                                {{ $bulletinInfo->{'name_' . app()->getLocale()} }}
+                            </a>
+                            <a href="{{ route($downloadLink, ['pdf' => $bulletinInfo->id]) }}">
+                                <div class="link__pdf_icon">
+                                    <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
+                                    <span class="link__pdf_span text-18">@lang('main.download')</span>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                    <a class="link__pdf flex" href="#">
-                        <span class="text-18">
-                            Գիտագործնական հանդեսի կազմի ձևը
-                        </span>
-                        <div class="link__pdf_icon">
-                            <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
-                            <span class="link__pdf_span text-18">@lang('main.download')</span>
-                        </div>
-                    </a>
-                    <a class="link__pdf flex" href="#">
-                        <span class="text-18">
-                            Գիտագործնական հանդեսի էթիկայի կանոնները
-                        </span>
-                        <div class="link__pdf_icon">
-                            <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
-                            <span class="link__pdf_span text-18">@lang('main.download')</span>
-                        </div>
-                    </a>
-                    <a class="link__pdf flex" href="#">
-                        <span class="text-18">
-                            Գիտագործնական հանդեսի խմբագրական խորհրդի կազմը
-                        </span>
-                        <div class="link__pdf_icon">
-                            <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
-                            <span class="link__pdf_span text-18">@lang('main.download')</span>
-                        </div>
-                    </a>
+                    @endforeach
                 </div>
             </div>
         </section>

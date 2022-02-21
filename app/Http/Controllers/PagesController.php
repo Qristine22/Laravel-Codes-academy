@@ -22,6 +22,7 @@ use App\Models\MassMedium;
 use App\Models\RectorsPage;
 use App\Models\BehaviorRule;
 use App\Models\VideoLecture;
+use App\Models\BulletinInfo;
 use App\Models\DormitoryRule;
 use App\Models\RectorsDecree;
 use App\Models\ConductingExam;
@@ -819,8 +820,12 @@ class PagesController extends Controller
 
     // bulletin *********************************************************************************
     public function bulletin(){
+        $bulletinInfos = BulletinInfo::all();
+
         return view('bulletin', [
             'headers' => $this->getHeader(),
+            'bulletinInfos' => $bulletinInfos,
+            'downloadLink' => 'bulletinInfoDownload',
         ]);
     }
 

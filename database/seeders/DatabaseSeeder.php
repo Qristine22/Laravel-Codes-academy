@@ -54,5 +54,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DistanceLearningGuideSeeder::class);
         $this->call(ECHRLinkSeeder::class);
         $this->call(LibraryPdfSeeder::class);
+        $this->call(BulletinInfoSeeder::class);
     }
 }
