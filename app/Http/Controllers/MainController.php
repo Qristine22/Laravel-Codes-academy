@@ -6,7 +6,9 @@ use App\Models\News;
 use App\Models\Gallery;
 
 // Models
+
 use App\Models\Library;
+use App\Models\LibraryPdf;
 use Illuminate\Http\Request;
 use App\Models\RectorsDecree;
 use App\Models\ConductingExam;
@@ -137,11 +139,22 @@ class MainController extends Controller
     }
 
     // ECHR resource download
-    public function ECHRResourcesDownload($pdf){
+    public function ECHRResourcesDownload($pdf)
+    {
         $ECHRResource = Library::findOrFail($pdf);
         $file = public_path() . "/storage/" . $ECHRResource->pdf;
         $headers = ['Content-Type: application/pdf'];
 
         return response()->download($file, 'ECHRResource' . $ECHRResource->id . '.pdf', $headers);
+    }
+
+    // library pdf download
+    public function LibraryPdfDownload($pdf)
+    {
+        $LibraryPdf = LibraryPdf::findOrFail($pdf);
+        $file = public_path() . "/storage/" . $LibraryPdf->pdf;
+        $headers = ['Content-Type: application/pdf'];
+
+        return response()->download($file, 'library' . $LibraryPdf->id . '.pdf', $headers);
     }
 }

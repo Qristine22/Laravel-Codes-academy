@@ -17,6 +17,7 @@ use App\Models\Graduate;
 use App\Models\Admission;
 use App\Models\Candidate;
 use App\Models\Subheader;
+use App\Models\LibraryPdf;
 use App\Models\MassMedium;
 use App\Models\RectorsPage;
 use App\Models\BehaviorRule;
@@ -578,6 +579,7 @@ class PagesController extends Controller
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'data' => $conductingPractices,
+            'downloadLink' => 'ECHRResourcesDownload', // ------------------------------------------------------------------
         ]);
     }
     public function rulesOfBehavior(){
@@ -588,6 +590,7 @@ class PagesController extends Controller
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'data' => $data,
+            'downloadLink' => 'ECHRResourcesDownload', // -----------------------------------------------------------------
         ]);
     }
     public function dormitoryRules(){
@@ -598,6 +601,7 @@ class PagesController extends Controller
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'data' => $data,
+            'downloadLink' => 'ECHRResourcesDownload', // ------------------------------------------------------------------
         ]);
     }
     public function provideDeferral(){
@@ -608,6 +612,7 @@ class PagesController extends Controller
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'data' => $data,
+            'downloadLink' => 'ECHRResourcesDownload', // ------------------------------------------------------------------
         ]);
     }
 
@@ -762,30 +767,37 @@ class PagesController extends Controller
     }
     public function professionalLiterature(){
         $headersBot = Subheader::where('parent_id', 5)->get();
+        $professionalLiteratures = LibraryPdf::where('category', 'professional-literature')->get();
 
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'data' => $professionalLiteratures,
+            'downloadLink' => 'LibraryPdfDownload',
         ]);
     }
     public function organizingLibraryActivities(){
         $headersBot = Subheader::where('parent_id', 5)->get();
+        $organizingLibraryActivities = LibraryPdf::where('category', 'organizing-library-activity')->get();
 
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'data' => $organizingLibraryActivities,
+            'downloadLink' => 'LibraryPdfDownload',
         ]);
     }
     public function ECHRResources(){
         $headersBot = Subheader::where('parent_id', 5)->get();
         $ECHRResources = Library::where('category', 'ECHR-resource')->get();
         $ECHRLinks = EchrLink::all();
-
+        
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'data' => $ECHRResources,
             'ECHRLinks' => $ECHRLinks,
+            'downloadLink' => 'ECHRResourcesDownload',
         ]);
     }
     public function investigatorTrainingModules(){

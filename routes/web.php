@@ -184,6 +184,10 @@ Route::middleware(['set_locale'])->group(function () {
         // ECHR resource pdf download
         Route::get('/ECHR-resources/{pdf}/download', 'App\Http\Controllers\MainController@ECHRResourcesDownload')
             ->name('ECHRResourcesDownload');
+
+        // library pdf download
+        Route::get('/pdf/{pdf}/download', 'App\Http\Controllers\MainController@LibraryPdfDownload')
+            ->name('LibraryPdfDownload');
     });
 
 
@@ -311,10 +315,21 @@ Route::middleware(['set_locale'])->group(function () {
                 Route::resource('academy-publication', 'App\Http\Controllers\Admin\Library\AcademyPublicationController');
                 Route::resource('manual', 'App\Http\Controllers\Admin\Library\ManualController');
                 Route::resource('training-material', 'App\Http\Controllers\Admin\Library\TrainingMaterialController');
-                Route::resource('investigator-training-module', 'App\Http\Controllers\Admin\Library\InvestigatorTrainingModuleController');
+                Route::resource(
+                    'investigator-training-module',
+                    'App\Http\Controllers\Admin\Library\InvestigatorTrainingModuleController'
+                );
                 Route::resource('video-lecture', 'App\Http\Controllers\Admin\Library\VideoLectureController');
                 Route::resource('echr-resource', 'App\Http\Controllers\Admin\Library\ECHRResourceController');
                 Route::resource('echr-link', 'App\Http\Controllers\Admin\Library\ECHRLinkController');
+                Route::resource(
+                    'professional-literature',
+                    'App\Http\Controllers\Admin\Library\ProfessionalLiteratureController'
+                );
+                Route::resource(
+                    'organizing-library-activity',
+                    'App\Http\Controllers\Admin\Library\OrganizingLibraryActivityController'
+                );
             });
         });
     });
