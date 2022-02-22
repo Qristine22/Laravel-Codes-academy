@@ -55,21 +55,23 @@
                         </div>
                     </div>
                     
-                    <div class="inputs__group">
-                        <span class="text-20 form__item_name">Links</span>
-                        <div class="flex admin__edit_imgs admin__edit_column">
-                            @foreach ($massMedia->links as $link)
-                                <div class="admin__edit_img admin__edit_bordered">
-                                    <span class="text-20">{{ $link->site_name }}</span>
-                                    <a class="text-18 admin__edit_link" href="{{ $link->link }}">{{ $link->link_name }}</a>
-                                    <a class="admin__edit_img_delete"
-                                        href="{{ route('admin.about.massMediaLinkDelete', ['id' => $link->id]) }}">
-                                        <img class="img" src="/media/img/icons/delete.png" alt="delete">
-                                    </a>
-                                </div>
-                            @endforeach
+                    @if(count($massMedia->links) > 0)
+                        <div class="inputs__group">
+                            <span class="text-20 form__item_name">Links</span>
+                            <div class="flex admin__edit_imgs admin__edit_column">
+                                @foreach ($massMedia->links as $link)
+                                    <div class="admin__edit_img admin__edit_bordered">
+                                        <span class="text-20">{{ $link->site_name }}</span>
+                                        <a class="text-18 admin__edit_link" href="{{ $link->link }}">{{ $link->link_name }}</a>
+                                        <a class="admin__edit_img_delete"
+                                            href="{{ route('admin.about.massMediaLinkDelete', ['id' => $link->id]) }}">
+                                            <img class="img" src="/media/img/icons/delete.png" alt="delete">
+                                        </a>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
+                    @endif
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
                             <label class="text-20 form__item_name" for="year">Year</label>

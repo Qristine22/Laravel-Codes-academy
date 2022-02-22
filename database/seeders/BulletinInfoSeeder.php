@@ -16,6 +16,12 @@ class BulletinInfoSeeder extends Seeder
     {
         DB::table('bulletin_infos')->insert([
             [
+                'name_en' => 'Notice to authors',
+                'name_am' => 'Ի գիտություն հեղինակների',
+                'name_ru' => 'К сведению авторов',
+                'pdf' => 'bulletin/info/XGbOBcC0xwwONh1OBj24432JRtTnHVkptORLs3SS.pdf',
+            ],
+            [
                 'name_en' => 'The order organizing the publishing work of scientific - practical journal',
                 'name_am' => 'Գիտագործնական հանդեսի հրատարակման աշխատանքների կազմակերպման կարգը',
                 'name_ru' => 'Порядок организации издательской работы научно-практического журнала',

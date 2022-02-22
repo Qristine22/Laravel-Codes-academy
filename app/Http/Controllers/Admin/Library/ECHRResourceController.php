@@ -100,7 +100,7 @@ class ECHRResourceController extends Controller
      * @param  \App\Models\Library  $echrResource
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Library $echrResource)
+    public function update(BookRequest $request, Library $echrResource)
     {
         $pdf = $request->pdfHidden;
         $img = $request->imgHidden;

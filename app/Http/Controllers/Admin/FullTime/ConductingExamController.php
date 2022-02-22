@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Admin\FullTime;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\NameRequest;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
+use App\Models\ConductingExamVideo;
+use App\Http\Requests\NamePdfRequest;
 
 // Models
 use App\Models\ConductingExam;
-use App\Models\ConductingExamVideo;
+use Illuminate\Support\Facades\Storage;
 
 class ConductingExamController extends Controller
 {
@@ -45,11 +46,8 @@ class ConductingExamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NameRequest $request)
+    public function store(NamePdfRequest $request)
     {
-        $request->validate([
-            'pdf' => 'required',
-        ]);
         $pdf = $request->file('pdf')->store('full-time-education/conducting-exams');
 
         ConductingExam::insert([

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\ProvideDeferral;
 use App\Http\Requests\NameRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\NamePdfRequest;
 use Illuminate\Support\Facades\Storage;
 
 class ProvideDeferralController extends Controller
@@ -40,11 +41,8 @@ class ProvideDeferralController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NameRequest $request)
+    public function store(NamePdfRequest $request)
     {
-        $request->validate([
-            'pdf' => 'required',
-        ]);
         $pdf = $request->file('pdf')->store('full-time-education/provide-deferral');
 
         ProvideDeferral::insert([

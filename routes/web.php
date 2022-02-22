@@ -213,7 +213,7 @@ Route::middleware(['set_locale'])->group(function () {
 
         // bulletin info pdf download
         Route::get('/bulletin-info/{pdf}/download', 'App\Http\Controllers\MainController@bulletinInfoDownload')
-        ->name('bulletinInfoDownload');
+            ->name('bulletinInfoDownload');
     });
 
 
@@ -356,6 +356,14 @@ Route::middleware(['set_locale'])->group(function () {
             // bulletin /***************************************************************************
             Route::group(['prefix' => 'bulletin', 'as' => 'bulletin.'], function () {
                 Route::resource('info', 'App\Http\Controllers\Admin\Bulletin\InfoController');
+            });
+
+
+            // partner /***************************************************************************
+            Route::group(['prefix' => 'partners', 'as' => 'partners.'], function () {
+                Route::resource('partner', 'App\Http\Controllers\Admin\Partners\PartnerController');
+                Route::get('/partner/link/{id}', 'App\Http\Controllers\Admin\Partners\PartnerController@linkDelete')
+                    ->name('partnerLinkDelete');
             });
         });
     });

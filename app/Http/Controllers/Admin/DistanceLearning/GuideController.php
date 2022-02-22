@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\DistanceLearning;
 use Illuminate\Http\Request;
 use App\Http\Requests\NameRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\NamePdfRequest;
 use App\Models\DistanceLearningGuide;
 use Illuminate\Support\Facades\Storage;
 
@@ -40,11 +41,10 @@ class GuideController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NameRequest $request)
+    public function store(NamePdfRequest $request)
     {
         $request->validate([
             'img' => 'required',
-            'pdf' => 'required',
         ]);
 
         $pdf = $request->file('pdf')->store('distance-learning/guide');

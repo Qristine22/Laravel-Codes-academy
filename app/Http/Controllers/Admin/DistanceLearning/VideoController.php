@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\DistanceLearning;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\DistanceLearning\VideoRequest;
 use App\Http\Requests\NameRequest;
 use App\Models\DistanceLearningVideo;
 
@@ -39,12 +40,8 @@ class VideoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NameRequest $request)
+    public function store(VideoRequest $request)
     {
-        $request->validate([
-            'video' => 'required',
-        ]);
-
         DistanceLearningVideo::insert([
             'name_en' => $request->name_en,
             'name_am' => $request->name_am,
@@ -86,12 +83,8 @@ class VideoController extends Controller
      * @param  \App\Models\DistanceLearningVideo  $video
      * @return \Illuminate\Http\Response
      */
-    public function update(NameRequest $request, DistanceLearningVideo $video)
-    {
-        $request->validate([
-            'video' => 'required',
-        ]);
-        
+    public function update(VideoRequest $request, DistanceLearningVideo $video)
+    {        
         $video->update([
             'name_en' => $request->name_en,
             'name_am' => $request->name_am,

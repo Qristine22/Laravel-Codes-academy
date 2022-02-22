@@ -40,6 +40,7 @@ use App\Models\DistanceLearningGuide;
 use App\Models\DistanceLearningVideo;
 use App\Models\FormerRectorsBiography;
 use App\Models\DistanceLearningVideoMaterial;
+use App\Models\Partner;
 
 class PagesController extends Controller
 {
@@ -837,16 +838,25 @@ class PagesController extends Controller
 
     // partners *********************************************************************************
     public function partners(){
+        $internationals = Partner::where('category', 'international')->get();
+        $foreigns = Partner::where('category', 'foreign')->get();
+        $armArtsakhs = Partner::where('category', 'arm&artsakh')->get();
+
         return view('partners', [
             'headers' => $this->getHeader(),
+            'internationals' => $internationals,
+            'foreigns' => $foreigns,
+            'armArtsakhs' => $armArtsakhs,
         ]);
     }
     public function partnerSingle($id){
         $headersBot = Subheader::where('parent_id', 7)->get();
+        $partner = Partner::findOrFail($id);
 
         return view('partner-single', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'partner' => $partner,
         ]);
     }
 

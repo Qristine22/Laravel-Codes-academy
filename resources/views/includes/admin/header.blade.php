@@ -222,22 +222,26 @@
             </li>
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
-                    <a class="text-20 admin-header__link @if(Request::is('admin/bulletin/info') ||
-                    Request::is('admin/library/bulletin/info/*')) admin-header__link-active @endif"
-                        href="{{ route('admin.bulletin.info.index') }}">Բանբեր</a>
+                    <a class="text-20 admin-header__link @if(Request::is('admin/bulletin') ||
+                    Request::is('admin/bulletin/*')) admin-header__link-active @endif"
+                        href="#">Բանբեր</a>
                     <div class="admin-header__arrow">
                         <img class="img" src="/media/img/icons/whiteDownArrow.png" alt="whiteDownArrow">
                     </div>
                 </div>
                 <ul class="admin-header__menu-list">
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link" href="#">Ակադեմիայի կառավարմանխորհուրդ</a>
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/bulletin/info') ||
+                        Request::is('admin/bulletin/info/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.bulletin.info.index') }}">Բանբեր հղումներ</a>
                     </li>
                 </ul>
             </li>
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
-                    <a class="text-20 admin-header__link" href="#">Գործընկերներ</a>
+                    <a class="text-20 admin-header__link @if(Request::is('admin/partners') ||
+                    Request::is('admin/partners/*')) admin-header__link-active @endif"
+                        href="{{ route('admin.partners.partner.index') }}">Գործընկերներ</a>
                     <div class="admin-header__arrow">
                         <img class="img" src="/media/img/icons/whiteDownArrow.png" alt="whiteDownArrow">
                     </div>

@@ -55,5 +55,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ECHRLinkSeeder::class);
         $this->call(LibraryPdfSeeder::class);
         $this->call(BulletinInfoSeeder::class);
+        $this->call(PartnerSeeder::class);
+        $this->call(PartnerLinkSeeder::class);
     }
 }
