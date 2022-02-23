@@ -114,4 +114,17 @@ class SubheaderController extends Controller
         $subheader->delete();
         return redirect(route('admin.header.index'));
     }
+    
+
+    
+    public function recycleBinRestore($id){
+        Subheader::withTrashed()->findOrFail($id)->restore();
+        return redirect(route('admin.header.index'));
+    }
+
+
+    public function forceDelete($id){
+        Subheader::withTrashed()->findOrFail($id)->forceDelete();
+        return redirect(route('admin.header.index'));
+    }
 }

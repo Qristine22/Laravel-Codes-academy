@@ -20,6 +20,7 @@ class CreatePartnersLinksTable extends Migration
             $table->string('name_am')->nullable(true);
             $table->string('name_ru')->nullable(true);
             $table->string('link')->nullable(true);
+            $table->string('file')->nullable(true);
             $table->integer('partner_id');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

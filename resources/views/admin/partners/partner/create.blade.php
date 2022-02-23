@@ -71,6 +71,11 @@
                                 <input class="admin-inp" type="text" id="link" name="links[]"
                                     placeholder="Enter your text here" value="{{ old('link') }}">
                             </div>
+                            <div class="form__item form__item-inp">
+                                <span class="text-20 form__item_name">File</span>
+                                <label class="text-20 admin-inp admin-inp-file" for="file">Attach your File</label>
+                                <input class="admin-file" type="file" id="file" name="pdfs[]">
+                            </div>
                         </div>
                     </div>
                     <div class="form__item inputs__group">

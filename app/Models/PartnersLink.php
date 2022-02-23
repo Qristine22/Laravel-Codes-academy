@@ -16,6 +16,7 @@ class PartnersLink extends Model
         'name_am',
         'name_ru',
         'link',
+        'file',
         'partner_id',
     ];
 }

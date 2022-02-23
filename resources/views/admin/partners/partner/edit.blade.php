@@ -7,8 +7,8 @@
                 <h2 class="admin__title">Գործընկերներ</h2>
             </div>
 
-            <form class="admin__form" action="{{ route('admin.partners.partner.update', ['partner' => $partner]) }}" method="POST"
-                enctype="multipart/form-data">
+            <form class="admin__form" action="{{ route('admin.partners.partner.update', ['partner' => $partner]) }}"
+                method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 @if ($errors->any())
@@ -43,13 +43,13 @@
                         <div class="form__item form__item-inp">
                             <label class="text-20 form__item_name" for="category">Category</label>
                             <select class="admin-inp" name="category" id="category">
-                                <option value="international" @if($partner->category == 'international') selected @endif>
+                                <option value="international" @if ($partner->category == 'international') selected @endif>
                                     Միջազգային
                                 </option>
-                                <option value="foreign" @if($partner->category == 'foreign') selected @endif>
+                                <option value="foreign" @if ($partner->category == 'foreign') selected @endif>
                                     Օտարերկրյա
                                 </option>
-                                <option value="arm&artsakh" @if($partner->category == 'arm&artsakh') selected @endif>
+                                <option value="arm&artsakh" @if ($partner->category == 'arm&artsakh') selected @endif>
                                     Հայաստանյան և Արցախյան
                                 </option>
                             </select>
@@ -78,10 +78,15 @@
                                 <input class="admin-inp" type="text" id="link" name="links[]"
                                     placeholder="Enter your text here" value="{{ old('link') }}">
                             </div>
+                            <div class="form__item form__item-inp">
+                                <span class="text-20 form__item_name">File</span>
+                                <label class="text-20 admin-inp admin-inp-file" for="file">Attach your File</label>
+                                <input class="admin-file" type="file" id="file" name="pdfs[]">
+                            </div>
                         </div>
                     </div>
 
-                    @if(count($partner->links) > 0)
+                    @if (count($partner->links) > 0)
                         <div class="inputs__group">
                             <span class="text-20 form__item_name">Links</span>
                             <div class="flex admin__edit_imgs admin__edit_column">
@@ -90,9 +95,13 @@
                                         <span class="text-20">{{ $link->name_en }}</span>
                                         <span class="text-20">{{ $link->name_am }}</span>
                                         <span class="text-20">{{ $link->name_ru }}</span>
-                                        <a class="text-18 admin__edit_link" href="{{ $link->link }}">
-                                            {{ $link->link }}
-                                        </a>
+                                        @if (!empty($link->link))
+                                            <a class="text-18 admin__edit_link" href="{{ $link->link }}">
+                                                {{ $link->link }}
+                                            </a>
+                                        @else
+                                            <img class="edit__inputs_pdf" src="/media/img/icons/pdf.png" alt="pdf">
+                                        @endif
                                         <a class="admin__edit_img_delete"
                                             href="{{ route('admin.partners.partnerLinkDelete', ['id' => $link->id]) }}">
                                             <img class="img" src="/media/img/icons/delete.png" alt="delete">
@@ -106,20 +115,20 @@
                     <div class="form__item">
                         <label class="text-20" for="description__en">Description (English)</label>
                         <textarea class="ckeditor" name="description_en" id="description__en">
-                            {{ $partner->description_en }}
-                        </textarea>
+                                {{ $partner->description_en }}
+                            </textarea>
                     </div>
                     <div class="form__item">
                         <label class="text-20" for="description__am">Description (Armenian)</label>
                         <textarea class="ckeditor" name="description_am" id="description__am">
-                            {{ $partner->description_am }}
-                        </textarea>
+                                {{ $partner->description_am }}
+                            </textarea>
                     </div>
                     <div class="form__item">
                         <label class="text-20" for="description__ru">Description (Russian)</label>
                         <textarea class="ckeditor" name="description_ru" id="description__ru">
-                            {{ $partner->description_ru }}
-                        </textarea>
+                                {{ $partner->description_ru }}
+                            </textarea>
                     </div>
                 </div>
 

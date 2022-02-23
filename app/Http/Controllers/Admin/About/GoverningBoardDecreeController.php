@@ -118,7 +118,26 @@ class GoverningBoardDecreeController extends Controller
     public function destroy(GoverningBoardDecree $governingBoardDecree)
     {
         $governingBoardDecree->delete();
-        Storage::delete($governingBoardDecree->pdf);
+        return redirect(route('admin.about.governing-board-page.index'));
+    }
+
+
+
+    
+
+
+    public function recycleBinRestore($id)
+    {
+        GoverningBoardDecree::withTrashed()->findOrFail($id)->restore();
+        return redirect(route('admin.about.governing-board-page.index'));
+    }
+
+
+    public function forceDelete($id)
+    {
+        $item = GoverningBoardDecree::withTrashed()->findOrFail($id);
+        $item->forceDelete();
+        Storage::delete($item->pdf);
         return redirect(route('admin.about.governing-board-page.index'));
     }
 }

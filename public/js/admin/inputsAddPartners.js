@@ -32,10 +32,6 @@ if (adminInputAdd) {
         newFormInp1.setAttribute("placeholder", `Enter your text here`);
 
 
-
-
-
-
         // name am
         let newFormItem2 = create("div", newFormWrap, `form__item`);
         newFormItem2.classList.add("form__item-inp");
@@ -50,9 +46,6 @@ if (adminInputAdd) {
         newFormInp2.setAttribute("id", `name__am${i}`);
         newFormInp2.setAttribute("name", `amNames[]`);
         newFormInp2.setAttribute("placeholder", `Enter your text here`);
-
-
-
 
 
         // name ru
@@ -71,10 +64,6 @@ if (adminInputAdd) {
         newFormInp3.setAttribute("placeholder", `Enter your text here`);
 
 
-
-
-
-
         // link 
         let newFormItem4 = create("div", newFormWrap, `form__item`);
         newFormItem4.classList.add("form__item-inp");
@@ -89,6 +78,30 @@ if (adminInputAdd) {
         newFormInp4.setAttribute("id", `link${i}`);
         newFormInp4.setAttribute("name", `links[]`);
         newFormInp4.setAttribute("placeholder", `Enter your text here`);
+        
+
+        // file 
+        
+        let newFormItem5 = create("div", newFormWrap, `form__item`);
+        newFormItem5.classList.add("form__item-inp");
+
+        let newFormLabel5 = create("span", newFormItem5, `text-20`);
+        newFormLabel5.classList.add("form__item_name");
+        newFormLabel5.innerHTML = "File";
+
+        let newFormLabel6 = create("label", newFormItem5, `text-20`);
+        newFormLabel6.classList.add("admin-inp");
+        newFormLabel6.classList.add("admin-inp-file");
+        newFormLabel6.setAttribute("for", `pdfs${i}`);
+        newFormLabel6.innerHTML = "Attach your File";
+
+        let newFormInp5 = create("input", newFormItem5, `admin-file`);
+        newFormInp5.setAttribute("type", `file`);
+        newFormInp5.setAttribute("id", `pdfs${i}`);
+        newFormInp5.setAttribute("name", `pdfs[]`);
         i++;
     });
 }
+
+
+

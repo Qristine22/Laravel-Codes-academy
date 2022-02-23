@@ -25,8 +25,4 @@ class Header extends Model
     public function subheaders(){
         return $this->hasMany(Subheader::class, 'parent_id', 'id');
     }
-
-    public static function findItemWithParentId($id){
-        return Header::findOrFail($id)->name_am;
-    }
 }

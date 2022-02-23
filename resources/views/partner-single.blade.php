@@ -32,7 +32,8 @@
                 <div class="wrapper">
                     <div class="link__pdfs">
                         @foreach ($partner->links as $link)
-                            <a class="link__pdf flex" href="{{ $link->link }}" target="_blank">
+                            <a class="link__pdf flex" target="_blank"
+                                href="{{ !empty($link->link) ? $link->link : Storage::url($link->file) }}">
                                 <span class="text-18">{{ $link->{'name_' . app()->getLocale()} }}</span>
                             </a>
                         @endforeach

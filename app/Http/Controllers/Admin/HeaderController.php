@@ -113,4 +113,34 @@ class HeaderController extends Controller
         $header->delete();
         return redirect(route('admin.header.index'));
     }
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin(){
+        $headers = Header::onlyTrashed()->paginate(10, ['*'], 'headers');
+        $subHeaders = Subheader::onlyTrashed()->paginate(10, ['*'], 'subHeaders');
+
+        return view('admin.header.recycleBin', [
+            'headers' => $headers,
+            'subHeaders' => $subHeaders,
+        ]);
+    }
+
+
+    
+    public function recycleBinRestore($id){
+        Header::withTrashed()->findOrFail($id)->restore();
+        return redirect(route('admin.header.index'));
+    }
+
+
+    public function forceDelete($id){
+        Header::withTrashed()->findOrFail($id)->forceDelete();
+        return redirect(route('admin.header.index'));
+    }
 }

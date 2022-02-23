@@ -15,7 +15,10 @@
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
                     <a class="text-20 admin-header__link @if (Request::is('admin/header/*') || Request::is('admin/header')
-                        || Request::is('admin/subheader')|| Request::is('admin/subheader/*'))admin-header__link-active @endif" href="{{ route('admin.header.index') }}">Նավիգացիա</a>
+                        || Request::is('admin/subheader')|| Request::is('admin/subheader/*')
+                        || Request::is('admin/recycleBin/header') || Request::is('admin/recycleBin/header/*')
+                        || Request::is('admin/recycleBin/subheader') || Request::is('admin/recycleBin/subheader/*'))
+                        admin-header__link-active @endif" href="{{ route('admin.header.index') }}">Նավիգացիա</a>
                 </div>
             </li>
             <li class="admin-header__item">
@@ -33,7 +36,9 @@
                         Request::is('admin/about/governing-board-decree') ||
                         Request::is('admin/about/governing-board-decree/*') ||
                         Request::is('admin/about/governing-board-staff/*') ||
-                        Request::is('admin/about/governing-board-staff'))admin-header__link-active @endif"
+                        Request::is('admin/about/governing-board-staff') ||
+                        Request::is('admin/about/recycleBin/page') ||
+                        Request::is('admin/about/recycleBin/page/*'))admin-header__link-active @endif"
                             href="{{ route('admin.about.governing-board-page.index') }}">
                             Կառավարման խորհուրդ
                         </a>

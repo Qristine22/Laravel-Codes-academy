@@ -188,6 +188,20 @@ admin-section
     -ms-transform: translateY(-5px);
     -o-transform: translateY(-5px);
 }
+.admin-item__add{
+    right: 110px;
+}
+.admin-item__trash{
+    right: 55px;
+}
+.admin-item__trash_plus{
+    font-size: 20px;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+}
 .admin__form{
     display: flex;
     flex-direction: column;
@@ -221,6 +235,7 @@ admin-section
 }
 .form__item-wrap{
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 .admin-inp-file{
     position: relative;
@@ -242,6 +257,9 @@ admin-section
 }
 .admin-file{
     display: none;
+}
+.edit__inputs_pdf{
+    width: 40px;
 }
 .admin-inp{
     width: 100%;
@@ -281,7 +299,8 @@ admin-section
 .admin__paginate{
     margin-top: 30px;
 }
-.admin__input_add{
+.admin__input_add,
+.admin__input_file_add{
     padding: 0px 12px 3px 12px;
     display: inline-block;
     font-size: 20px;

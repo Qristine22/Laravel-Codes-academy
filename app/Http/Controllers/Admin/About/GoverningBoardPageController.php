@@ -20,8 +20,8 @@ class GoverningBoardPageController extends Controller
     public function index()
     {
         $aboutPage = GoverningBoardPage::get();
-        $decrees = GoverningBoardDecree::orderBy('id', 'DESC')->paginate(5, ['*'], 'decrees');
-        $staff = GoverningBoardStaff::orderBy('id', 'DESC')->paginate(5, ['*'], 'staff');
+        $decrees = GoverningBoardDecree::orderBy('id', 'DESC')->paginate(10, ['*'], 'decrees');
+        $staff = GoverningBoardStaff::orderBy('id', 'DESC')->paginate(10, ['*'], 'staff');
 
         return view('admin.about.governing-board-page.index', [
             'aboutPage' => $aboutPage,
@@ -109,5 +109,21 @@ class GoverningBoardPageController extends Controller
     {
         // $governingBoardPage->delete();
         // return redirect(route('admin.about.governing-board-page.index'));
+    }
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $decrees = GoverningBoardDecree::onlyTrashed()->paginate(10, ['*'], 'decrees');
+        $staff = GoverningBoardStaff::onlyTrashed()->paginate(10, ['*'], 'staff');
+
+        return view('admin.about.governing-board-page.recycleBin', [
+            'decrees' => $decrees,
+            'staff' => $staff,
+        ]);
     }
 }

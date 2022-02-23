@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ադմինիստրատիվ համակարգ</title>
     <link rel="icon" type="image/x-icon" href="/media/img/logo/brownLogo.png">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/media/fonts/fonts.css">
     <link rel="stylesheet" href="/css/admin/all.css">

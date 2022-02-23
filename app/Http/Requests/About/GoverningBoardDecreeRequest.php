@@ -28,7 +28,7 @@ class GoverningBoardDecreeRequest extends FormRequest
             'info_en' => 'required',
             'info_am' => 'required',
             'info_ru' => 'required',
-            'year' => 'required|numeric|max:255',
+            'year' => 'required|numeric',
         ];
     }
 }

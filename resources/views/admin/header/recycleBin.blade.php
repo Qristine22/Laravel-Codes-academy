@@ -2,18 +2,11 @@
 
 @section('content')
     <div class="admin__sections">
+        
         <section class="admin-section">
             <div class="admin__head">
                 <h2 class="admin__title">Նավիգացիա</h2>
             </div>
-            <a class="admin-item__create admin-item__add" href="{{ route('admin.header.create') }}">
-                <span class="admin-item__plus">+</span>
-            </a>
-            <a class="admin-item__create admin-item__trash" href="{{ route('admin.header.recycleBin') }}">
-                <span class="admin-item__plus admin-item__trash_plus">
-                    <i class="fas fa-trash-alt"></i>
-                </span>
-            </a>
             <table class="table">
                 <tr>
                     <th class="th text-18" style="width: 5%">#id</th>
@@ -21,17 +14,18 @@
                     <th class="th text-18">link</th>
                     <th class="th text-18" style="width: 5%">Panel</th>
                 </tr>
-                @foreach ($data as $item)
+                @foreach ($headers as $item)
                     <tr>
                         <td class="td text-18">{{ $item->id }}</td>
                         <td class="td">{{ $item->name_am }}</td>
                         <td class="td">{{ $item->link }}</td>
                         <td class="td text-18">
                             <div class="table__panel flex">
-                                <a class="table__panel_item" href="{{ route('admin.header.edit', ['header' => $item]) }}">
-                                    <img class="img" src="/media/img/icons/edit.png" alt="edit">
+                                <a class="table__panel_item"
+                                    href="{{ route('admin.header.recycleBinRestore', ['id' => $item]) }}">
+                                    <i class="fas fa-trash-restore"></i>
                                 </a>
-                                <form action="{{ route('admin.header.destroy', ['header' => $item]) }}" method="POST">
+                                <form action="{{ route('admin.header.forceDelete', ['id' => $item]) }}" method="GET">
                                     @csrf
                                     @method('DELETE')
                                     <button class="table__panel_item table__panel_delete">
@@ -44,16 +38,13 @@
                 @endforeach
             </table>
 
-            {{ $data->appends(['subheaders' => $subheaders->currentPage()])->links('includes.pagination.paginate') }}
+            {{ $headers->appends(['subHeaders' => $subHeaders->currentPage()])->links('includes.pagination.paginate') }}
         </section>
 
         <section class="admin-section">
             <div class="admin__head">
                 <h2 class="admin__title">Ենթա Նավիգացիա</h2>
             </div>
-            <a class="admin-item__create" href="{{ route('admin.subheader.create') }}">
-                <span class="admin-item__plus">+</span>
-            </a>
             <table class="table">
                 <tr>
                     <th class="th text-18" style="width: 5%">#id</th>
@@ -62,7 +53,7 @@
                     <th class="th text-18" style="width: 5%">parent</th>
                     <th class="th text-18" style="width: 5%">Panel</th>
                 </tr>
-                @foreach ($subheaders as $subheader)
+                @foreach ($subHeaders as $subheader)
                     <tr>
                         <td class="td text-18">{{ $subheader->id }}</td>
                         <td class="td">{{ $subheader->name_am }}</td>
@@ -76,12 +67,12 @@
                         </td>
                         <td class="td text-18">
                             <div class="table__panel flex">
-                                <a class="table__panel_item" href="{{ route('admin.subheader.edit',
-                                    ['subheader' => $subheader]) }}">
-                                    <img class="img" src="/media/img/icons/edit.png" alt="edit">
+                                <a class="table__panel_item" href="{{ route('admin.subheader.recycleBinRestore',
+                                    ['id' => $subheader]) }}">
+                                    <i class="fas fa-trash-restore"></i>
                                 </a>
-                                <form action="{{ route('admin.subheader.destroy', ['subheader' => $subheader]) }}"
-                                    method="POST">
+                                <form action="{{ route('admin.subheader.forceDelete', ['id' => $subheader]) }}"
+                                    method="GET">
                                     @csrf
                                     @method('DELETE')
                                     <button class="table__panel_item table__panel_delete">
@@ -94,7 +85,7 @@
                 @endforeach
             </table>
 
-            {{ $subheaders->appends(['headers' => $data->currentPage()])->links('includes.pagination.paginate') }}
+            {{ $subHeaders->appends(['headers' => $headers->currentPage()])->links('includes.pagination.paginate') }}
         </section>
     </div>
 @endsection

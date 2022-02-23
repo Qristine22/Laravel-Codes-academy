@@ -249,7 +249,17 @@ Route::middleware(['set_locale'])->group(function () {
 
             // header /***************************************************************************
             Route::resource('header', 'App\Http\Controllers\Admin\HeaderController');
+            Route::get('recycleBin/header', 'App\Http\Controllers\Admin\HeaderController@recycleBin')->name('header.recycleBin');
+            Route::get('recycleBin/header/{id}/restore', 'App\Http\Controllers\Admin\HeaderController@recycleBinRestore')
+                ->name('header.recycleBinRestore');
+            Route::get('recycleBin/header/{id}/delete', 'App\Http\Controllers\Admin\HeaderController@forceDelete')
+                ->name('header.forceDelete');
+
             Route::resource('subheader', 'App\Http\Controllers\Admin\SubheaderController');
+            Route::get('recycleBin/subheader/{id}/restore', 'App\Http\Controllers\Admin\SubheaderController@recycleBinRestore')
+                ->name('subheader.recycleBinRestore');
+            Route::get('recycleBin/subheader/{id}/delete', 'App\Http\Controllers\Admin\SubheaderController@forceDelete')
+                ->name('subheader.forceDelete');
 
             // home /***************************************************************************
             Route::resource('home', 'App\Http\Controllers\Admin\HomeController');
@@ -258,8 +268,19 @@ Route::middleware(['set_locale'])->group(function () {
             Route::group(['prefix' => 'about', 'as' => 'about.'], function () {
                 // governing board page
                 Route::resource('page', 'App\Http\Controllers\Admin\About\AboutController');
+                
                 Route::resource('governing-board-page', 'App\Http\Controllers\Admin\About\GoverningBoardPageController');
+                Route::get('recycleBin/page', 'App\Http\Controllers\Admin\About\GoverningBoardPageController@recycleBin')
+                    ->name('page.recycleBin');
+
                 Route::resource('governing-board-decree', 'App\Http\Controllers\Admin\About\GoverningBoardDecreeController');
+                Route::get('recycleBin/governing-board-decree/{id}/restore',
+                    'App\Http\Controllers\Admin\About\GoverningBoardDecreeController@recycleBinRestore')
+                    ->name('governing-board-decree.recycleBinRestore');
+                Route::get('recycleBin/governing-board-decree/{id}/delete',
+                    'App\Http\Controllers\Admin\About\GoverningBoardDecreeController@forceDelete')
+                    ->name('governing-board-decree.forceDelete');
+
                 Route::resource('governing-board-staff', 'App\Http\Controllers\Admin\About\GoverningBoardStaffController');
 
 

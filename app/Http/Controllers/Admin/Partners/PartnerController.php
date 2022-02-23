@@ -46,7 +46,7 @@ class PartnerController extends Controller
      */
     public function store(PartnerRequest $request)
     {
-        $logo = $request->file('logo')->store('partners/'.$request->category);
+        $logo = $request->file('logo')->store('partners/' . $request->category);
 
         $partner = Partner::insertGetId([
             'name_en' => $request->name_en,
@@ -59,14 +59,21 @@ class PartnerController extends Controller
             'category' => $request->category,
         ]);
 
+
         if (!empty($request->links)) {
             foreach ($request->links as $index => $link) {
+                $pdf = null;
+                if (!empty($request->pdfs[$index])) {
+                    $pdf = $request->pdfs[$index]->store('partners/links');
+                }
+
                 PartnersLink::insert([
                     'name_en' => $request->enNames[$index],
                     'name_am' => $request->amNames[$index],
                     'name_ru' => $request->ruNames[$index],
                     'partner_id' => $partner,
                     'link' => $link,
+                    'file' => $pdf,
                 ]);
             }
         }
@@ -109,9 +116,9 @@ class PartnerController extends Controller
     {
         $logo = $request->logoHidden;
 
-        if(!empty($request->logo)){
+        if (!empty($request->logo)) {
             Storage::delete($logo);
-            $logo = $request->file('logo')->store('partners/'.$request->category);
+            $logo = $request->file('logo')->store('partners/' . $request->category);
         }
 
         $partner->update([
@@ -127,11 +134,17 @@ class PartnerController extends Controller
 
         if (!empty($request->links)) {
             foreach ($request->links as $index => $link) {
+                $pdf = null;
+                if (!empty($request->pdfs[$index])) {
+                    $pdf = $request->pdfs[$index]->store('partners/links');
+                }
+
                 PartnersLink::insert([
                     'name_en' => $request->enNames[$index],
                     'name_am' => $request->amNames[$index],
                     'name_ru' => $request->ruNames[$index],
                     'link' => $link,
+                    'file' => $pdf,
                     'partner_id' => $partner->id,
                 ]);
             }
@@ -150,7 +163,7 @@ class PartnerController extends Controller
     {
         Storage::delete($partner->logo);
         $partner->delete();
-        foreach($partner->links as $link){
+        foreach ($partner->links as $link) {
             $link->delete();
         }
 
@@ -161,9 +174,11 @@ class PartnerController extends Controller
 
 
 
-    public function linkDelete($id){
+    public function linkDelete($id)
+    {
         $link = PartnersLink::findOrFail($id);
         $link->forceDelete();
+        Storage::delete($link->file);
         return redirect()->back();
     }
 }
