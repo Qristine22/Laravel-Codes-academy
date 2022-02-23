@@ -10,6 +10,7 @@ use App\Models\About;
 use App\Models\Header;
 use App\Models\Report;
 use App\Models\Worker;
+use App\Models\Partner;
 use App\Models\Gallery;
 use App\Models\Library;
 use App\Models\EchrLink;
@@ -40,7 +41,6 @@ use App\Models\DistanceLearningGuide;
 use App\Models\DistanceLearningVideo;
 use App\Models\FormerRectorsBiography;
 use App\Models\DistanceLearningVideoMaterial;
-use App\Models\Partner;
 
 class PagesController extends Controller
 {
