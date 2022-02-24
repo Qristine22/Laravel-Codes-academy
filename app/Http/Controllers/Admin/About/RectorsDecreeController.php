@@ -113,9 +113,30 @@ class RectorsDecreeController extends Controller
      */
     public function destroy(RectorsDecree $rectorsDecree)
     {
-        Storage::delete($rectorsDecree->pdf);
+        // Storage::delete($rectorsDecree->pdf);
         $rectorsDecree->delete();
 
         return redirect(route('admin.about.rectors-page.index'));
+    }
+
+
+        
+
+
+
+
+    public function recycleBinRestore($id)
+    {
+        RectorsDecree::withTrashed()->findOrFail($id)->restore();
+        return redirect(route('admin.about.governing-board-page.index'));
+    }
+
+
+    public function forceDelete($id)
+    {
+        $item = RectorsDecree::withTrashed()->findOrFail($id);
+        $item->forceDelete();
+        Storage::delete($item->img);
+        return redirect(route('admin.about.governing-board-page.index'));
     }
 }

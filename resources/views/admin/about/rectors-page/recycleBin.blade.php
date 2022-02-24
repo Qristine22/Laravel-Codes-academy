@@ -6,17 +6,6 @@
             <div class="admin__head">
                 <h2 class="admin__title">Ակադեմիայի ռեկտոր</h2>
             </div>
-
-            @if (count($data) == 0)
-                <a class="admin-item__create admin-item__add" href="{{ route('admin.about.rectors-page.create') }}">
-                    <span class="admin-item__plus">+</span>
-                </a>
-            @endif
-            <a class="admin-item__create admin-item__trash" href="{{ route('admin.about.page.recycleBin') }}">
-                <span class="admin-item__plus admin-item__trash_plus">
-                    <i class="fas fa-trash-alt"></i>
-                </span>
-            </a>
             <table class="table">
                 <tr>
                     <th class="th text-18" style="width: 5%">#id</th>
@@ -51,10 +40,6 @@
             <div class="admin__head">
                 <h2 class="admin__title">Ռեկտորի հրամաններ</h2>
             </div>
-
-            <a class="admin-item__create" href="{{ route('admin.about.rectors-decree.create') }}">
-                <span class="admin-item__plus">+</span>
-            </a>
             <table class="table">
                 <tr>
                     <th class="th text-18" style="width: 5%">#id</th>

@@ -123,7 +123,26 @@ class GoverningBoardStaffController extends Controller
     public function destroy(GoverningBoardStaff $governingBoardStaff)
     {
         $governingBoardStaff->delete();
-        Storage::delete($governingBoardStaff->img);
+        return redirect(route('admin.about.governing-board-page.index'));
+    }
+    
+
+
+    
+
+
+    public function recycleBinRestore($id)
+    {
+        GoverningBoardStaff::withTrashed()->findOrFail($id)->restore();
+        return redirect(route('admin.about.governing-board-page.index'));
+    }
+
+
+    public function forceDelete($id)
+    {
+        $item = GoverningBoardStaff::withTrashed()->findOrFail($id);
+        $item->forceDelete();
+        Storage::delete($item->img);
         return redirect(route('admin.about.governing-board-page.index'));
     }
 }

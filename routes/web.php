@@ -282,6 +282,12 @@ Route::middleware(['set_locale'])->group(function () {
                     ->name('governing-board-decree.forceDelete');
 
                 Route::resource('governing-board-staff', 'App\Http\Controllers\Admin\About\GoverningBoardStaffController');
+                Route::get('recycleBin/governing-board-staff/{id}/restore',
+                    'App\Http\Controllers\Admin\About\GoverningBoardStaffController@recycleBinRestore')
+                    ->name('governing-board-staff.recycleBinRestore');
+                Route::get('recycleBin/governing-board-staff/{id}/delete',
+                    'App\Http\Controllers\Admin\About\GoverningBoardStaffController@forceDelete')
+                    ->name('governing-board-staff.forceDelete');
 
 
                 // rectors page
