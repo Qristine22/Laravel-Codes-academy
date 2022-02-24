@@ -95,4 +95,21 @@ class ConductingExamVideoController extends Controller
         $conductingExamVideo->delete();
         return redirect(route('admin.full-time-education.conducting-exam.index'));
     }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        ConductingExamVideo::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = ConductingExamVideo::withTrashed()->findOrFail($id);
+        $item->forceDelete();
+
+        return redirect()->back();
+    }
 }

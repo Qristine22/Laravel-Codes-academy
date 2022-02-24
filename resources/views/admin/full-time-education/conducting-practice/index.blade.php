@@ -6,8 +6,15 @@
             <div class="admin__head">
                 <h2 class="admin__title">Փորձաշրջանի անցկացման կարգ</h2>
             </div>
-            <a class="admin-item__create" href="{{ route('admin.full-time-education.conducting-practice.create') }}">
+            <a class="admin-item__create admin-item__add"
+                href="{{ route('admin.full-time-education.conducting-practice.create') }}">
                 <span class="admin-item__plus">+</span>
+            </a>
+            <a class="admin-item__create admin-item__trash"
+                href="{{ route('admin.full-time-education.conducting-practice.recycleBin') }}">
+                <span class="admin-item__plus admin-item__trash_plus">
+                    <i class="fas fa-trash-alt"></i>
+                </span>
             </a>
             <table class="table">
                 <tr>

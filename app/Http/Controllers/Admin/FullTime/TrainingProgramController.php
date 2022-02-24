@@ -121,7 +121,41 @@ class TrainingProgramController extends Controller
     public function destroy(TrainingProgram $trainingProgram)
     {
         $trainingProgram->delete();
-        Storage::delete($trainingProgram->pdf);
         return redirect(route('admin.full-time-education.training-program.index'));
+    }
+    
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $trainingPrograms = TrainingProgram::onlyTrashed()->paginate(10);
+
+        return view('admin.full-time-education.training-program.recycleBin', [
+            'trainingPrograms' => $trainingPrograms,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        TrainingProgram::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = TrainingProgram::withTrashed()->findOrFail($id);
+        Storage::delete($item->pdf);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }

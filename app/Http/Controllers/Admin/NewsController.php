@@ -145,15 +145,7 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
-        $imgItems = NewsImg::where('news_id', $news->id)->get();
-        foreach ($imgItems as $item) {
-            $item->delete();
-            $img = $item->img;
-            Storage::delete($img);
-        }
-        Storage::delete($news->bg);
         $news->delete();
-
         return redirect(route('admin.news.index'));
     }
 
@@ -165,6 +157,47 @@ class NewsController extends Controller
         $img = NewsImg::findOrFail($id);
         Storage::delete($img->img);
         $img->forceDelete();
+        return redirect()->back();
+    }
+
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $news = News::onlyTrashed()->paginate(10);
+
+        return view('admin.news.recycleBin', [
+            'news' => $news,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        News::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {
+        $imgItems = NewsImg::where('news_id', $id)->get();
+        foreach ($imgItems as $item) {
+            $item->forceDelete();
+            Storage::delete($item->img);
+        }
+        
+        $item = News::withTrashed()->findOrFail($id);
+        Storage::delete($item->bg);
+        $item->forceDelete();
+
         return redirect()->back();
     }
 }

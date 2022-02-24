@@ -17,7 +17,7 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $reports = Report::orderBy('id', 'DESC')->paginate(5);
+        $reports = Report::orderBy('id', 'DESC')->paginate(10);
 
         return view('admin.about.report.index', [
             'reports' => $reports,
@@ -117,10 +117,40 @@ class ReportController extends Controller
      */
     public function destroy(Report $report)
     {
-        Storage::delete($report->pdf);
         $report->delete();
-
         return redirect(route('admin.about.report.index'));
+    }
 
+    
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $reports = Report::onlyTrashed()->paginate(10);
+
+        return view('admin.about.report.recycleBin', [
+            'reports' => $reports,
+        ]);
+    }
+
+
+
+
+
+    public function recycleBinRestore($id)
+    {
+        Report::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {
+        $item = Report::withTrashed()->findOrFail($id);
+        $item->forceDelete();
+        Storage::delete($item->pdf);
+        return redirect()->back();
     }
 }

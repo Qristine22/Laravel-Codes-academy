@@ -114,7 +114,41 @@ class ProvideDeferralController extends Controller
     public function destroy(ProvideDeferral $provideDeferral)
     {
         $provideDeferral->delete();
-        Storage::delete($provideDeferral->pdf);
         return redirect(route('admin.full-time-education.provide-deferral.index'));
+    }
+    
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $provideDeferral = ProvideDeferral::onlyTrashed()->paginate(10);
+
+        return view('admin.full-time-education.provide-deferral.recycleBin', [
+            'provideDeferral' => $provideDeferral,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        ProvideDeferral::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = ProvideDeferral::withTrashed()->findOrFail($id);
+        Storage::delete($item->pdf);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }

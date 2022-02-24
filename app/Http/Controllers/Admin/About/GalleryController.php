@@ -127,14 +127,7 @@ class GalleryController extends Controller
      */
     public function destroy(Gallery $gallery)
     {
-        $imgItems = GalleryImgs::where('gallery_id', $gallery->id)->get();
-        foreach ($imgItems as $item) {
-            $item->delete();
-            $img = $item->img;
-            Storage::delete($img);
-        }
         $gallery->delete();
-
         return redirect(route('admin.about.gallery.index'));
     }
 
@@ -153,6 +146,48 @@ class GalleryController extends Controller
         $item = GalleryImgs::findOrFail($id);
         Storage::delete($item->img);
         $item->delete();
+        return redirect()->back();
+    }
+
+
+
+
+    
+
+    
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $galleries = Gallery::onlyTrashed()->paginate(10);
+
+        return view('admin.about.gallery.recycleBin', [
+            'galleries' => $galleries,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        Gallery::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {
+        $imgItems = GalleryImgs::where('gallery_id', $id)->get();
+        foreach ($imgItems as $item) {
+            $item->forceDelete();
+            Storage::delete($item->img);
+        }
+
+        $item = Gallery::withTrashed()->findOrFail($id);
+        $item->forceDelete();
+        Storage::delete($item->img);
         return redirect()->back();
     }
 }

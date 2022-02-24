@@ -21,8 +21,8 @@ class ConductingExamController extends Controller
      */
     public function index()
     {
-        $conductingExam = ConductingExam::paginate(10);
-        $conductingExamVideos = ConductingExamVideo::paginate(5);
+        $conductingExam = ConductingExam::paginate(10, ['*'], 'conductingExam');
+        $conductingExamVideos = ConductingExamVideo::paginate(10, ['*'], 'conductingExamVideos');
 
         return view('admin.full-time-education.conducting-exam.index', [
             'conductingExam' => $conductingExam,
@@ -119,7 +119,40 @@ class ConductingExamController extends Controller
     public function destroy(ConductingExam $conductingExam)
     {
         $conductingExam->delete();
-        Storage::delete($conductingExam->pdf);
         return redirect(route('admin.full-time-education.conducting-exam.index'));
+    }
+
+
+
+
+
+    
+    // recycle bin
+    public function recycleBin()
+    {
+        $conductingExam = ConductingExam::onlyTrashed()->paginate(10, ['*'], 'conductingExam');
+        $conductingExamVideos = ConductingExamVideo::onlyTrashed()->paginate(10, ['*'], 'conductingExamVideos');
+        return view('admin.full-time-education.conducting-exam.recycleBin', [
+            'conductingExam' => $conductingExam,
+            'conductingExamVideos' => $conductingExamVideos,
+        ]);
+    }
+    
+
+
+    public function recycleBinRestore($id)
+    {
+        ConductingExam::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = ConductingExam::withTrashed()->findOrFail($id);
+        Storage::delete($item->pdf);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }

@@ -82,13 +82,13 @@
                         <td class="td text-18">
                             <div class="table__panel flex">
                                 <a class="table__panel_item"
-                                    href="{{ route('admin.about.governing-board-staff.recycleBinRestore',
-                                    ['id' => $item]) }}">
-                                    <i class="fas fa-trash-restore"></i>
+                                    href="{{ route('admin.about.governing-board-staff.edit',
+                                    ['governing_board_staff' => $item]) }}">
+                                    <img class="img" src="/media/img/icons/edit.png" alt="edit">
                                 </a>
                                 <form
-                                    action="{{ route('admin.about.governing-board-staff.forceDelete',
-                                    ['id' => $item]) }}" method="GET">
+                                    action="{{ route('admin.about.governing-board-staff.destroy',
+                                    ['governing_board_staff' => $item]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="table__panel_item table__panel_delete">

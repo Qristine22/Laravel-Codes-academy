@@ -21,7 +21,7 @@ class Gallery extends Model
 
 
     public static function gallery(){
-        return Gallery::with('imgs')->paginate(5);
+        return Gallery::with('imgs')->paginate(10);
     }
     
     public static function galleryAll($year){

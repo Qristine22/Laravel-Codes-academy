@@ -108,4 +108,17 @@ class RectorsPageController extends Controller
         // $rectorsPage->delete();
         // return redirect(route('admin.about.rectors-page.index'));
     }
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $decrees = RectorsDecree::onlyTrashed()->paginate(10);
+
+        return view('admin.about.rectors-page.recycleBin', [
+            'decrees' => $decrees,
+        ]);
+    }
 }

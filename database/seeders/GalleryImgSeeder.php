@@ -56,10 +56,6 @@ class GalleryImgSeeder extends Seeder
                 'gallery_id' => 2,
             ],
             [
-                'img' => 'about/gallery/2016/oQZwMTSMhhsZ4qpuI4p619ET4Kk3dMAWxHoHf2MG.png',
-                'gallery_id' => 3,
-            ],
-            [
                 'img' => 'about/gallery/2016/zZsRN9VYOSohdPxGDUjrEz0HpeKCAvzGf58NgjlH.png',
                 'gallery_id' => 3,
             ],

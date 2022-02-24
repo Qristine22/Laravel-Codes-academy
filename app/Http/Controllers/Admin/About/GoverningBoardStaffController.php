@@ -134,7 +134,7 @@ class GoverningBoardStaffController extends Controller
     public function recycleBinRestore($id)
     {
         GoverningBoardStaff::withTrashed()->findOrFail($id)->restore();
-        return redirect(route('admin.about.governing-board-page.index'));
+        return redirect()->back();
     }
 
 
@@ -143,6 +143,6 @@ class GoverningBoardStaffController extends Controller
         $item = GoverningBoardStaff::withTrashed()->findOrFail($id);
         $item->forceDelete();
         Storage::delete($item->img);
-        return redirect(route('admin.about.governing-board-page.index'));
+        return redirect()->back();
     }
 }

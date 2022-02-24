@@ -292,7 +292,17 @@ Route::middleware(['set_locale'])->group(function () {
 
                 // rectors page
                 Route::resource('rectors-page', 'App\Http\Controllers\Admin\About\RectorsPageController');
+                Route::get('recycleBin/rectors-page', 'App\Http\Controllers\Admin\About\RectorsPageController@recycleBin')
+                    ->name('rectors-page.recycleBin');
+
                 Route::resource('rectors-decree', 'App\Http\Controllers\Admin\About\RectorsDecreeController');
+                Route::get('recycleBin/rectors-decree/{id}/restore',
+                    'App\Http\Controllers\Admin\About\RectorsDecreeController@recycleBinRestore')
+                    ->name('rectors-decree.recycleBinRestore');
+                Route::get('recycleBin/rectors-decree/{id}/delete',
+                    'App\Http\Controllers\Admin\About\RectorsDecreeController@forceDelete')
+                    ->name('rectors-decree.forceDelete');
+
                 Route::resource('rectors-biography', 'App\Http\Controllers\Admin\About\RectorsBiographyController');
                 Route::resource('former-rectors-biography', 'App\Http\Controllers\Admin\About\FormerRectorsBiographyController');
 
@@ -305,53 +315,160 @@ Route::middleware(['set_locale'])->group(function () {
                     ->name('workersImgDelete');
 
 
-                // reports page
+                // report page
                 Route::resource('report', 'App\Http\Controllers\Admin\About\ReportController');
-
+                Route::get('recycleBin/report', 'App\Http\Controllers\Admin\About\ReportController@recycleBin')
+                    ->name('report.recycleBin');
+                Route::get('recycleBin/report/{id}/restore',
+                    'App\Http\Controllers\Admin\About\ReportController@recycleBinRestore')
+                    ->name('report.recycleBinRestore');
+                Route::get('recycleBin/report/{id}/delete', 'App\Http\Controllers\Admin\About\ReportController@forceDelete')
+                    ->name('report.forceDelete');
 
                 // graduates page
                 Route::resource('graduates', 'App\Http\Controllers\Admin\About\GraduateController');
-
+                Route::get('recycleBin/graduates', 'App\Http\Controllers\Admin\About\GraduateController@recycleBin')
+                    ->name('graduates.recycleBin');
+                Route::get('recycleBin/graduates/{id}/restore',
+                    'App\Http\Controllers\Admin\About\GraduateController@recycleBinRestore')
+                    ->name('graduates.recycleBinRestore');
+                Route::get('recycleBin/graduates/{id}/delete', 'App\Http\Controllers\Admin\About\GraduateController@forceDelete')
+                    ->name('graduates.forceDelete');
 
                 // admission page
                 Route::resource('admission', 'App\Http\Controllers\Admin\About\AdmissionController');
+
                 // candidate page
                 Route::resource('candidate', 'App\Http\Controllers\Admin\About\CandidateController');
 
-
-                // candidate page
+                // gallery
                 Route::resource('gallery', 'App\Http\Controllers\Admin\About\GalleryController');
                 Route::get('/gallery/deleting-img/{id}', 'App\Http\Controllers\Admin\About\GalleryController@imgDelete')
                     ->name('galleryImgDelete');
+                Route::get('recycleBin/gallery', 'App\Http\Controllers\Admin\About\GalleryController@recycleBin')
+                    ->name('gallery.recycleBin');
+                Route::get('recycleBin/gallery/{id}/restore',
+                    'App\Http\Controllers\Admin\About\GalleryController@recycleBinRestore')
+                    ->name('gallery.recycleBinRestore');
+                Route::get('recycleBin/gallery/{id}/delete', 'App\Http\Controllers\Admin\About\GalleryController@forceDelete')
+                    ->name('gallery.forceDelete');
 
                 // mass media page
                 Route::resource('mass-media', 'App\Http\Controllers\Admin\About\MassMediaController');
                 Route::get('/mass-media/link/{id}', 'App\Http\Controllers\Admin\About\MassMediaController@linkDelete')
                     ->name('massMediaLinkDelete');
+                Route::get('recycleBin/mass-media', 'App\Http\Controllers\Admin\About\MassMediaController@recycleBin')
+                    ->name('mass-media.recycleBin');
+                Route::get('recycleBin/mass-media/{id}/restore',
+                    'App\Http\Controllers\Admin\About\MassMediaController@recycleBinRestore')
+                    ->name('mass-media.recycleBinRestore');
+                Route::get('recycleBin/mass-media/{id}/delete','App\Http\Controllers\Admin\About\MassMediaController@forceDelete')
+                    ->name('mass-media.forceDelete');
             });
 
             // news /***************************************************************************
             Route::resource('news', 'App\Http\Controllers\Admin\NewsController');
             Route::get('/news/deleting-img/{id}', 'App\Http\Controllers\Admin\NewsController@imgDelete')
                 ->name('news.ImgDelete');
+            Route::get('recycleBin/news', 'App\Http\Controllers\Admin\NewsController@recycleBin')
+                ->name('news.recycleBin');
+            Route::get('recycleBin/news/{id}/restore', 'App\Http\Controllers\Admin\NewsController@recycleBinRestore')
+                ->name('news.recycleBinRestore');
+            Route::get('recycleBin/news/{id}/delete','App\Http\Controllers\Admin\NewsController@forceDelete')
+                ->name('news.forceDelete');
 
 
             // full time education /***************************************************************************
             Route::group(['prefix' => 'full-time-education', 'as' => 'full-time-education.'], function () {
                 Route::resource('training-program', 'App\Http\Controllers\Admin\FullTime\TrainingProgramController');
+                Route::get('recycleBin/training-program',
+                    'App\Http\Controllers\Admin\FullTime\TrainingProgramController@recycleBin')
+                    ->name('training-program.recycleBin');
+                Route::get('recycleBin/training-program/{id}/restore',
+                    'App\Http\Controllers\Admin\FullTime\TrainingProgramController@recycleBinRestore')
+                    ->name('training-program.recycleBinRestore');
+                Route::get('recycleBin/training-program/{id}/delete',
+                    'App\Http\Controllers\Admin\FullTime\TrainingProgramController@forceDelete')
+                    ->name('training-program.forceDelete');
+
                 Route::resource('conducting-exam', 'App\Http\Controllers\Admin\FullTime\ConductingExamController');
+                Route::get('recycleBin/conducting-exam',
+                    'App\Http\Controllers\Admin\FullTime\ConductingExamController@recycleBin')
+                    ->name('conducting-exam.recycleBin');
+                Route::get('recycleBin/conducting-exam/{id}/restore',
+                    'App\Http\Controllers\Admin\FullTime\ConductingExamController@recycleBinRestore')
+                    ->name('conducting-exam.recycleBinRestore');
+                Route::get('recycleBin/conducting-exam/{id}/delete',
+                    'App\Http\Controllers\Admin\FullTime\ConductingExamController@forceDelete')
+                    ->name('conducting-exam.forceDelete');
+
                 Route::resource('conducting-exam-video', 'App\Http\Controllers\Admin\FullTime\ConductingExamVideoController');
+                Route::get('recycleBin/conducting-exam-video/{id}/restore',
+                    'App\Http\Controllers\Admin\FullTime\ConductingExamVideoController@recycleBinRestore')
+                    ->name('conducting-exam-video.recycleBinRestore');
+                Route::get('recycleBin/conducting-exam-video/{id}/delete',
+                    'App\Http\Controllers\Admin\FullTime\ConductingExamVideoController@forceDelete')
+                    ->name('conducting-exam-video.forceDelete');
+
                 Route::resource('conducting-practice', 'App\Http\Controllers\Admin\FullTime\ConductingpracticeController');
+                Route::get('recycleBin/conducting-practice',
+                    'App\Http\Controllers\Admin\FullTime\ConductingPracticeController@recycleBin')
+                    ->name('conducting-practice.recycleBin');
+                Route::get('recycleBin/conducting-practice/{id}/restore',
+                    'App\Http\Controllers\Admin\FullTime\ConductingPracticeController@recycleBinRestore')
+                    ->name('conducting-practice.recycleBinRestore');
+                Route::get('recycleBin/conducting-practice/{id}/delete',
+                    'App\Http\Controllers\Admin\FullTime\ConductingPracticeController@forceDelete')
+                    ->name('conducting-practice.forceDelete');
+
                 Route::resource('behavior-rule', 'App\Http\Controllers\Admin\FullTime\BehaviorRuleController');
+                Route::get('recycleBin/behavior-rule', 'App\Http\Controllers\Admin\FullTime\BehaviorRuleController@recycleBin')
+                    ->name('behavior-rule.recycleBin');
+                Route::get('recycleBin/behavior-rule/{id}/restore',
+                    'App\Http\Controllers\Admin\FullTime\BehaviorRuleController@recycleBinRestore')
+                    ->name('behavior-rule.recycleBinRestore');
+                Route::get('recycleBin/behavior-rule/{id}/delete',
+                    'App\Http\Controllers\Admin\FullTime\BehaviorRuleController@forceDelete')
+                    ->name('behavior-rule.forceDelete');
+
                 Route::resource('dormitory-rule', 'App\Http\Controllers\Admin\FullTime\DormitoryRuleController');
+                Route::get('recycleBin/dormitory-rule', 'App\Http\Controllers\Admin\FullTime\DormitoryRuleController@recycleBin')
+                    ->name('dormitory-rule.recycleBin');
+                Route::get('recycleBin/dormitory-rule/{id}/restore',
+                    'App\Http\Controllers\Admin\FullTime\DormitoryRuleController@recycleBinRestore')
+                    ->name('dormitory-rule.recycleBinRestore');
+                Route::get('recycleBin/dormitory-rule/{id}/delete',
+                    'App\Http\Controllers\Admin\FullTime\DormitoryRuleController@forceDelete')
+                    ->name('dormitory-rule.forceDelete');
+
                 Route::resource('provide-deferral', 'App\Http\Controllers\Admin\FullTime\ProvideDeferralController');
+                Route::get('recycleBin/provide-deferral',
+                    'App\Http\Controllers\Admin\FullTime\ProvideDeferralController@recycleBin')
+                    ->name('provide-deferral.recycleBin');
+                Route::get('recycleBin/provide-deferral/{id}/restore',
+                    'App\Http\Controllers\Admin\FullTime\ProvideDeferralController@recycleBinRestore')
+                    ->name('provide-deferral.recycleBinRestore');
+                Route::get('recycleBin/provide-deferral/{id}/delete',
+                    'App\Http\Controllers\Admin\FullTime\ProvideDeferralController@forceDelete')
+                    ->name('provide-deferral.forceDelete');
             });
 
 
             // distance learning /***************************************************************************
             Route::group(['prefix' => 'distance-learning', 'as' => 'distance-learning.'], function () {
                 Route::resource('page', 'App\Http\Controllers\Admin\DistanceLearning\DistancelearningController');
+                
                 Route::resource('video', 'App\Http\Controllers\Admin\DistanceLearning\VideoController');
+                Route::get('recycleBin/video',
+                    'App\Http\Controllers\Admin\DistanceLearning\VideoController@recycleBin')
+                    ->name('video.recycleBin');
+                Route::get('recycleBin/video/{id}/restore',
+                    'App\Http\Controllers\Admin\DistanceLearning\VideoController@recycleBinRestore')
+                    ->name('video.recycleBinRestore');
+                Route::get('recycleBin/video/{id}/delete',
+                    'App\Http\Controllers\Admin\DistanceLearning\VideoController@forceDelete')
+                    ->name('video.forceDelete');
+
                 Route::resource('video-material', 'App\Http\Controllers\Admin\DistanceLearning\VideoMaterialController');
                 Route::resource('guide', 'App\Http\Controllers\Admin\DistanceLearning\GuideController');
             });

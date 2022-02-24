@@ -135,12 +135,12 @@ class HeaderController extends Controller
     
     public function recycleBinRestore($id){
         Header::withTrashed()->findOrFail($id)->restore();
-        return redirect(route('admin.header.index'));
+        return redirect()->back();
     }
 
 
     public function forceDelete($id){
         Header::withTrashed()->findOrFail($id)->forceDelete();
-        return redirect(route('admin.header.index'));
+        return redirect()->back();
     }
 }

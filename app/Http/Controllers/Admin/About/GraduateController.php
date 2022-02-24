@@ -118,7 +118,38 @@ class GraduateController extends Controller
     public function destroy(Graduate $graduate)
     {
         $graduate->delete();
-        Storage::delete($graduate->img);
         return redirect(route('admin.about.graduates.index'));
+    }
+
+
+    
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $graduates = Graduate::onlyTrashed()->paginate(10);
+
+        return view('admin.about.graduate.recycleBin', [
+            'graduates' => $graduates,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        Graduate::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {
+        $item = Graduate::withTrashed()->findOrFail($id);
+        $item->forceDelete();
+        Storage::delete($item->img);
+        return redirect()->back();
     }
 }

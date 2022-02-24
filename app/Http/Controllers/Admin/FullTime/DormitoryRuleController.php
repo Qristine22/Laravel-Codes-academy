@@ -114,7 +114,41 @@ class DormitoryRuleController extends Controller
     public function destroy(DormitoryRule $dormitoryRule)
     {
         $dormitoryRule->delete();
-        Storage::delete($dormitoryRule->pdf);
         return redirect(route('admin.full-time-education.dormitory-rule.index'));
+    }
+    
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $dormitoryRule = DormitoryRule::onlyTrashed()->paginate(10);
+
+        return view('admin.full-time-education.dormitory-rule.recycleBin', [
+            'dormitoryRule' => $dormitoryRule,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        DormitoryRule::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = DormitoryRule::withTrashed()->findOrFail($id);
+        Storage::delete($item->pdf);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }

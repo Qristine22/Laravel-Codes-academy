@@ -127,10 +127,6 @@ class MassMediaController extends Controller
     public function destroy(MassMedium $massMedium)
     {
         $massMedium->delete();
-        foreach($massMedium->links as $link){
-            $link->delete();
-        }
-
         return redirect(route('admin.about.mass-media.index'));
     }
 
@@ -142,6 +138,44 @@ class MassMediaController extends Controller
     public function linkDelete($id){
         $link = MassMediaLink::findOrFail($id);
         $link->forceDelete();
+        return redirect()->back();
+    }
+
+
+    
+
+    
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $massMedia = MassMedium::onlyTrashed()->paginate(10);
+
+        return view('admin.about.mass-media.recycleBin', [
+            'massMedia' => $massMedia,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        MassMedium::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {
+        $massMediaLinks = MassMediaLink::where('mass_media_id', $id)->get();
+        foreach($massMediaLinks as $link){
+            $link->forceDelete();
+        }
+
+        $item = MassMedium::withTrashed()->findOrFail($id);
+        $item->forceDelete();
         return redirect()->back();
     }
 }

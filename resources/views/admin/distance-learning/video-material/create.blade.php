@@ -35,7 +35,7 @@
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
                             <span class="text-20 form__item_name">Video</span>
-                            <label class="text-20 admin-inp admin-inp-file" for="video">Attach your Photo</label>
+                            <label class="text-20 admin-inp admin-inp-file" for="video">Attach your Video</label>
                             <input class="admin-file" type="file" id="video" name="video">
                         </div>
                     </div>

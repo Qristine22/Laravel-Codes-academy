@@ -114,7 +114,41 @@ class ConductingPracticeController extends Controller
     public function destroy(ConductingPractice $conductingPractice)
     {
         $conductingPractice->delete();
-        Storage::delete($conductingPractice->pdf);
         return redirect(route('admin.full-time-education.conducting-practice.index'));
+    }
+
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $conductingPractice = ConductingPractice::onlyTrashed()->paginate(10);
+
+        return view('admin.full-time-education.conducting-practice.recycleBin', [
+            'conductingPractice' => $conductingPractice,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        ConductingPractice::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = ConductingPractice::withTrashed()->findOrFail($id);
+        Storage::delete($item->pdf);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }

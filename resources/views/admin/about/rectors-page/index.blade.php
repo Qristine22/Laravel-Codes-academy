@@ -12,7 +12,7 @@
                     <span class="admin-item__plus">+</span>
                 </a>
             @endif
-            <a class="admin-item__create admin-item__trash" href="{{ route('admin.about.page.recycleBin') }}">
+            <a class="admin-item__create admin-item__trash" href="{{ route('admin.about.rectors-page.recycleBin') }}">
                 <span class="admin-item__plus admin-item__trash_plus">
                     <i class="fas fa-trash-alt"></i>
                 </span>

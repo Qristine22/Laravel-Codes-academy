@@ -106,4 +106,37 @@ class VideoController extends Controller
         $video->delete();
         return redirect(route('admin.distance-learning.video.index'));
     }
+    
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $distanceLearningVideo = DistanceLearningVideo::onlyTrashed()->paginate(10);
+
+        return view('admin.distance-learning.video.recycleBin', [
+            'distanceLearningVideo' => $distanceLearningVideo,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        DistanceLearningVideo::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = DistanceLearningVideo::withTrashed()->findOrFail($id);
+        $item->forceDelete();
+
+        return redirect()->back();
+    }
 }
