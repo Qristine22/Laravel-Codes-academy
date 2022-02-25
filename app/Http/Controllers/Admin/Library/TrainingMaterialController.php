@@ -17,7 +17,7 @@ class TrainingMaterialController extends Controller
      */
     public function index()
     {
-        $trainingManuals = Library::where('category', 'training-material')->paginate(10);
+        $trainingManuals = Library::where('category', 'training-material')->orderBy('id', 'DESC')->paginate(10);
 
         return view('admin.library.training-material.index', [
             'title' => 'Ուսումնաօժանդակ նյութեր',
@@ -132,10 +132,43 @@ class TrainingMaterialController extends Controller
      */
     public function destroy(Library $trainingMaterial)
     {
-        Storage::delete($trainingMaterial->pdf);
-        Storage::delete($trainingMaterial->img);
         $trainingMaterial->delete();
-
         return redirect(route('admin.library.training-material.index'));
+    }
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $books = Library::where('category', 'training-material')->onlyTrashed()->paginate(10);
+
+        return view('admin.library.training-material.recycleBin', [
+            'title' => 'Ուսումնաօժանդակ նյութեր',
+            'books' => $books,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        Library::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = Library::withTrashed()->findOrFail($id);
+        Storage::delete($item->pdf);
+        Storage::delete($item->img);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }

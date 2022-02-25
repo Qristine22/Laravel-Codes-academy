@@ -21,6 +21,8 @@ use App\Models\Subheader;
 use App\Models\LibraryPdf;
 use App\Models\MassMedium;
 use App\Models\RectorsPage;
+use App\Models\ContactPage;
+use App\Models\ContactStaff;
 use App\Models\BehaviorRule;
 use App\Models\VideoLecture;
 use App\Models\BulletinInfo;
@@ -868,8 +870,13 @@ class PagesController extends Controller
     
     // contacts *********************************************************************************
     public function contacts(){
+        $contactPage = ContactPage::first();
+        $contactStaff = ContactStaff::all();
+
         return view('contacts', [
             'headers' => $this->getHeader(),
+            'contactPage' => $contactPage,
+            'contactStaff' => $contactStaff,
         ]);
     }
 

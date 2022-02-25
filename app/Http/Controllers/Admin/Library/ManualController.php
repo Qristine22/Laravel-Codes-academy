@@ -17,7 +17,7 @@ class ManualController extends Controller
      */
     public function index()
     {
-        $manuals = Library::where('category', 'manual')->paginate(10);
+        $manuals = Library::where('category', 'manual')->orderBy('id', 'DESC')->paginate(10);
 
         return view('admin.library.manual.index', [
             'title' => 'Ուսումնական ձեռնարկներ',
@@ -132,10 +132,44 @@ class ManualController extends Controller
      */
     public function destroy(Library $manual)
     {
-        Storage::delete($manual->pdf);
-        Storage::delete($manual->img);
         $manual->delete();
 
         return redirect(route('admin.library.manual.index'));
+    }
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $books = Library::where('category', 'manual')->onlyTrashed()->paginate(10);
+
+        return view('admin.library.manual.recycleBin', [
+            'title' => 'Ուսումնական ձեռնարկներ',
+            'books' => $books,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        Library::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = Library::withTrashed()->findOrFail($id);
+        Storage::delete($item->pdf);
+        Storage::delete($item->img);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }

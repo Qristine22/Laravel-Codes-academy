@@ -21,7 +21,7 @@ class PartnerController extends Controller
      */
     public function index()
     {
-        $partners = Partner::paginate(10);
+        $partners = Partner::orderBy('id', 'DESC')->paginate(10);
 
         return view('admin.partners.partner.index', [
             'partners' => $partners,
@@ -161,12 +161,7 @@ class PartnerController extends Controller
      */
     public function destroy(Partner $partner)
     {
-        Storage::delete($partner->logo);
         $partner->delete();
-        foreach ($partner->links as $link) {
-            $link->delete();
-        }
-
         return redirect(route('admin.partners.partner.index'));
     }
 
@@ -179,6 +174,48 @@ class PartnerController extends Controller
         $link = PartnersLink::findOrFail($id);
         $link->forceDelete();
         Storage::delete($link->file);
+        return redirect()->back();
+    }
+
+
+
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $partners = Partner::onlyTrashed()->paginate(10);
+
+        return view('admin.partners.partner.recycleBin', [
+            'partners' => $partners,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        Partner::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {
+        $partnerLinks = PartnersLink::where('partner_id', $id)->get();
+        foreach ($partnerLinks as $item) {
+            $item->forceDelete();
+            Storage::delete($item->file);
+        }
+        
+        $item = Partner::withTrashed()->findOrFail($id);
+        Storage::delete($item->logo);
+        $item->forceDelete();
         return redirect()->back();
     }
 }

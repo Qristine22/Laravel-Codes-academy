@@ -6,16 +6,6 @@
             <div class="admin__head">
                 <h2 class="admin__title">{{ $title }}</h2>
             </div>
-
-            <a class="admin-item__create admin-item__add" href="{{ route('admin.library.training-material.create') }}">
-                <span class="admin-item__plus">+</span>
-            </a>
-            <a class="admin-item__create admin-item__trash"
-                href="{{ route('admin.library.training-material.recycleBin') }}">
-                <span class="admin-item__plus admin-item__trash_plus">
-                    <i class="fas fa-trash-alt"></i>
-                </span>
-            </a>
             <table class="table">
                 <tr>
                     <th class="th text-18" style="width: 5%">#id</th>
@@ -47,13 +37,13 @@
                         <td class="td text-18">
                             <div class="table__panel flex">
                                 <a class="table__panel_item"
-                                    href="{{ route('admin.library.training-material.edit',
-                                    ['training_material' => $item]) }}">
-                                    <img class="img" src="/media/img/icons/edit.png" alt="edit">
+                                    href="{{ route('admin.library.investigator-training-module.recycleBinRestore',
+                                    ['id' => $item]) }}">
+                                    <i class="fas fa-trash-restore"></i>
                                 </a>
                                 <form
-                                    action="{{ route('admin.library.training-material.destroy',
-                                    ['training_material' => $item]) }}" method="POST">
+                                    action="{{ route('admin.library.investigator-training-module.forceDelete',
+                                    ['id' => $item]) }}" method="GET">
                                     @csrf
                                     @method('DELETE')
                                     <button class="table__panel_item table__panel_delete">

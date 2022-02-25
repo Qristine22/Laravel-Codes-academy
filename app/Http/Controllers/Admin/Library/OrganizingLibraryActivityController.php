@@ -110,9 +110,27 @@ class OrganizingLibraryActivityController extends Controller
      */
     public function destroy(LibraryPdf $organizingLibraryActivity)
     {
-        Storage::delete($organizingLibraryActivity->pdf);
         $organizingLibraryActivity->delete();
-
         return redirect(route('admin.library.professional-literature.index'));
+    }
+
+
+
+
+
+    public function recycleBinRestore($id)
+    {
+        LibraryPdf::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = LibraryPdf::withTrashed()->findOrFail($id);
+        Storage::delete($item->pdf);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }

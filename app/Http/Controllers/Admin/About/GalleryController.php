@@ -152,9 +152,9 @@ class GalleryController extends Controller
 
 
 
-    
 
-    
+
+
 
 
 

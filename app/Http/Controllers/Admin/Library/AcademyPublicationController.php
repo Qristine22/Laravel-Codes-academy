@@ -17,7 +17,7 @@ class AcademyPublicationController extends Controller
      */
     public function index()
     {
-        $academyPublications = Library::where('category', 'academy-publication')->paginate(10);
+        $academyPublications = Library::where('category', 'academy-publication')->orderBy('id', 'DESC')->paginate(10);
 
         return view('admin.library.academy-publication.index', [
             'title' => 'Արդարադատության ակադեմիայի հրատարակություններ',
@@ -132,10 +132,43 @@ class AcademyPublicationController extends Controller
      */
     public function destroy(Library $academyPublication)
     {
-        Storage::delete($academyPublication->pdf);
-        Storage::delete($academyPublication->img);
         $academyPublication->delete();
-
         return redirect(route('admin.library.academy-publication.index'));
+    }
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $books = Library::where('category', 'academy-publication')->onlyTrashed()->paginate(10);
+
+        return view('admin.library.academy-publication.recycleBin', [
+            'title' => 'Արդարադատության ակադեմիայի հրատարակություններ',
+            'books' => $books,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        Library::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = Library::withTrashed()->findOrFail($id);
+        Storage::delete($item->pdf);
+        Storage::delete($item->img);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }

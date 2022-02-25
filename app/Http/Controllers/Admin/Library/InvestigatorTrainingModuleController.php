@@ -16,7 +16,8 @@ class InvestigatorTrainingModuleController extends Controller
      */
     public function index()
     {
-        $investigatorTrainingModules = Library::where('category', 'investigator-training-module')->paginate(10);
+        $investigatorTrainingModules = Library::where('category', 'investigator-training-module')->orderBy('id', 'DESC')
+        ->paginate(10);
 
         return view('admin.library.investigator-training-module.index', [
             'title' => 'Անչափահասների մասնակցությամբ գործերով մասնագիտացված քննիչների վերապատրաստման մոդուլներ',
@@ -131,10 +132,44 @@ class InvestigatorTrainingModuleController extends Controller
      */
     public function destroy(Library $investigatorTrainingModule)
     {
-        Storage::delete($investigatorTrainingModule->pdf);
-        Storage::delete($investigatorTrainingModule->img);
         $investigatorTrainingModule->delete();
 
         return redirect(route('admin.library.investigator-training-module.index'));
+    }
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $books = Library::where('category', 'investigator-training-module')->onlyTrashed()->paginate(10);
+
+        return view('admin.library.investigator-training-module.recycleBin', [
+            'title' => 'Անչափահասների մասնակցությամբ գործերով մասնագիտացված քննիչների վերապատրաստման մոդուլներ',
+            'books' => $books,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        Library::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = Library::withTrashed()->findOrFail($id);
+        Storage::delete($item->pdf);
+        Storage::delete($item->img);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }

@@ -16,7 +16,7 @@ class VideoLectureController extends Controller
      */
     public function index()
     {
-        $videoLectures = VideoLecture::paginate(10);
+        $videoLectures = VideoLecture::orderBy('id', 'DESC')->paginate(10);
 
         return view('admin.library.video-lecture.index', [
             'videoLectures' => $videoLectures,
@@ -110,5 +110,38 @@ class VideoLectureController extends Controller
     {
         $videoLecture->delete();
         return redirect(route('admin.library.video-lecture.index'));
+    }
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $videoLectures = VideoLecture::onlyTrashed()->paginate(10);
+
+        return view('admin.library.video-lecture.recycleBin', [
+            'videoLectures' => $videoLectures,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        VideoLecture::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = VideoLecture::withTrashed()->findOrFail($id);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }

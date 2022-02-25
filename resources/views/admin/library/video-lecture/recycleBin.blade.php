@@ -4,42 +4,34 @@
     <div class="admin__sections">
         <section class="admin-section">
             <div class="admin__head">
-                <h2 class="admin__title">Բանբեր հղումներ</h2>
+                <h2 class="admin__title">Տեսադասախոսություններ</h2>
             </div>
-
-            <a class="admin-item__create admin-item__add" href="{{ route('admin.bulletin.info.create') }}">
-                <span class="admin-item__plus">+</span>
-            </a>
-            <a class="admin-item__create admin-item__trash"
-                href="{{ route('admin.bulletin.info.recycleBin') }}">
-                <span class="admin-item__plus admin-item__trash_plus">
-                    <i class="fas fa-trash-alt"></i>
-                </span>
-            </a>
             <table class="table">
                 <tr>
                     <th class="th text-18" style="width: 5%">#id</th>
-                    <th class="th text-18">name</th>
-                    <th class="th text-18" style="width: 5%">file</th>
+                    <th class="th text-18">Topic</th>
+                    <th class="th text-18">Lecturer</th>
+                    <th class="th text-18">video</th>
                     <th class="th text-18" style="width: 5%">Panel</th>
                 </tr>
-                @foreach ($bulletinInfo as $item)
+                @foreach ($videoLectures as $item)
                     <tr>
                         <td class="td text-18">{{ $item->id }}</td>
-                        <td class="td text-18">{{ $item->name_am }}</td>
+                        <td class="td text-18">{{ $item->topic_am }}</td>
+                        <td class="td text-18">{{ $item->lecturer_am }}</td>
                         <td class="td">
-                            <img src="/media/img/icons/pdf.png" alt="pdf">    
+                            {!! $item->video !!}   
                         </td>
                         <td class="td text-18">
                             <div class="table__panel flex">
                                 <a class="table__panel_item"
-                                    href="{{ route('admin.bulletin.info.edit',
-                                    ['info' => $item]) }}">
-                                    <img class="img" src="/media/img/icons/edit.png" alt="edit">
+                                    href="{{ route('admin.library.video-lecture.recycleBinRestore',
+                                    ['id' => $item]) }}">
+                                    <i class="fas fa-trash-restore"></i>
                                 </a>
                                 <form
-                                    action="{{ route('admin.bulletin.info.destroy',
-                                    ['info' => $item]) }}" method="POST">
+                                    action="{{ route('admin.library.video-lecture.forceDelete',
+                                    ['id' => $item]) }}" method="GET">
                                     @csrf
                                     @method('DELETE')
                                     <button class="table__panel_item table__panel_delete">
@@ -52,7 +44,7 @@
                 @endforeach
             </table>
 
-            {{ $bulletinInfo->links('includes.pagination.paginate') }}
+            {{ $videoLectures->links('includes.pagination.paginate') }}
         </section>
     </div>
 @endsection

@@ -108,4 +108,23 @@ class ECHRLinkController extends Controller
         $echrLink->delete();
         return redirect(route('admin.library.echr-resource.index'));
     }
+
+
+
+
+
+    public function recycleBinRestore($id)
+    {
+        EchrLink::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = EchrLink::withTrashed()->findOrFail($id);
+        $item->forceDelete();
+
+        return redirect()->back();
+    }
 }

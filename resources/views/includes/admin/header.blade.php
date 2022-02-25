@@ -198,7 +198,9 @@
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/video-material') ||
-                        Request::is('admin/distance-learning/video-material/*')) admin-header__link-active @endif"
+                        Request::is('admin/distance-learning/video-material/*') ||
+                        Request::is('admin/distance-learning/recycleBin/video-material') ||
+                        Request::is('admin/distance-learning/recycleBin/video-material/*')) admin-header__link-active @endif"
                             href="{{ route('admin.distance-learning.video-material.index') }}">Տեղեկատվական տեսանյութեր</a>
                     </li>
                     <li class="admin-header__menu-item">
@@ -219,29 +221,41 @@
                 <ul class="admin-header__menu-list">
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/academy-publication') ||
-                        Request::is('admin/library/academy-publication/*')) admin-header__link-active @endif"
-                            href="{{ route('admin.library.academy-publication.index') }}">Արդարադատության ակադեմիայի հրատարակություններ</a>
+                        Request::is('admin/library/academy-publication/*') ||
+                        Request::is('admin/library/recycleBin/academy-publication') ||
+                        Request::is('admin/library/recycleBin/academy-publication')) admin-header__link-active @endif"
+                            href="{{ route('admin.library.academy-publication.index') }}">
+                            Արդարադատության ակադեմիայի հրատարակություններ
+                        </a>
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/manual') ||
-                        Request::is('admin/library/manual/*')) admin-header__link-active @endif"
+                        Request::is('admin/library/manual/*') || Request::is('admin/library/recycleBin/manual') ||
+                        Request::is('admin/library/recycleBin/manual/*')) admin-header__link-active @endif"
                             href="{{ route('admin.library.manual.index') }}">Ուսումնական ձեռնարկներ</a>
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/professional-literature') ||
                         Request::is('admin/library/professional-literature/*') ||
                         Request::is('admin/library/organizing-library-activity') ||
-                        Request::is('admin/library/organizing-library-activity/*')) admin-header__link-active @endif"
+                        Request::is('admin/library/organizing-library-activity/*') ||
+                        Request::is('admin/library/recycleBin/professional-literature') ||
+                        Request::is('admin/library/recycleBin/professional-literature/*')) admin-header__link-active @endif"
                             href="{{ route('admin.library.professional-literature.index') }}">Մասնագիտական գրականության ցանկ</a>
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/training-material') ||
-                        Request::is('admin/library/training-material/*')) admin-header__link-active @endif"
+                        Request::is('admin/library/training-material/*') ||
+                        Request::is('admin/library/recycleBin/training-material') ||
+                        Request::is('admin/library/recycleBin/training-material/*')) admin-header__link-active @endif"
                             href="{{ route('admin.library.training-material.index') }}">Ուսումնաօժանդակ նյութեր</a>
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/investigator-training-module')
-                        || Request::is('admin/library/investigator-training-module/*')) admin-header__link-active @endif"
+                        || Request::is('admin/library/investigator-training-module/*') ||
+                        Request::is('admin/library/recycleBin/investigator-training-module') ||
+                        Request::is('admin/library/recycleBin/investigator-training-module/*')
+                        ) admin-header__link-active @endif"
                             href="{{ route('admin.library.investigator-training-module.index') }}">
                             Անչափահասների մասնակցությամբ գործերով մասնագիտացված քննիչների վերապատրաստման մոդուլներ
                         </a>
@@ -249,14 +263,18 @@
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/echr-resource') ||
                         Request::is('admin/library/echr-resource/*') || Request::is('admin/library/echr-link/*') ||
-                        Request::is('admin/library/echr-link/*')) admin-header__link-active @endif"
+                        Request::is('admin/library/echr-link/*') ||
+                        Request::is('admin/library/recycleBin/echr-resource') ||
+                        Request::is('admin/library/recycleBin/echr-resource/*')) admin-header__link-active @endif"
                             href="{{ route('admin.library.echr-resource.index') }}">
                             ՄԻԵԴ իրավաբանության վերաբերյալ ռեսուրսներ
                         </a>
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/video-lecture') ||
-                        Request::is('admin/library/video-lecture/*')) admin-header__link-active @endif"
+                        Request::is('admin/library/video-lecture/*') ||
+                        Request::is('admin/library/recycleBin/video-lecture') ||
+                        Request::is('admin/library/recycleBin/video-lecture/*')) admin-header__link-active @endif"
                             href="{{ route('admin.library.video-lecture.index') }}">Տեսադասախոսություններ</a>
                     </li>
                 </ul>
@@ -273,7 +291,9 @@
                 <ul class="admin-header__menu-list">
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/bulletin/info') ||
-                        Request::is('admin/bulletin/info/*')) admin-header__link-active @endif"
+                        Request::is('admin/bulletin/info/*') ||
+                        Request::is('admin/bulletin/recycleBin/info') ||
+                        Request::is('admin/bulletin/recycleBin/info/*')) admin-header__link-active @endif"
                             href="{{ route('admin.bulletin.info.index') }}">Բանբեր հղումներ</a>
                     </li>
                 </ul>
@@ -283,20 +303,26 @@
                     <a class="text-20 admin-header__link @if(Request::is('admin/partners') ||
                     Request::is('admin/partners/*')) admin-header__link-active @endif"
                         href="{{ route('admin.partners.partner.index') }}">Գործընկերներ</a>
+                </div>
+            </li>
+            <li class="admin-header__item">
+                <div class="admin-header__item_cont flex">
+                    <a class="text-20 admin-header__link @if(Request::is('admin/contact') ||
+                    Request::is('admin/contact/*')) admin-header__link-active @endif"
+                        href="{{ route('admin.contact.page.index') }}">Հետադարձ կապ</a>
                     <div class="admin-header__arrow">
                         <img class="img" src="/media/img/icons/whiteDownArrow.png" alt="whiteDownArrow">
                     </div>
                 </div>
                 <ul class="admin-header__menu-list">
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link" href="#">Ակադեմիայի կառավարմանխորհուրդ</a>
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/contact/staff') ||
+                        Request::is('admin/contact/staff/*') ||
+                        Request::is('admin/contact/recycleBin/staff') ||
+                        Request::is('admin/contact/recycleBin/staff/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.contact.staff.index') }}">Անձնակազմ</a>
                     </li>
                 </ul>
-            </li>
-            <li class="admin-header__item">
-                <div class="admin-header__item_cont flex">
-                    <a class="text-20 admin-header__link" href="#">Հետադարձ կապ</a>
-                </div>
             </li>
         </ul>
     </div>

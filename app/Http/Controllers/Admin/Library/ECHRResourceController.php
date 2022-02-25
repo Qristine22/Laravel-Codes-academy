@@ -20,8 +20,8 @@ class ECHRResourceController extends Controller
      */
     public function index()
     {
-        $echrResources = Library::where('category', 'ECHR-resource')->paginate(10, ['*'], 'echrResources');
-        $echrLinks = EchrLink::paginate(10, ['*'], 'echrLinks');
+        $echrResources = Library::where('category', 'ECHR-resource')->orderBy('id', 'DESC')->paginate(10, ['*'], 'echrResources');
+        $echrLinks = EchrLink::orderBy('id', 'DESC')->paginate(10, ['*'], 'echrLinks');
 
         return view('admin.library.echr-resource.index', [
             'echrResources' => $echrResources,
@@ -133,10 +133,44 @@ class ECHRResourceController extends Controller
      */
     public function destroy(Library $echrResource)
     {
-        Storage::delete($echrResource->pdf);
-        Storage::delete($echrResource->img);
         $echrResource->delete();
-
         return redirect(route('admin.library.echr-resource.index'));
+    }
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $echrResources = Library::where('category', 'ECHR-resource')->onlyTrashed()->paginate(10, ['*'], 'echrResources');
+        $echrLinks = EchrLink::onlyTrashed()->paginate(10, ['*'], 'echrLinks');
+
+        return view('admin.library.ECHR-resource.recycleBin', [
+            'echrResources' => $echrResources,
+            'echrLinks' => $echrLinks,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        Library::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = Library::withTrashed()->findOrFail($id);
+        Storage::delete($item->pdf);
+        Storage::delete($item->img);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }

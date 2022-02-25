@@ -118,9 +118,43 @@ class ProfessionalLiteratureController extends Controller
      */
     public function destroy(LibraryPdf $professionalLiterature)
     {
-        Storage::delete($professionalLiterature->pdf);
         $professionalLiterature->delete();
-
         return redirect(route('admin.library.professional-literature.index'));
+    }
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $professionalLiteratures = LibraryPdf::where('category', 'professional-literature')->onlyTrashed()->paginate(10);
+        $organizingLibraryActivities = LibraryPdf::where('category', 'organizing-library-activity')->onlyTrashed()->paginate(10);
+
+        return view('admin.library.professional-literature.recycleBin', [
+            'professionalLiteratures' => $professionalLiteratures,
+            'organizingLibraryActivities' => $organizingLibraryActivities,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        LibraryPdf::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = LibraryPdf::withTrashed()->findOrFail($id);
+        Storage::delete($item->pdf);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }

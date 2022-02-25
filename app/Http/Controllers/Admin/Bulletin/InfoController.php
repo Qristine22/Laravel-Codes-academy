@@ -18,7 +18,7 @@ class InfoController extends Controller
      */
     public function index()
     {
-        $bulletinInfo = BulletinInfo::paginate(10);
+        $bulletinInfo = BulletinInfo::orderBy('id', 'DESC')->paginate(10);
 
         return view('admin.bulletin.info.index', [
             'bulletinInfo' => $bulletinInfo,
@@ -113,10 +113,43 @@ class InfoController extends Controller
      */
     public function destroy(BulletinInfo $info)
     {
-        Storage::delete($info->pdf);
-        Storage::delete($info->img);
         $info->delete();
 
         return redirect(route('admin.bulletin.info.index'));
+    }
+
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $bulletinInfo = BulletinInfo::onlyTrashed()->paginate(10);
+
+        return view('admin.bulletin.info.recycleBin', [
+            'bulletinInfo' => $bulletinInfo,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        BulletinInfo::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = BulletinInfo::withTrashed()->findOrFail($id);
+        Storage::delete($item->pdf);
+        Storage::delete($item->img);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }

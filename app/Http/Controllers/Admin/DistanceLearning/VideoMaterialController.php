@@ -17,7 +17,7 @@ class VideoMaterialController extends Controller
      */
     public function index()
     {
-        $distanceLearningVideoMaterials = DistanceLearningVideoMaterial::paginate(5);
+        $distanceLearningVideoMaterials = DistanceLearningVideoMaterial::orderBy('id', 'DESC')->paginate(5);
 
         return view('admin.distance-learning.video-material.index', [
             'distanceLearningVideoMaterials' => $distanceLearningVideoMaterials,
@@ -116,7 +116,40 @@ class VideoMaterialController extends Controller
     public function destroy(DistanceLearningVideoMaterial $videoMaterial)
     {
         $videoMaterial->delete();
-        Storage::delete($videoMaterial->video);
         return redirect(route('admin.distance-learning.video-material.index'));   
+    }
+    
+
+
+
+
+
+
+    // recycle bin
+    public function recycleBin()
+    {
+        $videoMaterials = DistanceLearningVideoMaterial::onlyTrashed()->paginate(10);
+
+        return view('admin.distance-learning.video-material.recycleBin', [
+            'videoMaterials' => $videoMaterials,
+        ]);
+    }
+
+
+
+    public function recycleBinRestore($id)
+    {
+        DistanceLearningVideoMaterial::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+    
+    
+    public function forceDelete($id)
+    {        
+        $item = DistanceLearningVideoMaterial::withTrashed()->findOrFail($id);
+        Storage::delete($item->video);
+        $item->forceDelete();
+
+        return redirect()->back();
     }
 }
