@@ -2,6 +2,11 @@
     <div class="wrapper">
         <div class="link__pdfs">
             <div class="link__pdf flex">
+                <a class="link__name text-18" href="{{ route('FAQ') }}">
+                    {{ $FAQ->{'title_'.app()->getLocale()} }}
+                </a>
+            </div>
+            <div class="link__pdf flex">
                 <a class="link__name text-18" href="{{ route('distanceLearningGuide') }}">
                     {{ $guide->{'name_' . app()->getLocale()} }}
                 </a>

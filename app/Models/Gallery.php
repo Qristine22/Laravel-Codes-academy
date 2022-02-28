@@ -21,7 +21,7 @@ class Gallery extends Model
 
 
     public static function gallery(){
-        return Gallery::with('imgs')->paginate(10);
+        return Gallery::with('imgs')->orderBy('id', 'DESC')->paginate(10, ['*'], 'galleries');
     }
     
     public static function galleryAll($year){

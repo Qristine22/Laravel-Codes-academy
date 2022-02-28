@@ -14,5 +14,8 @@ return [
         'judges' => 'Судьи',
         'prosecutors' => 'прокурори',
         'investigators' => 'следователи',
-    ]
+    ],
+    'gallery' => [
+        'video' => 'Видео',
+    ],
 ];

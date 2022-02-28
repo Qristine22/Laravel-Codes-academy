@@ -124,7 +124,11 @@ Route::middleware(['set_locale'])->group(function () {
         });
 
         // gallery
-        Route::get('/gallery/{year?}', 'App\Http\Controllers\PagesController@gallery')->name('gallery');
+        Route::get('/gallery/{year?}', 'App\Http\Controllers\PagesController@gallery')->name('gallery')->where('year', '[0-9]+');
+
+        // gallery video
+        Route::get('/gallery/video/{year?}', 'App\Http\Controllers\PagesController@galleryVideo')->name('galleryVideo');
+
         // mass media
         Route::get('/mass-media/{year?}', 'App\Http\Controllers\PagesController@massMedia')->name('massMedia');
     });
@@ -205,6 +209,9 @@ Route::middleware(['set_locale'])->group(function () {
             // distance learning guide
             Route::get('/distance-learning-guide', 'App\Http\Controllers\PagesController@distanceLearningGuide')
                 ->name('distanceLearningGuide');
+            // distance learning guide
+            Route::get('/FAQ', 'App\Http\Controllers\PagesController@FAQ')
+            ->name('FAQ');
         });
 
         // distance learning guide pdf download
@@ -402,6 +409,15 @@ Route::middleware(['set_locale'])->group(function () {
                 Route::get('recycleBin/gallery/{id}/delete', 'App\Http\Controllers\Admin\About\GalleryController@forceDelete')
                     ->name('gallery.forceDelete');
 
+                // gallery video
+                Route::resource('gallery-video', 'App\Http\Controllers\Admin\About\GalleryVideoController');
+                Route::get('recycleBin/gallery-video/{id}/restore',
+                    'App\Http\Controllers\Admin\About\GalleryVideoController@recycleBinRestore')
+                    ->name('gallery-video.recycleBinRestore');
+                Route::get('recycleBin/gallery-video/{id}/delete',
+                    'App\Http\Controllers\Admin\About\GalleryVideoController@forceDelete')
+                    ->name('gallery-video.forceDelete');
+
                 // mass media page
                 Route::resource('mass-media', 'App\Http\Controllers\Admin\About\MassMediaController');
                 Route::get('/mass-media/link/{id}', 'App\Http\Controllers\Admin\About\MassMediaController@linkDelete')
@@ -540,6 +556,9 @@ Route::middleware(['set_locale'])->group(function () {
 
                 // guide
                 Route::resource('guide', 'App\Http\Controllers\Admin\DistanceLearning\GuideController');
+                
+                // FAQ
+                Route::resource('FAQ', 'App\Http\Controllers\Admin\DistanceLearning\FrequentlyAskedQuestionController');
             });
 
 

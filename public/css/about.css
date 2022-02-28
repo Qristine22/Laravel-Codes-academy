@@ -406,6 +406,9 @@ structure
 gallery
 */
 
+.gallery__dates{
+    width: 85%;
+}
 .gallery{
     min-height: calc(100vh - 300px);
 }
@@ -413,10 +416,14 @@ gallery
     justify-content: center;
     flex-wrap: wrap;
 }
-.gallery__item{
+.gallery__item,
+.gallery-video__item{
     width: calc(33% - 70px);
     flex-direction: column;
     margin: 25px;
+}
+.gallery-video__item iframe{
+    width: 100%;
 }
 .gallery__top{
     display: block;

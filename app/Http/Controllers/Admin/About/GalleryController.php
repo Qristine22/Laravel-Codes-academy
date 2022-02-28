@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Admin\About;
 
-use App\Models\Gallery;
-use App\Models\GalleryImgs;
 use Illuminate\Http\Request;
-
-// Models
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\About\GalleryRequest;
+use App\Http\Controllers\Controller;
+
+// Models
+use App\Models\Gallery;
+use App\Models\GalleryImgs;
+use App\Models\GalleryVideo;
 
 class GalleryController extends Controller
 {
@@ -21,8 +22,11 @@ class GalleryController extends Controller
     public function index()
     {
         $galleries = Gallery::gallery();
+        $galleryVideos = GalleryVideo::orderBy('id', 'DESC')->paginate(10, ['*'], 'galleryVideos');
+
         return view('admin.about.gallery.index', [
             'galleries' => $galleries,
+            'galleryVideos' => $galleryVideos,
         ]);
     }
 
@@ -161,10 +165,12 @@ class GalleryController extends Controller
     // recycle bin
     public function recycleBin()
     {
-        $galleries = Gallery::onlyTrashed()->paginate(10);
+        $galleries = Gallery::onlyTrashed()->orderBy('id', 'DESC')->paginate(10, ['*'], 'galleries');
+        $galleryVideos = GalleryVideo::onlyTrashed()->orderBy('id', 'DESC')->paginate(10, ['*'], 'galleryVideos');
 
         return view('admin.about.gallery.recycleBin', [
             'galleries' => $galleries,
+            'galleryVideos' => $galleryVideos,
         ]);
     }
 

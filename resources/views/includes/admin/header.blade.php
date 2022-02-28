@@ -91,9 +91,11 @@
                     </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/gallery') ||
-                        Request::is('admin/about/gallery/*')||
+                        Request::is('admin/about/gallery/*') ||
+                        Request::is('admin/about/gallery-video/*')||
                         Request::is('admin/about/recycleBin/gallery') ||
-                        Request::is('admin/about/recycleBin/gallery/*')) admin-header__link-active @endif"
+                        Request::is('admin/about/recycleBin/gallery/*') ||
+                        Request::is('admin/about/recycleBin/gallery-video/*')) admin-header__link-active @endif"
                             href="{{ route('admin.about.gallery.index') }}">Տեսադարան</a>
                     </li>
                     <li class="admin-header__menu-item">
@@ -207,6 +209,11 @@
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/guide') ||
                         Request::is('admin/distance-learning/guide/*')) admin-header__link-active @endif"
                             href="{{ route('admin.distance-learning.guide.index') }}">Հեռաուսուցման ուղեցույց</a>
+                    </li>
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/FAQ') ||
+                        Request::is('admin/distance-learning/FAQ/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.distance-learning.FAQ.index') }}">Հաճախակի տրվող հարցեր</a>
                     </li>
                 </ul>
             </li>

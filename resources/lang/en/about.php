@@ -14,5 +14,8 @@ return [
         'judges' => 'judges',
         'prosecutors' => 'prosecutors',
         'investigators' => 'investigators',
-    ]
+    ],
+    'gallery' => [
+        'video' => 'Video',
+    ],
 ];

@@ -14,7 +14,9 @@
         <section class="distance-learning section section-text">
             <div class="wrapper">
                 <div class="section-text__cont">
-                    {!! $distanceLearning->{'text_'.app()->getLocale()} !!}
+                    @if (!empty($distanceLearning))
+                        {!! $distanceLearning->{'text_'.app()->getLocale()} !!}
+                    @endif
                 </div>
             </div>
         </section>

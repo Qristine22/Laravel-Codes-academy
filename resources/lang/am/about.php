@@ -14,5 +14,8 @@ return [
         'judges' => 'Դատավորներ',
         'prosecutors' => 'Դատախազներ',
         'investigators' => 'Քննիչներ',
-    ]
+    ],
+    'gallery' => [
+        'video' => 'Տեսանյութեր',
+    ],
 ];

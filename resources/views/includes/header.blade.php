@@ -1,4 +1,4 @@
-a<header class="header">
+<header class="header">
     <div class="wrapper">
         <div class="header__cont flex">
             <div class="header__logo">

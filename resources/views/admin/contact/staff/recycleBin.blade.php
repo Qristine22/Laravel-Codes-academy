@@ -9,15 +9,17 @@
             <table class="table">
                 <tr>
                     <th class="th text-18" style="width: 5%">#id</th>
-                    <th class="th text-18">address</th>
-                    <th class="th text-18">mail</th>
-                    <th class="th text-18">phone</th>
+                    <th class="th text-18">Possition</th>
+                    <th class="th text-18">Name</th>
+                    <th class="th text-18">Mail</th>
+                    <th class="th text-18">Phone</th>
                     <th class="th text-18" style="width: 5%">Panel</th>
                 </tr>
                 @foreach ($contactStaff as $item)
                     <tr>
                         <td class="td text-18">{{ $item->id }}</td>
-                        <td class="td">{{ $item->address_am }}</td>
+                        <td class="td">{{ $item->possition_am }}</td>
+                        <td class="td">{{ $item->name_am }}</td>
                         <td class="td">{{ $item->mail }}</td>
                         <td class="td">{{ $item->phone }}</td>
                         <td class="td text-18">

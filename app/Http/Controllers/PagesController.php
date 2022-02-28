@@ -26,6 +26,7 @@ use App\Models\ContactStaff;
 use App\Models\BehaviorRule;
 use App\Models\VideoLecture;
 use App\Models\BulletinInfo;
+use App\Models\GalleryVideo;
 use App\Models\DormitoryRule;
 use App\Models\RectorsDecree;
 use App\Models\ConductingExam;
@@ -42,6 +43,7 @@ use App\Models\GoverningBoardDecree;
 use App\Models\DistanceLearningGuide;
 use App\Models\DistanceLearningVideo;
 use App\Models\FormerRectorsBiography;
+use App\Models\FrequentlyAskedQuestion;
 use App\Models\DistanceLearningVideoMaterial;
 
 class PagesController extends Controller
@@ -65,7 +67,7 @@ class PagesController extends Controller
 
     // home *********************************************************************************
     public function home(){
-        $home = Home::first();
+        $home = Home::firstOrFail();
         $lastNews = News::latest()->take(3)->get();
 
         return view('home', [
@@ -83,7 +85,7 @@ class PagesController extends Controller
 
     // about *********************************************************************************
     public function about(){
-        $about = About::first();
+        $about = About::firstOrFail();
         $headersBot = Subheader::where('parent_id', 1)->get();
         return view('about', [
             'headers' => $this->getHeader(),
@@ -96,7 +98,7 @@ class PagesController extends Controller
         $headersBot = Subheader::where('parent_id', 1)->get();
 
         // /about/governing-board - long text in top 
-        $governingBoardPage = GoverningBoardPage::first();
+        $governingBoardPage = GoverningBoardPage::firstOrFail();
 
         // /about/governing-board - years
         $governingBoardDecreesYears = GoverningBoardDecree::all()->groupBy('year');
@@ -142,7 +144,7 @@ class PagesController extends Controller
     public function rector(){
         $headersBot = Subheader::where('parent_id', 1)->get();
 
-        $text = RectorsPage::first();
+        $text = RectorsPage::firstOrFail();
         return view('rector', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
@@ -152,7 +154,7 @@ class PagesController extends Controller
     public function rectorsBiography(){
         $headersBot = Subheader::where('parent_id', 1)->get();
 
-        $person = RectorsBiography::first();
+        $person = RectorsBiography::firstOrFail();
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
@@ -162,7 +164,7 @@ class PagesController extends Controller
     public function formerRectorsBiography(){
         $headersBot = Subheader::where('parent_id', 1)->get();
 
-        $person = FormerRectorsBiography::first();
+        $person = FormerRectorsBiography::firstOrFail();
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
@@ -197,7 +199,7 @@ class PagesController extends Controller
     }
     public function VICERector(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::first();
+        $person = Worker::firstOrFail();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -207,7 +209,7 @@ class PagesController extends Controller
     }
     public function chiefOfStaff(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 2)->first();
+        $person = Worker::where('id', 2)->firstOrFail();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -217,7 +219,7 @@ class PagesController extends Controller
     }
     public function distanceLearningChief(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 3)->first();
+        $person = Worker::where('id', 3)->firstOrFail();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -227,7 +229,7 @@ class PagesController extends Controller
     }
     public function programmaticMethodologicalActivities(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 4)->first();
+        $person = Worker::where('id', 4)->firstOrFail();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -237,7 +239,7 @@ class PagesController extends Controller
     }
     public function trainingForTrainees(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 5)->first();
+        $person = Worker::where('id', 5)->firstOrFail();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -247,7 +249,7 @@ class PagesController extends Controller
     }
     public function trainingOrganization(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 6)->first();
+        $person = Worker::where('id', 6)->firstOrFail();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -257,7 +259,7 @@ class PagesController extends Controller
     }
     public function unitOfFinance(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 7)->first();
+        $person = Worker::where('id', 7)->firstOrFail();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -267,7 +269,7 @@ class PagesController extends Controller
     }
     public function cooperationAndPublicRelation(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 8)->first();
+        $person = Worker::where('id', 8)->firstOrFail();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -277,7 +279,7 @@ class PagesController extends Controller
     }
     public function staffAndDocumentManagement(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 9)->first();
+        $person = Worker::where('id', 9)->firstOrFail();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -287,7 +289,7 @@ class PagesController extends Controller
     }
     public function tehchnicalAndEconomicActivities(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 10)->first();
+        $person = Worker::where('id', 10)->firstOrFail();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -297,7 +299,7 @@ class PagesController extends Controller
     }
     public function hotel(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 11)->first();
+        $person = Worker::where('id', 11)->firstOrFail();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -399,7 +401,7 @@ class PagesController extends Controller
 
     public function admission(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $admission = Admission::first();
+        $admission = Admission::firstOrFail();
 
         return view('admission', [
             'headers' => $this->getHeader(),
@@ -409,7 +411,7 @@ class PagesController extends Controller
     }
     public function judgesCandidates(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $judgesCandidate = Candidate::first();
+        $judgesCandidate = Candidate::firstOrFail();
 
         return view('candidates', [
             'headers' => $this->getHeader(),
@@ -459,6 +461,25 @@ class PagesController extends Controller
             'year' => $year,
         ]);
     }
+    public function galleryVideo($year = null){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+        $years = GalleryVideo::all()->groupBy('year')->reverse();
+
+        if(empty($year)){
+            $year = $years->keys()[0];
+        }
+        $galleryVideos = GalleryVideo::where('year', $year)->get();
+
+        return view('gallery', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'galleryVideos' => $galleryVideos,
+            'years' => $years,
+            'year' => $year,
+        ]);
+    }
+
+
 
     public function massMedia($year = null){
         $headersBot = Subheader::where('parent_id', 1)->get();
@@ -629,7 +650,7 @@ class PagesController extends Controller
     // distance learning *********************************************************************************
     public function distanceLearning(){
         $headersBot = Subheader::where('parent_id', 4)->get();
-        $distanceLearning = DistanceLearning::first();
+        $distanceLearning = DistanceLearning::firstOrFail();
         $distancelearningVideos = DistanceLearningVideo::paginate(10);
 
         return view('distance-learning', [
@@ -642,13 +663,15 @@ class PagesController extends Controller
     public function distanceLearningVideo($id){
         $headersBot = Subheader::where('parent_id', 4)->get();
         $distancelearningVideo = DistanceLearningVideo::findOrFail($id);
-        $guide = DistanceLearningGuide::first();
+        $guide = DistanceLearningGuide::firstOrFail();
+        $FAQ = FrequentlyAskedQuestion::firstOrFail();
 
         return view('distance-learning-video', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'distancelearningVideo' => $distancelearningVideo,
             'guide' => $guide,
+            'FAQ' => $FAQ,
         ]);
     }
     public function videoMaterials(){
@@ -663,42 +686,62 @@ class PagesController extends Controller
     }
     public function distanceLearningCourses(){
         $headersBot = Subheader::where('parent_id', 4)->get();
-        $guide = DistanceLearningGuide::first();
+        $guide = DistanceLearningGuide::firstOrFail();
+        $FAQ = FrequentlyAskedQuestion::firstOrFail();
 
         return view('distance-learning-courses', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'guide' => $guide,
+            'FAQ' => $FAQ,
+        ]);
+    }
+    public function FAQ(){
+        $headersBot = Subheader::where('parent_id', 4)->get();
+        $FAQ = FrequentlyAskedQuestion::firstOrFail();
+        $distancelearningVideos = DistanceLearningVideo::paginate(10);
+
+        return view('distance-learning', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'distanceLearning' => $FAQ,
+            'distancelearningVideos' => $distancelearningVideos,
         ]);
     }
     public function motivationalVideos(){
         $headersBot = Subheader::where('parent_id', 4)->get();
-        $guide = DistanceLearningGuide::first();
+        $guide = DistanceLearningGuide::firstOrFail();
+        $FAQ = FrequentlyAskedQuestion::firstOrFail();
 
         return view('motivational-videos', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'guide' => $guide,
+            'FAQ' => $FAQ,
         ]);
     }
     public function mediaMaterials(){
         $headersBot = Subheader::where('parent_id', 4)->get();
-        $guide = DistanceLearningGuide::first();
+        $guide = DistanceLearningGuide::firstOrFail();
+        $FAQ = FrequentlyAskedQuestion::firstOrFail();
 
         return view('media-materials', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'guide' => $guide,
+            'FAQ' => $FAQ,
         ]);
     }
     public function distanceLearningGuide(){
         $headersBot = Subheader::where('parent_id', 4)->get();
-        $guide = DistanceLearningGuide::first();
+        $guide = DistanceLearningGuide::firstOrFail();
+        $FAQ = FrequentlyAskedQuestion::firstOrFail();
 
         return view('distance-learning-guide', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'guide' => $guide,
+            'FAQ' => $FAQ,
         ]);
     }
 
@@ -870,7 +913,7 @@ class PagesController extends Controller
     
     // contacts *********************************************************************************
     public function contacts(){
-        $contactPage = ContactPage::first();
+        $contactPage = ContactPage::firstOrFail();
         $contactStaff = ContactStaff::all();
 
         return view('contacts', [
