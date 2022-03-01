@@ -1,5 +1,0 @@
-/                                      search design and how much models weel be see
-/about/gallery                         is correct ?
-/distance-learning/courses	       courses design and logick
-/bulletin	       		       design and logick
-/contacts			       message to the rector
