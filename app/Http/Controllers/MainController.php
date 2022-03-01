@@ -5,9 +5,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
 // Models
-
-use App\Models\News;
-use App\Models\Gallery;
 use App\Models\Library;
 use App\Models\LibraryPdf;
 use App\Models\BehaviorRule;
@@ -32,59 +29,6 @@ class MainController extends Controller
         App::setLocale($locale);
         return redirect()->back();
     }
-
-
-
-
-
-
-
-    // home search function *******************************************************************
-    public function search($query)
-    {
-        // $columnsToSearch = ['info_en', 'info_am', 'info_ru', 'pdf_name'];
-        // $indents = [];
-
-
-        // if(isset($query)){
-        //     foreach($columnsToSearch as $column) {
-        //         $indent = GoverningBoardDecree::where($column, 'LIKE', "%$query%")->get();
-        //         if(count($indent)){
-        //             $indents[] = $indent;
-        //         }
-        //     }
-
-        //     return response()->json($indents);
-        // }
-
-
-        if (isset($query)) {
-            $news = News::where('title_en', 'LIKE', "%$query%")
-                ->orwhere('title_am', 'LIKE', "%$query%")
-                ->orwhere('title_ru', 'LIKE', "%$query%")
-                ->orwhere('description_en', 'LIKE', "%$query%")
-                ->orwhere('description_am', 'LIKE', "%$query%")
-                ->orwhere('description_ru', 'LIKE', "%$query%")
-                ->orwhere('date', 'LIKE', "%$query%")
-                ->get()->toArray();
-
-            $galleries = Gallery::where('text_en', 'LIKE', "%$query%")
-                ->orwhere('text_am', 'LIKE', "%$query%")
-                ->orwhere('text_ru', 'LIKE', "%$query%")
-                ->orwhere('year', 'LIKE', "%$query%")
-                ->orwhere('full_date', 'LIKE', "%$query%")
-                ->get()->toArray();
-
-            $data = array_merge($news, $galleries);
-            return response()->json($data);
-        }
-    }
-
-
-
-
-
-
 
 
 
@@ -200,6 +144,15 @@ class MainController extends Controller
         $headers = ['Content-Type: application/pdf'];
 
         return response()->download($file, 'library' . $LibraryPdf->id . '.pdf', $headers);
+    }
+
+    // library book download
+    public function LibraryBookDownload($pdf){
+        $LibraryBook = Library::findOrFail($pdf);
+        $file = public_path() . "/storage/" . $LibraryBook->pdf;
+        $headers = ['Content-Type: application/pdf'];
+
+        return response()->download($file, 'library' . $LibraryBook->id . '.pdf', $headers);
     }
 
     // bulletin info download

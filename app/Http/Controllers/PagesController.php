@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Helpers\PaginationHelper;
 
 // Models
 use App\Models\Home;
@@ -10,9 +11,10 @@ use App\Models\About;
 use App\Models\Header;
 use App\Models\Report;
 use App\Models\Worker;
-use App\Models\Partner;
 use App\Models\Gallery;
 use App\Models\Library;
+use App\Models\Partner;
+use App\Models\Bulletin;
 use App\Models\EchrLink;
 use App\Models\Graduate;
 use App\Models\Admission;
@@ -20,13 +22,13 @@ use App\Models\Candidate;
 use App\Models\Subheader;
 use App\Models\LibraryPdf;
 use App\Models\MassMedium;
-use App\Models\RectorsPage;
 use App\Models\ContactPage;
-use App\Models\ContactStaff;
+use App\Models\RectorsPage;
 use App\Models\BehaviorRule;
-use App\Models\VideoLecture;
 use App\Models\BulletinInfo;
+use App\Models\ContactStaff;
 use App\Models\GalleryVideo;
+use App\Models\VideoLecture;
 use App\Models\DormitoryRule;
 use App\Models\RectorsDecree;
 use App\Models\ConductingExam;
@@ -77,6 +79,43 @@ class PagesController extends Controller
         ]);
     }
 
+    // search
+    public function search(Request $request){
+        if (isset($request->search) && !empty($request->search)) {
+            $query = $request->search;
+        }
+        else {
+            return redirect()->back();
+        }
+        $lastNews = News::latest()->take(3)->get();
+
+        $news = News::where('title_en', 'LIKE', "%$query%")
+            ->orwhere('title_am', 'LIKE', "%$query%")
+            ->orwhere('title_ru', 'LIKE', "%$query%")
+            ->orwhere('description_en', 'LIKE', "%$query%")
+            ->orwhere('description_am', 'LIKE', "%$query%")
+            ->orwhere('description_ru', 'LIKE', "%$query%")
+            ->orwhere('date', 'LIKE', "%$query%")
+            ->get();
+
+        $galleries = Gallery::where('text_en', 'LIKE', "%$query%")
+            ->orwhere('text_am', 'LIKE', "%$query%")
+            ->orwhere('text_ru', 'LIKE', "%$query%")
+            ->orwhere('year', 'LIKE', "%$query%")
+            ->orwhere('full_date', 'LIKE', "%$query%")
+            ->get();
+
+
+        $data = $news->concat($galleries);
+        // ->concat($name)
+        $data = PaginationHelper::paginate($data, 20);
+
+        return view('search', [
+            'headers' => $this->getHeader(),
+            'lastNews' => $lastNews,
+            'searchResults' => $data,
+        ]);
+    }
 
 
 
@@ -867,10 +906,12 @@ class PagesController extends Controller
     // bulletin *********************************************************************************
     public function bulletin(){
         $bulletinInfos = BulletinInfo::all();
+        $bulletins = Bulletin::all();
 
         return view('bulletin', [
             'headers' => $this->getHeader(),
             'bulletinInfos' => $bulletinInfos,
+            'bulletins' => $bulletins,
             'downloadLink' => 'bulletinInfoDownload',
         ]);
     }

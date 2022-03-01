@@ -15,10 +15,10 @@
                             <div class="home__logo">
                                 <img class="home__logo_img" src="{{ Storage::url($home->logo) }}" alt="mainLogo">
                             </div>
-                            <h1 class="home__title">{{ $home->{'title_'.app()->getLocale()} }}</h1>
-                            <form class="home__form" action="#" method="POST">
+                            <h1 class="home__title">{{ $home->{'title_' . app()->getLocale()} }}</h1>
+                            <form class="home__form" action="{{ route('search') }}" method="GET">
                                 <img class="home__search_icon" src="/media/img/icons/search.png" alt="search">
-                                <input class="inp home__form_inp" type="text" placeholder="@lang('home.search')">
+                                <input class="inp home__form_inp" name="search" type="text" placeholder="@lang('home.search')">
                             </form>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                             <img class="img" src="{{ Storage::url($home->rectors_img) }}" alt="rector">
                         </div>
                         <div class="rector__inner">
-                            {!! $home->{'rectors_word_'.app()->getLocale()} !!}
+                            {!! $home->{'rectors_word_' . app()->getLocale()} !!}
                             <img class="rector__signature" src="{{ Storage::url($home->rectors_signature) }}"
                                 alt="signature">
                         </div>
@@ -40,12 +40,8 @@
                 </div>
             </section>
         @endif
-        
-        {{-- 3 last news --}}
+
+        {{-- last 3 news --}}
         @include('includes.news.last-news')
     </main>
-@endsection
-
-@section('scripts')
-    <script src="/js/home/search.js"></script>
 @endsection

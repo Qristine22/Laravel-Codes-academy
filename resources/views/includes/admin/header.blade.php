@@ -191,6 +191,13 @@
                 </div>
                 <ul class="admin-header__menu-list">
                     <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/courses') ||
+                        Request::is('admin/distance-learning/courses/*') ||
+                        Request::is('admin/distance-learning/recycleBin/courses') ||
+                        Request::is('admin/distance-learning/recycleBin/courses/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.distance-learning.courses.index') }}">Դասընթացներ</a>
+                    </li>
+                    <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/video') ||
                         Request::is('admin/distance-learning/video/*') ||
                         Request::is('admin/distance-learning/recycleBin/video') ||
@@ -289,8 +296,10 @@
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
                     <a class="text-20 admin-header__link @if(Request::is('admin/bulletin') ||
-                    Request::is('admin/bulletin/*')) admin-header__link-active @endif"
-                        href="#">Բանբեր</a>
+                    Request::is('admin/bulletin/*') || 
+                    Request::is('admin/recycleBin/bulletin/recycleBin') ||
+                    Request::is('admin/recycleBin/bulletin/recycleBin/*')) admin-header__link-active @endif"
+                        href="{{ route('admin.bulletin.bulletin.index') }}">Բանբեր</a>
                     <div class="admin-header__arrow">
                         <img class="img" src="/media/img/icons/whiteDownArrow.png" alt="whiteDownArrow">
                     </div>

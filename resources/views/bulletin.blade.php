@@ -11,46 +11,17 @@
             <div class="swiper">
                 <div class="swiper-pagination"></div>
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide courses__slide-item">
-                        <div class="courses__item">
-                            <a href="#">
-                                <img class="img" src="/media/img/bulletin/Book1.png" alt="book1">
-                            </a>
+                    @foreach($bulletins as $bulletin)
+                        <div class="swiper-slide courses__slide-item">
+                            <div class="courses__item">
+                                <a href="{{ Storage::url($bulletin->pdf) }}" target="_blank">
+                                    <img class="img" src="{{ Storage::url($bulletin->img) }}"
+                                    alt="{{ $bulletin->{'name_'.app()->getLocale()} }}">
+                                </a>
+                            </div>
+                            <h2 class="courses__item_name text-26">{{ $bulletin->{'name_'.app()->getLocale()} }}</h2>
                         </div>
-                        <h2 class="courses__item_name text-26">ԲԱՆԲԵՐ, 2020, № 1 (3)</h2>
-                    </div>
-                    <div class="swiper-slide courses__slide-item">
-                        <div class="courses__item">
-                            <a href="#">
-                                <img class="img" src="/media/img/bulletin/Book1.png" alt="book2">
-                            </a>
-                        </div>
-                        <h2 class="courses__item_name text-26">ԲԱՆԲԵՐ, 2020, № 1 (3)</h2>
-                    </div>
-                    <div class="swiper-slide courses__slide-item">
-                        <div class="courses__item">
-                            <a href="#">
-                                <img class="img" src="/media/img/bulletin/Book1.png" alt="book3">
-                            </a>
-                        </div>
-                        <h2 class="courses__item_name text-26">ԲԱՆԲԵՐ, 2020, № 1 (3)</h2>
-                    </div>
-                    <div class="swiper-slide courses__slide-item">
-                        <div class="courses__item">
-                            <a href="#">
-                                <img class="img" src="/media/img/bulletin/Book1.png" alt="book4">
-                            </a>
-                        </div>
-                        <h2 class="courses__item_name text-26">ԲԱՆԲԵՐ, 2020, № 1 (3)</h2>
-                    </div>
-                    <div class="swiper-slide courses__slide-item">
-                        <div class="courses__item">
-                            <a href="#">
-                                <img class="img" src="/media/img/bulletin/Book1.png" alt="book5">
-                            </a>
-                        </div>
-                        <h2 class="courses__item_name text-26">ԲԱՆԲԵՐ, 2020, № 1 (3)</h2>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

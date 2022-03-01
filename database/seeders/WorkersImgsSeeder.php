@@ -66,7 +66,7 @@ class WorkersImgsSeeder extends Seeder
             ],
             [
                 'worker_id' => '11',
-                'img' => 'about/workers/Fb8xogJOhKzfAL8esZ3s2UUdcu0HdCMTTBAoZsLl.jpg',
+                'img' => 'about/workers/bfYTEgn99Vo7zsKZvk0HQfl1z0lh9W5g1hpNKTe2.jpg',
             ],
         ]);
     }

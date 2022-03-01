@@ -22,6 +22,7 @@ Route::get('locale/{locale}', 'App\Http\Controllers\MainController@changeLocale'
 Route::middleware(['set_locale'])->group(function () {
     // pages ******************************************************************************
     Route::get('/', 'App\Http\Controllers\PagesController@home')->name('home');
+    Route::get('/search', 'App\Http\Controllers\PagesController@search')->name('search');
 
 
     // about/*********************************************************************************
@@ -256,6 +257,9 @@ Route::middleware(['set_locale'])->group(function () {
         // pdf download
         Route::get('/pdf/{pdf}/download', 'App\Http\Controllers\MainController@LibraryPdfDownload')
             ->name('LibraryPdfDownload');
+        // library pdf download
+        Route::get('/library/{pdf}/download', 'App\Http\Controllers\MainController@LibraryBookDownload')
+        ->name('LibraryBookDownload');
     });
 
 
@@ -531,6 +535,17 @@ Route::middleware(['set_locale'])->group(function () {
                 Route::resource('page', 'App\Http\Controllers\Admin\DistanceLearning\DistancelearningController');
                 
                 // video
+                Route::resource('courses', 'App\Http\Controllers\Admin\DistanceLearning\CoursesController');
+                Route::get('recycleBin/courses', 'App\Http\Controllers\Admin\DistanceLearning\CoursesController@recycleBin')
+                    ->name('courses.recycleBin');
+                Route::get('recycleBin/courses/{id}/restore',
+                    'App\Http\Controllers\Admin\DistanceLearning\CoursesController@recycleBinRestore')
+                    ->name('courses.recycleBinRestore');
+                Route::get('recycleBin/courses/{id}/delete',
+                    'App\Http\Controllers\Admin\DistanceLearning\CoursesController@forceDelete')
+                    ->name('courses.forceDelete');
+
+                // video
                 Route::resource('video', 'App\Http\Controllers\Admin\DistanceLearning\VideoController');
                 Route::get('recycleBin/video',
                     'App\Http\Controllers\Admin\DistanceLearning\VideoController@recycleBin')
@@ -675,6 +690,17 @@ Route::middleware(['set_locale'])->group(function () {
 
             // bulletin /***************************************************************************
             Route::group(['prefix' => 'bulletin', 'as' => 'bulletin.'], function () {
+                Route::resource('/bulletin', 'App\Http\Controllers\Admin\Bulletin\BulletinController');
+                Route::get('recycleBin/bulletin', 'App\Http\Controllers\Admin\Bulletin\BulletinController@recycleBin')
+                    ->name('bulletin.recycleBin');
+                Route::get('recycleBin/bulletin/{id}/restore',
+                    'App\Http\Controllers\Admin\Bulletin\BulletinController@recycleBinRestore')
+                    ->name('bulletin.recycleBinRestore');
+                Route::get('recycleBin/bulletin/{id}/delete',
+                    'App\Http\Controllers\Admin\Bulletin\BulletinController@forceDelete')
+                    ->name('bulletin.forceDelete');
+
+                // info
                 Route::resource('info', 'App\Http\Controllers\Admin\Bulletin\InfoController');
                 Route::get('recycleBin/info', 'App\Http\Controllers\Admin\Bulletin\InfoController@recycleBin')
                     ->name('info.recycleBin');

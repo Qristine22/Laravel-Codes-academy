@@ -19,11 +19,11 @@ html{
     color: var(--dark-yellow);
     padding: 12px 17px;
     border: 1px solid var(--gray-dark);
-    border-radius: 21px;
-    -webkit-border-radius: 21px;
-    -moz-border-radius: 21px;
-    -ms-border-radius: 21px;
-    -o-border-radius: 21px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 .section{
     background-color: var(--section);
