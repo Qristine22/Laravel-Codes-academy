@@ -24,4 +24,13 @@ class DistanceLearningCourse extends Model
         'syllabus_pdf_name_am',
         'syllabus_pdf_name_ru',
     ];
+
+
+    public static function courses(){
+        return DistanceLearningCourse::with('books')->get();
+    }
+
+    public function books(){
+        return $this->hasMany(DistanceLearningBook::class, 'course_id', 'id');
+    }
 }

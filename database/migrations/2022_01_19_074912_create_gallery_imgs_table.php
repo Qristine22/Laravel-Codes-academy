@@ -16,7 +16,7 @@ class CreateGalleryImgsTable extends Migration
     {
         Schema::create('gallery_imgs', function (Blueprint $table) {
             $table->id();
-            $table->string('img');
+            $table->string('img')->nullable(true);
             $table->integer('gallery_id');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

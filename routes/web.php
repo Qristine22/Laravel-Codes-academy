@@ -207,13 +207,21 @@ Route::middleware(['set_locale'])->group(function () {
             // distance learning media materials
             Route::get('/media-materials/{id}', 'App\Http\Controllers\PagesController@mediaMaterials')
                 ->name('mediaMaterials');
+            // distance learning assignments
+            Route::get('/assignments/{id}', 'App\Http\Controllers\PagesController@assignments')
+            ->name('assignments');
             // distance learning guide
             Route::get('/distance-learning-guide', 'App\Http\Controllers\PagesController@distanceLearningGuide')
                 ->name('distanceLearningGuide');
             // distance learning guide
             Route::get('/FAQ', 'App\Http\Controllers\PagesController@FAQ')
             ->name('FAQ');
+            // distance learning single course
+            Route::get('/book/{id}', 'App\Http\Controllers\PagesController@distanceLearningBook')->name('distanceLearningBook');
+            Route::get('book/{pdf}/download', 'App\Http\Controllers\MainController@distanceLearningCourseDownload')
+                ->name('distanceLearningCourseDownload');
         });
+
 
         // distance learning guide pdf download
         Route::get('guide{pdf}download', 'App\Http\Controllers\MainController@distanceLearningGuideDownload')
@@ -534,7 +542,7 @@ Route::middleware(['set_locale'])->group(function () {
             Route::group(['prefix' => 'distance-learning', 'as' => 'distance-learning.'], function () {
                 Route::resource('page', 'App\Http\Controllers\Admin\DistanceLearning\DistancelearningController');
                 
-                // video
+                // courses
                 Route::resource('courses', 'App\Http\Controllers\Admin\DistanceLearning\CoursesController');
                 Route::get('recycleBin/courses', 'App\Http\Controllers\Admin\DistanceLearning\CoursesController@recycleBin')
                     ->name('courses.recycleBin');
@@ -544,6 +552,32 @@ Route::middleware(['set_locale'])->group(function () {
                 Route::get('recycleBin/courses/{id}/delete',
                     'App\Http\Controllers\Admin\DistanceLearning\CoursesController@forceDelete')
                     ->name('courses.forceDelete');
+
+                // book
+                Route::resource('book', 'App\Http\Controllers\Admin\DistanceLearning\BookController');
+                Route::get('/book/deleting-pdf/{id}', 'App\Http\Controllers\Admin\DistanceLearning\BookController@bookPdfDelete')
+                    ->name('bookPdfDelete');
+                Route::get('recycleBin/book',
+                    'App\Http\Controllers\Admin\DistanceLearning\BookController@recycleBin')
+                    ->name('book.recycleBin');
+                Route::get('recycleBin/book/{id}/restore',
+                    'App\Http\Controllers\Admin\DistanceLearning\BookController@recycleBinRestore')
+                    ->name('book.recycleBinRestore');
+                Route::get('recycleBin/book/{id}/delete',
+                    'App\Http\Controllers\Admin\DistanceLearning\BookController@forceDelete')
+                    ->name('book.forceDelete');
+
+                // motivational video
+                Route::resource('motivational-video', 'App\Http\Controllers\Admin\DistanceLearning\MotivationalVideoController');
+                Route::get('recycleBin/motivational-video',
+                    'App\Http\Controllers\Admin\DistanceLearning\MotivationalVideoController@recycleBin')
+                    ->name('motivational-video.recycleBin');
+                Route::get('recycleBin/motivational-video/{id}/restore',
+                    'App\Http\Controllers\Admin\DistanceLearning\MotivationalVideoController@recycleBinRestore')
+                    ->name('motivational-video.recycleBinRestore');
+                Route::get('recycleBin/motivational-video/{id}/delete',
+                    'App\Http\Controllers\Admin\DistanceLearning\MotivationalVideoController@forceDelete')
+                    ->name('motivational-video.forceDelete');
 
                 // video
                 Route::resource('video', 'App\Http\Controllers\Admin\DistanceLearning\VideoController');

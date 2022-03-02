@@ -6,7 +6,6 @@
             <div class="admin__head">
                 <h2 class="admin__title">Տեսադարան</h2>
             </div>
-
             <form class="admin__form" action="{{ route('admin.about.gallery.update', ['gallery' => $gallery]) }}" method="POST"
                 enctype="multipart/form-data">
                 @csrf

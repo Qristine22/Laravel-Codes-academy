@@ -149,7 +149,7 @@ class GalleryController extends Controller
     public function imgDelete($id){
         $item = GalleryImgs::findOrFail($id);
         Storage::delete($item->img);
-        $item->delete();
+        $item->forceDelete();
         return redirect()->back();
     }
 

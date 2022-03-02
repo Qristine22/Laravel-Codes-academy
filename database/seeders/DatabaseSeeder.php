@@ -49,10 +49,14 @@ class DatabaseSeeder extends Seeder
         $this->call(ProvideDeferralSeeder::class);
         $this->call(DistanceLearningSeeder::class);
         $this->call(DistanceLearningVideoSeeder::class);
+        $this->call(DistanceLearningBookSeeder::class);
+        $this->call(DistanceLearningBookPdfSeeder::class);
+        $this->call(MotivationalVideoSeeder::class);
         $this->call(VideoMaterialSeeder::class);
         $this->call(LibrarySeeder::class);
         $this->call(VideoLectureSeeder::class);
         $this->call(DistanceLearningGuideSeeder::class);
+        $this->call(DistanceLearningCourseSeeder::class);
         $this->call(ECHRLinkSeeder::class);
         $this->call(LibraryPdfSeeder::class);
         $this->call(BulletinInfoSeeder::class);

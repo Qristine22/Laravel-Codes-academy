@@ -198,6 +198,20 @@
                             href="{{ route('admin.distance-learning.courses.index') }}">Դասընթացներ</a>
                     </li>
                     <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/book') ||
+                        Request::is('admin/distance-learning/book/*') ||
+                        Request::is('admin/distance-learning/recycleBin/book') ||
+                        Request::is('admin/distance-learning/recycleBin/book/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.distance-learning.book.index') }}">Գրքեր</a>
+                    </li>
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/motivational-video') ||
+                        Request::is('admin/distance-learning/motivational-video/*') ||
+                        Request::is('admin/distance-learning/recycleBin/motivational-video') ||
+                        Request::is('admin/distance-learning/recycleBin/motivational-video/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.distance-learning.motivational-video.index') }}">Մոտիվացնող Տեսանյութեր</a>
+                    </li>
+                    <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/video') ||
                         Request::is('admin/distance-learning/video/*') ||
                         Request::is('admin/distance-learning/recycleBin/video') ||

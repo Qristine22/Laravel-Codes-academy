@@ -7,16 +7,17 @@ use Illuminate\Support\Facades\App;
 // Models
 use App\Models\Library;
 use App\Models\LibraryPdf;
-use App\Models\BehaviorRule;
 use App\Models\BulletinInfo;
-use App\Models\RectorsDecree;
+use App\Models\BehaviorRule;
 use App\Models\DormitoryRule;
+use App\Models\RectorsDecree;
 use App\Models\ConductingExam;
 use App\Models\ProvideDeferral;
 use App\Models\TrainingProgram;
 use App\Models\ConductingPractice;
 use App\Models\GoverningBoardDecree;
 use App\Models\DistanceLearningGuide;
+use App\Models\DistanceLearningBooksPdf;
 
 class MainController extends Controller
 {
@@ -124,6 +125,16 @@ class MainController extends Controller
         $headers = ['Content-Type: application/pdf'];
 
         return response()->download($file, 'guide' . $guide->id . '.pdf', $headers);
+    }
+
+    // distance learning course download
+    public function distanceLearningCourseDownload($pdf)
+    {
+        $book = DistanceLearningBooksPdf::findOrFail($pdf);
+        $file = public_path() . "/storage/" . $book->pdf;
+        $headers = ['Content-Type: application/pdf'];
+
+        return response()->download($file, 'book' . $book->id . '.pdf', $headers);
     }
 
     // ECHR resource download

@@ -37,15 +37,19 @@ use App\Models\TrainingProgram;
 use App\Models\AcademyStructure;
 use App\Models\DistanceLearning;
 use App\Models\RectorsBiography;
+use App\Models\MotivationalVideo;
 use App\Models\ConductingPractice;
 use App\Models\GoverningBoardPage;
 use App\Models\ConductingExamVideo;
+use App\Models\DistanceLearningBook;
 use App\Models\GoverningBoardStaff;
 use App\Models\GoverningBoardDecree;
 use App\Models\DistanceLearningGuide;
 use App\Models\DistanceLearningVideo;
+use App\Models\DistanceLearningCourse;
 use App\Models\FormerRectorsBiography;
 use App\Models\FrequentlyAskedQuestion;
+use App\Models\DistanceLearningBooksPdf;
 use App\Models\DistanceLearningVideoMaterial;
 
 class PagesController extends Controller
@@ -723,16 +727,34 @@ class PagesController extends Controller
             'videoMaterials' => $videoMaterials
         ]);
     }
+    public function assignments($id){
+        dd($id);
+    }
     public function distanceLearningCourses(){
         $headersBot = Subheader::where('parent_id', 4)->get();
         $guide = DistanceLearningGuide::firstOrFail();
         $FAQ = FrequentlyAskedQuestion::firstOrFail();
+        $courses = DistanceLearningCourse::courses();
+        $books = DistanceLearningBook::all();
 
         return view('distance-learning-courses', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'guide' => $guide,
             'FAQ' => $FAQ,
+            'courses' => $courses,
+            'books' => $books,
+        ]);
+    }
+    public function distanceLearningBook($id){
+        $headersBot = Subheader::where('parent_id', 4)->get();
+        $pdfs = DistanceLearningBooksPdf::where('book_id', $id)->get();
+
+        return view('pdfs-download', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'data' => $pdfs,
+            'downloadLink' => 'distanceLearningCourseDownload',
         ]);
     }
     public function FAQ(){
@@ -747,16 +769,22 @@ class PagesController extends Controller
             'distancelearningVideos' => $distancelearningVideos,
         ]);
     }
-    public function motivationalVideos(){
+    public function motivationalVideos($id){
         $headersBot = Subheader::where('parent_id', 4)->get();
         $guide = DistanceLearningGuide::firstOrFail();
         $FAQ = FrequentlyAskedQuestion::firstOrFail();
+        $motivationalVideos = MotivationalVideo::where('course_id', $id)->get();
+
+        if(count($motivationalVideos) === 0){
+            return abort(404);
+        }
 
         return view('motivational-videos', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'guide' => $guide,
             'FAQ' => $FAQ,
+            'motivationalVideos' => $motivationalVideos,
         ]);
     }
     public function mediaMaterials(){

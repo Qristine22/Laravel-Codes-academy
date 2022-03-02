@@ -112,6 +112,13 @@ courses
 .courses__pdfs{
     border-top: 1px solid var(--dark-yellow);
 }
+.courses__pdfs_items{
+    width: 100%;
+    justify-content: flex-start;
+}
+.courses__pdfs_item{
+    margin: 0 50px;
+}
 .courses__icon{
     color: var(--brown);
     margin-right: 10px;

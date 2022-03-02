@@ -74,3 +74,6 @@ conducting exams
     line-height: 25px;
     margin-top: 10px;
 }
+.distance-learning__min-height{
+    min-height: calc(100vh - 200px);
+}

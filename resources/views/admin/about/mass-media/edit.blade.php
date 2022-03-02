@@ -79,7 +79,7 @@
                                 placeholder="Enter your text here" value="{{ $massMedia->year }}">
                         </div>
                     </div>
-                    
+                </div>
                 <button class="form__btn">Save</button>
             </form>
         </section>

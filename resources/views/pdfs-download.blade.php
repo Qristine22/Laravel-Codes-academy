@@ -15,7 +15,7 @@
 
 @section('content')
     <main>
-        <section class="section-text section-top section__min-height">
+        <section class="section-text section-top section__min-height @if(Request::is('distance-learning/courses/*'))distance-learning__min-height @endif">
             <div class="wrapper">
                 <div class="conducting-exams__cont">
                     <div class="link__pdfs">

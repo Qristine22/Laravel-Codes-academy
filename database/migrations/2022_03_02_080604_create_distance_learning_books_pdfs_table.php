@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMassMediaLinksTable extends Migration
+class CreateDistanceLearningBooksPdfsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,13 @@ class CreateMassMediaLinksTable extends Migration
      */
     public function up()
     {
-        Schema::create('mass_media_links', function (Blueprint $table) {
+        Schema::create('distance_learning_books_pdfs', function (Blueprint $table) {
             $table->id();
-            $table->string('site_name')->nullable(true);
-            $table->string('link_name')->nullable(true);
-            $table->text('link')->nullable(true);
-            $table->string('mass_media_id');
+            $table->string('name_en')->nullable(true);
+            $table->string('name_am')->nullable(true);
+            $table->string('name_ru')->nullable(true);
+            $table->string('pdf')->nullable(true);
+            $table->integer('book_id')->nullable(true);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->softDeletes();
@@ -33,6 +34,6 @@ class CreateMassMediaLinksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mass_media_links');
+        Schema::dropIfExists('distance_learning_books_pdfs');
     }
 }
