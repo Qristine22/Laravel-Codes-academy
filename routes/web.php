@@ -201,6 +201,9 @@ Route::middleware(['set_locale'])->group(function () {
             // distance learning courses
             Route::get('/', 'App\Http\Controllers\PagesController@distanceLearningCourses')
                 ->name('distanceLearningCourses');
+            // distance learning courses
+            Route::get('/syllabus/{id}', 'App\Http\Controllers\PagesController@distanceLearningCourseSyllabus')
+                ->name('distanceLearningCourseSyllabus');
             // distance learning motivational videos
             Route::get('/motivational-videos/{id}', 'App\Http\Controllers\PagesController@motivationalVideos')
                 ->name('motivationalVideos');
@@ -579,6 +582,33 @@ Route::middleware(['set_locale'])->group(function () {
                     'App\Http\Controllers\Admin\DistanceLearning\MotivationalVideoController@forceDelete')
                     ->name('motivational-video.forceDelete');
 
+                // additional material
+                Route::resource('additional-material', 'App\Http\Controllers\Admin\DistanceLearning\AdditionalMaterialController');
+                Route::get('/additional-material/link/{id}',
+                    'App\Http\Controllers\Admin\DistanceLearning\AdditionalMaterialController@additionalMaterialLinkDelete')
+                    ->name('additionalMaterialLinkDelete');
+                Route::get('recycleBin/additional-material',
+                    'App\Http\Controllers\Admin\DistanceLearning\AdditionalMaterialController@recycleBin')
+                    ->name('additional-material.recycleBin');
+                Route::get('recycleBin/additional-material/{id}/restore',
+                    'App\Http\Controllers\Admin\DistanceLearning\AdditionalMaterialController@recycleBinRestore')
+                    ->name('additional-material.recycleBinRestore');
+                Route::get('recycleBin/additional-material/{id}/delete',
+                    'App\Http\Controllers\Admin\DistanceLearning\AdditionalMaterialController@forceDelete')
+                    ->name('additional-material.forceDelete');
+
+                // assignment
+                Route::resource('assignment', 'App\Http\Controllers\Admin\DistanceLearning\AssignmentController');
+                Route::get('recycleBin/assignment',
+                    'App\Http\Controllers\Admin\DistanceLearning\AssignmentController@recycleBin')
+                    ->name('assignment.recycleBin');
+                Route::get('recycleBin/assignment/{id}/restore',
+                    'App\Http\Controllers\Admin\DistanceLearning\AssignmentController@recycleBinRestore')
+                    ->name('assignment.recycleBinRestore');
+                Route::get('recycleBin/assignment/{id}/delete',
+                    'App\Http\Controllers\Admin\DistanceLearning\AssignmentController@forceDelete')
+                    ->name('assignment.forceDelete');
+
                 // video
                 Route::resource('video', 'App\Http\Controllers\Admin\DistanceLearning\VideoController');
                 Route::get('recycleBin/video',
@@ -774,6 +804,17 @@ Route::middleware(['set_locale'])->group(function () {
                     ->name('staff.recycleBinRestore');
                 Route::get('recycleBin/staff/{id}/delete', 'App\Http\Controllers\Admin\Contact\StaffController@forceDelete')
                     ->name('staff.forceDelete');
+
+                // contact sites link
+                Route::resource('sites-link', 'App\Http\Controllers\Admin\Contact\SitesLinkController');
+                Route::get('recycleBin/sites-link', 'App\Http\Controllers\Admin\Contact\SitesLinkController@recycleBin')
+                    ->name('sites-link.recycleBin');
+                Route::get('recycleBin/sites-link/{id}/restore',
+                    'App\Http\Controllers\Admin\Contact\SitesLinkController@recycleBinRestore')
+                    ->name('sites-link.recycleBinRestore');
+                Route::get('recycleBin/sites-link/{id}/delete',
+                    'App\Http\Controllers\Admin\Contact\SitesLinkController@forceDelete')
+                    ->name('sites-link.forceDelete');
             });
         });
     });

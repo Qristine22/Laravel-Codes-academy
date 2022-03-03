@@ -212,6 +212,20 @@
                             href="{{ route('admin.distance-learning.motivational-video.index') }}">Մոտիվացնող Տեսանյութեր</a>
                     </li>
                     <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/additional-material') ||
+                        Request::is('admin/distance-learning/additional-material/*') ||
+                        Request::is('admin/distance-learning/recycleBin/additional-material') ||
+                        Request::is('admin/distance-learning/recycleBin/additional-material/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.distance-learning.additional-material.index') }}">Լրացուցիչ մեդիա-նյութեր</a>
+                    </li>
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/assignment') ||
+                        Request::is('admin/distance-learning/assignment/*') ||
+                        Request::is('admin/distance-learning/recycleBin/assignment') ||
+                        Request::is('admin/distance-learning/recycleBin/assignment/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.distance-learning.assignment.index') }}">Առաջադրանքներ</a>
+                    </li>
+                    <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/video') ||
                         Request::is('admin/distance-learning/video/*') ||
                         Request::is('admin/distance-learning/recycleBin/video') ||
@@ -351,6 +365,13 @@
                         Request::is('admin/contact/recycleBin/staff') ||
                         Request::is('admin/contact/recycleBin/staff/*')) admin-header__link-active @endif"
                             href="{{ route('admin.contact.staff.index') }}">Անձնակազմ</a>
+                    </li>
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/contact/sites-link') ||
+                        Request::is('admin/contact/sites-link/*') ||
+                        Request::is('admin/contact/recycleBin/sites-link') ||
+                        Request::is('admin/contact/recycleBin/sites-link/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.contact.sites-link.index') }}">Կայքերի հղումներ</a>
                     </li>
                 </ul>
             </li>

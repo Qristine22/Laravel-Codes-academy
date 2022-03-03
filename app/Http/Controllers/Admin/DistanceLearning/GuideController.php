@@ -18,7 +18,7 @@ class GuideController extends Controller
      */
     public function index()
     {
-        $guides = DistanceLearningGuide::paginate(10);
+        $guides = DistanceLearningGuide::orderBy('id', 'DESC')->paginate(10);
 
         return view('admin.distance-learning.guide.index', [
             'guides' => $guides,

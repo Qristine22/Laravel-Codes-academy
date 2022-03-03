@@ -90,6 +90,9 @@ class VideoMaterialController extends Controller
      */
     public function update(NameRequest $request, DistanceLearningVideoMaterial $videoMaterial)
     {
+        $request->validate([
+            'video' => 'mimes:mp4,ogx,oga,ogv,ogg,webm',
+        ]);
         $video = $request->videoHidden;
 
         if(!empty($request->video)){

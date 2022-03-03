@@ -18,7 +18,7 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        $courses = DistanceLearningCourse::paginate(10);
+        $courses = DistanceLearningCourse::orderBy('id', 'DESC')->paginate(10);
 
         return view('admin.distance-learning.course.index', [
             'courses' => $courses,

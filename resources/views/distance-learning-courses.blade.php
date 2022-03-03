@@ -18,8 +18,10 @@
                     @foreach ($courses as $course)
                         <div class="swiper-slide courses__slide-item" data-id="{{ $course->id }}">
                             <div class="courses__item">
-                                <img class="img" src="{{ Storage::url($course->img) }}"
-                                    alt="{{ $course->{'name_' . app()->getLocale()} }}">
+                                <a href="{{ route('distanceLearningCourseSyllabus', ['id' => $course->id]) }}">
+                                    <img class="img" src="{{ Storage::url($course->img) }}"
+                                        alt="{{ $course->{'name_' . app()->getLocale()} }}">
+                                </a>
                             </div>
                             <h2 class="courses__item_name text-26">{{ $course->{'name_' . app()->getLocale()} }}</h2>
                         </div>

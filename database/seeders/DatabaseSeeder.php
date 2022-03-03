@@ -51,7 +51,10 @@ class DatabaseSeeder extends Seeder
         $this->call(DistanceLearningVideoSeeder::class);
         $this->call(DistanceLearningBookSeeder::class);
         $this->call(DistanceLearningBookPdfSeeder::class);
+        $this->call(DistanceLearningAssignmentSeeder::class);
         $this->call(MotivationalVideoSeeder::class);
+        $this->call(DistanceLearningAdditionalMaterialSeeder::class);
+        $this->call(DistanceLearningAdditionalMaterialLinkSeeder::class);
         $this->call(VideoMaterialSeeder::class);
         $this->call(LibrarySeeder::class);
         $this->call(VideoLectureSeeder::class);
@@ -66,5 +69,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ContactPageSeeder::class);
         $this->call(ContactStaffSeeder::class);
         $this->call(FAQSeeder::class);
+        $this->call(SitesLinkSeeder::class);
     }
 }

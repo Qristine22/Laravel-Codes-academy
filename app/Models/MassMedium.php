@@ -19,7 +19,7 @@ class MassMedium extends Model
     ];
     
     public static function massMidia(){
-        return MassMedium::with('links')->paginate(5);
+        return MassMedium::with('links')->paginate(10);
     }
 
     public static function massMidiaYear($year){

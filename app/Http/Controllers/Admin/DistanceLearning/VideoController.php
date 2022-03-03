@@ -17,7 +17,7 @@ class VideoController extends Controller
      */
     public function index()
     {
-        $distanceLearningVideo = DistanceLearningVideo::paginate(10);
+        $distanceLearningVideo = DistanceLearningVideo::orderBy('id', 'DESC')->paginate(10);
 
         return view('admin.distance-learning.video.index', [
             'distanceLearningVideo' => $distanceLearningVideo,

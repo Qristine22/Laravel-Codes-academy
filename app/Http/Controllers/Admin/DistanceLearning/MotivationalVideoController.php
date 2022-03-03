@@ -19,7 +19,7 @@ class MotivationalVideoController extends Controller
      */
     public function index()
     {
-        $motivationalVideos = MotivationalVideo::paginate(10);
+        $motivationalVideos = MotivationalVideo::orderBy('id', 'DESC')->paginate(10);
         
         return view('admin.distance-learning.motivational-video.index', [
             'motivationalVideos' => $motivationalVideos,

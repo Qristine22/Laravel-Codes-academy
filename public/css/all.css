@@ -112,13 +112,15 @@ html{
     color: var(--brown);
     content: ".";
 }
-.section-text__cont h3{
+.section-text__cont h3,
+.section-text__cont strong{
     color: var(--brown);
     font-weight: 700;
     margin-top: 40px;
     font-size: 20px;
 }
-.section-text__cont h3:first-child{
+.section-text__cont h3:first-child,
+.section-text__cont strong:first-child{
     margin-top: 0;
 }
 .section-text__cont a{

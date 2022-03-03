@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Helpers\PaginationHelper;
 
@@ -17,6 +18,7 @@ use App\Models\Partner;
 use App\Models\Bulletin;
 use App\Models\EchrLink;
 use App\Models\Graduate;
+use App\Models\SitesLink;
 use App\Models\Admission;
 use App\Models\Candidate;
 use App\Models\Subheader;
@@ -41,8 +43,8 @@ use App\Models\MotivationalVideo;
 use App\Models\ConductingPractice;
 use App\Models\GoverningBoardPage;
 use App\Models\ConductingExamVideo;
-use App\Models\DistanceLearningBook;
 use App\Models\GoverningBoardStaff;
+use App\Models\DistanceLearningBook;
 use App\Models\GoverningBoardDecree;
 use App\Models\DistanceLearningGuide;
 use App\Models\DistanceLearningVideo;
@@ -50,11 +52,14 @@ use App\Models\DistanceLearningCourse;
 use App\Models\FormerRectorsBiography;
 use App\Models\FrequentlyAskedQuestion;
 use App\Models\DistanceLearningBooksPdf;
+use App\Models\DistanceLearningAssignment;
 use App\Models\DistanceLearningVideoMaterial;
+use App\Models\DistanceLearningAdditionalMaterial;
 
 class PagesController extends Controller
 {
     public $headers;
+    public $sitesLinks;
 
     public function getHeader(){
         return $this->headers;
@@ -62,9 +67,17 @@ class PagesController extends Controller
     public function setHeader($headers){
         $this->headers = $headers;
     }
+    public function getSitesLinks(){
+        return $this->sitesLinks;
+    }
+    public function setSitesLinks($sitesLinks){
+        $this->sitesLinks = $sitesLinks;
+    }
     public function __construct(){
         $headers = Header::headers();
+        $sitesLinks = SitesLink::all();
         $this->setHeader($headers);
+        $this->setSitesLinks($sitesLinks);
     }
 
 
@@ -80,6 +93,7 @@ class PagesController extends Controller
             'headers' => $this->getHeader(),
             'home' => $home,
             'lastNews' => $lastNews,
+            'sitesLinks' => $this->getSitesLinks(),
         ]);
     }
 
@@ -114,8 +128,11 @@ class PagesController extends Controller
         // ->concat($name)
         $data = PaginationHelper::paginate($data, 20);
 
+
+
         return view('search', [
             'headers' => $this->getHeader(),
+            'sitesLinks' => $this->getSitesLinks(),
             'lastNews' => $lastNews,
             'searchResults' => $data,
         ]);
@@ -130,8 +147,10 @@ class PagesController extends Controller
     public function about(){
         $about = About::firstOrFail();
         $headersBot = Subheader::where('parent_id', 1)->get();
+
         return view('about', [
             'headers' => $this->getHeader(),
+            'sitesLinks' => $this->getSitesLinks(),
             'about' => $about,
             'headersBot' => $headersBot,
         ]);
@@ -152,6 +171,7 @@ class PagesController extends Controller
         return view('governing-board', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'governingBoardPage' => $governingBoardPage,
             'governingBoardDecreesYears' => $governingBoardDecreesYears,
             'governingBoardMembers' => $governingBoardMembers,
@@ -167,6 +187,7 @@ class PagesController extends Controller
         return view('governing-board-decree', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'governingBoardDecrees' => $governingBoardDecrees,
             'governingBoardDecreesYears' => $governingBoardDecreesYears,
             'year' => $year,
@@ -180,6 +201,7 @@ class PagesController extends Controller
         return view('governing-board-biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'person' => $person,
         ]);
     }
@@ -191,6 +213,7 @@ class PagesController extends Controller
         return view('rector', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'text' => $text,
         ]);
     }
@@ -201,6 +224,7 @@ class PagesController extends Controller
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'person' => $person
         ]);
     }
@@ -211,6 +235,7 @@ class PagesController extends Controller
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'person' => $person
         ]);
     }
@@ -221,6 +246,7 @@ class PagesController extends Controller
         return view('rectors-decrees', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'decrees' => $decrees,
         ]);
     }
@@ -237,6 +263,7 @@ class PagesController extends Controller
         return view('academy-structure', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'academyStructure' => $academyStructure,
         ]);
     }
@@ -247,6 +274,7 @@ class PagesController extends Controller
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'person' => $person,
         ]);
     }
@@ -257,6 +285,7 @@ class PagesController extends Controller
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'person' => $person,
         ]);
     }
@@ -267,6 +296,7 @@ class PagesController extends Controller
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'person' => $person,
         ]);
     }
@@ -277,6 +307,7 @@ class PagesController extends Controller
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'person' => $person,
         ]);
     }
@@ -287,6 +318,7 @@ class PagesController extends Controller
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'person' => $person,
         ]);
     }
@@ -297,6 +329,7 @@ class PagesController extends Controller
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'person' => $person,
         ]);
     }
@@ -307,6 +340,7 @@ class PagesController extends Controller
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'person' => $person,
         ]);
     }
@@ -317,6 +351,7 @@ class PagesController extends Controller
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'person' => $person,
         ]);
     }
@@ -327,6 +362,7 @@ class PagesController extends Controller
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'person' => $person,
         ]);
     }
@@ -337,6 +373,7 @@ class PagesController extends Controller
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'person' => $person,
         ]);
     }
@@ -347,6 +384,7 @@ class PagesController extends Controller
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'person' => $person,
         ]);
     }
@@ -369,6 +407,7 @@ class PagesController extends Controller
         return view('report', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'reports' => $reports,
             'reportYears' => $reportYears,
             'year' => $year,
@@ -394,6 +433,7 @@ class PagesController extends Controller
         return view('graduates', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'graduateYears' => $graduateYears,
             'judgeGraduates' => $judgeGraduates,
             'prosecutorGraduates' => $prosecutorGraduates,
@@ -408,6 +448,7 @@ class PagesController extends Controller
         return view('graduates-profession', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'graduates' => $judgeGraduates,
             'position' => 'judge',
         ]);
@@ -419,6 +460,7 @@ class PagesController extends Controller
         return view('graduates-profession', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'graduates' => $prosecutorGraduates,
             'position' => 'prosecutor',
         ]);
@@ -430,6 +472,7 @@ class PagesController extends Controller
         return view('graduates-profession', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'graduates' => $investigatorGraduates,
             'position' => 'investigator',
         ]);
@@ -449,6 +492,7 @@ class PagesController extends Controller
         return view('admission', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'admission' => $admission,
         ]);
     }
@@ -459,6 +503,7 @@ class PagesController extends Controller
         return view('candidates', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'candidate' => $judgesCandidate,
         ]);
     }
@@ -469,6 +514,7 @@ class PagesController extends Controller
         return view('candidates', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'candidate' => $prosecutorsCandidate,
         ]);
     }
@@ -479,6 +525,7 @@ class PagesController extends Controller
         return view('candidates', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'candidate' => $investigatorsCandidate,
         ]);
     }
@@ -499,6 +546,7 @@ class PagesController extends Controller
         return view('gallery', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'galleries' => $galleries,
             'years' => $years,
             'year' => $year,
@@ -516,6 +564,7 @@ class PagesController extends Controller
         return view('gallery', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'galleryVideos' => $galleryVideos,
             'years' => $years,
             'year' => $year,
@@ -536,6 +585,7 @@ class PagesController extends Controller
         return view('mass-media', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'massMedia' => $massMedia,
             'years' => $years,
             'year' => $year,
@@ -554,6 +604,7 @@ class PagesController extends Controller
         $news = News::orderBy('id', 'DESC')->paginate(10);
 
         return view('news', [
+            'sitesLinks' => $this->getSitesLinks(),
             'headers' => $this->getHeader(),
             'news' => $news,
         ]);
@@ -563,6 +614,7 @@ class PagesController extends Controller
         $lastNews = News::latest()->take(3)->get();
 
         return view('news-single', [
+            'sitesLinks' => $this->getSitesLinks(),
             'headers' => $this->getHeader(),
             'news' => $news,
             'lastNews' => $lastNews,
@@ -589,6 +641,7 @@ class PagesController extends Controller
         return view('training-programs', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'trainingProgramJodgeYears' => $trainingProgramJodgeYears,
             'trainingProgramProsecutorYears' => $trainingProgramProsecutorYears,
             'trainingProgramInvestigatorYears' => $trainingProgramInvestigatorYears,
@@ -604,6 +657,7 @@ class PagesController extends Controller
         return view('training-programs', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'trainingProgramJodgeYears' => $trainingProgramJodgeYears,
             'trainingProgramProsecutorYears' => $trainingProgramProsecutorYears,
             'trainingProgramInvestigatorYears' => $trainingProgramInvestigatorYears,
@@ -617,6 +671,7 @@ class PagesController extends Controller
         return view('training-program-single', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'trainingPrograms' => $trainingPrograms,
             'year' => $year,
             'category' => $category,
@@ -635,6 +690,7 @@ class PagesController extends Controller
         return view('conducting-exams', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'conductingExams' => $conductingExams,
             'conductingExamVideos' => $conductingExamVideos,
         ]);
@@ -646,6 +702,7 @@ class PagesController extends Controller
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'data' => $conductingPractices,
             'downloadLink' => 'conductingPracticeDownload',
         ]);
@@ -657,6 +714,7 @@ class PagesController extends Controller
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'data' => $data,
             'downloadLink' => 'rulesOfBehaviorDownload',
         ]);
@@ -668,6 +726,7 @@ class PagesController extends Controller
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'data' => $data,
             'downloadLink' => 'dormitoryRulesDownload',
         ]);
@@ -679,6 +738,7 @@ class PagesController extends Controller
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'data' => $data,
             'downloadLink' => 'provideDeferralDownload',
         ]);
@@ -699,6 +759,7 @@ class PagesController extends Controller
         return view('distance-learning', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'distanceLearning' => $distanceLearning,
             'distancelearningVideos' => $distancelearningVideos,
         ]);
@@ -712,6 +773,7 @@ class PagesController extends Controller
         return view('distance-learning-video', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'distancelearningVideo' => $distancelearningVideo,
             'guide' => $guide,
             'FAQ' => $FAQ,
@@ -724,11 +786,27 @@ class PagesController extends Controller
         return view('video-materials', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'videoMaterials' => $videoMaterials
         ]);
     }
     public function assignments($id){
-        dd($id);
+        $headersBot = Subheader::where('parent_id', 4)->get();
+        $guide = DistanceLearningGuide::firstOrFail();
+        $FAQ = FrequentlyAskedQuestion::firstOrFail();
+        $assignments = DistanceLearningAssignment::where('course_id', $id)->get();
+
+        if(count($assignments) === 0){
+            return abort(404);
+        }
+        return view('distance-learning-assignment', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
+            'guide' => $guide,
+            'FAQ' => $FAQ,
+            'assignments' => $assignments,
+        ]);
     }
     public function distanceLearningCourses(){
         $headersBot = Subheader::where('parent_id', 4)->get();
@@ -740,10 +818,24 @@ class PagesController extends Controller
         return view('distance-learning-courses', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'guide' => $guide,
             'FAQ' => $FAQ,
             'courses' => $courses,
             'books' => $books,
+        ]);
+    }
+    public function distanceLearningCourseSyllabus($id){
+        $headersBot = Subheader::where('parent_id', 4)->get();
+        $distanceLearningCourse = DistanceLearningCourse::findOrFail($id);
+        $distancelearningVideos = DistanceLearningVideo::paginate(10);
+
+        return view('distance-learning', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
+            'distanceLearning' => $distanceLearningCourse,
+            'distancelearningVideos' => $distancelearningVideos,
         ]);
     }
     public function distanceLearningBook($id){
@@ -753,6 +845,7 @@ class PagesController extends Controller
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'data' => $pdfs,
             'downloadLink' => 'distanceLearningCourseDownload',
         ]);
@@ -765,6 +858,7 @@ class PagesController extends Controller
         return view('distance-learning', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'distanceLearning' => $FAQ,
             'distancelearningVideos' => $distancelearningVideos,
         ]);
@@ -782,21 +876,25 @@ class PagesController extends Controller
         return view('motivational-videos', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'guide' => $guide,
             'FAQ' => $FAQ,
             'motivationalVideos' => $motivationalVideos,
         ]);
     }
-    public function mediaMaterials(){
+    public function mediaMaterials($id){
         $headersBot = Subheader::where('parent_id', 4)->get();
         $guide = DistanceLearningGuide::firstOrFail();
         $FAQ = FrequentlyAskedQuestion::firstOrFail();
+        $additionalMaterials = DistanceLearningAdditionalMaterial::additionalMaterialSingle($id);
 
         return view('media-materials', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'guide' => $guide,
             'FAQ' => $FAQ,
+            'additionalMaterials' => $additionalMaterials,
         ]);
     }
     public function distanceLearningGuide(){
@@ -807,6 +905,7 @@ class PagesController extends Controller
         return view('distance-learning-guide', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'guide' => $guide,
             'FAQ' => $FAQ,
         ]);
@@ -826,6 +925,7 @@ class PagesController extends Controller
         return view('library', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'data' => $academyPublications,
         ]);
     }
@@ -836,6 +936,7 @@ class PagesController extends Controller
         return view('library', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'data' => $academyPublications,
         ]);
     }
@@ -846,6 +947,7 @@ class PagesController extends Controller
         return view('video-lectures', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'videoLectures' => $videoLectures,
         ]);
     }
@@ -856,6 +958,7 @@ class PagesController extends Controller
         return view('video-lecture-single', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'videoLecture' => $videoLecture,
         ]);
     }
@@ -866,6 +969,7 @@ class PagesController extends Controller
         return view('library', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'data' => $academyPublications,
         ]);
     }
@@ -876,6 +980,7 @@ class PagesController extends Controller
         return view('library', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'data' => $manuals,
         ]);
     }
@@ -886,6 +991,7 @@ class PagesController extends Controller
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'data' => $professionalLiteratures,
             'downloadLink' => 'LibraryPdfDownload',
         ]);
@@ -897,6 +1003,7 @@ class PagesController extends Controller
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'data' => $organizingLibraryActivities,
             'downloadLink' => 'LibraryPdfDownload',
         ]);
@@ -909,6 +1016,7 @@ class PagesController extends Controller
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'data' => $ECHRResources,
             'ECHRLinks' => $ECHRLinks,
             'downloadLink' => 'ECHRResourcesDownload',
@@ -921,6 +1029,7 @@ class PagesController extends Controller
         return view('library', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
             'data' => $investigatorTrainingModules,
         ]);
     }
@@ -938,6 +1047,7 @@ class PagesController extends Controller
 
         return view('bulletin', [
             'headers' => $this->getHeader(),
+            'sitesLinks' => $this->getSitesLinks(),
             'bulletinInfos' => $bulletinInfos,
             'bulletins' => $bulletins,
             'downloadLink' => 'bulletinInfoDownload',
@@ -958,6 +1068,7 @@ class PagesController extends Controller
 
         return view('partners', [
             'headers' => $this->getHeader(),
+            'sitesLinks' => $this->getSitesLinks(),
             'internationals' => $internationals,
             'foreigns' => $foreigns,
             'armArtsakhs' => $armArtsakhs,
@@ -969,6 +1080,7 @@ class PagesController extends Controller
 
         return view('partner-single', [
             'headers' => $this->getHeader(),
+            'sitesLinks' => $this->getSitesLinks(),
             'headersBot' => $headersBot,
             'partner' => $partner,
         ]);
@@ -987,6 +1099,7 @@ class PagesController extends Controller
 
         return view('contacts', [
             'headers' => $this->getHeader(),
+            'sitesLinks' => $this->getSitesLinks(),
             'contactPage' => $contactPage,
             'contactStaff' => $contactStaff,
         ]);

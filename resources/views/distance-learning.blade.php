@@ -15,7 +15,11 @@
             <div class="wrapper">
                 <div class="section-text__cont">
                     @if (!empty($distanceLearning))
-                        {!! $distanceLearning->{'text_'.app()->getLocale()} !!}
+                        @if(!empty($distanceLearning->text_am))
+                            {!! $distanceLearning->{'text_'.app()->getLocale()} !!}
+                        @else
+                            {!! $distanceLearning->{'syllabus_'.app()->getLocale()} !!}
+                        @endif
                     @endif
                 </div>
             </div>
