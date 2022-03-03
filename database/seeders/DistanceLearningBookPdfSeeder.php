@@ -43,6 +43,28 @@ class DistanceLearningBookPdfSeeder extends Seeder
                 'pdf' => 'distance-learning/books/pdfs/JDoR03BnY1FT5geOg3fl6CUMx4ENSXSqeTaWoGxv.pdf',
                 'book_id' => '2',
             ],
+
+            [
+                'name_en' => 'Ծրագիր - Փախստականների իրավունք',
+                'name_am' => 'Ծրագիր - Փախստականների իրավունք',
+                'name_ru' => 'Ծրագիր - Փախստականների իրավունք',
+                'pdf' => 'distance-learning/books/pdfs/XyCRU49LSPFSdasMCLsdyB3xnZr9x3Z49GQYhw0Q.pdf',
+                'book_id' => '3',
+            ],
+            [
+                'name_en' => 'Նախաբան',
+                'name_am' => 'Նախաբան',
+                'name_ru' => 'Նախաբան',
+                'pdf' => 'distance-learning/books/pdfs/Vnj5aFgwjY7wdm2zWm84oZ084fDykBJl2NsyXyQA.pdf',
+                'book_id' => '3',
+            ],
+            [
+                'name_en' => 'Ներածություն',
+                'name_am' => 'Ներածություն',
+                'name_ru' => 'Ներածություն',
+                'pdf' => 'distance-learning/books/pdfs/NmouxVqCgN2abv8J2cQswnPvJJaTJANK7HyTeXG0.pdf',
+                'book_id' => '3',
+            ],
         ]);
     }
 }
