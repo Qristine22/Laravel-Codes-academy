@@ -37,7 +37,7 @@ html{
     margin-top: 105px;
 }
 .section__min-height{
-    min-height: calc(100vh - 293px);
+    min-height: calc(100vh - 278px);
 }
 .img{
     width: 100%;

@@ -24,9 +24,9 @@ class StaffRequest extends FormRequest
     public function rules()
     {
         return [
-            'possition_en' => 'max:255',
-            'possition_am' => 'max:255',
-            'possition_ru' => 'max:255',
+            'position_en' => 'max:255',
+            'position_am' => 'max:255',
+            'position_ru' => 'max:255',
             'name_en' => 'max:255',
             'name_am' => 'max:255',
             'name_ru' => 'max:255',

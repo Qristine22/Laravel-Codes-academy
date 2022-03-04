@@ -18,4 +18,9 @@ return [
     'gallery' => [
         'video' => 'Video',
     ],
+    'admission' => [
+        'judges' => 'Candidates for judges',
+        'prosecutor' => 'Candidates for prosecutors',
+        'investigator' => 'Candidates for investigators',
+    ],
 ];

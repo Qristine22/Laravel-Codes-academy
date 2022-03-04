@@ -16,9 +16,9 @@ class CreateContactStaffTable extends Migration
     {
         Schema::create('contact_staff', function (Blueprint $table) {
             $table->id();
-            $table->string('possition_en')->nullable(true);
-            $table->string('possition_am')->nullable(true);
-            $table->string('possition_ru')->nullable(true);
+            $table->string('position_en')->nullable(true);
+            $table->string('position_am')->nullable(true);
+            $table->string('position_ru')->nullable(true);
             $table->string('name_en')->nullable(true);
             $table->string('name_am')->nullable(true);
             $table->string('name_ru')->nullable(true);

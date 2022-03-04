@@ -15,9 +15,9 @@ class GoverningBoardStaff extends Model
         'name_en',
         'name_am',
         'name_ru',
-        'possition_en',
-        'possition_am',
-        'possition_ru',
+        'position_en',
+        'position_am',
+        'position_ru',
         'biography',
         'img',
     ];

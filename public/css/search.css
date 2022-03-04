@@ -7,6 +7,9 @@
     margin-bottom: 50px;
 }
 .result{
+    margin-top: 30px;
+}
+.search__link_wrap{
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -15,14 +18,21 @@
     -webkit-box-orient: vertical;
     margin-top: 5px;
 }
+.search__link_wrap:first-child,
 .result:first-child{
     margin-top: 0;
+}
+.search__title{
+    color: var(--brown);
+    font-size: 23px;
+    font-weight: 700;
+    margin: 0 0 15px 9px;
 }
 .search__link{
     display: block;
     width: max-content;
     color: var(--dark-yellow);
-    padding: 2px 8px;
+    padding: 0 8px;
     border: 1px solid transparent;
     transition: all ease .3s;
     -webkit-transition: all ease .3s;

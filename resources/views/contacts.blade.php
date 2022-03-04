@@ -66,7 +66,7 @@
                     @foreach($contactStaff as $item)
                         <div class="staff__block_item">
                             <div class="staff__item_top">
-                                <h3 class="staff__item_bold text-20">{{ $item->{'possition_'.app()->getLocale()} }}</h3>
+                                <h3 class="staff__item_bold text-20">{{ $item->{'position_'.app()->getLocale()} }}</h3>
                                 <h3 class="staff__item_bold text-18">{{ $item->{'name_'.app()->getLocale()} }}</h3>
                             </div>
                             <div class="staff__item_bot">

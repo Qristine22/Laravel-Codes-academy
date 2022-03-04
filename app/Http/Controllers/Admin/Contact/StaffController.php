@@ -42,9 +42,9 @@ class StaffController extends Controller
     public function store(StaffRequest $request)
     {
         ContactStaff::insert([
-            'possition_en' => $request->possition_en,
-            'possition_am' => $request->possition_am,
-            'possition_ru' => $request->possition_ru,
+            'position_en' => $request->position_en,
+            'position_am' => $request->position_am,
+            'position_ru' => $request->position_ru,
             'name_en' => $request->name_en,
             'name_am' => $request->name_am,
             'name_ru' => $request->name_ru,
@@ -89,9 +89,9 @@ class StaffController extends Controller
     public function update(StaffRequest $request, ContactStaff $staff)
     {
         $staff->update([
-            'possition_en' => $request->possition_en,
-            'possition_am' => $request->possition_am,
-            'possition_ru' => $request->possition_ru,
+            'position_en' => $request->position_en,
+            'position_am' => $request->position_am,
+            'position_ru' => $request->position_ru,
             'name_en' => $request->name_en,
             'name_am' => $request->name_am,
             'name_ru' => $request->name_ru,

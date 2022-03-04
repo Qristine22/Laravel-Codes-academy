@@ -17,19 +17,19 @@
                 <div class="form__text">
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="possition__en">Possition (English)</label>
-                            <input class="admin-inp" type="text" id="possition__en" name="possition_en"
-                                placeholder="Enter your text here" value="{{ old('possition_en') }}">
+                            <label class="text-20 form__item_name" for="position__en">position (English)</label>
+                            <input class="admin-inp" type="text" id="position__en" name="position_en"
+                                placeholder="Enter your text here" value="{{ old('position_en') }}">
                         </div>
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="possition__am">Possition (Armenian)</label>
-                            <input class="admin-inp" type="text" id="possition__am" name="possition_am"
-                                placeholder="Enter your text here" value="{{ old('possition_am') }}">
+                            <label class="text-20 form__item_name" for="position__am">position (Armenian)</label>
+                            <input class="admin-inp" type="text" id="position__am" name="position_am"
+                                placeholder="Enter your text here" value="{{ old('position_am') }}">
                         </div>
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="possition__ru">Possition (Russian)</label>
-                            <input class="admin-inp" type="text" id="possition__ru" name="possition_ru"
-                                placeholder="Enter your text here" value="{{ old('possition_ru') }}">
+                            <label class="text-20 form__item_name" for="position__ru">position (Russian)</label>
+                            <input class="admin-inp" type="text" id="position__ru" name="position_ru"
+                                placeholder="Enter your text here" value="{{ old('position_ru') }}">
                         </div>
                     </div>
                     <div class="flex inputs__group">

@@ -28,7 +28,7 @@ class AcademyStructureSeeder extends Seeder
                 'link' => 'about/rector',
             ],
             [
-                'name_en' => '<>RECTOR\'S</p><p>ADVISOR</p>',
+                'name_en' => 'RECTOR\'S</p><p>ADVISOR</p>',
                 'name_am' => '<p>ՌԵԿՏՈՐԻ</p><p>ԽՈՐՀՐԴԱԿԱՆ</p>',
                 'name_ru' => '<p>СОВЕТНИК</p><p>РЕКТОРА</p>',
                 'link' => null,
