@@ -59,7 +59,7 @@
                                 </a>
                                 <a href="{{ route('assignments', ['id' => $course->id]) }}">
                                     <button class="courses__btn text-18">
-                                        <i class="courses__icon fas fa-headphones"></i>
+                                        <i class="courses__icon fas fa-file-signature"></i>
                                         @lang('distance-learning.assignments')
                                     </button>
                                 </a>
