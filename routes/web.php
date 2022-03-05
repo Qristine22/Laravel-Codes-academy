@@ -829,3 +829,12 @@ Route::middleware(['set_locale'])->group(function () {
         });
     });
 });
+
+
+
+
+
+Route::group(['prefix' => 'search', 'as' => 'search.'], function () {
+    Route::get('news/{id}', 'App\Http\Controllers\SearchResultController@news')->name('news');
+    Route::get('abouts/{id}', 'App\Http\Controllers\SearchResultController@abouts')->name('abouts');
+});

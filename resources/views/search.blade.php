@@ -24,7 +24,8 @@
                                     @if (count($result) > 0)
                                         @foreach ($result as $item)
                                             <div class="search__link_wrap">
-                                                <a class="search__link text-20" href="#">
+                                                <a class="search__link text-20" href="{{ route('search.'.$result[0]->getTable(), ['id' => $item->id]) }}">
+                                                    {{-- $result[0]->getTable() --}}
                                                     @if (isset($item->name_en))
                                                         {!! $item->{'name_' . app()->getLocale()} !!}
                                                     @elseif (isset($item->title_en))
@@ -50,8 +51,6 @@
                             @endforeach
                         @endif
                     </div>
-
-                    {{-- {{ $searchResults->appends(['search' => $_GET['search']])->links('includes.pagination.paginate') }} --}}
                 </div>
             </div>
         </div>

@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 
 // Models
-use App\Models\Home;
 use App\Models\News;
 use App\Models\About;
 use App\Models\Header;
@@ -65,14 +64,6 @@ class SearchController extends Controller
             return redirect()->back();
         }
 
-        $homes = Home::where('title_en', 'LIKE', "%$query%")
-            ->orwhere('title_am', 'LIKE', "%$query%")
-            ->orwhere('title_ru', 'LIKE', "%$query%")
-            ->orwhere('rectors_word_en', 'LIKE', "%$query%")
-            ->orwhere('rectors_word_am', 'LIKE', "%$query%")
-            ->orwhere('rectors_word_ru', 'LIKE', "%$query%")
-            ->get();
-
         $news = News::where('title_en', 'LIKE', "%$query%")
             ->orwhere('title_am', 'LIKE', "%$query%")
             ->orwhere('title_ru', 'LIKE', "%$query%")
@@ -104,11 +95,11 @@ class SearchController extends Controller
             ->orwhere('biography_ru', 'LIKE', "%$query%")
             ->get();
 
-        $libraries = Library::where('name_en', 'LIKE', "%$query%")
-            ->orwhere('name_am', 'LIKE', "%$query%")
-            ->orwhere('name_ru', 'LIKE', "%$query%")
-            ->orwhere('category', 'LIKE', "%$query%")
-            ->get();
+        // $libraries = Library::where('name_en', 'LIKE', "%$query%")
+        //     ->orwhere('name_am', 'LIKE', "%$query%")
+        //     ->orwhere('name_ru', 'LIKE', "%$query%")
+        //     ->orwhere('category', 'LIKE', "%$query%")
+        //     ->get();
 
         $partners = Partner::where('name_en', 'LIKE', "%$query%")
             ->orwhere('name_am', 'LIKE', "%$query%")
@@ -361,22 +352,24 @@ class SearchController extends Controller
 
 
 
-        $data = Collection::wrap(array($news))->concat(array($galleries))->concat(array($homes))->concat(array($abouts))
-            ->concat(array($reports))->concat(array($workers))->concat(array($partners))->concat(array($bulletins))
-            ->concat(array($echrLinks))->concat(array($admissions))->concat(array($candidates))
-            ->concat(array($libraryPdfs))->concat(array($massMedia)) ->concat(array($contactPages))
-            ->concat(array($rectorsPages))->concat(array($behaviorRules))->concat(array($bulletinInfos))
-            ->concat(array($contactStaffs))->concat(array($distanceLearningAdditionalMaterials))
-            ->concat(array($GalleryVideos))->concat(array($videoLectures))->concat(array($dormitoryRules))
-            ->concat(array($rectorsDecree))->concat(array($conductingExams))->concat(array($provideDeferrals))
-            ->concat(array($trainingPrograms))->concat(array($academyStructures))->concat(array($distanceLearnings))
-            ->concat(array($rectorsBiographys))->concat(array($motivationalVideos))->concat(array($conductingPractices))
-            ->concat(array($governingBoardPages))->concat(array($governingBoardStaffs))->concat(array($distanceLearningBooks))
-            ->concat(array($governingBoardDecrees))->concat(array($distanceLearningGuides))
-            ->concat(array($distanceLearningVideos))->concat(array($distanceLearningCourses))
-            ->concat(array($formerRectorsBiographys))->concat(array($frequentlyAskedQuestions))
-            ->concat(array($distanceLearningBooksPdfs))->concat(array($distanceLearningAssignments))
-            ->concat(array($distanceLearningVideoMaterials));
+        $data = Collection::wrap(array($news))
+        // ->concat(array($galleries))
+            ->concat(array($abouts));
+            // ->concat(array($reports))->concat(array($workers))->concat(array($partners))->concat(array($bulletins))
+            // ->concat(array($echrLinks))->concat(array($admissions))->concat(array($candidates))
+            // ->concat(array($libraryPdfs))->concat(array($massMedia)) ->concat(array($contactPages))
+            // ->concat(array($rectorsPages))->concat(array($behaviorRules))->concat(array($bulletinInfos))
+            // ->concat(array($contactStaffs))->concat(array($distanceLearningAdditionalMaterials))
+            // ->concat(array($GalleryVideos))->concat(array($videoLectures))->concat(array($dormitoryRules))
+            // ->concat(array($rectorsDecree))->concat(array($conductingExams))->concat(array($provideDeferrals))
+            // ->concat(array($trainingPrograms))->concat(array($academyStructures))->concat(array($distanceLearnings))
+            // ->concat(array($rectorsBiographys))->concat(array($motivationalVideos))->concat(array($conductingPractices))
+            // ->concat(array($governingBoardPages))->concat(array($governingBoardStaffs))->concat(array($distanceLearningBooks))
+            // ->concat(array($governingBoardDecrees))->concat(array($distanceLearningGuides))
+            // ->concat(array($distanceLearningVideos))->concat(array($distanceLearningCourses))
+            // ->concat(array($formerRectorsBiographys))->concat(array($frequentlyAskedQuestions))
+            // ->concat(array($distanceLearningBooksPdfs))->concat(array($distanceLearningAssignments))
+            // ->concat(array($distanceLearningVideoMaterials));
 
 
 
