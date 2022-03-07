@@ -834,7 +834,65 @@ Route::middleware(['set_locale'])->group(function () {
 
 
 
+
+
+
+// search results /***************************************************************************
 Route::group(['prefix' => 'search', 'as' => 'search.'], function () {
-    Route::get('news/{id}', 'App\Http\Controllers\SearchResultController@news')->name('news');
-    Route::get('abouts/{id}', 'App\Http\Controllers\SearchResultController@abouts')->name('abouts');
+    Route::get('news/{id}', 'App\Http\Controllers\Pages\NewsController@newsSingle')->name('news');
+    Route::get('abouts/{id}', 'App\Http\Controllers\Pages\AboutController@about')->name('abouts');
+    Route::get('reports/{id}', 'App\Http\Controllers\SearchResultController@reports')->name('reports');
+    Route::get('abouts/academy-structure/{id}', 'App\Http\Controllers\SearchResultController@workers')->name('workers');
+    Route::get('partners/{id}', 'App\Http\Controllers\Pages\PartnersController@partnerSingle')->name('partners');
+    Route::get('echr-links/{id}', 'App\Http\Controllers\Pages\LibraryController@ECHRResources')->name('echr_links');
+    Route::get('admissions/{id}', 'App\Http\Controllers\Pages\AboutController@admission')->name('admissions');
+    Route::get('candidates/{id}', 'App\Http\Controllers\SearchResultController@candidates')->name('candidates');
+    Route::get('library-pdfs/{id}', 'App\Http\Controllers\SearchResultController@libraryPdfs')->name('library_pdfs');
+    Route::get('mass-media/{id}', 'App\Http\Controllers\SearchResultController@massMedia')->name('mass_media');
+    Route::get('contact-pages/{id}', 'App\Http\Controllers\Pages\ContactsController@contacts')->name('contact_pages');
+    Route::get('contact-staff/{id}', 'App\Http\Controllers\Pages\ContactsController@contacts')->name('contact_staff');
+    Route::get('abouts/rectors-pages/{id}', 'App\Http\Controllers\Pages\AboutController@rector')->name('rectors_pages');
+    Route::get('behavior-rules/{id}', 'App\Http\Controllers\Pages\FullTimeEducationController@rulesOfBehavior')
+        ->name('behavior_rules');
+    Route::get('bulletin-infos/{id}', 'App\Http\Controllers\Pages\BulletinController@bulletin')->name('bulletin_infos');
+    Route::get('galleries/{id}', 'App\Http\Controllers\SearchResultController@galleries')->name('galleries');
+    Route::get('gallery-videos/{id}', 'App\Http\Controllers\SearchResultController@galleryVideos')->name('gallery_videos');
+    Route::get('video-lectures/{id}', 'App\Http\Controllers\SearchResultController@videoLectures')->name('video_lectures');
+    Route::get('dormitory-rules/{id}', 'App\Http\Controllers\Pages\FullTimeEducationController@dormitoryRules')
+        ->name('dormitory_rules');
+    Route::get('rectors-decrees/{id}', 'App\Http\Controllers\Pages\AboutController@rectorsDecrees')->name('rectors_decrees');
+    Route::get('conducting-exams/{id}', 'App\Http\Controllers\Pages\FullTimeEducationController@conductingExams')
+        ->name('conducting_exams');
+    Route::get('academy-structures/{id}', 'App\Http\Controllers\Pages\AboutController@academyStructure')
+        ->name('academy_structures');
+    Route::get('provide-deferrals/{id}', 'App\Http\Controllers\Pages\FullTimeEducationController@provideDeferral')
+        ->name('provide_deferrals');
+    Route::get('training-programs/{id}', 'App\Http\Controllers\Pages\FullTimeEducationController@trainingPrograms')
+        ->name('training_programs');
+    Route::get('distance-learnings/{id}', 'App\Http\Controllers\Pages\DistanceLearningController@distanceLearning')
+        ->name('distance_learnings');
+    Route::get('abouts/rectors-biographies/{id}', 'App\Http\Controllers\Pages\AboutController@rectorsBiography')
+        ->name('rectors_biographies');
+    Route::get('abouts/former-rectors-biographies/{id}', 'App\Http\Controllers\Pages\AboutController@formerRectorsBiography')
+        ->name('former_rectors_biographies');
+    Route::get('conducting-practice/{id}', 'App\Http\Controllers\Pages\FullTimeEducationController@conductingPractice')
+        ->name('conducting_practices');
+    Route::get('governing-board-pages/{id}', 'App\Http\Controllers\Pages\AboutController@governingBoard')
+        ->name('governing_board_pages');
+    Route::get('governing-board-staff/{id}', 'App\Http\Controllers\Pages\AboutController@governingBoardBiography')
+        ->name('governing_board_staff');
+    Route::get('distance-learning-books/{id}', 'App\Http\Controllers\Pages\DistanceLearningController@distanceLearningBook')
+        ->name('distance_learning_books');
+    Route::get('governing-board-decrees/{id}', 'App\Http\Controllers\SearchResultController@governingBoardDecrees')
+        ->name('governing_board_decrees');
+    Route::get('distance-learning-guides/{id}', 'App\Http\Controllers\Pages\DistanceLearningController@distanceLearningGuide')
+        ->name('distance_learning_guides');
+    Route::get('distance-learning-videos/{id}', 'App\Http\Controllers\Pages\DistanceLearningController@distanceLearningVideo')
+        ->name('distance_learning_videos');
+    Route::get('distance-learning-courses/{id}', 'App\Http\Controllers\Pages\DistanceLearningController@distanceLearningCourses')
+        ->name('distance_learning_courses');
+    Route::get('FAQ/{id}', 'App\Http\Controllers\Pages\DistanceLearningController@FAQ')
+        ->name('frequently_asked_questions');
+    Route::get('graduates/{id}', 'App\Http\Controllers\Pages\DistanceLearningController@FAQ')
+        ->name('graduates');
 });

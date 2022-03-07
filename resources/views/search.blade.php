@@ -25,7 +25,6 @@
                                         @foreach ($result as $item)
                                             <div class="search__link_wrap">
                                                 <a class="search__link text-20" href="{{ route('search.'.$result[0]->getTable(), ['id' => $item->id]) }}">
-                                                    {{-- $result[0]->getTable() --}}
                                                     @if (isset($item->name_en))
                                                         {!! $item->{'name_' . app()->getLocale()} !!}
                                                     @elseif (isset($item->title_en))
@@ -34,6 +33,8 @@
                                                         {!! $item->{'description_' . app()->getLocale()} !!}
                                                     @elseif (isset($item->info_en))
                                                         {!! $item->{'info_' . app()->getLocale()} !!}
+                                                    @elseif (isset($item->info))
+                                                        {!! $item->info !!}
                                                     @elseif (isset($item->text_en))
                                                         {!! $item->{'text_' . app()->getLocale()} !!}
                                                     @elseif (isset($item->address_en))

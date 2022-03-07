@@ -89,13 +89,8 @@ class AboutController extends Controller
     public function governingBoard(){
         $headersBot = Subheader::where('parent_id', 1)->get();
 
-        // /about/governing-board - long text in top 
         $governingBoardPage = GoverningBoardPage::firstOrFail();
-
-        // /about/governing-board - years
         $governingBoardDecreesYears = GoverningBoardDecree::all()->groupBy('year');
-
-        // /about/governing-board - members
         $governingBoardMembers = GoverningBoardStaff::get();
 
         return view('governing-board', [
@@ -110,7 +105,6 @@ class AboutController extends Controller
 
     public function governingBoardDecree($year){
         $headersBot = Subheader::where('parent_id', 1)->get();
-
         $governingBoardDecrees = GoverningBoardDecree::where('year', $year)->get();
         $governingBoardDecreesYears = GoverningBoardDecree::all()->groupBy('year');
 
@@ -138,8 +132,8 @@ class AboutController extends Controller
 
     public function rector(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-
         $text = RectorsPage::firstOrFail();
+
         return view('rector', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,

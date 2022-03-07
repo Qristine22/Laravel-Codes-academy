@@ -95,12 +95,6 @@ class SearchController extends Controller
             ->orwhere('biography_ru', 'LIKE', "%$query%")
             ->get();
 
-        // $libraries = Library::where('name_en', 'LIKE', "%$query%")
-        //     ->orwhere('name_am', 'LIKE', "%$query%")
-        //     ->orwhere('name_ru', 'LIKE', "%$query%")
-        //     ->orwhere('category', 'LIKE', "%$query%")
-        //     ->get();
-
         $partners = Partner::where('name_en', 'LIKE', "%$query%")
             ->orwhere('name_am', 'LIKE', "%$query%")
             ->orwhere('name_ru', 'LIKE', "%$query%")
@@ -239,7 +233,7 @@ class SearchController extends Controller
             ->orwhere('text_ru', 'LIKE', "%$query%")
             ->get();
 
-        $rectorsBiographys = RectorsBiography::where('name_en', 'LIKE', "%$query%")
+        $rectorsBiographies = RectorsBiography::where('name_en', 'LIKE', "%$query%")
             ->orwhere('name_am', 'LIKE', "%$query%")
             ->orwhere('name_ru', 'LIKE', "%$query%")
             ->orwhere('position_en', 'LIKE', "%$query%")
@@ -248,11 +242,6 @@ class SearchController extends Controller
             ->orwhere('biography_en', 'LIKE', "%$query%")
             ->orwhere('biography_am', 'LIKE', "%$query%")
             ->orwhere('biography_ru', 'LIKE', "%$query%")
-            ->get();
-
-        $motivationalVideos = MotivationalVideo::where('name_en', 'LIKE', "%$query%")
-            ->orwhere('name_am', 'LIKE', "%$query%")
-            ->orwhere('name_ru', 'LIKE', "%$query%")
             ->get();
 
         $conductingPractices = ConductingPractice::where('name_en', 'LIKE', "%$query%")
@@ -307,7 +296,7 @@ class SearchController extends Controller
             ->orwhere('syllabus_pdf_name_ru', 'LIKE', "%$query%")
             ->get();
 
-        $formerRectorsBiographys = FormerRectorsBiography::where('name_en', 'LIKE', "%$query%")
+        $formerRectorsBiographies = FormerRectorsBiography::where('name_en', 'LIKE', "%$query%")
             ->orwhere('name_am', 'LIKE', "%$query%")
             ->orwhere('name_ru', 'LIKE', "%$query%")
             ->orwhere('position_en', 'LIKE', "%$query%")
@@ -326,50 +315,21 @@ class SearchController extends Controller
             ->orwhere('text_ru', 'LIKE', "%$query%")
             ->get();
 
-        $distanceLearningBooksPdfs = DistanceLearningBooksPdf::where('name_en', 'LIKE', "%$query%")
-            ->orwhere('name_am', 'LIKE', "%$query%")
-            ->orwhere('name_ru', 'LIKE', "%$query%")
-            ->get();
-
-        $distanceLearningAssignments = DistanceLearningAssignment::where('name_en', 'LIKE', "%$query%")
-            ->orwhere('name_am', 'LIKE', "%$query%")
-            ->orwhere('name_ru', 'LIKE', "%$query%")
-            ->get();
-
-        $distanceLearningVideoMaterials = DistanceLearningVideoMaterial::where('name_en', 'LIKE', "%$query%")
-            ->orwhere('name_am', 'LIKE', "%$query%")
-            ->orwhere('name_ru', 'LIKE', "%$query%")
-            ->get();
-
-        $distanceLearningAdditionalMaterials = DistanceLearningAdditionalMaterial::where('name_en', 'LIKE', "%$query%")
-            ->orwhere('name_am', 'LIKE', "%$query%")
-            ->orwhere('name_ru', 'LIKE', "%$query%")
-            ->get();
 
 
 
-
-
-
-
-        $data = Collection::wrap(array($news))
-        // ->concat(array($galleries))
-            ->concat(array($abouts));
-            // ->concat(array($reports))->concat(array($workers))->concat(array($partners))->concat(array($bulletins))
-            // ->concat(array($echrLinks))->concat(array($admissions))->concat(array($candidates))
-            // ->concat(array($libraryPdfs))->concat(array($massMedia)) ->concat(array($contactPages))
-            // ->concat(array($rectorsPages))->concat(array($behaviorRules))->concat(array($bulletinInfos))
-            // ->concat(array($contactStaffs))->concat(array($distanceLearningAdditionalMaterials))
-            // ->concat(array($GalleryVideos))->concat(array($videoLectures))->concat(array($dormitoryRules))
-            // ->concat(array($rectorsDecree))->concat(array($conductingExams))->concat(array($provideDeferrals))
-            // ->concat(array($trainingPrograms))->concat(array($academyStructures))->concat(array($distanceLearnings))
-            // ->concat(array($rectorsBiographys))->concat(array($motivationalVideos))->concat(array($conductingPractices))
-            // ->concat(array($governingBoardPages))->concat(array($governingBoardStaffs))->concat(array($distanceLearningBooks))
-            // ->concat(array($governingBoardDecrees))->concat(array($distanceLearningGuides))
-            // ->concat(array($distanceLearningVideos))->concat(array($distanceLearningCourses))
-            // ->concat(array($formerRectorsBiographys))->concat(array($frequentlyAskedQuestions))
-            // ->concat(array($distanceLearningBooksPdfs))->concat(array($distanceLearningAssignments))
-            // ->concat(array($distanceLearningVideoMaterials));
+        $data = Collection::wrap(array($news))->concat(array($contactStaffs))->concat(array($contactPages))
+            ->concat(array($workers))->concat(array($partners))->concat(array($massMedia))->concat(array($abouts))
+            ->concat(array($rectorsPages))->concat(array($echrLinks))->concat(array($academyStructures))->concat(array($graduates))
+            ->concat(array($bulletinInfos))->concat(array($admissions))->concat(array($candidates))->concat(array($libraryPdfs))
+            ->concat(array($behaviorRules))->concat(array($galleries))->concat(array($GalleryVideos))
+            ->concat(array($reports))->concat(array($videoLectures))->concat(array($dormitoryRules))
+            ->concat(array($rectorsDecree))->concat(array($conductingExams))->concat(array($provideDeferrals))
+            ->concat(array($trainingPrograms))->concat(array($distanceLearnings))->concat(array($rectorsBiographies))
+            ->concat(array($conductingPractices))->concat(array($governingBoardPages))->concat(array($governingBoardStaffs))
+            ->concat(array($distanceLearningBooks))->concat(array($governingBoardDecrees))->concat(array($distanceLearningGuides))
+            ->concat(array($distanceLearningVideos))->concat(array($distanceLearningCourses))
+            ->concat(array($formerRectorsBiographies))->concat(array($frequentlyAskedQuestions));
 
 
 

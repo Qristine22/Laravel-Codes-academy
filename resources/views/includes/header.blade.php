@@ -20,7 +20,8 @@
                     @foreach ($headers as $header)
                         <li class="header__item">
                             <a class="header__link 
-                                @if (Request::is($header->link, $header->link . '/*'))header__link-active @endif"
+                                @if (Request::is($header->link, $header->link . '/*', 'search/' . $header->link . '/*',
+                                'search/' . $header->link . 's/*'))header__link-active @endif"
                                 href="{{ env('APP_URL') . $header->link }}">
                                 {{ $header->{'name_' . app()->getLocale()} }}
                             </a>
@@ -74,7 +75,7 @@
         <ul class="header-mob__list">
             @foreach ($headers as $header)
                 <li class="header-mob__item">
-                    <a class="header__link{{ count($header->subheaders) ? '' : ' header-mob__item-single' }}{{ Request::is($header->link, $header->link . '/*') ? ' header__menu_link-active' : '' }}"
+                    <a class="header__link{{ count($header->subheaders) ? '' : ' header-mob__item-single' }}{{ Request::is($header->link, $header->link . '/*', 'search/' . $header->link . '/*', 'search/' . $header->link . 's/*') ? ' header__menu_link-active' : '' }}"
                         href="{{ env('APP_URL') . $header->link }}">
                         {{ $header->{'name_' . app()->getLocale()} }}
                     </a>

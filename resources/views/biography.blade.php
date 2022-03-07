@@ -25,14 +25,13 @@
                             @endif
 
 
-                            {{-- academy workers hase biography in ru and en --}}
-                            @if (Request::is('about/rector/*') ||
-                                Request::is('about/academy-structure/*'))
+                            {{-- The staff of the academy does not have a biography in ru and en --}}
+                            @if (Request::is('about/rector/*') || Request::is('about/academy-structure/*') ||
+                                Request::is('search/abouts/*'))
                                 {!! $person->{'biography_'.app()->getLocale()} !!}
                             @else
                                 @if(app()->getLocale() == 'am')
                                     {!! $person->biography !!}
-                                
                                 @else
                                     @lang('main.info-is-available')
                                 @endif
