@@ -34,21 +34,37 @@
                     </div>
                     <div class="contacts__block contacts__message">
                         <h3 class="contacts__title text-26">@lang('contact.message-to-the-Rector')</h3>
-                        <form class="contacts__form" action="#">
+                        @if (\Session::has('success'))
+                            <p class="success">{!! \Session::get('success') !!}</p>
+                        @endif
+                        <form class="contacts__form" action="{{ route('sendEmail') }}" method="POST">
+                            @csrf
                             <div class="contacts__form_inps flex">
                                 <input class="inp text-18 contacts__inp contacts__inp-top" type="text" name="name"
-                                    placeholder="@lang('contact.name-placeholder')">
+                                    placeholder="@lang('contact.name-placeholder')" value="{{ old('name') }}">
                                 <input class="inp text-18 contacts__inp contacts__inp-top" type="text" name="mail"
-                                    placeholder="@lang('contact.mail-placeholder')">
+                                    placeholder="@lang('contact.mail-placeholder')" value="{{ old('mail') }}">
                             </div>
+                            @error('name')
+                                <div class="text-18">{{ $message }}</div>
+                            @enderror
+                            @error('mail')
+                                <div class="text-18">{{ $message }}</div>
+                            @enderror
                             <div class="contacts__form_inps flex">
                                 <input class="inp text-18 contacts__inp" type="text" name="topic"
-                                    placeholder="@lang('contact.topic-placeholder')">
+                                    placeholder="@lang('contact.topic-placeholder')" value="{{ old('topic') }}">
                             </div>
+                            @error('topic')
+                                <div class="text-18">{{ $message }}</div>
+                            @enderror
                             <div class="contacts__form_inps flex">
                                 <textarea class="contacts__textarea inp text-18 contacts__inp" name="content"
-                                    placeholder="@lang('contact.content-placeholder')"></textarea>
+                                    placeholder="@lang('contact.content-placeholder')">{{ old('content') }}</textarea>
                             </div>
+                            @error('content')
+                                <div class="text-18">{{ $message }}</div>
+                            @enderror
                             <div class="contacts__form_inps flex">
                                 <button class="contacts__btn text-18">
                                     <span class="contacts__btn_span">@lang('contact.send')</span>

@@ -304,6 +304,7 @@ Route::middleware(['set_locale'])->group(function () {
 
     // contacts/***************************************************************************
     Route::get('/contacts', 'App\Http\Controllers\Pages\ContactsController@contacts')->name('contacts');
+    Route::post('/contacts/send-email', 'App\Http\Controllers\Pages\ContactsController@sendEmail')->name('sendEmail');
 
 
     // admin form/***************************************************************************

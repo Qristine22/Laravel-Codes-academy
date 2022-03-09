@@ -45,6 +45,19 @@ home
     width: 70%;
     position: relative;
 }
+.home__form_btn{
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    background-color: transparent;
+    border: none;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
 .home__form_inp{
     width: 100%;
     font-size: 18px;
@@ -59,15 +72,7 @@ home
     outline: none;
 }
 .home__search_icon{
-    width: 30px;
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
+    width: 100%;
 }
 
 /*

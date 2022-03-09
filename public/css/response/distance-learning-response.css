@@ -80,6 +80,9 @@
     .courses__btn:last-child{
         margin-top: 10px;
     }
+    .courses__pdfs_item {
+        margin: 0 30px;
+    }
 }
 @media only screen and (max-width: 600px) {
     .motivation__item{
@@ -105,6 +108,9 @@
     .videos__item,
     .motivation__item{
         width: 100%;
+    }
+    .courses__pdfs_item {
+        margin: 0 15px;
     }
 }
 @media only screen and (max-width: 430px) {

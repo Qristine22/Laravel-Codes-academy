@@ -17,7 +17,9 @@
                             </div>
                             <h1 class="home__title">{{ $home->{'title_' . app()->getLocale()} }}</h1>
                             <form class="home__form" action="{{ route('search') }}" method="GET">
-                                <img class="home__search_icon" src="/media/img/icons/search.png" alt="search">
+                                <button class="home__form_btn">
+                                    <img class="home__search_icon" src="/media/img/icons/search.png" alt="search">
+                                </button>
                                 <input class="inp home__form_inp" name="search" type="text" placeholder="@lang('home.search')">
                             </form>
                         </div>

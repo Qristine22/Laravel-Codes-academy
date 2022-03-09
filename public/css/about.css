@@ -423,6 +423,7 @@ gallery
     margin: 25px;
 }
 .gallery-video__item iframe{
+    height: 290px;
     width: 100%;
 }
 .gallery__top{

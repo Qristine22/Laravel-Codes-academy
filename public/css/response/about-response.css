@@ -121,6 +121,9 @@
         width: calc(25% - 10px);
         margin: 5px;
     }
+    .gallery-video__item iframe {
+        height: 190px;
+    }
 }
 @media only screen and (max-width: 1000px) {
     .members__title{
@@ -167,6 +170,9 @@
     .member__info strong{
         font-size: 16px;
         line-height: 20px;
+    }
+    .gallery-video__item iframe {
+        height: 110px;
     }
 }
 @media only screen and (max-width: 850px) {
@@ -290,6 +296,13 @@
         font-size: 13px;
         line-height: 25px;
     }
+    .gallery-video__item{
+        width: calc(50% - 30px);
+        margin: 15px;
+    }
+    .gallery-video__item iframe {
+        height: 170px;
+    }
 }
 @media only screen and (max-width: 650px) {
     .members__item{
@@ -397,5 +410,11 @@
     }
     .graduates-profession__items{
         margin: 0 -5px;
+    }
+    .gallery-video__item{
+        width: 100%;
+    }
+    .gallery-video__item iframe {
+        height: 210px;
     }
 }

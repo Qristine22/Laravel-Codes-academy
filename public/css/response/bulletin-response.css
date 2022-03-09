@@ -2,6 +2,9 @@
     .bulletin{
         margin-top: 90px;
     }
+    .bulletin .swiper{
+        padding: 0;
+    }
 }
 @media only screen and (max-width: 750px) {
     .bulletin{

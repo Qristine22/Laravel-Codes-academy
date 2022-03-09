@@ -347,6 +347,9 @@
     .last-news__item:last-child{
         display: none;
     }
+    .last-news__item{
+        max-width: 50%;
+    }
     .text-26 {
         font-size: 17px;
         line-height: 25px;
@@ -365,6 +368,9 @@
     .section-text__cont li{
         font-size: 10px;
         line-height: 18px;
+    }
+    .section-text__cont strong{
+        font-size: 15px;
     }
     /* .info__list, */
     .section-text__cont ol{
@@ -394,6 +400,12 @@
     }
     .pdf__item_icon{
         margin-left: 20px;
+    }
+    .pdf__item_img{
+        margin: 35px 0 0 0;
+    }
+    .pdf__item_span{
+        right: 15px;
     }
     .pdfs__title{
         font-size: 17px;

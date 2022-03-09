@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Pages;
-
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Contact\MailSendingRequest;
+use App\Mail\ContactMail;
 
 // Models
 use App\Models\Header;
@@ -51,5 +53,31 @@ class ContactsController extends Controller
             'contactPage' => $contactPage,
             'contactStaff' => $contactStaff,
         ]);
+    }
+
+
+
+
+
+
+    public function sendEmail(MailSendingRequest $request){
+        $data = [
+            'name' => $request->name,
+            'mail' => $request->mail,
+            'topic' => $request->topic,
+            'content' => $request->content,
+        ];
+
+        Mail::to('simon.karapetyan@justiceacademy.am')->send(new ContactMail($data));
+
+        if(app()->getLocale() === 'en'){
+            return redirect()->back()->with('success', 'Thanks for sending message');
+        }
+        elseif(app()->getLocale() === 'ru'){
+            return redirect()->back()->with('success', 'Спасибо за отправку сообщения');
+        }
+        else{
+            return redirect()->back()->with('success', 'Շնորհակալություն հաղորդագրություն ուղարկելու համար');
+        }
     }
 }
