@@ -96,9 +96,6 @@ member
     letter-spacing: 2px;
     line-height: 35px;
 }
-.member__info > div{
-    margin-top: 90px;
-}
 .member__info li,
 .member__info h4{
     display: flex;
