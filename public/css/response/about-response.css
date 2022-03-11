@@ -331,6 +331,7 @@
     .member__img{
         position: unset;
         width: 155px;
+        margin-bottom: 20px;
     }
     .member__cont{
         display: flex;

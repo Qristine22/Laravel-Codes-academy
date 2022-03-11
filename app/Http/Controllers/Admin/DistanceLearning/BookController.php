@@ -117,6 +117,7 @@ class BookController extends Controller
      */
     public function update(BookUpdateRequest $request, DistanceLearningBook $book)
     {
+        // dd($request);
         $img = $request->imgHidden;
 
         if(!empty($request->img)){
@@ -134,7 +135,12 @@ class BookController extends Controller
 
         if (!empty($request->enNames) && !empty($request->amNames) && !empty($request->ruNames)) {
             foreach ($request->enNames as $index => $enName) {
-                $pdf = $request->pdfs[$index]->store('distance-learning/books/pdfs');
+                if(!empty($request->pdfs[$index])){
+                    $pdf = $request->pdfs[$index]->store('distance-learning/books/pdfs');
+                }
+                else{
+                    $pdf = null;
+                }
 
                 DistanceLearningBooksPdf::insert([
                     'name_en' => $enName,

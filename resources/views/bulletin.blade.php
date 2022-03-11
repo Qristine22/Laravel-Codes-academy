@@ -7,7 +7,7 @@
 
 @section('content')
     <main>
-        <section class="bulletin section-text">
+        <section class="bulletin section-text section__min-height">
             <div class="swiper">
                 <div class="swiper-pagination"></div>
                 <div class="swiper-wrapper">

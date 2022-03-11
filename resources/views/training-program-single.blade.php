@@ -11,7 +11,7 @@
 
 @section('content')
     <main>
-        <section class="pdfs section-text section-top section__min-height">
+        <section class="pdfs section-text section-top education-single">
             <div class="wrapper">
                 <div class="pdfs__cont">
                     <h3 class="pdfs__title">

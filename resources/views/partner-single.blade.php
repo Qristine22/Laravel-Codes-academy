@@ -13,7 +13,7 @@
     <main>
         <section class="partner section-text section-top">
             <div class="wrapper">
-                <div class="partner__cont">
+                <div class="partner__cont section-text__cont">
                     <div class="partner__top flex">
                         <div class="partner__img">
                             <img class="img" src="{{ Storage::url($partner->logo) }}" alt="1">
