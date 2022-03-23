@@ -13,6 +13,7 @@ home
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    padding-top: 120px;
     display: flex;
     align-items: stretch;
 }
