@@ -58,7 +58,7 @@ class AboutController extends Controller
 
     // home *********************************************************************************
     public function home(){
-        $home = Home::firstOrFail();
+        $home = Home::first();
         $lastNews = News::latest()->take(3)->get();
 
         return view('home', [
@@ -75,7 +75,7 @@ class AboutController extends Controller
 
     // about *********************************************************************************
     public function about(){
-        $about = About::firstOrFail();
+        $about = About::first();
         $headersBot = Subheader::where('parent_id', 1)->get();
 
         return view('about', [
@@ -89,7 +89,7 @@ class AboutController extends Controller
     public function governingBoard(){
         $headersBot = Subheader::where('parent_id', 1)->get();
 
-        $governingBoardPage = GoverningBoardPage::firstOrFail();
+        $governingBoardPage = GoverningBoardPage::first();
         $governingBoardDecreesYears = GoverningBoardDecree::all()->groupBy('year');
         $governingBoardMembers = GoverningBoardStaff::get();
 
@@ -132,7 +132,7 @@ class AboutController extends Controller
 
     public function rector(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $text = RectorsPage::firstOrFail();
+        $text = RectorsPage::first();
 
         return view('rector', [
             'headers' => $this->getHeader(),
@@ -144,7 +144,7 @@ class AboutController extends Controller
     public function rectorsBiography(){
         $headersBot = Subheader::where('parent_id', 1)->get();
 
-        $person = RectorsBiography::firstOrFail();
+        $person = RectorsBiography::first();
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
@@ -155,7 +155,7 @@ class AboutController extends Controller
     public function formerRectorsBiography(){
         $headersBot = Subheader::where('parent_id', 1)->get();
 
-        $person = FormerRectorsBiography::firstOrFail();
+        $person = FormerRectorsBiography::first();
         return view('biography', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
@@ -193,7 +193,7 @@ class AboutController extends Controller
     }
     public function VICERector(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::firstOrFail();
+        $person = Worker::first();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -204,7 +204,7 @@ class AboutController extends Controller
     }
     public function chiefOfStaff(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 2)->firstOrFail();
+        $person = Worker::where('id', 2)->first();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -215,7 +215,7 @@ class AboutController extends Controller
     }
     public function distanceLearningChief(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 3)->firstOrFail();
+        $person = Worker::where('id', 3)->first();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -226,7 +226,7 @@ class AboutController extends Controller
     }
     public function programmaticMethodologicalActivities(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 4)->firstOrFail();
+        $person = Worker::where('id', 4)->first();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -237,7 +237,7 @@ class AboutController extends Controller
     }
     public function trainingForTrainees(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 5)->firstOrFail();
+        $person = Worker::where('id', 5)->first();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -248,7 +248,7 @@ class AboutController extends Controller
     }
     public function trainingOrganization(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 6)->firstOrFail();
+        $person = Worker::where('id', 6)->first();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -259,7 +259,7 @@ class AboutController extends Controller
     }
     public function unitOfFinance(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 7)->firstOrFail();
+        $person = Worker::where('id', 7)->first();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -270,7 +270,7 @@ class AboutController extends Controller
     }
     public function cooperationAndPublicRelation(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 8)->firstOrFail();
+        $person = Worker::where('id', 8)->first();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -281,7 +281,7 @@ class AboutController extends Controller
     }
     public function staffAndDocumentManagement(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 9)->firstOrFail();
+        $person = Worker::where('id', 9)->first();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -292,7 +292,7 @@ class AboutController extends Controller
     }
     public function tehchnicalAndEconomicActivities(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 10)->firstOrFail();
+        $person = Worker::where('id', 10)->first();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -303,7 +303,7 @@ class AboutController extends Controller
     }
     public function hotel(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', 11)->firstOrFail();
+        $person = Worker::where('id', 11)->first();
 
         return view('biography', [
             'headers' => $this->getHeader(),
@@ -411,7 +411,7 @@ class AboutController extends Controller
 
     public function admission(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $admission = Admission::firstOrFail();
+        $admission = Admission::first();
 
         return view('admission', [
             'headers' => $this->getHeader(),
@@ -422,7 +422,7 @@ class AboutController extends Controller
     }
     public function judgesCandidates(){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $judgesCandidate = Candidate::firstOrFail();
+        $judgesCandidate = Candidate::first();
 
         return view('candidates', [
             'headers' => $this->getHeader(),

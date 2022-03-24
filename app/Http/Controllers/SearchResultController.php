@@ -64,7 +64,7 @@ class SearchResultController extends Controller
     }
     public function workers($id){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $person = Worker::where('id', $id)->firstOrFail();
+        $person = Worker::where('id', $id)->first();
 
         return view('biography', [
             'headers' => $this->getHeader(),

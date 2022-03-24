@@ -52,7 +52,7 @@ class DistanceLearningController extends Controller
     // distance learning *********************************************************************************
     public function distanceLearning(){
         $headersBot = Subheader::where('parent_id', 4)->get();
-        $distanceLearning = DistanceLearning::firstOrFail();
+        $distanceLearning = DistanceLearning::first();
         $distancelearningVideos = DistanceLearningVideo::paginate(10);
 
         return view('distance-learning', [
@@ -66,8 +66,8 @@ class DistanceLearningController extends Controller
     public function distanceLearningVideo($id){
         $headersBot = Subheader::where('parent_id', 4)->get();
         $distancelearningVideo = DistanceLearningVideo::findOrFail($id);
-        $guide = DistanceLearningGuide::firstOrFail();
-        $FAQ = FrequentlyAskedQuestion::firstOrFail();
+        $guide = DistanceLearningGuide::first();
+        $FAQ = FrequentlyAskedQuestion::first();
 
         return view('distance-learning-video', [
             'headers' => $this->getHeader(),
@@ -91,8 +91,8 @@ class DistanceLearningController extends Controller
     }
     public function assignments($id){
         $headersBot = Subheader::where('parent_id', 4)->get();
-        $guide = DistanceLearningGuide::firstOrFail();
-        $FAQ = FrequentlyAskedQuestion::firstOrFail();
+        $guide = DistanceLearningGuide::first();
+        $FAQ = FrequentlyAskedQuestion::first();
         $assignments = DistanceLearningAssignment::where('course_id', $id)->get();
 
         if(count($assignments) === 0){
@@ -109,8 +109,8 @@ class DistanceLearningController extends Controller
     }
     public function distanceLearningCourses(){
         $headersBot = Subheader::where('parent_id', 4)->get();
-        $guide = DistanceLearningGuide::firstOrFail();
-        $FAQ = FrequentlyAskedQuestion::firstOrFail();
+        $guide = DistanceLearningGuide::first();
+        $FAQ = FrequentlyAskedQuestion::first();
         $courses = DistanceLearningCourse::courses();
         $books = DistanceLearningBook::all();
 
@@ -151,7 +151,7 @@ class DistanceLearningController extends Controller
     }
     public function FAQ(){
         $headersBot = Subheader::where('parent_id', 4)->get();
-        $FAQ = FrequentlyAskedQuestion::firstOrFail();
+        $FAQ = FrequentlyAskedQuestion::first();
         $distancelearningVideos = DistanceLearningVideo::paginate(10);
 
         return view('distance-learning', [
@@ -164,8 +164,8 @@ class DistanceLearningController extends Controller
     }
     public function motivationalVideos($id){
         $headersBot = Subheader::where('parent_id', 4)->get();
-        $guide = DistanceLearningGuide::firstOrFail();
-        $FAQ = FrequentlyAskedQuestion::firstOrFail();
+        $guide = DistanceLearningGuide::first();
+        $FAQ = FrequentlyAskedQuestion::first();
         $motivationalVideos = MotivationalVideo::where('course_id', $id)->get();
 
         if(count($motivationalVideos) === 0){
@@ -183,8 +183,8 @@ class DistanceLearningController extends Controller
     }
     public function mediaMaterials($id){
         $headersBot = Subheader::where('parent_id', 4)->get();
-        $guide = DistanceLearningGuide::firstOrFail();
-        $FAQ = FrequentlyAskedQuestion::firstOrFail();
+        $guide = DistanceLearningGuide::first();
+        $FAQ = FrequentlyAskedQuestion::first();
         $additionalMaterials = DistanceLearningAdditionalMaterial::additionalMaterialSingle($id);
 
         return view('media-materials', [
@@ -198,8 +198,8 @@ class DistanceLearningController extends Controller
     }
     public function distanceLearningGuide(){
         $headersBot = Subheader::where('parent_id', 4)->get();
-        $guide = DistanceLearningGuide::firstOrFail();
-        $FAQ = FrequentlyAskedQuestion::firstOrFail();
+        $guide = DistanceLearningGuide::first();
+        $FAQ = FrequentlyAskedQuestion::first();
 
         return view('distance-learning-guide', [
             'headers' => $this->getHeader(),

@@ -35,28 +35,32 @@
                     </div>
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
+                            <img class="img__file_reader" src="" alt="">
                             <span class="text-20 form__item_name">Logo</span>
                             <label class="text-20 admin-inp admin-inp-file" for="logo">Attach your Photo</label>
-                            <input class="admin-file" type="file" id="logo" name="logo">
+                            <input class="admin-file admin-file-img" type="file" id="logo" name="logo">
                         </div>
                         <div class="form__item form__item-inp">
+                            <img class="img__file_reader" src="" alt="">
                             <span class="text-20 form__item_name">Background Photo</span>
                             <label class="text-20 admin-inp admin-inp-file" for="bg">Attach your Photo</label>
-                            <input class="admin-file" type="file" id="bg" name="bg">
+                            <input class="admin-file admin-file-img" type="file" id="bg" name="bg">
                         </div>
                         <div class="form__item form__item-inp">
+                            <img class="img__file_reader" src="" alt="">
                             <span class="text-20 form__item_name">Attach your Photo</span>
                             <label class="text-20 admin-inp admin-inp-file" for="rectors__signature">
                                 Attach Rectors Signature
                             </label>
-                            <input class="admin-file" type="file" id="rectors__signature" name="rectors_signature">
+                            <input class="admin-file admin-file-img" type="file" id="rectors__signature" name="rectors_signature">
                         </div>
                     </div>
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
+                            <img class="img__file_reader" src="" alt="">
                             <span class="text-20 form__item_name">Rectors Photo</span>
                             <label class="text-20 admin-inp admin-inp-file" for="rectors__img">Attach your Photo</label>
-                            <input class="admin-file" type="file" id="rectors__img" name="rectors_img">
+                            <input class="admin-file admin-file-img" type="file" id="rectors__img" name="rectors_img">
                         </div>
                     </div>
                     <div class="form__item inputs__group">
@@ -87,4 +91,5 @@
 
 @section('scripts')
     <script src="/ckeditor/ckeditor.js"></script>
+    <script src="/js/admin/inputsFileReader/imgReader.js"></script>
 @endsection

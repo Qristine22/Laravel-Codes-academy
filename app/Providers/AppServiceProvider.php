@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('errors::404', function ($view) {
             $headers = Header::headers();
-            $home = Home::firstOrFail();
+            $home = Home::first();
             $sitesLinks = SitesLink::all();
 
             $view->with(['headers' => $headers, 'home' => $home, 'sitesLinks' => $sitesLinks]);

@@ -44,7 +44,7 @@ class ContactsController extends Controller
     
     // contacts *********************************************************************************
     public function contacts(){
-        $contactPage = ContactPage::firstOrFail();
+        $contactPage = ContactPage::first();
         $contactStaff = ContactStaff::all();
 
         return view('contacts', [

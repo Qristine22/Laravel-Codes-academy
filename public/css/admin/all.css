@@ -214,6 +214,10 @@ admin-section
 .inputs__add_group{
     justify-content: flex-start;
 }
+.form__item{
+    position: relative;
+    overflow: hidden;
+}
 .form__text > .form__item,
 .inputs__group{
     margin-top: 40px;
@@ -255,6 +259,14 @@ admin-section
 .inputs__group > .form__item_name{
     margin: 0 0 5px 26px;
 }
+.img__file_reader{
+    width: 80px;
+    position: absolute;
+    left: 190px;
+    top: 41px;
+    z-index: 1;
+}
+
 .admin-file{
     display: none;
 }
