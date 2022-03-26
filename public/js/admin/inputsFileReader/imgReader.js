@@ -1,11 +1,9 @@
-const inputs = document.querySelectorAll('.admin-file-img');
-const imgs = document.querySelectorAll('.img__file_reader');
+let inputs = document.querySelectorAll('.admin-file-img');
+let imgs = document.querySelectorAll('.img__file_reader');
 
 
 function imgReader(inputs){
     inputs.forEach((item, i) => {
-
-
 
         item.onchange = function (evt) {
             var tgt = evt.target || window.event.srcElement,

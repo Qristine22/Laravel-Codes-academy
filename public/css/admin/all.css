@@ -266,6 +266,9 @@ admin-section
     top: 41px;
     z-index: 1;
 }
+.inputs__add_group .img__file_reader{
+    top: 0px;
+}
 
 .admin-file{
     display: none;

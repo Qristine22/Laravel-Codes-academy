@@ -43,9 +43,11 @@
             <div class="admin__head">
                 <h2 class="admin__title">Աշխատակազմ</h2>
             </div>
-            <a class="admin-item__create" href="{{ route('admin.about.workers.create') }}">
-                <span class="admin-item__plus">+</span>
-            </a>
+            @if (count($data) == 0)
+                <a class="admin-item__create" href="{{ route('admin.about.workers.create') }}">
+                    <span class="admin-item__plus">+</span>
+                </a>
+            @endif
             <table class="table">
                 <tr>
                     <th class="th text-18" style="width: 5%">#id</th>

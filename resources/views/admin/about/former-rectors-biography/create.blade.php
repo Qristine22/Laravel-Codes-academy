@@ -52,9 +52,10 @@
                     </div>
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
+                            <img class="img__file_reader" src="" alt="">
                             <span class="text-20 form__item_name">Photo</span>
                             <label class="text-20 admin-inp admin-inp-file" for="img">Attach your File</label>
-                            <input class="admin-file" type="file" id="img" name="img">
+                            <input class="admin-file admin-file-img" type="file" id="img" name="img">
                         </div>
                     </div>
                     <div class="form__text">
@@ -87,4 +88,5 @@
 
 @section('scripts')
     <script src="/ckeditor/ckeditor.js"></script>
+    <script src="/js/admin/inputsFileReader/imgReader.js"></script>
 @endsection

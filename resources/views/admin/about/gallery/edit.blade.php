@@ -49,8 +49,9 @@
                         <span class="text-20 form__item_name">Photo <span class="admin__input_add">+</span></span>
                         <div class="flex inputs__add_group form__item-wrap">
                             <div class="form__item form__item-inp">
+                                <img class="img__file_reader" src="" alt="">
                                 <label class="text-20 admin-inp admin-inp-file" for="img">Attach your File</label>
-                                <input class="admin-file" type="file" id="img" name="imgs[]">
+                                <input class="admin-file admin-file-img" type="file" id="img" name="imgs[]">
                             </div>
                         </div>
                     </div>
@@ -69,7 +70,6 @@
                         </div>
                     </div>
                     
-                    
                 <button class="form__btn">Save</button>
             </form>
         </section>
@@ -78,4 +78,5 @@
 
 @section('scripts')
     <script src="/js/admin/inputsAdd.js"></script>
+    <script src="/js/admin/inputsFileReader/imgReader.js"></script>
 @endsection
