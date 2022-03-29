@@ -66,15 +66,17 @@ class BookController extends Controller
 
         if (!empty($request->enNames[0]) && !empty($request->amNames[0]) && !empty($request->ruNames[0])) {
             foreach ($request->enNames as $index => $enName) {
-                $pdf = $request->pdfs[$index]->store('distance-learning/books/pdfs');
-
-                DistanceLearningBooksPdf::insert([
-                    'name_en' => $enName,
-                    'name_am' => $request->amNames[$index],
-                    'name_ru' => $request->ruNames[$index],
-                    'pdf' => $pdf,
-                    'book_id' => $book,
-                ]);
+                if (isset($request->amNames[$index]) && isset($request->ruNames[$index]) && isset($enName)) {
+                    $pdf = $request->pdfs[$index]->store('distance-learning/books/pdfs');
+                    
+                    DistanceLearningBooksPdf::insert([
+                        'name_en' => $enName,
+                        'name_am' => $request->amNames[$index],
+                        'name_ru' => $request->ruNames[$index],
+                        'pdf' => $pdf,
+                        'book_id' => $book,
+                    ]);
+                }
             }
         }
 
@@ -117,10 +119,9 @@ class BookController extends Controller
      */
     public function update(BookUpdateRequest $request, DistanceLearningBook $book)
     {
-        // dd($request);
         $img = $request->imgHidden;
 
-        if(!empty($request->img)){
+        if (!empty($request->img)) {
             Storage::delete($img);
             $img = $request->file('img')->store('distance-learning/books');
         }
@@ -135,20 +136,21 @@ class BookController extends Controller
 
         if (!empty($request->enNames) && !empty($request->amNames) && !empty($request->ruNames)) {
             foreach ($request->enNames as $index => $enName) {
-                if(!empty($request->pdfs[$index])){
-                    $pdf = $request->pdfs[$index]->store('distance-learning/books/pdfs');
-                }
-                else{
-                    $pdf = null;
-                }
+                if (isset($request->amNames[$index]) && isset($request->ruNames[$index]) && isset($enName)) {
 
-                DistanceLearningBooksPdf::insert([
-                    'name_en' => $enName,
-                    'name_am' => $request->amNames[$index],
-                    'name_ru' => $request->ruNames[$index],
-                    'pdf' => $pdf,
-                    'book_id' => $book->id,
-                ]);
+                    if (!empty($request->pdfs[$index])) {
+                        $pdf = $request->pdfs[$index]->store('distance-learning/books/pdfs');
+                    } else {
+                        $pdf = null;
+                    }
+                    DistanceLearningBooksPdf::insert([
+                        'name_en' => $enName,
+                        'name_am' => $request->amNames[$index],
+                        'name_ru' => $request->ruNames[$index],
+                        'pdf' => $pdf,
+                        'book_id' => $book->id,
+                    ]);
+                }
             }
         }
 
@@ -173,7 +175,8 @@ class BookController extends Controller
 
 
     // edit page deleting pdf
-    public function bookPdfDelete($id){
+    public function bookPdfDelete($id)
+    {
         $item = DistanceLearningBooksPdf::findOrFail($id);
         Storage::delete($item->pdf);
         $item->forceDelete();
@@ -208,10 +211,10 @@ class BookController extends Controller
         DistanceLearningBook::withTrashed()->findOrFail($id)->restore();
         return redirect()->back();
     }
-    
-    
+
+
     public function forceDelete($id)
-    {        
+    {
         $item = DistanceLearningBook::withTrashed()->findOrFail($id);
         $item->forceDelete();
         Storage::delete($item->img);

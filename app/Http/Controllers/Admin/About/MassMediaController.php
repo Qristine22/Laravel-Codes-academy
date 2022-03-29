@@ -52,12 +52,14 @@ class MassMediaController extends Controller
 
         if (!empty($request->siteNames) && !empty($request->linkNames) && !empty($request->links)) {
             foreach ($request->siteNames as $index => $siteName) {
-                MassMediaLink::insert([
-                    'mass_media_id' => $massMedia,
-                    'site_name' => $siteName,
-                    'link_name' => $request->linkNames[$index],
-                    'link' => $request->links[$index],
-                ]);
+                if(isset($request->siteNames[$index]) && isset($request->linkNames[$index])){
+                    MassMediaLink::insert([
+                        'mass_media_id' => $massMedia,
+                        'site_name' => $siteName,
+                        'link_name' => $request->linkNames[$index],
+                        'link' => $request->links[$index],
+                    ]);
+                }
             }
         }
 
@@ -104,15 +106,16 @@ class MassMediaController extends Controller
             'year' => $request->year,
         ]);
 
-
         if (!empty($request->siteNames) && !empty($request->linkNames) && !empty($request->links)) {
             foreach ($request->siteNames as $index => $siteName) {
-                MassMediaLink::insert([
-                    'mass_media_id' => $massMedium->id,
-                    'site_name' => $siteName,
-                    'link_name' => $request->linkNames[$index],
-                    'link' => $request->links[$index],
-                ]);
+                if(isset($request->siteNames[$index]) && isset($request->linkNames[$index])){
+                    MassMediaLink::insert([
+                        'mass_media_id' => $massMedium->id,
+                        'site_name' => $siteName,
+                        'link_name' => $request->linkNames[$index],
+                        'link' => $request->links[$index],
+                    ]);
+                }
             }
         }
         return redirect(route('admin.about.mass-media.index'));

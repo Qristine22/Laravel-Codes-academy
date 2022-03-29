@@ -62,19 +62,22 @@ class PartnerController extends Controller
 
         if (!empty($request->links)) {
             foreach ($request->links as $index => $link) {
-                $pdf = null;
-                if (!empty($request->pdfs[$index])) {
-                    $pdf = $request->pdfs[$index]->store('partners/links');
-                }
+                if (isset($request->enNames[$index]) && isset($request->amNames[$index]) && isset($request->ruNames[$index])
+                && (isset($link) || isset($request->pdfs[$index]))) {
+                    $pdf = null;
+                    if (!empty($request->pdfs[$index])) {
+                        $pdf = $request->pdfs[$index]->store('partners/links');
+                    }
 
-                PartnersLink::insert([
-                    'name_en' => $request->enNames[$index],
-                    'name_am' => $request->amNames[$index],
-                    'name_ru' => $request->ruNames[$index],
-                    'partner_id' => $partner,
-                    'link' => $link,
-                    'file' => $pdf,
-                ]);
+                    PartnersLink::insert([
+                        'name_en' => $request->enNames[$index],
+                        'name_am' => $request->amNames[$index],
+                        'name_ru' => $request->ruNames[$index],
+                        'partner_id' => $partner,
+                        'link' => $link,
+                        'file' => $pdf,
+                    ]);
+                }
             }
         }
 
@@ -134,19 +137,22 @@ class PartnerController extends Controller
 
         if (!empty($request->links)) {
             foreach ($request->links as $index => $link) {
-                $pdf = null;
-                if (!empty($request->pdfs[$index])) {
-                    $pdf = $request->pdfs[$index]->store('partners/links');
+                if (isset($request->enNames[$index]) && isset($request->amNames[$index]) && isset($request->ruNames[$index])
+                    && (isset($link) || isset($request->pdfs[$index]))) {
+                    $pdf = null;
+                    if (!empty($request->pdfs[$index])) {
+                        $pdf = $request->pdfs[$index]->store('partners/links');
+                    }
+                    
+                    PartnersLink::insert([
+                        'name_en' => $request->enNames[$index],
+                        'name_am' => $request->amNames[$index],
+                        'name_ru' => $request->ruNames[$index],
+                        'link' => $link,
+                        'file' => $pdf,
+                        'partner_id' => $partner->id,
+                    ]);
                 }
-
-                PartnersLink::insert([
-                    'name_en' => $request->enNames[$index],
-                    'name_am' => $request->amNames[$index],
-                    'name_ru' => $request->ruNames[$index],
-                    'link' => $link,
-                    'file' => $pdf,
-                    'partner_id' => $partner->id,
-                ]);
             }
         }
 

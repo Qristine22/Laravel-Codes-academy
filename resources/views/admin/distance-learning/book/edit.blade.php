@@ -37,8 +37,9 @@
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
                             <span class="text-20 form__item_name">Photo</span>
+                            <img class="img__file_reader" src="{{ Storage::url($book->img) }}" alt="">
                             <label class="text-20 admin-inp admin-inp-file" for="img">Attach your Photo</label>
-                            <input class="admin-file" type="file" id="img" name="img">
+                            <input class="admin-file admin-file-img" type="file" id="img" name="img">
                         </div>
                         <div class="form__item form__item-inp">
                             <label class="text-20 form__item_name" for="course">Course</label>
@@ -109,4 +110,5 @@
 
 @section('scripts')
     <script src="/js/admin/inputsAddBooksPdf.js"></script>
+    <script src="/js/admin/inputsFileReader/imgReader.js"></script>
 @endsection

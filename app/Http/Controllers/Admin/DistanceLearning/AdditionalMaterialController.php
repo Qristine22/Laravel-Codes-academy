@@ -59,16 +59,18 @@ class AdditionalMaterialController extends Controller
 
         if (!empty($request->links) || !empty($request->linkNames) || !empty($request->pdfs)) {
             foreach ($request->links as $index => $link) {
-                $pdf = null;
-                if(!empty($request->pdfs[$index])){
-                    $pdf = $request->pdfs[$index]->store('distance-learning/additional-materials');
+                if (isset($link) && isset($request->linkNames[$index])) {
+                    $pdf = null;
+                    if(!empty($request->pdfs[$index])){
+                        $pdf = $request->pdfs[$index]->store('distance-learning/additional-materials');
+                    }
+                    DistanceLearningAdditionalMaterialLink::insert([
+                        'link' => $link,
+                        'link_name' => $request->linkNames[$index],
+                        'pdf' => $pdf,
+                        'additional_material_id' => $additionalMaterial,
+                    ]);
                 }
-                DistanceLearningAdditionalMaterialLink::insert([
-                    'link' => $link,
-                    'link_name' => $request->linkNames[$index],
-                    'pdf' => $pdf,
-                    'additional_material_id' => $additionalMaterial,
-                ]);
             }
         }
 
@@ -120,16 +122,18 @@ class AdditionalMaterialController extends Controller
 
         if (!empty($request->links) || !empty($request->linkNames) || !empty($request->pdfs)) {
             foreach ($request->links as $index => $link) {
-                $pdf = null;
-                if(!empty($request->pdfs[$index])){
-                    $pdf = $request->pdfs[$index]->store('distance-learning/additional-materials');
+                if (isset($link) && isset($request->linkNames[$index])) {
+                    $pdf = null;
+                    if(!empty($request->pdfs[$index])){
+                        $pdf = $request->pdfs[$index]->store('distance-learning/additional-materials');
+                    }
+                    DistanceLearningAdditionalMaterialLink::insert([
+                        'link' => $link,
+                        'link_name' => $request->linkNames[$index],
+                        'pdf' => $pdf,
+                        'additional_material_id' => $additionalMaterial->id,
+                    ]);
                 }
-                DistanceLearningAdditionalMaterialLink::insert([
-                    'link' => $link,
-                    'link_name' => $request->linkNames[$index],
-                    'pdf' => $pdf,
-                    'additional_material_id' => $additionalMaterial->id,
-                ]);
             }
         }
 

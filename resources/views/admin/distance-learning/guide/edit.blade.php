@@ -37,8 +37,9 @@
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
                             <span class="text-20 form__item_name">Photo</span>
+                            <img class="img__file_reader" src="{{ Storage::url($guide->img) }}" alt="">
                             <label class="text-20 admin-inp admin-inp-file" for="img">Attach your File</label>
-                            <input class="admin-file" type="file" id="img" name="img">
+                            <input class="admin-file admin-file-img" type="file" id="img" name="img">
                         </div>
                         <div class="form__item form__item-inp">
                             <span class="text-20 form__item_name">File</span>
@@ -55,4 +56,9 @@
             </form>
         </section>
     </div>
+@endsection
+
+
+@section('scripts')
+    <script src="/js/admin/inputsFileReader/imgReader.js"></script>
 @endsection
