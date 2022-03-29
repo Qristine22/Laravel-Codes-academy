@@ -36,8 +36,8 @@
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
                             <span class="text-20 form__item_name">File</span>
-                            <label class="text-20 admin-inp admin-inp-file" for="link">Attach your File</label>
-                            <input class="admin-file" type="file" id="link" name="link">
+                            <label class="text-20 admin-inp admin-inp-file admin-inp-pdf" for="link">Attach your File</label>
+                            <input class="admin-file admin-file-pdf" type="file" id="link" name="link">
                         </div>
                         <div class="form__item form__item-inp">
                             <label class="text-20 form__item_name" for="course">Course</label>
@@ -62,5 +62,5 @@
 @endsection
 
 @section('scripts')
-    <script src="/ckeditor/ckeditor.js"></script>
+    <script src="/js/admin/inputsFileReader/pdfReader.js"></script>
 @endsection

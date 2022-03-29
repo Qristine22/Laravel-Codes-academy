@@ -28,10 +28,12 @@ if (adminInputAdd) {
         let newFormLabel = create("label", newFormItem, `text-20`);
         newFormLabel.classList.add("admin-inp");
         newFormLabel.classList.add("admin-inp-file");
+        newFormLabel.classList.add("admin-inp-pdf");
         newFormLabel.setAttribute("for", `pdf${i}`);
         newFormLabel.innerHTML = "Attach your File";
 
         let newFormInp = create("input", newFormItem, `admin-file`);
+        newFormInp.classList.add('admin-file-pdf');
         newFormInp.setAttribute("type", `file`);
         newFormInp.setAttribute("id", `pdf${i}`);
         newFormInp.setAttribute("name", `pdfs[]`);
@@ -77,5 +79,12 @@ if (adminInputAdd) {
         newFormInp3.setAttribute("name", `linkNames[]`);
         newFormInp3.setAttribute("placeholder", `Enter your text here`);
         i++;
+        
+
+
+
+        pdfs = document.querySelectorAll('.admin-file-pdf');
+        labels = document.querySelectorAll('.admin-inp-pdf');
+        pdfReader(pdfs);
     });
 }

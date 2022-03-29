@@ -61,8 +61,8 @@
                         </div>
                         <div class="form__item form__item-inp">
                             <span class="text-20 form__item_name">Syllabus pdf</span>
-                            <label class="text-20 admin-inp admin-inp-file" for="syllabus__pdf">Attach your File</label>
-                            <input class="admin-file" type="file" id="syllabus__pdf" name="syllabus_pdf">
+                            <label class="text-20 admin-inp admin-inp-file admin-inp-pdf" for="syllabus__pdf">Attach your File</label>
+                            <input class="admin-file admin-file-pdf" type="file" id="syllabus__pdf" name="syllabus_pdf">
                         </div>
                     </div>
                     <div class="form__item">
@@ -97,4 +97,5 @@
 @section('scripts')
     <script src="/ckeditor/ckeditor.js"></script>
     <script src="/js/admin/inputsFileReader/imgReader.js"></script>
+    <script src="/js/admin/inputsFileReader/pdfReader.js"></script>
 @endsection

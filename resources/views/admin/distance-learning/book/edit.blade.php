@@ -74,8 +74,8 @@
                             </div>
                             <div class="form__item form__item-inp">
                                 <span class="text-20 form__item_name">File</span>
-                                <label class="text-20 admin-inp admin-inp-file" for="pdf">Attach your File</label>
-                                <input class="admin-file" type="file" id="pdf" name="pdfs[]">
+                                <label class="text-20 admin-inp admin-inp-file admin-inp-pdf" for="pdf">Attach your File</label>
+                                <input class="admin-file admin-file-pdf" type="file" id="pdf" name="pdfs[]">
                             </div>
                         </div>
                     </div>
@@ -111,4 +111,5 @@
 @section('scripts')
     <script src="/js/admin/inputsAddBooksPdf.js"></script>
     <script src="/js/admin/inputsFileReader/imgReader.js"></script>
+    <script src="/js/admin/inputsFileReader/pdfReader.js"></script>
 @endsection

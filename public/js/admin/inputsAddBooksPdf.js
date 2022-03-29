@@ -88,13 +88,22 @@ if (adminInputAdd) {
         let newFormLabel4 = create("label", newFormItem4, `text-20`);
         newFormLabel4.classList.add("admin-inp");
         newFormLabel4.classList.add("admin-inp-file");
+        newFormLabel4.classList.add("admin-inp-pdf");
         newFormLabel4.setAttribute("for", `pdf${i}`);
         newFormLabel4.innerHTML = "Attach your File";
 
         let newFormInp4 = create("input", newFormItem4, `admin-file`);
+        newFormInp4.classList.add('admin-file-pdf');
         newFormInp4.setAttribute("type", `file`);
         newFormInp4.setAttribute("id", `pdf${i}`);
         newFormInp4.setAttribute("name", `pdfs[]`);
         i++;
+
+
+
+
+        pdfs = document.querySelectorAll('.admin-file-pdf');
+        labels = document.querySelectorAll('.admin-inp-pdf');
+        pdfReader(pdfs);
     });
 }

@@ -1,9 +1,9 @@
-let inputs = document.querySelectorAll('.admin-file-pdf');
-let labels = document.querySelectorAll('.admin-inp-file');
+let pdfs = document.querySelectorAll('.admin-file-pdf');
+let labels = document.querySelectorAll('.admin-inp-pdf');
 
 
-function pdfReader(inputs) {
-    inputs.forEach((item, i) => {
+function pdfReader(pdfs) {
+    pdfs.forEach((item, i) => {
 
         item.onchange = function (evt) {
             var tgt = evt.target || window.event.srcElement,
@@ -11,9 +11,9 @@ function pdfReader(inputs) {
 
             if (FileReader && files && files.length) {
                 var fr = new FileReader();
-                if (evt.target.files[i].size < 10000000) {
+                if (evt.target.files[0].size < 10000000) {
                     fr.onload = function () {
-                        labels[i].innerHTML = evt.target.files[i].name;
+                        labels[i].innerHTML = evt.target.files[0].name;
                     }
                     fr.readAsDataURL(files[0]);
                 }
@@ -26,4 +26,4 @@ function pdfReader(inputs) {
     });
 }
 
-pdfReader(inputs);
+pdfReader(pdfs);
