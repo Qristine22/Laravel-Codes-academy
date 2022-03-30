@@ -101,6 +101,7 @@ if (adminInputAdd) {
         newFormInp5.setAttribute("type", `file`);
         newFormInp5.setAttribute("id", `pdfs${i}`);
         newFormInp5.setAttribute("name", `pdfs[]`);
+        newFormInp5.setAttribute("accept", `.pdf`);
         i++;
 
 
