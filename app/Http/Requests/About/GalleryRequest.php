@@ -24,9 +24,9 @@ class GalleryRequest extends FormRequest
     public function rules()
     {
         return [
-            'text_en' => 'required|max:255',
+            'text_en' => 'max:255',
             'text_am' => 'required|max:255',
-            'text_ru' => 'required|max:255',
+            'text_ru' => 'max:255',
             'year' => 'required|numeric|digits:4',
             'full_date' => 'required|max:255',
         ];

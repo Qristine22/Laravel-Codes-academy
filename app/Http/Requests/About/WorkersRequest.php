@@ -24,12 +24,10 @@ class WorkersRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_en' => 'required|max:255',
+            'name_en' => 'max:255',
             'name_am' => 'required|max:255',
-            'name_ru' => 'required|max:255',
-            'biography_en' => 'required',
+            'name_ru' => 'max:255',
             'biography_am' => 'required',
-            'biography_ru' => 'required',
         ];
     }
 }

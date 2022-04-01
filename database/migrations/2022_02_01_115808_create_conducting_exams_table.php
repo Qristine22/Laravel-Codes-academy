@@ -16,9 +16,9 @@ class CreateConductingExamsTable extends Migration
     {
         Schema::create('conducting_exams', function (Blueprint $table) {
             $table->id();
-            $table->text('name_en');
+            $table->text('name_en')->nullable(true);
             $table->text('name_am');
-            $table->text('name_ru');
+            $table->text('name_ru')->nullable(true);
             $table->string('pdf');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

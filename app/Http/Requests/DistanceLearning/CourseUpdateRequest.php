@@ -24,15 +24,13 @@ class CourseUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_en' => 'required|max:255',
+            'name_en' => 'max:255',
             'name_am' => 'required|max:255',
-            'name_ru' => 'required|max:255',
-            'syllabus_en' => 'required',
+            'name_ru' => 'max:255',
             'syllabus_am' => 'required',
-            'syllabus_ru' => 'required',
-            'syllabus_pdf_name_en' => 'required|max:255',
+            'syllabus_pdf_name_en' => 'max:255',
             'syllabus_pdf_name_am' => 'required|max:255',
-            'syllabus_pdf_name_ru' => 'required|max:255',
+            'syllabus_pdf_name_ru' => 'max:255',
         ];
     }
 }

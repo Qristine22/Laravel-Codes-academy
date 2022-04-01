@@ -16,9 +16,9 @@ class CreateGalleryVideosTable extends Migration
     {
         Schema::create('gallery_videos', function (Blueprint $table) {
             $table->id();
-            $table->string('text_en');
+            $table->string('text_en')->nullable(true);
             $table->string('text_am');
-            $table->string('text_ru');
+            $table->string('text_ru')->nullable(true);
             $table->text('link');
             $table->string('full_date');
             $table->integer('year');

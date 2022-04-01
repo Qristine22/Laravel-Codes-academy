@@ -16,12 +16,12 @@ class CreateFrequentlyAskedQuestionsTable extends Migration
     {
         Schema::create('frequently_asked_questions', function (Blueprint $table) {
             $table->id();
-            $table->text('title_en');
+            $table->text('title_en')->nullable(true);
             $table->text('title_am');
-            $table->text('title_ru');
-            $table->text('text_en');
+            $table->text('title_ru')->nullable(true);
+            $table->text('text_en')->nullable(true);
             $table->text('text_am');
-            $table->text('text_ru');
+            $table->text('text_ru')->nullable(true);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->softDeletes();
