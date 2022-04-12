@@ -15,7 +15,7 @@
                             <div class="home__logo">
                                 <img class="home__logo_img" src="{{ Storage::url($home->logo) }}" alt="mainLogo">
                             </div>
-                            <h1 class="home__title">{{ $home->{'title_' . app()->getLocale()} }}</h1>
+                            <h1 class="home__title">{!! $home->{'title_' . app()->getLocale()} !!}</h1>
                             <form class="home__form" action="{{ route('search') }}" method="GET">
                                 <button class="home__form_btn">
                                     <img class="home__search_icon" src="/media/img/icons/search.png" alt="search">

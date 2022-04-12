@@ -19,23 +19,6 @@
                 <div class="form__text">
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="title__en">Title (English)</label>
-                            <input class="admin-inp" type="text" id="title__en" name="title_en"
-                                placeholder="Enter your text here" value="{{ $home->title_en }}">
-                        </div>
-                        <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="title__am">Title (Armenian)</label>
-                            <input class="admin-inp" type="text" id="title__am" name="title_am"
-                                placeholder="Enter your text here" value="{{ $home->title_am }}">
-                        </div>
-                        <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="title__ru">Title (Russian)</label>
-                            <input class="admin-inp" type="text" id="title__ru" name="title_ru"
-                                placeholder="Enter your text here" value="{{ $home->title_ru }}">
-                        </div>
-                    </div>
-                    <div class="flex inputs__group">
-                        <div class="form__item form__item-inp">
                             <img class="img__file_reader" src="{{ Storage::url($home->logo) }}" alt="">
                             <span class="text-20 form__item_name">Logo</span>
                             <label class="text-20 admin-inp admin-inp-file" for="logo">Attach your Photo</label>
@@ -53,9 +36,11 @@
                             <label class="text-20 admin-inp admin-inp-file" for="rectors__signature">
                                 Attach your Photo
                             </label>
-                            <input class="admin-file admin-file-img" type="file" id="rectors__signature" name="rectors_signature">
+                            <input class="admin-file admin-file-img" type="file" id="rectors__signature"
+                                name="rectors_signature">
                         </div>
                     </div>
+                    
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
                             <img class="img__file_reader" src="{{ Storage::url($home->rectors_img) }}" alt="">
@@ -64,6 +49,25 @@
                             <input class="admin-file admin-file-img" type="file" id="rectors__img" name="rectors_img">
                         </div>
                     </div>
+                    <div class="form__item">
+                        <label class="text-20" for="title__en">Title (English)</label>
+                        <textarea class="ckeditor" name="title_en" id="title__en">
+                            {{ $home->title_en }}
+                        </textarea>
+                    </div>
+                    <div class="form__item">
+                        <label class="text-20" for="title__am">Title (Armenian)</label>
+                        <textarea class="ckeditor" name="title_am" id="title__am">
+                            {{ $home->title_am }}
+                        </textarea>
+                    </div>
+                    <div class="form__item">
+                        <label class="text-20" for="title__ru">Title (Russian)</label>
+                        <textarea class="ckeditor" name="title_ru" id="title__ru">
+                            {{ $home->title_ru }}
+                        </textarea>
+                    </div>
+
                     <div class="form__item">
                         <label class="text-20" for="rectors_word__en">Rectors Word (English)</label>
                         <textarea class="ckeditor" name="rectors_word_en" id="rectors_word__en">
