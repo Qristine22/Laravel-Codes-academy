@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +22,6 @@ Route::middleware(['set_locale'])->group(function () {
     // pages ******************************************************************************
     Route::get('/', 'App\Http\Controllers\Pages\AboutController@home')->name('home');
     Route::get('/search', 'App\Http\Controllers\SearchController@search')->name('search');
-
 
     // about/*********************************************************************************
     Route::group(['prefix' => 'about'], function () {
@@ -222,6 +220,9 @@ Route::middleware(['set_locale'])->group(function () {
             // distance learning assignments
             Route::get('/assignments/{id}', 'App\Http\Controllers\Pages\DistanceLearningController@assignments')
             ->name('assignments');
+            // distance learning articulate projects
+            Route::get('/articulates/{id}', 'App\Http\Controllers\Pages\DistanceLearningController@articulate')
+            ->name('articulate');
             // distance learning guide
             Route::get('/distance-learning-guide', 'App\Http\Controllers\Pages\DistanceLearningController@distanceLearningGuide')
                 ->name('distanceLearningGuide');
@@ -619,6 +620,18 @@ Route::middleware(['set_locale'])->group(function () {
                 Route::get('recycleBin/assignment/{id}/delete',
                     'App\Http\Controllers\Admin\DistanceLearning\AssignmentController@forceDelete')
                     ->name('assignment.forceDelete');
+                    
+                // articulate courses
+                Route::resource('articulate', 'App\Http\Controllers\Admin\DistanceLearning\ArticulateCourseController');
+                Route::get('recycleBin/articulate',
+                    'App\Http\Controllers\Admin\DistanceLearning\ArticulateCourseController@recycleBin')
+                    ->name('articulate.recycleBin');
+                Route::get('recycleBin/articulate/{id}/restore',
+                    'App\Http\Controllers\Admin\DistanceLearning\ArticulateCourseController@recycleBinRestore')
+                    ->name('articulate.recycleBinRestore');
+                Route::get('recycleBin/articulate/{id}/delete',
+                    'App\Http\Controllers\Admin\DistanceLearning\ArticulateCourseController@forceDelete')
+                    ->name('articulate.forceDelete');
 
                 // video
                 Route::resource('video', 'App\Http\Controllers\Admin\DistanceLearning\VideoController');

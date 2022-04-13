@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Header;
 use App\Models\Subheader;
 use App\Models\SitesLink;
+use App\Models\ArticulateCourse;
 use App\Models\DistanceLearning;
 use App\Models\MotivationalVideo;
 use App\Models\DistanceLearningBook;
@@ -105,6 +106,24 @@ class DistanceLearningController extends Controller
             'guide' => $guide,
             'FAQ' => $FAQ,
             'assignments' => $assignments,
+        ]);
+    }
+    public function articulate($id){
+        $headersBot = Subheader::where('parent_id', 4)->get();
+        $guide = DistanceLearningGuide::first();
+        $FAQ = FrequentlyAskedQuestion::first();
+        $articulates = ArticulateCourse::where('course_id', $id)->get();
+
+        if(count($articulates) === 0){
+            return abort(404);
+        }
+        return view('distance-learning-articulate', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
+            'guide' => $guide,
+            'FAQ' => $FAQ,
+            'articulates' => $articulates,
         ]);
     }
     public function distanceLearningCourses(){
