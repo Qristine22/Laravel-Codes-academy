@@ -19,9 +19,9 @@ class CreateContactStaffTable extends Migration
             $table->string('position_en')->nullable(true);
             $table->string('position_am')->nullable(true);
             $table->string('position_ru')->nullable(true);
-            $table->string('name_en')->nullable(true);
-            $table->string('name_am')->nullable(true);
-            $table->string('name_ru')->nullable(true);
+            $table->text('name_en')->nullable(true);
+            $table->text('name_am')->nullable(true);
+            $table->text('name_ru')->nullable(true);
             $table->string('phone')->nullable(true);
             $table->string('mail')->nullable(true);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

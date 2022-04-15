@@ -19,7 +19,7 @@
                     <tr>
                         <td class="td text-18">{{ $item->id }}</td>
                         <td class="td">{{ $item->position_am }}</td>
-                        <td class="td">{{ $item->name_am }}</td>
+                        <td class="td">{!! $item->name_am !!}</td>
                         <td class="td">{{ $item->mail }}</td>
                         <td class="td">{{ $item->phone }}</td>
                         <td class="td text-18">
