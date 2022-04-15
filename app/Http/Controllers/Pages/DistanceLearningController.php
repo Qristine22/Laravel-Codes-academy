@@ -114,16 +114,13 @@ class DistanceLearningController extends Controller
         $FAQ = FrequentlyAskedQuestion::first();
         $articulates = ArticulateCourse::where('course_id', $id)->get();
 
-        if(count($articulates) === 0){
-            return abort(404);
-        }
         return view('distance-learning-articulate', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'sitesLinks' => $this->getSitesLinks(),
             'guide' => $guide,
             'FAQ' => $FAQ,
-            'articulates' => $articulates,
+            'articulates' => (count($articulates) === 0) ? 'distance-learning.no_courses' : $articulates,
         ]);
     }
     public function distanceLearningCourses(){

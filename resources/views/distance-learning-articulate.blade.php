@@ -6,7 +6,7 @@
 @endsection
 
 @section('header-bot')
-    @include("includes.header-bot")
+    @include('includes.header-bot')
 @endsection
 
 @section('content')
@@ -15,13 +15,17 @@
             <div class="wrapper">
                 <div class="conducting-exams__cont">
                     <div class="link__pdfs">
-                        @if (@isset($articulates) && count($articulates))
+                        @if (@isset($articulates) && @gettype($articulates) !== 'string')
                             @foreach ($articulates as $item)
                                 <div class="link__pdf flex">
                                     <a class="link__name text-18" href="{{ $item->link }}"
                                         target="_blank">{{ $item->{'name_' . app()->getLocale()} }}</a>
                                 </div>
                             @endforeach
+                        @else
+                            <p class="articulate__info">
+                                @lang('distance-learning.no_courses')
+                            </p>
                         @endif
                     </div>
                 </div>

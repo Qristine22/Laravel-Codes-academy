@@ -5,5 +5,6 @@ return [
     'media-materials' => 'Լրացուցիչ մեդիա-նյութեր',
     'distance-larening-guide' => 'Հեռաուսուցման ուղեցույց',
     'assignments' => 'Առաջադրանք',
-    'courses' => 'Դասընդացներ',
+    'courses' => 'Դասընթացներ',
+    'no_courses' => 'Դասընթացներ չկան',
 ];

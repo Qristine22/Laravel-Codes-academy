@@ -6,4 +6,5 @@ return [
     'distance-larening-guide' => 'Distance learning guide',
     'assignments' => 'Assignments',
     'courses' => 'Courses',
+    'no_courses' => 'There are no courses',
 ];
