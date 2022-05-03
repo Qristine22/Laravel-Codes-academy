@@ -61,6 +61,8 @@ Route::middleware(['set_locale'])->group(function () {
         Route::group(['prefix' => 'academy-structure'], function () {
             // rector page
             Route::get('/', 'App\Http\Controllers\Pages\AboutController@academyStructure')->name('academyStructure');
+            // rector's advisor
+            Route::get('/rectors-advisor', 'App\Http\Controllers\Pages\AboutController@rectorsAdvisor')->name('rectorsAdvisor');
             // vice rector
             Route::get('/vice-rector', 'App\Http\Controllers\Pages\AboutController@VICERector')->name('VICERector');
             // chief of staff

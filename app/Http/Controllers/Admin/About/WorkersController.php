@@ -42,9 +42,15 @@ class WorkersController extends Controller
     public function store(WorkersRequest $request)
     {
         $worker = Worker::insertGetId([
+            'name_en' => $request->name_en,
+            'name_am' => $request->name_am,
+            'name_ru' => $request->name_ru,
             'position_en' => $request->position_en,
             'position_am' => $request->position_am,
             'position_ru' => $request->position_ru,
+            'biography_en' => $request->biography_en,
+            'biography_am' => $request->biography_am,
+            'biography_ru' => $request->biography_ru,
         ]);
 
 

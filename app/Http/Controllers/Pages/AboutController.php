@@ -224,7 +224,7 @@ class AboutController extends Controller
             'person' => $person,
         ]);
     }
-    public function programmaticMethodologicalActivities(){
+    public function rectorsAdvisor(){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $person = Worker::where('id', 4)->first();
 
@@ -235,7 +235,7 @@ class AboutController extends Controller
             'person' => $person,
         ]);
     }
-    public function trainingForTrainees(){
+    public function programmaticMethodologicalActivities(){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $person = Worker::where('id', 5)->first();
 
@@ -246,7 +246,7 @@ class AboutController extends Controller
             'person' => $person,
         ]);
     }
-    public function trainingOrganization(){
+    public function trainingForTrainees(){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $person = Worker::where('id', 6)->first();
 
@@ -257,7 +257,7 @@ class AboutController extends Controller
             'person' => $person,
         ]);
     }
-    public function unitOfFinance(){
+    public function trainingOrganization(){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $person = Worker::where('id', 7)->first();
 
@@ -268,7 +268,7 @@ class AboutController extends Controller
             'person' => $person,
         ]);
     }
-    public function cooperationAndPublicRelation(){
+    public function unitOfFinance(){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $person = Worker::where('id', 8)->first();
 
@@ -279,7 +279,7 @@ class AboutController extends Controller
             'person' => $person,
         ]);
     }
-    public function staffAndDocumentManagement(){
+    public function cooperationAndPublicRelation(){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $person = Worker::where('id', 9)->first();
 
@@ -290,7 +290,7 @@ class AboutController extends Controller
             'person' => $person,
         ]);
     }
-    public function tehchnicalAndEconomicActivities(){
+    public function staffAndDocumentManagement(){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $person = Worker::where('id', 10)->first();
 
@@ -301,9 +301,20 @@ class AboutController extends Controller
             'person' => $person,
         ]);
     }
-    public function hotel(){
+    public function tehchnicalAndEconomicActivities(){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $person = Worker::where('id', 11)->first();
+
+        return view('biography', [
+            'headers' => $this->getHeader(),
+            'headersBot' => $headersBot,
+            'sitesLinks' => $this->getSitesLinks(),
+            'person' => $person,
+        ]);
+    }
+    public function hotel(){
+        $headersBot = Subheader::where('parent_id', 1)->get();
+        $person = Worker::where('id', 12)->first();
 
         return view('biography', [
             'headers' => $this->getHeader(),
