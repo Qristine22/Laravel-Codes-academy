@@ -17,13 +17,13 @@
                     <div class="graduates__item">
                         <h3 class="members__title graduates-profession__title text-26">
                             @if($position == 'judge')
-                                @lang('about.graduates.judges') - 2021
+                                @lang('about.graduates.judges') - {{ $year  }}
                             @endif
                             @if($position == 'prosecutor')
-                                @lang('about.graduates.prosecutors') - 2021
+                                @lang('about.graduates.prosecutors') - {{ $year  }}
                             @endif
                             @if($position == 'investigator')
-                                @lang('about.graduates.investigators') - 2021
+                                @lang('about.graduates.investigators') - {{ $year  }}
                             @endif
                         </h3>
                         <div class="graduates-profession__items">

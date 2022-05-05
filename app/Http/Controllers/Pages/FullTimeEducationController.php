@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Helpers\Helpers;
 
 // Models
 use App\Models\Header;
@@ -45,15 +46,20 @@ class FullTimeEducationController extends Controller
 
 
 
-    
+
     // full time education *********************************************************************************
     // training programs
     public function fullTimeEducation(){
         $headersBot = Subheader::where('parent_id', 3)->get();
         $trainingProgramJodgeYears = TrainingProgram::where('category', 'judge')->get()->groupBy('year')->reverse();
+        $trainingProgramJodgeYears = Helpers::datesSortHelper($trainingProgramJodgeYears);
+
         $trainingProgramProsecutorYears = TrainingProgram::where('category', 'prosecutor')->get()->groupBy('year')->reverse();
+        $trainingProgramProsecutorYears = Helpers::datesSortHelper($trainingProgramProsecutorYears);
+
         $trainingProgramInvestigatorYears = TrainingProgram::where('category', 'investigator')
             ->get()->groupBy('year')->reverse();
+        $trainingProgramInvestigatorYears = Helpers::datesSortHelper($trainingProgramInvestigatorYears);
 
         return view('training-programs', [
             'headers' => $this->getHeader(),
@@ -67,9 +73,14 @@ class FullTimeEducationController extends Controller
     public function trainingPrograms(){
         $headersBot = Subheader::where('parent_id', 3)->get();
         $trainingProgramJodgeYears = TrainingProgram::where('category', 'judge')->get()->groupBy('year')->reverse();
+        $trainingProgramJodgeYears = Helpers::datesSortHelper($trainingProgramJodgeYears);
+
         $trainingProgramProsecutorYears = TrainingProgram::where('category', 'prosecutor')->get()->groupBy('year')->reverse();
+        $trainingProgramProsecutorYears = Helpers::datesSortHelper($trainingProgramProsecutorYears);
+
         $trainingProgramInvestigatorYears = TrainingProgram::where('category', 'investigator')
             ->get()->groupBy('year')->reverse();
+        $trainingProgramInvestigatorYears = Helpers::datesSortHelper($trainingProgramInvestigatorYears);
 
         return view('training-programs', [
             'headers' => $this->getHeader(),
@@ -84,6 +95,7 @@ class FullTimeEducationController extends Controller
         $headersBot = Subheader::where('parent_id', 3)->get();
         $trainingPrograms = TrainingProgram::where('category', $category)->where('year', $year)
             ->get();
+        $trainingPrograms = Helpers::datesSortHelper($trainingPrograms);
 
         return view('training-program-single', [
             'headers' => $this->getHeader(),
@@ -139,7 +151,7 @@ class FullTimeEducationController extends Controller
     public function dormitoryRules(){
         $headersBot = Subheader::where('parent_id', 3)->get();
         $data = DormitoryRule::paginate(10);
-        
+
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,

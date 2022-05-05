@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Pages;
 
+use App\Helpers\Helpers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -28,6 +29,7 @@ use App\Models\GoverningBoardPage;
 use App\Models\GoverningBoardStaff;
 use App\Models\GoverningBoardDecree;
 use App\Models\FormerRectorsBiography;
+use phpDocumentor\Reflection\Types\Collection;
 
 class AboutController extends Controller
 {
@@ -53,7 +55,7 @@ class AboutController extends Controller
         $this->setSitesLinks($sitesLinks);
     }
 
-    
+
 
 
     // home *********************************************************************************
@@ -91,6 +93,8 @@ class AboutController extends Controller
 
         $governingBoardPage = GoverningBoardPage::first();
         $governingBoardDecreesYears = GoverningBoardDecree::all()->groupBy('year');
+        $governingBoardDecreesYears = Helpers::datesSortHelper($governingBoardDecreesYears);
+
         $governingBoardMembers = GoverningBoardStaff::get();
 
         return view('governing-board', [
@@ -106,6 +110,7 @@ class AboutController extends Controller
     public function governingBoardDecree($year){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $governingBoardDecrees = GoverningBoardDecree::where('year', $year)->get();
+        $governingBoardDecrees = Helpers::datesSortHelper($governingBoardDecrees);
         $governingBoardDecreesYears = GoverningBoardDecree::all()->groupBy('year');
 
         return view('governing-board-decree', [
@@ -334,6 +339,8 @@ class AboutController extends Controller
     public function report($year = null){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $reportYears = Report::orderBy('id', 'DESC')->get()->groupBy('year');
+        $reportYears = Helpers::datesSortHelper($reportYears);
+
         if(empty($year)){
             $year = $reportYears->keys()[0];
         }
@@ -357,7 +364,8 @@ class AboutController extends Controller
     public function graduates($year = null){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $graduateYears = Graduate::orderBy('id', 'DESC')->get()->groupBy('year');
-        
+        $graduateYears = Helpers::datesSortHelper($graduateYears);
+
         if(empty($year)){
             $year = $graduateYears->keys()[0];
         }
@@ -386,6 +394,7 @@ class AboutController extends Controller
             'sitesLinks' => $this->getSitesLinks(),
             'graduates' => $judgeGraduates,
             'position' => 'judge',
+            'year' => $year,
         ]);
     }
     public function graduatesProsecutors($year){
@@ -398,6 +407,7 @@ class AboutController extends Controller
             'sitesLinks' => $this->getSitesLinks(),
             'graduates' => $prosecutorGraduates,
             'position' => 'prosecutor',
+            'year' => $year,
         ]);
     }
     public function graduatesInvestigators($year){
@@ -410,6 +420,7 @@ class AboutController extends Controller
             'sitesLinks' => $this->getSitesLinks(),
             'graduates' => $investigatorGraduates,
             'position' => 'investigator',
+            'year' => $year,
         ]);
     }
 
@@ -472,6 +483,7 @@ class AboutController extends Controller
     public function gallery($year = null){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $years = Gallery::all()->groupBy('year')->reverse();
+        $years = Helpers::datesSortHelper($years);
 
         if(empty($year)){
             $year = $years->keys()[0];
@@ -490,6 +502,7 @@ class AboutController extends Controller
     public function galleryVideo($year = null){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $years = GalleryVideo::all()->groupBy('year')->reverse();
+        $years = Helpers::datesSortHelper($years);
 
         if(empty($year)){
             $year = $years->keys()[0];
@@ -511,6 +524,7 @@ class AboutController extends Controller
     public function massMedia($year = null){
         $headersBot = Subheader::where('parent_id', 1)->get();
         $years = MassMedium::all()->groupBy('year')->reverse();
+        $years = Helpers::datesSortHelper($years);
 
         if(empty($year)){
             $year = $years->keys()[0];
