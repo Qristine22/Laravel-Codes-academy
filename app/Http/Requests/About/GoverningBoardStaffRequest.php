@@ -24,12 +24,12 @@ class GoverningBoardStaffRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_en' => 'required|max:255',
+            'name_en' => 'max:255',
             'name_am' => 'required|max:255',
-            'name_ru' => 'required|max:255',
-            'position_en' => 'required|max:255',
+            'name_ru' => 'max:255',
+            'position_en' => 'max:255',
             'position_am' => 'required|max:255',
-            'position_ru' => 'required|max:255',
+            'position_ru' => 'max:255',
             'biography' => 'required',
         ];
     }

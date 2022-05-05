@@ -45,6 +45,12 @@
                                 @endforeach
                             </div>
                             <div class="courses__btns flex">
+                                <a href="{{ route('articulate', ['id' => $course->id]) }}">
+                                    <button class="courses__btn text-18">
+                                        <i class="courses__icon fas fa-play"></i>
+                                        @lang('distance-learning.courses')
+                                    </button>
+                                </a>
                                 <a href="{{ route('motivationalVideos', ['id' => $course->id]) }}">
                                     <button class="courses__btn text-18">
                                         <i class="courses__icon fas fa-play"></i>

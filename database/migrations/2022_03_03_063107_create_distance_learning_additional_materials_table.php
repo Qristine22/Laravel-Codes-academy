@@ -16,9 +16,9 @@ class CreateDistanceLearningAdditionalMaterialsTable extends Migration
     {
         Schema::create('distance_learning_additional_materials', function (Blueprint $table) {
             $table->id();
-            $table->string('name_en');
+            $table->string('name_en')->nullable(true);
             $table->string('name_am');
-            $table->string('name_ru');
+            $table->string('name_ru')->nullable(true);
             $table->integer('course_id');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

@@ -16,9 +16,9 @@ class CreateGoverningBoardDecreesTable extends Migration
     {
         Schema::create('governing_board_decrees', function (Blueprint $table) {
             $table->id();
-            $table->text('info_en');
+            $table->text('info_en')->nullable(true);
             $table->text('info_am');
-            $table->text('info_ru');
+            $table->text('info_ru')->nullable(true);
             $table->string('pdf_name');
             $table->string('pdf');
             $table->string('year');

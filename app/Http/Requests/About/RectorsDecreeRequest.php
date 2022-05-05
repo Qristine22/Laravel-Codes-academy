@@ -24,9 +24,7 @@ class RectorsDecreeRequest extends FormRequest
     public function rules()
     {
         return [
-            'info_en' => 'required',
             'info_am' => 'required',
-            'info_ru' => 'required',
             'pdf_name' => 'required|max:255',
         ];
     }

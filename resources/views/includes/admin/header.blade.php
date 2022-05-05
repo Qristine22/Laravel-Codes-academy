@@ -199,6 +199,12 @@
                             href="{{ route('admin.distance-learning.assignment.index') }}">Առաջադրանքներ</a>
                     </li>
                     <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/articulate',
+                            'admin/distance-learning/articulate/*', 'admin/distance-learning/recycleBin/articulate',
+                            'admin/distance-learning/recycleBin/articulate/*')) admin-header__link-active @endif"
+                            href="{{ route('admin.distance-learning.articulate.index') }}">Articulate</a>
+                    </li>
+                    <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/distance-learning/video',
                             'admin/distance-learning/video/*', 'admin/distance-learning/recycleBin/video',
                             'admin/distance-learning/recycleBin/video/*')) admin-header__link-active @endif"

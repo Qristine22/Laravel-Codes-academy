@@ -54,7 +54,7 @@
                             <div class="form__item form__item-inp">
                                 <span class="text-20 form__item_name">File</span>
                                 <label class="text-20 admin-inp admin-inp-file admin-inp-pdf" for="pdf">Attach your File</label>
-                                <input class="admin-file admin-file-pdf" type="file" id="pdf" name="pdfs[]">
+                                <input class="admin-file admin-file-pdf" type="file" id="pdf" name="pdfs[]" accept=".pdf">
                             </div>
                             <div class="form__item form__item-inp">
                                 <label class="text-20 form__item_name" for="link">Link</label>

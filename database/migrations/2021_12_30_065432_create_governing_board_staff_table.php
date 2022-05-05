@@ -16,12 +16,12 @@ class CreateGoverningBoardStaffTable extends Migration
     {
         Schema::create('governing_board_staff', function (Blueprint $table) {
             $table->id();
-            $table->string('name_en');
+            $table->string('name_en')->nullable(true);
             $table->string('name_am');
-            $table->string('name_ru');
-            $table->string('position_en');
+            $table->string('name_ru')->nullable(true);
+            $table->string('position_en')->nullable(true);
             $table->string('position_am');
-            $table->string('position_ru');
+            $table->string('position_ru')->nullable(true);
             $table->text('biography');
             $table->string('img');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

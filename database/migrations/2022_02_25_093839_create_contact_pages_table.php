@@ -16,9 +16,9 @@ class CreateContactPagesTable extends Migration
     {
         Schema::create('contact_pages', function (Blueprint $table) {
             $table->id();
-            $table->string('address_en');
+            $table->string('address_en')->nullable(true);
             $table->string('address_am');
-            $table->string('address_ru');
+            $table->string('address_ru')->nullable(true);
             $table->string('mail');
             $table->string('phone');
             $table->text('map');

@@ -24,9 +24,9 @@ class PageRequest extends FormRequest
     public function rules()
     {
         return [
-            'address_en' =>'required|max:255',
+            'address_en' =>'max:255',
             'address_am' =>'required|max:255',
-            'address_ru' =>'required|max:255',
+            'address_ru' =>'max:255',
             'mail' =>'required|max:255',
             'phone' =>'required',
             'map' =>'required',

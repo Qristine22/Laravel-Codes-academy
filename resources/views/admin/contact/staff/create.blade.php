@@ -32,22 +32,23 @@
                                 placeholder="Enter your text here" value="{{ old('position_ru') }}">
                         </div>
                     </div>
-                    <div class="flex inputs__group">
-                        <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="name__en">Name (English)</label>
-                            <input class="admin-inp" type="text" id="name__en" name="name_en"
-                                placeholder="Enter your text here" value="{{ old('name_en') }}">
-                        </div>
-                        <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="name__am">Name (Armenian)</label>
-                            <input class="admin-inp" type="text" id="name__am" name="name_am"
-                                placeholder="Enter your text here" value="{{ old('name_am') }}">
-                        </div>
-                        <div class="form__item form__item-inp">
-                            <label class="text-20 form__item_name" for="name__ru">Name (Russian)</label>
-                            <input class="admin-inp" type="text" id="name__ru" name="name_ru"
-                                placeholder="Enter your text here" value="{{ old('name_ru') }}">
-                        </div>
+                    <div class="form__item">
+                        <label class="text-20 form__item_name" for="name__en">Name (English)</label>
+                        <textarea class="ckeditor" name="name_en" id="name__en" placeholder="Enter Your Text Here">
+                            {{ old('name_en') }}
+                        </textarea>
+                    </div>
+                    <div class="form__item">
+                        <label class="text-20 form__item_name" for="name__am">Name (Armenian)</label>
+                        <textarea class="ckeditor" name="name_am" id="name__am" placeholder="Enter Your Text Here">
+                            {{ old('name_am') }}
+                        </textarea>
+                    </div>
+                    <div class="form__item">
+                        <label class="text-20 form__item_name" for="name__ru">Name (Russian)</label>
+                        <textarea class="ckeditor" name="name_ru" id="name__ru" placeholder="Enter Your Text Here">
+                            {{ old('name_ru') }}
+                        </textarea>
                     </div>
                     <div class="flex inputs__group">
                         <div class="form__item form__item-inp">
@@ -66,4 +67,9 @@
             </form>
         </section>
     </div>
+@endsection
+
+
+@section('scripts')
+    <script src="/ckeditor/ckeditor.js"></script>
 @endsection

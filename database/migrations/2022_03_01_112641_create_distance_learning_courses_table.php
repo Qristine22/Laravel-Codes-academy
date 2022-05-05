@@ -16,17 +16,17 @@ class CreateDistanceLearningCoursesTable extends Migration
     {
         Schema::create('distance_learning_courses', function (Blueprint $table) {
             $table->id();
-            $table->string('name_en');
+            $table->string('name_en')->nullable(true);
             $table->string('name_am');
-            $table->string('name_ru');
-            $table->text('syllabus_en');
+            $table->string('name_ru')->nullable(true);
+            $table->text('syllabus_en')->nullable(true);
             $table->text('syllabus_am');
-            $table->text('syllabus_ru');
+            $table->text('syllabus_ru')->nullable(true);
             $table->string('img');
             $table->string('syllabus_pdf');
-            $table->string('syllabus_pdf_name_en');
+            $table->string('syllabus_pdf_name_en')->nullable(true);
             $table->string('syllabus_pdf_name_am');
-            $table->string('syllabus_pdf_name_ru');
+            $table->string('syllabus_pdf_name_ru')->nullable(true);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->softDeletes();

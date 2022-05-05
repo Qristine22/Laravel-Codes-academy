@@ -77,3 +77,13 @@ conducting exams
 .distance-learning__min-height{
     min-height: calc(100vh - 200px);
 }
+
+/*
+articulate courses
+*/
+.articulate__info {
+    color: var(--brown);
+    font-size: 18px;
+    line-height: 35px;
+    margin-top: 20px;
+}

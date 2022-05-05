@@ -24,8 +24,9 @@
                         </div>
                         <div class="form__item form__item-inp">
                             <span class="text-20 form__item_name">Icon</span>
+                            <img class="img__file_reader" src="" alt="">
                             <label class="text-20 admin-inp admin-inp-file" for="icon">Attach your Icon</label>
-                            <input class="admin-file" type="file" id="icon" name="icon">
+                            <input class="admin-file admin-file-img" type="file" id="icon" name="icon">
                         </div>
                     </div>
                 </div>
@@ -33,4 +34,9 @@
             </form>
         </section>
     </div>
+@endsection
+
+
+@section('scripts')
+    <script src="/js/admin/inputsFileReader/imgReader.js"></script>
 @endsection

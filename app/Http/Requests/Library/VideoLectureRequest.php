@@ -24,12 +24,12 @@ class VideoLectureRequest extends FormRequest
     public function rules()
     {
         return [
-            'topic_en' => 'required|max:255',
+            'topic_en' => 'max:255',
             'topic_am' => 'required|max:255',
-            'topic_ru' => 'required|max:255',
-            'lecturer_en' => 'required|max:255',
+            'topic_ru' => 'max:255',
+            'lecturer_en' => 'max:255',
             'lecturer_am' => 'required|max:255',
-            'lecturer_ru' => 'required|max:255',
+            'lecturer_ru' => 'max:255',
             'video' => 'required',
         ];
     }

@@ -66,3 +66,5 @@ class Kernel extends HttpKernel
         'set_locale' => \App\Http\Middleware\SetLocale::class,
     ];
 }
+
+

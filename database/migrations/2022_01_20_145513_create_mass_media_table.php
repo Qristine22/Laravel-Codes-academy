@@ -16,9 +16,9 @@ class CreateMassMediaTable extends Migration
     {
         Schema::create('mass_media', function (Blueprint $table) {
             $table->id();
-            $table->string('text_en');
+            $table->string('text_en')->nullable(true);
             $table->string('text_am');
-            $table->string('text_ru');
+            $table->string('text_ru')->nullable(true);
             $table->integer('year');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

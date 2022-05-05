@@ -25,9 +25,7 @@ class GoverningBoardDecreeRequest extends FormRequest
     {
         return [
             'file_name' => 'required|max:255',
-            'info_en' => 'required',
             'info_am' => 'required',
-            'info_ru' => 'required',
             'year' => 'required|numeric',
         ];
     }
