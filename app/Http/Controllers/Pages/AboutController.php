@@ -109,9 +109,9 @@ class AboutController extends Controller
 
     public function governingBoardDecree($year){
         $headersBot = Subheader::where('parent_id', 1)->get();
-        $governingBoardDecrees = GoverningBoardDecree::where('year', $year)->get();
-        $governingBoardDecrees = Helpers::datesSortHelper($governingBoardDecrees);
+        $governingBoardDecrees = GoverningBoardDecree::where('year', $year)->orderBy('id', 'DESC')->get();
         $governingBoardDecreesYears = GoverningBoardDecree::all()->groupBy('year');
+        $governingBoardDecreesYears = Helpers::datesSortHelper($governingBoardDecreesYears);
 
         return view('governing-board-decree', [
             'headers' => $this->getHeader(),

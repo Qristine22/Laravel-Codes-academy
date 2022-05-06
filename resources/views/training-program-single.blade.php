@@ -34,7 +34,11 @@
                             <div class="pdf__item_inner flex">
                                 <div class="pdf__item_cont">
                                     <p class="pdf__name text-18">
-                                        {!! $item->description !!}
+                                        @if(app()->getLocale() == 'am')
+                                            {!! $item->description !!}
+                                        @else
+                                            @lang('main.info-is-available')
+                                        @endif
                                     </p>
                                 </div>
                                 <div class="pdf__item_icon">

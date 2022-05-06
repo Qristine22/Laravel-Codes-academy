@@ -67,7 +67,7 @@
                     </div>
                     <div class="form__text">
                         <div class="form__item">
-                            <label class="text-20 form__item_name" for="description">Text (English)</label>
+                            <label class="text-20 form__item_name" for="description">Text (Armenian)</label>
                             <textarea class="ckeditor" name="description" id="description" placeholder="Enter Your Text Here">
                                 {{ $trainingProgram->description }}
                             </textarea>

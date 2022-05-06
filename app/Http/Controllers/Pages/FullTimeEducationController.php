@@ -95,7 +95,6 @@ class FullTimeEducationController extends Controller
         $headersBot = Subheader::where('parent_id', 3)->get();
         $trainingPrograms = TrainingProgram::where('category', $category)->where('year', $year)
             ->get();
-        $trainingPrograms = Helpers::datesSortHelper($trainingPrograms);
 
         return view('training-program-single', [
             'headers' => $this->getHeader(),
