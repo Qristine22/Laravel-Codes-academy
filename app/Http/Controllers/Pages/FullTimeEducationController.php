@@ -93,7 +93,7 @@ class FullTimeEducationController extends Controller
     }
     public function trainingProgramSingle($year, $category){
         $headersBot = Subheader::where('parent_id', 3)->get();
-        $trainingPrograms = TrainingProgram::where('category', $category)->where('year', $year)
+        $trainingPrograms = TrainingProgram::where('category', $category)->where('year', $year)->orderBy('id', 'DESC')
             ->get();
 
         return view('training-program-single', [
