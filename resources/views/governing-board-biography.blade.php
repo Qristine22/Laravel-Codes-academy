@@ -19,7 +19,7 @@
                             <h2 class="member__name">{{ $person->{'name_'.app()->getLocale()} }}</h2>
 
                             @if(@isset($person->position_en) || @isset($person->position_am) || @isset($person->position_ru))
-                                <p class="member__position text-20">{{ $person->{'position_'.app()->getLocale()} }}</p>
+                                <p class="member__position">{{ $person->{'position_'.app()->getLocale()} }}</p>
                             @endif
 
 
