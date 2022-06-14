@@ -19,7 +19,7 @@ class MassMediaController extends Controller
      */
     public function index()
     {
-        $massMedia = MassMedium::paginate(10);
+        $massMedia = MassMedium::orderBy('id', 'DESC')->paginate(10);
         return view('admin.about.mass-media.index', [
             'massMedia' => $massMedia,
         ]);
@@ -145,9 +145,9 @@ class MassMediaController extends Controller
     }
 
 
-    
 
-    
+
+
 
 
 
@@ -168,8 +168,8 @@ class MassMediaController extends Controller
         MassMedium::withTrashed()->findOrFail($id)->restore();
         return redirect()->back();
     }
-    
-    
+
+
     public function forceDelete($id)
     {
         $massMediaLinks = MassMediaLink::where('mass_media_id', $id)->get();
