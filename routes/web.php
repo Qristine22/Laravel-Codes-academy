@@ -520,7 +520,7 @@ Route::middleware(['set_locale'])->group(function () {
                     ->name('conducting-exam-video.forceDelete');
 
                 // conducting practice
-                Route::resource('conducting-practice', 'App\Http\Controllers\Admin\FullTime\ConductingpracticeController');
+                Route::resource('conducting-practice', 'App\Http\Controllers\Admin\FullTime\ConductingPracticeController');
                 Route::get('recycleBin/conducting-practice',
                     'App\Http\Controllers\Admin\FullTime\ConductingPracticeController@recycleBin')
                     ->name('conducting-practice.recycleBin');
