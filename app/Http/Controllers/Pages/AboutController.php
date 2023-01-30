@@ -484,8 +484,7 @@ class AboutController extends Controller
         $headersBot = Subheader::where('parent_id', 1)->get();
         $years = Gallery::all()->groupBy('year')->reverse();
         $years = Helpers::datesSortHelper($years);
-
-        if(empty($year)){
+        if(empty($year) && count($years)){
             $year = $years->keys()[0];
         }
         $galleries = Gallery::galleryAll($year);
@@ -504,7 +503,7 @@ class AboutController extends Controller
         $years = GalleryVideo::all()->groupBy('year')->reverse();
         $years = Helpers::datesSortHelper($years);
 
-        if(empty($year)){
+        if(empty($year) && count($years)){
             $year = $years->keys()[0];
         }
         $galleryVideos = GalleryVideo::where('year', $year)->get();
