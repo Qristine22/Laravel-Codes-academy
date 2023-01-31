@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Pages;
 
 use App\Helpers\Helpers;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 // Models
 use App\Models\News;
@@ -29,7 +28,6 @@ use App\Models\GoverningBoardPage;
 use App\Models\GoverningBoardStaff;
 use App\Models\GoverningBoardDecree;
 use App\Models\FormerRectorsBiography;
-use phpDocumentor\Reflection\Types\Collection;
 
 class AboutController extends Controller
 {
@@ -95,7 +93,7 @@ class AboutController extends Controller
         $governingBoardDecreesYears = GoverningBoardDecree::all()->groupBy('year');
         $governingBoardDecreesYears = Helpers::datesSortHelper($governingBoardDecreesYears);
 
-        $governingBoardMembers = GoverningBoardStaff::get();
+        $governingBoardMembers = GoverningBoardStaff::orderBy('id', 'DESC')->get();
 
         return view('governing-board', [
             'headers' => $this->getHeader(),
