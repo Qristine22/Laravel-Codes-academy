@@ -23,7 +23,7 @@ class ECHRResourceController extends Controller
         $echrResources = Library::where('category', 'ECHR-resource')->orderBy('id', 'DESC')->paginate(10, ['*'], 'echrResources');
         $echrLinks = EchrLink::orderBy('id', 'DESC')->paginate(10, ['*'], 'echrLinks');
 
-        return view('admin.library.echr-resource.index', [
+        return view('admin.library.ECHR-resource.index', [
             'echrResources' => $echrResources,
             'echrLinks' => $echrLinks,
         ]);
@@ -36,7 +36,7 @@ class ECHRResourceController extends Controller
      */
     public function create()
     {
-        return view('admin.library.echr-resource.create');
+        return view('admin.library.ECHR-resource.create');
     }
 
     /**
@@ -88,7 +88,7 @@ class ECHRResourceController extends Controller
      */
     public function edit(Library $echrResource)
     {
-        return view('admin.library.echr-resource.edit', [
+        return view('admin.library.ECHR-resource.edit', [
             'echrResource' => $echrResource,
         ]);
     }
@@ -162,10 +162,10 @@ class ECHRResourceController extends Controller
         Library::withTrashed()->findOrFail($id)->restore();
         return redirect()->back();
     }
-    
-    
+
+
     public function forceDelete($id)
-    {        
+    {
         $item = Library::withTrashed()->findOrFail($id);
         Storage::delete($item->pdf);
         Storage::delete($item->img);
