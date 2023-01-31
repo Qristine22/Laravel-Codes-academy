@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin\Bulletin;
 
 use App\Models\Bulletin;
-use Illuminate\Http\Request;
 use App\Http\Requests\NameRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NamePdfRequest;
@@ -153,10 +152,10 @@ class BulletinController extends Controller
         Bulletin::withTrashed()->findOrFail($id)->restore();
         return redirect()->back();
     }
-    
-    
+
+
     public function forceDelete($id)
-    {        
+    {
         $item = Bulletin::withTrashed()->findOrFail($id);
         Storage::delete($item->pdf);
         Storage::delete($item->img);
