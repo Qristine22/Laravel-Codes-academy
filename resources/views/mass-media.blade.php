@@ -34,9 +34,9 @@
                             <div class="mass-media__list">
                                 @foreach($massMedium->links as $link)
                                     <div class="mass-media__list_item">
-                                        <a class="text-20 mass-media__link-site" target="_blank" href="{{ $link->site_name }}">
+                                        <span class="text-20 mass-media__link-site">
                                             {{ $link->site_name }}
-                                        </a>
+                                        </span>
                                         <a class="text-20 mass-media__link" target="_blank" href="{{ $link->link }}">
                                             {{ $link->link_name }}
                                         </a>
