@@ -36,14 +36,14 @@ class BulletinController extends Controller
         $this->setSitesLinks($sitesLinks);
     }
 
-    
+
 
 
 
     // bulletin *********************************************************************************
     public function bulletin(){
         $bulletinInfos = BulletinInfo::all();
-        $bulletins = Bulletin::all();
+        $bulletins = Bulletin::orderBy('id', 'DESC')->get();
 
         return view('bulletin', [
             'headers' => $this->getHeader(),
