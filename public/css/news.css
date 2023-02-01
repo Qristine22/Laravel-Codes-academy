@@ -135,9 +135,16 @@ new info
 }
 .new-top__imgs{
     width: 100%;
+    display: flex;
+}
+.new-top__imgs:first-child {
+    justify-content: end;
+}
+.new-top__imgs:last-child {
+    justify-content: start;
 }
 .new-top__imgs > .new-top__img{
-    width: 33.3%;
+    width: 50%;
 }
 .new-top__img{
     width: 100%;
