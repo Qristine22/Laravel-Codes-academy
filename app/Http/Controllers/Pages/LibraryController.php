@@ -141,7 +141,7 @@ class LibraryController extends Controller
     }
     public function ECHRResources(){
         $headersBot = Subheader::where('parent_id', 5)->get();
-        $ECHRResources = Library::where('category', 'ECHR-resource')->get();
+        $ECHRResources = Library::where('category', 'ECHR-resource')->orderBy('id', 'DESC')->get();
         $ECHRLinks = EchrLink::all();
 
         return view('pdfs-download', [
