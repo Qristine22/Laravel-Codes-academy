@@ -62,7 +62,7 @@ class LibraryController extends Controller
     }
     public function trainingMaterials(){
         $headersBot = Subheader::where('parent_id', 5)->get();
-        $academyPublications = Library::where('category', 'training-material')->get();
+        $academyPublications = Library::where('category', 'training-material')->orderBy('id', 'DESC')->get();
 
         return view('library', [
             'headers' => $this->getHeader(),
@@ -73,7 +73,7 @@ class LibraryController extends Controller
     }
     public function videoLectures(){
         $headersBot = Subheader::where('parent_id', 5)->get();
-        $videoLectures = VideoLecture::paginate(10);
+        $videoLectures = VideoLecture::orderBy('id', 'DESC')->paginate(10);
 
         return view('video-lectures', [
             'headers' => $this->getHeader(),
@@ -95,7 +95,7 @@ class LibraryController extends Controller
     }
     public function academyPublications(){
         $headersBot = Subheader::where('parent_id', 5)->get();
-        $academyPublications = Library::where('category', 'academy-publication')->get();
+        $academyPublications = Library::where('category', 'academy-publication')->orderBy('id', 'DESC')->get();
 
         return view('library', [
             'headers' => $this->getHeader(),
@@ -106,7 +106,7 @@ class LibraryController extends Controller
     }
     public function manuals(){
         $headersBot = Subheader::where('parent_id', 5)->get();
-        $manuals = Library::where('category', 'manual')->get();
+        $manuals = Library::where('category', 'manual')->orderBy('id', 'DESC')->get();
 
         return view('library', [
             'headers' => $this->getHeader(),
@@ -155,7 +155,7 @@ class LibraryController extends Controller
     }
     public function investigatorTrainingModules(){
         $headersBot = Subheader::where('parent_id', 5)->get();
-        $investigatorTrainingModules = Library::where('category', 'investigator-training-module')->get();
+        $investigatorTrainingModules = Library::where('category', 'investigator-training-module')->orderBy('id', 'DESC')->get();
 
         return view('library', [
             'headers' => $this->getHeader(),
