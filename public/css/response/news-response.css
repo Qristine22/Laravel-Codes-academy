@@ -44,6 +44,9 @@
     .new{
         margin-bottom: 20px;
     }
+    .new-top__imgs > .new-top__img{
+        width: 100%;
+    }
 }
 @media only screen and (max-width: 900px) {
     .new__date{
