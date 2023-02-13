@@ -54,7 +54,7 @@
                                         <span class="gallery__date text-20">{{ $gallery->full_date }}</span>
                                     </div>
                                 @endforeach
-                            @else
+                            @elseif(@isset($gallery->imgs[0]))
                                 <div class="gallery__item flex">
                                     <a class="gallery__top" data-fancybox="gallery"
                                         data-caption="{{ $gallery->{'text_'.app()->getLocale()} }}"

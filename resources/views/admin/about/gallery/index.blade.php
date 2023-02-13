@@ -24,30 +24,32 @@
                     <th class="th text-18" style="width: 5%">Panel</th>
                 </tr>
                 @foreach ($galleries as $item)
-                    <tr>
-                        <td class="td text-18">{{ $item->id }}</td>
-                        <td class="td">{{ $item->text_am }}</td>
-                        <td class="td">{{ $item->year }}</td>
-                        <td class="td">{{ $item->full_date }}</td>
-                        <td class="td">
-                            <img class="img" src="{{ Storage::url($item->imgs[0]->img) }}" alt="img">
-                        </td>
-                        <td class="td text-18">
-                            <div class="table__panel flex">
-                                <a class="table__panel_item"
-                                    href="{{ route('admin.about.gallery.edit', ['gallery' => $item]) }}">
-                                    <img class="img" src="/media/img/icons/edit.png" alt="edit">
-                                </a>
-                                <form action="{{ route('admin.about.gallery.destroy', ['gallery' => $item]) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="table__panel_item table__panel_delete">
-                                        <img class="img" src="/media/img/icons/delete.png" alt="edit">
-                                    </button>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
+                    @if(@isset($item->imgs[0]))
+                        <tr>
+                            <td class="td text-18">{{ $item->id }}</td>
+                            <td class="td">{{ $item->text_am }}</td>
+                            <td class="td">{{ $item->year }}</td>
+                            <td class="td">{{ $item->full_date }}</td>
+                            <td class="td">
+                                <img class="img" src="{{ Storage::url($item->imgs[0]->img) }}" alt="img">
+                            </td>
+                            <td class="td text-18">
+                                <div class="table__panel flex">
+                                    <a class="table__panel_item"
+                                        href="{{ route('admin.about.gallery.edit', ['gallery' => $item]) }}">
+                                        <img class="img" src="/media/img/icons/edit.png" alt="edit">
+                                    </a>
+                                    <form action="{{ route('admin.about.gallery.destroy', ['gallery' => $item]) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="table__panel_item table__panel_delete">
+                                            <img class="img" src="/media/img/icons/delete.png" alt="edit">
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    @endif
                 @endforeach
             </table>
         </section>
