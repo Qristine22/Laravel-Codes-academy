@@ -25,6 +25,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="azdararir">
+                    <img class="azdararir__img" src="/media/img/home/azdararir.gif" alt="@lang('home.azdararir')">
+                </div>
             </section>
 
             <section class="section rector">
