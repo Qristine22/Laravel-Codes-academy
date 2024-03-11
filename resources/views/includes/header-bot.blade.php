@@ -1,6 +1,6 @@
 <div class="header__bot">
     <div class="wrapper">
-        <nav class="header__bot_nav">
+        <nav class="header__bot_nav" aria-label="Main navigation">
             <ul class="header__bot_list">
                 @foreach ($headersBot as $headerBot)
                     <li class="header__bot_item">

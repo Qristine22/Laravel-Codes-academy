@@ -15,8 +15,8 @@
                                 {{ $item->{'title_'.app()->getLocale()} }}
                             </a>
                             <div class="read-more__cont">
-                                <a class="read-more" href="{{ route('newsSingle', ['id' => $item->id]) }}">
-                                    @lang('main.read-more')    
+                                <a aria-label="{{$item->id}}"  class="read-more" href="{{ route('newsSingle', ['id' => $item->id]) }}">
+                                    @lang('main.read-more')
                                 </a>
                                 <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
                             </div>

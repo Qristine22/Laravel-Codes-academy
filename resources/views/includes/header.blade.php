@@ -1,5 +1,6 @@
 <header class="header">
     <div class="wrapper">
+       <h1 class="sr-only" aria-label="Արդարադատության Ակադեմիա - ԱՐԴԱՐԱԴԱՏՈւԹՅԱՆ ԱԿԱԴԵՄԻԱ">Արդարադատության Ակադեմիա - ԱՐԴԱՐԱԴԱՏՈւԹՅԱՆ ԱԿԱԴԵՄԻԱ</h1>
         <div class="header__cont flex">
             <div class="header__logo">
                 @auth
@@ -19,7 +20,7 @@
                 <ul class="header__list header__info_list flex">
                     @foreach ($headers as $header)
                         <li class="header__item">
-                            <a class="header__link 
+                            <a class="header__link
                                 @if (Request::is($header->link, $header->link . '/*', 'search/' . $header->link . '/*',
                                 'search/' . $header->link . 's/*'))header__link-active @endif"
                                 href="{{ env('APP_URL') . $header->link }}">

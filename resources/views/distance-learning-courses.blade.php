@@ -38,7 +38,7 @@
                             <div class="courses__pdfs_items flex">
                                 @foreach ($course->books as $book)
                                     <div class="courses__pdfs_item">
-                                        <a href="{{ route('distanceLearningBook', ['id' => $book->id]) }}">
+                                        <a href="{{ route('distanceLearningBook', ['id' => $book->id]) }}" aria-label="{{$book->id}}">
                                             <img class="img" src="{{ Storage::url($book->img) }}" alt="2">
                                         </a>
                                     </div>

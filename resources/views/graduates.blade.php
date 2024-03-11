@@ -40,7 +40,7 @@
                                         if(count($judgeGraduates) < 4){
                                             $judgeCount = count($judgeGraduates);
                                         }
-                                    @endphp 
+                                    @endphp
                                     @for ($i = 0; $i < $judgeCount; $i++)
                                         <div class="graduate__item">
                                             <img class="img" src="{{ Storage::url($judgeGraduates[$i]->img) }}"
@@ -80,14 +80,14 @@
                                         if(count($prosecutorGraduates) < 4){
                                             $prosecutorCount = count($prosecutorGraduates);
                                         }
-                                    @endphp 
+                                    @endphp
                                     @for ($i = 0; $i < $prosecutorCount; $i++)
                                         <div class="graduate__item">
                                             <img class="img" src="{{ Storage::url($prosecutorGraduates[$i]->img) }}"
                                                 alt="{{ $prosecutorGraduates[$i]->name }}">
                                             <div class="members__item_cont">
                                                 <h3 class="member__title">{{ $prosecutorGraduates[$i]->name }}</h3>
-                                                <h4 class="member__subtitle">{{ $prosecutorGraduates[$i]->info }}</h4>
+                                                <h4 class="member__subtitle">{{ $prosecutorGraduates[$i]->name }}</h4>
                                             </div>
                                         </div>
                                     @endfor
@@ -120,7 +120,7 @@
                                     if(count($investigatorGraduates) < 4){
                                         $investigatorCount = count($investigatorGraduates);
                                     }
-                                @endphp 
+                                @endphp
                                 @for ($i = 0; $i < $investigatorCount; $i++)
                                     <div class="graduate__item">
                                         <img class="img" src="{{ Storage::url($investigatorGraduates[$i]->img) }}"

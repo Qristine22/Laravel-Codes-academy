@@ -27,7 +27,7 @@
     @yield('header-bot')
 
     @yield('content')
-    
+
     @include("includes.footer")
 
     <script src="/js/loader.js"></script>
