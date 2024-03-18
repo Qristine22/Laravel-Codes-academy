@@ -23,7 +23,7 @@
                                         alt="{{ $course->{'name_' . app()->getLocale()} }}">
                                 </a>
                             </div>
-                            <h2 class="courses__item_name text-26">{{ $course->{'name_' . app()->getLocale()} }}</h2>
+{{--                            <h2 class="courses__item_name text-26">{{ $course->{'name_' . app()->getLocale()} }}</h2>--}}
                         </div>
                     @endforeach
                 </div>

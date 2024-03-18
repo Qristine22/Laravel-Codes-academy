@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="about-main">
         <section class="section section-text section-top section__min-height">
             <div class="wrapper">
                 <div class="section-text__cont">

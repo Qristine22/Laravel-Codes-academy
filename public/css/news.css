@@ -33,7 +33,7 @@ news
     position: relative;
 }
 .new__date{
-    color: var(--dark-yellow)
+    color: var(--dark-brown)
 }
 .new__title{
     color: var(--brown);

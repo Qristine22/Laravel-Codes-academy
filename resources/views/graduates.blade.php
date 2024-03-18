@@ -18,6 +18,7 @@
                         @foreach ($graduateYears as $key => $val)
                             <div class="governing__date date-12">
                                 <a class="date about__date @if ($key == $year)date-active @endif"
+                                    aria-label="{{ $key }}"
                                     href="{{ route('graduates', ['year' => $key]) }}">{{ $key }}</a>
                             </div>
                         @endforeach

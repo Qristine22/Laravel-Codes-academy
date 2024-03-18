@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" aria-label="Header">
     <div class="wrapper">
        <h1 class="sr-only" aria-label="Արդարադատության Ակադեմիա - ԱՐԴԱՐԱԴԱՏՈւԹՅԱՆ ԱԿԱԴԵՄԻԱ">Արդարադատության Ակադեմիա - ԱՐԴԱՐԱԴԱՏՈւԹՅԱՆ ԱԿԱԴԵՄԻԱ</h1>
         <div class="header__cont flex">
@@ -7,7 +7,7 @@
                     <a class="admin__btn admin__logout" href="{{ route('logout') }}">logout</a>
                 @endauth
                 <a href="{{ route('home') }}">
-                    <img class="header__logo_img" src="/media/img/logo/brownLogo.png" alt="Logo">
+                    <img class="header__logo_img" src="/media/img/logo/brownLogo.png" alt="Logo for header">
                 </a>
                 @auth
                     <a class="admin__btn" href="{{ route('admin.home.index') }}">Admin</a>
@@ -16,13 +16,15 @@
 
 
             {{-- navigation --}}
-            <nav class="nav">
+            <nav class="nav" aria-label="Navigation Menu">
                 <ul class="header__list header__info_list flex">
                     @foreach ($headers as $header)
                         <li class="header__item">
                             <a class="header__link
                                 @if (Request::is($header->link, $header->link . '/*', 'search/' . $header->link . '/*',
                                 'search/' . $header->link . 's/*'))header__link-active @endif"
+                                aria-label="{{ $header->{'name_' . app()->getLocale()} }}"
+                                title="{{ $header->{'name_' . app()->getLocale()} }}"
                                 href="{{ env('APP_URL') . $header->link }}">
                                 {{ $header->{'name_' . app()->getLocale()} }}
                             </a>
@@ -34,6 +36,8 @@
                                         @foreach ($header->subheaders as $subheader)
                                             <li class="header__menu_item">
                                                 <a class="header__menu_link"
+                                                   aria-label="{{ $header->{'name_' . app()->getLocale()} }}"
+                                                   title="{{ $header->{'name_' . app()->getLocale()} }}"
                                                     href="{{ env('APP_URL') . $subheader->link }}">
                                                     {{ $subheader->{'name_' . app()->getLocale()} }}
                                                 </a>

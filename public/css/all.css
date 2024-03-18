@@ -417,7 +417,7 @@ header
 }
 .header__bot_link-active,
 .header__bot_item:hover .header__bot_link{
-    background-color: var(--pink);
+    background-color: var(--white);
     border: 1px solid var(--dark-yellow);
 }
 .admin__btn{
@@ -526,7 +526,7 @@ header
     position: relative;
 }
 .read-more{
-    color: var(--dark-yellow);
+    color: var(--dark-brown);
     font-size: 13px;
     font-style: italic;
 }
@@ -838,7 +838,7 @@ link pdfs
 }
 .link__pdf_span{
     margin-top: -30px;
-    opacity: 0;
+    opacity: 1;
     transform: scale(0);
     -webkit-transform: scale(0);
     -moz-transform: scale(0);
@@ -971,6 +971,7 @@ courses
     -o-transform: translateX(90%) scale(0.8);
 }
 .courses__item_name{
+    color: black;
     width: 380%;
     position: absolute;
     text-align: center;

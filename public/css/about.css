@@ -166,7 +166,7 @@ rector
 }
 .about__link,
 .report__link{
-    color: var(--dark-yellow);
+    color: var(--dark-brown);
     font-weight: 700;
     padding: 0 8px;
     border: 1px solid transparent;
