@@ -36,7 +36,7 @@ news
     color: var(--dark-yellow)
 }
 .new__title{
-    color: var(--brown);
+    color: var(--dark-brown);
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 1px;
