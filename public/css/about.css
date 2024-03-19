@@ -416,6 +416,9 @@ gallery
     justify-content: center;
     flex-wrap: wrap;
 }
+.gallery_video{
+    align-items: flex-start;
+}
 .gallery__item,
 .gallery-video__item{
     width: calc(33% - 70px);

@@ -1,8 +1,10 @@
 @extends('layouts.main')
 
 @section('styles')
+{{--    <link rel="stylesheet" href="/css/about.css">--}}
     <link rel="stylesheet" href="/css/news.css">
     <link rel="stylesheet" href="/css/response/news-response.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
 @endsection
 
 @section('content')
@@ -29,30 +31,37 @@
         <section class="new-images">
             <div class="wrapper">
                 <div class="new-images_cont">
-                    <div class="new-images__top flex">
-                        @if (count($news->imgs) > 2)
+                    <div class="new-images__top gallery__cont flex">
+                        @if (count($imgs) > 2)
                             <div class="swiper">
                                 <div class="swiper-wrapper">
-                                    @foreach ($news->imgs as $img)
+                                    @foreach ($imgs as $img)
                                         <div class="swiper-slide new-top__img">
-                                            <a href="{{ Storage::url($img->img) }}" target="_blank">
-                                                <img class="img" src="{{ Storage::url($img->img) }}"
-                                                    alt="{{ Storage::url($img->id) }}">
-                                            </a>
+                                            <div class="gallery__item flex">
+                                                <a class="gallery__top" data-fancybox="gallery"
+                                                   href="{{ Storage::url($img->img) }}">
+                                                    <img class="gallery__img img" src="{{ Storage::url($img->img) }}"
+                                                         alt="1">
+                                                </a>
+                                            </div>
                                         </div>
                                     @endforeach
-                                    <div class="swiper-button-prev swiper__arrow"></div>
-                                    <div class="swiper-button-next swiper__arrow"></div>
                                 </div>
+                                <div class="swiper-button-prev swiper__arrow"></div>
+
+                                <div class="swiper-button-next swiper__arrow"></div>
                             </div>
                         @else
-                            @foreach ($news->imgs as $img)
-                                <div class="new-top__imgs flex">
+                            @foreach ($imgs as $img)
+                                <div class="new-top__imgs">
                                     <div class="new-top__img">
-                                        <a href="{{ Storage::url($img->img) }}" target="_blank">
-                                            <img class="img" src="{{ Storage::url($img->img) }}"
-                                                alt="{{ Storage::url($img->id) }}">
-                                        </a>
+                                        <div class="gallery__item">
+                                            <a class="gallery__top" data-fancybox="gallery"
+                                               href="{{ Storage::url($img->img) }}">
+                                                <img class="gallery__img img" src="{{ Storage::url($img->img) }}"
+                                                     alt="1">
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach
@@ -69,4 +78,17 @@
 @section('scripts')
     <script src="/js/swiper.js"></script>
     <script src="/js/news.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    @if (count($imgs) > 2)
+        <script>
+            setInterval(function () {
+                let url = document.URL
+                if (url.includes('gallery')) {
+                    let item = url.split('-')[1] * 1
+                    mySwiper.slideTo(item, true, true);
+                }
+            }, 500)
+        </script>
+    @endif
 @endsection

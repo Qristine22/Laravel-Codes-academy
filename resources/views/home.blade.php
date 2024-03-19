@@ -25,6 +25,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="azdararir">
+                    <a href="http://www.azdararir.am" target="_blank">
+                        <img class="azdararir__img" src="/media/img/home/azdararir.gif" alt="@lang('home.azdararir')">
+                    </a>
+                </div>
             </section>
 
             <section class="section rector">

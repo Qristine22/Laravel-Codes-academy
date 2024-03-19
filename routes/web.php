@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,13 @@ use Illuminate\Support\Facades\Route;
 session(['locale' => 'am']);
 App::setLocale('am');
 Route::get('locale/{locale}', 'App\Http\Controllers\MainController@changeLocale')->name('lang');
+Route::get('migrate', function (){
+    try {
+        Artisan::call('migrate');
+    }catch (Exception $exception){
+        dd($exception);
+    }
+});
 
 Route::middleware(['set_locale'])->group(function () {
     // pages ******************************************************************************
@@ -247,6 +255,8 @@ Route::middleware(['set_locale'])->group(function () {
 
     // library/****************************************************************************
     Route::group(['prefix' => 'library'], function () {
+        Route::get('/criminal-procedure-codes/{type?}/{item?}', 'App\Http\Controllers\Pages\LibraryController@criminalProcedureCodes')
+            ->where('year', '[0-9]+')->name('criminal-procedure-codes');
         // library page
         Route::get('/', 'App\Http\Controllers\Pages\LibraryController@library')->name('library');
         // academy publications
@@ -419,6 +429,8 @@ Route::middleware(['set_locale'])->group(function () {
                     ->name('graduates.recycleBinRestore');
                 Route::get('recycleBin/graduates/{id}/delete', 'App\Http\Controllers\Admin\About\GraduateController@forceDelete')
                     ->name('graduates.forceDelete');
+                Route::get('/graduates/filter/{year}', 'App\Http\Controllers\Admin\About\GraduateController@filter')
+                    ->name('graduates.filter');
 
                 // admission page
                 Route::resource('admission', 'App\Http\Controllers\Admin\About\AdmissionController');
@@ -508,7 +520,7 @@ Route::middleware(['set_locale'])->group(function () {
                     ->name('conducting-exam-video.forceDelete');
 
                 // conducting practice
-                Route::resource('conducting-practice', 'App\Http\Controllers\Admin\FullTime\ConductingpracticeController');
+                Route::resource('conducting-practice', 'App\Http\Controllers\Admin\FullTime\ConductingPracticeController');
                 Route::get('recycleBin/conducting-practice',
                     'App\Http\Controllers\Admin\FullTime\ConductingPracticeController@recycleBin')
                     ->name('conducting-practice.recycleBin');
@@ -558,7 +570,7 @@ Route::middleware(['set_locale'])->group(function () {
             // distance learning /***************************************************************************
             Route::group(['prefix' => 'distance-learning', 'as' => 'distance-learning.'], function () {
                 Route::resource('page', 'App\Http\Controllers\Admin\DistanceLearning\DistancelearningController');
-                
+
                 // courses
                 Route::resource('courses', 'App\Http\Controllers\Admin\DistanceLearning\CoursesController');
                 Route::get('recycleBin/courses', 'App\Http\Controllers\Admin\DistanceLearning\CoursesController@recycleBin')
@@ -622,7 +634,7 @@ Route::middleware(['set_locale'])->group(function () {
                 Route::get('recycleBin/assignment/{id}/delete',
                     'App\Http\Controllers\Admin\DistanceLearning\AssignmentController@forceDelete')
                     ->name('assignment.forceDelete');
-                    
+
                 // articulate courses
                 Route::resource('articulate', 'App\Http\Controllers\Admin\DistanceLearning\ArticulateCourseController');
                 Route::get('recycleBin/articulate',
@@ -661,7 +673,7 @@ Route::middleware(['set_locale'])->group(function () {
 
                 // guide
                 Route::resource('guide', 'App\Http\Controllers\Admin\DistanceLearning\GuideController');
-                
+
                 // FAQ
                 Route::resource('FAQ', 'App\Http\Controllers\Admin\DistanceLearning\FrequentlyAskedQuestionController');
             });
@@ -669,6 +681,18 @@ Route::middleware(['set_locale'])->group(function () {
 
             // library /***************************************************************************
             Route::group(['prefix' => 'library', 'as' => 'library.'], function () {
+                // criminal procedure codes
+                Route::resource('criminal-procedure-codes', 'App\Http\Controllers\Admin\Library\CriminalProcedureCodesController');
+                Route::get('recycleBin/criminal-procedure-codes',
+                    'App\Http\Controllers\Admin\Library\CriminalProcedureCodesController@recycleBin')
+                    ->name('criminal-procedure-codes.recycleBin');
+                Route::get('recycleBin/criminal-procedure-codes/{id}/delete',
+                    'App\Http\Controllers\Admin\Library\CriminalProcedureCodesController@forceDelete')
+                    ->name('criminal-procedure-codes.forceDelete');
+                Route::get('recycleBin/criminal-procedure-codes/{id}/restore',
+                    'App\Http\Controllers\Admin\Library\CriminalProcedureCodesController@recycleBinRestore')
+                    ->name('criminal-procedure-codes.recycleBinRestore');
+
                 // academy publication
                 Route::resource('academy-publication', 'App\Http\Controllers\Admin\Library\AcademyPublicationController');
                 Route::get('recycleBin/academy-publication',
@@ -814,13 +838,13 @@ Route::middleware(['set_locale'])->group(function () {
                 Route::get('recycleBin/partner/{id}/delete', 'App\Http\Controllers\Admin\Partners\PartnerController@forceDelete')
                     ->name('partner.forceDelete');
             });
-            
+
 
             // contact /***************************************************************************
             Route::group(['prefix' => 'contact', 'as' => 'contact.'], function () {
                 // contact page
                 Route::resource('page', 'App\Http\Controllers\Admin\Contact\ContactPageController');
-                
+
                 // contact staff
                 Route::resource('staff', 'App\Http\Controllers\Admin\Contact\StaffController');
                 Route::get('recycleBin/staff', 'App\Http\Controllers\Admin\Contact\StaffController@recycleBin')
@@ -844,16 +868,9 @@ Route::middleware(['set_locale'])->group(function () {
             });
         });
     });
-});
-
-
-
-
-
-
-
-
-// search results /***************************************************************************
+    
+    
+    // search results /***************************************************************************
 Route::group(['prefix' => 'search', 'as' => 'search.'], function () {
     Route::get('news/{id}', 'App\Http\Controllers\Pages\NewsController@newsSingle')->name('news');
     Route::get('abouts/{id}', 'App\Http\Controllers\Pages\AboutController@about')->name('abouts');
@@ -911,4 +928,5 @@ Route::group(['prefix' => 'search', 'as' => 'search.'], function () {
         ->name('frequently_asked_questions');
     Route::get('graduates/{id}', 'App\Http\Controllers\Pages\DistanceLearningController@FAQ')
         ->name('graduates');
+});
 });

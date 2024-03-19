@@ -18,9 +18,12 @@ class GraduateController extends Controller
     public function index()
     {
         $graduates = Graduate::orderBy('id', 'DESC')->paginate(10);
-
+        $years = Graduate::select('year')
+            ->groupBy('year')
+            ->pluck('year');
         return view('admin.about.graduate.index', [
             'graduates' => $graduates,
+            'years' => $years,
         ]);
     }
 
@@ -122,7 +125,7 @@ class GraduateController extends Controller
     }
 
 
-    
+
 
 
 
@@ -143,13 +146,27 @@ class GraduateController extends Controller
         Graduate::withTrashed()->findOrFail($id)->restore();
         return redirect()->back();
     }
-    
-    
+
+
     public function forceDelete($id)
     {
         $item = Graduate::withTrashed()->findOrFail($id);
         $item->forceDelete();
         Storage::delete($item->img);
         return redirect()->back();
+    }
+
+    public function filter($year)
+    {
+        $years = Graduate::select('year')
+            ->groupBy('year')
+            ->pluck('year');
+        $graduates = Graduate::where('year', $year)->paginate(10);
+
+        return view('admin.about.graduate.index', [
+            'graduates' => $graduates,
+            'years' => $years,
+            'selected_year' => $year,
+        ]);
     }
 }

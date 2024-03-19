@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'judiciary-training' => 'Обучения слушателей судебной системы',
-    'prosecutorial-training' => 'Обучения слушателей органов прокуратуры',
-    'investigative-training' => 'Обучения слушателей следственной системы',
+    'judiciary-training' => 'Обучение слушателей судебной системы',
+    'prosecutorial-training' => 'Обучение слушателей органов прокуратуры',
+    'investigative-training' => 'Обучение слушателей следственной системы',
 ];

@@ -11,7 +11,7 @@ function pdfReader(pdfs) {
 
             if (FileReader && files && files.length) {
                 var fr = new FileReader();
-                if (evt.target.files[0].size < 10000000) {
+                if (evt.target.files[0].size < 80000000) {
                     fr.onload = function () {
                         labels[i].innerHTML = evt.target.files[0].name;
                     }

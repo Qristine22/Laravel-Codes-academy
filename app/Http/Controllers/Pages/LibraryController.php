@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Pages;
 
+use App\Helpers\Helpers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,8 @@ use App\Models\SitesLink;
 use App\Models\EchrLink;
 use App\Models\LibraryPdf;
 use App\Models\VideoLecture;
+use App\Models\CriminalProcedureCodes;
+
 
 class LibraryController extends Controller
 {
@@ -42,7 +45,7 @@ class LibraryController extends Controller
 
 
 
-    
+
 
 
     // library *********************************************************************************
@@ -59,7 +62,7 @@ class LibraryController extends Controller
     }
     public function trainingMaterials(){
         $headersBot = Subheader::where('parent_id', 5)->get();
-        $academyPublications = Library::where('category', 'training-material')->get();
+        $academyPublications = Library::where('category', 'training-material')->orderBy('id', 'DESC')->get();
 
         return view('library', [
             'headers' => $this->getHeader(),
@@ -70,7 +73,7 @@ class LibraryController extends Controller
     }
     public function videoLectures(){
         $headersBot = Subheader::where('parent_id', 5)->get();
-        $videoLectures = VideoLecture::paginate(10);
+        $videoLectures = VideoLecture::orderBy('id', 'DESC')->paginate(10);
 
         return view('video-lectures', [
             'headers' => $this->getHeader(),
@@ -92,7 +95,7 @@ class LibraryController extends Controller
     }
     public function academyPublications(){
         $headersBot = Subheader::where('parent_id', 5)->get();
-        $academyPublications = Library::where('category', 'academy-publication')->get();
+        $academyPublications = Library::where('category', 'academy-publication')->orderBy('id', 'DESC')->get();
 
         return view('library', [
             'headers' => $this->getHeader(),
@@ -103,7 +106,7 @@ class LibraryController extends Controller
     }
     public function manuals(){
         $headersBot = Subheader::where('parent_id', 5)->get();
-        $manuals = Library::where('category', 'manual')->get();
+        $manuals = Library::where('category', 'manual')->orderBy('id', 'DESC')->get();
 
         return view('library', [
             'headers' => $this->getHeader(),
@@ -138,9 +141,9 @@ class LibraryController extends Controller
     }
     public function ECHRResources(){
         $headersBot = Subheader::where('parent_id', 5)->get();
-        $ECHRResources = Library::where('category', 'ECHR-resource')->get();
+        $ECHRResources = Library::where('category', 'ECHR-resource')->orderBy('id', 'DESC')->get();
         $ECHRLinks = EchrLink::all();
-        
+
         return view('pdfs-download', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
@@ -152,13 +155,43 @@ class LibraryController extends Controller
     }
     public function investigatorTrainingModules(){
         $headersBot = Subheader::where('parent_id', 5)->get();
-        $investigatorTrainingModules = Library::where('category', 'investigator-training-module')->get();
+        $investigatorTrainingModules = Library::where('category', 'investigator-training-module')->orderBy('id', 'DESC')->get();
 
         return view('library', [
             'headers' => $this->getHeader(),
             'headersBot' => $headersBot,
             'sitesLinks' => $this->getSitesLinks(),
             'data' => $investigatorTrainingModules,
+        ]);
+    }
+
+    public function criminalProcedureCodes($type = null, $item = null){
+        if ($type) {
+            $criminalProcedureCodes = CriminalProcedureCodes::where('type', $type)->paginate(15);
+
+        } else {
+            $criminalProcedureCodes = [];
+        }
+
+        $headersBot = Subheader::where('parent_id', 5)->get();
+
+        if ($item){
+            $criminalProcedureCodes = CriminalProcedureCodes::find($item);
+            return view('criminal-procedure-codes-item', [
+                'criminalProcedureCodes' => $criminalProcedureCodes,
+                'headers' => $this->getHeader(),
+                'sitesLinks' => $this->getSitesLinks(),
+                'headersBot' => $headersBot,
+                'type' => $type,
+            ]);
+        }
+
+        return view('criminal-procedure-codes', [
+            'criminalProcedureCodes' => $criminalProcedureCodes,
+            'headers' => $this->getHeader(),
+            'sitesLinks' => $this->getSitesLinks(),
+            'headersBot' => $headersBot,
+            'type' => $type,
         ]);
     }
 }

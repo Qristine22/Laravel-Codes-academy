@@ -12,7 +12,7 @@ return [
     ],
     'graduates' => [
         'judges' => 'Судьи',
-        'prosecutors' => 'прокурори',
+        'prosecutors' => 'прокуроры',
         'investigators' => 'следователи',
     ],
     'gallery' => [

@@ -32,7 +32,7 @@ class CourseRequest extends FormRequest
             'syllabus_pdf' => 'required',
             'syllabus_pdf_name_en' => 'max:255',
             'syllabus_pdf_name_am' => 'required|max:255',
-            'syllabus_pdf_name_ru' => 'reqred|max:255',
+            'syllabus_pdf_name_ru' => 'required|max:255',
         ];
     }
 }

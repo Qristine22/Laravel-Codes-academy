@@ -40,34 +40,34 @@
                         </a>
                     </li>
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/rectors-page', 
-                            'admin/about/rectors-page/*', 'admin/about/rectors-decree', 'admin/about/rectors-decree/*', 
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/rectors-page',
+                            'admin/about/rectors-page/*', 'admin/about/rectors-decree', 'admin/about/rectors-decree/*',
                             'admin/about/recycleBin/rectors-page', 'admin/about/recycleBin/rectors-page/*')) admin-header__link-active @endif" href="{{ route('admin.about.rectors-page.index') }}">
                             Ռեկտորի Էջ
                         </a>
                     </li>
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/rectors-biography', 
-                            'admin/about/rectors-biography/*', 'admin/about/former-rectors-biography', 
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/rectors-biography',
+                            'admin/about/rectors-biography/*', 'admin/about/former-rectors-biography',
                             'admin/about/former-rectors-biography/*')) admin-header__link-active @endif"
                             href="{{ route('admin.about.rectors-biography.index') }}">
                             Ռեկտորի կենսագրություն
                         </a>
                     </li>
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/academy-structure', 
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/academy-structure',
                             'admin/about/academy-structure/*', 'admin/about/workers/*')) admin-header__link-active @endif"
                             href="{{ route('admin.about.academy-structure.index') }}">Ակադեմիայի կառուցվածք</a>
                     </li>
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/report', 'admin/about/report/*',  
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/report', 'admin/about/report/*',
                             'admin/about/recycleBin/report', 'admin/about/recycleBin/report/*')) admin-header__link-active @endif"
                             href="{{ route('admin.about.report.index') }}">
                             Հաշվետվություններ և աուդիտորական եզրակացություններ
                         </a>
                     </li>
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/graduates', 
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/graduates',
                             'admin/about/graduates/*', 'admin/about/recycleBin/graduates', 'admin/about/recycleBin/graduates/*')) admin-header__link-active @endif" href="{{ route('admin.about.graduates.index') }}">Շրջանավարտներ</a>
                     </li>
                     <li class="admin-header__menu-item">
@@ -81,7 +81,7 @@
                             'admin/about/recycleBin/gallery/*', 'admin/about/recycleBin/gallery-video/*')) admin-header__link-active @endif" href="{{ route('admin.about.gallery.index') }}">Տեսադարան</a>
                     </li>
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/mass-media', 
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/about/mass-media',
                             'admin/about/mass-media/*', 'admin/about/recycleBin/mass-media',
                             'admin/about/recycleBin/mass-media/*')) admin-header__link-active @endif"
                             href="{{ route('admin.about.mass-media.index') }}">ԶԼՄ-ները մեր մասին</a>
@@ -98,7 +98,7 @@
             </li>
             <li class="admin-header__item">
                 <div class="admin-header__item_cont flex">
-                    <a class="text-20 admin-header__link @if(Request::is('admin/full-time-education', 
+                    <a class="text-20 admin-header__link @if(Request::is('admin/full-time-education',
                         'admin/full-time-education/*')) admin-header__link-active @endif"
                         href="{{ route('admin.full-time-education.training-program.index') }}">Առկա ուսուցում</a>
                     <div class="admin-header__arrow">
@@ -114,8 +114,8 @@
                             href="{{ route('admin.full-time-education.training-program.index') }}">Ուսուցման ծրագրեր</a>
                     </li>
                     <li class="admin-header__menu-item">
-                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/full-time-education/conducting-exam',  
-                            'admin/full-time-education/conducting-exam/*', 'admin/full-time-education/conducting-exam-video', 
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/full-time-education/conducting-exam',
+                            'admin/full-time-education/conducting-exam/*', 'admin/full-time-education/conducting-exam-video',
                             'admin/full-time-education/conducting-exam-video/*',
                             'admin/full-time-education/recycleBin/conducting-exam',
                             'admin/full-time-education/recycleBin/conducting-exam/*',
@@ -237,6 +237,14 @@
                     </div>
                 </div>
                 <ul class="admin-header__menu-list">
+                    <li class="admin-header__menu-item">
+                        <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/criminal-procedure-codes',
+                            'admin/library/academy-publication/*', 'admin/library/recycleBin/criminal-procedure-codes',
+                            'admin/library/recycleBin/criminal-procedure-codes')) admin-header__link-active @endif"
+                           href="{{ route('admin.library.criminal-procedure-codes.index') }}">
+                            Քրեական դատավարության օրենսգրքեր
+                        </a>
+                    </li>
                     <li class="admin-header__menu-item">
                         <a class="text-18 admin-header__menu-link @if(Request::is('admin/library/academy-publication',
                             'admin/library/academy-publication/*', 'admin/library/recycleBin/academy-publication',

@@ -49,6 +49,8 @@ class NewsController extends Controller
     }
     public function newsSingle($id){
         $news = News::findOrFail($id);
+        $imgs = $news->imgs;
+
         $lastNews = News::latest()->take(3)->get();
 
         return view('news-single', [
@@ -56,6 +58,7 @@ class NewsController extends Controller
             'headers' => $this->getHeader(),
             'news' => $news,
             'lastNews' => $lastNews,
+            'imgs' => $imgs,
         ]);
     }
 }

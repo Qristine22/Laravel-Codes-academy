@@ -33,14 +33,17 @@
                             @endforeach
                         @endif
                     </div>
+                    
                     <a class="header__bot_link @if(Request::is('about/gallery/video') || Request::is('about/gallery/video/*'))header__bot_link-active @endif"
                         href="{{ route('galleryVideo') }}">@lang('about.gallery.video')</a>
+                        
+                        
                 </div>
             </div>
         </section>
         <section class="gallery section-text section__min-height">
             <div class="wrapper">
-                <div class="gallery__cont flex">
+                <div class="gallery__cont flex gallery_video">
                     @if(@isset($galleries) && !empty($galleries))
                         @foreach($galleries as $gallery)
                             @if(count($gallery->imgs) > 1)
@@ -53,16 +56,18 @@
                                         </a>
                                         <span class="gallery__date text-20">{{ $gallery->full_date }}</span>
                                     </div>
+                            
                                 @endforeach
+                            @elseif(@isset($gallery->imgs[0]))
+                                <div class="gallery__item flex">
+                                    <a class="gallery__top" data-fancybox="gallery"
+                                        data-caption="{{ $gallery->{'text_'.app()->getLocale()} }}"
+                                        href="{{ Storage::url($gallery->imgs[0]->img) }}">
+                                        <img class="gallery__img img" src="{{ Storage::url($gallery->imgs[0]->img) }}" alt="1">
+                                    </a>
+                                    <span class="gallery__date text-20">{{ $gallery->full_date }}</span>
+                                </div>
                             @endif
-                            <div class="gallery__item flex">
-                                <a class="gallery__top" data-fancybox="gallery"
-                                    data-caption="{{ $gallery->{'text_'.app()->getLocale()} }}"
-                                    href="{{ Storage::url($gallery->imgs[0]->img) }}">
-                                    <img class="gallery__img img" src="{{ Storage::url($gallery->imgs[0]->img) }}" alt="1">
-                                </a>
-                                <span class="gallery__date text-20">{{ $gallery->full_date }}</span>
-                            </div>
                         @endforeach
                     @endif
                     @if(@isset($galleryVideos) && !empty($galleryVideos))
@@ -70,6 +75,9 @@
                             <div class="gallery-video__item flex">
                                 {!! $galleryVideo->link !!}
                                 <span class="gallery__date text-20">{{ $galleryVideo->full_date }}</span>
+                                <div>
+                                    <p class="gallery__text text-20">{{ $galleryVideo->{'text_'.app()->getLocale()} }}</p>
+                                </div>
                             </div>
                         @endforeach
                     @endif

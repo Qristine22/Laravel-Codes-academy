@@ -34,15 +34,16 @@
         font-size: 13px;
     }
     .header__menu_link{
-        font-size: 15px;
-        line-height: 20px;
+        font-size: 14px;
+        line-height: 18px;
+    
     }
     .last-news__title{
         font-size: 35px;
     }
     .last-news__item_link{
-        font-size: 20px;
-        line-height: 35px;
+        font-size: 19px;
+        line-height: 28px;
         letter-spacing: 1px;
     }
     .read-more{
@@ -439,22 +440,23 @@
     }
     .last-news__item_link {
         font-size: 11px;
+        
     }
     .footer__link{
         margin-left: 5px;
     }
     .footer__link:first-child > img{
-        width: 5px;
+        width: 15px;
     }
     .footer__link:nth-child(2) > img{
-        width: 13px;
+        width: 15px;
     }
     .footer__link:nth-child(3) > img{
-        width: 12px;
+        width: 15px;
     }
     .footer__link:nth-child(4) > img,
     .footer__link:last-child > img{
-        width: 16px;
+        width: 15px;
     }
     .footer__cont{
         flex-direction: column;
