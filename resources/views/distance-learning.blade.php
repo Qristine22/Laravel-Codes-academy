@@ -29,6 +29,7 @@
                 <div class="rector__bot_cont distance__learning_videos">
                     @foreach($distancelearningVideos as $distancelearningVideo)
                         <a class="distance__learning_video_name about__link text-18"
+                            aria-label="{{ $distancelearningVideo->{'name_'.app()->getLocale()} }}"
                             href="{{ route('distanceLearningVideo', ['id' => $distancelearningVideo->id]) }}">
                             {{ $distancelearningVideo->{'name_'.app()->getLocale()} }}
                         </a>

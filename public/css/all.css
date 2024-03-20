@@ -529,7 +529,7 @@ header
     position: relative;
 }
 .read-more{
-    color: var(--dark-yellow);
+    color: var(--dark-brown);
     font-size: 13px;
     font-style: italic;
 }
@@ -842,7 +842,7 @@ link pdfs
 }
 .link__pdf_span{
     margin-top: -30px;
-    opacity: 0;
+    opacity: 1;
     transform: scale(0);
     -webkit-transform: scale(0);
     -moz-transform: scale(0);

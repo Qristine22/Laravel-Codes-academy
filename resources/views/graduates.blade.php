@@ -18,6 +18,7 @@
                         @foreach ($graduateYears as $key => $val)
                             <div class="governing__date date-12">
                                 <a class="date about__date @if ($key == $year)date-active @endif"
+                                    aria-label="{{ $key }}"
                                     href="{{ route('graduates', ['year' => $key]) }}">{{ $key }}</a>
                             </div>
                         @endforeach
@@ -40,7 +41,7 @@
                                         if(count($judgeGraduates) < 4){
                                             $judgeCount = count($judgeGraduates);
                                         }
-                                    @endphp 
+                                    @endphp
                                     @for ($i = 0; $i < $judgeCount; $i++)
                                         <div class="graduate__item">
                                             <img class="img" src="{{ Storage::url($judgeGraduates[$i]->img) }}"
@@ -80,7 +81,7 @@
                                         if(count($prosecutorGraduates) < 4){
                                             $prosecutorCount = count($prosecutorGraduates);
                                         }
-                                    @endphp 
+                                    @endphp
                                     @for ($i = 0; $i < $prosecutorCount; $i++)
                                         <div class="graduate__item">
                                             <img class="img" src="{{ Storage::url($prosecutorGraduates[$i]->img) }}"
@@ -120,7 +121,7 @@
                                     if(count($investigatorGraduates) < 4){
                                         $investigatorCount = count($investigatorGraduates);
                                     }
-                                @endphp 
+                                @endphp
                                 @for ($i = 0; $i < $investigatorCount; $i++)
                                     <div class="graduate__item">
                                         <img class="img" src="{{ Storage::url($investigatorGraduates[$i]->img) }}"

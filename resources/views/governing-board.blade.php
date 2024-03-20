@@ -32,6 +32,7 @@
                         @foreach ($governingBoardDecreesYears as $key => $val)
                             <div class="governing__date">
                                 <a class="date"
+                                    aria-label="{{$key}}"
                                     href="{{ route('governingBoardDecree', ['year' => $key]) }}">{{ $key }}</a>
                             </div>
                         @endforeach

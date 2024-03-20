@@ -2,16 +2,19 @@
     <div class="wrapper">
         <div class="rector__bot_cont">
             <a class="about__link text-18 @if (Request::is('about/rector/decrees')) about__link-active @endif"
-            href="{{ route('rectorsDecrees') }}">
+               aria-label="decrees"
+               href="{{ route('rectorsDecrees') }}">
                 @lang('about.rector.decrees')
             </a>
             <a class="about__link text-18 @if (Request::is('about/rector/rectors-biography')) about__link-active @endif"
-            href="{{ route('rectorsBiography') }}">
+               aria-label="rectors-biography"
+               href="{{ route('rectorsBiography') }}">
                 @lang('about.rector.biography')
             </a>
             <a class="about__link text-18 @if (Request::is('about/rector/former-rectors-biography')) about__link-active @endif"
-            href="{{ route('formerRectorsBiography') }}">
-                @lang('about.rector.former-rector')    
+               aria-label="former-rectors-biography"
+               href="{{ route('formerRectorsBiography') }}">
+                @lang('about.rector.former-rector')
             </a>
         </div>
     </div>
