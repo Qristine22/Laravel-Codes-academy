@@ -17,7 +17,7 @@
                     <div class="about__dates flex">
                         @foreach ($reportYears as $key => $val)
                             <div class="governing__date date-12">
-                                <a class="date about__date @if($year == $key)date-active @endif" href="{{ route('report', ['year' => $key]) }}">{{ $key }}</a>
+                                <a class="date about__date @if($year == $key)date-active @endif" href="{{ route('report', ['year' => $key]) }}" aria-label="{{ $key }}" >{{ $key }}</a>
                             </div>
                         @endforeach
                     </div>
@@ -29,7 +29,7 @@
                 <div class="pdfs__cont">
                     @foreach ($reports as $report)
                         <div>
-                            <a class="report__link text-18" href="{{ Storage::url($report->pdf) }}" target="_blank">{{ $report->{'name_'.app()->getLocale()} }}</a>
+                            <a class="report__link text-18" href="{{ Storage::url($report->pdf) }}" target="_blank" aria-label="{{ $report->{'name_'.app()->getLocale()} }}" >{{ $report->{'name_'.app()->getLocale()} }}</a>
                         </div>
                     @endforeach
                 </div>

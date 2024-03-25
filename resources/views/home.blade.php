@@ -19,6 +19,7 @@
                             <form class="home__form" action="{{ route('search') }}" method="GET">
                                 <button class="home__form_btn">
                                     <img class="home__search_icon" src="/media/img/icons/search.png" alt="search">
+                                    <span class="sr-only">Search</span>
                                 </button>
                                 <input class="inp home__form_inp" name="search" type="text" placeholder="@lang('home.search')">
                             </form>

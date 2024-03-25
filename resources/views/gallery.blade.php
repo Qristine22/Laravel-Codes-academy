@@ -20,6 +20,7 @@
                             @foreach($years as $key => $val)
                                 <div class="governing__date date-12">
                                     <a class="date about__date @if($year == $key)date-active @endif"
+                                        aria-label="{{ $key }}"
                                         href="{{ route('gallery', ['year' => $key]) }}">{{ $key }}</a>
                                 </div>
                             @endforeach
@@ -28,16 +29,18 @@
                             @foreach($years as $key => $val)
                                 <div class="governing__date date-12">
                                     <a class="date about__date @if($year == $key)date-active @endif"
+                                        aria-label="{{ $key }}"
                                         href="{{ route('galleryVideo', ['year' => $key]) }}">{{ $key }}</a>
                                 </div>
                             @endforeach
                         @endif
                     </div>
-                    
+
                     <a class="header__bot_link @if(Request::is('about/gallery/video') || Request::is('about/gallery/video/*'))header__bot_link-active @endif"
+                        aria-label="@lang('about.gallery.video')"
                         href="{{ route('galleryVideo') }}">@lang('about.gallery.video')</a>
-                        
-                        
+
+
                 </div>
             </div>
         </section>
@@ -50,13 +53,14 @@
                                 @foreach($gallery->imgs as $img)
                                     <div class="gallery__item flex">
                                         <a class="gallery__top" data-fancybox="gallery"
+                                             aria-label="{{ @$gallery->full_date }}"
                                             data-caption="{{ $gallery->{'text_'.app()->getLocale()} }}"
                                             href="{{ Storage::url($img->img) }}">
                                             <img class="gallery__img img" src="{{ Storage::url($img->img) }}" alt="1">
                                         </a>
                                         <span class="gallery__date text-20">{{ $gallery->full_date }}</span>
                                     </div>
-                            
+
                                 @endforeach
                             @elseif(@isset($gallery->imgs[0]))
                                 <div class="gallery__item flex">

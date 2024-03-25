@@ -42,7 +42,7 @@ conducting exams
     align-items: flex-start;
 }
 .about__link{
-    color: var(--dark-yellow);
+    color: var(--dark-brown);
     font-weight: 700;
     padding: 0 8px;
     text-transform: uppercase;

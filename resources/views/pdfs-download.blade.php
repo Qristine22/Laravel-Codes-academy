@@ -24,8 +24,9 @@
                             @foreach ($data as $item)
                                 <div class="link__pdf flex">
                                     <a class="link__name text-18" href="{{ Storage::url($item->pdf) }}"
+                                       aria-label="{{$item->pdf}}"
                                         target="_blank">{{ $item->{'name_' . app()->getLocale()} }}</a>
-                                    <a href="{{ route($downloadLink, ['pdf' => $item->id]) }}">
+                                    <a href="{{ route($downloadLink, ['pdf' => $item->id]) }}" aria-label="{{$item->id}}">
                                         <div class="link__pdf_icon">
                                             <img class="link__pdf_img img" src="/media/img/icons/pdf.png" alt="pdf">
                                             <span class="link__pdf_span text-18">@lang('main.download')</span>
