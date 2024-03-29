@@ -18,17 +18,20 @@
 </head>
 
 <body>
-    <div class="preloader flex">
-        <div class="preloader__img">
-            <div class="preloader__cont"></div>
-            <img class="img" src="/media/img/logo/brownLogo.png" alt="loading">
+    <aside>
+        <div class="preloader flex">
+            <div class="preloader__img">
+                <div class="preloader__cont"></div>
+                <img class="img" src="/media/img/logo/brownLogo.png" alt="loading">
+            </div>
         </div>
-    </div>
+    </aside>
+
     @include('includes.header')
     @yield('header-bot')
 
     @yield('content')
-    
+
     @include("includes.footer")
 
     <script src="/js/loader.js"></script>

@@ -47,7 +47,7 @@
                                             <img class="img" src="{{ Storage::url($judgeGraduates[$i]->img) }}"
                                                 alt="{{ $judgeGraduates[$i]->name }}">
                                             <div class="members__item_cont">
-                                                <h3 class="member__title">{{ $judgeGraduates[$i]->name }}</h3>
+{{--                                                <h3 class="member__title">{{ $judgeGraduates[$i]->name }}</h3>--}}
                                                 <h4 class="member__subtitle">{{ $judgeGraduates[$i]->info }}</h4>
                                             </div>
                                         </div>
@@ -87,8 +87,10 @@
                                             <img class="img" src="{{ Storage::url($prosecutorGraduates[$i]->img) }}"
                                                 alt="{{ $prosecutorGraduates[$i]->name }}">
                                             <div class="members__item_cont">
-                                                <h3 class="member__title">{{ $prosecutorGraduates[$i]->name }}</h3>
-                                                <h4 class="member__subtitle">{{ $prosecutorGraduates[$i]->info }}</h4>
+{{--                                                <h3 class="member__title">{{ $prosecutorGraduates[$i]->name }}</h3>--}}
+                                                @if($prosecutorGraduates[$i]->info)
+                                                    <h4 class="member__subtitle">{{ $prosecutorGraduates[$i]->info }}</h4>
+                                                @endif
                                             </div>
                                         </div>
                                     @endfor
@@ -127,7 +129,7 @@
                                         <img class="img" src="{{ Storage::url($investigatorGraduates[$i]->img) }}"
                                             alt="{{ $investigatorGraduates[$i]->name }}">
                                         <div class="members__item_cont">
-                                            <h3 class="member__title">{{ $investigatorGraduates[$i]->name }}</h3>
+{{--                                            <h3 class="member__title">{{ $investigatorGraduates[$i]->name }}</h3>--}}
                                             <h4 class="member__subtitle">{{ $investigatorGraduates[$i]->info }}</h4>
                                         </div>
                                     </div>
