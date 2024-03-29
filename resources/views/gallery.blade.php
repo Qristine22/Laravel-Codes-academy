@@ -53,7 +53,7 @@
                                 @foreach($gallery->imgs as $img)
                                     <div class="gallery__item flex">
                                         <a class="gallery__top" data-fancybox="gallery"
-                                             aria-label="{{ @$gallery->full_date }}"
+                                            aria-label="{{ $img->id }}"
                                             data-caption="{{ $gallery->{'text_'.app()->getLocale()} }}"
                                             href="{{ Storage::url($img->img) }}">
                                             <img class="gallery__img img" src="{{ Storage::url($img->img) }}" alt="1">
