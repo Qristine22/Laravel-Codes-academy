@@ -14,7 +14,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="pdfs-download">
         <section class="section-text section-top section__min-height @if(Request::is('distance-learning/courses/*',
             'search/distance-learning-books/*'))distance-learning__min-height @endif">
             <div class="wrapper">

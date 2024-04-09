@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="distance-learning-courses">
         <section class="courses distance-learning section-text">
             <div class="swiper">
                 <div class="swiper-pagination"></div>

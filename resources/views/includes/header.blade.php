@@ -54,11 +54,11 @@
                     {{-- languages --}}
                     <li class="header__item flex">
                         <a class="header__lang @if (app()->getLocale() == 'am') header__lang-active @endif"
-                            href="{{ route('lang', ['locale' => 'am']) }}">հայ</a>
+                            href="{{ route('lang', ['locale' => 'am']) }}" aria-label="arm">հայ</a>
                         <a class="header__lang @if (app()->getLocale() == 'ru') header__lang-active @endif"
-                            href="{{ route('lang', ['locale' => 'ru']) }}">pyc</a>
+                            href="{{ route('lang', ['locale' => 'ru']) }}" aria-label="rus">pyc</a>
                         <a class="header__lang @if (app()->getLocale() == 'en') header__lang-active @endif"
-                            href="{{ route('lang', ['locale' => 'en']) }}">eng</a>
+                            href="{{ route('lang', ['locale' => 'en']) }}" aria-label="eng">eng</a>
                     </li>
                 </ul>
             </nav>
@@ -73,7 +73,7 @@
 
 
 {{-- mobile header ************************************************************************** --}}
-<nav class="mobile-nav">
+<nav class="mobile-nav" aria-label="mobile-nav">
     <div class="wrapper">
 
         {{-- mobile navigation --}}
@@ -110,11 +110,11 @@
             {{-- languages --}}
             <li class="header-mob__item flex">
                 <a class="header__lang  @if (app()->getLocale() == 'am') header__lang-active @endif"
-                    href="{{ route('lang', ['locale' => 'am']) }}">հայ</a>
+                    href="{{ route('lang', ['locale' => 'am']) }}" aria-label="arm">հայ</a>
                 <a class="header__lang  @if (app()->getLocale() == 'en') header__lang-active @endif"
-                    href="{{ route('lang', ['locale' => 'en']) }}">eng</a>
+                    href="{{ route('lang', ['locale' => 'en']) }}" aria-label="eng">eng</a>
                 <a class="header__lang  @if (app()->getLocale() == 'ru') header__lang-active @endif"
-                    href="{{ route('lang', ['locale' => 'ru']) }}">pyc</a>
+                    href="{{ route('lang', ['locale' => 'ru']) }}" aria-label="rus">pyc</a>
             </li>
         </ul>
     </div>

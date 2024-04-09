@@ -1,5 +1,5 @@
 @if ($paginator->hasPages())
-    <nav class="pagination admin__paginate flex">
+    <nav class="pagination admin__paginate flex" aria-label="paginate-nav">
         @if ($paginator->previousPageUrl())
             <a class="pagination__link" href="{{ $paginator->url(1) }}">
                 <img class="img pagination__icon" src="/media/img/icons/firstPage.png" alt="firstPage">

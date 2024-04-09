@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="search">
         <div class="search section">
             <div class="wrapper">
                 <div class="search__cont">

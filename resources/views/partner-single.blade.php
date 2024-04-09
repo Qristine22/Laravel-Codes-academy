@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="partner-single">
         <section class="partner section-text section-top">
             <div class="wrapper">
                 <div class="partner__cont section-text__cont">

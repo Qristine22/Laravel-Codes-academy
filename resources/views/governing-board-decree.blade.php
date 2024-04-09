@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="governing-board-decree">
 
         {{-- about/governing-board/decree/$year  dates --}}
         <section class="governing__dates section-top">

@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="bulletin">
         <section class="bulletin section-text section__min-height">
             <div class="swiper">
                 <div class="swiper-pagination"></div>

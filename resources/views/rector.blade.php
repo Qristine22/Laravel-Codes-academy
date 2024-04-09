@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="rector">
         <section class="section-text section-top">
             <div class="wrapper">
                 <div class="section-text__cont">
@@ -20,7 +20,7 @@
                 </div>
             </div>
         </section>
-        
+
         @include('includes.about.rector.rector-menu')
     </main>
 @endsection

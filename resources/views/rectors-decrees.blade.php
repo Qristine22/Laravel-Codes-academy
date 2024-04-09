@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="rectors-decrees">
         <section class="pdfs section-text section-top">
             <div class="wrapper">
                 <h3 class="pdfs__title">@lang('about.rector.decrees')</h3>
