@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="governing-board">
 
         {{-- about/governing-board  long text --}}
         <section class="section-text section-top">

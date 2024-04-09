@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="contacts">
         <section class="contacts section-text">
             <div class="wrapper">
                 <div class="contacts__top flex">

@@ -420,7 +420,7 @@ header
 }
 .header__bot_link-active,
 .header__bot_item:hover .header__bot_link{
-    background-color: var(--light-brown);
+    background-color: var(--dark-brown);
     color: var(--section);
 }
 .admin__btn{
@@ -930,7 +930,7 @@ courses
 .swiper-pagination-bullet{
     width: 20px;
     height: 20px;
-    background-color: var(--light-brown);
+    background-color: var(--dark-brown);
     color: var(--white);
     display: inline-flex;
     justify-content: center;

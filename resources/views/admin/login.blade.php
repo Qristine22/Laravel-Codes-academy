@@ -22,7 +22,7 @@
             <img class="img" src="/media/img/logo/brownLogo.png" alt="loading">
         </div>
     </div>
-    <main>
+    <main aria-label="login">
         <section class="login">
             <form action="{{ route('loginProgress') }}" method="POST">
                 @csrf

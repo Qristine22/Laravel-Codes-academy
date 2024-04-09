@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="news">
         <section class="section news__section">
             <div class="wrapper">
                 <div class="news__cont flex">

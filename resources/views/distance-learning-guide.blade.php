@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="distance-learning-guide">
         <section class="learning-guide section-text distance-learning">
             <h2 class="text-26 learning-guide__title">{{ $guide->{'name_'.app()->getLocale()} }}</h2>
             <div class="wrapper">

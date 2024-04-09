@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="news-single">
         <section class="news__home" style="background-image: url({{ Storage::url($news->bg) }}">
             <div class="news__home_cont">
                 <div class="wrapper">

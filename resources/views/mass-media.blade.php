@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="mass-media">
         <section class="governing__dates section-top">
             <div class="wrapper">
                 <div class="dates__item dates__item-first flex">

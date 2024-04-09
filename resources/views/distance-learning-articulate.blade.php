@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="distance-learning-articulate">
         <section class="section-text section-top section__min-height">
             <div class="wrapper">
                 <div class="conducting-exams__cont">

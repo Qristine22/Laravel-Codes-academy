@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="motivations-videos">
         <section class="motivation section-text distance-learning">
             <div class="wrapper">
                 <div class="motivation__cont flex">

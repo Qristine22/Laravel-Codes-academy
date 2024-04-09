@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <aside>
+    <aside aria-label="main-aside">
         <div class="preloader flex">
             <div class="preloader__img">
                 <div class="preloader__cont"></div>

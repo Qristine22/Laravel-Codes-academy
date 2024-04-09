@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="home">
         @if (!empty($home))
             <section class="home section" style="background-image: url({{ Storage::url($home->bg) }})">
                 <div class="wrapper">

@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="candidates">
         <section class="section-text section-top section__min-height">
             <div class="wrapper">
                 <div class="section-text__cont">
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </section>
-        
+
         @include('includes.about.admission.admission-menu')
     </main>
 @endsection
