@@ -19,7 +19,7 @@
 
                         {{-- component path  about/decree --}}
                         <x-about.decree :item=$item>
-                            <a href="{{ route('rectorsDecreedownload', ['pdf' => $item->id]) }}">
+                            <a href="{{ route('rectorsDecreedownload', ['pdf' => $item->id]) }}" aria-label="{{$item -> id}}">
                                 <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
                                 <span class="pdf__item_span text-18">
                                     @lang('main.download')
