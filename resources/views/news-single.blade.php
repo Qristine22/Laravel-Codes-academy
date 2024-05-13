@@ -39,17 +39,18 @@
                                         <div class="swiper-slide new-top__img">
                                             <div class="gallery__item flex">
                                                 <a class="gallery__top" data-fancybox="gallery"
+                                                   aria-label="test_{{ $img-> id }}"
                                                    href="{{ Storage::url($img->img) }}">
                                                     <img class="gallery__img img" src="{{ Storage::url($img->img) }}"
-                                                         alt="1">
+                                                         alt="{{ $img->id }}">
                                                 </a>
                                             </div>
                                         </div>
                                     @endforeach
                                 </div>
-                                <div class="swiper-button-prev swiper__arrow"></div>
+                                <div class="swiper-button-prev swiper__arrow"><span class="sr-only">prev</span></div>
 
-                                <div class="swiper-button-next swiper__arrow"></div>
+                                <div class="swiper-button-next swiper__arrow"><span class="sr-only">next</span></div>
                             </div>
                         @else
                             @foreach ($imgs as $img)
@@ -57,9 +58,10 @@
                                     <div class="new-top__img">
                                         <div class="gallery__item">
                                             <a class="gallery__top" data-fancybox="gallery"
+                                               aria-label="{{ $img->id }}"
                                                href="{{ Storage::url($img->img) }}">
                                                 <img class="gallery__img img" src="{{ Storage::url($img->img) }}"
-                                                     alt="1">
+                                                     alt="{{ $img->id }}">
                                             </a>
                                         </div>
                                     </div>
