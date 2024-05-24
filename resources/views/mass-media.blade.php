@@ -38,7 +38,7 @@
                                         <span class="text-20 mass-media__link-site">
                                             {{ $link->site_name }}
                                         </span>
-                                        <a class="text-20 mass-media__link" target="_blank" href="{{ $link->link }}" aria-label="{{ $link->link_name }}">
+                                        <a class="text-20 mass-media__link" target="_blank" href="{{ $link->link }}" aria-label="{{ $link->id }}">
                                             {{ $link->link_name }}
                                         </a>
                                     </div>

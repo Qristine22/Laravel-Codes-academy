@@ -65,6 +65,7 @@
                             @elseif(@isset($gallery->imgs[0]))
                                 <div class="gallery__item flex">
                                     <a class="gallery__top" data-fancybox="gallery"
+                                        aria-label="{{ $gallery->imgs[0]->id }}"
                                         data-caption="{{ $gallery->{'text_'.app()->getLocale()} }}"
                                         href="{{ Storage::url($gallery->imgs[0]->img) }}">
                                         <img class="gallery__img img" src="{{ Storage::url($gallery->imgs[0]->img) }}" alt="1">
