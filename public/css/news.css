@@ -49,6 +49,10 @@ news
     font-size: 20px;
     line-height: 30px;
 }
+.new__subtitle-content ~a {
+    color: var(--brown);
+}
+
 .new__title,
 .new__subtitle{
     overflow: hidden;

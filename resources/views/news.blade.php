@@ -25,7 +25,7 @@
                                     </a>
                                 </h3>
                                 <div class="new__subtitle">
-                                    <a href="{{ route('newsSingle', ['id' => $item->id]) }}" aria-label="{{$item->id}}">
+                                    <a href="{{ route('newsSingle', ['id' => $item->id]) }}" aria-label="{{$item->id}}" class="new__subtitle-content">
                                         {!! $item->{'description_'.app()->getLocale()} !!}
                                     </a>
                                 </div>

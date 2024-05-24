@@ -40,8 +40,8 @@ class ContactsController extends Controller
 
 
 
-    
-    
+
+
     // contacts *********************************************************************************
     public function contacts(){
         $contactPage = ContactPage::first();

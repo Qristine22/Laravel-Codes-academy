@@ -34,8 +34,8 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="swiper-button-prev swiper__arrow"></div>
-                            <div class="swiper-button-next swiper__arrow"></div>
+                            <div class="swiper-button-prev swiper__arrow"> <span class="sr-only">prev</span> </div>
+                            <div class="swiper-button-next swiper__arrow"> <span class="sr-only">next</span> </div>
                         </div>
                     @else
                         <div class="swiper">
@@ -76,8 +76,8 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="swiper-button-prev swiper__arrow"></div>
-                            <div class="swiper-button-next swiper__arrow"></div>
+                            <div class="swiper-button-prev swiper__arrow"> <span class="sr-only">prev</span> </div>
+                            <div class="swiper-button-next swiper__arrow"> <span class="sr-only">next</span> </div>
                         </div>
                     @else
                         <div class="swiper">
@@ -118,8 +118,8 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="swiper-button-prev swiper__arrow"></div>
-                            <div class="swiper-button-next swiper__arrow"></div>
+                            <div class="swiper-button-prev swiper__arrow"> <span class="sr-only">prev</span> </div>
+                            <div class="swiper-button-next swiper__arrow"> <span class="sr-only">next</span> </div>
                         </div>
                     @else
                         <div class="swiper">
