@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="graduates">
         <section class="governing__dates section-top">
             <div class="wrapper">
                 <div class="dates__item dates__item-first flex">
@@ -18,6 +18,7 @@
                         @foreach ($graduateYears as $key => $val)
                             <div class="governing__date date-12">
                                 <a class="date about__date @if ($key == $year)date-active @endif"
+                                    aria-label="{{ $key }}"
                                     href="{{ route('graduates', ['year' => $key]) }}">{{ $key }}</a>
                             </div>
                         @endforeach
@@ -40,13 +41,13 @@
                                         if(count($judgeGraduates) < 4){
                                             $judgeCount = count($judgeGraduates);
                                         }
-                                    @endphp 
+                                    @endphp
                                     @for ($i = 0; $i < $judgeCount; $i++)
                                         <div class="graduate__item">
                                             <img class="img" src="{{ Storage::url($judgeGraduates[$i]->img) }}"
                                                 alt="{{ $judgeGraduates[$i]->name }}">
                                             <div class="members__item_cont">
-                                                <h3 class="member__title">{{ $judgeGraduates[$i]->name }}</h3>
+{{--                                                <h3 class="member__title">{{ $judgeGraduates[$i]->name }}</h3>--}}
                                                 <h4 class="member__subtitle">{{ $judgeGraduates[$i]->info }}</h4>
                                             </div>
                                         </div>
@@ -80,14 +81,16 @@
                                         if(count($prosecutorGraduates) < 4){
                                             $prosecutorCount = count($prosecutorGraduates);
                                         }
-                                    @endphp 
+                                    @endphp
                                     @for ($i = 0; $i < $prosecutorCount; $i++)
                                         <div class="graduate__item">
                                             <img class="img" src="{{ Storage::url($prosecutorGraduates[$i]->img) }}"
                                                 alt="{{ $prosecutorGraduates[$i]->name }}">
                                             <div class="members__item_cont">
-                                                <h3 class="member__title">{{ $prosecutorGraduates[$i]->name }}</h3>
-                                                <h4 class="member__subtitle">{{ $prosecutorGraduates[$i]->info }}</h4>
+{{--                                                <h3 class="member__title">{{ $prosecutorGraduates[$i]->name }}</h3>--}}
+                                                @if($prosecutorGraduates[$i]->info)
+                                                    <h4 class="member__subtitle">{{ $prosecutorGraduates[$i]->info }}</h4>
+                                                @endif
                                             </div>
                                         </div>
                                     @endfor
@@ -120,13 +123,13 @@
                                     if(count($investigatorGraduates) < 4){
                                         $investigatorCount = count($investigatorGraduates);
                                     }
-                                @endphp 
+                                @endphp
                                 @for ($i = 0; $i < $investigatorCount; $i++)
                                     <div class="graduate__item">
                                         <img class="img" src="{{ Storage::url($investigatorGraduates[$i]->img) }}"
                                             alt="{{ $investigatorGraduates[$i]->name }}">
                                         <div class="members__item_cont">
-                                            <h3 class="member__title">{{ $investigatorGraduates[$i]->name }}</h3>
+{{--                                            <h3 class="member__title">{{ $investigatorGraduates[$i]->name }}</h3>--}}
                                             <h4 class="member__subtitle">{{ $investigatorGraduates[$i]->info }}</h4>
                                         </div>
                                     </div>

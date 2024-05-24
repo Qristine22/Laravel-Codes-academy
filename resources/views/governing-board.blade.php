@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="governing-board">
 
         {{-- about/governing-board  long text --}}
         <section class="section-text section-top">
@@ -32,6 +32,7 @@
                         @foreach ($governingBoardDecreesYears as $key => $val)
                             <div class="governing__date">
                                 <a class="date"
+                                    aria-label="{{$key}}"
                                     href="{{ route('governingBoardDecree', ['year' => $key]) }}">{{ $key }}</a>
                             </div>
                         @endforeach

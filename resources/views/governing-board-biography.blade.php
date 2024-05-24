@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="governing-board-biography">
         <section class="section-text section-top section__min-height">
             <div class="wrapper">
                 <div class="member__cont">
@@ -30,7 +30,7 @@
                                 <h4>@lang('main.info-is-available')</h4>
                             @endif
                         </div>
-                        
+
                         @if (@isset($person->img))
                             <div class="member__img">
                                 <img class="img" src="{{ Storage::url($person->img) }}" alt="img">

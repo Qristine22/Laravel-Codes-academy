@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="criminal-procedure-codes">
         <section class="governing__dates section-top @if(empty($criminalProcedureCodes)) section__min-height @endif">
             <div class="wrapper">
                 <div class="dates__item dates__item-first flex">

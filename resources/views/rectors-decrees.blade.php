@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="rectors-decrees">
         <section class="pdfs section-text section-top">
             <div class="wrapper">
                 <h3 class="pdfs__title">@lang('about.rector.decrees')</h3>
@@ -19,7 +19,7 @@
 
                         {{-- component path  about/decree --}}
                         <x-about.decree :item=$item>
-                            <a href="{{ route('rectorsDecreedownload', ['pdf' => $item->id]) }}">
+                            <a href="{{ route('rectorsDecreedownload', ['pdf' => $item->id]) }}" aria-label="{{$item -> id}}">
                                 <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
                                 <span class="pdf__item_span text-18">
                                     @lang('main.download')

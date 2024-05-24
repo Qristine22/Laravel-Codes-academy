@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="academy-strycture">
         <section class="structure section-top">
             <div class="wrapper">
                 <div class="structure__cont">

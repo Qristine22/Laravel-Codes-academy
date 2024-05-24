@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="video-lecture-single">
         <section class="lecture-single section section-top">
             <div class="wrapper">
                 <div class="lecture__top">

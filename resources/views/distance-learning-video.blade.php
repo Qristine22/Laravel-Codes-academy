@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="distance-learning-video">
         <section class="learning-video section-text distance-learning">
             <div class="wrapper">
                 {!! $distancelearningVideo->video !!}

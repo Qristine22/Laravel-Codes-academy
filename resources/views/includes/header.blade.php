@@ -1,12 +1,13 @@
-<header class="header">
+<header class="header" aria-label="Header">
     <div class="wrapper">
+       <h1 class="sr-only" aria-label="Արդարադատության Ակադեմիա - ԱՐԴԱՐԱԴԱՏՈւԹՅԱՆ ԱԿԱԴԵՄԻԱ">Արդարադատության Ակադեմիա - ԱՐԴԱՐԱԴԱՏՈւԹՅԱՆ ԱԿԱԴԵՄԻԱ</h1>
         <div class="header__cont flex">
             <div class="header__logo">
                 @auth
                     <a class="admin__btn admin__logout" href="{{ route('logout') }}">logout</a>
                 @endauth
                 <a href="{{ route('home') }}">
-                    <img class="header__logo_img" src="/media/img/logo/brownLogo.png" alt="Logo">
+                    <img class="header__logo_img" src="/media/img/logo/brownLogo.png" alt="Logo for header">
                 </a>
                 @auth
                     <a class="admin__btn" href="{{ route('admin.home.index') }}">Admin</a>
@@ -15,13 +16,15 @@
 
 
             {{-- navigation --}}
-            <nav class="nav">
+            <nav class="nav" aria-label="Navigation Menu">
                 <ul class="header__list header__info_list flex">
                     @foreach ($headers as $header)
                         <li class="header__item">
-                            <a class="header__link 
+                            <a class="header__link
                                 @if (Request::is($header->link, $header->link . '/*', 'search/' . $header->link . '/*',
                                 'search/' . $header->link . 's/*'))header__link-active @endif"
+                                aria-label="{{ $header->{'name_' . app()->getLocale()} }}"
+                                title="{{ $header->{'name_' . app()->getLocale()} }}"
                                 href="{{ env('APP_URL') . $header->link }}">
                                 {{ $header->{'name_' . app()->getLocale()} }}
                             </a>
@@ -33,6 +36,8 @@
                                         @foreach ($header->subheaders as $subheader)
                                             <li class="header__menu_item">
                                                 <a class="header__menu_link"
+                                                   aria-label="{{ $header->{'name_' . app()->getLocale()} }}"
+                                                   title="{{ $header->{'name_' . app()->getLocale()} }}"
                                                     href="{{ env('APP_URL') . $subheader->link }}">
                                                     {{ $subheader->{'name_' . app()->getLocale()} }}
                                                 </a>
@@ -49,11 +54,11 @@
                     {{-- languages --}}
                     <li class="header__item flex">
                         <a class="header__lang @if (app()->getLocale() == 'am') header__lang-active @endif"
-                            href="{{ route('lang', ['locale' => 'am']) }}">հայ</a>
+                            href="{{ route('lang', ['locale' => 'am']) }}" aria-label="arm">հայ</a>
                         <a class="header__lang @if (app()->getLocale() == 'ru') header__lang-active @endif"
-                            href="{{ route('lang', ['locale' => 'ru']) }}">pyc</a>
+                            href="{{ route('lang', ['locale' => 'ru']) }}" aria-label="rus">pyc</a>
                         <a class="header__lang @if (app()->getLocale() == 'en') header__lang-active @endif"
-                            href="{{ route('lang', ['locale' => 'en']) }}">eng</a>
+                            href="{{ route('lang', ['locale' => 'en']) }}" aria-label="eng">eng</a>
                     </li>
                 </ul>
             </nav>
@@ -68,7 +73,7 @@
 
 
 {{-- mobile header ************************************************************************** --}}
-<nav class="mobile-nav">
+<nav class="mobile-nav" aria-label="mobile-nav">
     <div class="wrapper">
 
         {{-- mobile navigation --}}
@@ -105,11 +110,11 @@
             {{-- languages --}}
             <li class="header-mob__item flex">
                 <a class="header__lang  @if (app()->getLocale() == 'am') header__lang-active @endif"
-                    href="{{ route('lang', ['locale' => 'am']) }}">հայ</a>
+                    href="{{ route('lang', ['locale' => 'am']) }}" aria-label="arm">հայ</a>
                 <a class="header__lang  @if (app()->getLocale() == 'en') header__lang-active @endif"
-                    href="{{ route('lang', ['locale' => 'en']) }}">eng</a>
+                    href="{{ route('lang', ['locale' => 'en']) }}" aria-label="eng">eng</a>
                 <a class="header__lang  @if (app()->getLocale() == 'ru') header__lang-active @endif"
-                    href="{{ route('lang', ['locale' => 'ru']) }}">pyc</a>
+                    href="{{ route('lang', ['locale' => 'ru']) }}" aria-label="rus">pyc</a>
             </li>
         </ul>
     </div>

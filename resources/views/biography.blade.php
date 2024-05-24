@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="blography">
         <section class="section-text section-top section__min-height">
             <div class="wrapper">
                 <div class="member__cont">
@@ -37,7 +37,7 @@
                                 @endif
                             @endif
                         </div>
-                        
+
                         {{-- one img --}}
                         @if(@isset($person->imgs) && count($person->imgs) == 1)
                             <div class="member__img">
@@ -48,7 +48,7 @@
                                 <img class="img" src="{{ Storage::url($person->img) }}" alt="img">
                             </div>
                         @endif
-                        
+
 
                         {{-- more imgs in bottom --}}
                         @if(@isset($person->imgs) && count($person->imgs) > 1)

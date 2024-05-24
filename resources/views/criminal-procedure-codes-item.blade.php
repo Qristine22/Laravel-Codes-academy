@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="criminal-procedure-codes-item">
         <section class="governing__dates section-top">
             <div class="wrapper">
                 <div class="dates__item dates__item-first flex">

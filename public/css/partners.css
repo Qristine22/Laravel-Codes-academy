@@ -59,7 +59,7 @@ partners
     color: var(--brown);
     font-size: 16px;
     text-align: center;
-    opacity: 0;
+    opacity: 1;
     transition: opacity ease .3s;
     -webkit-transition: opacity ease .3s;
     -moz-transition: opacity ease .3s;

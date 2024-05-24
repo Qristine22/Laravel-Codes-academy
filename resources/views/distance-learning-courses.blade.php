@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="distance-learning-courses">
         <section class="courses distance-learning section-text">
             <div class="swiper">
                 <div class="swiper-pagination"></div>
@@ -23,7 +23,7 @@
                                         alt="{{ $course->{'name_' . app()->getLocale()} }}">
                                 </a>
                             </div>
-                            <h2 class="courses__item_name text-26">{{ $course->{'name_' . app()->getLocale()} }}</h2>
+{{--                            <h2 class="courses__item_name text-26">{{ $course->{'name_' . app()->getLocale()} }}</h2>--}}
                         </div>
                     @endforeach
                 </div>
@@ -38,7 +38,7 @@
                             <div class="courses__pdfs_items flex">
                                 @foreach ($course->books as $book)
                                     <div class="courses__pdfs_item">
-                                        <a href="{{ route('distanceLearningBook', ['id' => $book->id]) }}">
+                                        <a href="{{ route('distanceLearningBook', ['id' => $book->id]) }}" aria-label="{{$book->id}}">
                                             <img class="img" src="{{ Storage::url($book->img) }}" alt="2">
                                         </a>
                                     </div>

@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="video-lectures">
         <section class="section section-top">
             <div class="wrapper">
                 <div class="lectures__cont flex">
@@ -35,6 +35,7 @@
                                 <div class="lecture__bot">
                                     <div class="read-more__cont lectures__read-more__cont">
                                         <a class="read-more lecture__read-more"
+                                            aria-label="{{$videoLecture->id}}"
                                             href="{{ route('videoLectureSingle', ['id' => $videoLecture->id]) }}">
                                             @lang('library.video-lectures.watch-the-video')
                                         </a>

@@ -33,10 +33,10 @@ news
     position: relative;
 }
 .new__date{
-    color: var(--dark-yellow)
+    color: var(--dark-brown)
 }
 .new__title{
-    color: var(--brown);
+    color: var(--dark-brown);
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 1px;

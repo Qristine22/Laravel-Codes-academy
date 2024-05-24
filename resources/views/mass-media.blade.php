@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="mass-media">
         <section class="governing__dates section-top">
             <div class="wrapper">
                 <div class="dates__item dates__item-first flex">
@@ -18,6 +18,7 @@
                         @foreach($years as $key => $val)
                             <div class="governing__date date-12">
                                 <a class="date about__date @if($key == $year)date-active @endif"
+                                    aria-label="{{ $key }}"
                                     href="{{ route('massMedia', ['year' => $key]) }}">{{ $key }}</a>
                             </div>
                         @endforeach
@@ -37,7 +38,7 @@
                                         <span class="text-20 mass-media__link-site">
                                             {{ $link->site_name }}
                                         </span>
-                                        <a class="text-20 mass-media__link" target="_blank" href="{{ $link->link }}">
+                                        <a class="text-20 mass-media__link" target="_blank" href="{{ $link->link }}" aria-label="{{ $link->link_name }}">
                                             {{ $link->link_name }}
                                         </a>
                                     </div>

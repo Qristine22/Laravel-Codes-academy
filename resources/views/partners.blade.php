@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="parters">
         <section class="partners section-text">
             <div class="wrapper">
                 <div class="partners__item">

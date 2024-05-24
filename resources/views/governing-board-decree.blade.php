@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <main>
+    <main aria-label="governing-board-decree">
 
         {{-- about/governing-board/decree/$year  dates --}}
         <section class="governing__dates section-top">
@@ -20,6 +20,7 @@
                         @foreach ($governingBoardDecreesYears as $key => $val)
                             <div class="governing__date date-12">
                                 <a class="date about__date @if ($year == $key) date-active @endif"
+                                    aria-label="{{ $key }}"
                                     href="{{ route('governingBoardDecree', ['year' => $key]) }}">{{ $key }}</a>
                             </div>
                         @endforeach
@@ -37,7 +38,7 @@
 
                         {{-- component path  about/decree --}}
                         <x-about.decree :item=$item>
-                            <a href="{{ route('governingBoardDecreedownload', ['pdf' => $item->id]) }}">
+                            <a href="{{ route('governingBoardDecreedownload', ['pdf' => $item->id]) }}" aria-label="{{ $item -> id }}">
                                 <img class="pdf__item_img img" src="/media/img/icons/pdf.png" alt="pdf">
                                 <span class="pdf__item_span text-18">
                                     @lang('main.download')
