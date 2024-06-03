@@ -17,7 +17,7 @@
 
             {{-- navigation --}}
             <nav class="nav" aria-label="Navigation Menu">
-                <ul class="header__list header__info_list flex">
+                <ul class="header__list header__info_list flex" aria-label="asdasdasd">
                     @foreach ($headers as $header)
                         <li class="header__item">
                             <a class="header__link
@@ -73,8 +73,8 @@
 
 
 {{-- mobile header ************************************************************************** --}}
-<nav class="mobile-nav" aria-label="mobile-nav">
-    <div class="wrapper">
+<div class="wrapper" role="navigation">
+    <nav class="mobile-nav" aria-label="mobile-nav">
 
         {{-- mobile navigation --}}
         <ul class="header-mob__list">
@@ -117,5 +117,5 @@
                     href="{{ route('lang', ['locale' => 'ru']) }}" aria-label="rus">pyc</a>
             </li>
         </ul>
-    </div>
 </nav>
+    </div>
