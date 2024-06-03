@@ -17,7 +17,7 @@
 
             {{-- navigation --}}
             <nav class="nav" aria-label="Navigation Menu">
-                <ul class="header__list header__info_list flex" aria-label="asdasdasd">
+                <ul class="header__list header__info_list flex">
                     @foreach ($headers as $header)
                         <li class="header__item">
                             <a class="header__link
