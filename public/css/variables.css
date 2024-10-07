@@ -10,6 +10,17 @@
     --admin-active: #DDCDB8;
 }
 
+[data-theme='dark'] {
+    --white: #000000;
+    --black: #ffffff;
+    --pink: #F8EDE8;
+    --brown: #FFFFFF;
+    --dark-brown: #d1d1d1;
+    --light-brown: #AF521D;
+    --dark-yellow: #C9B695;
+    --section: #000000;
+    --admin-active: #DDCDB8;
+}
 *::selection {
     background-color: var(--brown);
     color: var(--white);

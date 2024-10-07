@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -27,6 +27,7 @@
         </div>
     </aside>
 
+{{--    @include('includes.accessibility-instruments')--}}
     @include('includes.header')
     @yield('header-bot')
 

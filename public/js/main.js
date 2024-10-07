@@ -75,3 +75,22 @@ document.addEventListener("click", (e) => {
     burgerMenuLines[2].style["margin-top"] = "0";
     burgerMenuBool = true;
 });
+
+//accessibility instruments
+const html = document.querySelector('html');
+const theme = sessionStorage.getItem("data-theme");
+
+if(theme) html.setAttribute('data-theme', theme);
+
+
+const lightButton = document.getElementById('lightButton');
+lightButton.addEventListener('click', () => {
+    html.setAttribute('data-theme', 'light');
+    sessionStorage.setItem("data-theme", "light");
+})
+
+const darkButton = document.getElementById('darkButton');
+darkButton.addEventListener('click', () => {
+    html.setAttribute('data-theme', 'dark');
+    sessionStorage.setItem("data-theme", "dark");
+})
