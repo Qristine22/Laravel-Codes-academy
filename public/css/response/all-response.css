@@ -23,10 +23,10 @@
         height: 90px;
     }
     .header__bot{
-        top: 90px;
+        top: 137px;
     }
     .section-top{
-        margin-top: 90px;
+        margin-top: 130px;
     }
     .header__link,
     .header__lang,
@@ -36,7 +36,7 @@
     .header__menu_link{
         font-size: 14px;
         line-height: 18px;
-    
+
     }
     .last-news__title{
         font-size: 35px;
@@ -63,7 +63,7 @@
 @media only screen and (max-width: 1300px) {
     .header__bot{
         position: unset;
-        margin-top: 90px;
+        margin-top: 137px;
     }
     .section-top{
         margin-top: 0;
@@ -440,7 +440,7 @@
     }
     .last-news__item_link {
         font-size: 11px;
-        
+
     }
     .footer__link{
         margin-left: 5px;
@@ -465,7 +465,7 @@
     .footer__sites{
         margin-top: 15px;
     }
-        
+
     /* pagination */
     .pagination__link{
         width: 18px;
