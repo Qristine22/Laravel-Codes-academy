@@ -8,18 +8,20 @@
     --dark-yellow: #C9B695;
     --section: #F7F7F7;
     --admin-active: #DDCDB8;
+    --pdf-link:#FBF3EF;
 }
 
 [data-theme='dark'] {
     --white: #000000;
     --black: #ffffff;
-    --pink: #a8a8a8;
+    --pink: #C9B695;
     --brown: #FFFFFF;
-    --dark-brown: #d1d1d1;
+    --dark-brown: #AF521D;
     --light-brown: #AF521D;
     --dark-yellow: #C9B695;
     --section: #000000;
     --admin-active: #DDCDB8;
+    --pdf-link:#AF521D;
 }
 *::selection {
     background-color: var(--brown);
