@@ -31,10 +31,10 @@
     .header__link,
     .header__lang,
     .footer__text{
-        font-size: 13px;
+        font-size: 0.813rem;
     }
     .header__menu_link{
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 18px;
 
     }
@@ -71,7 +71,7 @@
 }
 @media only screen and (max-width: 1210px) {
     .header__info_list .header__link{
-        font-size: 12px;
+        font-size: 0.75rem;
     }
     .dates__item_title{
         font-size: 20px;
@@ -98,10 +98,10 @@
     .header__link,
     .header__lang,
     .footer__text{
-        font-size: 12px;
+        font-size: 0.75rem;
     }
     .header__menu_link{
-        font-size: 13px;
+        font-size: 0.813rem;
         line-height: 15px;
     }
     .last-news__title{
