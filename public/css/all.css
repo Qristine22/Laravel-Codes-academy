@@ -5,6 +5,10 @@ html{
     font-family: 'GHEA Grapalat', sans-serif;
     font-weight: 400;
     scroll-behavior: smooth;
+    font-size: 16px;
+}
+img {
+    color: var(--black);
 }
 .wrapper{
     width: 1540px;
@@ -223,7 +227,7 @@ header
     display: flex;
     align-items: center;
     color: var(--brown);
-    font-size: 15px;
+    font-size: 0.938rem;
     font-weight: 700;
     position: relative;
 }
@@ -286,7 +290,7 @@ header
     /*border-bottom: none;*/
 }
 .header__menu_link{
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 30px;
     display: block;
     text-align: center;
@@ -410,7 +414,7 @@ header
 .header__bot_link{
     color: var(--light-brown);
     border: 1px solid transparent;
-    font-size: 15px;
+    font-size: 0.938rem;
     display: inline-block;
     padding: 5px 7px;
     transition: all ease .3s;

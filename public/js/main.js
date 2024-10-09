@@ -76,26 +76,65 @@ document.addEventListener("click", (e) => {
     burgerMenuBool = true;
 });
 
-//accessibility instruments
+//accessibility instruments  dark/light
 const html = document.querySelector('html');
 const theme = sessionStorage.getItem("data-theme");
 
-if(theme) html.setAttribute('data-theme', theme);
+if(theme) html.setAttribute("data-theme", theme);
 
 
-const lightButton = document.getElementById('lightButton');
-lightButton.addEventListener('click', () => {
-    html.setAttribute('data-theme', 'light');
+const lightButton = document.getElementById("lightButton");
+lightButton.addEventListener("click", () => {
+    html.setAttribute("data-theme", "light");
     sessionStorage.setItem("data-theme", "light");
 })
 
-const darkButton = document.getElementById('darkButton');
-darkButton.addEventListener('click', () => {
-    html.setAttribute('data-theme', 'dark');
+const darkButton = document.getElementById("darkButton");
+darkButton.addEventListener("click", () => {
+    html.setAttribute("data-theme", "dark");
     sessionStorage.setItem("data-theme", "dark");
 })
 
-const downButton = document.getElementById('downButton');
-downButton.addEventListener('click', () => {
+//accessibility instruments  resize text
+const downButton = document.getElementById("downButton");
+const upButton = document.getElementById("upButton");
+const resetButton = document.getElementById("restartButton");
+const fontSize =  sessionStorage.getItem("current-font-size");
+const sizeSpan = document.querySelector(".current__size");
 
+if(fontSize) html.style.fontSize = `${+fontSize}px`;
+
+let currentFontSize = fontSize ? +fontSize : 16;
+sizeSpan.innerText = `${currentFontSize}px`;
+downButton.addEventListener("click", () => {
+    upButton.style.opacity = "unset";
+    if (currentFontSize <= 7) {
+        downButton.style.opacity = "0.5";
+        return
+    }
+    currentFontSize -= 3;
+    html.style.fontSize = `${currentFontSize}px`;
+    sizeSpan.innerText = `${currentFontSize}px`;
+    sessionStorage.setItem("current-font-size", currentFontSize);
+    downButton.style.opacity = "unset";
+})
+upButton.addEventListener("click", () => {
+    downButton.style.opacity = "unset";
+    if (currentFontSize >= 25){
+        upButton.style.opacity = "0.5";
+        return
+    }
+    currentFontSize += 3;
+    html.style.fontSize = `${currentFontSize}px`;
+    sizeSpan.innerText = `${currentFontSize}px`;
+    sessionStorage.setItem("current-font-size", currentFontSize);
+    upButton.style.opacity = "unset";
+})
+resetButton.addEventListener("click", () => {
+    currentFontSize = 16;
+    html.style.fontSize = `${currentFontSize}px`;
+    sizeSpan.innerText = `${currentFontSize}px`;
+    sessionStorage.setItem("current-font-size", currentFontSize);
+    downButton.style.opacity = "unset";
+    upButton.style.opacity = "unset";
 })

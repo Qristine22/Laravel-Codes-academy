@@ -2,7 +2,7 @@
     <div class="instruments-wrapper">
         <div class="instruments">
             <div class="resize-buttons">
-                <span class="mode-text">@lang('main.font-size')</span>
+                <p class="mode-text">@lang('main.font-size') <span class="current__size"></span></p>
                 <button id="downButton">A-</button>
                 <button id="upButton">A+</button>
                 <button id="restartButton"><svg fill="#000000" viewBox="-7.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" transform="rotate(-45)">
