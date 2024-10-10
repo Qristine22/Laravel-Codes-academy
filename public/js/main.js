@@ -105,35 +105,35 @@ const sizeSpan = document.querySelector(".current__size");
 if(fontSize) html.style.fontSize = `${+fontSize}px`;
 
 let currentFontSize = fontSize ? +fontSize : 16;
-sizeSpan.innerText = `${currentFontSize}px`;
+sizeSpan.innerText = `${currentFontSize}PX`;
 downButton.addEventListener("click", () => {
     upButton.style.opacity = "unset";
-    if (currentFontSize <= 7) {
-        downButton.style.opacity = "0.5";
-        return
-    }
+    if (currentFontSize <= 7) return;
     currentFontSize -= 3;
-    html.style.fontSize = `${currentFontSize}px`;
-    sizeSpan.innerText = `${currentFontSize}px`;
+    html.style.fontSize = `${currentFontSize}PX`;
+    sizeSpan.innerText = `${currentFontSize}PX`;
     sessionStorage.setItem("current-font-size", currentFontSize);
     downButton.style.opacity = "unset";
+    if (currentFontSize <= 7) {
+        downButton.style.opacity = "0.5";
+    }
 })
 upButton.addEventListener("click", () => {
     downButton.style.opacity = "unset";
-    if (currentFontSize >= 25){
-        upButton.style.opacity = "0.5";
-        return
-    }
+    if (currentFontSize >= 25) return;
     currentFontSize += 3;
-    html.style.fontSize = `${currentFontSize}px`;
-    sizeSpan.innerText = `${currentFontSize}px`;
+    html.style.fontSize = `${currentFontSize}PX`;
+    sizeSpan.innerText = `${currentFontSize}PX`;
     sessionStorage.setItem("current-font-size", currentFontSize);
     upButton.style.opacity = "unset";
+    if (currentFontSize >= 25) {
+        upButton.style.opacity = "0.5";
+    }
 })
 resetButton.addEventListener("click", () => {
     currentFontSize = 16;
-    html.style.fontSize = `${currentFontSize}px`;
-    sizeSpan.innerText = `${currentFontSize}px`;
+    html.style.fontSize = `${currentFontSize}PX`;
+    sizeSpan.innerText = `${currentFontSize}PX`;
     sessionStorage.setItem("current-font-size", currentFontSize);
     downButton.style.opacity = "unset";
     upButton.style.opacity = "unset";

@@ -37,7 +37,7 @@ news
 }
 .new__title{
     color: var(--dark-brown);
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
     margin: 10px 0 30px 0;
@@ -46,7 +46,7 @@ news
 .new__subtitle{
     display: block;
     color: var(--brown);
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 30px;
 }
 .new__subtitle-content ~a {
@@ -68,7 +68,7 @@ news
     margin-right: 100px;
 }
 .new__read-more{
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 .new-images__top .swiper{
     padding: 0;
@@ -107,7 +107,7 @@ new single
 .news__home_title{
     position: relative;
     color: var(--brown);
-    font-size: 35px;
+    font-size: 2.188rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -131,7 +131,7 @@ new info
 }
 .new-info__cont_date{
     color: var(--light-brown);
-    font-size: 24px;
+    font-size:1.5rem;
     font-style: italic;
 }
 .new-info__text{
@@ -175,7 +175,7 @@ new info
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 3.125rem;
     font-weight: 700;
     z-index: 1;
     transition: all ease .3s;

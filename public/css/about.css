@@ -51,13 +51,13 @@
 }
 .member__title{
     /*color: var(--white);*/
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 700;
     text-transform: uppercase;
 }
 .member__subtitle{
     /*color: var(--white);*/
-    font-size: 15px;
+    font-size: 0.938rem;
     line-height: 25px;
     margin-top: 10px;
 }
@@ -80,7 +80,7 @@ member
 }
 .member__name{
     color: var(--brown);
-    font-size: 35px;
+    font-size: 2.188rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -236,7 +236,7 @@ graduates
 }
 .members__item_count > span{
     /*color: var(--white);*/
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 700;
 }
 
@@ -280,7 +280,7 @@ structure
     position: absolute;
     display: flex;
     align-items: center;
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 700;
     text-transform: uppercase;
     padding: 0 90px;
@@ -326,7 +326,7 @@ structure
 }
 .structure__mid_link{
     width: 295px;
-    font-size: 20px;
+    font-size: 1.25rem;
     padding: 13px 72px;
     text-align: center;
     padding: 0;
@@ -334,7 +334,7 @@ structure
 .structure__small_link-left,
 .structure__small_link-center,
 .structure__small_link-right{
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
     padding: 0 20px;
     text-align: center;

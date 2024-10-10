@@ -1,6 +1,6 @@
 @media only screen and (max-width: 1570px) {
     .home__title{
-        font-size: 30px;
+        font-size:1.875rem;
         line-height: 60px;
     }
     .home__logo {
@@ -11,17 +11,17 @@
     }
     .home__form_inp{
         padding: 15px 15px 15px 50px;
-        font-size: 16px;
+        font-size: 1rem;
     }
     .home__search_icon{
         width: 20px;
     }
     .rector__inner h2,
     .rector__inner h3{
-        font-size: 22px;
+        font-size: 1.375rem;
     }
     .rector__inner > p{
-        font-size: 20px;
+        font-size: 1.25rem;
         line-height: 35px;
         letter-spacing: 1px;
     }
@@ -31,7 +31,7 @@
 }
 @media only screen and (max-width: 1150px) {
     .home__title{
-        font-size: 25px;
+        font-size: 1.563rem;
         line-height: 45px;
     }
     .home__logo{
@@ -42,10 +42,10 @@
     }
     .rector__inner h2,
     .rector__inner h3{
-        font-size: 20px;
+        font-size: 1.25rem;
     }
     .rector__inner > p{
-        font-size: 18px;
+        font-size: 1.125rem;
         line-height: 25px;
     }
     .rector__signature {
@@ -62,7 +62,7 @@
         justify-content: center;
     }
     .home__title{
-        font-size: 22px;
+        font-size: 1.375rem;
         line-height: 35px;
         margin: 20px 0 30px 0;
     }
@@ -74,7 +74,7 @@
     }
     .home__form_inp{
         padding: 10px 10px 10px 40px;
-        font-size: 15px;
+        font-size: 0.938rem;
     }
     .home__search_icon{
         width: 17px;
@@ -89,10 +89,10 @@
     .rector__inner h2,
     .rector__inner h3,
     .new-info__cont_date{
-        font-size: 18px;
+        font-size: 1.125rem;
     }
     .rector__inner > p{
-        font-size: 15px;
+        font-size: 0.938rem;
         line-height: 20px;
     }
     .rector__signature {
@@ -117,15 +117,15 @@
         width: 140px;
     }
     .home__title {
-        font-size: 20px;
+        font-size: 1.25rem;
         line-height: 30px;
     }
     .rector__inner h2,
     .rector__inner h3{
-        font-size: 15px;
+        font-size: 0.938rem;
     }
     .rector__inner > p {
-        font-size: 12px;
+        font-size: 0.75rem;
         line-height: 18px;
     }
     .rector__signature {
@@ -153,7 +153,7 @@
         margin: 15px 0 30px 0;
     }
     .home__title {
-        font-size: 30px;
+        font-size: 1.875rem;
         line-height: 60px;
     }
 }

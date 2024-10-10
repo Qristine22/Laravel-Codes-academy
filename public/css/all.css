@@ -5,7 +5,7 @@ html{
     font-family: 'GHEA Grapalat', sans-serif;
     font-weight: 400;
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: 1rem;
 }
 img {
     color: var(--black);
@@ -60,13 +60,13 @@ img {
 .text-18,
 .section-text__cont li,
 .section-text__cont p{
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 .text-20{
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 .text-26{
-    font-size: 26px;
+    font-size: 1.625rem;
     font-weight: 700;
 }
 .margin__par{
@@ -93,14 +93,14 @@ img {
 }
 .info__item .info__item::before{
     color: var(--light-brown);
-    font-size: 28px;
+    font-size: 1.75rem;
     left: -35px;
 }
 .info__item_dot::before{
     position: absolute;
     top: -9px;
     left: -30px;
-    font-size: 35px;
+    font-size: 2.188rem;
     font-weight: 700;
     color: var(--brown);
     content: ".";
@@ -109,7 +109,7 @@ img {
 .section-text__cont strong{
     color: var(--brown);
     font-weight: 700;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 .section-text__cont a{
     text-decoration: underline;
@@ -435,7 +435,7 @@ header
     left: 0;
     bottom: -30px;
     padding: 5px 10px;
-    font-size: 15px;
+    font-size: 0.938rem;
     opacity: 0;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -462,7 +462,7 @@ header
 
 .last-news__title{
     color: var(--brown);
-    font-size: 50px;
+    font-size: 3.125rem;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 50px;
@@ -520,7 +520,7 @@ header
 }
 .last-news__item_link{
     color: var(--brown);
-    font-size: 19px;
+    font-size: 1.188rem;
     font-weight: 700;
     line-height: 28px;
     letter-spacing: 2px;
@@ -535,7 +535,7 @@ header
 }
 .read-more{
     color: var(--dark-brown);
-    font-size: 13px;
+    font-size: 0.813rem;
     font-style: italic;
 }
 .read-more__arrow{
@@ -570,7 +570,7 @@ dates
 .dates__item_title{
     width: 35%;
     color: var(--dark-brown);
-    font-size: 26px;
+    font-size: 1.625rem;
     font-weight: 700;
     line-height: 35px;
     letter-spacing: 1px;
@@ -581,7 +581,7 @@ dates
 }
 .date{
     color: var(--brown);
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 35px;
     padding: 5px 10px;
     border-radius: 10px;
@@ -613,7 +613,7 @@ pdfs
 }
 .pdfs__title{
     color: var(--light-brown);
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 700;
     font-style: italic;
     margin-bottom: 30px;
@@ -940,7 +940,7 @@ courses
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
+    font-size: 0.75rem;
     opacity: 1;
     margin-right: 40px;
     position: relative;
@@ -1019,7 +1019,7 @@ paginate
     margin: 0 20px;
 }
 .pagination__num{
-    font-size: 26px;
+    font-size: 1.625rem;
     color: var(--brown);
 }
 .pagination__current{
@@ -1040,7 +1040,7 @@ footer
     height: 78px;
 }
 .footer__text{
-    font-size: 17px;
+    font-size: 1.063rem;
     letter-spacing: 1px;
     color: #F7F7F7;
 }
