@@ -79,6 +79,7 @@ document.addEventListener("click", (e) => {
 //accessibility instruments  dark/light
 const html = document.querySelector('html');
 const theme = sessionStorage.getItem("data-theme");
+const headerLogo = document.querySelector(".header__logo_img");
 
 if(theme) html.setAttribute("data-theme", theme);
 
@@ -86,6 +87,7 @@ if(theme) html.setAttribute("data-theme", theme);
 const lightButtonS = document.querySelectorAll(".lightButton");
 lightButtonS.forEach(button => {
     button.addEventListener("click", () => {
+        headerLogo.setAttribute("src", "/media/img/logo/brownLogo.png");
         document.documentElement.setAttribute("data-theme", "light");
         sessionStorage.setItem("data-theme", "light");
     });
@@ -94,6 +96,7 @@ lightButtonS.forEach(button => {
 const darkButtons = document.querySelectorAll(".darkButton");
 darkButtons.forEach(button => {
     button.addEventListener("click", () => {
+        headerLogo.setAttribute("src", "/media/img/logo/mainLogo.png");
         document.documentElement.setAttribute("data-theme", "dark");
         sessionStorage.setItem("data-theme", "dark");
     });
@@ -158,4 +161,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentFontSize <= 7) {
         downButtons.forEach(down => down.style.opacity = "0.5");
     }
+    if (sessionStorage.getItem("data-theme") == "dark"){
+        headerLogo.setAttribute("src", "/media/img/logo/mainLogo.png");
+    } else {
+        headerLogo.setAttribute("src", "/media/img/logo/brownLogo.png");
+    }
+
 });
