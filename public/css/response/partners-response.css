@@ -6,7 +6,7 @@
 }
 @media only screen and (max-width: 1400px) {
     .partners__title{
-        font-size: 25px;
+        font-size: 1.563rem;
     }
     .partner__item{
         width: 25%;
@@ -29,7 +29,7 @@
     }
     .partner__name{
         width: calc(100% + 130px);
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 }
 @media only screen and (max-width: 800px) {
@@ -46,7 +46,7 @@
 @media only screen and (max-width: 650px) {
     .partners__title{
         font-size: 20px;
-        margin-bottom: 30px;
+        margin-bottom: 1.875rem;
     }
     .partner__item {
         width: 100%;
@@ -66,10 +66,10 @@
 }
 @media only screen and (max-width: 500px) {
     .partner__name{
-        font-size: 11px;
+        font-size: .688rem;
     }
     .partner-single__name{
-        font-size: 13px;
+        font-size: 0.813rem;
         margin: 0 0 0 10px !important;
     }
 }

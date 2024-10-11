@@ -54,7 +54,7 @@ img {
 .section-text__cont p{
     color: var(--brown);
     letter-spacing: 1px;
-    line-height: 35px;
+    line-height: 2.188rem;
     font-weight: 400;
 }
 .text-18,
@@ -291,7 +291,7 @@ header
 }
 .header__menu_link{
     font-size: 1.125rem;
-    line-height: 30px;
+    line-height: 1.875rem;
     display: block;
     text-align: center;
     padding: 1px;
@@ -335,7 +335,7 @@ header
     position: fixed;
     top: 90px;
     left: 0;
-    background-color: rgba(255,250,248,1);
+    background-color: var( --white);
     padding: 20px 0;
     display: none;
     z-index: 10;
@@ -360,6 +360,7 @@ header
     align-items: center;
     display: none;
     padding-bottom: 10px;
+    color: var(--black);
 }
 .header-mob__arrow{
     width: 30px;
@@ -522,7 +523,7 @@ header
     color: var(--brown);
     font-size: 1.188rem;
     font-weight: 700;
-    line-height: 28px;
+    line-height: 1.75rem;
     letter-spacing: 2px;
     position: relative;
 }
@@ -572,7 +573,7 @@ dates
     color: var(--dark-brown);
     font-size: 1.625rem;
     font-weight: 700;
-    line-height: 35px;
+    line-height: 2.188rem;
     letter-spacing: 1px;
 }
 .dates{
@@ -582,7 +583,7 @@ dates
 .date{
     color: var(--brown);
     font-size: 1.5rem;
-    line-height: 35px;
+    line-height: 2.188rem;
     padding: 5px 10px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -811,7 +812,7 @@ pdfs
     bottom: 0;
     left: 0;
     text-align: center;
-    line-height: 25px;
+    line-height: 1.563rem;
     opacity: 0;
     display: flex;
     align-items: center;
@@ -1081,6 +1082,12 @@ footer
 .instruments-wrapper {
     border-bottom: 1px solid grey;
 }
+.instruments-wrapper-mobile {
+    display: none;
+}
+.instruments-wrapper-mobile .instruments {
+    padding: 10px 20px;
+}
 .instruments {
     max-width: 1100px;
     padding: 10px 90px;
@@ -1115,7 +1122,7 @@ footer
         margin-right: 15px;
         color: var(--brown);
     }
-    #restartButton {
+    .restartButton {
         padding: 0;
         svg {
             fill: var(--brown);
@@ -1143,13 +1150,13 @@ footer
     button:hover {
         transform: scale(1.1);
     }
-    #lightButton {
+    .lightButton {
         background-color: white;
         border-color: black;
         box-shadow: 0 0 1px 1px white;
 
     }
-    #darkButton {
+    .darkButton {
         background-color: black;
         border-color: white;
         box-shadow: 0 0 1px 1px black;

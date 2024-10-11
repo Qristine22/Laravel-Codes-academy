@@ -112,5 +112,5 @@ staff
 }
 .staff__item_bold,
 .staff__item_info{
-    line-height: 25px;
+    line-height: 1.563rem;
 }

@@ -83,58 +83,79 @@ const theme = sessionStorage.getItem("data-theme");
 if(theme) html.setAttribute("data-theme", theme);
 
 
-const lightButton = document.getElementById("lightButton");
-lightButton.addEventListener("click", () => {
-    html.setAttribute("data-theme", "light");
-    sessionStorage.setItem("data-theme", "light");
-})
+const lightButtonS = document.querySelectorAll(".lightButton");
+lightButtonS.forEach(button => {
+    button.addEventListener("click", () => {
+        document.documentElement.setAttribute("data-theme", "light");
+        sessionStorage.setItem("data-theme", "light");
+    });
+});
 
-const darkButton = document.getElementById("darkButton");
-darkButton.addEventListener("click", () => {
-    html.setAttribute("data-theme", "dark");
-    sessionStorage.setItem("data-theme", "dark");
-})
+const darkButtons = document.querySelectorAll(".darkButton");
+darkButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        document.documentElement.setAttribute("data-theme", "dark");
+        sessionStorage.setItem("data-theme", "dark");
+    });
+});
 
-//accessibility instruments  resize text
-const downButton = document.getElementById("downButton");
-const upButton = document.getElementById("upButton");
-const resetButton = document.getElementById("restartButton");
-const fontSize =  sessionStorage.getItem("current-font-size");
+const downButtons = document.querySelectorAll(".downButton");
+const upButtons = document.querySelectorAll(".upButton");
+const resetButtons = document.querySelectorAll(".restartButton");
+const fontSize = sessionStorage.getItem("current-font-size");
 const sizeSpan = document.querySelector(".current__size");
 
-if(fontSize) html.style.fontSize = `${+fontSize}px`;
 
+// Set initial font size from session storage or default
 let currentFontSize = fontSize ? +fontSize : 16;
+html.style.fontSize = `${currentFontSize}px`;
 sizeSpan.innerText = `${currentFontSize}PX`;
-downButton.addEventListener("click", () => {
-    upButton.style.opacity = "unset";
-    if (currentFontSize <= 7) return;
-    currentFontSize -= 3;
-    html.style.fontSize = `${currentFontSize}PX`;
+
+// Function to update the font size
+const updateFontSize = (sizeChange) => {
+    currentFontSize = Math.max(7, Math.min(25, currentFontSize + sizeChange)); // Clamp size between 7 and 25
+    html.style.fontSize = `${currentFontSize}px`;
     sizeSpan.innerText = `${currentFontSize}PX`;
     sessionStorage.setItem("current-font-size", currentFontSize);
-    downButton.style.opacity = "unset";
-    if (currentFontSize <= 7) {
-        downButton.style.opacity = "0.5";
-    }
-})
-upButton.addEventListener("click", () => {
-    downButton.style.opacity = "unset";
-    if (currentFontSize >= 25) return;
-    currentFontSize += 3;
-    html.style.fontSize = `${currentFontSize}PX`;
-    sizeSpan.innerText = `${currentFontSize}PX`;
-    sessionStorage.setItem("current-font-size", currentFontSize);
-    upButton.style.opacity = "unset";
+};
+
+downButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        upButtons.forEach(up => up.style.opacity = "unset");
+        if (currentFontSize > 7) {
+            updateFontSize(-3);
+        }
+        if (currentFontSize <= 7) button.style.opacity = "0.5";
+        else button.style.opacity = "unset";
+    });
+});
+
+upButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+        downButtons.forEach(down => down.style.opacity = "unset");
+        if (currentFontSize < 25) {
+            updateFontSize(3);
+        }
+        if (currentFontSize >= 25) button.style.opacity = "0.5";
+        else button.style.opacity = "unset";
+    });
+});
+
+resetButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        currentFontSize = 16;
+        updateFontSize(0); // Reset to default size
+        downButtons.forEach(down => down.style.opacity = "unset");
+        upButtons.forEach(up => up.style.opacity = "unset");
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
     if (currentFontSize >= 25) {
-        upButton.style.opacity = "0.5";
+        upButtons.forEach(up => up.style.opacity = "0.5");
     }
-})
-resetButton.addEventListener("click", () => {
-    currentFontSize = 16;
-    html.style.fontSize = `${currentFontSize}PX`;
-    sizeSpan.innerText = `${currentFontSize}PX`;
-    sessionStorage.setItem("current-font-size", currentFontSize);
-    downButton.style.opacity = "unset";
-    upButton.style.opacity = "unset";
-})
+    if (currentFontSize <= 7) {
+        downButtons.forEach(down => down.style.opacity = "0.5");
+    }
+});
