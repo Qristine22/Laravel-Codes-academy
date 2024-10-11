@@ -1138,6 +1138,7 @@ footer
 
 .resize-buttons .restartButton svg {
     fill: var(--brown);
+    transform: rotate(-45deg);
 }
 
 .dark-light-buttons {
