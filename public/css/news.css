@@ -41,13 +41,13 @@ news
     font-weight: 700;
     letter-spacing: 1px;
     margin: 10px 0 30px 0;
-    line-height: 35px;
+    line-height: 2.188rem;
 }
 .new__subtitle{
     display: block;
     color: var(--brown);
     font-size: 1.25rem;
-    line-height: 30px;
+    line-height: 1.875rem;
 }
 .new__subtitle-content ~a {
     color: var(--brown);
@@ -72,7 +72,7 @@ news
 }
 .new-images__top .swiper{
     padding: 0;
-    max-height: 260px;
+    max-height: 16.25rem;
 }
 
 /*
