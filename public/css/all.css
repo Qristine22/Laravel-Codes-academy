@@ -265,7 +265,7 @@ header
     /*border: 1px solid var(--dark-yellow);*/
 }
 .header__menu_list{
-    width: 355px;
+    width: 370px;
     position: absolute;
     z-index: 15;
     display: none;
@@ -274,6 +274,29 @@ header
     -moz-transform: translateX(-29%);
     -ms-transform: translateX(-29%);
     -o-transform: translateX(-29%);
+    max-height: 754px;
+    overflow-y: auto;
+    word-break: break-word;
+}
+/* Scrollbar width */
+.header__menu_list::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+.header__menu_list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.header__menu_list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.header__menu_list::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 .header__menu_item{
     background-color: var(--section);
