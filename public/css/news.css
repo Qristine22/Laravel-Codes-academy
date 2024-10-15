@@ -3,7 +3,7 @@ news
 */
 
 .news__section{
-    margin-top: 60px;
+    margin-top: 105px;
     min-height: calc(100vh - 120px);
 }
 .news__cont{

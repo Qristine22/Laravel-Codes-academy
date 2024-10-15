@@ -6,6 +6,7 @@ html{
     font-weight: 400;
     scroll-behavior: smooth;
     font-size: 1rem;
+    background-color: var(--section);
 }
 img {
     color: var(--black);
