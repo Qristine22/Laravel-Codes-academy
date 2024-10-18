@@ -275,7 +275,7 @@ header
     -moz-transform: translateX(-29%);
     -ms-transform: translateX(-29%);
     -o-transform: translateX(-29%);
-    max-height: 754px;
+    max-height: 70vh;
     overflow-y: auto;
     word-break: break-word;
 }
@@ -402,7 +402,8 @@ header
     -o-transform: translateX(-120%);
 }
 .header__logo_img{
-    width: 100%;
+    /*width: 100%;*/
+    width: 50px;
     display: block;
     transition: transform ease .3s;
     -webkit-transition: transform ease .3s;
@@ -1197,10 +1198,29 @@ footer
     background-color: white;
     border-color: black;
     box-shadow: 0 0 1px 1px white;
+    position: relative;
 }
 
 .dark-light-buttons .darkButton {
     background-color: black;
     border-color: white;
     box-shadow: 0 0 1px 1px black;
+    position: relative;
+}
+
+.dark-light-buttons .lightButton::before {
+    content: '▼';
+    display: inline-block;
+    color: black;
+    font-size: 12px;
+    position: absolute;
+    top: 14px;
+}
+.dark-light-buttons .darkButton::before {
+    content: '▼';
+    display: inline-block;
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 14px;
 }
