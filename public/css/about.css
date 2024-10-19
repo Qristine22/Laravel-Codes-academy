@@ -58,7 +58,7 @@
 .member__subtitle{
     /*color: var(--white);*/
     font-size: 0.938rem;
-    line-height: 25px;
+    line-height: 1.563rem;
     margin-top: 10px;
 }
 
@@ -297,7 +297,7 @@ structure
 }
 .structure__span{
     width: 100%;
-    line-height: 25px;
+    line-height: 1.5rem;
     display: inline-block;
     transition: transform ease .3s;
     -webkit-transition: transform ease .3s;
@@ -371,12 +371,15 @@ structure
 }
 .structure__scientific-research{
     top: 575px;
+    height: 6.875rem;
 }
 .structure__judiciary{
     top: 795px;
+    height: 6.875rem;
 }
 .structure__prosecutorial{
-    bottom: 60px;
+    bottom: 10px;
+    height: 6.875rem;
 }
 .structure__bulletin{
     top: 460px;
