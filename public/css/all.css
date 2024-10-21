@@ -10,6 +10,7 @@ html{
 }
 img {
     color: var(--black);
+    font-size: 0.7rem;
 }
 .wrapper{
     width: 1540px;
@@ -1214,7 +1215,7 @@ footer
 .dark-light-buttons .lightButton::before {
     content: '▼';
     display: inline-block;
-    color: black;
+    color: #121212;
     font-size: 12px;
     position: absolute;
     top: 14px;
@@ -1222,7 +1223,7 @@ footer
 .dark-light-buttons .darkButton::before {
     content: '▼';
     display: inline-block;
-    color: white;
+    color: #F7F7F7;
     font-size: 12px;
     position: absolute;
     top: 14px;
