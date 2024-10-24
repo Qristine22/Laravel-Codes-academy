@@ -21,6 +21,9 @@ news
     -ms-transition: background-color ease .3s;
     -o-transition: background-color ease .3s;
 }
+.new:hover .new__subtitle {
+    color: #121212
+}
 .new:hover{
     background-color: var(--pink);
 }
@@ -88,6 +91,7 @@ new single
 }
 .news__home_cont{
     width: 100%;
+    background-color: var(--pink);
     position: absolute;
     left: 0;
     bottom: 0;
@@ -95,9 +99,9 @@ new single
 }
 .news__home_title::before{
     content: "";
-    width: 200%;
+    /*width: 200%;*/
     height: 100%;
-    background-color: var(--pink);
+    /*background-color: var(--pink);*/
     position: absolute;
     top: 0;
     left: -100%;
@@ -106,7 +110,7 @@ new single
 }
 .news__home_title{
     position: relative;
-    color: var(--brown);
+    color: var(--dark-brown);
     font-size: 2.188rem;
     font-weight: 700;
     text-transform: uppercase;
