@@ -8,8 +8,8 @@
     }
     .structure__btn{
         border: 1px solid var(--dark-yellow);
-        font-size: 0.938rem;
-        height: 40px;
+        font-size: 0.8rem;
+        max-height: 45px;
         padding: 0 15px;
     }
     .structure__btn:hover{
@@ -17,6 +17,7 @@
     }
     .structure__span{
         line-height: 1rem;
+        font-size: 0.4rem;
     }
     .structure__mid_link{
         width: 170px;
@@ -184,6 +185,7 @@
     }
     .structure__span{
         line-height: 0.5rem;
+        font-size: 0.438rem;
     }
     .structure__mid_link{
         width: 80px;

@@ -40,6 +40,7 @@ img {
     padding: 30px 0;
 }
 .section-top{
+    color: var(--black);
     margin-top: 150px;
 }
 .section__min-height{
@@ -114,6 +115,10 @@ img {
     font-size: 1.25rem;
 }
 .section-text__cont a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-decoration: underline;
     color: var(--light-brown);
 }
@@ -505,6 +510,9 @@ header
 .last-news__item:hover .last-news__item_cont::before{
     width: 100%;
 }
+.last-news__item:hover .last-news__item_link{
+    color: #121212;
+}
 .last-news__item_top{
     width: 100%;
     max-height: 270px;
@@ -666,6 +674,9 @@ pdfs
     width: calc(100% - 70px);
     border-right: 1px solid var(--dark-yellow);
     padding-right: 60px;
+}
+.pdf__item_cont p{
+    color: black
 }
 .pdf__link{
     display: inline-block;
@@ -920,7 +931,7 @@ courses
 
 .courses{
     position: relative;
-    background-color: var(--pink);
+    background-color: var(--section);
 }
 .swiper{
     padding: 115px 0 0 0;
@@ -1201,14 +1212,14 @@ footer
 .dark-light-buttons .lightButton {
     background-color: white;
     border-color: black;
-    box-shadow: 0 0 1px 1px white;
+    /*box-shadow: 0 0 1px 1px white;*/
     position: relative;
 }
 
 .dark-light-buttons .darkButton {
     background-color: black;
     border-color: white;
-    box-shadow: 0 0 1px 1px black;
+    /*box-shadow: 0 0 1px 1px black;*/
     position: relative;
 }
 

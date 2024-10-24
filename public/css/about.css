@@ -35,7 +35,7 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     /*position: absolute;*/
-    color: black;
+    color: var(--black);
     top: 0;
     left: 0;
     display: flex;
@@ -297,6 +297,7 @@ structure
 }
 .structure__span{
     width: 100%;
+    font-size: 0.8rem;
     line-height: 1.5rem;
     display: inline-block;
     transition: transform ease .3s;
