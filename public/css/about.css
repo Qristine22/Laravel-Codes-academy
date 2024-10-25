@@ -222,6 +222,7 @@ graduates
 }
 .graduate__item,
 .graduate-profession__item{
+    word-break: break-all;
     width: calc(20% - 20px);
     position: relative;
 }

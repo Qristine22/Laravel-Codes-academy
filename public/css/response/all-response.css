@@ -98,7 +98,7 @@
     .header__link,
     .header__lang,
     .footer__text{
-        font-size: 0.75rem;
+        font-size: 0.6rem;
     }
     .header__menu_link{
         font-size: 0.813rem;
@@ -186,6 +186,7 @@
         line-height: 1.563rem;
     }
     .last-news__item_cont{
+        word-break: break-all;
         padding: 35px 10px 15px 10px;
     }
     .read-more__arrow{
