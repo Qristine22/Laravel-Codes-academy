@@ -55,7 +55,7 @@ img {
 .text-26,
 .section-text__cont li,
 .section-text__cont p{
-    color: #121212;
+    color: var(--black);
     letter-spacing: 1px;
     line-height: 2.188rem;
     font-weight: 400;
