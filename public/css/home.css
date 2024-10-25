@@ -30,7 +30,9 @@ home
 .home__inner {
     width: 705px;
     flex-direction: column;
+    color: var(--black);
 }
+
 
 .home__logo {
     margin-top: 40px;
