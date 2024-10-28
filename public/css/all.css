@@ -702,6 +702,7 @@ pdfs
     position: relative;
     top: -40px;
     right: 40px;
+    color: #121212;
     transform: scale(0);
     -webkit-transform: scale(0);
     -moz-transform: scale(0);
@@ -900,6 +901,10 @@ link pdfs
     -ms-transition: all ease .3s;
     -o-transition: all ease .3s;
 }
+.link__pdf_img{
+    width: 50% !important;
+    min-width: 20px;
+}
 .link__pdf:hover,
 .pdf__item:hover{
     background-color: var(--pink);
@@ -936,7 +941,8 @@ courses
     background-color: var(--section);
 }
 .swiper{
-    overflow: visible;
+    /*overflow: visible;*/
+    overflow: hidden;
     word-break: break-all;
     padding: 115px 0 0 0;
 }
@@ -1106,14 +1112,6 @@ footer
 footer
 */
 
-.error-404{
-    font-size: 227px;
-    font-weight: 700;
-}
-.not-found-404{
-    font-size: 27px;
-    font-weight: 700;
-}
 .sr-only {
     position: absolute;
     width: 1px;
@@ -1235,7 +1233,7 @@ footer
     color: #121212;
     font-size: 12px;
     position: absolute;
-    top: 14px;
+    top: 12px;
 }
 .dark-light-buttons .darkButton::before {
     content: '▼';
@@ -1243,5 +1241,21 @@ footer
     color: #F7F7F7;
     font-size: 12px;
     position: absolute;
-    top: 14px;
+    top: 12px;
+}
+
+/* error section */
+
+.error__section{
+    background-color: var(--white);
+}
+.error-404{
+    font-size: 150px;
+    font-weight: 700;
+    color: var(--black);
+}
+.not-found-404{
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--black);
 }
