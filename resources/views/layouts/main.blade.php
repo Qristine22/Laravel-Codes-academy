@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/media/fonts/fonts.css">
-    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/all.css?v=<?= time(); ?>">
     @yield('styles')
-    <link rel="stylesheet" href="/css/response/all-response.css">
+    <link rel="stylesheet" href="/css/response/all-response.css?v=<?= time(); ?>">
 </head>
 
 <body>
