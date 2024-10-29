@@ -30,7 +30,7 @@ home
 .home__inner {
     width: 705px;
     flex-direction: column;
-    color: var(--black);
+    color: white;
 }
 
 
@@ -63,7 +63,7 @@ home
     width: 40px;
     position: absolute;
     top: 50%;
-    left: 15px;
+    left: 10px;
     background-color: transparent;
     border: none;
     transform: translateY(-50%);
