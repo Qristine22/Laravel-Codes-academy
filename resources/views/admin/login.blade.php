@@ -9,10 +9,10 @@
     <link rel="icon" type="image/x-icon" href="/media/img/logo/brownLogo.png">
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/media/fonts/fonts.css">
-    <link rel="stylesheet" href="/css/all.css">
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/response/home-response.css">
-    <link rel="stylesheet" href="/css/response/all-response.css">
+    <link rel="stylesheet" href="/css/all.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/css/home.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/css/response/home-response.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/css/response/all-response.css?v=<?= time(); ?>">
 </head>
 
 <body>

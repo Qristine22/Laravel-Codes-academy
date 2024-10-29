@@ -2,7 +2,7 @@
 
 @section('styles')
     <link rel="stylesheet" href="/css/library.css">
-    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/about.css?v=<?= time();?>">
     <link rel="stylesheet" href="/css/response/about-response.css">
 
 @endsection

@@ -75,3 +75,96 @@ document.addEventListener("click", (e) => {
     burgerMenuLines[2].style["margin-top"] = "0";
     burgerMenuBool = true;
 });
+
+//accessibility instruments  dark/light
+const html = document.querySelector('html');
+const theme = sessionStorage.getItem("data-theme");
+const headerLogo = document.querySelector(".header__logo_img");
+
+if(theme) html.setAttribute("data-theme", theme);
+
+
+const lightButtonS = document.querySelectorAll(".lightButton");
+lightButtonS.forEach(button => {
+    button.addEventListener("click", () => {
+        headerLogo.setAttribute("src", "/media/img/logo/brownLogo.png");
+        document.documentElement.setAttribute("data-theme", "light");
+        sessionStorage.setItem("data-theme", "light");
+    });
+});
+
+const darkButtons = document.querySelectorAll(".darkButton");
+darkButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        headerLogo.setAttribute("src", "/media/img/logo/mainLogo.png");
+        document.documentElement.setAttribute("data-theme", "dark");
+        sessionStorage.setItem("data-theme", "dark");
+    });
+});
+
+const downButtons = document.querySelectorAll(".downButton");
+const upButtons = document.querySelectorAll(".upButton");
+const resetButtons = document.querySelectorAll(".restartButton");
+const fontSize = sessionStorage.getItem("current-font-size");
+const sizeSpan = document.querySelector(".current__size");
+
+
+// Set initial font size from session storage or default
+let currentFontSize = fontSize ? +fontSize : 16;
+html.style.fontSize = `${currentFontSize}px`;
+sizeSpan.innerText = `${currentFontSize}PX`;
+
+// Function to update the font size
+const updateFontSize = (sizeChange) => {
+    currentFontSize = Math.max(7, Math.min(25, currentFontSize + sizeChange)); // Clamp size between 7 and 25
+    html.style.fontSize = `${currentFontSize}px`;
+    sizeSpan.innerText = `${currentFontSize}PX`;
+    sessionStorage.setItem("current-font-size", currentFontSize);
+};
+
+downButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        upButtons.forEach(up => up.style.opacity = "unset");
+        if (currentFontSize > 7) {
+            updateFontSize(-3);
+        }
+        if (currentFontSize <= 7) button.style.opacity = "0.5";
+        else button.style.opacity = "unset";
+    });
+});
+
+upButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+        downButtons.forEach(down => down.style.opacity = "unset");
+        if (currentFontSize < 25) {
+            updateFontSize(3);
+        }
+        if (currentFontSize >= 25) button.style.opacity = "0.5";
+        else button.style.opacity = "unset";
+    });
+});
+
+resetButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        currentFontSize = 16;
+        updateFontSize(0); // Reset to default size
+        downButtons.forEach(down => down.style.opacity = "unset");
+        upButtons.forEach(up => up.style.opacity = "unset");
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (currentFontSize >= 25) {
+        upButtons.forEach(up => up.style.opacity = "0.5");
+    }
+    if (currentFontSize <= 7) {
+        downButtons.forEach(down => down.style.opacity = "0.5");
+    }
+    if (sessionStorage.getItem("data-theme") == "dark"){
+        headerLogo.setAttribute("src", "/media/img/logo/mainLogo.png");
+    } else {
+        headerLogo.setAttribute("src", "/media/img/logo/brownLogo.png");
+    }
+
+});

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('styles')
-    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/about.css?v=<?= time();?>">
     <link rel="stylesheet" href="/css/response/about-response.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 @endsection

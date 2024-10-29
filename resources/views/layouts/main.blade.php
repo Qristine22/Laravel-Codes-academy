@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/media/fonts/fonts.css">
-    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/all.css?v=<?= time(); ?>">
     @yield('styles')
-    <link rel="stylesheet" href="/css/response/all-response.css">
+    <link rel="stylesheet" href="/css/response/all-response.css?v=<?= time(); ?>">
 </head>
 
 <body>
@@ -27,6 +27,7 @@
         </div>
     </aside>
 
+{{--    @include('includes.accessibility-instruments')--}}
     @include('includes.header')
     @yield('header-bot')
 

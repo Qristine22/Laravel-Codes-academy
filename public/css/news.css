@@ -3,7 +3,7 @@ news
 */
 
 .news__section{
-    margin-top: 60px;
+    margin-top: 105px;
     min-height: calc(100vh - 120px);
 }
 .news__cont{
@@ -21,6 +21,9 @@ news
     -ms-transition: background-color ease .3s;
     -o-transition: background-color ease .3s;
 }
+.new:hover .new__subtitle {
+    color: #121212
+}
 .new:hover{
     background-color: var(--pink);
 }
@@ -37,17 +40,17 @@ news
 }
 .new__title{
     color: var(--dark-brown);
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
     margin: 10px 0 30px 0;
-    line-height: 35px;
+    line-height: 2.188rem;
 }
 .new__subtitle{
     display: block;
     color: var(--brown);
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
 }
 .new__subtitle-content ~a {
     color: var(--brown);
@@ -68,11 +71,11 @@ news
     margin-right: 100px;
 }
 .new__read-more{
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 .new-images__top .swiper{
     padding: 0;
-    max-height: 260px;
+    max-height: 16.25rem;
 }
 
 /*
@@ -88,6 +91,7 @@ new single
 }
 .news__home_cont{
     width: 100%;
+    background-color: var(--pink);
     position: absolute;
     left: 0;
     bottom: 0;
@@ -95,9 +99,9 @@ new single
 }
 .news__home_title::before{
     content: "";
-    width: 200%;
+    /*width: 200%;*/
     height: 100%;
-    background-color: var(--pink);
+    /*background-color: var(--pink);*/
     position: absolute;
     top: 0;
     left: -100%;
@@ -106,8 +110,8 @@ new single
 }
 .news__home_title{
     position: relative;
-    color: var(--brown);
-    font-size: 35px;
+    color: var(--dark-brown);
+    font-size: 2.188rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -131,7 +135,7 @@ new info
 }
 .new-info__cont_date{
     color: var(--light-brown);
-    font-size: 24px;
+    font-size:1.5rem;
     font-style: italic;
 }
 .new-info__text{
@@ -175,7 +179,7 @@ new info
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 3.125rem;
     font-weight: 700;
     z-index: 1;
     transition: all ease .3s;
