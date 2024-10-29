@@ -199,6 +199,10 @@ swiper
     display: none;
 }
 
+.partners .wrapper .new-images__top .swiper-container-initialized{
+    overflow: visible !important;
+}
+
 
 /*
 header
@@ -335,6 +339,7 @@ header
     -o-transform: scale(1.03, 1.03);
 }
 .header__menu_link-active{
+    color: #121212;
     background-color: var(--pink);
     border: 1px solid var(--dark-yellow);
 }
@@ -1247,7 +1252,7 @@ footer
 /* error section */
 
 .error__section{
-    background-color: var(--white);
+    background-color: var(--white) !important;
 }
 .error-404{
     font-size: 150px;
