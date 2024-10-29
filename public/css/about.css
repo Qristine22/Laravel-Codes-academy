@@ -479,4 +479,5 @@ mass media
     color: var(--light-brown);
     display: block;
     text-decoration: underline;
+    word-break: break-all;
 }
