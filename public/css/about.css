@@ -21,6 +21,7 @@
     margin: 0 -15px;
 }
 .members__item{
+    word-break: break-all;
     width: calc(25% - 30px);
     margin: 15px;
     position: relative;
@@ -180,6 +181,7 @@ rector
 .about__link:hover,
 .about__link-active,
 .report__link:hover{
+    color: #121212;
     border: 1px solid var(--dark-yellow);
     background-color: var(--pink);
 }
@@ -202,6 +204,10 @@ admission
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
+
+.section-text .wrapper .section-text__cont p span a {
+    color: var(--black);
 }
 
 /*
@@ -297,6 +303,7 @@ structure
     border: 2px solid var(--brown);
 }
 .structure__span{
+    color: var(--black);
     width: 100%;
     font-size: 0.8rem;
     line-height: 1.5rem;

@@ -3,9 +3,26 @@
         min-height: calc(100vh - 260px);
     }
 }
+@media only screen and (max-width: 1300px) {
+    .education{
+        margin-top: 90px !important;
+    }
+}
 @media only screen and (max-width: 1080px) {
     .education{
         min-height: calc(100vh - 160px);
+        width: 100% !important;
+    }
+    .education__cont .dates__item{
+        flex-direction: column;
+    }
+    .education__cont .dates__item .dates__item_title{
+        text-align: center;
+        width: 100%;
+    }
+    .education__cont .dates__item .dates{
+        margin-top: 20px;
+        width: 100%;
     }
     .education-single{
         min-height: calc(100vh - 160px) !important;
@@ -22,6 +39,11 @@
     }
     .education-single{
         min-height: calc(100vh - 100px) !important;
+    }
+}
+@media only screen and (max-width: 600px){
+    .education__cont .dates__item .dates{
+        flex-wrap: wrap;
     }
 }
 @media only screen and (max-width: 500px) {

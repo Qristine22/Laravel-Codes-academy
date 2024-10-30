@@ -71,6 +71,7 @@
     }
     .home__inner{
         width: 390px;
+        margin-bottom: 110px;
     }
     .home__form_inp{
         padding: 10px 10px 10px 40px;

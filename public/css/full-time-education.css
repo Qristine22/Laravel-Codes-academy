@@ -4,6 +4,7 @@ education
 
 .education{
     height: calc(100vh - 278px);
+    width: min-content;
 }
 
 /*

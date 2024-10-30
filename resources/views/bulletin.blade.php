@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('styles')
-    <link rel="stylesheet" href="/css/bulletin.css">
-    <link rel="stylesheet" href="/css/response/bulletin-response.css">
+    <link rel="stylesheet" href="/css/bulletin.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/css/response/bulletin-response.css?v=<?= time(); ?>">
 @endsection
 
 @section('content')
