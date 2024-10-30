@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('styles')
-    <link rel="stylesheet" href="/css/full-time-education.css">
-    <link rel="stylesheet" href="/css/response/full-time-education-response.css">
+    <link rel="stylesheet" href="/css/full-time-education.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/css/response/full-time-education-response.css?v=<?= time(); ?>">
 @endsection
 
 @section('header-bot')

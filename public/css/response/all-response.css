@@ -68,6 +68,9 @@
     .section-top{
         margin-top: 0;
     }
+    .last-news__item_top{
+        max-height: 137px;
+    }
 }
 @media only screen and (max-width: 1210px) {
     .header__info_list .header__link{
@@ -141,7 +144,7 @@
         width: 55px;
     }
     .section-top{
-        margin-top: 90px;
+        margin-top: 122px;
     }
     .section__min-height{
         min-height: calc(100vh - 200px);
@@ -251,9 +254,9 @@
     .header__cont{
         height: 60px;
     }
-    .section-top{
-        margin-top: 60px;
-    }
+    /*.section-top{*/
+    /*    margin-top: 77px;*/
+    /*}*/
     .mobile-nav{
         top: 60px;
     }
@@ -433,9 +436,9 @@
     .header{
         height: 56px;
     }
-    .section-top{
-        margin-top: 56px;
-    }
+    /*.section-top{*/
+    /*    margin-top: 56px;*/
+    /*}*/
     .mobile-nav{
         top: 56px;
     }
