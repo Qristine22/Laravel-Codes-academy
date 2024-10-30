@@ -19,10 +19,10 @@
             <div class="dark-light-buttons">
                 <span class="mode-text">@lang('main.color-mode')</span>
                 <button class="lightButton">
-                    <span class="emptyBtn">.</span>
+                    <span class="hidden">.</span>
                     </button>
                 <button class="darkButton">
-                    <span class="emptyBtn">.</span>
+                    <span class="hidden">.</span>
                     </button>
             </div>
         </div>

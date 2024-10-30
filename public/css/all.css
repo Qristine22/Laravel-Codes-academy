@@ -495,7 +495,7 @@ header
     opacity: 1;
 }
 
-.emptyBtn{
+.hidden{
     display: none;
 }
 
