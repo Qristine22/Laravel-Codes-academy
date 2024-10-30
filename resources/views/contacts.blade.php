@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('styles')
-    <link rel="stylesheet" href="/css/contacts.css">
-    <link rel="stylesheet" href="/css/response/contacts-response.css">
+    <link rel="stylesheet" href="/css/contacts.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/css/response/contacts-response.css?v=<?= time(); ?>">
 @endsection
 
 @section('content')

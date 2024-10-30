@@ -28,12 +28,15 @@ partners
     flex-wrap: wrap;
     margin: 0 -20px;
 }
+.international__partners{
+    margin-top: 140px;
+}
 .partner__item{
     width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 70px;
+    padding: 0 80px;
     margin-bottom: 50px;
 }
 .partner__img{

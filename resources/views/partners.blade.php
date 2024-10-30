@@ -1,10 +1,10 @@
 @extends('layouts.main')
 
 @section('styles')
-    <link rel="stylesheet" href="/css/partners.css">
-    <link rel="stylesheet" href="/css/response/partners-response.css">
-    <link rel="stylesheet" href="/css/news.css">
-    <link rel="stylesheet" href="/css/response/news-response.css">
+    <link rel="stylesheet" href="/css/partners.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/css/response/partners-response.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/css/news.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/css/response/news-response.css?v=<?= time(); ?>">
     <style>
         .swiper__arrow{
             top: 25%
@@ -14,7 +14,7 @@
 
 @section('content')
     <main aria-label="parters">
-        <section class="partners section-text">
+        <section class="section-text international__partners">
             <div class="wrapper">
                 <div class="partners__item">
                     <h2 class="partners__title">@lang('partners.international')</h2>

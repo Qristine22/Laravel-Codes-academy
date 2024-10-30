@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('styles')
-    <link rel="stylesheet" href="/css/library.css">
-    <link rel="stylesheet" href="/css/response/library-response.css">
+    <link rel="stylesheet" href="/css/library.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/css/response/library-response.css?v=<?= time(); ?>">
 @endsection
 
 @section('header-bot')

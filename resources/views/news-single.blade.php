@@ -2,8 +2,8 @@
 
 @section('styles')
 {{--    <link rel="stylesheet" href="/css/about.css">--}}
-    <link rel="stylesheet" href="/css/news.css">
-    <link rel="stylesheet" href="/css/response/news-response.css">
+    <link rel="stylesheet" href="/css/news.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/css/response/news-response.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
 @endsection
 

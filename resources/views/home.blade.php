@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('styles')
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/response/home-response.css">
+    <link rel="stylesheet" href="/css/home.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/css/response/home-response.css?v=<?= time(); ?>">
 @endsection
 
 @section('content')
