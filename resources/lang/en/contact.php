@@ -12,4 +12,5 @@ return [
     'mail-placeholder' => 'Mail',
     'topic-placeholder' => 'Topic',
     'content-placeholder' => 'Content',
+    'full_name' => 'Name Surname',
 ];

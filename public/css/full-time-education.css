@@ -12,6 +12,7 @@ training program
 */
 
 .training-program__title{
+    color: #121212 !important;
     width: 90%;
     margin-bottom: 30px;
     letter-spacing: 2px;
