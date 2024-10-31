@@ -134,7 +134,7 @@ new info
     margin-left: 100px;
 }
 .new-info__cont_date{
-    color: var(--light-brown);
+    color: var(--dark-brown);
     font-size:1.5rem;
     font-style: italic;
 }

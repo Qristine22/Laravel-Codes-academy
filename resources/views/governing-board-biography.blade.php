@@ -27,7 +27,7 @@
                                 {!! $person->biography !!}
 
                             @else
-                                <h4>@lang('main.info-is-available')</h4>
+                                <p>@lang('main.info-is-available')</p>
                             @endif
                         </div>
 

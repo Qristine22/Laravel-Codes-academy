@@ -27,9 +27,7 @@
                     @foreach($trainingPrograms as $item)
                         <div class="pdf__item training__pdf section-text__cont">
                             <h3 class="bold__title training-program__title text-20"   aria-label="{{ $item->id }}">
-                                <a href="{{ Storage::url($item->pdf) }}" target="_blank" aria-label="{{ $item->id }}">
                                     {{ $item->{'name_'.app()->getLocale()} }}
-                                </a>
                             </h3>
                             <div class="pdf__item_inner flex">
                                 <div class="pdf__item_cont">

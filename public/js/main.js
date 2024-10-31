@@ -128,7 +128,7 @@ downButtons.forEach(button => {
         if (currentFontSize > 7) {
             updateFontSize(-3);
         }
-        if (currentFontSize <= 7) button.style.opacity = "0.5";
+        if (currentFontSize <= 7) button.style.opacity = "0.6";
         else button.style.opacity = "unset";
     });
 });
@@ -140,7 +140,7 @@ upButtons.forEach(button => {
         if (currentFontSize < 25) {
             updateFontSize(3);
         }
-        if (currentFontSize >= 25) button.style.opacity = "0.5";
+        if (currentFontSize >= 25) button.style.opacity = "0.6";
         else button.style.opacity = "unset";
     });
 });
@@ -156,10 +156,10 @@ resetButtons.forEach(button => {
 
 document.addEventListener("DOMContentLoaded", () => {
     if (currentFontSize >= 25) {
-        upButtons.forEach(up => up.style.opacity = "0.5");
+        upButtons.forEach(up => up.style.opacity = "0.6");
     }
     if (currentFontSize <= 7) {
-        downButtons.forEach(down => down.style.opacity = "0.5");
+        downButtons.forEach(down => down.style.opacity = "0.6");
     }
     if (sessionStorage.getItem("data-theme") == "dark"){
         headerLogo.setAttribute("src", "/media/img/logo/mainLogo.png");
