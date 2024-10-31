@@ -84,7 +84,7 @@
                             <div class="staff__item_top">
                                 <h3 class="staff__item_bold text-20">{{ $item->{'position_'.app()->getLocale()} }}</h3>
                                 <h4 class="staff__item_bold text-18">
-                                    {!! $item->{'name_'.app()->getLocale()} ?? 'Name Surname' !!}
+                                    {!! $item->{'name_'.app()->getLocale()} ?? __('contact.full_name') !!}
                                 </h4>
                             </div>
                             <div class="staff__item_bot">
