@@ -12,6 +12,4 @@ return [
     'mail-placeholder' => 'Էլ․ Փոստ',
     'topic-placeholder' => 'Թեմա',
     'content-placeholder' => 'Բովանդակություն',
-    'full_name' => 'Անուն Ազգանուն',
-
 ];

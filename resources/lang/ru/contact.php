@@ -12,5 +12,4 @@ return [
     'mail-placeholder' => 'Почта',
     'topic-placeholder' => 'Тема',
     'content-placeholder' => 'Содержание',
-    'full_name' => 'Имя Фамилия',
 ];
