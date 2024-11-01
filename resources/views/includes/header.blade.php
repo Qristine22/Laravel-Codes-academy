@@ -95,7 +95,8 @@
                     <div class="resize-buttons">
                         <button class="downButton">A-</button>
                         <button class="upButton">A+</button>
-                        <button class="restartButton"><svg fill="#000000" width="33" height="33" viewBox="-7.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" transform="rotate(-45)">
+                        <button class="restartButton">
+                            <svg role="img" aria-label="font size reset btn" fill="#000000" width="33" height="33" viewBox="-7.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" transform="rotate(-45)">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                 <g id="SVGRepo_iconCarrier">
