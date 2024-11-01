@@ -4,7 +4,7 @@ education
 
 .education{
     height: calc(100vh - 278px);
-    width: min-content;
+    margin: 130px 0;
 }
 
 /*
@@ -12,6 +12,7 @@ training program
 */
 
 .training-program__title{
+    color: #121212 !important;
     width: 90%;
     margin-bottom: 30px;
     letter-spacing: 2px;

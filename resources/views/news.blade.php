@@ -3,7 +3,6 @@
 @section('styles')
     <link rel="stylesheet" href="/css/news.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="/css/response/news-response.css?v=<?= time(); ?>">
-    css/about.css?v=<?= time(); ?>
 @endsection
 
 @section('content')

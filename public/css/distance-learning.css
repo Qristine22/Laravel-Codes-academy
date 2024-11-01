@@ -12,6 +12,8 @@ videos
     align-items: flex-start;
     justify-content: center;
     margin: 0 -20px;
+    background-color: var(--white);
+    color: var(--black);
 }
 .videos__item{
     flex-direction: column;
