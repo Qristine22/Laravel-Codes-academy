@@ -106,8 +106,8 @@
                             </svg></button>
                     </div>
                     <div class="dark-light-buttons">
-                        <button class="lightButton"></button>
-                        <button class="darkButton"></button>
+                        <button class="lightButton">.</button>
+                        <button class="darkButton">.</button>
                     </div>
                 </div>
             </div>
