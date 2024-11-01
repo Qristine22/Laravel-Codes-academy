@@ -994,6 +994,7 @@ courses
     position: absolute;
     top: 20px;
     left: 50%;
+    margin: 0 5px;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
