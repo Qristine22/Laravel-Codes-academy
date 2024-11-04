@@ -83,15 +83,13 @@
                         <div class="staff__block_item">
                             <div class="staff__item_top">
                                 <h3 class="staff__item_bold text-20">{{ $item->{'position_'.app()->getLocale()} }}</h3>
-                               <h4 class="staff__item_bold text-18 {{ empty($item->{'name_'.app()->getLocale()}) ? 'hidden' : '' }}">
-                                   {!! $item->{'name_'.app()->getLocale()} ?? 'No name available' !!}
-                               </h4>
+                                <h4 class="staff__item_bold text-18">
+                                    {!! $item->{'name_'.app()->getLocale()} ?? ' ' !!}
+                                </h4>
                             </div>
                             <div class="staff__item_bot">
                                 <span class="staff__item_info text-18">{{ $item->phone }}</span>
-                             <span class="staff__item_info text-18 {{ empty($item->mail) ? 'hidden' : '' }}">
-                                 {{ $item->mail ?? 'No email available' }}
-                             </span>
+                                <span class="staff__item_info text-18">{{ $item->mail ?? ' ' }}</span>
                             </div>
                         </div>
                     @endforeach

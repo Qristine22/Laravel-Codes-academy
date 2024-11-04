@@ -209,7 +209,7 @@ new info
 .swiper__arrow{
     height: 70px;
     width: 70px;
-    color: var(--black);
+    color: #f2f2f2;
 }
 .swiper__arrow:hover{
     background-color: #71717185;
