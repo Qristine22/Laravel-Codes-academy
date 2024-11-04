@@ -106,8 +106,12 @@
                             </svg></button>
                     </div>
                     <div class="dark-light-buttons">
-                        <button class="lightButton">.</button>
-                        <button class="darkButton">.</button>
+                        <button class="lightButton">
+                            <span class="hidden">.</span>
+                        </button>
+                        <button class="darkButton">
+                            <span class="hidden">.</span>
+                        </button>
                     </div>
                 </div>
             </div>
