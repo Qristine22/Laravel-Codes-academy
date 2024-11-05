@@ -913,8 +913,16 @@ link pdfs
     -o-transition: all ease .3s;
 }
 .link__pdf_img{
-    width: 50% !important;
+    width: 100%;
+    max-width: 200px;
     min-width: 20px;
+}
+@media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+        width: 100%;
+        max-width: 200px;
+        min-width: 20px;
+    }
 }
 .link__pdf:hover,
 .pdf__item:hover{
@@ -1025,7 +1033,7 @@ courses
     position: absolute;
     width: 40px;
     height: 2px;
-    background-color: var(--light-brown);
+    background-color: var(--dark-brown);
     right: 0;
     transform: translateX(100%);
     -webkit-transform: translateX(100%);

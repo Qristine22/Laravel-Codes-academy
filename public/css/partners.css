@@ -105,6 +105,9 @@ partner
 .partners__bot{
     border-top: 1px solid var(--dark-yellow);
 }
+.partners__bot .wrapper .link__pdfs .link__pdf span{
+    color: #121212;
+}
 .about__link{
     text-transform: uppercase;
     color: var(--dark-yellow);
