@@ -88,10 +88,12 @@
                                </h4>
                             </div>
                             <div class="staff__item_bot">
-                                <span class="staff__item_info text-18">{{ $item->phone }}</span>
-                             <span class="staff__item_info text-18 {{ empty($item->mail) ? 'hidden' : '' }}">
-                                 {{ $item->mail ?? 'No email available' }}
-                             </span>
+                                <span class="staff__item_info text-18 {{ empty($item->phone) ? 'hidden' : '' }}">
+                                    {{ $item->phone ?? 'No phone available' }}
+                                </span>
+                                <span class="staff__item_info text-18 {{ empty($item->mail) ? 'hidden' : '' }}">
+                                    {{ $item->mail ?? 'No email available' }}
+                                </span>
                             </div>
                         </div>
                     @endforeach
