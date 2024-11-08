@@ -13,7 +13,7 @@
     <main aria-label="rectors-decrees">
         <section class="pdfs section-text section-top">
             <div class="wrapper">
-                <h3 class="pdfs__title">@lang('about.rector.decrees')</h3>
+                <h2 class="pdfs__title">@lang('about.rector.decrees')</h2>
                 <div class="pdfs__cont flex">
                     @foreach ($decrees as $item)
 

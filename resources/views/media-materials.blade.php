@@ -16,7 +16,7 @@
                 <div class="materials__cont">
                     @foreach($additionalMaterials as $additionalMaterial)
                         <div class="materials__item">
-                            <h3 class="material__title text-20">{{ $additionalMaterial->{'name_'.app()->getLocale()} }}</h3>
+                            <h2 class="material__title text-20">{{ $additionalMaterial->{'name_'.app()->getLocale()} }}</h3>
                             <ul class="material__list">
                                 @foreach($additionalMaterial->links as $link)
                                     <li class="material__list_item">

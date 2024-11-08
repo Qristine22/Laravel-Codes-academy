@@ -5,22 +5,24 @@
             <div class="last-news__items flex">
                 @foreach($lastNews as $item)
                     <div class="last-news__item">
-                        <div class="last-news__item_top">
-                            <a href="{{ route('newsSingle', ['id' => $item->id]) }}" aria-label="{{ $item->id }}">
-                                <img class="img news__item_img" src="{{ Storage::url($item->bg) }}" alt="{{ $item->id }}">
-                            </a>
-                        </div>
-                        <div class="last-news__item_cont">
-                            <a class="last-news__item_link" href="{{ route('newsSingle', ['id' => $item->id]) }}" aria-label="{{ $item->id }}">
-                                {{ $item->{'title_'.app()->getLocale()} }}
-                            </a>
-                            <div class="read-more__cont">
-                                <a aria-label="{{ $item->id }}"  class="read-more" href="{{ route('newsSingle', ['id' => $item->id]) }}" aria-label="read-more">
-                                    @lang('main.read-more')
-                                </a>
-                                <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="longArrow">
+                        <a href="{{ route('newsSingle', ['id' => $item->id]) }}" aria-label="{{ $item->id }}">
+                            <div class="last-news__item_top">
+                                <div>
+                                    <img class="img news__item_img" src="{{ Storage::url($item->bg) }}" alt="{{ $item->id }}">
+                                </div>
                             </div>
-                        </div>
+                            <div class="last-news__item_cont">
+                                <p class="last-news__item_link">
+                                    {{ $item->{'title_'.app()->getLocale()} }}
+                                </p>
+                                <div class="read-more__cont">
+                                    <p class="read-more">
+                                        @lang('main.read-more')
+                                    </p>
+                                    <img class="read-more__arrow" src="/media/img/icons/longArrow.png" alt="Arrow Icon">
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 @endforeach
             </div>

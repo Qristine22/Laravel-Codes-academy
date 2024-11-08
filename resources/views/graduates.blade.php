@@ -33,7 +33,7 @@
                     {{-- judges --}}
                     @if(count($judgeGraduates) > 0)
                         <div class="graduates__item">
-                            <h3 class="members__title graduates__title text-26">@lang('about.graduates.judges')</h3>
+                            <h2 class="members__title graduates__title text-26">@lang('about.graduates.judges')</h2>
                             <div class="graduates__items flex">
                                 @if(app()->getLocale() == 'am')
                                     @php
@@ -77,7 +77,7 @@
                     {{-- prosecutors --}}
                     @if(count($prosecutorGraduates) > 0)
                         <div class="graduates__item">
-                            <h3 class="members__title graduates__title text-26">@lang('about.graduates.prosecutors')</h3>
+                            <h2 class="members__title graduates__title text-26">@lang('about.graduates.prosecutors')</h2>
                             <div class="graduates__items flex">
                                 @if(app()->getLocale() == 'am')
                                     @php
@@ -121,7 +121,7 @@
                     {{-- investigators --}}
                     @if(count($investigatorGraduates) > 0)
                         <div class="graduates__item">
-                            <h3 class="members__title graduates__title text-26">@lang('about.graduates.investigators')</h3>
+                            <h2 class="members__title graduates__title text-26">@lang('about.graduates.investigators')</h2>
                             <div class="graduates__items flex">
                                 @if(app()->getLocale() == 'am')
                                 @php

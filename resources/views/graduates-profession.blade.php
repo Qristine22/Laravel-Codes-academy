@@ -15,7 +15,7 @@
             <div class="wrapper">
                 <div class="graduates__cont">
                     <div class="graduates__item">
-                        <h3 class="members__title graduates-profession__title text-26">
+                        <h2 class="members__title graduates-profession__title text-26">
                             @if($position == 'judge')
                                 @lang('about.graduates.judges') - {{ $year  }}
                             @endif
@@ -33,7 +33,7 @@
                                         alt="{{ $graduate->name }}">
                                     <div class="members__item_cont">
                                         <h3 class="member__title">{{ $graduate->name }}</h3>
-                                        <h4 class="member__subtitle">{{ $graduate->info }}</h4>
+                                        <h4 class="member__subtitle {{ empty($graduate->info) ? 'hidden' : '' }}">{{ $graduate->info }}</h4>
                                     </div>
                                 </div>
                             @endforeach

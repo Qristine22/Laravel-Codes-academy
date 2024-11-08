@@ -5,7 +5,7 @@
             <div class="footer__sites">
                 @foreach($sitesLinks as $sitesLink)
                     <a class="footer__link" href="{{ $sitesLink->link }}" aria-label="{{ $sitesLink->id }}" title="{{ $sitesLink->id }}">
-                        <img src="{{ Storage::url($sitesLink->icon) }}" alt="icon">
+                        <img src="{{ Storage::url($sitesLink->icon) }}" alt="{{ $sitesLink->id }}">
                     </a>
                 @endforeach
             </div>
