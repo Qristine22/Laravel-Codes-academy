@@ -9,6 +9,7 @@
     --section: #F7F7F7;
     --admin-active: #DDCDB8;
     --pdf-link:#FBF3EF;
+    --header-backgrorund: #ffffff
 }
 
 [data-theme='dark'] {
@@ -16,12 +17,22 @@
     --black: #ffffff;
     --pink: #C9B695;
     --brown: #FFFFFF;
-    --dark-brown: #c65e2f;
+    --dark-brown: #cd6b3f;
     --light-brown: #AF521D;
     --dark-yellow: #C9B695;
     --section: #121212;
     --admin-active: #DDCDB8;
     --pdf-link:#AF521D;
+    --header-backgrorund: linear-gradient(
+        0deg,
+        rgba(18, 18, 18, 1) 0%,       /* #121212 - start */
+        rgba(18, 18, 18, 1) 20%,      /* Keep #121212 for a larger portion */
+        rgba(24, 24, 24, 1) 40%,      /* Slightly lighter dark */
+        rgba(30, 30, 30, 1) 60%,      /* Midway point */
+        rgba(24, 24, 24, 1) 80%,      /* Slightly lighter dark */
+        rgba(18, 18, 18, 1) 100%      /* End with #121212 */
+    );
+
 }
 *::selection {
     background-color: var(--brown);

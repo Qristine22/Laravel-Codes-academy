@@ -16,13 +16,16 @@
                                 <img class="home__logo_img" src="{{ Storage::url($home->logo) }}" alt="mainLogo">
                             </div>
                             <h1 class="home__title">{!! $home->{'title_' . app()->getLocale()} !!}</h1>
-                            <form class="home__form" action="{{ route('search') }}" method="GET">
-                                <button class="home__form_btn">
-                                    <img class="home__search_icon" src="/media/img/icons/search.png" alt="search">
-                                    <span class="sr-only">Search</span>
-                                </button>
-                                <input class="inp home__form_inp" name="search" type="text" placeholder="@lang('home.search')">
-                            </form>
+                        <form class="home__form" action="{{ route('search') }}" method="GET">
+                            <label for="search-input">
+                                <span class="sr-only">Search</span>
+                            </label>
+                            <input id="search-input" class="inp home__form_inp" name="search" type="text" placeholder="@lang('home.search')">
+                            <button class="home__form_btn">
+                                <img class="home__search_icon" src="/media/img/icons/search.png" alt="Icon of Searching">
+                                <span class="sr-only">Search</span>
+                            </button>
+                        </form>
                         </div>
                     </div>
                 </div>

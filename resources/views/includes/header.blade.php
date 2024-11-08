@@ -18,11 +18,11 @@
             </div>
             <div class="dark-light-buttons">
                 <span class="mode-text">@lang('main.color-mode')</span>
-                <button class="lightButton">
-                    <span class="hidden">.</span>
+                <button id="lightBtn" aria-label="Hidden Button" class="lightButton">
+                    <span class="hidden">Hidden Button</span>
                     </button>
-                <button class="darkButton">
-                    <span class="hidden">.</span>
+                <button id="DarkBtn" aria-label="Hidden Button" class="darkButton">
+                    <span class="hidden">Hidden Button</span>
                     </button>
             </div>
         </div>
@@ -52,7 +52,7 @@
                                 @if (Request::is($header->link, $header->link . '/*', 'search/' . $header->link . '/*',
                                 'search/' . $header->link . 's/*'))header__link-active @endif"
                                 aria-label="{{ $header->{'name_' . app()->getLocale()} }}"
-                                title="{{ $header->{'name_' . app()->getLocale()} }}"
+                                title="{{ $header->{'id' . app()->getLocale()} }}"
                                 href="{{ env('APP_URL') . $header->link }}">
                                 {{ $header->{'name_' . app()->getLocale()} }}
                             </a>
@@ -106,11 +106,11 @@
                             </svg></button>
                     </div>
                     <div class="dark-light-buttons">
-                        <button class="lightButton">
-                            <span class="hidden">.</span>
+                        <button id="LightBtnMobile" aria-label="Hidden Button" class="lightButton">
+                            <span class="hidden">Hidden Button</span>
                         </button>
-                        <button class="darkButton">
-                            <span class="hidden">.</span>
+                        <button id="DarkBtnMobile" aria-label="Hidden Button" class="darkButton">
+                            <span class="hidden">Hidden Button</span>
                         </button>
                     </div>
                 </div>
@@ -126,49 +126,48 @@
 
 
 {{-- mobile header ************************************************************************** --}}
-<div class="wrapper" role="navigation">
-    <nav class="mobile-nav" aria-label="mobile-nav">
+    <div class="wrapper" role="navigation">
+         <nav class="mobile-nav" aria-label="mobile-nav">
+            {{-- mobile navigation --}}
+            <ul class="header-mob__list">
+                @foreach ($headers as $header)
+                    <li class="header-mob__item">
+                        <a class="header__link{{ count($header->subheaders) ? '' : ' header-mob__item-single' }}{{ Request::is($header->link, $header->link . '/*', 'search/' . $header->link . '/*', 'search/' . $header->link . 's/*') ? ' header__menu_link-active' : '' }}"
+                            href="{{ env('APP_URL') . $header->link }}">
+                            {{ $header->{'name_' . app()->getLocale()} }}
+                        </a>
 
-        {{-- mobile navigation --}}
-        <ul class="header-mob__list">
-            @foreach ($headers as $header)
-                <li class="header-mob__item">
-                    <a class="header__link{{ count($header->subheaders) ? '' : ' header-mob__item-single' }}{{ Request::is($header->link, $header->link . '/*', 'search/' . $header->link . '/*', 'search/' . $header->link . 's/*') ? ' header__menu_link-active' : '' }}"
-                        href="{{ env('APP_URL') . $header->link }}">
-                        {{ $header->{'name_' . app()->getLocale()} }}
-                    </a>
+                        @if (count($header->subheaders))
+                            {{-- mobile navigation arrow --}}
+                            <div class="header-mob__arrow">
+                                <img class="img" src="/media/img/icons/downArrow.png" alt="downArrow">
+                            </div>
 
-                    @if (count($header->subheaders))
-                        {{-- mobile navigation arrow --}}
-                        <div class="header-mob__arrow">
-                            <img class="img" src="/media/img/icons/downArrow.png" alt="downArrow">
-                        </div>
-
-                        {{-- mobile navigation menu --}}
-                        <ul class="header-mob__menu_list">
-                            @foreach ($header->subheaders as $subheader)
-                                <li class="header-mob__menu_item">
-                                    <a class="header__menu_link @if (Request::is($subheader->link, $subheader->link . '/*'))header__menu_link-active @endif"
-                                        href="{{ env('APP_URL') . $subheader->link }}">
-                                        {{ $subheader->{'name_' . app()->getLocale()} }}
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    @endif
-                </li>
-            @endforeach
+                            {{-- mobile navigation menu --}}
+                            <ul class="header-mob__menu_list">
+                                @foreach ($header->subheaders as $subheader)
+                                    <li class="header-mob__menu_item">
+                                        <a class="header__menu_link @if (Request::is($subheader->link, $subheader->link . '/*'))header__menu_link-active @endif"
+                                            href="{{ env('APP_URL') . $subheader->link }}">
+                                            {{ $subheader->{'name_' . app()->getLocale()} }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </li>
+                @endforeach
 
 
-            {{-- languages --}}
-            <li class="header-mob__item flex">
-                <a class="header__lang  @if (app()->getLocale() == 'am') header__lang-active @endif"
-                    href="{{ route('lang', ['locale' => 'am']) }}" aria-label="arm">հայ</a>
-                <a class="header__lang  @if (app()->getLocale() == 'en') header__lang-active @endif"
-                    href="{{ route('lang', ['locale' => 'en']) }}" aria-label="eng">eng</a>
-                <a class="header__lang  @if (app()->getLocale() == 'ru') header__lang-active @endif"
-                    href="{{ route('lang', ['locale' => 'ru']) }}" aria-label="rus">pyc</a>
-            </li>
-        </ul>
-</nav>
+                {{-- languages --}}
+                <li class="header-mob__item flex">
+                    <a class="header__lang  @if (app()->getLocale() == 'am') header__lang-active @endif"
+                        href="{{ route('lang', ['locale' => 'am']) }}" aria-label="arm">հայ</a>
+                    <a class="header__lang  @if (app()->getLocale() == 'en') header__lang-active @endif"
+                        href="{{ route('lang', ['locale' => 'en']) }}" aria-label="eng">eng</a>
+                    <a class="header__lang  @if (app()->getLocale() == 'ru') header__lang-active @endif"
+                        href="{{ route('lang', ['locale' => 'ru']) }}" aria-label="rus">pyc</a>
+                    </li>
+                </ul>
+        </nav>
     </div>

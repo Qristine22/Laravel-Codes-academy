@@ -210,8 +210,7 @@ header
 
 .header{
     width: 100%;
-    background: var(--section);
-    /*background: linear-gradient(0deg, rgba(255,250,248,1) 0%, rgba(255,250,248,1) 57%, rgba(237,228,216,1) 71%, rgba(226,214,195,1) 84%, rgba(201,182,149,1) 100%);*/
+    background: var(--header-backgrorund);
     display: flex;
     align-items: stretch;
     flex-direction: column;
@@ -1250,10 +1249,10 @@ footer
 .dark-light-buttons .lightButton::before {
     content: '▼';
     display: inline-block;
-    color: #121212;
+    color: #181818;
     font-size: 12px;
     position: absolute;
-    top: 12px;
+    top: 12.3px;
 }
 .dark-light-buttons .darkButton::before {
     content: '▼';

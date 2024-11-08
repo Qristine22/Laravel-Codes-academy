@@ -31,7 +31,7 @@
                 <div class="mass-media__cont">
                     @foreach($massMedia as $massMedium)
                         <div class="mass-media__item">
-                            <h3 class="text-26">{{ $massMedium->{'text_'.app()->getLocale()} }}</h3>
+                            <h2 class="text-26">{{ $massMedium->{'text_'.app()->getLocale()} }}</h2>
                             <div class="mass-media__list">
                                 @foreach($massMedium->links as $link)
                                     <div class="mass-media__list_item">

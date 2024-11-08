@@ -14,12 +14,12 @@
         <section class="lecture-single section section-top">
             <div class="wrapper">
                 <div class="lecture__top">
-                    <h3 class="lecture__title text-20">
+                    <h2 class="lecture__title text-20">
                         <span class="lecture__strong">
                             @lang('library.video-lectures.topic')
                         </span>
                         {{ $videoLecture->{'topic_' . app()->getLocale()} }}
-                    </h3>
+                    </h2>
                     <p class="lecture__title text-20">
                         <span class="lecture__strong">
                             @lang('library.video-lectures.lecturer')

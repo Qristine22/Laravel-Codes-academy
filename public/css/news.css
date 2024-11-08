@@ -91,7 +91,7 @@ new single
 }
 .news__home_cont{
     width: 100%;
-    background-color: var(--pink);
+    background-color: var(--dark-brown);
     position: absolute;
     left: 0;
     bottom: 0;
@@ -110,7 +110,7 @@ new single
 }
 .news__home_title{
     position: relative;
-    color: var(--dark-brown);
+    color: #ffffff;
     font-size: 2.188rem;
     font-weight: 700;
     text-transform: uppercase;

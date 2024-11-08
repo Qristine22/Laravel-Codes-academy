@@ -15,7 +15,7 @@
                             {!! $contactPage->map !!}
                         </div>
                         <div class="contacts__info">
-                            <h3 class="contacts__title text-26">@lang('contact.contacts')</h3>
+                            <h2 class="contacts__title text-26">@lang('contact.contacts')</h3>
                             <div class="contacts__about">
                                 <span class="contacts__about_name text-20">@lang('contact.address')</span>
                                 <span class="contacts__about_info text-20">
@@ -40,9 +40,11 @@
                         <form class="contacts__form" action="{{ route('sendEmail') }}" method="POST">
                             @csrf
                             <div class="contacts__form_inps flex">
-                                <input class="inp text-18 contacts__inp contacts__inp-top" type="text" name="name"
+                                <label for='nameId'><span class='hidden'>hidden</span></label>
+                                <input id=nameId class="inp text-18 contacts__inp contacts__inp-top" type="text" name="name"
                                     placeholder="@lang('contact.name-placeholder')" value="{{ old('name') }}">
-                                <input class="inp text-18 contacts__inp contacts__inp-top" type="text" name="mail"
+                                <label for='mailId'><span class='hidden'>hidden</span></label>
+                                <input id='mailId' class="inp text-18 contacts__inp contacts__inp-top" type="text" name="mail"
                                     placeholder="@lang('contact.mail-placeholder')" value="{{ old('mail') }}">
                             </div>
                             @error('name')
@@ -52,14 +54,16 @@
                                 <div class="text-18">{{ $message }}</div>
                             @enderror
                             <div class="contacts__form_inps flex">
-                                <input class="inp text-18 contacts__inp" type="text" name="topic"
+                                <label for='topicId'><span class='hidden'>hidden</span></label>
+                                <input id='topicId' class="inp text-18 contacts__inp" type="text" name="topic"
                                     placeholder="@lang('contact.topic-placeholder')" value="{{ old('topic') }}">
                             </div>
                             @error('topic')
                                 <div class="text-18">{{ $message }}</div>
                             @enderror
                             <div class="contacts__form_inps flex">
-                                <textarea class="contacts__textarea inp text-18 contacts__inp" name="content"
+                                <label for='contactsId'><span class='hidden'>hidden</span></label>
+                                <textarea id="contactsId" class="contacts__textarea inp text-18 contacts__inp" name="content"
                                     placeholder="@lang('contact.content-placeholder')">{{ old('content') }}</textarea>
                             </div>
                             @error('content')
