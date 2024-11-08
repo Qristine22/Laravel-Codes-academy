@@ -18,7 +18,9 @@
                             <h1 class="home__title">{!! $home->{'title_' . app()->getLocale()} !!}</h1>
                         <form class="home__form" action="{{ route('search') }}" method="GET">
                             <label for="search-input">
-                                <span class="sr-only">Search</span>
+                                <span class="sr-only">
+                                    <span class="hidden">Search</span>
+                                </span>
                             </label>
                             <input id="search-input" class="inp home__form_inp" name="search" type="text" placeholder="@lang('home.search')">
                             <button class="home__form_btn">
