@@ -56,7 +56,7 @@
                                             aria-label="{{ $img->id }}"
                                             data-caption="{{ $gallery->{'text_'.app()->getLocale()} }}"
                                             href="{{ Storage::url($img->img) }}">
-                                                 <img class="gallery__img img" src="{{ Storage::url($img->img) }}" alt="{{ $gallery->{'title_'.app()->getLocale()} ?? 'Gallery Image ' . $img->id }}">
+                                        <img class="gallery__img img" src="{{ Storage::url($img->img) }}" alt="{{ $gallery->{'title_'.app()->getLocale()} ?? 'Gallery Image ' . $img->id }}">
                                         </a>
                                         <span class="gallery__date text-20">{{ $gallery->full_date }}</span>
                                     </div>
@@ -68,8 +68,7 @@
                                         aria-label="{{ $gallery->imgs[0]->id }}"
                                         data-caption="{{ $gallery->{'text_'.app()->getLocale()} }}"
                                         href="{{ Storage::url($gallery->imgs[0]->img) }}">
-                                                <img class="gallery__img img" src="{{ Storage::url($img->img) }}" alt="{{ $gallery->{'title_'.app()->getLocale()} ?? 'Gallery Image ' . $img->id }}">
-                                    </a>
+                                        <img class="gallery__img img" src="{{ Storage::url($gallery->imgs[0]->img) }}" alt="{{ $gallery->{'title_'.app()->getLocale()} ?? 'Gallery Image ' . $gallery->imgs[0]->id }}">                                    </a>
                                     <span class="gallery__date text-20">{{ $gallery->full_date }}</span>
                                 </div>
                             @endif
