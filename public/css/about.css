@@ -18,7 +18,7 @@
 .members__items{
     flex-wrap: wrap;
     justify-content: center;
-    align-items: baseline;
+    align-items: flex-start;
     margin: 0 -15px;
 }
 .members__item{
@@ -220,7 +220,7 @@ graduates
 .swiper{
     padding-top: 20px;
 }
-.graduate__items{
+.graduates__items{
     align-items: self-start !important;
 }
 .graduates__item{
@@ -499,15 +499,17 @@ mass media
 .more__graduate{
     position: relative;
 }
-.more__graduate .members__item:hover .members__item_cont{
+.more__graduate a .members__item_cont{
     position: absolute;
 }
 
-.more__graduate .members__item_cont span {
+.more__graduate a .members__item_cont span {
     position: absolute;
     top: 35%;
     left: 35%;
     opacity: 0;
+    color: #ffffff;
+    font-size: 50px;
     transition: opacity 0.3s ease; /* smooth transition */
 }
 
