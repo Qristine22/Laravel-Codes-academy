@@ -260,7 +260,7 @@ graduates
 .graduates-profession__items{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: self-start;
     margin: 0 -10px;
 }
 .graduates-profession__title{
