@@ -69,7 +69,7 @@
         margin-top: 0;
     }
     .last-news__item_top{
-        max-height: 137px;
+        max-height: 130px;
     }
 }
 @media only screen and (max-width: 1210px) {
@@ -365,6 +365,9 @@
     .text-26 {
         font-size: 1.063rem;
         line-height: 1.563rem;
+    }
+    .last-news__item_top{
+        max-height: 130px;
     }
 }
 @media only screen and (max-width: 530px) {

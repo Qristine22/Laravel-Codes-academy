@@ -62,7 +62,7 @@
                                                 <img class="img" src="{{ Storage::url($judgeGraduates[5]->img) }}"
                                                      alt="{{ $judgeGraduates[5]->name }}">
                                                 <div class="members__item_cont">
-                                                    <span>+{{ count($judgeGraduates) }}</span>
+                                                    <span>+{{ count($judgeGraduates) }}&#8594;</span>
                                                 </div>
                                             </a>
                                         </div>
@@ -106,7 +106,7 @@
                                                 <img class="img" src="{{ Storage::url($prosecutorGraduates[5]->img) }}"
                                                     alt="{{ $prosecutorGraduates[5]->name }}">
                                                 <div class="members__item_cont members__item_count">
-                                                    <span>+{{ count($prosecutorGraduates) }}</span>
+                                                    <span>+{{ count($prosecutorGraduates) }}&#8594;</span>
                                                 </div>
                                             </a>
                                         </div>
@@ -150,7 +150,7 @@
                                                <img class="img" src="{{ Storage::url($investigatorGraduates[5]->img) }}"
                                                      alt="{{ $investigatorGraduates[5]->name }}">
                                                 <div class="members__item_cont members__item_count">
-                                                    <span>+{{ count($investigatorGraduates) }}</span>
+                                                    <span>+{{ count($investigatorGraduates) }}&#8594;</span>
                                                 </div>
                                             </a>
                                         </div>
