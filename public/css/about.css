@@ -220,6 +220,9 @@ graduates
 .swiper{
     padding-top: 20px;
 }
+.graduate__items{
+    align-items: self-start !important;
+}
 .graduates__item{
     margin-top: 20px;
 }
@@ -493,10 +496,17 @@ mass media
     word-break: break-all;
 }
 
+.more__graduate{
+    position: relative;
+}
+.more__graduate .members__item:hover .members__item_cont{
+    position: absolute;
+}
+
 .more__graduate .members__item_cont span {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 35%;
+    left: 35%;
     opacity: 0;
     transition: opacity 0.3s ease; /* smooth transition */
 }
