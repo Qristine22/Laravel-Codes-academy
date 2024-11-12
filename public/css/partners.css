@@ -57,6 +57,7 @@ partners
     opacity: 1;
 }
 .partner__name{
+    word-break: auto-phrase;
     width: calc(100% + 140px);
     margin: 20px 0 0 -70px;
     color: var(--brown);
