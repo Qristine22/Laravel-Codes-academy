@@ -61,7 +61,7 @@
                                             <a href="{{ route('graduatesJudges', ['year' => $year]) }}">
                                                 <img class="img" src="{{ Storage::url($judgeGraduates[5]->img) }}"
                                                      alt="{{ $judgeGraduates[5]->name }}">
-                                                <div class="members__item_cont members__item_count">
+                                                <div class="members__item_cont">
                                                     <span>+{{ count($judgeGraduates) }}</span>
                                                 </div>
                                             </a>
