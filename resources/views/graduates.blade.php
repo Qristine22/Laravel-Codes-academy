@@ -57,10 +57,10 @@
                                         </div>
                                     @endfor
                                     @if(!@empty($judgeGraduates[5]))
-                                        <div class="graduate__item">
-                                            <img class="img" src="{{ Storage::url($judgeGraduates[5]->img) }}"
-                                                alt="{{ $judgeGraduates[5]->name }}">
+                                        <div class="graduate__item more__graduate">
                                             <a href="{{ route('graduatesJudges', ['year' => $year]) }}">
+                                                <img class="img" src="{{ Storage::url($judgeGraduates[5]->img) }}"
+                                                     alt="{{ $judgeGraduates[5]->name }}">
                                                 <div class="members__item_cont members__item_count">
                                                     <span>+{{ count($judgeGraduates) }}</span>
                                                 </div>
@@ -101,10 +101,10 @@
                                         </div>
                                     @endfor
                                     @if(!@empty($prosecutorGraduates[5]))
-                                        <div class="graduate__item">
-                                            <img class="img" src="{{ Storage::url($prosecutorGraduates[5]->img) }}"
-                                                alt="{{ $prosecutorGraduates[5]->name }}">
+                                        <div class="graduate__item more__graduate">
                                             <a href="{{ route('graduatesProsecutors', ['year' => $year]) }}">
+                                                <img class="img" src="{{ Storage::url($prosecutorGraduates[5]->img) }}"
+                                                    alt="{{ $prosecutorGraduates[5]->name }}">
                                                 <div class="members__item_cont members__item_count">
                                                     <span>+{{ count($prosecutorGraduates) }}</span>
                                                 </div>
@@ -145,10 +145,10 @@
                                     </div>
                                 @endfor
                                     @if(!@empty($investigatorGraduates[5]))
-                                        <div class="graduate__item">
-                                            <img class="img" src="{{ Storage::url($investigatorGraduates[5]->img) }}"
-                                                alt="{{ $investigatorGraduates[5]->name }}">
+                                        <div class="graduate__item more__graduate">
                                             <a href="{{ route('graduatesInvestigators', ['year' => $year]) }}">
+                                               <img class="img" src="{{ Storage::url($investigatorGraduates[5]->img) }}"
+                                                     alt="{{ $investigatorGraduates[5]->name }}">
                                                 <div class="members__item_cont members__item_count">
                                                     <span>+{{ count($investigatorGraduates) }}</span>
                                                 </div>
