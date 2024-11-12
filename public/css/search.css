@@ -43,4 +43,5 @@
 .search__link:hover{
     border: 1px solid var(--dark-yellow);
     background-color: var(--pink);
+    color: #121212;
 }

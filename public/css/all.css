@@ -44,7 +44,7 @@ img {
     margin-top: 150px;
 }
 .section__min-height{
-    min-height: calc(100vh - 278px);
+    min-height: calc(100vh - 263px);
 }
 .img{
     width: 100%;
