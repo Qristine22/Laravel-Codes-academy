@@ -22,7 +22,7 @@
                 <div class="new-images__top flex">
                     @if (count($internationals) > 2)
                         <div class="swiper">
-                            <div class="swiper-wrapper">
+                            <div class="swiper-wrapper partners__wrapper">
                                 @foreach ($internationals as $international)
                                     <div class="swiper-slide new-top__img partner__item">
                                         <a class="partners__link"
@@ -39,7 +39,7 @@
                         </div>
                     @else
                         <div class="swiper">
-                            <div class="swiper-wrapper">
+                            <div class="swiper-wrapper partners__wrapper">
                                 @foreach ($internationals as $international)
                                     <div class="swiper-slide new-top__img partner__item">
                                         <a class="partners__link"
@@ -64,7 +64,7 @@
                 <div class="new-images__top flex">
                     @if (count($foreigns) > 5)
                         <div class="swiper">
-                            <div class="swiper-wrapper">
+                            <div class="swiper-wrapper partners__wrapper">
                                 @foreach ($foreigns as $foreign)
                                     <div class="swiper-slide partner__item">
                                         <a class="partners__link"
@@ -81,7 +81,7 @@
                         </div>
                     @else
                         <div class="swiper">
-                            <div class="swiper-wrapper">
+                            <div class="swiper-wrapper partners__wrapper">
                                 @foreach ($foreigns as $foreign)
                                     <div class="swiper-slide partner__item">
                                         <a class="partners__link"
@@ -106,7 +106,7 @@
                 <div class="new-images__top flex">
                     @if (count($armArtsakhs) > 2)
                         <div class="swiper">
-                            <div class="swiper-wrapper">
+                            <div class="swiper-wrapper partners__wrapper">
                                 @foreach ($armArtsakhs as $armArtsakh)
                                     <div class="swiper-slide new-top__img partner__item">
                                         <a class="partners__link"
@@ -123,7 +123,7 @@
                         </div>
                     @else
                         <div class="swiper">
-                            <div class="swiper-wrapper">
+                            <div class="swiper-wrapper partners__wrapper">
                                 @foreach ($armArtsakhs as $armArtsakh)
                                     <div class="swiper-slide partner__item">
                                         <a class="partners__link"
