@@ -410,7 +410,7 @@
     }
     .graduate-profession__item{
         width: calc(33.3% - 10px);
-        margin: 5px;
+        margin: 6px;
     }
     .graduates-profession__items{
         margin: 0 -5px;
