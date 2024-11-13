@@ -972,6 +972,7 @@ courses
     overflow: unset;
 }
 .courses__item{
+    max-height: 352px;
     opacity: 0.5;
     width: 100%;
     box-shadow: 0px 0px 8px 2px rgb(0 0 0 / 30%);
