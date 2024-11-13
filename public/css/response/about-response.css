@@ -108,7 +108,7 @@
         padding: 10px;
     }
     .member__title{
-        font-size: 1.25rem;
+        font-size: 0.9rem;
     }
     .member__subtitle{
         font-size: 0.813rem;
@@ -136,6 +136,9 @@
     .graduates__cont_item{
         width: calc(25% - 10px);
     }
+    .member__title{
+        font-size: 0.7rem;
+    }
     .gallery__item{
         width: calc(33% - 20px);
         margin: 10px;
@@ -161,6 +164,7 @@
     }
     .graduate__item{
         width: calc(25% - 10px);
+        margin: 7px;
     }
     .graduate-profession__item{
         width: calc(25% - 20px);
@@ -320,7 +324,7 @@
 }
 @media only screen and (max-width: 505px) {
     .member__title {
-        font-size: 0.875rem;
+        font-size: 0.65rem;
     }
     .member__subtitle {
         font-size: 0.625rem;
@@ -391,7 +395,7 @@
         padding: 0px 5px;
     }
     .member__title {
-        font-size: 0.625rem;
+        font-size: 0.54rem;
     }
     .member__subtitle {
         font-size: 0.5rem;
@@ -406,7 +410,7 @@
     }
     .graduate-profession__item{
         width: calc(33.3% - 10px);
-        margin: 5px;
+        margin: 6px;
     }
     .graduates-profession__items{
         margin: 0 -5px;

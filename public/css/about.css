@@ -153,7 +153,9 @@ member
 /*
 rector
 */
-
+.rector-section{
+    min-height: calc(100vh - 276px);
+}
 .rector__inner{
     margin-top: 30px;
 }
@@ -221,6 +223,8 @@ graduates
     padding-top: 20px;
 }
 .graduates__items{
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: self-start !important;
 }
 .graduates__item{
@@ -260,6 +264,7 @@ graduates
 .graduates-profession__items{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: self-start;
     margin: 0 -10px;
 }

@@ -71,6 +71,9 @@ news
     margin-right: 100px;
 }
 .new__read-more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.125rem;
 }
 .new-images__top .swiper{

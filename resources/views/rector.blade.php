@@ -11,16 +11,18 @@
 
 @section('content')
     <main aria-label="rector">
-        <section class="section-text section-top">
-            <div class="wrapper">
-                <div class="section-text__cont">
-                    <div class="rector__cont">
-                        {!! $text->{'text_'.app()->getLocale()} !!}
+       <section class='rector-section'>
+            <section class="section-text section-top">
+                <div class="wrapper">
+                    <div class="section-text__cont">
+                        <div class="rector__cont">
+                            {!! $text->{'text_'.app()->getLocale()} !!}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        @include('includes.about.rector.rector-menu')
+            @include('includes.about.rector.rector-menu')
+        </section>
     </main>
 @endsection
