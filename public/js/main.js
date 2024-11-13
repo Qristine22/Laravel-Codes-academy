@@ -120,6 +120,7 @@ const updateFontSize = (sizeChange) => {
     html.style.fontSize = `${currentFontSize}px`;
     sizeSpan.innerText = `${currentFontSize}PX`;
     sessionStorage.setItem("current-font-size", currentFontSize);
+    checkFontSize();
 };
 
 downButtons.forEach(button => {
@@ -168,3 +169,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+function checkFontSize() {
+    const fontSize = sessionStorage.getItem("current-font-size");
+    const partners = document.querySelectorAll('.partners__wrapper .partner__item .partner__name');
+    for(partner of partners){
+        if (parseFloat(fontSize) > 16 && window.matchMedia("(max-width: 1100px)").matches) {
+            partner.style.display = 'none';
+        } else {
+            partner.style.display = 'flex';
+        }
+    }
+}
+window.addEventListener('resize', checkFontSize);
+
