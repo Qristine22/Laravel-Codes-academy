@@ -52,7 +52,7 @@
         width: 100%;
         padding: 0;
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
     }
     .partner__name{
         width: 100%;

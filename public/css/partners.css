@@ -6,6 +6,9 @@ partners
     margin-top: 150px;
     /*min-height: 100vh;*/
 }
+.partners__section{
+    min-height: calc(100vh - 278px);
+}
 .partners__item{
     width: 100%;
     display: flex;

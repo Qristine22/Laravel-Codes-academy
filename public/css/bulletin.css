@@ -9,6 +9,9 @@ bulletin
 .bulletin__pdfs{
     border-top: 1px solid var(--dark-yellow);
 }
+.bulletin__item{
+    max-height: 400px;
+}
 .swiper-pagination-bullet{
     transition: all ease .5s;
     -webkit-transition: all ease .5s;
