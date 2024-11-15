@@ -13,7 +13,7 @@
                 <div class="swiper-wrapper">
                     @foreach($bulletins as $bulletin)
                         <div class="swiper-slide courses__slide-item">
-                            <div class="courses__item">
+                            <div class="courses__item bulletin__item">
                                 <a href="{{ Storage::url($bulletin->pdf) }}" target="_blank">
                                     <img class="img" src="{{ Storage::url($bulletin->img) }}"
                                     alt="{{ $bulletin->{'name_'.app()->getLocale()} }}">

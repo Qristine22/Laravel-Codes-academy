@@ -181,5 +181,6 @@ function checkFontSize() {
         }
     }
 }
+checkFontSize()
 window.addEventListener('resize', checkFontSize);
 
